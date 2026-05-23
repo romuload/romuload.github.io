@@ -1,300 +1,544 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>TXT by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rômulo Adriano — Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-			<!-- Header -->
-				<header id="header">
-					<div class="logo container">
-						<div>
-							<h1><a href="index.html" id="logo">TXT</a></h1>
-							<p>A responsive site template by HTML5 UP</p>
-						</div>
-					</div>
-				</header>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --text: #ffffff;
+      --text-muted: #777777;
+      --border: #1e1e1e;
+      --font: 'Inter', sans-serif;
+    }
 
-			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Home</a></li>
-						<li>
-							<a href="#">Dropdown</a>
-							<ul>
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">Magna phasellus</a></li>
-								<li>
-									<a href="#">Phasellus consequat</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Phasellus consequat</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Veroeros feugiat</a></li>
-							</ul>
-						</li>
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li><a href="no-sidebar.html">No Sidebar</a></li>
-					</ul>
-				</nav>
+    html { scroll-behavior: smooth; }
 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-12">
+    a { color: inherit; text-decoration: none; }
 
-								<!-- Highlight -->
-									<section class="box highlight">
-										<ul class="special">
-											<li><a href="#" class="icon solid fa-search"><span class="label">Magnifier</span></a></li>
-											<li><a href="#" class="icon solid fa-tablet-alt"><span class="label">Tablet</span></a></li>
-											<li><a href="#" class="icon solid fa-flask"><span class="label">Flask</span></a></li>
-											<li><a href="#" class="icon solid fa-cog"><span class="label">Cog?</span></a></li>
-										</ul>
-										<header>
-											<h2>A random assortment of icons in circles</h2>
-											<p>And some text that attempts to explain their significance</p>
-										</header>
-										<p>
-											Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu<br />
-											ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
-										</p>
-									</section>
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
 
-							</div>
-							<div class="col-12">
+    .nav-logo {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
 
-								<!-- Features -->
-									<section class="box features">
-										<h2 class="major"><span>A Major Heading</span></h2>
-										<div>
-											<div class="row">
-												<div class="col-3 col-6-medium col-12-small">
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
 
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-															<h3><a href="#">A Subheading</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
 
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
+    .nav-links a:hover { color: var(--text); }
 
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-															<h3><a href="#">Another Subheading</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
+    /* HERO */
+    .hero-wrap { max-width: 1200px; margin: 0 auto; }
 
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 4rem 5rem;
+    }
 
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-															<h3><a href="#">And Another</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
+    .hero-content { max-width: 680px; }
 
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
 
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-															<h3><a href="#">And One More</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
+    .hero h1 {
+      font-size: clamp(2.75rem, 6vw, 5.25rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.75rem;
+    }
 
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><a href="#" class="button large">Do Something</a></li>
-														<li><a href="#" class="button alt large">Think About It</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</section>
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin-bottom: 2.75rem;
+      line-height: 1.75;
+    }
 
-							</div>
-							<div class="col-12">
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-								<!-- Blog -->
-									<section class="box blog">
-										<h2 class="major"><span>Another Major Heading</span></h2>
-										<div>
-											<div class="row">
-												<div class="col-9 col-12-medium">
-													<div class="content">
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.875rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      background: var(--text);
+      color: var(--bg);
+    }
 
-														<!-- Featured Post -->
-															<article class="box post">
-																<header>
-																	<h3><a href="#">Here's a really big heading</a></h3>
-																	<p>With a smaller subtitle that attempts to elaborate</p>
-																	<ul class="meta">
-																		<li class="icon fa-clock">15 minutes ago</li>
-																		<li class="icon fa-comments"><a href="#">8</a></li>
-																	</ul>
-																</header>
-																<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-																<p>
-																	Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-																	semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-																	dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-																	dolor sit non aliquet sed, tempor et dolor. Praesent a dapibus velit. Curabitur
-																	accumsan.
-																</p>
-																<a href="#" class="button">Continue Reading</a>
-															</article>
+    .btn:hover { opacity: 0.85; }
 
-													</div>
-												</div>
-												<div class="col-3 col-12-medium">
-													<div class="sidebar">
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
 
-														<!-- Archives -->
-															<ul class="divided">
-																<li>
-																	<article class="box post-summary">
-																		<h3><a href="#">A Subheading</a></h3>
-																		<ul class="meta">
-																			<li class="icon fa-clock">6 hours ago</li>
-																			<li class="icon fa-comments"><a href="#">34</a></li>
-																		</ul>
-																	</article>
-																</li>
-																<li>
-																	<article class="box post-summary">
-																		<h3><a href="#">Another Subheading</a></h3>
-																		<ul class="meta">
-																			<li class="icon fa-clock">9 hours ago</li>
-																			<li class="icon fa-comments"><a href="#">27</a></li>
-																		</ul>
-																	</article>
-																</li>
-																<li>
-																	<article class="box post-summary">
-																		<h3><a href="#">And Another</a></h3>
-																		<ul class="meta">
-																			<li class="icon fa-clock">Yesterday</li>
-																			<li class="icon fa-comments"><a href="#">184</a></li>
-																		</ul>
-																	</article>
-																</li>
-																<li>
-																	<article class="box post-summary">
-																		<h3><a href="#">And Another</a></h3>
-																		<ul class="meta">
-																			<li class="icon fa-clock">2 days ago</li>
-																			<li class="icon fa-comments"><a href="#">286</a></li>
-																		</ul>
-																	</article>
-																</li>
-																<li>
-																	<article class="box post-summary">
-																		<h3><a href="#">And One More</a></h3>
-																		<ul class="meta">
-																			<li class="icon fa-clock">3 days ago</li>
-																			<li class="icon fa-comments"><a href="#">8,086</a></li>
-																		</ul>
-																	</article>
-																</li>
-															</ul>
-															<a href="#" class="button alt">Archives</a>
+    .btn-outline:hover { border-color: #444; opacity: 1; }
 
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
+    /* DIVIDER */
+    .divider { width: 100%; height: 1px; background: var(--border); }
 
-							</div>
-						</div>
-					</div>
-				</section>
+    /* SECTIONS */
+    section {
+      padding: 7rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-			<!-- Footer -->
-				<footer id="footer">
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-12">
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
 
-								<!-- About -->
-									<section>
-										<h2 class="major"><span>What's this about?</span></h2>
-										<p>
-											This is <strong>TXT</strong>, yet another free responsive site template designed by
-											<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>. It's released under the
-											<a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for
-											whatever you're working on (personal or commercial), just be sure to give us credit for the design.
-											That's basically it :)
-										</p>
-									</section>
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 6rem;
+      align-items: center;
+    }
 
-							</div>
-							<div class="col-12">
+    .about-photo {
+      aspect-ratio: 4 / 5;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
 
-								<!-- Contact -->
-									<section>
-										<h2 class="major"><span>Get in touch</span></h2>
-										<ul class="contact">
-											<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-											<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-											<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
-											<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-											<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</section>
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-							</div>
-						</div>
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: #2a2a2a;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-						<!-- Copyright -->
-							<div id="copyright">
-								<ul class="menu">
-									<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-								</ul>
-							</div>
+    .photo-placeholder svg { width: 2.25rem; height: 2.25rem; }
 
-					</div>
-				</footer>
+    .about-text h2 {
+      font-size: clamp(1.625rem, 2.5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
 
-		</div>
+    .about-text p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
 
-	</body>
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 0.25rem;
+    }
+
+    /* PROJECTS */
+    .projects-head {
+      margin-bottom: 3rem;
+    }
+
+    .projects-head h2 {
+      font-size: clamp(1.625rem, 2.5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .project-card {
+      background: var(--bg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .project-card:hover { background: var(--bg-card); }
+
+    .project-thumb {
+      aspect-ratio: 16 / 9;
+      background: var(--bg-card);
+      overflow: hidden;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: transform 0.6s ease, filter 0.3s;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .project-info { padding: 1.75rem 2rem 2.25rem; }
+
+    .project-cat {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .case-link svg { transition: transform 0.2s; }
+    .project-card:hover .case-link { color: var(--text); }
+    .project-card:hover .case-link svg { transform: translateX(4px); }
+
+    /* CONTACT */
+    .contact-inner { max-width: 580px; }
+
+    .contact-inner h2 {
+      font-size: clamp(2rem, 4vw, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-inner p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email {
+      font-size: 1.1875rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      display: inline-block;
+      transition: border-color 0.2s;
+    }
+
+    .contact-email:hover { border-color: #555; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .social-links { display: flex; gap: 1.75rem; }
+
+    .social-links a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover { color: var(--text); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 2rem; }
+      .nav-links { display: none; }
+      section, .hero { padding-left: 1.75rem; padding-right: 1.75rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-photo { max-width: 320px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">Rômulo Adriano</span>
+    <ul class="nav-links">
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <div class="hero">
+      <div class="hero-content">
+        <span class="tag">Designer</span>
+        <h1>Design que comunica, encanta e converte.</h1>
+        <p>Crio experiências visuais com intenção — da identidade de marca ao produto digital. Projetos que unem estética e função.</p>
+        <div class="btn-row">
+          <a href="#projetos" class="btn">Ver projetos</a>
+          <a href="#contato" class="btn btn-outline">Entrar em contato</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <p class="section-label">Sobre</p>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/foto.jpg" alt="Rômulo Adriano" />
+      </div>
+      <div class="about-text">
+        <h2>Olá, eu sou o Rômulo — designer com foco em identidade e produto.</h2>
+        <p>Trabalho na interseção entre estética e estratégia, criando marcas, interfaces e experiências que fazem sentido para quem usa — e resultado para quem precisa.</p>
+        <p>Com olhar atento ao detalhe e ao contexto, cada projeto começa com a pergunta certa antes de qualquer traço.</p>
+        <div class="stats">
+          <div>
+            <div class="stat-value">5+</div>
+            <div class="stat-label">Anos de experiência</div>
+          </div>
+          <div>
+            <div class="stat-value">30+</div>
+            <div class="stat-label">Projetos entregues</div>
+          </div>
+          <div>
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Clientes atendidos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projetos">
+    <div class="projects-head">
+      <p class="section-label">Projetos</p>
+      <h2>Trabalhos selecionados</h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">Identidade Visual</p>
+          <h3>Projeto 01</h3>
+          <p>Branding completo para uma startup de tecnologia — da estratégia de marca ao sistema visual.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">UI/UX Design</p>
+          <h3>Projeto 02</h3>
+          <p>Redesign do aplicativo mobile de uma fintech, com foco em usabilidade e retenção.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">Web Design</p>
+          <h3>Projeto 03</h3>
+          <p>Site institucional para escritório de arquitetura — elegante, rápido e responsivo.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">Identidade Visual</p>
+          <h3>Projeto 04</h3>
+          <p>Identidade para marca de moda independente — conceito, tipografia e aplicações.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">Direção de Arte</p>
+          <h3>Projeto 05</h3>
+          <p>Campanha visual para lançamento de produto — conceito, direção e assets para todas as mídias.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><div class="thumb-placeholder">Imagem do projeto</div></div>
+        <div class="project-info">
+          <p class="project-cat">UI/UX Design</p>
+          <h3>Projeto 06</h3>
+          <p>Design system para plataforma SaaS — componentes, tokens e documentação.</p>
+          <span class="case-link">Ver case <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contato">
+    <div class="contact-inner">
+      <p class="section-label">Contato</p>
+      <h2>Vamos trabalhar juntos?</h2>
+      <p>Estou disponível para projetos freelance, colaborações e oportunidades full-time. Me conta o que você tem em mente.</p>
+      <a href="mailto:romuloadriano@gmail.com" class="contact-email">romuloadriano@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2025 Rômulo Adriano</span>
+    <div class="social-links">
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net" target="_blank" rel="noopener">Behance</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+</body>
 </html>
