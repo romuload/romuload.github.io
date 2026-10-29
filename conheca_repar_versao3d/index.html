@@ -386,7 +386,7 @@ function painelFluxo(e) {
 function mostrarApresentador(html) {
   $('central').hidden = true; $('explorarInfo').hidden = true; $('dica').hidden = true;
   $('apresentador').hidden = false;
-  const b = $('balao'); b.innerHTML = html; b.style.animation = 'none'; void b.offsetWidth; b.style.animation = '';
+  const b = $('balao'); b.innerHTML = html; b.scrollTop = 0; b.style.animation = 'none'; void b.offsetWidth; b.style.animation = '';
   requestAnimationFrame(enquadrarTela);
 }
 function reagir(feliz) {
