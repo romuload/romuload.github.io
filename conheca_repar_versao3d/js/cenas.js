@@ -56,11 +56,14 @@ const Cenas = (() => {
     return `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="${h}" fill="url(#g-duto)" stroke="#999" stroke-width=".6"/>`;
   }
 
+  // símbolo BR da Petrobras, com a mesma geometria de images/petrobras.svg;
+  // ocupa a mesma caixa do desenho antigo (w de largura x 0,8w de altura), centralizado
   function logoBR(x, y, w = 30) {
-    const h = w * 0.8;
-    return `<g><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#008542"/>
-      <text x="${x + w / 2}" y="${y + h * 0.78}" text-anchor="middle" font-size="${h * 0.8}" font-weight="700"
-        font-style="italic" fill="#fdc82f" font-family="Arial, sans-serif">BR</text></g>`;
+    const h = w * 0.8, s = h / 63.7, dx = (w - 63.9 * s) / 2;
+    return `<g transform="translate(${x + dx} ${y}) scale(${s})">
+      <path fill="#f7bf21" d="M0,15.5L63.9,15.5L63.9,0L0,0Z"/>
+      <path fill="#007d4f" d="M0,63.7L63.9,63.7L63.9,23.2L0,23.2Z"/>
+      <path fill="#ffffff" fill-rule="evenodd" d="M63.9,23.2L63.9,15.5L0,15.5L0,23.2L12.3,23.2L5.5,46.8L19.4,46.8C25.5,46.8 26.5,45.4 27.8,44.3C29.4,43 30.3,39.7 29.5,37.4C29,35.8 27.5,34.8 27.3,34.8C29.2,33.9 30.3,32 30.4,31.7C31.1,30.2 31.7,27.6 29.9,25.5C28.5,23.7 25.7,23.2 23.6,23.2L38.6,23.2L31.7,46.8L38.6,46.8L41.2,37.9L45.1,37.9C48,37.9 47.7,39.6 47.8,40.4L48,47L54.5,47C54.5,47 54.2,39.6 54.1,39.1C54.1,37.2 52.8,36.3 51.7,36.3C53.8,35.8 55.6,33.9 56.3,32.7C57.1,31.3 57.7,29.1 56.9,26.9C55.7,23.8 52.7,23.2 50.6,23.2ZZM43.9,28L49,28C51.4,28 51.5,29.6 51.5,30C51.5,31.1 50.5,33.2 47.6,33.2L42.5,33.2C42.5,33.2 43.9,28.1 43.9,28ZM15.2,36.8L19.8,36.8C22.1,36.8 22.2,37.4 22.5,38C22.8,38.5 22.7,39.6 22.5,40C22.2,40.4 21.8,41.9 18.9,41.9L13.8,41.9C13.8,41.9 15.2,36.8 15.2,36.8ZM17.8,27.9L23.1,27.9C24.1,27.9 25.1,28.6 25.1,29.7C25.1,31.2 23.9,32.3 22.2,32.3L16.5,32.3Z"/></g>`;
   }
 
   function titulo(x, y, texto) {

@@ -216,8 +216,10 @@ button:focus-visible, a:focus-visible, label:focus-within { outline: 3px solid v
 .explorar-info dd { margin: 0; }
 .dica-flutuante { position: fixed; z-index: 9; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); padding: 8px 14px; border-radius: 999px; background: var(--vidro); color: #dbe6f0; font-size: 13px; white-space: nowrap; }
 
-.rodape { position: fixed; z-index: 7; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); background: rgba(255,255,255,.92); border-radius: 8px; padding: 4px 8px; line-height: 0; }
-.rodape img { height: 34px; width: auto; }
+.rodape { position: fixed; z-index: 7; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,.94); border-radius: 8px; padding: 6px 12px; line-height: 0; }
+.rodape img { width: auto; display: block; }
+.rodape .logo-selo { height: 34px; }
+.rodape .logo-petrobras { height: 22px; }
 .recentrar { position: fixed; z-index: 7; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(66px + env(safe-area-inset-bottom, 0px)); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.2); background: var(--vidro); color: #e8f0f7; font-size: 13px; }
 
 /* ---------- telas menores ---------- */
