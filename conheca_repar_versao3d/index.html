@@ -116,19 +116,37 @@ renderer.toneMappingExposure = 1.0;
 palco.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
-{ // céu de fim de tarde
+// Ambiente: dia (padrão) ou fim de tarde (abrir com ?noite no endereço)
+const NOITE = location.search.includes('noite');
+const AMB = NOITE ? {
+  ceu: [[0, '#081426'], [.42, '#16355a'], [.52, '#d9824f'], [.56, '#2a4a6e'], [1, '#0c2238']],
+  nevoa: [0x10263d, 240, 620], hemi: [0xa9c8ff, 0x24361f, 0.85], sol: [0xffc9a0, 2.3], contra: 0.6,
+  bloom: [0.55, 0.45, 0.9], exposicao: 1.0, sombras: false, esmaecer: ['#0d1d2e', .68]
+} : {
+  ceu: [[0, '#5d9fd6'], [.45, '#a9cfee'], [.55, '#dcebf6'], [.62, '#c4dbea'], [1, '#b3cfe2']],
+  nevoa: [0xcfe2ef, 320, 760], hemi: [0xe4f1ff, 0x5b6b45, 1.15], sol: [0xfff3e2, 3.1], contra: 0.35,
+  bloom: [0.18, 0.3, 0.97], exposicao: 1.0, sombras: true, esmaecer: ['#c9d4dc', .55]
+};
+{
   const c = document.createElement('canvas'); c.width = 4; c.height = 256;
   const g = c.getContext('2d'), gr = g.createLinearGradient(0, 0, 0, 256);
-  gr.addColorStop(0, '#081426'); gr.addColorStop(.42, '#16355a'); gr.addColorStop(.52, '#d9824f'); gr.addColorStop(.56, '#2a4a6e'); gr.addColorStop(1, '#0c2238');
+  AMB.ceu.forEach(([p, cor]) => gr.addColorStop(p, cor));
   g.fillStyle = gr; g.fillRect(0, 0, 4, 256);
   const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; scene.background = tex;
 }
-scene.fog = new THREE.Fog(0x10263d, 240, 620);
+scene.fog = new THREE.Fog(...AMB.nevoa);
+renderer.toneMappingExposure = AMB.exposicao;
 const pmrem = new THREE.PMREMGenerator(renderer);
 scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-scene.add(new THREE.HemisphereLight(0xa9c8ff, 0x24361f, 0.85));
-const sol = new THREE.DirectionalLight(0xffc9a0, 2.3); sol.position.set(-120, 90, 60); scene.add(sol);
-const contra = new THREE.DirectionalLight(0x7fa6ff, 0.6); contra.position.set(90, 60, -80); scene.add(contra);
+scene.add(new THREE.HemisphereLight(...AMB.hemi));
+const sol = new THREE.DirectionalLight(...AMB.sol); sol.position.set(-120, 140, 70); scene.add(sol);
+if (AMB.sombras) {
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048);
+  Object.assign(sol.shadow.camera, { left: -125, right: 125, top: 125, bottom: -125, near: 20, far: 450 });
+  sol.shadow.bias = -0.0005; sol.shadow.normalBias = 0.05;
+}
+const contra = new THREE.DirectionalLight(0x9fbfff, AMB.contra); contra.position.set(90, 60, -80); scene.add(contra);
 
 const camera = new THREE.PerspectiveCamera(36, innerWidth / innerHeight, 0.5, 2000);
 const CASA = { pos: new THREE.Vector3(-92, 112, 128), alvo: new THREE.Vector3(-4, 0, 4) };
@@ -141,7 +159,7 @@ controls.autoRotateSpeed = 0.35;
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.55, 0.45, 0.9);
+const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), ...AMB.bloom);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
 
@@ -151,11 +169,11 @@ let clicaveis = [];
 const jogo = { modo: 'carregando', indice: 0, pontos: 0, respostas: [] };
 
 const cacheEsmaecido = new Map();
-const TOM = new THREE.Color('#0d1d2e');
+const TOM = new THREE.Color(AMB.esmaecer[0]);
 function esmaecido(m) {
   if (!cacheEsmaecido.has(m.uuid)) {
     const d = m.clone();
-    if (d.color) d.color.lerp(TOM, .68);
+    if (d.color) d.color.lerp(TOM, AMB.esmaecer[1]);
     if (d.emissive) d.emissiveIntensity *= .08;
     d.envMapIntensity = .15;
     cacheEsmaecido.set(m.uuid, d);
@@ -178,10 +196,26 @@ const bin = Uint8Array.from(atob(window.REPAR_GLB_B64), c => c.charCodeAt(0)).bu
 loader.parse(bin, '', gltf => {
   const raiz = gltf.scene;
   raiz.traverse(o => {
-    if (o.isMesh) (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => {
-      m.envMapIntensity = .6;
-      if (m.emissiveIntensity > 5) m.emissiveIntensity = /janela/.test(m.name) ? 1.6 : 3.2;   // luzes do Blender são fortes demais para o bloom em tempo real
-    });
+    if (o.isMesh) {
+      (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => {
+        m.envMapIntensity = .6;
+        if (NOITE) { if (m.emissiveIntensity > 5) m.emissiveIntensity = /janela/.test(m.name) ? 1.6 : 3.2; return; }
+        // de dia: luzes apagadas, janelas viram vidro, tubulações coloridas sem brilho
+        if (/^luz_(quente|fria)/.test(m.name)) { m.emissiveIntensity = 0; m.color.set('#e9edf0'); }
+        else if (/janela_acesa/.test(m.name)) { m.emissiveIntensity = 0; m.color.set('#4d7a99'); m.roughness = .15; m.metalness = .3; }
+        else if (/^fluxo_/.test(m.name)) m.emissiveIntensity = .25;
+        else if (/brilho_forno/.test(m.name)) m.emissiveIntensity = 1.2;
+        else if (/^luz_/.test(m.name)) m.emissiveIntensity = 1.5;
+        else if (/faixa_/.test(m.name)) m.emissiveIntensity = 0;
+        if (m.name === 'agua') { m.color.set('#2f6f9b'); m.roughness = .3; }
+      });
+      if (AMB.sombras) {
+        let p = o, tipo = ''; while (p) { if (p.userData?.tipo) { tipo = p.userData.tipo; break; } p = p.parent; }
+        const nome = o.name + ' ' + (o.parent?.name || '');
+        o.receiveShadow = true;
+        o.castShadow = !/Agua|Terreno|Orla|piso/.test(nome);
+      }
+    }
     const ud = o.userData || {};
     if (ud.tipo === 'unidade') unidades[o.name] = { no: o, nome: ud.nome, num: ud.num, descricao: ud.descricao, equips: [] };
   });
