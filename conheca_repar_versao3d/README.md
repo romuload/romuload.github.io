@@ -15,6 +15,5 @@ Depois do jogo, "Explorar a refinaria" permite navegar livremente pela maquete.
 - `js/perguntas.js` — etapas, perguntas, alternativas e explicações.
 - `js/cenas.js` — desenho do técnico (reaproveitado da versão 2D).
 - `modelo/repar_glb.js` — maquete 3D (glTF com compressão Draco) embutida em JavaScript, para abrir sem servidor.
-- `geral.html` / `geral.gif` — infográfico original "Conheça todo o processo".
 
 Precisa de internet para carregar Three.js, GSAP e as fontes.
