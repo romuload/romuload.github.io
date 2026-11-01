@@ -37,8 +37,10 @@ Para novos conteúdos, escreva o HTML em inglês e acrescente seu par inglês/po
 
 `projeto-ilab.html` integra as dez seções do case original de https://romuload.github.io/ilab/case/, com imagens locais em `images/ilab-case/`, logo em `ilab-logo.js`, comparação antes/depois e narrativa por scroll. Pesquisa, atuação e resultado de infraestrutura reproduzem o material já existente do autor. O nome foi ajustado para Romulo Nascimento. A navegação e o seletor conectam o case ao portfólio; os botões de exploração continuam abrindo o protótipo original.
 
-## Símbolo e mockups
+## Correção da identidade e molduras de navegador
 
-A marca no cabeçalho usa apenas o símbolo reduzido aprovado, extraído da imagem fornecida pelo autor em `images/brand/rn-symbol.png`. Todas as páginas usam o mesmo favicon (ICO com 16/32 px, PNGs correspondentes e ícone Apple de 180 px).
+O cabeçalho combina o símbolo RN em `images/brand/rn-symbol.svg`, o nome Romulo Nascimento e o cargo Product Designer. O SVG foi reconstruído manualmente com curvas, sem fonte, imagem incorporada ou fundo. O favicon usa o mesmo desenho em `favicon.svg`; as versões PNG/ICO foram renderizadas a partir desse vetor. A imagem recortada anterior foi removida.
 
-As telas dos mockups usam `object-fit: contain` e alinhamento superior para preservar a captura completa. A moldura do celular reserva espaço para a câmera e o indicador inferior sem sobrepor o conteúdo. As capturas móveis dos jogos foram refeitas em viewport de 390 × 844, usando as fotos enviadas como referência; a bancada iLab usa sua captura original de 780 × 1688. Os modelos desktop têm proporção 16:9, com 16:10 para o iLab. O case completo iLab também mantém as imagens integrais e o cabeçalho livre da câmera decorativa.
+`mockups.css` define os viewports explícitos e isolados das capturas. O navegador desktop e a moldura Safari mobile têm barra de endereço com `romuload.github.io` e controles decorativos, fora da área da página. Desktop e celular ficam lado a lado, sem sobreposição, e as imagens são posicionadas de forma absoluta com `object-fit: contain`. As quatro capturas móveis da galeria foram refeitas em 390 × 700 para caber na área de conteúdo reservada abaixo da barra do navegador.
+
+O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco. Fontes dos arquivos adicionais: SONDA no CDN do próprio site (https://www.sonda.com/ResourcePackages/Sonda2024/assets/dist/images/logos/logo-white-footer.svg), Fiat e Thomson Reuters nas páginas de arquivo do Wikimedia Commons. Ícones da moldura do navegador são do projeto Tabler Icons, com licença em `images/browser-icons/LICENSE.txt`.
