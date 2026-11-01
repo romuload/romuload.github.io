@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>Romulo Nascimento</title><rect width="100" height="100" rx="20" fill="#1c1d1f"/><g transform="translate(4 11)">  <g id="rn" fill="#fff">
-    <path id="r" d="M6 64V18h11v8c5-7 12-10 22-9v12c-13-2-22 4-22 16v19H6Z"/>
-    <path id="n" d="M36 64V39c0-15 10-24 25-24s25 9 25 24v25H74V39c0-8-5-13-13-13s-13 5-13 13v25H36Z"/>
-  </g>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>Romulo Nascimento</title><rect width="64" height="64" rx="13" fill="#1c1d1f"/><g transform="translate(4 4) scale(.875)" id="cube-axes" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 19 49 29v19L32 58 15 48V29Zm-17 10 17 10 17-10M32 39v19M32 19V6m-5 5 5-5 5 5M15 48l-9 5m2-7-2 7 7 1m36-6 9 5m-7 1 7-1-2-7"/></g></svg>
