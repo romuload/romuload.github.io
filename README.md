@@ -1,24 +1,30 @@
-# Rômulo Adriano | Portfólio UX
+# Romulo Nascimento | Portfólio UX
 
-Landing page estática para https://romuload.github.io/.
+Site estático para https://romuload.github.io/.
 
 ## Visualizar
 
-Execute `python3 -m http.server 4173` nesta pasta e abra http://localhost:4173.
+Execute `python3 -m http.server 4187` nesta pasta e abra http://localhost:4187.
+Sem instalação ou compilação. GitHub Pages publica a raiz da branch `main`.
 
-Sem instalação ou compilação. Publique a raiz do repositório no GitHub Pages (branch `main`).
+## Páginas
 
-## Conteúdo
+- `index.html`: projetos, abertura e carrossel de logos.
+- `sobre.html`: apresentação e abordagem.
+- `trabalhe-comigo.html`: contato.
+- `projeto-repar.html`, `projeto-ilab.html`, `projeto-legado.html`, `projeto-games.html`: páginas descritivas com acesso às experiências.
 
-- `index.html`: projetos, clientes, sobre, abordagem e contato.
-- `styles.css`: layout responsivo e animações de revelação.
-- `main.js`: revelação por IntersectionObserver e detalhes dos projetos em diálogo acessível.
-- `images/`: retrato existente e capturas reais dos projetos. A captura iLab vem de seu próprio case.
+Cada card tem somente duas ações, nesta ordem: Por dentro do projeto (página local) e Explorar o projeto (experiência pública em nova aba). As capas não são clicáveis. Os mockups em CSS usam capturas reais de desktop e celular.
 
-Os links abrem os projetos públicos existentes. Nenhuma métrica de impacto ou participação específica foi presumida. As descrições pessoais e de abordagem são uma proposta editorial para revisão.
+## Recursos
 
-As animações respeitam a preferência de movimento reduzido. O conteúdo permanece visível sem JavaScript.
+- `styles.css`: layout responsivo, mockups, revelações e carrossel contínuo.
+- `main.js`: revelação com IntersectionObserver, controle de pausa do carrossel e ano do rodapé.
+- `images/`: retrato e capturas dos projetos. As capturas do iLab vêm do seu case; os demais projetos foram capturados em suas páginas públicas, inclusive em largura de 390px.
+- `fonts/`: Manrope, hospedada localmente com licença SIL Open Font License.
 
-## Direção visual
+O carrossel pode ser pausado pelo botão e ao passar o cursor. Movimento reduzido desativa a animação e mantém as três marcas visíveis. O conteúdo e a navegação funcionam sem JavaScript.
 
-Abertura escura com mensagem central e clientes em destaque, seguida por galeria clara de cases em duas colunas. Direção inspirada na referência indicada pelo usuário: https://www.irvingsuna.net/. Conteúdo, identidade e imagens são próprios. Tipografia Manrope hospedada localmente (SIL Open Font License).
+Direção visual inspirada na referência fornecida: https://www.irvingsuna.net/. Conteúdo, identidade e capturas próprios. Textos de apresentação e abordagem são propostas editoriais; nenhuma métrica de impacto ou participação específica foi presumida.
+
+Logos: Petrobras proveniente do próprio repositório REPAR, com variante monocromática para fundo escuro; Porto do CDN oficial usado em https://www.portoseguro.com.br/; Itaú de https://commons.wikimedia.org/wiki/File:Itaú_Unibanco_logo_2023.svg. Marcas pertencem aos respectivos titulares.
