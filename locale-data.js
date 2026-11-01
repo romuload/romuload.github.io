@@ -1,4 +1,4 @@
-// Authored English / Brazilian Portuguese copy, shared across the portfolio.
+// English and Brazilian Portuguese content. Validate both languages before publishing.
 window.PORTFOLIO_TRANSLATIONS = [
   [
     "Projects",
@@ -865,15 +865,15 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Conheça a REPAR: legado: telas reais em mockups de desktop e celular"
   ],
   [
-    "Inside the project: Caça-Palavras REPAR",
+    "Inside the project: REPAR Word Search",
     "Por dentro do projeto: Caça-Palavras REPAR"
   ],
   [
-    "Explore Caça-Palavras REPAR in a new tab",
+    "Explore REPAR Word Search in a new tab",
     "Explorar Caça-Palavras REPAR em nova aba"
   ],
   [
-    "Caça-Palavras REPAR: real desktop and mobile screens in device mockups",
+    "REPAR Word Search: real desktop and mobile screens in device mockups",
     "Caça-Palavras REPAR: telas reais em mockups de desktop e celular"
   ],
   [
@@ -925,11 +925,11 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Por dentro: Conheça a REPAR: legado. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."
   ],
   [
-    "Inside: Caça-Palavras REPAR | Romulo Nascimento",
+    "Inside: REPAR Word Search | Romulo Nascimento",
     "Por dentro: Caça-Palavras REPAR | Romulo Nascimento"
   ],
   [
-    "Inside: Caça-Palavras REPAR. Romulo Nascimento’s UX portfolio: digital products, 3D experiences and games.",
+    "Inside: REPAR Word Search. Romulo Nascimento’s UX portfolio: digital products, 3D experiences and games.",
     "Por dentro: Caça-Palavras REPAR. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."
   ],
   [
@@ -939,10 +939,7 @@ window.PORTFOLIO_TRANSLATIONS = [
   [
     "iLAB, Petrobras: turning a decade-old laboratory ecosystem into an intelligent, integrated experience. Product Design case study by Romulo Nascimento.",
     "iLAB, Petrobras: transformando um ecossistema de laboratório de uma década em uma experiência inteligente e integrada. Estudo de caso de design de produto por Romulo Nascimento."
-  ]
-];
-
-window.PORTFOLIO_TRANSLATIONS.push(...[
+  ],
   [
     "About me",
     "Sobre mim"
@@ -1046,12 +1043,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   [
     "Work with me",
     "Trabalhe comigo"
-  ]
-]);
-
-window.PORTFOLIO_TRANSLATIONS.push(["Artificial intelligence", "Inteligência artificial"]);
-
-window.PORTFOLIO_TRANSLATIONS.push(...[
+  ],
+  [
+    "Artificial intelligence",
+    "Inteligência artificial"
+  ],
   [
     "Petrobras · Interactive learning · 2D to 3D",
     "Petrobras · Aprendizagem interativa · Do 2D ao 3D"
@@ -1065,7 +1061,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Novas formas de explorar."
   ],
   [
-    "Conhecer Repar 3D brings two generations of the same project together: the original visual journey and an interactive 3D experience that makes the path of oil tangible.",
+    "Explore REPAR 3D brings two generations of the same project together: the original visual journey and an interactive 3D experience that makes the path of oil tangible.",
     "Conhecer Repar 3D reúne duas gerações do mesmo projeto: a jornada visual original e uma experiência 3D interativa que torna o caminho do petróleo tangível."
   ],
   [
@@ -1199,14 +1195,23 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   [
     "Open 3D version",
     "Abrir versão 3D"
-  ]
-]);
-
-window.PORTFOLIO_TRANSLATIONS.push(["From the original illustrated journey to an interactive 3D refinery.","Da jornada ilustrada original a uma refinaria 3D interativa."]);
-
-window.PORTFOLIO_TRANSLATIONS.push(...[["Inside the project: Conhecer Repar 3D", "Por dentro do projeto: Conhecer Repar 3D"], ["Explore Conhecer Repar 3D in a new tab", "Explorar Conhecer Repar 3D em uma nova aba"], ["Conhecer Repar 3D: real desktop and mobile screens in device mockups", "Conhecer Repar 3D: telas reais de desktop e celular em mockups de dispositivos"]]);
-
-window.PORTFOLIO_TRANSLATIONS.push(...[
+  ],
+  [
+    "From the original illustrated journey to an interactive 3D refinery.",
+    "Da jornada ilustrada original a uma refinaria 3D interativa."
+  ],
+  [
+    "Inside the project: Explore REPAR 3D",
+    "Por dentro do projeto: Conhecer Repar 3D"
+  ],
+  [
+    "Open Explore REPAR 3D in a new tab",
+    "Explorar Conhecer Repar 3D em uma nova aba"
+  ],
+  [
+    "Explore REPAR 3D: real desktop and mobile screens in device mockups",
+    "Conhecer Repar 3D: telas reais de desktop e celular em mockups de dispositivos"
+  ],
   [
     "Petrobras · Games & learning",
     "Petrobras · Games e aprendizagem"
@@ -1220,7 +1225,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Descubra a refinaria."
   ],
   [
-    "Caça-Palavras REPAR turns the vocabulary of refining into a five-minute discovery game. A project from 2007, rebuilt for desktop and mobile.",
+    "REPAR Word Search turns the vocabulary of refining into a five-minute discovery game. A project from 2007, rebuilt for desktop and mobile.",
     "O Caça-Palavras REPAR transforma o vocabulário do refino em um jogo de descoberta de cinco minutos. Um projeto de 2007, reconstruído para desktop e celular."
   ],
   [
@@ -1338,10 +1343,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   [
     "Play the word search",
     "Jogar caça-palavras"
-  ]
-]);
-
-window.PORTFOLIO_TRANSLATIONS.push(...[
+  ],
   [
     "FIAT · Interactive experience · Motion design",
     "FIAT · Experiência interativa · Motion design"
@@ -1355,11 +1357,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Um ciclo para descobrir."
   ],
   [
-    "Água em Ciclo makes the industrial water journey visible, from production to treatment and reuse, through an interactive 3D experience and motion videos.",
+    "Water Cycle makes the industrial water journey visible, from production to treatment and reuse, through an interactive 3D experience and motion videos.",
     "Água em Ciclo torna visível a jornada industrial da água, da produção ao tratamento e reúso, com uma experiência 3D interativa e vídeos de motion."
   ],
   [
-    "Explore Água em Ciclo",
+    "Explore Water Cycle",
     "Explorar Água em Ciclo"
   ],
   [
@@ -1367,7 +1369,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Assistir aos entregáveis de motion"
   ],
   [
-    "FIAT Água em Ciclo: full interactive water treatment overview",
+    "FIAT Water Cycle: full interactive water treatment overview",
     "FIAT Água em Ciclo: visão completa da experiência de tratamento da água"
   ],
   [
@@ -1467,15 +1469,39 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Uma jornada interativa pelo tratamento e reúso da água, com entregáveis de motion."
   ],
   [
-    "Inside the project: FIAT · Água em Ciclo",
+    "Inside the project: FIAT · Water Cycle",
     "Por dentro do projeto: FIAT · Água em Ciclo"
   ],
   [
-    "Explore FIAT · Água em Ciclo in a new tab",
+    "Explore FIAT · Water Cycle in a new tab",
     "Explorar FIAT · Água em Ciclo em uma nova aba"
   ],
   [
-    "FIAT · Água em Ciclo: real desktop and mobile screens in device mockups",
+    "FIAT · Water Cycle: real desktop and mobile screens in device mockups",
     "FIAT · Água em Ciclo: telas reais de desktop e celular em mockups de dispositivos"
+  ],
+  [
+    "REPAR Word Search",
+    "Caça-Palavras REPAR"
+  ],
+  [
+    "FIAT · Water Cycle",
+    "FIAT · Água em Ciclo"
+  ],
+  [
+    "Explore REPAR 3D",
+    "Conhecer Repar 3D"
+  ],
+  [
+    "REPAR Word Search | Romulo Nascimento",
+    "Caça-Palavras REPAR | Romulo Nascimento"
+  ],
+  [
+    "FIAT · Water Cycle | Romulo Nascimento",
+    "FIAT · Água em Ciclo | Romulo Nascimento"
+  ],
+  [
+    "Explore REPAR 3D | Romulo Nascimento",
+    "Conhecer Repar 3D | Romulo Nascimento"
   ]
-]);
+];
