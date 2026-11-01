@@ -14,7 +14,7 @@ Sem instalação ou compilação. GitHub Pages publica a raiz da branch `main`.
 - `trabalhe-comigo.html`: contato.
 - `projeto-repar.html`, `projeto-ilab.html`, `projeto-legado.html`, `projeto-games.html`: páginas descritivas com acesso às experiências.
 
-Cada card tem somente duas ações, nesta ordem: Por dentro do projeto (página local) e Explorar o projeto (experiência pública em nova aba). As capas não são clicáveis. Os mockups em CSS usam capturas reais de desktop e celular.
+Cada card tem somente duas ações, nesta ordem: Por dentro do projeto (página local) e Explorar o projeto (experiência pública em nova aba). As capas não são clicáveis. As capas usam um mockup de iPhone em CSS com capturas reais da versão mobile.
 
 ## Recursos
 
@@ -41,7 +41,7 @@ Para novos conteúdos, escreva o HTML em inglês e acrescente seu par inglês/po
 
 O cabeçalho combina o símbolo RN em `images/brand/rn-symbol.svg`, o nome Romulo Nascimento e o cargo Product Designer. O SVG foi reconstruído manualmente com curvas, sem fonte, imagem incorporada ou fundo. O favicon usa o mesmo desenho em `favicon.svg`; as versões PNG/ICO foram renderizadas a partir desse vetor. A imagem recortada anterior foi removida.
 
-`mockups.css` define os viewports explícitos e isolados das capturas. O navegador desktop e a moldura Safari mobile têm barra de endereço com `romuload.github.io` e controles decorativos, fora da área da página. Desktop e celular ficam lado a lado, sem sobreposição, e as imagens são posicionadas de forma absoluta com `object-fit: contain`. As quatro capturas móveis da galeria foram refeitas em 390 × 700 para caber na área de conteúdo reservada abaixo da barra do navegador.
+As capas da página inicial usam `phone-mockup.css`: um único iPhone por card, com borda de titânio, Dynamic Island, barra de status e barra flutuante do Safari com `romuload.github.io`. As capturas ficam em `images/phone/` e foram feitas em 390 × 790 px a 2x (a área visível do Safari abaixo da barra de status), por isso preenchem a tela sem cortes. `mockups.css` continua definindo as molduras de navegador usadas nas páginas internas.
 
 O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco. Fontes dos arquivos adicionais: SONDA no CDN do próprio site (https://www.sonda.com/ResourcePackages/Sonda2024/assets/dist/images/logos/logo-white-footer.svg), Fiat e Thomson Reuters nas páginas de arquivo do Wikimedia Commons. Ícones da moldura do navegador são do projeto Tabler Icons, com licença em `images/browser-icons/LICENSE.txt`.
 

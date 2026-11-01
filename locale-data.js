@@ -1503,5 +1503,21 @@ window.PORTFOLIO_TRANSLATIONS = [
   [
     "Explore REPAR 3D | Romulo Nascimento",
     "Conhecer Repar 3D | Romulo Nascimento"
+  ],
+  [
+    "Explore REPAR 3D: mobile screen in a phone mockup",
+    "Conhecer Repar 3D: tela de celular em um mockup de iPhone"
+  ],
+  [
+    "iLab 3.0: mobile screen in a phone mockup",
+    "iLab 3.0: tela de celular em um mockup de iPhone"
+  ],
+  [
+    "REPAR Word Search: mobile screen in a phone mockup",
+    "Caça-Palavras REPAR: tela de celular em um mockup de iPhone"
+  ],
+  [
+    "FIAT · Water Cycle: mobile screen in a phone mockup",
+    "FIAT · Água em Ciclo: tela de celular em um mockup de iPhone"
   ]
 ];

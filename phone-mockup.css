@@ -1,0 +1,39 @@
+/* Project covers: one realistic phone per card. Captures are 390 × 790 CSS px at 2x,
+   the exact Safari viewport below the status bar, so the screen never crops or scales them.
+   Each level is a size container: cqw inside .iphone is phone width, inside the screen it is screen width. */
+.phone-stage{position:relative;display:grid;place-items:center;aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate}
+.phone-stage::before{content:"";position:absolute;left:50%;bottom:7%;width:30%;height:5%;transform:translateX(-50%);border-radius:50%;background:#000;opacity:.32;filter:blur(2.2cqw);z-index:-1}
+.iphone{position:relative;width:28cqw;container-type:inline-size;transition:transform .6s var(--ease)}
+.project-image:hover .iphone{transform:translateY(-.8cqw)}
+
+/* Natural titanium edge, black glass bezel. */
+.iphone-body{padding:1.5cqw;border-radius:16.5cqw;background:linear-gradient(120deg,#7d8084,#e4e5e6 14%,#9a9da1 30%,#d6d8da 52%,#74777b 74%,#c9cbcd 90%,#8a8d91);box-shadow:inset 0 0 0 .35cqw #ffffff59,inset 0 0 0 .7cqw #00000026,0 2cqw 3cqw #0000002e,0 7cqw 12cqw -2cqw #00000059}
+.iphone-bezel{padding:3.2cqw;border-radius:15cqw;background:#050506;box-shadow:inset 0 0 0 .3cqw #26282c}
+.iphone-key{position:absolute;width:1.1cqw;border-radius:.6cqw;background:linear-gradient(90deg,#6f7276,#d9dbdd 55%,#8b8e92)}
+.iphone-action{left:-.75cqw;top:38cqw;height:9cqw}
+.iphone-vol-up{left:-.75cqw;top:53cqw;height:16cqw}
+.iphone-vol-down{left:-.75cqw;top:72cqw;height:16cqw}
+.iphone-power{right:-.75cqw;top:60cqw;height:25cqw}
+
+.iphone-screen{--p:calc(100cqw / 390);position:relative;aspect-ratio:390/844;overflow:hidden;border-radius:11.8cqw;background:var(--status-bg,#fff);container-type:inline-size;color:var(--phone-ink,#111)}
+.iphone-screen::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,#ffffff14 0%,#ffffff05 34%,transparent 35%);pointer-events:none}
+.iphone-status{position:relative;height:calc(54 * var(--p));display:grid;grid-template-columns:1fr calc(126 * var(--p)) 1fr;align-items:center;font:600 calc(16.5 * var(--p))/1 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif;letter-spacing:-.02em}
+.iphone-status>span{justify-self:center;padding-top:calc(4 * var(--p))}
+.iphone-island{height:calc(36 * var(--p));border-radius:calc(20 * var(--p));background:#000}
+.iphone-icons{justify-self:center;width:calc(72 * var(--p));height:calc(13 * var(--p));margin-top:calc(4 * var(--p));background:currentColor;-webkit-mask:url(images/phone/status.svg) center/contain no-repeat;mask:url(images/phone/status.svg) center/contain no-repeat}
+.project-image .iphone-screen img{display:block;width:100%;height:calc(790 * var(--p));padding:0;object-fit:cover;object-position:top;filter:none;transform:none;border-radius:0}
+
+/* Safari bottom bar, floating glass over the page like current iOS. */
+.iphone-safari{position:absolute;left:calc(14 * var(--p));right:calc(14 * var(--p));bottom:calc(25 * var(--p));display:flex;gap:calc(8 * var(--p));height:calc(48 * var(--p))}
+.iphone-safari>*{display:grid;place-items:center;border-radius:calc(24 * var(--p));background:var(--glass,#f9f9fbbd);box-shadow:0 0 0 calc(.6 * var(--p)) var(--glass-line,#0000001a),0 calc(6 * var(--p)) calc(18 * var(--p)) #0000002e;-webkit-backdrop-filter:blur(calc(12 * var(--p))) saturate(1.8);backdrop-filter:blur(calc(12 * var(--p))) saturate(1.8)}
+.safari-btn{width:calc(48 * var(--p));flex:none}
+.safari-btn::before{content:"";width:calc(22 * var(--p));height:calc(22 * var(--p));background:currentColor}
+.safari-back::before{-webkit-mask:url(images/browser-icons/back.svg) center/contain no-repeat;mask:url(images/browser-icons/back.svg) center/contain no-repeat}
+.safari-more::before{height:calc(5 * var(--p));-webkit-mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/calc(8.5 * var(--p)) 100% repeat-x;mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/calc(8.5 * var(--p)) 100% repeat-x;width:calc(25 * var(--p))}
+.safari-url{flex:1;font:500 calc(15 * var(--p))/1 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif;letter-spacing:-.01em}
+.iphone-home{position:absolute;left:50%;bottom:calc(8 * var(--p));width:calc(140 * var(--p));height:calc(5 * var(--p));transform:translateX(-50%);border-radius:calc(3 * var(--p));background:currentColor}
+
+/* Dark pages: light status text and dark glass. */
+.phone-dark .iphone-screen{--phone-ink:#fff;--glass:#2a2d33a8;--glass-line:#ffffff24}
+
+@media(max-width:767px){.phone-stage{aspect-ratio:1.3}.iphone{width:31cqw}}
