@@ -1,2 +1,589 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1c1d1f"><title>Por dentro: iLab 3.0 | Romulo Nascimento</title><meta name="description" content="Por dentro: iLab 3.0. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."><meta property="og:title" content="Por dentro: iLab 3.0 | Romulo Nascimento"><meta property="og:type" content="website"><meta property="og:url" content="https://romuload.github.io/projeto-ilab.html"><meta property="og:image" content="https://romuload.github.io/images/repar-3d.png"><link rel="stylesheet" href="styles.css"><script src="main.js" defer></script></head><body><a class="skip" href="#conteudo">Pular para o conteúdo</a><div class="opening inner-header"><header class="header wrap"><a class="identity" href="index.html" aria-label="Romulo Nascimento, página de projetos"><span class="name-mark" aria-hidden="true">rn.</span><span class="name-text">Romulo Nascimento<small>UX & Product Design</small></span></a><nav aria-label="Navegação principal"><a href="index.html" aria-current="page">Projetos</a><a href="sobre.html">Sobre mim</a><a href="trabalhe-comigo.html">Trabalhe comigo</a></nav></header></div><main id="conteudo" class="case-page wrap"><a class="button button-secondary back-button" href="index.html">← Todos os projetos</a><div class="case-intro"><p class="section-label">Por dentro do projeto · Petrobras · UX/UI & prototipação</p><h1>iLab 3.0</h1><p>Protótipo do redesenho do módulo Minhas Consultas do iLab 3.0, com navegação de consultas, resultados e ajustes.</p></div><div class="project-image image-ilab device-stage" role="img" aria-label="iLab 3.0: telas reais em mockups de desktop e celular"><div class="desktop-device" aria-hidden="true"><div class="desktop-screen"><img src="images/ilab.jpg" alt="" fetchpriority="high"></div><div class="desktop-chin"></div><div class="desktop-stand"></div><div class="desktop-foot"></div></div><div class="phone-device" aria-hidden="true"><div class="phone-camera"></div><img src="images/ilab-mobile.jpg" alt="" fetchpriority="high"><div class="phone-home"></div></div></div><div class="case-content"><section class="case-section reveal"><h2>Do laboratório à interface</h2><p>Uma bancada 3D interativa reúne amostras, ensaios e equipamentos. O protótipo conecta esse espaço à consulta de informações e resultados.</p></section><section class="case-section reveal"><h2>Explorar o projeto</h2><p>O case apresenta capturas reais do protótipo e sua narrativa de design. Os dados, amostras e e-mails usados na demonstração são fictícios. O case está em inglês.</p></section><section class="case-section reveal"><h2>Explore a experiência</h2><p>Abra o projeto e experimente a navegação. As telas acima mostram a experiência em desktop e celular.</p><div class="project-links"><a class="button button-primary" href="https://romuload.github.io/ilab/" target="_blank" rel="noopener">Explorar o projeto ↗</a><a class="button button-secondary" href="https://romuload.github.io/ilab/case/" target="_blank" rel="noopener">Ler o case completo do iLab ↗</a></div></section></div></main><footer class="wrap"><span>© <span id="year">2026</span> Romulo Nascimento</span><a href="https://github.com/romuload" target="_blank" rel="noopener">GitHub ↗</a><a href="trabalhe-comigo.html">Trabalhe comigo</a></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>iLAB Case Study | Romulo Nascimento</title>
+<meta name="description" content="iLAB, Petrobras: turning a decade-old laboratory ecosystem into an intelligent, integrated experience. Product Design case study by Romulo Nascimento.">
+<meta name="theme-color" content="#07110C">
+<link rel="icon" href="https://romuload.github.io/ilab/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://romuload.github.io/ilab/apple-touch-icon.png">
+
+
+
+<script src="ilab-logo.js"></script>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#07110C;--bg2:#0B1A13;--card:#0F2219;--line:rgba(238,244,240,.09);--line2:rgba(238,244,240,.16);
+  --ink:#EEF4F0;--ink2:#C4D3CA;--muted:#859C90;
+  --green:#36B05E;--lime:#9BE15D;--amber:#FFB020;--orange:#FF8000;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --pad:clamp(16px,4vw,56px);--max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.eyebrow .n{color:var(--muted);margin-right:10px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+h2{font-size:clamp(36px,5.6vw,76px)}
+h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
+p{margin:0}
+.lead{font-size:clamp(18px,1.6vw,21px);color:var(--ink2);max-width:640px}
+.muted{color:var(--muted)}
+.grad{background:linear-gradient(100deg,var(--lime),var(--green) 45%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+section{position:relative}
+.sec{padding:clamp(96px,14vh,160px) 0}
+.sec-head{display:grid;gap:22px;margin-bottom:clamp(40px,6vh,72px)}
+
+/* ---- top bar ---- */
+.top{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;gap:16px;padding:14px var(--pad);background:linear-gradient(var(--bg),rgba(7,17,12,0));transition:background .3s}
+.top.solid{background:rgba(7,17,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top ilab-logo{font-size:24px}
+.top .tag{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-left:16px;border-left:1px solid var(--line2)}
+.top .sp{flex:1}
+.top nav{display:flex;gap:6px}
+.top nav a{font-size:14px;font-weight:500;color:var(--ink2);text-decoration:none;padding:8px 12px;border-radius:999px}
+.top nav a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:999px;font:600 15px/1 Manrope,sans-serif;text-decoration:none;border:1px solid var(--line2);color:var(--ink);background:rgba(255,255,255,.03);transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{background:rgba(255,255,255,.08);border-color:rgba(238,244,240,.3)}
+.btn.pri{background:var(--green);border-color:var(--green);color:#03150B}
+.btn.pri:hover{background:#45C76E;transform:translateY(-1px)}
+.btn svg{width:16px;height:16px}
+.top .btn{height:38px;padding:0 16px;font-size:14px}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--green),var(--lime),var(--amber))}
+@media (max-width:760px){.top nav,.top .tag{display:none}}
+
+/* ---- device frames ---- */
+.browser{border-radius:14px;overflow:hidden;background:#141917;border:1px solid var(--line2);box-shadow:0 40px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(0,0,0,.4)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#1A201D;border-bottom:1px solid rgba(255,255,255,.05)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#3A423E}
+.browser .bar span{margin:0 auto;font:400 11px/1 var(--mono);color:#7F8F86;background:#111614;padding:6px 14px;border-radius:6px;max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.screen{position:relative;aspect-ratio:16/10;background:#f3f5f4;overflow:hidden}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left}
+.monitor{position:relative}
+.monitor .bezel{padding:1.1%;border-radius:20px;background:linear-gradient(#1B211E,#0E1210);border:1px solid var(--line2);box-shadow:0 60px 160px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08)}
+.monitor .bezel .screen{border-radius:8px}
+.monitor .neck{width:14%;height:clamp(28px,6vw,80px);margin:0 auto;background:linear-gradient(90deg,#0d110f,#1d2420 50%,#0d110f)}
+.monitor .foot{width:30%;height:10px;margin:0 auto;border-radius:6px 6px 2px 2px;background:#1a201d}
+.phone{position:relative;width:min(300px,72vw);aspect-ratio:390/844;border-radius:46px;padding:11px;background:linear-gradient(145deg,#2a312d,#0d100e);box-shadow:0 50px 120px -30px rgba(0,0,0,.9),inset 0 0 0 1.5px rgba(255,255,255,.08)}
+.phone .in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#f3f5f4}
+.phone .in img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone .in::before{content:"";position:absolute;z-index:2;top:9px;left:50%;width:30%;height:22px;margin-left:-15%;border-radius:20px;background:#050605}
+
+/* ---- 01 hero ---- */
+.hero{min-height:100vh;padding:clamp(120px,18vh,180px) 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120vh;background:radial-gradient(50% 45% at 50% 30%,rgba(54,176,94,.22),transparent 70%),radial-gradient(30% 30% at 72% 60%,rgba(255,160,32,.10),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;text-align:center}
+.hero h1{font-size:clamp(46px,8.4vw,124px);margin:26px auto 26px;max-width:12ch}
+.hero .lead{margin:0 auto}
+.meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 34px;margin:40px 0 0;padding:0;list-style:none}
+.meta li{display:grid;gap:6px;text-align:left}
+.meta b{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.meta span{font-size:15px;font-weight:600}
+.hero-stage{perspective:1600px;margin:clamp(56px,9vh,96px) auto 0;max-width:1180px}
+.hero-stage .monitor{transform-origin:50% 0}
+.scroll-cue{display:inline-flex;align-items:center;gap:10px;margin-top:34px;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.scroll-cue i{width:1px;height:28px;background:linear-gradient(var(--lime),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---- 02 challenge ---- */
+.challenge .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,6vw,96px);align-items:center}
+.lines{display:grid;gap:30px;margin-top:44px}
+.lines .ln{display:grid;grid-template-columns:44px 1fr;gap:18px;padding-top:24px;border-top:1px solid var(--line)}
+.lines .ln b{font:500 13px/1.5 var(--mono);color:var(--amber)}
+.lines .ln h3{margin-bottom:6px}
+.legacy{position:relative}
+.legacy .browser{filter:saturate(.75)}
+.legacy .stamp{position:absolute;left:-14px;bottom:-16px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--bg);border:1px solid var(--line2);color:var(--ink2);padding:10px 14px;border-radius:999px}
+@media (max-width:900px){.challenge .grid{grid-template-columns:1fr}.legacy{order:-1}}
+
+/* ---- 03 discovery ---- */
+.disc{background:linear-gradient(var(--bg),var(--bg2) 30%,var(--bg2) 70%,var(--bg))}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card .big{font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:14px}
+.card p{color:var(--ink2);font-size:15.5px}
+.journey{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:28px 0 0}
+.journey span{font:500 13px/1 var(--mono);padding:11px 16px;border-radius:999px;border:1px solid var(--line2);color:var(--ink2);background:rgba(255,255,255,.02)}
+.journey em{color:var(--muted);font-style:normal}
+.hmw{margin-top:clamp(56px,8vh,88px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hmw .card{border-color:rgba(155,225,93,.18);background:linear-gradient(160deg,rgba(54,176,94,.10),rgba(15,34,25,.6))}
+.hmw .q{font-size:clamp(20px,1.9vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.3;margin:14px 0 14px}
+@media (max-width:900px){.cards3,.hmw{grid-template-columns:1fr}}
+
+/* ---- 04 impact ---- */
+.impact{text-align:center;overflow:hidden}
+.impact .num{font-size:clamp(120px,24vw,340px);font-weight:800;letter-spacing:-.07em;line-height:.85;margin:28px 0 12px;font-variant-numeric:tabular-nums}
+.impact .num small{font-size:.42em;letter-spacing:-.04em;vertical-align:.9em;margin-left:.06em}
+.impact h3{font-size:clamp(22px,2.4vw,30px)}
+.consol{max-width:760px;margin:56px auto 0}
+.consol svg{width:100%;height:auto;overflow:visible}
+.consol .srv rect{fill:#13271D;stroke:rgba(238,244,240,.22)}
+.consol .srv line{stroke:rgba(238,244,240,.3)}
+.consol .lnk{fill:none;stroke:url(#lg);stroke-width:1.4;stroke-dasharray:420;stroke-dashoffset:420}
+.consol text{font:500 10px var(--mono);letter-spacing:.12em;fill:var(--muted);text-transform:uppercase}
+.note{max-width:620px;margin:40px auto 0;font-size:14px;color:var(--muted);line-height:1.6}
+
+/* ---- 05 reimagination / before-after ---- */
+.ba{position:relative;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.ba .screen img.after{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:var(--lime);box-shadow:0 0 24px rgba(155,225,93,.7);pointer-events:none}
+.ba .handle::after{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2303150B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba input:focus-visible ~ .handle::after{outline:3px solid #fff;outline-offset:3px}
+.ba .lbl{position:absolute;top:14px;z-index:1;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;border-radius:999px;background:rgba(7,17,12,.82);color:var(--ink);pointer-events:none}
+.ba .lbl.l{left:14px}.ba .lbl.r{right:14px;background:var(--green);color:#03150B}
+.chip{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);color:var(--muted);border:1px solid var(--line2);padding:9px 14px;border-radius:999px}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--amber)}
+
+/* ---- 06 product experience ---- */
+.px-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px)}
+.pstep{padding:8vh 0;border-top:1px solid var(--line)}
+.pstep:first-child{border-top:0;padding-top:0}
+.pstep .k{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.pstep h3{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+.pstep p{color:var(--ink2);max-width:440px}
+.pstep .why{margin-top:18px;font-size:14.5px;color:var(--muted);max-width:440px;padding-left:14px;border-left:2px solid var(--green)}
+.pstep .inline{margin-top:28px}
+.pstep .inline.ph{display:flex;justify-content:center}
+.px-stage{display:none}
+.wide .pstep{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:0;border-top:0;opacity:.28;transition:opacity .5s}
+.wide .pstep.on{opacity:1}
+.wide .pstep .inline{display:none}
+.wide .px-stage{display:block;position:sticky;top:max(96px,calc(50vh - 17vw));height:fit-content}
+.px-stage .browser{transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.px-stage .scr{opacity:0;transition:opacity .6s ease}
+.px-stage .scr.on{opacity:1}
+.px-stage .phone{position:absolute;right:-2%;bottom:-12%;width:min(240px,34%);opacity:0;transform:translateY(40px);transition:opacity .6s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.px-stage.mob .phone{opacity:1;transform:none}
+.px-stage.mob .browser{transform:scale(.92) translateX(-6%);opacity:.45}
+@media (max-width:900px){.px-grid{grid-template-columns:1fr}}
+
+/* ---- 07 spatial ---- */
+.spatial{background:#030806}
+.sp-intro{text-align:center}
+.sp-intro .lead{margin:22px auto 0}
+.sp-film{margin-top:56px}
+.sp-frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/10;background:#000}
+.sp-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sp-cap{position:absolute;left:24px;bottom:22px;z-index:2;display:flex;gap:10px;align-items:center;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;border-radius:999px;background:rgba(3,8,6,.78);backdrop-filter:blur(8px)}
+.sp-cap i{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.sp-frame + .sp-frame{margin-top:16px}
+.wide .sp-film{height:280vh;margin-top:0}
+.wide .sp-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center}
+.wide .sp-frame{position:absolute;left:var(--pad);right:var(--pad);top:50%;transform:translateY(-50%);max-width:calc(var(--max) - 2*var(--pad));margin:0 auto;aspect-ratio:auto;height:min(78vh,calc((100vw - 2*var(--pad))*.625))}
+.wide .sp-frame + .sp-frame{margin-top:0;margin:0 auto;opacity:0}
+.sp-more{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;margin-top:16px}
+.sp-more .card{display:grid;gap:18px;align-content:start}
+.sp-more .card .screen{border-radius:12px;border:1px solid var(--line)}
+.sp-more .phwrap{display:flex;justify-content:center;align-items:center;background:radial-gradient(60% 50% at 50% 50%,rgba(54,176,94,.18),transparent 70%)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.facts span{font:500 12px/1 var(--mono);padding:9px 12px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--ink2)}
+@media (max-width:900px){.sp-more{grid-template-columns:1fr}}
+
+/* ---- 08 AI workflow ---- */
+.flow{display:grid;grid-template-columns:1fr auto 2.2fr auto 1fr;align-items:stretch;gap:14px}
+.flow .node{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.flow .node .k{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.flow .node h3{font-size:19px;margin-bottom:8px}
+.flow .node p{font-size:14.5px;color:var(--ink2)}
+.flow .me{border-color:rgba(155,225,93,.35);background:linear-gradient(160deg,rgba(54,176,94,.16),var(--card))}
+.flow .out{border-color:rgba(255,176,32,.35);background:linear-gradient(160deg,rgba(255,176,32,.12),var(--card))}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tools .node{padding:18px}
+.tools .node h3{font-size:17px;display:flex;align-items:center;gap:10px}
+.tools .node h3 i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+.arrow{display:flex;align-items:center;color:var(--muted)}
+.arrow svg{width:34px;height:14px}
+.arrow path{stroke:currentColor;stroke-width:1.5;fill:none;stroke-dasharray:4 4;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-16}}
+.principle{margin-top:40px;font-size:clamp(22px,2.3vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.3;max-width:900px}
+@media (max-width:1000px){.flow{grid-template-columns:1fr}.arrow{justify-content:center;transform:rotate(90deg);height:34px}}
+@media (max-width:520px){.tools{grid-template-columns:1fr}}
+
+/* ---- 09 learnings + final ---- */
+.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.learn .card b{display:block;font:500 12px/1 var(--mono);color:var(--amber);margin-bottom:18px}
+@media (max-width:900px){.learn{grid-template-columns:1fr}}
+.final{text-align:center;overflow:hidden}
+.final::before{content:"";position:absolute;inset:auto -10% 0;height:90%;background:radial-gradient(50% 50% at 50% 70%,rgba(54,176,94,.2),transparent 70%);pointer-events:none}
+.final .wrap{position:relative}
+.final ilab-logo{font-size:clamp(64px,10vw,128px)}
+.final h2{margin:34px auto 20px;max-width:14ch}
+.final .lead{margin:0 auto}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+/* reveal: só quando a animação está ativa; sem JS ou com movimento reduzido, tudo aparece */
+.motion .rv{opacity:0;transform:translateY(28px)}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-cue i,.arrow path{animation:none}}
+</style>
+<link rel="stylesheet" href="locale.css">
+<style>
+@font-face{font-family:Manrope;src:url(fonts/manrope-regular.ttf) format("truetype");font-weight:400 500;font-display:swap} @font-face{font-family:Manrope;src:url(fonts/manrope-semibold.ttf) format("truetype");font-weight:600 800;font-display:swap}
+.portfolio-home{font-size:13px;white-space:nowrap;text-decoration:none;color:var(--ink2)}.case-skip{position:fixed;top:-80px;left:20px;z-index:100;background:#fff;color:#07110c;padding:12px}.case-skip:focus{top:12px}.top .lang-switch{margin-left:4px}.top{flex-wrap:wrap}.top .btn{white-space:nowrap}.hero h1{max-width:16ch}body{font-family:Manrope,system-ui,sans-serif}
+@media(max-width:760px){.top{gap:10px;padding:12px 16px}.top ilab-logo{font-size:21px}.top .btn{font-size:11px;padding:0 10px;height:36px}.portfolio-home{font-size:11px}.hero{padding-top:145px}.top .lang-switch{margin-left:0}.top .sp{display:none}.top .tag{display:none}.hero h1{font-size:clamp(40px,9vw,64px)}}
+</style>
+<script src="locale-data.js"></script><script src="locale.js" defer></script></head>
+<body><a class="case-skip" href="#conteudo">Skip to content</a>
+
+<header class="top" id="top">
+  <a class="portfolio-home" href="index.html">← Projects</a><a href="#hero" aria-label="Back to top"><ilab-logo on-dark></ilab-logo></a>
+  <span class="tag">Case study</span>
+  <span class="sp"></span>
+  <nav aria-label="Sections">
+    <a href="sobre.html">About me</a>
+    <a href="trabalhe-comigo.html">Work with me</a>
+  </nav>
+  <a class="btn pri" href="https://romuload.github.io/ilab/" target="_blank" rel="noopener">Explore the project ↗</a>
+<div class="lang-switch" role="group" aria-label="Choose language"><button type="button" data-language="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-language="pt" aria-pressed="false" lang="pt-BR" aria-label="Português">PT</button></div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="conteudo">
+
+<!-- 01 · HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <p class="eyebrow rv">Product Design · Enterprise UX · Petrobras</p>
+    <h1 class="rv">From legacy to an <span class="grad">intelligent lab.</span></h1>
+    <p class="lead rv">How a decade-old laboratory ecosystem became an integrated experience for finding, comparing and acting on refinery quality data.</p>
+    <ul class="meta rv">
+      <li><b>Role</b><span>End-to-end Product Designer</span></li>
+      <li><b>Original project</b><span>2013 – 2015</span></li>
+      <li><b>Reimagination</b><span>2026 · working prototype</span></li>
+      <li><b>Scope</b><span>Research · IA · UI · 3D · Code</span></li>
+    </ul>
+    <div class="hero-stage">
+      <div class="monitor" id="heroMonitor">
+        <div class="bezel"><div class="screen"><img src="images/ilab-case/d-consultas.jpg" width="2880" height="1800" alt="Redesigned iLAB: Saved queries list with output type, owner, last run and one-click Run buttons"></div></div>
+        <div class="neck"></div><div class="foot"></div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+  </div>
+</section>
+
+<!-- 02 · CHALLENGE -->
+<section class="sec challenge" id="challenge">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow rv"><span class="n">01</span>The challenge</p>
+      <h2 class="rv" style="margin-top:22px;font-size:clamp(36px,4.6vw,64px)">Complex systems.<br>Real problems.</h2>
+      <p class="lead rv" style="margin-top:22px">Refineries decide with lab data: whether a batch of gasoline or diesel meets ANP specification before it ships. That data travelled from sample collection, through LabWare LIMS, into iLAB.</p>
+      <div class="lines">
+        <div class="ln rv"><b>01</b><div><h3>Eight modules, one fragmented experience.</h3><p class="muted">Each with its own logic, on servers kept separately by every refinery.</p></div></div>
+        <div class="ln rv"><b>02</b><div><h3>The same query, rebuilt every day.</h3><p class="muted">Daily checks meant re-entering identical parameters, again and again.</p></div></div>
+        <div class="ln rv"><b>03</b><div><h3>Results that couldn&#x27;t sit side by side.</h3><p class="muted">Comparing runs relied on notes and parallel spreadsheets.</p></div></div>
+      </div>
+    </div>
+    <div class="legacy rv">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>ilab / minhas_consultas · legacy</span></div>
+        <div class="screen"><img src="images/ilab-case/leg-minhas_consultas_incluir_passo2.jpg" width="2880" height="1800" loading="lazy" alt="Legacy iLAB 3.0 query screen: a narrow column of filters, an empty period form and dense controls"></div></div>
+      <span class="stamp">iLAB 3.0 · as it was</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · DISCOVERY -->
+<section class="sec disc" id="discovery">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv"><span class="n">02</span>Discovery</p>
+      <h2 class="rv">Understand the work<br>before the tool.</h2>
+      <p class="lead rv">A quantitative survey across business units and qualitative interviews about routines, systems and friction. The insight: the same result answers different questions depending on who is asking.</p>
+    </div>
+    <div class="cards3">
+      <div class="card rv"><div class="big grad">6</div><h3>Personas</h3><p style="margin-top:8px">From the field operator who collects samples to the supervisor who decides whether operations continue.</p></div>
+      <div class="card rv"><div class="big grad">5</div><h3>Journey stages</h3><p style="margin-top:8px">Mapped end to end to separate UX problems from technology dependencies.</p></div>
+      <div class="card rv"><div class="big grad">2</div><h3>Priority problems</h3><p style="margin-top:8px">Repetitive queries and hard-to-compare results, ranked by severity and frequency.</p></div>
+    </div>
+    <div class="journey rv" aria-label="Lab journey">
+      <span>Collect</span><em>→</em><span>Plan</span><em>→</em><span>Test</span><em>→</em><span>Query</span><em>→</em><span>Decide</span>
+    </div>
+    <div class="hmw">
+      <div class="card rv"><p class="eyebrow">How might we · 01</p><p class="q">…let people run their daily queries without configuring the same parameters every time?</p><p class="muted">Hypothesis: saved, parameterised queries.</p></div>
+      <div class="card rv"><p class="eyebrow">How might we · 02</p><p class="q">…make comparing lab results easy without losing analytical flexibility?</p><p class="muted">Hypothesis: every run opens in its own tab.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · IMPACT -->
+<section class="sec impact" id="impact">
+  <div class="wrap">
+    <p class="eyebrow rv"><span class="n">03</span>Business impact</p>
+    <div class="num" id="num" aria-label="minus 70 percent">−<span id="numv">70</span><small>%</small></div>
+    <h3 class="rv">Infrastructure costs</h3>
+    <div class="consol rv" id="consol" aria-hidden="true">
+      <svg viewbox="0 0 640 260">
+        <defs><lineargradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#36B05E" stop-opacity=".3"><stop offset="1" stop-color="#9BE15D"></lineargradient></defs>
+        <g id="srvs"></g>
+        <g id="hub" transform="translate(500 130)">
+          <circle r="54" fill="rgba(54,176,94,.12)" stroke="#36B05E">
+          <circle r="54" fill="none" stroke="#9BE15D" stroke-opacity=".35"></circle>
+          <text text-anchor="middle" y="-4" style="fill:#EEF4F0;font-size:11px">Unified</text>
+          <text text-anchor="middle" y="12">infrastructure</text>
+        </g>
+        <text x="80" y="252" text-anchor="middle">One server per refinery</text>
+      </svg>
+    </div>
+    <p class="note rv">A confirmed result of the iLAB modernisation, driven by the decision to consolidate refinery servers. My role was making sure that technology shift also became a better experience for the people using it.</p>
+  </div>
+</section>
+
+<!-- 05 · REIMAGINATION -->
+<section class="sec" id="reimagined" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv"><span class="n">04</span>The reimagination</p>
+      <h2 class="rv">Same problems.<br><span class="grad">Today&#x27;s tools.</span></h2>
+      <p class="lead rv">In 2026 I revisited the project to show how far the same strategy can go: a fully working prototype, built with the original research as its backbone.</p>
+      <p class="rv"><span class="chip"><i></i>Personal reinterpretation · all data fictional</span></p>
+    </div>
+    <div class="ba rv" id="ba" style="--x:50%">
+      <div class="browser"><div class="bar"><i></i><i></i><i></i><span>Create query · then and now</span></div>
+        <div class="screen">
+          <img src="images/ilab-case/leg-minhas_consultas_incluir_passo2.jpg" width="2880" height="1800" loading="lazy" alt="Legacy query form">
+          <img class="after" src="images/ilab-case/d-nova.jpg" width="2880" height="1800" loading="lazy" alt="Redesigned three-step query builder with a live summary">
+          <span class="lbl l">2013</span><span class="lbl r">2026</span>
+          <input type="range" min="0" max="100" value="50" id="baIn" aria-label="Compare legacy and redesigned screens">
+          <div class="handle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · PRODUCT EXPERIENCE -->
+<section class="sec" id="product">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv"><span class="n">05</span>Product experience</p>
+      <h2 class="rv">Designed for clarity.</h2>
+    </div>
+    <div class="px-grid">
+      <div class="px-steps" id="steps">
+        <article class="pstep" data-i="0">
+          <p class="k">Decision 01 · Saved queries</p>
+          <h3>Configure once. Run whenever.</h3>
+          <p>Queries are saved, pinned and shared with a team. Daily checks become a single click; parameters that change are asked only at run time.</p>
+          <p class="why">Removes repeated work without removing flexibility.</p>
+          <div class="inline browser"><div class="screen"><img src="images/ilab-case/d-consultas.jpg" loading="lazy" alt="Saved queries"></div></div>
+        </article>
+        <article class="pstep" data-i="1">
+          <p class="k">Decision 02 · Compare</p>
+          <h3>Every run in its own tab. Two side by side.</h3>
+          <p>Results open as tabs, and any two can be compared in place, with out-of-spec values highlighted where the eye lands.</p>
+          <p class="why">Builds on a pattern people already know instead of a new comparison tool.</p>
+          <div class="inline browser"><div class="screen"><img src="images/ilab-case/d-comparar.jpg" loading="lazy" alt="Two results compared side by side"></div></div>
+        </article>
+        <article class="pstep" data-i="2">
+          <p class="k">Decision 03 · Status system</p>
+          <h3>Status you never read by colour alone.</h3>
+          <p>Every sample and test state pairs an icon, a colour and a word. A status guide maps each new state to its legacy name, so the change doesn&#x27;t break anyone&#x27;s mental model.</p>
+          <p class="why">Accessible to colour-blind users, consistent across screens.</p>
+          <div class="inline browser"><div class="screen"><img src="images/ilab-case/d-status.jpg" loading="lazy" alt="Status guide"></div></div>
+        </article>
+        <article class="pstep" data-i="3">
+          <p class="k">Decision 04 · Mobile</p>
+          <h3>Dense tables become cards on the go.</h3>
+          <p>On a phone, each result row turns into a card with the essentials first (the SAP Fiori pop-in pattern), so a technician can check a sample away from the workstation.</p>
+          <p class="why">Real responsive design, not a squeezed desktop.</p>
+          <div class="inline ph"><div class="phone"><div class="in"><img src="images/ilab-case/m-resultados.jpg" loading="lazy" alt="Mobile result cards"></div></div></div>
+        </article>
+      </div>
+      <div class="px-stage" id="stage" aria-hidden="true">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>romuload.github.io/ilab</span></div>
+          <div class="screen">
+            <img class="scr on" src="images/ilab-case/d-consultas.jpg" alt="">
+            <img class="scr" src="images/ilab-case/d-comparar.jpg" loading="lazy" alt="">
+            <img class="scr" src="images/ilab-case/d-status.jpg" loading="lazy" alt="">
+            <img class="scr" src="images/ilab-case/d-resultados.jpg" loading="lazy" alt="">
+          </div>
+        </div>
+        <div class="phone"><div class="in"><img src="images/ilab-case/m-resultados.jpg" loading="lazy" alt=""></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · SPATIAL -->
+<section class="sec spatial" id="spatial">
+  <div class="wrap sp-intro">
+    <p class="eyebrow rv"><span class="n">06</span>Spatial experience</p>
+    <h2 class="rv" style="margin-top:22px">Beyond the table.</h2>
+    <p class="lead rv">The lab, as the technician knows it. Each sample is a bottle on a bench; its liquid and badge show product and status. Click one and the camera moves in to the test details.</p>
+  </div>
+  <div class="sp-film" id="film">
+    <div class="sp-sticky">
+      <div class="wrap" style="width:100%">
+        <div class="sp-frame" id="f1"><img src="images/ilab-case/d-intro.jpg" loading="lazy" alt="Cinematic opening: a glass Erlenmeyer with amber liquid surrounded by real specification values"><span class="sp-cap"><i></i>Opening · under 5 s · skippable</span></div>
+        <div class="sp-frame" id="f2"><img src="images/ilab-case/d-bancada.jpg" loading="lazy" alt="3D lab bench with sample bottles, flasks, instruments and the LIMS monitor, beside a list of today&#x27;s samples"><span class="sp-cap"><i></i>3D bench · today&#x27;s samples</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="sp-more">
+      <div class="card rv">
+        <p class="eyebrow">Grounded in real chemistry</p>
+        <h3>Accurate where it matters.</h3>
+        <p class="muted">The bench uses real specification limits and test methods, and the data path a sample actually follows.</p>
+        <div class="facts"><span>ANP Res. 807/2020</span><span>ANP Res. 968/2024</span><span>ASTM D-86</span><span>ASTM D-4052</span><span>ASTM D-5453</span><span>LabWare LIMS → triLAB</span></div>
+        <div class="screen"><img src="images/ilab-case/d-erlenmeyer.jpg" loading="lazy" alt="Free lab: an interactive 3D Erlenmeyer with volume, liquid and stir controls"></div>
+        <p class="muted" style="font-size:14.5px">Free lab: a playful entry point where anyone can fill, swap and stir the flask.</p>
+      </div>
+      <div class="card phwrap rv"><div class="phone"><div class="in"><img src="images/ilab-case/m-bancada.jpg" loading="lazy" alt="3D bench on mobile with the sample list below"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · AI WORKFLOW -->
+<section class="sec" id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rv"><span class="n">07</span>AI-powered execution</p>
+      <h2 class="rv">Design thinking.<br><span class="grad">AI-powered building.</span></h2>
+      <p class="lead rv">I used AI as a production partner to go from design decisions to a working product: code, 3D and narrative, at a pace a single designer couldn&#x27;t reach before.</p>
+    </div>
+    <div class="flow">
+      <div class="node me rv"><p class="k">Designer</p><h3>Decisions</h3><p>Research, information architecture, interaction, visual direction and quality bar.</p></div>
+      <div class="arrow rv" aria-hidden="true"><svg viewbox="0 0 34 14"><path d="M0 7h30m-5-5 5 5-5 5"></svg></div>
+      <div class="tools">
+        <div class="node rv"><h3><i></i>ChatGPT</h3><p>Exploring narrative, structure and copy.</p></div>
+        <div class="node rv"><h3><i></i>Claude Code</h3><p>Building the prototype: interface, three.js scenes, real-screen capture.</p></div>
+        <div class="node rv"><h3><i></i>Cursor</h3><p>Iterating on code in the editor.</p></div>
+        <div class="node rv"><h3><i></i>Blender via MCP</h3><p>Modelling the flask, glass and liquid materials.</p></div>
+      </div>
+      <div class="arrow rv" aria-hidden="true"><svg viewbox="0 0 34 14"><path d="M0 7h30m-5-5 5 5-5 5"></svg></div>
+      <div class="node out rv"><p class="k">Shipped</p><h3>Working prototype</h3><p>Responsive web app and 3D bench, live on GitHub Pages.</p></div>
+    </div>
+    <p class="principle rv">AI accelerated the making. <span class="muted">Every decision about people, problems and priorities stayed mine.</span></p>
+  </div>
+</section>
+
+<!-- 09 · LEARNINGS -->
+<section class="sec" id="learnings" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow rv"><span class="n">08</span>What I took from it</p></div>
+    <div class="learn">
+      <div class="card rv"><b>01</b><h3>Process before screens.</h3><p style="margin-top:10px">In enterprise products, an interface is only good if it reflects how the work really happens.</p></div>
+      <div class="card rv"><b>02</b><h3>Removing effort beats adding features.</h3><p style="margin-top:10px">The two most valuable changes took steps away instead of adding new ones.</p></div>
+      <div class="card rv"><b>03</b><h3>UX, tech and business are one conversation.</h3><p style="margin-top:10px">The savings came from architecture; they only mattered because the work got better too.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · FINAL -->
+<section class="sec final" id="explore">
+  <div class="wrap">
+    <ilab-logo on-dark class="rv"></ilab-logo>
+    <h2 class="rv">Don&#x27;t take my word for it. <span class="grad">Explore it.</span></h2>
+    <p class="lead rv">Everything shown here is live, from the saved queries to the 3D bench.</p>
+    <div class="ctas rv">
+      <a class="btn pri" href="https://romuload.github.io/ilab/bancada.html?intro=1">Open the 3D bench <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"></svg></a>
+      <a class="btn" href="https://romuload.github.io/ilab/index.html#/consultas">Saved queries</a>
+      <a class="btn" href="https://romuload.github.io/ilab/erlenmeyer.html">Free lab</a>
+      <a class="btn" href="https://github.com/romuload/ilab">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap"><span>iLAB · Product Design case study · Romulo Nascimento</span><span>Original project 2013–2015 · Reimagination 2026 · Data shown is fictional</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(() => {
+  // servidores do diagrama de consolidação: duas colunas de quatro, cada um ligado ao hub
+  const srvs = document.getElementById('srvs'), NS = 'http://www.w3.org/2000/svg';
+  for (let i = 0; i < 8; i++) {
+    const x = 40 + (i % 2) * 70, y = 22 + Math.floor(i / 2) * 54;
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('class', 'lnk'); p.setAttribute('d', `M${x + 44} ${y + 16} C ${x + 200} ${y + 16}, 330 130, 446 130`);
+    srvs.appendChild(p);
+    const g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'srv'); g.setAttribute('transform', `translate(${x} ${y})`);
+    g.innerHTML = '<rect width="44" height="32" rx="5"/><line x1="8" x2="36" y1="11" y2="11"/><line x1="8" x2="28" y1="20" y2="20"/>';
+    srvs.appendChild(g);
+  }
+
+  // antes/depois
+  const ba = document.getElementById('ba'), baIn = document.getElementById('baIn');
+  baIn.addEventListener('input', () => ba.style.setProperty('--x', baIn.value + '%'));
+
+  // barra do topo e progresso de leitura (funciona sem GSAP)
+  const top = document.getElementById('top'), prog = document.getElementById('progress');
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+    top.classList.toggle('solid', scrollY > 40);
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    const root = document.documentElement; root.classList.add('motion');
+
+    // revelação em cascata por seção
+    gsap.utils.toArray('section').forEach(sec => {
+      const items = sec.querySelectorAll('.rv');
+      if (items.length) gsap.to(items, { opacity: 1, y: 0, duration: .9, ease: 'power3.out', stagger: .08, scrollTrigger: { trigger: sec, start: 'top 78%' } });
+    });
+
+    // hero: o monitor nasce inclinado e cresce ao rolar
+    gsap.fromTo('#heroMonitor', { rotateX: 22, scale: .86, y: 40 }, { rotateX: 0, scale: 1, y: 0, ease: 'none', scrollTrigger: { trigger: '.hero-stage', start: 'top 92%', end: 'top 18%', scrub: .6 } });
+
+    // −70: contagem e consolidação
+    const numv = document.getElementById('numv'), o = { v: 0 };
+    gsap.fromTo('#num', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '#impact', start: 'top 70%' } });
+    gsap.to(o, { v: 70, duration: 1.8, ease: 'power2.out', onUpdate: () => numv.textContent = Math.round(o.v), scrollTrigger: { trigger: '#impact', start: 'top 70%' } });
+    numv.textContent = '0';
+    gsap.to('#consol .lnk', { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut', stagger: .07, scrollTrigger: { trigger: '#consol', start: 'top 80%' } });
+    gsap.from('#consol .srv', { x: -16, opacity: 0, duration: .6, stagger: .05, scrollTrigger: { trigger: '#consol', start: 'top 85%' } });
+
+    // antes/depois: a cortina corre sozinha uma vez quando aparece
+    ScrollTrigger.create({ trigger: '#ba', start: 'top 60%', once: true, onEnter: () => {
+      const s = { x: 50 };
+      gsap.timeline().to(s, { x: 12, duration: 1, ease: 'power2.inOut', onUpdate: () => { ba.style.setProperty('--x', s.x + '%'); baIn.value = s.x; } })
+        .to(s, { x: 50, duration: 1.1, ease: 'power2.inOut', onUpdate: () => { ba.style.setProperty('--x', s.x + '%'); baIn.value = s.x; } });
+    } });
+
+    // narrativa fixa do produto e a sequência de câmera da bancada só no desktop
+    const desk = gsap.matchMedia();
+    desk.add('(min-width: 901px)', () => {
+      root.classList.add('wide');
+      const stage = document.getElementById('stage'), scr = stage.querySelectorAll('.scr'), steps = document.querySelectorAll('.pstep');
+      const set = i => {
+        steps.forEach((s, k) => s.classList.toggle('on', k === i));
+        scr.forEach((s, k) => s.classList.toggle('on', k === Math.min(i, 3)));
+        stage.classList.toggle('mob', i === 3);
+      };
+      set(0);
+      steps.forEach((s, i) => ScrollTrigger.create({ trigger: s, start: 'top 55%', end: 'bottom 55%', onToggle: e => e.isActive && set(i) }));
+
+      const tl = gsap.timeline({ scrollTrigger: { trigger: '#film', start: 'top top', end: 'bottom bottom', scrub: .8 } });
+      tl.fromTo('#f1 img', { scale: 1.25 }, { scale: 1, ease: 'none', duration: 1 })
+        .to('#f1', { opacity: 0, duration: .5 }, '+=.15')
+        .fromTo('#f2', { opacity: 0 }, { opacity: 1, duration: .5 }, '<')
+        .fromTo('#f2 img', { scale: 1.35, xPercent: 8 }, { scale: 1, xPercent: 0, ease: 'none', duration: 1.2 }, '<');
+
+      return () => { root.classList.remove('wide'); };
+    });
+
+    return () => { root.classList.remove('motion'); numv.textContent = '70'; };
+  });
+})();
+</script>
+</body>
+</html>
