@@ -39,7 +39,7 @@ O cabeçalho combina o avião de papel simplificado, só contorno, de `images/br
 
 As capas da página inicial usam `phone-mockup.css`: um único iPhone por card, com borda de titânio, Dynamic Island, barra de status e barra flutuante do Safari com `romuload.github.io`. As capturas ficam em `images/phone/` e foram feitas em 390 × 790 px a 2x (a área visível do Safari abaixo da barra de status), por isso preenchem a tela sem cortes. `mockups.css` continua definindo as molduras de navegador usadas nas páginas internas.
 
-O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco. Fontes dos arquivos adicionais: SONDA no CDN do próprio site (https://www.sonda.com/ResourcePackages/Sonda2024/assets/dist/images/logos/logo-white-footer.svg), Fiat e Thomson Reuters nas páginas de arquivo do Wikimedia Commons. Ícones da moldura do navegador são do projeto Tabler Icons, com licença em `images/browser-icons/LICENSE.txt`.
+O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco.
 
 ## About page and spacing
 
