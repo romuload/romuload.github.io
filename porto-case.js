@@ -34,17 +34,17 @@
         if (event.matches) { reveal.disconnect(); document.querySelectorAll('.will-reveal').forEach(node => node.classList.add('shown')); }
       });
     }
-    const links = Array.from(document.querySelectorAll('.star-nav a'));
+    const links = Array.from(document.querySelectorAll('.case-nav a'));
     const chapters = new IntersectionObserver(entries => {
       for (const entry of entries) if(entry.isIntersecting) {
         links.forEach(link => {
-          const active = link.getAttribute('href') === `#${entry.target.dataset.star}`;
+          const active = link.getAttribute('href') === `#${entry.target.dataset.chapter}`;
           link.classList.toggle('active', active);
           if (active) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
         });
       }
     }, {rootMargin:'-20% 0px -55% 0px',threshold:0});
-    document.querySelectorAll('[data-star]').forEach(section=>chapters.observe(section));
+    document.querySelectorAll('[data-chapter]').forEach(section=>chapters.observe(section));
   }
   const progress = document.querySelector('.reading-progress');
   let queued = false;

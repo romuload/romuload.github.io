@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=porto-process-2'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-narrative-4'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -40,9 +40,9 @@ const porto = fs.readFileSync('projeto-porto.html', 'utf8');
 assert(porto.includes('id="porto-slider"'));
 assert(porto.includes('Provisional impact figures.'));
 assert(fs.readFileSync('index.html','utf8').includes('images/phone/porto.jpg'));
-console.log('Porto STAR copy, metric status, comparison and current iPhone thumbnail: OK');
+console.log('Porto copy, metric status, comparison and current iPhone thumbnail: OK');
 
-const processChapters = ['situation', 'task', 'action', 'results', 'design-process', 'discovery', 'content-design', 'prototyping', 'validation', 'comparison'];
+const processChapters = ['context', 'contribution', 'direction', 'approach', 'discovery', 'content-design', 'prototyping', 'validation', 'solution', 'comparison', 'outcomes'];
 let previousChapter = -1;
 for (const chapter of processChapters) {
  const position = porto.indexOf(`id="${chapter}"`);
@@ -50,7 +50,11 @@ for (const chapter of processChapters) {
  previousChapter = position;
 }
 assert.equal((porto.match(/class="design-reasoning"/g) || []).length, 3);
-for (const label of ['Design Process', 'Evidence', 'Interpretation', 'Design decision', 'Validation approach']) {
+for (const label of ['My contribution', 'Design direction', 'Approach & rationale', 'Evidence', 'Interpretation', 'Design decision', 'Validation approach', 'Design constraints']) {
  assert(map.get(label)?.pt && map.get(label).pt !== label, `Untranslated design process label: ${label}`);
 }
-console.log('Porto STAR → process order, evidence-to-decision reasoning and bilingual process labels: OK');
+console.log('Porto narrative order, evidence-to-decision reasoning and bilingual chapter labels: OK');
+
+assert(!porto.includes('data-star='), 'Porto should use one narrative, without STAR chapter markers');
+assert(porto.includes('<h3>Design constraints</h3>'), 'Preserve the pending English editorial change');
+assert.equal((porto.match(/class="case-nav"/g) || []).length, 1);
