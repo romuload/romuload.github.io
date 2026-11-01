@@ -1203,3 +1203,5 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 ]);
 
 window.PORTFOLIO_TRANSLATIONS.push(["From the original illustrated journey to an interactive 3D refinery.","Da jornada ilustrada original a uma refinaria 3D interativa."]);
+
+window.PORTFOLIO_TRANSLATIONS.push(...[["Inside the project: Conhecer Repar 3D", "Por dentro do projeto: Conhecer Repar 3D"], ["Explore Conhecer Repar 3D in a new tab", "Explorar Conhecer Repar 3D em uma nova aba"], ["Conhecer Repar 3D: real desktop and mobile screens in device mockups", "Conhecer Repar 3D: telas reais de desktop e celular em mockups de dispositivos"]]);
