@@ -33,8 +33,8 @@ window.PORTFOLIO_TRANSLATIONS = [
     "tecnologia e pessoas."
   ],
   [
-    "Projects for",
-    "Projetos para"
+    "I’ve done work for",
+    "Já desenvolvi projetos para"
   ],
   [
     "Pause carousel",
