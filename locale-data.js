@@ -1048,3 +1048,5 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Trabalhe comigo"
   ]
 ]);
+
+window.PORTFOLIO_TRANSLATIONS.push(["Artificial intelligence", "Inteligência artificial"]);
