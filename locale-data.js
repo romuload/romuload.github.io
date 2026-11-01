@@ -1729,3 +1729,703 @@ window.PORTFOLIO_TRANSLATIONS = [
     "O WhatsApp abriu com a sua mensagem. É só tocar em enviar."
   ]
 ];
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Less searching.",
+    "Menos busca."
+  ],
+  [
+    "More clarity.",
+    "Mais clareza."
+  ],
+  [
+    "Redesigning the claims experience at Porto Seguro: connecting fragmented information, guiding decisions and bringing the workflow to desktop and mobile.",
+    "Redesenhando a experiência de sinistros da Porto Seguro: conectar informações fragmentadas, orientar decisões e levar o fluxo ao desktop e ao celular."
+  ],
+  [
+    "Read the case",
+    "Ler o case"
+  ],
+  [
+    "See before & after",
+    "Ver antes e depois"
+  ],
+  [
+    "Role",
+    "Papel"
+  ],
+  [
+    "Senior Product Designer",
+    "Senior Product Designer"
+  ],
+  [
+    "Team",
+    "Equipe"
+  ],
+  [
+    "GFT · Porto Seguro",
+    "GFT · Porto Seguro"
+  ],
+  [
+    "Period",
+    "Período"
+  ],
+  [
+    "January–August 2024",
+    "Janeiro–agosto de 2024"
+  ],
+  [
+    "Platform",
+    "Plataforma"
+  ],
+  [
+    "Salesforce Financial Services Cloud",
+    "Salesforce Financial Services Cloud"
+  ],
+  [
+    "Claims overview · Desktop",
+    "Acompanhamento de sinistros · Desktop"
+  ],
+  [
+    "Proposed Salesforce dashboard for claims monitoring",
+    "Dashboard Salesforce proposto para acompanhamento de sinistros"
+  ],
+  [
+    "Proposed mobile claims dashboard",
+    "Dashboard mobile proposto para sinistros"
+  ],
+  [
+    "Case study chapters",
+    "Capítulos do estudo de caso"
+  ],
+  [
+    "Situation",
+    "Situação"
+  ],
+  [
+    "Task",
+    "Tarefa"
+  ],
+  [
+    "Action",
+    "Ações"
+  ],
+  [
+    "Results",
+    "Resultados"
+  ],
+  [
+    "Situation",
+    "Situação"
+  ],
+  [
+    "One claim. Many disconnected paths.",
+    "Um sinistro. Muitos caminhos desconectados."
+  ],
+  [
+    "The move from a decades-old claims environment to Salesforce was an opportunity to rethink the work, rather than carry its fragmentation into a new platform.",
+    "A migração de um ambiente de sinistros com décadas de uso para o Salesforce era uma oportunidade de repensar o trabalho, em vez de levar sua fragmentação para uma nova plataforma."
+  ],
+  [
+    "The analyst was connecting what the systems could not.",
+    "O analista conectava o que os sistemas não conectavam."
+  ],
+  [
+    "To understand a case, analysts moved between claim notices, policy information, documents, notes and external tools. The detailed design focuses on APP/DC: passenger personal accident and bodily injury claims.",
+    "Para compreender um caso, os analistas alternavam entre avisos, apólices, documentos, notas e ferramentas externas. O recorte detalhado do design é APP/DC: acidentes pessoais de passageiros e danos corporais."
+  ],
+  [
+    "Information from Porto, the external regulator REIS and payment systems did not always arrive together. A received document could become another task to investigate, rather than a clear next action.",
+    "Informações da Porto, da reguladora externa REIS e dos sistemas de pagamento nem sempre chegavam juntas. Um documento recebido podia virar mais uma tarefa para investigar, em vez de uma próxima ação clara."
+  ],
+  [
+    "The underlying problem was the effort required to reconstruct context before making a decision.",
+    "O problema central era o esforço para reconstruir o contexto antes de tomar uma decisão."
+  ],
+  [
+    "Scattered context",
+    "Contexto disperso"
+  ],
+  [
+    "Claim, policy, documents and history in separate places.",
+    "Sinistro, apólice, documentos e histórico em locais separados."
+  ],
+  [
+    "Manual repetition",
+    "Repetição manual"
+  ],
+  [
+    "Data copied into notes, local text files and payment flows.",
+    "Dados copiados para notas, arquivos de texto e fluxos de pagamento."
+  ],
+  [
+    "Unclear ownership",
+    "Responsabilidade pouco clara"
+  ],
+  [
+    "Analysts checked whether a task belonged to Porto or REIS.",
+    "Analistas precisavam descobrir se a pendência era da Porto ou da REIS."
+  ],
+  [
+    "Limited visibility",
+    "Visibilidade limitada"
+  ],
+  [
+    "Document status and case progress required additional checks.",
+    "Status de documentos e andamento exigiam consultas adicionais."
+  ],
+  [
+    "Legacy claims task list with identifying fields removed",
+    "Lista de tarefas de sinistros do legado com campos identificáveis removidos"
+  ],
+  [
+    "Legacy entry point: a task-heavy view. Identifying fields have been removed.",
+    "Entrada pelo legado: uma visão centrada em tarefas. Campos identificáveis foram removidos."
+  ],
+  [
+    "Task",
+    "Tarefa"
+  ],
+  [
+    "Modernize the experience. Respect the platform.",
+    "Modernizar a experiência. Respeitar a plataforma."
+  ],
+  [
+    "As Senior Product Designer working through GFT, my remit connected discovery, journey mapping, content, interface design and handoff for the new claims workflow.",
+    "Como Senior Product Designer alocado pela GFT, minha atuação conectou discovery, mapeamento de jornada, conteúdo, design de interface e handoff do novo workflow de sinistros."
+  ],
+  [
+    "Make the next decision clear without making the analyst rebuild the whole case.",
+    "Deixar clara a próxima decisão sem fazer o analista reconstruir o caso inteiro."
+  ],
+  [
+    "The design boundaries",
+    "Os limites do design"
+  ],
+  [
+    "Work with Lightning components, the Financial Services Cloud data model and OmniScript. Support a shared foundation across Porto, Azul, Itaú and Mitsui without multiplying custom interfaces.",
+    "Trabalhar com componentes Lightning, o modelo de dados do Financial Services Cloud e OmniScript. Apoiar uma base comum para Porto, Azul, Itaú e Mitsui sem multiplicar interfaces customizadas."
+  ],
+  [
+    "Tools: Figma, Miro, Salesforce component libraries, Kraft and AI-assisted synthesis.",
+    "Ferramentas: Figma, Miro, bibliotecas de componentes Salesforce, Kraft e síntese apoiada por IA."
+  ],
+  [
+    "Consolidation",
+    "Consolidação"
+  ],
+  [
+    "Bring the relevant context together.",
+    "Reunir o contexto relevante."
+  ],
+  [
+    "Guidance",
+    "Orientação"
+  ],
+  [
+    "Make the sequence and next action explicit.",
+    "Explicitar a sequência e a próxima ação."
+  ],
+  [
+    "Clarity",
+    "Clareza"
+  ],
+  [
+    "Use language and states people can act on.",
+    "Usar linguagem e estados que orientem a ação."
+  ],
+  [
+    "Action · Discovery",
+    "Ações · Discovery"
+  ],
+  [
+    "Understand the operation before drawing the screen.",
+    "Entender a operação antes de desenhar a tela."
+  ],
+  [
+    "I combined observation of the legacy workflow with collaborative workshops to understand the people, handoffs and decisions behind a claim.",
+    "Combinei observação do fluxo legado e workshops colaborativos para compreender as pessoas, as transições e as decisões por trás de um sinistro."
+  ],
+  [
+    "days of intensive discovery",
+    "dias de discovery intensivo"
+  ],
+  [
+    "pain points synthesized",
+    "dores sintetizadas"
+  ],
+  [
+    "brands in a shared platform",
+    "marcas em uma plataforma comum"
+  ],
+  [
+    "Research scope as recorded in the project case. These figures describe the work, not post-launch performance.",
+    "Escopo de pesquisa registrado no relato do projeto. Estes números descrevem o trabalho, não o desempenho após o lançamento."
+  ],
+  [
+    "Miro workshop with expectations for a unified, clear and intuitive system",
+    "Workshop no Miro com expectativas de um sistema unificado, claro e intuitivo"
+  ],
+  [
+    "Aligning expectations: a single view, clear information and a simpler workflow.",
+    "Alinhamento de expectativas: visão única, informações claras e um fluxo mais simples."
+  ],
+  [
+    "Workshop collaboration agreements and guidance for recording observations",
+    "Acordos de colaboração do workshop e orientações para registrar observações"
+  ],
+  [
+    "Shared working agreements made observations easier to discuss and reuse.",
+    "Acordos de trabalho tornaram as observações mais fáceis de discutir e reaproveitar."
+  ],
+  [
+    "From observations to priorities",
+    "Das observações às prioridades"
+  ],
+  [
+    "Shadowing exposed the switches between systems and the manual checks behind each decision. AI supported grouping the mapped pain points, while workshops with analysts, managers, technology and product teams helped align the problem space and MVP priorities.",
+    "O shadowing revelou as trocas entre sistemas e as verificações manuais por trás de cada decisão. A IA apoiou o agrupamento das dores mapeadas, enquanto workshops com analistas, gestores, tecnologia e produto ajudaram a alinhar os problemas e as prioridades do MVP."
+  ],
+  [
+    "Journey map connecting actors, activities, channels and outcomes",
+    "Mapa da jornada conectando atores, atividades, canais e resultados"
+  ],
+  [
+    "A shared map connected the operation to the people performing it.",
+    "Um mapa compartilhado conectou a operação às pessoas que a executam."
+  ],
+  [
+    "Claim notice",
+    "Aviso"
+  ],
+  [
+    "Analysis",
+    "Análise"
+  ],
+  [
+    "Adjustment",
+    "Regulação"
+  ],
+  [
+    "Approval & settlement",
+    "Aprovação e liquidação"
+  ],
+  [
+    "Payment & closure",
+    "Pagamento e encerramento"
+  ],
+  [
+    "The broader journey informed the work. The detailed screens in this case focus on APP/DC, including internal handling and external regulation through REIS.",
+    "A jornada mais ampla orientou o trabalho. As telas detalhadas deste case se concentram em APP/DC, com tratamento interno e regulação externa pela REIS."
+  ],
+  [
+    "Process map distinguishing manual activities, automated work, dependencies and waiting",
+    "Mapa de processo distinguindo atividades manuais, automações, dependências e espera"
+  ],
+  [
+    "Separating people, systems and waiting revealed where the experience broke down.",
+    "Separar pessoas, sistemas e espera revelou onde a experiência se fragmentava."
+  ],
+  [
+    "Action · Content and prototyping",
+    "Ações · Conteúdo e prototipação"
+  ],
+  [
+    "Make complexity actionable.",
+    "Tornar a complexidade acionável."
+  ],
+  [
+    "Language that guides",
+    "Linguagem que orienta"
+  ],
+  [
+    "Content design focused on clearer terms, actionable messages and consistent labels. Cloze testing was used to explore whether analysts understood the wording in context.",
+    "O content design focou termos mais claros, mensagens acionáveis e rótulos consistentes. Testes cloze ajudaram a explorar se os analistas compreendiam os textos em contexto."
+  ],
+  [
+    "Prototype within the constraints",
+    "Prototipar dentro das restrições"
+  ],
+  [
+    "Wireframes and high-fidelity screens used Salesforce libraries to keep the proposal close to Lightning patterns. Prototyping and handoff connected the interface to the platform and its data requirements.",
+    "Wireframes e telas de alta fidelidade usaram bibliotecas Salesforce para manter a proposta próxima aos padrões Lightning. Prototipação e handoff conectaram a interface à plataforma e aos requisitos de dados."
+  ],
+  [
+    "Observed friction",
+    "Fricção observada"
+  ],
+  [
+    "Design response",
+    "Resposta de design"
+  ],
+  [
+    "Rebuilding the claim context across screens",
+    "Reconstrução do contexto em várias telas"
+  ],
+  [
+    "Claim overview with policy, history and documents.",
+    "Visão do sinistro com apólice, histórico e documentos."
+  ],
+  [
+    "Unclear queues and pending work",
+    "Filas e pendências pouco claras"
+  ],
+  [
+    "Dashboard, status-based lists and priority cues.",
+    "Dashboard, listas por status e indicação de prioridade."
+  ],
+  [
+    "Repeated document checks",
+    "Conferências repetidas de documentos"
+  ],
+  [
+    "Categorized attachments and an in-context viewer.",
+    "Anexos organizados por categoria e visualização no contexto."
+  ],
+  [
+    "Complex analysis and routing decisions",
+    "Decisões complexas de análise e encaminhamento"
+  ],
+  [
+    "Guided steps for analysis, internal and external regulation.",
+    "Passos guiados para análise e regulação interna e externa."
+  ],
+  [
+    "Action · Before & after",
+    "Ações · Antes e depois"
+  ],
+  [
+    "From managing tasks",
+    "De gerenciar tarefas"
+  ],
+  [
+    "to understanding the workload.",
+    "a entender a operação."
+  ],
+  [
+    "Compare two entry points: the legacy task list and the proposed Salesforce overview. Move the divider to reveal each interface.",
+    "Compare duas portas de entrada: a lista de tarefas do legado e a visão geral proposta no Salesforce. Mova o divisor para revelar cada interface."
+  ],
+  [
+    "Before: legacy task list with identifying fields removed",
+    "Antes: lista de tarefas do legado com campos identificáveis removidos"
+  ],
+  [
+    "After: proposed Salesforce claims overview",
+    "Depois: visão geral de sinistros proposta no Salesforce"
+  ],
+  [
+    "Before · Legacy",
+    "Antes · Legado"
+  ],
+  [
+    "After · Salesforce",
+    "Depois · Salesforce"
+  ],
+  [
+    "Compare legacy and proposed Salesforce interfaces",
+    "Comparar interfaces do legado e da proposta Salesforce"
+  ],
+  [
+    "Drag, tap or use the arrow keys. Original project artifacts are shown in Portuguese; identifying information has been removed.",
+    "Arraste, toque ou use as setas do teclado. Os artefatos originais do projeto são apresentados em português; informações identificáveis foram removidas."
+  ],
+  [
+    "Action · The solution",
+    "Ações · A solução"
+  ],
+  [
+    "Context, sequence and visibility.",
+    "Contexto, sequência e visibilidade."
+  ],
+  [
+    "The proposed experience combines an operational overview with a structured path through the claim.",
+    "A experiência proposta combina uma visão da operação com um caminho estruturado pelo sinistro."
+  ],
+  [
+    "Salesforce · Claims monitoring",
+    "Salesforce · Acompanhamento de sinistros"
+  ],
+  [
+    "Claims dashboard with queue indicators and charts by company and injury type",
+    "Dashboard de sinistros com indicadores de fila e gráficos por empresa e tipo de lesão"
+  ],
+  [
+    "Analyst dashboard",
+    "Dashboard do analista"
+  ],
+  [
+    "Queue status, received documentation, active analysis and closed cases in one overview.",
+    "Status das filas, documentação recebida, análises em andamento e casos encerrados em uma visão."
+  ],
+  [
+    "Guided analysis",
+    "Análise guiada"
+  ],
+  [
+    "A step-based flow supported by OmniScript and dynamic forms, aligned with the case context.",
+    "Um fluxo por etapas apoiado por OmniScript e formulários dinâmicos, alinhado ao contexto do caso."
+  ],
+  [
+    "360° claim context",
+    "Contexto 360° do sinistro"
+  ],
+  [
+    "Claim notice, policy, related events, documents, history and comments connected to the case.",
+    "Aviso, apólice, ocorrências relacionadas, documentos, histórico e comentários conectados ao caso."
+  ],
+  [
+    "Documents and decisions",
+    "Documentos e decisões"
+  ],
+  [
+    "Requests, attachments and in-context viewing, alongside internal/external regulation and payment states.",
+    "Solicitações, anexos e visualização no contexto, junto aos estados de regulação interna/externa e pagamento."
+  ],
+  [
+    "Action · Mobile handoff",
+    "Ações · Handoff mobile"
+  ],
+  [
+    "The same operation.",
+    "A mesma operação."
+  ],
+  [
+    "A smaller screen.",
+    "Uma tela menor."
+  ],
+  [
+    "The mobile proposal extends claim monitoring and consultation beyond the desktop, keeping familiar Salesforce navigation.",
+    "A proposta mobile estende o acompanhamento e a consulta de sinistros além do desktop, mantendo a navegação familiar do Salesforce."
+  ],
+  [
+    "Overview",
+    "Visão geral"
+  ],
+  [
+    "A compact dashboard for the workload and incoming documentation.",
+    "Um dashboard compacto para a operação e a documentação recebida."
+  ],
+  [
+    "Claim list",
+    "Lista de sinistros"
+  ],
+  [
+    "Search, company and priority to help locate the next case.",
+    "Busca, empresa e prioridade para ajudar a localizar o próximo caso."
+  ],
+  [
+    "Case detail",
+    "Detalhe do caso"
+  ],
+  [
+    "Stage, policy, related notices, files, comments and recent activity.",
+    "Etapa, apólice, avisos relacionados, arquivos, comentários e atividades recentes."
+  ],
+  [
+    "Mobile scope shown in the handoff: monitoring and case consultation.",
+    "Escopo mobile apresentado no handoff: acompanhamento e consulta de casos."
+  ],
+  [
+    "Mobile Salesforce dashboard for the Porto claims experience",
+    "Dashboard mobile Salesforce para a experiência de sinistros Porto"
+  ],
+  [
+    "Results",
+    "Resultados"
+  ],
+  [
+    "A clearer workflow.",
+    "Um fluxo mais claro."
+  ],
+  [
+    "A measurable ambition.",
+    "Uma ambição mensurável."
+  ],
+  [
+    "The design work connects research findings to a common Salesforce experience, with operational visibility, guided analysis and mobile continuity.",
+    "O trabalho de design conecta os achados da pesquisa a uma experiência comum em Salesforce, com visibilidade operacional, análise guiada e continuidade mobile."
+  ],
+  [
+    "Analysis time",
+    "Tempo de análise"
+  ],
+  [
+    "Working figure from the project record.",
+    "Número provisório do relato do projeto."
+  ],
+  [
+    "Navigation steps",
+    "Etapas de navegação"
+  ],
+  [
+    "Working figure from the project record.",
+    "Número provisório do relato do projeto."
+  ],
+  [
+    "Provisional impact figures. Baselines and measurement details are being reviewed; these should not be read as independently verified production results.",
+    "Indicadores de impacto provisórios. As bases e os detalhes de medição estão em revisão; estes números não representam resultados de produção verificados de forma independente."
+  ],
+  [
+    "What the work delivers",
+    "O que o trabalho entrega"
+  ],
+  [
+    "A documented journey, a synthesis of recurring pain points, shared design principles and a Salesforce proposal spanning dashboard, queues, analysis, documents, regulation and payments.",
+    "Uma jornada documentada, uma síntese das dores recorrentes, princípios compartilhados de design e uma proposta Salesforce que abrange dashboard, filas, análise, documentos, regulação e pagamentos."
+  ],
+  [
+    "What success needs to track",
+    "O que acompanhar para medir sucesso"
+  ],
+  [
+    "Analysis time, navigation effort, incomplete-document rework, SLA by stage and the clarity of communication with customers and brokers.",
+    "Tempo de análise, esforço de navegação, retrabalho por documentos incompletos, SLA por etapa e clareza da comunicação com clientes e corretores."
+  ],
+  [
+    "What I take forward",
+    "O que levo para os próximos projetos"
+  ],
+  [
+    "Treat the workflow as a service, not a collection of screens. Use platform constraints to focus the design. Bring engineering into discovery early, test language in context and document the reasoning behind each decision.",
+    "Tratar o workflow como um serviço, não como uma coleção de telas. Usar as restrições da plataforma para dar foco ao design. Trazer engenharia para o discovery desde cedo, testar linguagem em contexto e documentar o raciocínio por trás de cada decisão."
+  ],
+  [
+    "Designing clarity",
+    "Desenhar clareza"
+  ],
+  [
+    "where the work is complex.",
+    "onde o trabalho é complexo."
+  ],
+  [
+    "Explore the design reference or get in touch to talk about a product challenge.",
+    "Explore a referência de design ou entre em contato para conversar sobre um desafio de produto."
+  ],
+  [
+    "View the design",
+    "Ver o design"
+  ],
+  [
+    "Case artifacts reflect the design proposal and research record. Prototype charts are illustrative, not operational reporting.",
+    "Os artefatos do case refletem a proposta de design e o registro da pesquisa. Os gráficos do protótipo são ilustrativos, não relatórios operacionais."
+  ],
+  [
+    "Porto Seguro · Claims experience",
+    "Porto Seguro · Experiência de sinistros"
+  ],
+  [
+    "Porto Seguro · Claims experience | Romulo Nascimento",
+    "Porto Seguro · Experiência de sinistros | Romulo Nascimento"
+  ],
+  [
+    "Porto Seguro claims experience: a STAR case study connecting discovery, Salesforce workflows and mobile design.",
+    "Experiência de sinistros Porto Seguro: um case STAR conectando discovery, workflows Salesforce e design mobile."
+  ],
+  [
+    "Enterprise UX · Salesforce",
+    "UX corporativa · Salesforce"
+  ],
+  [
+    "From fragmented legacy tools to a guided claims workflow on desktop and mobile.",
+    "De ferramentas legadas fragmentadas a um fluxo guiado de sinistros no desktop e no celular."
+  ],
+  [
+    "Porto Seguro · Claims experience: mobile screen in a phone mockup",
+    "Porto Seguro · Experiência de sinistros: tela mobile em mockup de celular"
+  ],
+  [
+    "Inside the project: Porto Seguro · Claims experience",
+    "Por dentro do projeto: Porto Seguro · Experiência de sinistros"
+  ],
+  [
+    "View the Porto Seguro design in a new tab",
+    "Ver o design da Porto Seguro em uma nova aba"
+  ]
+]);
+
+window.PORTFOLIO_TRANSLATIONS.push(["Salesforce · Enterprise UX","Salesforce · UX corporativa"]);
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "The move from a 40-year-old claims environment to Salesforce was an opportunity to rethink the work, rather than carry its fragmentation into a new platform.",
+    "A migração de um ambiente de sinistros com 40 anos de uso para o Salesforce era uma oportunidade de repensar o trabalho, em vez de levar sua fragmentação para uma nova plataforma."
+  ],
+  [
+    "The people behind a claim",
+    "As pessoas por trás de um sinistro"
+  ],
+  [
+    "Policyholder & broker",
+    "Segurado e corretor"
+  ],
+  [
+    "Clear requests and visibility of progress.",
+    "Solicitações claras e visibilidade do andamento."
+  ],
+  [
+    "Claims analysts",
+    "Analistas de sinistros"
+  ],
+  [
+    "Reliable context for coverage and routing decisions.",
+    "Contexto confiável para decidir cobertura e encaminhamento."
+  ],
+  [
+    "Regulators & medical teams",
+    "Reguladores e equipes médicas"
+  ],
+  [
+    "Documents and findings connected to the case.",
+    "Documentos e pareceres conectados ao caso."
+  ],
+  [
+    "Settlement teams",
+    "Equipes de liquidação"
+  ],
+  [
+    "Beneficiaries, agreements and payment information in context.",
+    "Beneficiários, acordos e informações de pagamento no contexto."
+  ],
+  [
+    "Managers",
+    "Gestores"
+  ],
+  [
+    "A view of workload, queues and deadlines.",
+    "Uma visão da operação, filas e prazos."
+  ],
+  [
+    "Product & engineering",
+    "Produto e engenharia"
+  ],
+  [
+    "A feasible design aligned with platform constraints.",
+    "Um design viável e alinhado às restrições da plataforma."
+  ],
+  [
+    "The project record describes workshops with 100+ collaborators and an organizational context of around 13,000 employees. The screens shown here focus on the APP/DC workflow.",
+    "O relato do projeto descreve workshops com mais de 100 colaboradores e um contexto organizacional de cerca de 13 mil pessoas. As telas deste case focam o fluxo APP/DC."
+  ],
+  [
+    "View larger",
+    "Ampliar imagem"
+  ],
+  [
+    "Close image",
+    "Fechar imagem"
+  ],
+  [
+    "Project evidence",
+    "Evidência do projeto"
+  ],
+  [
+    "Show legacy",
+    "Mostrar legado"
+  ],
+  [
+    "Show Salesforce",
+    "Mostrar Salesforce"
+  ]
+]);
