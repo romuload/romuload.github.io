@@ -54,3 +54,7 @@ Skill icons: Tabler Icons, MIT license (https://github.com/tabler/tabler-icons);
 ## Unified REPAR case
 
 The gallery lists Conhecer Repar 3D once. projeto-repar.html presents both the illustrated legacy version and the 3D evolution, using the iLab case palette and typography. The before/after range works with touch, mouse and keyboard, and both prototypes remain directly accessible. The former projeto-legado.html URL redirects to the unified comparison, retaining an explicit EN/PT selection. New narrative copy is bilingual and avoids unsupported outcome metrics.
+
+## FIAT Água em Ciclo
+
+The fourth gallery entry opens projeto-fiat.html, a bilingual case using the established case structure with FIAT-inspired red, white and dark tones. Desktop/mobile screenshots come from the live interactive project. The case links to the interactive water cycle and embeds the supplied YouTube landscape (n9-0C1eda_I) and portrait (c87ghSV32Y4) videos with responsive aspect ratios and direct YouTube links. Video files are not stored or uploaded with the site.

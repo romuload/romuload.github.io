@@ -49,7 +49,7 @@
       if (!href || href.startsWith('#')) return;
       const url = new URL(href, location.href);
       const portfolioDirectory = new URL('.', location.href).pathname;
-      const localPages = ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-legado.html', 'projeto-games.html'];
+      const localPages = ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-legado.html', 'projeto-games.html', 'projeto-fiat.html'];
       if (url.origin === location.origin && (url.pathname === portfolioDirectory || localPages.some(page => url.pathname === portfolioDirectory + page))) {
         url.searchParams.set('lang', language);
         link.setAttribute('href', url.pathname + url.search + url.hash);

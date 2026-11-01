@@ -1340,3 +1340,142 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Jogar caça-palavras"
   ]
 ]);
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "FIAT · Interactive experience · Motion design",
+    "FIAT · Experiência interativa · Motion design"
+  ],
+  [
+    "Water in motion.",
+    "Água em movimento."
+  ],
+  [
+    "A cycle to discover.",
+    "Um ciclo para descobrir."
+  ],
+  [
+    "Água em Ciclo makes the industrial water journey visible, from production to treatment and reuse, through an interactive 3D experience and motion videos.",
+    "Água em Ciclo torna visível a jornada industrial da água, da produção ao tratamento e reúso, com uma experiência 3D interativa e vídeos de motion."
+  ],
+  [
+    "Explore Água em Ciclo",
+    "Explorar Água em Ciclo"
+  ],
+  [
+    "Watch the motion deliverables",
+    "Assistir aos entregáveis de motion"
+  ],
+  [
+    "FIAT Água em Ciclo: full interactive water treatment overview",
+    "FIAT Água em Ciclo: visão completa da experiência de tratamento da água"
+  ],
+  [
+    "Making an invisible journey tangible.",
+    "Tornar uma jornada invisível tangível."
+  ],
+  [
+    "What happens to water after it is used in production? The experience follows treatment, purification, membranes, storage and the paths toward reuse or final destination.",
+    "O que acontece com a água depois de usada na produção? A experiência acompanha tratamento, purificação, membranas, armazenamento e os caminhos de reúso ou destinação."
+  ],
+  [
+    "A 3D model connects each stage. Camera movements, labels and narration help explain how the parts belong to the same cycle.",
+    "Uma maquete 3D conecta cada etapa. Movimentos de câmera, legendas e narração ajudam a explicar como as partes pertencem ao mesmo ciclo."
+  ],
+  [
+    "Interactive deliverable",
+    "Entregável interativo"
+  ],
+  [
+    "Follow the story.",
+    "Acompanhe a história."
+  ],
+  [
+    "Explore at your own pace.",
+    "Explore no seu ritmo."
+  ],
+  [
+    "A chapter-based journey guides the camera through the model. Visitors can pause, rotate, zoom and return to the overview to explore the system.",
+    "Uma jornada por capítulos guia a câmera pela maquete. É possível pausar, girar, aproximar e voltar à visão geral para explorar o sistema."
+  ],
+  [
+    "Guided narrative",
+    "Narrativa guiada"
+  ],
+  [
+    "Five chapters connect factory treatment, purification, membranes and reuse, return and destination, and the complete cycle.",
+    "Cinco capítulos conectam fábrica e tratamento, purificação, membranas e reúso, retorno e destinação e a visão completa do ciclo."
+  ],
+  [
+    "Free exploration",
+    "Exploração livre"
+  ],
+  [
+    "Camera controls and labels let visitors inspect the treatment stages beyond the narrated sequence.",
+    "Controles de câmera e legendas permitem observar as etapas do tratamento além da sequência narrada."
+  ],
+  [
+    "Open the interactive experience",
+    "Abrir a experiência interativa"
+  ],
+  [
+    "Motion deliverables",
+    "Entregáveis de motion"
+  ],
+  [
+    "One story.",
+    "Uma história."
+  ],
+  [
+    "Two video formats.",
+    "Dois formatos de vídeo."
+  ],
+  [
+    "Watch the produced motion videos in landscape and portrait formats, embedded directly from YouTube.",
+    "Assista aos vídeos de motion produzidos nos formatos horizontal e vertical, incorporados diretamente do YouTube."
+  ],
+  [
+    "Landscape motion · 16:9",
+    "Motion horizontal · 16:9"
+  ],
+  [
+    "Landscape motion · 16:9",
+    "Motion horizontal · 16:9"
+  ],
+  [
+    "Watch on YouTube",
+    "Assistir no YouTube"
+  ],
+  [
+    "Portrait motion · 9:16",
+    "Motion vertical · 9:16"
+  ],
+  [
+    "Portrait motion · 9:16",
+    "Motion vertical · 9:16"
+  ],
+  [
+    "Watch on YouTube",
+    "Assistir no YouTube"
+  ],
+  [
+    "3D & motion design",
+    "3D e motion design"
+  ],
+  [
+    "An interactive journey through water treatment and reuse, with motion deliverables.",
+    "Uma jornada interativa pelo tratamento e reúso da água, com entregáveis de motion."
+  ],
+  [
+    "Inside the project: FIAT · Água em Ciclo",
+    "Por dentro do projeto: FIAT · Água em Ciclo"
+  ],
+  [
+    "Explore FIAT · Água em Ciclo in a new tab",
+    "Explorar FIAT · Água em Ciclo em uma nova aba"
+  ],
+  [
+    "FIAT · Água em Ciclo: real desktop and mobile screens in device mockups",
+    "FIAT · Água em Ciclo: telas reais de desktop e celular em mockups de dispositivos"
+  ]
+]);
