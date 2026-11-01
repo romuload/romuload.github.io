@@ -44,3 +44,9 @@ O cabeçalho combina o símbolo RN em `images/brand/rn-symbol.svg`, o nome Romul
 `mockups.css` define os viewports explícitos e isolados das capturas. O navegador desktop e a moldura Safari mobile têm barra de endereço com `romuload.github.io` e controles decorativos, fora da área da página. Desktop e celular ficam lado a lado, sem sobreposição, e as imagens são posicionadas de forma absoluta com `object-fit: contain`. As quatro capturas móveis da galeria foram refeitas em 390 × 700 para caber na área de conteúdo reservada abaixo da barra do navegador.
 
 O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco. Fontes dos arquivos adicionais: SONDA no CDN do próprio site (https://www.sonda.com/ResourcePackages/Sonda2024/assets/dist/images/logos/logo-white-footer.svg), Fiat e Thomson Reuters nas páginas de arquivo do Wikimedia Commons. Ícones da moldura do navegador são do projeto Tabler Icons, com licença em `images/browser-icons/LICENSE.txt`.
+
+## About page and spacing
+
+The About page uses an editorial introduction, portrait and biography, icon-based skills and industry list, inspired by the structure of irvingsuna.net/about. Copy is specific to Romulo and available in English and Portuguese. Public LinkedIn recommendations informed the emphasis on user research, prototyping and collaborative UX leadership; unverified dates, job titles, awards and certifications are not included. The requested excluded sections are omitted.
+
+Skill icons: Tabler Icons, MIT license (https://github.com/tabler/tabler-icons); the existing license in images/browser-icons/LICENSE.txt applies. Gallery row spacing is 128px on desktop, 112px on tablet and 88px on mobile.

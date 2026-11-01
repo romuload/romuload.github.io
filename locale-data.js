@@ -941,3 +941,110 @@ window.PORTFOLIO_TRANSLATIONS = [
     "iLAB, Petrobras: transformando um ecossistema de laboratório de uma década em uma experiência inteligente e integrada. Estudo de caso de design de produto por Romulo Nascimento."
   ]
 ];
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "About me",
+    "Sobre mim"
+  ],
+  [
+    "Product Designer · UX/UI · Research · Prototyping",
+    "Product Designer · UX/UI · Pesquisa · Prototipação"
+  ],
+  [
+    "I design digital products that make complex tasks easier to understand and use. My work connects research, interface design and interactive prototyping.",
+    "Crio produtos digitais que tornam tarefas complexas mais fáceis de entender e realizar. Meu trabalho conecta pesquisa, design de interfaces e prototipação interativa."
+  ],
+  [
+    "Understanding the people behind a product comes first. User interviews and usability testing help me question assumptions, explore possibilities and refine the experience.",
+    "Entender as pessoas por trás de um produto vem primeiro. Entrevistas com usuários e testes de usabilidade me ajudam a questionar hipóteses, explorar possibilidades e refinar a experiência."
+  ],
+  [
+    "I bring a collaborative approach to UX leadership, connecting different perspectives and helping teams turn research into design decisions.",
+    "Trago uma abordagem colaborativa para a liderança de UX, conectando diferentes perspectivas e ajudando equipes a transformar pesquisa em decisões de design."
+  ],
+  [
+    "My portfolio brings together laboratory workflows, an interactive 3D refinery and learning games. These projects reflect my interest in making information tangible and helping people learn by exploring.",
+    "Meu portfólio reúne fluxos de laboratório, uma refinaria 3D interativa e jogos de aprendizagem. Esses projetos refletem meu interesse em tornar a informação tangível e ajudar as pessoas a aprender explorando."
+  ],
+  [
+    "View LinkedIn profile",
+    "Ver perfil no LinkedIn"
+  ],
+  [
+    "Skills highlights",
+    "Principais habilidades"
+  ],
+  [
+    "User research",
+    "Pesquisa com usuários"
+  ],
+  [
+    "User interviews",
+    "Entrevistas com usuários"
+  ],
+  [
+    "Usability testing",
+    "Testes de usabilidade"
+  ],
+  [
+    "Interaction design",
+    "Design de interação"
+  ],
+  [
+    "UX/UI design",
+    "Design UX/UI"
+  ],
+  [
+    "Rapid prototyping",
+    "Prototipação rápida"
+  ],
+  [
+    "Interactive experiences",
+    "Experiências interativas"
+  ],
+  [
+    "Collaborative leadership",
+    "Liderança colaborativa"
+  ],
+  [
+    "Industries",
+    "Setores de atuação"
+  ],
+  [
+    "Financial",
+    "Financeiro"
+  ],
+  [
+    "Automotive",
+    "Automotivo"
+  ],
+  [
+    "Technology",
+    "Tecnologia"
+  ],
+  [
+    "Medical",
+    "Médico"
+  ],
+  [
+    "Health insurance",
+    "Planos de saúde"
+  ],
+  [
+    "Tax",
+    "Tributário"
+  ],
+  [
+    "Retail",
+    "Varejo"
+  ],
+  [
+    "Let’s design what comes next.",
+    "Vamos desenhar o próximo passo."
+  ],
+  [
+    "Work with me",
+    "Trabalhe comigo"
+  ]
+]);
