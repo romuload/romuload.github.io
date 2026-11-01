@@ -24,3 +24,11 @@ dialog{width:min(680px,calc(100% - 32px));max-height:85dvh;overflow:auto;border:
 .desktop-device{top:12%}.case-page>.device-stage{aspect-ratio:1.5}
 @media(max-width:767px){.desktop-device{top:12%}.button{font-size:12px}.case-page>.device-stage{aspect-ratio:1.4}}
 @media(max-width:360px){.project-links{grid-template-columns:1fr}}
+/* Preserve complete screenshots; device hardware never overlaps the page header. */
+.identity .brand-symbol{display:block;width:50px;height:50px;object-fit:contain;border-radius:12px}
+.desktop-screen{aspect-ratio:16/9;background:#f3f5f4}.image-ilab .desktop-screen{aspect-ratio:16/10}
+.project-image .desktop-screen img{object-fit:contain;object-position:top center}
+.phone-device{width:22%;height:auto;aspect-ratio:390/844;top:20%;right:5%;padding:12px 0 8px;background:#18191c}
+.project-image .phone-device img{object-fit:contain;object-position:top center;background:#f3f5f4;border-radius:9px}
+.phone-camera{top:3px;height:3px}.phone-home{bottom:2px;height:2px}
+@media(max-width:767px){.identity .brand-symbol{width:44px;height:44px}.phone-device{padding:10px 0 6px}.project-image .phone-device img{border-radius:6px}}

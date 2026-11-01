@@ -6,8 +6,8 @@
 <title>iLAB Case Study | Romulo Nascimento</title>
 <meta name="description" content="iLAB, Petrobras: turning a decade-old laboratory ecosystem into an intelligent, integrated experience. Product Design case study by Romulo Nascimento.">
 <meta name="theme-color" content="#07110C">
-<link rel="icon" href="https://romuload.github.io/ilab/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="https://romuload.github.io/ilab/apple-touch-icon.png">
+
+
 
 
 
@@ -64,7 +64,7 @@ section{position:relative}
 .browser .bar i{width:10px;height:10px;border-radius:50%;background:#3A423E}
 .browser .bar span{margin:0 auto;font:400 11px/1 var(--mono);color:#7F8F86;background:#111614;padding:6px 14px;border-radius:6px;max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .screen{position:relative;aspect-ratio:16/10;background:#f3f5f4;overflow:hidden}
-.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top center}
 .monitor{position:relative}
 .monitor .bezel{padding:1.1%;border-radius:20px;background:linear-gradient(#1B211E,#0E1210);border:1px solid var(--line2);box-shadow:0 60px 160px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08)}
 .monitor .bezel .screen{border-radius:8px}
@@ -72,7 +72,7 @@ section{position:relative}
 .monitor .foot{width:30%;height:10px;margin:0 auto;border-radius:6px 6px 2px 2px;background:#1a201d}
 .phone{position:relative;width:min(300px,72vw);aspect-ratio:390/844;border-radius:46px;padding:11px;background:linear-gradient(145deg,#2a312d,#0d100e);box-shadow:0 50px 120px -30px rgba(0,0,0,.9),inset 0 0 0 1.5px rgba(255,255,255,.08)}
 .phone .in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#f3f5f4}
-.phone .in img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone .in img{width:100%;height:100%;object-fit:contain;object-position:top center}
 .phone .in::before{content:"";position:absolute;z-index:2;top:9px;left:50%;width:30%;height:22px;margin-left:-15%;border-radius:20px;background:#050605}
 
 /* ---- 01 hero ---- */
@@ -224,6 +224,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .motion .rv{opacity:0;transform:translateY(28px)}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll-cue i,.arrow path{animation:none}}
+
+.phone .in{padding-top:28px;padding-bottom:12px}.phone .in::before{top:6px;height:15px}.phone .in img{height:100%;object-fit:contain;object-position:top center}.portfolio-home .brand-symbol{display:block;width:42px;height:42px;border-radius:10px}
 </style>
 <link rel="stylesheet" href="locale.css">
 <style>
@@ -231,11 +233,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .portfolio-home{font-size:13px;white-space:nowrap;text-decoration:none;color:var(--ink2)}.case-skip{position:fixed;top:-80px;left:20px;z-index:100;background:#fff;color:#07110c;padding:12px}.case-skip:focus{top:12px}.top .lang-switch{margin-left:4px}.top{flex-wrap:wrap}.top .btn{white-space:nowrap}.hero h1{max-width:16ch}body{font-family:Manrope,system-ui,sans-serif}
 @media(max-width:760px){.top{gap:10px;padding:12px 16px}.top ilab-logo{font-size:21px}.top .btn{font-size:11px;padding:0 10px;height:36px}.portfolio-home{font-size:11px}.hero{padding-top:145px}.top .lang-switch{margin-left:0}.top .sp{display:none}.top .tag{display:none}.hero h1{font-size:clamp(40px,9vw,64px)}}
 </style>
-<script src="locale-data.js"></script><script src="locale.js" defer></script></head>
+<script src="locale-data.js"></script><script src="locale.js" defer></script><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32"><link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16"><link rel="apple-touch-icon" href="apple-touch-icon.png"></head>
 <body><a class="case-skip" href="#conteudo">Skip to content</a>
 
 <header class="top" id="top">
-  <a class="portfolio-home" href="index.html">← Projects</a><a href="#hero" aria-label="Back to top"><ilab-logo on-dark></ilab-logo></a>
+  <a class="portfolio-home" href="index.html" aria-label="Romulo Nascimento, projects page"><img class="brand-symbol" src="images/brand/rn-symbol.png" width="42" height="42" alt=""></a><a href="#hero" aria-label="Back to top"><ilab-logo on-dark></ilab-logo></a>
   <span class="tag">Case study</span>
   <span class="sp"></span>
   <nav aria-label="Sections">
