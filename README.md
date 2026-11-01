@@ -25,10 +25,6 @@ Cada card tem somente duas ações, nesta ordem: Por dentro do projeto (página 
 
 O carrossel pode ser pausado pelo botão e ao passar o cursor. Movimento reduzido desativa a animação e mantém as três marcas visíveis. O conteúdo e a navegação funcionam sem JavaScript.
 
-Direção visual inspirada na referência fornecida: https://www.irvingsuna.net/. Conteúdo, identidade e capturas próprios. Textos de apresentação e abordagem são propostas editoriais; nenhuma métrica de impacto ou participação específica foi presumida.
-
-Logos: Petrobras proveniente do próprio repositório REPAR, com variante monocromática para fundo escuro; Porto do CDN oficial usado em https://www.portoseguro.com.br/; Itaú de https://commons.wikimedia.org/wiki/File:Itaú_Unibanco_logo_2023.svg. Marcas pertencem aos respectivos titulares.
-
 ## Idiomas e case iLab
 
 O HTML é entregue em inglês. O seletor EN / PT traduz o texto editorial, navegação, botões, títulos, metadados e descrições acessíveis. `locale-data.js` contém os pares de texto; `locale.js` aplica a escolha, salva a preferência quando possível e a mantém nos links internos com `?lang=en` ou `?lang=pt`. Os protótipos externos e suas capturas preservam o conteúdo original.
@@ -47,7 +43,7 @@ O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, co
 
 ## About page and spacing
 
-The About page uses an editorial introduction, portrait and biography, icon-based skills and industry list, inspired by the structure of irvingsuna.net/about. Copy is specific to Romulo and available in English and Portuguese. Public LinkedIn recommendations informed the emphasis on user research, prototyping and collaborative UX leadership; unverified dates, job titles, awards and certifications are not included. The requested excluded sections are omitted.
+The About page uses an editorial introduction, portrait and biography, icon-based skills and industry list. Copy is specific to Romulo and available in English and Portuguese. Public LinkedIn recommendations informed the emphasis on user research, prototyping and collaborative UX leadership; unverified dates, job titles, awards and certifications are not included. The requested excluded sections are omitted.
 
 Skill icons: Tabler Icons, MIT license (https://github.com/tabler/tabler-icons); the existing license in images/browser-icons/LICENSE.txt applies. Gallery row spacing is 128px on desktop, 112px on tablet and 88px on mobile.
 
