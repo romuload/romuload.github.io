@@ -1050,3 +1050,156 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 ]);
 
 window.PORTFOLIO_TRANSLATIONS.push(["Artificial intelligence", "Inteligência artificial"]);
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Petrobras · Interactive learning · 2D to 3D",
+    "Petrobras · Aprendizagem interativa · Do 2D ao 3D"
+  ],
+  [
+    "One refinery.",
+    "Uma refinaria."
+  ],
+  [
+    "New ways to explore.",
+    "Novas formas de explorar."
+  ],
+  [
+    "Conhecer Repar 3D brings two generations of the same project together: the original visual journey and an interactive 3D experience that makes the path of oil tangible.",
+    "Conhecer Repar 3D reúne duas gerações do mesmo projeto: a jornada visual original e uma experiência 3D interativa que torna o caminho do petróleo tangível."
+  ],
+  [
+    "Compare before and after",
+    "Comparar antes e depois"
+  ],
+  [
+    "Explore both versions",
+    "Explorar as duas versões"
+  ],
+  [
+    "Interactive 3D refinery overview",
+    "Visão geral da refinaria 3D interativa"
+  ],
+  [
+    "Making a complex process easier to understand.",
+    "Tornar um processo complexo mais fácil de entender."
+  ],
+  [
+    "The experience follows oil from its arrival at the terminal to the products of refining. Ten stages combine explanations, questions and visual storytelling.",
+    "A experiência acompanha o petróleo da chegada ao terminal até os produtos do refino. Dez etapas combinam explicações, perguntas e narrativa visual."
+  ],
+  [
+    "The original project was created in Flash in 2007. Its legacy version preserves the illustrated approach, while the 3D version reimagines how people navigate and discover the refinery.",
+    "O projeto original foi criado em Flash em 2007. A versão legado preserva a abordagem ilustrada, enquanto a versão 3D repensa como as pessoas navegam e descobrem a refinaria."
+  ],
+  [
+    "The evolution",
+    "A evolução"
+  ],
+  [
+    "From illustrations to exploration.",
+    "Da ilustração à exploração."
+  ],
+  [
+    "A guided visual journey",
+    "Uma jornada visual guiada"
+  ],
+  [
+    "The legacy version presents the process through 2D illustrations, a sequence of stages and a character who introduces the refinery.",
+    "A versão legado apresenta o processo com ilustrações 2D, uma sequência de etapas e um personagem que apresenta a refinaria."
+  ],
+  [
+    "A refinery you can explore",
+    "Uma refinaria para explorar"
+  ],
+  [
+    "The 3D version uses a Blender model, camera movement and illuminated pipes to reveal connections. Visitors can follow the guided journey or explore freely.",
+    "A versão 3D usa um modelo feito no Blender, movimentos de câmera e tubulações iluminadas para revelar conexões. A pessoa pode seguir a jornada guiada ou explorar livremente."
+  ],
+  [
+    "Before and after",
+    "Antes e depois"
+  ],
+  [
+    "The same story.",
+    "A mesma história."
+  ],
+  [
+    "A new dimension.",
+    "Uma nova dimensão."
+  ],
+  [
+    "Move the divider to compare the legacy interface with the 3D version.",
+    "Mova o divisor para comparar a interface legado com a versão 3D."
+  ],
+  [
+    "Before: illustrated legacy REPAR interface",
+    "Antes: interface ilustrada do Conheça a REPAR legado"
+  ],
+  [
+    "After: interactive REPAR 3D interface",
+    "Depois: interface interativa da REPAR 3D"
+  ],
+  [
+    "Before · Legacy",
+    "Antes · Legado"
+  ],
+  [
+    "After · 3D",
+    "Depois · 3D"
+  ],
+  [
+    "Compare legacy and 3D versions",
+    "Comparar as versões legado e 3D"
+  ],
+  [
+    "Drag horizontally, tap the comparison or use the arrow keys when the slider is focused.",
+    "Arraste na horizontal, toque no comparativo ou use as setas do teclado com o controle selecionado."
+  ],
+  [
+    "Try the experience",
+    "Experimente a experiência"
+  ],
+  [
+    "Two versions. One project.",
+    "Duas versões. Um projeto."
+  ],
+  [
+    "Open each version to experience the journey and its different ways of presenting the refinery.",
+    "Abra cada versão para experimentar a jornada e suas diferentes formas de apresentar a refinaria."
+  ],
+  [
+    "The legacy experience",
+    "A experiência legado"
+  ],
+  [
+    "The legacy experience",
+    "A experiência legado"
+  ],
+  [
+    "Discover the illustrated journey through ten stages of refining.",
+    "Conheça a jornada ilustrada pelas dez etapas do refino."
+  ],
+  [
+    "Open legacy version",
+    "Abrir versão legado"
+  ],
+  [
+    "The 3D experience",
+    "A experiência 3D"
+  ],
+  [
+    "The 3D experience",
+    "A experiência 3D"
+  ],
+  [
+    "Follow the camera through the refinery or explore the 3D model freely.",
+    "Acompanhe a câmera pela refinaria ou explore o modelo 3D livremente."
+  ],
+  [
+    "Open 3D version",
+    "Abrir versão 3D"
+  ]
+]);
+
+window.PORTFOLIO_TRANSLATIONS.push(["From the original illustrated journey to an interactive 3D refinery.","Da jornada ilustrada original a uma refinaria 3D interativa."]);

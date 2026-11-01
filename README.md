@@ -50,3 +50,7 @@ O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, co
 The About page uses an editorial introduction, portrait and biography, icon-based skills and industry list, inspired by the structure of irvingsuna.net/about. Copy is specific to Romulo and available in English and Portuguese. Public LinkedIn recommendations informed the emphasis on user research, prototyping and collaborative UX leadership; unverified dates, job titles, awards and certifications are not included. The requested excluded sections are omitted.
 
 Skill icons: Tabler Icons, MIT license (https://github.com/tabler/tabler-icons); the existing license in images/browser-icons/LICENSE.txt applies. Gallery row spacing is 128px on desktop, 112px on tablet and 88px on mobile.
+
+## Unified REPAR case
+
+The gallery lists Conhecer Repar 3D once. projeto-repar.html presents both the illustrated legacy version and the 3D evolution, using the iLab case palette and typography. The before/after range works with touch, mouse and keyboard, and both prototypes remain directly accessible. The former projeto-legado.html URL redirects to the unified comparison, retaining an explicit EN/PT selection. New narrative copy is bilingual and avoids unsupported outcome metrics.
