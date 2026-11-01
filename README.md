@@ -39,7 +39,7 @@ Para novos conteúdos, escreva o HTML em inglês e acrescente seu par inglês/po
 
 ## Correção da identidade e molduras de navegador
 
-O cabeçalho combina o símbolo RN em `images/brand/rn-symbol.svg`, o nome Romulo Nascimento e o cargo Product Designer. O SVG foi reconstruído manualmente com curvas, sem fonte, imagem incorporada ou fundo. O favicon usa o mesmo desenho em `favicon.svg`; as versões PNG/ICO foram renderizadas a partir desse vetor. A imagem recortada anterior foi removida.
+O cabeçalho combina o avião de papel em traço fino de `images/brand/paper-plane.svg`, o nome Romulo Nascimento e o cargo Product Designer. O SVG foi desenhado à mão, sem fonte, imagem incorporada ou fundo. O favicon usa o mesmo avião em `favicon.svg`; as versões PNG/ICO foram renderizadas a partir desse vetor. A imagem recortada anterior foi removida.
 
 As capas da página inicial usam `phone-mockup.css`: um único iPhone por card, com borda de titânio, Dynamic Island, barra de status e barra flutuante do Safari com `romuload.github.io`. As capturas ficam em `images/phone/` e foram feitas em 390 × 790 px a 2x (a área visível do Safari abaixo da barra de status), por isso preenchem a tela sem cortes. `mockups.css` continua definindo as molduras de navegador usadas nas páginas internas.
 
