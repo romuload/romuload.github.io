@@ -1519,5 +1519,213 @@ window.PORTFOLIO_TRANSLATIONS = [
   [
     "FIAT · Water Cycle: mobile screen in a phone mockup",
     "FIAT · Água em Ciclo: tela de celular em um mockup de iPhone"
+  ],
+  [
+    "Tell me what you want to build or improve. Your answers open a ready-to-send WhatsApp message, so we can start from the context instead of from zero.",
+    "Conte o que você quer criar ou melhorar. Suas respostas viram uma mensagem pronta no WhatsApp, para começarmos pelo contexto e não do zero."
+  ],
+  [
+    "What happens next",
+    "Como funciona"
+  ],
+  [
+    "You send the brief",
+    "Você envia o briefing"
+  ],
+  [
+    "The form turns your answers into a WhatsApp message. Review it and tap send.",
+    "O formulário transforma suas respostas em uma mensagem de WhatsApp. É só revisar e enviar."
+  ],
+  [
+    "I read the context",
+    "Eu leio o contexto"
+  ],
+  [
+    "Goals, scope, timeline and budget help me see where design can make the biggest difference.",
+    "Objetivos, escopo, prazo e orçamento me ajudam a ver onde o design pode fazer mais diferença."
+  ],
+  [
+    "We talk about the next step",
+    "Conversamos sobre o próximo passo"
+  ],
+  [
+    "A first conversation to align expectations and shape the right kind of engagement.",
+    "Uma primeira conversa para alinhar expectativas e definir o melhor formato de trabalho."
+  ],
+  [
+    "Prefer email?",
+    "Prefere e-mail?"
+  ],
+  [
+    "Start a project",
+    "Comece um projeto"
+  ],
+  [
+    "Fields marked with * are required.",
+    "Campos com * são obrigatórios."
+  ],
+  [
+    "Name",
+    "Nome"
+  ],
+  [
+    "Your name",
+    "Seu nome"
+  ],
+  [
+    "Work email",
+    "E-mail corporativo"
+  ],
+  [
+    "name@company.com",
+    "nome@empresa.com"
+  ],
+  [
+    "Phone / WhatsApp",
+    "Telefone / WhatsApp"
+  ],
+  [
+    "Company",
+    "Empresa"
+  ],
+  [
+    "Company name",
+    "Nome da empresa"
+  ],
+  [
+    "Company size",
+    "Total de colaboradores"
+  ],
+  [
+    "Select an option…",
+    "Selecione uma opção…"
+  ],
+  [
+    "1,000+",
+    "+ de 1.000"
+  ],
+  [
+    "Website",
+    "Site"
+  ],
+  [
+    "Project type",
+    "Tipo de projeto"
+  ],
+  [
+    "App",
+    "Aplicativo"
+  ],
+  [
+    "System",
+    "Sistema"
+  ],
+  [
+    "Monthly retainer",
+    "Fee mensal"
+  ],
+  [
+    "Platform",
+    "Plataforma"
+  ],
+  [
+    "Contract add-on",
+    "Aditivo"
+  ],
+  [
+    "Adjustments",
+    "Ajustes"
+  ],
+  [
+    "Team extension",
+    "Extensão do time"
+  ],
+  [
+    "Budget",
+    "Orçamento"
+  ],
+  [
+    "R$ 20k – R$ 40k",
+    "R$ 20 mil – R$ 40 mil"
+  ],
+  [
+    "R$ 41k – R$ 60k",
+    "R$ 41 mil – R$ 60 mil"
+  ],
+  [
+    "R$ 61k – R$ 80k",
+    "R$ 61 mil – R$ 80 mil"
+  ],
+  [
+    "R$ 81k – R$ 100k",
+    "R$ 81 mil – R$ 100 mil"
+  ],
+  [
+    "R$ 101k – R$ 150k",
+    "R$ 101 mil – R$ 150 mil"
+  ],
+  [
+    "R$ 151k – R$ 200k",
+    "R$ 151 mil – R$ 200 mil"
+  ],
+  [
+    "Over R$ 200k",
+    "Acima de R$ 200 mil"
+  ],
+  [
+    "Not defined yet",
+    "Ainda não definido"
+  ],
+  [
+    "Deadline",
+    "Prazo"
+  ],
+  [
+    "30 days",
+    "30 dias"
+  ],
+  [
+    "45 days",
+    "45 dias"
+  ],
+  [
+    "60 days",
+    "60 dias"
+  ],
+  [
+    "90 days",
+    "90 dias"
+  ],
+  [
+    "120 days",
+    "120 dias"
+  ],
+  [
+    "Very urgent (rush fee)",
+    "Muita pressa (taxa de urgência)"
+  ],
+  [
+    "Deadline is flexible",
+    "Prazo não é problema"
+  ],
+  [
+    "About the project",
+    "Sobre o projeto"
+  ],
+  [
+    "Goals, audience, what exists today…",
+    "Objetivos, público, o que já existe hoje…"
+  ],
+  [
+    "Send on WhatsApp",
+    "Enviar pelo WhatsApp"
+  ],
+  [
+    "Please fill in the required fields.",
+    "Preencha os campos obrigatórios."
+  ],
+  [
+    "WhatsApp opened with your message. Just tap send.",
+    "O WhatsApp abriu com a sua mensagem. É só tocar em enviar."
   ]
 ];

@@ -35,8 +35,8 @@
         node.nodeValue = leading + entry[language] + trailing;
       }
     }
-    document.querySelectorAll('[alt], [aria-label], [title], meta[content]').forEach(element => {
-      ['alt', 'aria-label', 'title', 'content'].forEach(attribute => {
+    document.querySelectorAll('[alt], [aria-label], [title], [placeholder], meta[content]').forEach(element => {
+      ['alt', 'aria-label', 'title', 'placeholder', 'content'].forEach(attribute => {
         if (element.hasAttribute(attribute)) element.setAttribute(attribute, translate(element.getAttribute(attribute)));
       });
     });
