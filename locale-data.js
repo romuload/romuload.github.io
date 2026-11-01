@@ -1205,3 +1205,138 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 window.PORTFOLIO_TRANSLATIONS.push(["From the original illustrated journey to an interactive 3D refinery.","Da jornada ilustrada original a uma refinaria 3D interativa."]);
 
 window.PORTFOLIO_TRANSLATIONS.push(...[["Inside the project: Conhecer Repar 3D", "Por dentro do projeto: Conhecer Repar 3D"], ["Explore Conhecer Repar 3D in a new tab", "Explorar Conhecer Repar 3D em uma nova aba"], ["Conhecer Repar 3D: real desktop and mobile screens in device mockups", "Conhecer Repar 3D: telas reais de desktop e celular em mockups de dispositivos"]]);
+
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Petrobras · Games & learning",
+    "Petrobras · Games e aprendizagem"
+  ],
+  [
+    "Find the words.",
+    "Encontre as palavras."
+  ],
+  [
+    "Discover the refinery.",
+    "Descubra a refinaria."
+  ],
+  [
+    "Caça-Palavras REPAR turns the vocabulary of refining into a five-minute discovery game. A project from 2007, rebuilt for desktop and mobile.",
+    "O Caça-Palavras REPAR transforma o vocabulário do refino em um jogo de descoberta de cinco minutos. Um projeto de 2007, reconstruído para desktop e celular."
+  ],
+  [
+    "Play the word search",
+    "Jogar caça-palavras"
+  ],
+  [
+    "Inside the experience",
+    "Por dentro da experiência"
+  ],
+  [
+    "REPAR word search on desktop",
+    "Caça-Palavras REPAR no desktop"
+  ],
+  [
+    "Learning through discovery.",
+    "Aprender pela descoberta."
+  ],
+  [
+    "Originally created for REPAR’s 30th anniversary in 2007, the word search introduces terms connected to the refinery and its processes.",
+    "Criado originalmente para os 30 anos da REPAR, em 2007, o caça-palavras apresenta termos ligados à refinaria e seus processos."
+  ],
+  [
+    "The web version brings the game to today’s browsers, keeping the focus on a simple challenge: finding the hidden words before time runs out.",
+    "A versão web leva o jogo aos navegadores atuais, mantendo o foco em um desafio simples: encontrar as palavras escondidas antes que o tempo termine."
+  ],
+  [
+    "The game experience",
+    "A experiência do jogo"
+  ],
+  [
+    "A familiar game.",
+    "Um jogo familiar."
+  ],
+  [
+    "A new discovery each round.",
+    "Uma nova descoberta a cada rodada."
+  ],
+  [
+    "Words to find",
+    "Palavras para encontrar"
+  ],
+  [
+    "Refinery-related terms connect the challenge to the world of REPAR.",
+    "Termos ligados ao refino conectam o desafio ao universo da REPAR."
+  ],
+  [
+    "Minutes per round",
+    "Minutos por rodada"
+  ],
+  [
+    "A time limit gives each game a clear goal and a sense of pace.",
+    "O limite de tempo dá a cada partida um objetivo claro e um ritmo próprio."
+  ],
+  [
+    "Search directions",
+    "Direções de busca"
+  ],
+  [
+    "Words can appear across the grid in eight directions.",
+    "As palavras podem aparecer na grade em oito direções."
+  ],
+  [
+    "Interaction design",
+    "Design de interação"
+  ],
+  [
+    "From mouse",
+    "Do mouse"
+  ],
+  [
+    "to touch.",
+    "ao toque."
+  ],
+  [
+    "Drag across the letters or tap the two ends of a word. The same challenge adapts to different ways of playing.",
+    "Arraste sobre as letras ou toque nas duas pontas de uma palavra. O mesmo desafio se adapta a diferentes formas de jogar."
+  ],
+  [
+    "A different grid each time",
+    "Uma grade diferente a cada vez"
+  ],
+  [
+    "The grid changes with each new game, inviting another attempt.",
+    "A grade muda a cada nova partida, convidando a uma nova tentativa."
+  ],
+  [
+    "Preferences that stay with you",
+    "Preferências que acompanham você"
+  ],
+  [
+    "Records and sound preferences are saved in the browser.",
+    "Recordes e preferências de som ficam salvos no navegador."
+  ],
+  [
+    "Full REPAR word search mobile interface",
+    "Interface completa do Caça-Palavras REPAR no celular"
+  ],
+  [
+    "Try the experience",
+    "Experimente a experiência"
+  ],
+  [
+    "Your next discovery",
+    "Sua próxima descoberta"
+  ],
+  [
+    "starts with a word.",
+    "começa com uma palavra."
+  ],
+  [
+    "Open the game on your computer or phone and explore the vocabulary of the refinery.",
+    "Abra o jogo no computador ou celular e explore o vocabulário da refinaria."
+  ],
+  [
+    "Play the word search",
+    "Jogar caça-palavras"
+  ]
+]);
