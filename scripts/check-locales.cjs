@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=porto-star-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-process-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -41,3 +41,16 @@ assert(porto.includes('id="porto-slider"'));
 assert(porto.includes('Provisional impact figures.'));
 assert(fs.readFileSync('index.html','utf8').includes('images/phone/porto.jpg'));
 console.log('Porto STAR copy, metric status, comparison and current iPhone thumbnail: OK');
+
+const processChapters = ['situation', 'task', 'action', 'results', 'design-process', 'discovery', 'content-design', 'prototyping', 'validation', 'comparison'];
+let previousChapter = -1;
+for (const chapter of processChapters) {
+ const position = porto.indexOf(`id="${chapter}"`);
+ assert(position > previousChapter, `Porto chapter missing or out of order: ${chapter}`);
+ previousChapter = position;
+}
+assert.equal((porto.match(/class="design-reasoning"/g) || []).length, 3);
+for (const label of ['Design Process', 'Evidence', 'Interpretation', 'Design decision', 'Validation approach']) {
+ assert(map.get(label)?.pt && map.get(label).pt !== label, `Untranslated design process label: ${label}`);
+}
+console.log('Porto STAR → process order, evidence-to-decision reasoning and bilingual process labels: OK');
