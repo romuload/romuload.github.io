@@ -24,7 +24,7 @@ if (carouselButton && carouselTrack) {
   carouselButton.addEventListener('click', () => {
     const paused = carouselButton.getAttribute('aria-pressed') !== 'true';
     carouselButton.setAttribute('aria-pressed', String(paused));
-    carouselButton.textContent = paused ? 'Retomar carrossel' : 'Pausar carrossel';
+    carouselButton.textContent = window.portfolioI18n?.t(paused ? 'Resume carousel' : 'Pause carousel') || (paused ? 'Resume carousel' : 'Pause carousel');
     carouselTrack.classList.toggle('paused', paused);
   });
 }
