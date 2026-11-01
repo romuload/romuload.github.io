@@ -36,3 +36,9 @@ O HTML é entregue em inglês. O seletor EN / PT traduz o texto editorial, naveg
 Para novos conteúdos, escreva o HTML em inglês e acrescente seu par inglês/português em `locale-data.js`. Inclua também os rótulos de acessibilidade e metadados. O idioma padrão não depende do idioma do navegador. Sem JavaScript, o conteúdo em inglês continua legível e a navegação funciona.
 
 `projeto-ilab.html` integra as dez seções do case original de https://romuload.github.io/ilab/case/, com imagens locais em `images/ilab-case/`, logo em `ilab-logo.js`, comparação antes/depois e narrativa por scroll. Pesquisa, atuação e resultado de infraestrutura reproduzem o material já existente do autor. O nome foi ajustado para Romulo Nascimento. A navegação e o seletor conectam o case ao portfólio; os botões de exploração continuam abrindo o protótipo original.
+
+## Símbolo e mockups
+
+A marca no cabeçalho usa apenas o símbolo reduzido aprovado, extraído da imagem fornecida pelo autor em `images/brand/rn-symbol.png`. Todas as páginas usam o mesmo favicon (ICO com 16/32 px, PNGs correspondentes e ícone Apple de 180 px).
+
+As telas dos mockups usam `object-fit: contain` e alinhamento superior para preservar a captura completa. A moldura do celular reserva espaço para a câmera e o indicador inferior sem sobrepor o conteúdo. As capturas móveis dos jogos foram refeitas em viewport de 390 × 844, usando as fotos enviadas como referência; a bancada iLab usa sua captura original de 780 × 1688. Os modelos desktop têm proporção 16:9, com 16:10 para o iLab. O case completo iLab também mantém as imagens integrais e o cabeçalho livre da câmera decorativa.
