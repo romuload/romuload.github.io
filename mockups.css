@@ -1,0 +1,58 @@
+/* Approved vector identity. The symbol has no bitmap, background, border or crop. */
+.identity{display:flex;align-items:center;gap:13px}
+.identity .brand-symbol,.portfolio-home .brand-symbol{display:block;width:58px;height:42px;object-fit:contain;border-radius:0;padding:0;filter:none}
+.name-text{display:block;font:500 16px/1.25 Manrope,Arial,sans-serif;color:#fff;letter-spacing:-.3px}
+.name-text small{display:block;font-size:10px;font-weight:400;line-height:1.3;color:#bdc1ca;letter-spacing:.5px;margin-top:5px}
+.portfolio-home{display:flex;align-items:center;gap:11px;text-decoration:none}
+.top .portfolio-home .brand-symbol{width:48px;height:36px}
+.top .name-text{font-size:14px}.top .name-text small{font-size:9px}
+/* All client marks share one white treatment, including their internal negative space. */
+.logo-slot img{filter:brightness(0) invert(1)!important;object-fit:contain;max-width:165px}
+.logo-slot .logo-itau{width:52px;height:52px}
+.logo-slot .logo-fiat{width:63px;height:51px}
+.logo-slot .logo-thomson{width:180px;height:38px;max-width:180px}
+.logo-slot .logo-sonda{width:145px;height:43px}
+.logo-track{animation-duration:38s}
+@media(prefers-reduced-motion:reduce){.logo-window{overflow:visible}.logo-track{width:100%}.logo-group{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:16px}.logo-group[aria-hidden=true]{display:none}.logo-slot{width:auto}.logo-slot img{max-width:90%}}
+/* Each screen has its own explicit viewport. Absolutely positioned captures cannot
+   contribute intrinsic height or grow underneath a clipping bezel. */
+.project-image.device-stage,.case-page>.project-image.device-stage{aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate}
+.device-stage .desktop-device{position:absolute;left:5%;top:8%;width:74%;filter:drop-shadow(0 12px 12px #0004)}
+.device-stage .desktop-screen,.case-page .device-stage .desktop-screen{position:relative;aspect-ratio:auto;border:0;border-radius:8px 8px 0 0;padding:1.2%;background:#181a1e;overflow:hidden}
+.desktop-browser{height:5cqw;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 3%;background:#e9ecf0;color:#626a74;border-radius:4px 4px 0 0;font:400 1.5cqw/1 Manrope,Arial,sans-serif;white-space:nowrap}
+.browser-lights{color:#8f98a5;font-size:1cqw;letter-spacing:1px}.desktop-url{display:flex;align-items:center;justify-content:center;width:65%;height:65%;border-radius:3px;background:#f8f9fa;color:#3d454e}.browser-reload{font-size:2cqw}
+.desktop-viewport{position:relative;width:100%;aspect-ratio:var(--capture-ratio,16/9);overflow:hidden;background:#f3f5f4}
+.device-stage .desktop-viewport>img{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;object-fit:contain;object-position:center;filter:none;transform:none!important;border-radius:0}
+.device-stage .desktop-chin,.case-page .device-stage .desktop-chin{height:2.5cqw;border-radius:0 0 5px 5px;background:linear-gradient(#d6d9de,#a5abb3)}
+.device-stage .desktop-stand,.case-page .device-stage .desktop-stand{height:5cqw;width:15%;margin:auto;background:linear-gradient(90deg,#9da3ad,#dce0e5,#9198a2)}
+.device-stage .desktop-foot{height:.9cqw;width:30%;margin:auto;background:#c3c9d0;border-radius:50% 50% 2px 2px}
+.device-stage .phone-device,.case-page .device-stage .phone-device{position:absolute;right:4%;top:17%;width:24%;height:auto;aspect-ratio:auto;padding:1%;border:0;border-radius:2.8cqw;background:#17191d;overflow:visible;box-shadow:0 8px 18px #0005;container-type:inline-size}
+.phone-inner{display:flex;flex-direction:column;overflow:hidden;border-radius:9cqw;background:#f5f6f7;container-type:inline-size}
+.phone-status{position:relative;height:9cqw;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 8%;color:#16191f;font:600 3.6cqw/1 Arial,sans-serif;background:#f4f5f7}
+.phone-island{position:absolute;width:31%;height:5.5cqw;border-radius:10cqw;background:#131518;left:34.5%;top:1.7cqw}
+.mobile-address{height:12cqw;margin:0 4% 2cqw;padding:0 5%;flex:none;display:flex;align-items:center;justify-content:space-between;gap:4%;border-radius:9cqw;background:#e4e7eb;color:#252a32;font:400 4cqw/1 Arial,sans-serif;white-space:nowrap}
+.mobile-address>span:nth-child(2){font-size:4.1cqw;letter-spacing:-.1px}
+.phone-viewport{position:relative;flex:none;width:100%;aspect-ratio:390/700;background:#fff;overflow:hidden}
+.device-stage .phone-viewport>img{position:absolute;inset:0;width:100%;height:100%;padding:0;object-fit:contain;object-position:top center;filter:none;transform:none!important;border-radius:0;background:#fff}
+.mobile-toolbar{display:flex;align-items:center;justify-content:space-around;height:11cqw;flex:none;padding:0 5%;background:#f3f5f7;color:#333b48;font:400 7cqw/1 Arial,sans-serif}
+.mobile-toolbar>span:nth-child(3){font-size:6cqw}.mobile-home{height:1.1cqw;width:30%;margin:1.2cqw auto 1.8cqw;border-radius:5px;background:#20242a}
+.image-repar .phone-status{background:#172d3f;color:#fff}.image-repar .phone-island{background:#080d12}
+/* Imported iLab case: the same browser chrome stays outside the original capture. */
+body:has(.top) .phone{aspect-ratio:auto;height:auto}
+body:has(.top) .phone .in{height:auto;padding:0;display:flex;flex-direction:column;container-type:inline-size}
+body:has(.top) .phone .in::before{display:none}
+body:has(.top) .phone-viewport>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top center}
+body:has(.top) .screen{position:relative;aspect-ratio:16/10}
+body:has(.top) .screen>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top center}
+@media(max-width:767px){
+ .identity{gap:10px}.identity .brand-symbol{width:46px;height:34px}.name-text{font-size:14px}.name-text small{font-size:9px}
+ .logo-slot .logo-thomson{width:140px;max-width:140px}.logo-slot .logo-sonda{width:120px}.logo-slot .logo-fiat{width:50px;height:42px}
+ .project-image.device-stage,.case-page>.project-image.device-stage{aspect-ratio:1.35}
+ .device-stage .desktop-device{top:10%}.device-stage .phone-device,.case-page .device-stage .phone-device{top:18%}
+ .desktop-browser{height:5.5cqw;font-size:1.6cqw}.desktop-viewport{min-height:0}
+ .top .portfolio-home{flex:1;min-width:210px}.top>a[href="#hero"]{display:none}.top>.btn{order:3;flex:1;max-width:180px}.top .lang-switch{order:2}.top .sp{display:none}
+}
+/* The phone sits beside the monitor, never on top of screenshot content. */
+.device-stage .desktop-device{left:3%;width:70%;top:12%}
+.device-stage .phone-device,.case-page .device-stage .phone-device{right:3%;width:22%;top:20%}
+.device-stage .mobile-toolbar>img,body:has(.top) .mobile-toolbar>img{position:static;display:block;width:6.5cqw;height:6.5cqw;padding:0;object-fit:contain;filter:none;transform:none!important;background:transparent;border-radius:0}

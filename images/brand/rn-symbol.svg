@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 92 64" width="92" height="64" fill="none">
+  <title>Romulo Nascimento — RN</title>
+  <desc>Monograma rn em curvas vetoriais, sem fundo.</desc>
+  <g id="rn" fill="#fff">
+    <path id="r" d="M6 64V18h11v8c5-7 12-10 22-9v12c-13-2-22 4-22 16v19H6Z"/>
+    <path id="n" d="M36 64V39c0-15 10-24 25-24s25 9 25 24v25H74V39c0-8-5-13-13-13s-13 5-13 13v25H36Z"/>
+  </g>
+</svg>
