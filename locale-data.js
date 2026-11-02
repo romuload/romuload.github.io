@@ -2264,28 +2264,28 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Tempo de análise"
   ],
   [
-    "Before/after estimate, timing analysts completing a claim in both versions.",
-    "Estimativa antes/depois, cronometrando analistas concluindo um sinistro nas duas versões."
+    "45–60 min per claim in the legacy system, about 25 min with the guided analysis.",
+    "45 a 60 min por sinistro no sistema legado, cerca de 25 min com a análise guiada."
   ],
   [
     "Navigation steps",
     "Etapas de navegação"
   ],
   [
-    "Before/after estimate, timing analysts completing a claim in both versions.",
-    "Estimativa antes/depois, cronometrando analistas concluindo um sinistro nas duas versões."
+    "45–60 min per claim in the legacy system, about 25 min with the guided analysis.",
+    "45 a 60 min por sinistro no sistema legado, cerca de 25 min com a análise guiada."
   ],
   [
-    "How these were measured: by direct observation, estimating how long an analyst took to complete a claim, and how many steps it took, in the legacy system and in the new version. They are observational estimates, not production analytics.",
-    "Como foram medidos: por observação direta, estimando quanto tempo e quantas etapas um analista levava para concluir um sinistro no sistema legado e na nova versão. São estimativas por observação, não dados de produção."
+    "How these were measured: I observed five analysts completing claims in the legacy system, where gathering information across tabs took 45 to 60 minutes per claim. With the four-step guided analysis, the same work took about 25 minutes. These are observational estimates, not production analytics; I left the project before production data was available.",
+    "Como foram medidos: observei cinco analistas concluindo sinistros no sistema legado, onde reunir as informações pelas abas levava de 45 a 60 minutos por sinistro. Com a análise guiada em quatro etapas, o mesmo trabalho levava cerca de 25 minutos. São estimativas por observação, não dados de produção; saí do projeto antes de haver dados de produção."
   ],
   [
     "What the work delivers",
     "O que o trabalho entrega"
   ],
   [
-    "A documented journey, a synthesis of recurring pain points, shared design principles and a Salesforce proposal spanning dashboard, queues, analysis, documents, regulation and payments.",
-    "Uma jornada documentada, uma síntese das dores recorrentes, princípios compartilhados de design e uma proposta Salesforce que abrange dashboard, filas, análise, documentos, regulação e pagamentos."
+    "The four-step guided analysis, which I designed and took through implementation while on the project. The rest of the proposal (dashboard, queues, documents, regulation and payments) became backlog for the GFT team to continue after I left.",
+    "A análise guiada em quatro etapas, que desenhei e levei até a implementação enquanto estive no projeto. O restante da proposta (dashboard, filas, documentos, regulação e pagamentos) virou backlog para o time da GFT seguir depois da minha saída."
   ],
   [
     "What success needs to track",
@@ -2575,9 +2575,15 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The question", "A pergunta"],
   ["How could we customize the experience so analysts would stop hunting for fields, as they did in the legacy system?", "Como customizar a experiência para que o analista não precisasse mais caçar campos pelo produto, como acontecia no legado?"],
   ["The turning point", "A virada"],
-  ["I took the problem to the Salesforce specialists, and the answer was OmniScript. Native to the platform, it kept Salesforce’s standard information layout while the guided flow brought data from several tabs and sources into each step of the analysis. That is how the guided analysis was born.", "Levei o problema aos especialistas de Salesforce, e a resposta foi o OmniScript. Nativo da plataforma, ele mantinha o padrão de distribuição de informações do Salesforce, enquanto o fluxo guiado reunia em cada etapa da análise dados de várias abas e origens. Foi assim que nasceu a análise guiada."],
+  ["I mapped the fields analysts kept searching for and grouped them into four steps. Then I took the problem to the Salesforce specialists, and the answer was OmniScript: native to the platform, it kept Salesforce’s standard layout while the guided flow brought data from several tabs and sources into each step. That is how the guided analysis was born.", "Mapeei os campos que os analistas viviam procurando e agrupei tudo em quatro etapas. Depois levei o problema aos especialistas de Salesforce, e a resposta foi o OmniScript: nativo da plataforma, ele mantinha o padrão do Salesforce enquanto o fluxo guiado reunia, em cada etapa, dados de várias abas e origens. Foi assim que nasceu a análise guiada."],
   ["In the first migrated version, legacy fields were spread across Salesforce tabs, and analysts asked where their information had gone.", "Na primeira versão migrada, os campos do legado estavam espalhados pelas abas do Salesforce, e os analistas perguntavam para onde tinham ido suas informações."],
   ["Changing platforms without changing how information reaches the analyst would only move the search somewhere else.", "Trocar de plataforma sem mudar como a informação chega ao analista só mudaria a busca de lugar."],
-  ["Use OmniScript, native to Salesforce, to gather data from different tabs and sources into a single guided analysis.", "Usar o OmniScript, nativo do Salesforce, para reunir dados de abas e origens diferentes numa única análise guiada."],
-  ["Before/after estimate, counting the steps to complete the same claim in both versions.", "Estimativa antes/depois, contando as etapas para concluir o mesmo sinistro nas duas versões."]
+  ["Group the fields analysts searched for into four steps and deliver them as a guided analysis with OmniScript, native to Salesforce.", "Agrupar os campos que os analistas buscavam em quatro etapas e entregá-los como uma análise guiada com OmniScript, nativo do Salesforce."],
+  ["Before/after estimate, counting the steps to complete the same claim in both versions.", "Estimativa antes/depois, contando as etapas para concluir o mesmo sinistro nas duas versões."],
+  ["The guided analysis", "A análise guiada"],
+  ["Notice", "Aviso"],
+  ["Policy", "Apólice"],
+  ["Summary", "Resumo"],
+  ["Opinion", "Parecer"],
+  ["The information analysts used to hunt for across tabs, in the order they need it.", "As informações que os analistas caçavam pelas abas, na ordem em que precisam delas."]
 ]);
