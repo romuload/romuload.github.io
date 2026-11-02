@@ -1727,6 +1727,18 @@ window.PORTFOLIO_TRANSLATIONS = [
   [
     "WhatsApp opened with your message. Just tap send.",
     "O WhatsApp abriu com a sua mensagem. É só tocar em enviar."
+  ],
+  [
+    "Interactive animation of the legacy claim analysis workflow",
+    "Animação interativa do fluxo de análise de sinistro no sistema legado"
+  ],
+  [
+    "The legacy workflow, step by step: one claim, five screens and a text file. Use the controls to move through each stage. Personal data has been blurred.",
+    "O fluxo legado, passo a passo: um sinistro, cinco telas e um arquivo de texto. Use os controles para navegar por cada etapa. Os dados pessoais foram borrados."
+  ],
+  [
+    "Open full screen",
+    "Abrir em tela cheia"
   ]
 ];
 
