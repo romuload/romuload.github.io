@@ -2586,5 +2586,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Summary", "Resumo"],
   ["Opinion", "Parecer"],
   ["The information analysts used to hunt for across tabs, in the order they need it.", "As informações que os analistas caçavam pelas abas, na ordem em que precisam delas."],
-  ["Analysis time (up to)", "Tempo de análise (até)"]
+  ["Analysis time (up to)", "Tempo de análise (até)"],
+  ["How I reduced claims analysis time by up to 60% at Porto Seguro", "Como reduzi o tempo de análise de sinistros em até 60% na Porto Seguro"],
+  ["Inside the project: How I reduced claims analysis time by up to 60% at Porto Seguro", "Por dentro do projeto: Como reduzi o tempo de análise de sinistros em até 60% na Porto Seguro"]
 ]);
