@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guided claim analysis · Porto Seguro | Romulo Nascimento</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<style>
+  @font-face{font-family:Manrope;src:url(../fonts/manrope-regular.ttf) format("truetype");font-weight:400 500;font-display:swap}
+  @font-face{font-family:Manrope;src:url(../fonts/manrope-semibold.ttf) format("truetype");font-weight:600 800;font-display:swap}
+  :root{--bg:#061321;--line:#173450;--text:#eef3f7;--muted:#8ea3b5;--accent:#62c2f5;--accent2:#83d5ff;--sf:#0176d3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--bg)}
+  body{font-family:Manrope,system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+  #stage{position:absolute;left:0;top:0;width:1920px;height:960px;overflow:hidden;transform-origin:0 0;
+    background:radial-gradient(1200px 700px at 30% 40%,#0f2c47 0%,var(--bg) 70%)}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:96px 96px;opacity:.28;mask-image:radial-gradient(900px 600px at 50% 50%,#000 30%,transparent 100%)}
+  .abs{position:absolute}
+
+  #kicker{left:80px;top:46px;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  #caption{left:80px;top:72px;height:56px;width:1340px;display:flex;align-items:center;gap:18px}
+  #stepnum{font-weight:700;font-size:18px;color:#032039;background:var(--accent);border-radius:999px;padding:6px 14px;font-variant-numeric:tabular-nums}
+  #captext{font-size:34px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+
+  /* Salesforce window */
+  .card{position:absolute;left:80px;top:150px;width:1340px;height:754px;border-radius:14px;overflow:hidden;background:#b0c4df;
+    box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);transform-origin:0 0}
+  .screen{position:absolute;left:0;top:0;width:1440px;transform-origin:0 0}
+  .screen img{position:absolute;left:0;top:0;width:1440px;display:block;opacity:0}
+  .screen .tick{position:absolute;z-index:5;width:16px;height:16px;border-radius:3px;background:var(--sf);opacity:0}
+  .screen .tick::after{content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .screen .flash{position:absolute;z-index:5;border:3px solid var(--accent);border-radius:6px;box-shadow:0 0 0 6px rgba(98,194,245,.25);opacity:0}
+  #footer{position:absolute;left:0;bottom:0;width:1340px;height:37.2px;display:block}
+
+  /* guided panel */
+  #panel{left:1460px;top:150px;width:380px;border-radius:14px;padding:26px 24px 22px;background:linear-gradient(160deg,#10283e,#0b1e31);
+    border:1px solid #24425c;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  #panel .ph{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  #panel .pt{font-size:26px;font-weight:700;margin:8px 0 4px;letter-spacing:-.01em}
+  #panel .ps{font-size:14px;color:var(--muted);margin-bottom:20px}
+  .wz{list-style:none;position:relative}
+  .wz li{display:flex;align-items:center;gap:14px;padding:11px 0;position:relative;font-size:19px;font-weight:600;color:#6f8aa0;transition:color .3s}
+  .wz li .dot{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid #2d4d68;display:grid;place-items:center;font-size:13px;font-weight:700;color:#6f8aa0;background:#0b1e31;transition:all .3s;position:relative;z-index:1}
+  .wz li:not(:last-child)::after{content:"";position:absolute;left:14px;top:41px;width:2px;height:22px;background:#24425c}
+  .wz li.cur{color:#f1f7fc}.wz li.cur .dot{border-color:var(--accent2);color:var(--accent2);box-shadow:0 0 0 6px rgba(131,213,255,.18)}
+  .wz li.done{color:#bed0e0}.wz li.done .dot{background:var(--accent);border-color:var(--accent);color:#032039}
+  #pbar{height:6px;border-radius:6px;background:#1d3a55;margin:18px 0 6px;overflow:hidden}
+  #pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2b80bd,var(--accent2))}
+  #pstatus{font-size:13px;color:var(--muted);min-height:18px}
+  .ctrs{display:flex;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid #24425c}
+  .ctr{width:31%}
+  .ctr .n{font-size:34px;font-weight:700;line-height:1;color:var(--accent2);font-variant-numeric:tabular-nums}
+  .ctr .l{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.3}
+  .ctr .was{font-size:11.5px;color:#ff9a76;margin-top:6px;font-weight:600}
+
+  #cursor{width:34px;height:40px;left:0;top:0;filter:drop-shadow(0 3px 4px rgba(0,0,0,.5));z-index:40}
+  #ripple{width:60px;height:60px;border-radius:50%;border:3px solid var(--accent);z-index:39}
+
+  #intro{left:0;top:0;width:1920px;height:960px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:50}
+  #intro .t1{font-size:76px;font-weight:700;letter-spacing:-.025em}
+  #intro .t2{font-size:28px;color:var(--muted);margin-top:22px;font-weight:500}
+  #outroH{left:80px;top:62px;width:1760px;z-index:30}
+  #outroH .t1{font-size:56px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  #outroH .t1 b{color:var(--accent2)}
+  #outroH .t2{font-size:26px;color:var(--muted);margin-top:14px;font-weight:500}
+  #outroH .t3{font-size:22px;color:#bed0e0;margin-top:20px;font-weight:500;display:inline-flex;gap:10px;padding:12px 18px;border:1px solid #2b5673;border-radius:10px;background:#0c2339}
+  #outroH .t3 b{color:var(--accent2)}
+
+  /* controls (outside the scaled stage, real pixels) */
+  #ctrl{position:fixed;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;gap:14px;padding:0 16px;
+    background:#061321;border-top:1px solid #173450;z-index:60;font-family:Manrope,system-ui,sans-serif}
+  .cbtn{width:40px;height:40px;border-radius:50%;border:1px solid #41637b;background:transparent;color:#badff6;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;padding:0}
+  .cbtn:hover{background:#123653}
+  .cbtn:focus-visible,.step:focus-visible{outline:3px solid #bce9ff;outline-offset:3px}
+  .cbtn svg{width:18px;height:18px;fill:currentColor}
+  #steps{flex:1;display:flex;gap:10px;height:100%;min-width:0}
+  .step{flex:1;min-width:0;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:9px;border:0;background:none;color:#8da9bf;text-align:left;font:inherit;padding:0}
+  .step .bar{height:3px;border-radius:3px;background:#1d3a55;overflow:hidden;display:block}
+  .step .bar i{display:block;height:100%;width:0;background:#62c2f5}
+  .step .lb{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;gap:7px}
+  .step .lb b{font-variant-numeric:tabular-nums;color:#5f8099;font-weight:600}
+  .step.on .lb{color:#f1f7fc} .step.on .lb b{color:#83d5ff}
+  .step:hover .lb{color:#f1f7fc}
+  @media (max-width:760px){ .step .lb .tx{display:none} #ctrl{gap:10px;padding:0 10px} }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="grid"></div>
+  <div id="kicker" class="abs" data-i="kicker"></div>
+  <div id="caption" class="abs"><span id="stepnum">01</span><span id="captext"></span></div>
+
+  <div class="card" id="card">
+    <div class="screen" id="screen"></div>
+    <img id="footer" src="../images/porto/guided-flow/footer.webp" alt="">
+  </div>
+
+  <aside id="panel" class="abs">
+    <div class="ph">OmniScript</div>
+    <div class="pt" data-i="panelT"></div>
+    <div class="ps" data-i="panelS"></div>
+    <ol class="wz" id="wz"></ol>
+    <div id="pbar"><i></i></div>
+    <div id="pstatus"></div>
+    <div class="ctrs">
+      <div class="ctr"><div class="n">1</div><div class="l" data-i="c1"></div><div class="was" data-i="w1"></div></div>
+      <div class="ctr"><div class="n">0</div><div class="l" data-i="c2"></div><div class="was" data-i="w2"></div></div>
+      <div class="ctr"><div class="n">0</div><div class="l" data-i="c3"></div><div class="was" data-i="w3"></div></div>
+    </div>
+  </aside>
+
+  <div id="ripple" class="abs"></div>
+  <svg id="cursor" class="abs" viewBox="0 0 34 40"><path d="M3 2 L3 33 L11 25.5 L16.5 37.5 L22 35 L16.6 23.2 L27.5 23.2 Z" fill="#fff" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/></svg>
+
+  <div id="intro" class="abs"><div class="t1" data-i="i1"></div><div class="t2" data-i="i2"></div></div>
+  <div id="outroH" class="abs"><div class="t1" data-i="o1"></div><div class="t2" data-i="o2"></div><div class="t3" data-i="o3"></div></div>
+</div>
+
+<div id="ctrl" role="group" aria-label="Animation controls">
+  <button type="button" class="cbtn" id="bPlay" data-a="play"><svg id="icPlay" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+  <div id="steps"></div>
+  <button type="button" class="cbtn" id="bPrev" data-a="prev"><svg viewBox="0 0 24 24"><path d="M15.5 4 7.5 12l8 8 1.6-1.6L10.7 12l6.4-6.4z"/></svg></button>
+  <button type="button" class="cbtn" id="bNext" data-a="next"><svg viewBox="0 0 24 24"><path d="M8.5 4 6.9 5.6 13.3 12l-6.4 6.4L8.5 20l8-8z"/></svg></button>
+</div>
+
+<script>
+// ---------- helpers
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const prog=(t,a,b)=>clamp((t-a)/(b-a));
+const eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eout=p=>1-Math.pow(1-p,3);
+const back=p=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2)};
+const $=id=>document.getElementById(id);
+function show(el,o){el.style.opacity=o;el.style.visibility=o<=0.001?'hidden':'visible'}
+
+// ---------- geometry: the demo was captured at 1440×810 CSS px; the window is 1340 px wide
+const S=1340/1440, CARD={x:80,y:150};
+const H={ '01-dashboard':1842,'02-list':810,'03-case':1481,'04-s1-closed':1363,'05-s1-aviso':1363,'06-s1-full':1562,'07-s2-closed':1363,'08-s2-open':1363,
+  '09-s3-closed':1363,'10-s3-seguro':1363,'11-s3-vitima':1449,'12-s4-closed':1363,'13-s4-parecer':1363,'14-s4-checked':1363,'15-s4-ready':1363,'16-done':1481 };
+
+// ---------- timeline (seconds)
+const SC={intro:[0,2.4], s1:[2.4,7.0], s2:[7.0,12.95], s3:[12.95,16.55], s4:[16.55,22.15], s5:[22.15,29.6], outro:[29.6,36]};
+const DUR=36;
+// which capture is on screen
+const FR=[[2.4,'01-dashboard'],[4.15,'02-list'],[5.45,'03-case'],[6.85,'04-s1-closed'],[8.25,'05-s1-aviso'],[10.55,'06-s1-full'],
+  [12.85,'07-s2-closed'],[14.25,'08-s2-open'],[16.45,'09-s3-closed'],[17.85,'10-s3-seguro'],[19.85,'11-s3-vitima'],
+  [22.05,'12-s4-closed'],[23.45,'13-s4-parecer'],[26.25,'14-s4-checked'],[27.25,'15-s4-ready'],[28.95,'16-done']];
+// page scroll inside the window: [start, end, to]  (a jump when start==end)
+const SCR=[[8.6,9.6,450],[10.8,11.8,792],[12.85,12.85,0],[14.5,15.4,556],[16.45,16.45,0],[18.1,18.9,376],[20.1,21.0,679],[22.05,22.05,0],[27.4,28.0,239],[28.95,28.95,0]];
+// cursor path in page coordinates: [time, x, y]
+const TX=170; // where a section title gets clicked
+const CUR=[[3.0,900,620],[3.9,348,316],[4.4,348,316],[5.2,1066,235],[5.7,1066,235],[6.6,80,387],[7.3,80,387],
+  [8.0,TX,379],[8.3,TX,379],[10.3,TX,920],[10.6,TX,920],[12.6,903,1450],[13.3,903,1450],
+  [14.0,TX,379],[14.3,TX,379],[16.2,903,1116],[16.9,903,1116],[17.6,TX,379],[17.9,TX,379],[19.6,TX,826],[19.9,TX,826],[21.8,903,1337],
+  [22.5,903,1337],[23.2,TX,379],[23.7,TX,379],[24.2,58,519],[24.4,58,519],[24.7,58,545],[24.9,58,545],[25.2,58,571],[25.5,58,571],[26.0,TX,611],
+  [26.5,TX,611],[27.0,58,647],[27.3,58,647],[28.7,898,799],[28.9,898,799]];
+const CLICKS=[[4.0,348,316],[5.3,1066,235],[6.7,80,387],[8.1,TX,379,'t'],[10.4,TX,920,'t'],[12.7,903,1450],[14.1,TX,379,'t'],[16.3,903,1116],
+  [17.7,TX,379,'t'],[19.7,TX,826,'t'],[21.9,903,1337],[23.3,TX,379,'t'],[24.3,58,519],[24.8,58,545],[25.3,58,571],[26.1,TX,611,'t'],[27.1,58,647],[28.8,898,799]];
+const TICKS=[[24.3,58,519],[24.8,58,545],[25.3,58,571]];
+// wizard state: [time, current step (1-4), 5 = completed]
+const WZ=[[6.85,1],[12.85,2],[16.45,3],[22.05,4],[28.95,5]];
+
+function scrollAt(t){
+  let y=0;
+  for(const [a,b,to] of SCR){ if(t>=b){ y=to; continue; } if(t>a){ y=lerp(y,to,eio(prog(t,a,b))); } break; }
+  return y;
+}
+function toStage(t,px,py){ const sy=scrollAt(t); return [CARD.x+px*S, CARD.y+(py-sy)*S]; }
+
+// ---------- build screen layers
+const screen=$('screen');
+const IMGS={};
+Object.keys(H).forEach(k=>{ const im=new Image(); im.src=`../images/porto/guided-flow/${k}.webp`; im.alt=''; im.decoding='async'; im.style.height=H[k]+'px'; screen.appendChild(im); IMGS[k]=im; });
+const tickEls=TICKS.map(([t,x,y])=>{ const d=document.createElement('div'); d.className='tick'; d.style.left=(x-8)+'px'; d.style.top=(y-8)+'px'; screen.appendChild(d); return d; });
+const flash=document.createElement('div'); flash.className='flash'; screen.appendChild(flash);
+
+// ---------- language (follows the portfolio's EN/PT switch)
+const TXT={
+ en:{kicker:'Salesforce · Guided analysis with OmniScript',i1:'One claim. One guided flow.',i2:'The same analysis, now in Salesforce, in four steps',
+  panelT:'Guided analysis',panelS:'The fields analysts used to hunt for, in order',
+  c1:'screen<br>in use',c2:'copy<br>&amp; paste',c3:'external<br>tools',w1:'legacy: 5',w2:'legacy: 4',w3:'legacy: 2',
+  wz:['Notice','Policy','Summary','Opinion'],before:'Opens when the analyst clicks Analyze',stepOf:(n)=>`Step ${n} of 4`,done:'Analysis completed',
+  o1:'<b>1 screen</b>, 4 guided steps, 0 external tools',o2:'Everything the analyst used to hunt for, in the order it is needed.',o3:'Observed: <b>45–60 min → ~25 min</b> per claim',
+  play:'Play or pause',prev:'Previous step',next:'Next step',
+  caps:['Opens the claim from the dashboard','Notice: what was reported, in one step','Policy: coverage and policyholder, next','Summary: the case consolidated for review','Opinion: checks, decision and done'],
+  steps:['Dashboard to claim','Notice','Policy','Summary','Opinion','Result']},
+ pt:{kicker:'Salesforce · Análise guiada com OmniScript',i1:'Um sinistro. Um fluxo guiado.',i2:'A mesma análise, agora no Salesforce, em quatro etapas',
+  panelT:'Análise guiada',panelS:'Os campos que o analista caçava, em ordem',
+  c1:'tela<br>em uso',c2:'copia<br>e cola',c3:'ferramentas<br>externas',w1:'legado: 5',w2:'legado: 4',w3:'legado: 2',
+  wz:['Aviso','Apólice','Resumo','Parecer'],before:'Abre quando o analista clica em Analisar',stepOf:(n)=>`Etapa ${n} de 4`,done:'Análise concluída',
+  o1:'<b>1 tela</b>, 4 etapas guiadas, 0 ferramentas externas',o2:'Tudo o que o analista caçava, na ordem em que precisa.',o3:'Observado: <b>45–60 min → ~25 min</b> por sinistro',
+  play:'Reproduzir ou pausar',prev:'Etapa anterior',next:'Próxima etapa',
+  caps:['Abre o sinistro a partir do dashboard','Aviso: o que foi relatado, numa etapa só','Apólice: cobertura e segurado, na sequência','Resumo: o caso consolidado para revisão','Parecer: conferências, decisão e pronto'],
+  steps:['Do dashboard ao caso','Aviso','Apólice','Resumo','Parecer','Resultado']}
+};
+function detectLang(){
+  try{ if(parent!==window){ const l=parent.document.documentElement.lang; if(l) return l.toLowerCase().startsWith('pt')?'pt':'en'; } }catch(e){}
+  const q=new URLSearchParams(location.search).get('lang'); if(q==='pt'||q==='en') return q;
+  try{ const s=localStorage.getItem('portfolio-language'); if(s==='pt'||s==='en') return s; }catch(e){}
+  return 'en';
+}
+let LANG=detectLang();
+function applyLang(){
+  const T=TXT[LANG]; document.documentElement.lang=LANG==='pt'?'pt-BR':'en';
+  document.querySelectorAll('[data-i]').forEach(el=>el.innerHTML=T[el.dataset.i]);
+  document.querySelectorAll('[data-a]').forEach(el=>el.setAttribute('aria-label',T[el.dataset.a]));
+  $('wz').innerHTML=T.wz.map((s,i)=>`<li><span class="dot">${i+1}</span>${s}</li>`).join('');
+  document.querySelectorAll('#steps .step .tx').forEach((el,k)=>el.textContent=T.steps[k]);
+  document.querySelectorAll('#steps .step').forEach((el,k)=>el.setAttribute('aria-label',(k<5?'0'+(k+1)+' ':'')+T.steps[k]));
+}
+try{ if(parent!==window){ const sync=()=>{ const n=detectLang(); if(n!==LANG){ LANG=n; applyLang(); } };
+  new MutationObserver(sync).observe(parent.document.documentElement,{attributes:true,attributeFilter:['lang']}); parent.addEventListener('portfolio-language-change',sync);} }catch(e){}
+
+// ---------- render one moment
+const CAPS=[SC.s1,SC.s2,SC.s3,SC.s4,SC.s5];
+function render(t){
+  const T=TXT[LANG];
+  // intro
+  const io=prog(t,0.15,0.75)*(1-prog(t,1.9,2.35));
+  show($('intro'),io); $('intro').style.transform=`translateY(${lerp(18,0,eout(prog(t,0.15,0.9)))}px)`;
+
+  // header
+  const ui=prog(t,2.4,2.9)*(1-prog(t,29.6,30.0));
+  show($('kicker'),ui);
+  let k=-1; CAPS.forEach((c,i)=>{ if(t>=c[0]-0.05) k=i; });
+  if(k>=0){ $('stepnum').textContent='0'+(k+1); $('captext').textContent=T.caps[k];
+    const ci=eout(prog(t,CAPS[k][0]-0.05,CAPS[k][0]+0.35)); show($('caption'),ui*ci); $('caption').style.transform=`translateY(${lerp(14,0,ci)}px)`; }
+  else show($('caption'),0);
+
+  // window: rises in, then shrinks for the result
+  const card=$('card'), rise=eout(prog(t,2.4,3.0)), o=eio(prog(t,29.7,30.9));
+  show(card,rise);
+  card.style.transform=`translate(0px,${lerp(70,0,rise)+lerp(0,165,o)}px) scale(${lerp(1,0.78,o)})`;
+
+  // which capture
+  let cur=FR[0][1], prev=null, since=0;
+  FR.forEach(([ft,name],i)=>{ if(t>=ft){ prev=i>0?FR[i-1][1]:null; cur=name; since=ft; } });
+  const cross=prog(t,since,since+0.18);
+  Object.entries(IMGS).forEach(([name,im])=>{ im.style.opacity = name===cur ? 1 : (name===prev && cross<1 ? 1 : 0); im.style.zIndex = name===cur?2:1; });
+  IMGS[cur].style.opacity=cross; if(prev) IMGS[prev].style.opacity = cross<1 ? 1 : 0;
+  const sy=scrollAt(t);
+  screen.style.transform=`scale(${S}) translateY(${-sy}px)`;
+
+  // ticks drawn while the checkboxes are being clicked
+  TICKS.forEach(([tt],i)=>{ const p=back(prog(t,tt,tt+0.18)); tickEls[i].style.opacity = t>=tt && t<26.4 ? 1 : 0; tickEls[i].style.transform=`scale(${t>=tt?lerp(.4,1,p):1})`; });
+
+  // section title flash on click
+  let fl=0;
+  CLICKS.forEach(([ct,x,y,kind])=>{ if(kind==='t' && t>=ct && t<ct+0.7){ fl=1-prog(t,ct+0.25,ct+0.7); flash.style.left='50px'; flash.style.top=(y-17)+'px'; flash.style.width='906px'; flash.style.height='34px'; } });
+  flash.style.opacity=fl;
+
+  // panel
+  const po=prog(t,2.6,3.2);
+  show($('panel'),po);
+  $('panel').style.transform=`translate(${lerp(40,0,eout(po))}px,${lerp(0,150,eio(prog(t,29.7,30.9)))}px)`;
+  let wz=0; WZ.forEach(([wt,s])=>{ if(t>=wt) wz=s; });
+  [...$('wz').children].forEach((li,i)=>{ const n=i+1; li.className = wz===0?'' : n<wz||wz===5 ? 'done' : n===wz ? 'cur' : ''; li.querySelector('.dot').textContent = (n<wz||wz===5)?'✓':n; });
+  let pct=0; if(wz>0){ const nextT=(WZ[WZ.findIndex(w=>w[1]===wz)+1]||[t])[0], curT=WZ.find(w=>w[1]===wz)[0]; pct = wz===5?1 : ((wz-1)+prog(t,curT,nextT))/4; }
+  $('pbar').firstElementChild.style.width=(pct*100)+'%';
+  $('pstatus').textContent = wz===0 ? T.before : wz===5 ? '✓ '+T.done : T.stepOf(wz);
+
+  // cursor
+  const cv=t>=CUR[0][0] && t<=CUR[CUR.length-1][0];
+  if(cv){
+    let p=CUR[CUR.length-1];
+    let pos=toStage(t,p[1],p[2]);
+    for(let i=0;i<CUR.length-1;i++){ const a=CUR[i],b=CUR[i+1]; if(t>=a[0]&&t<=b[0]){ const e=eio(prog(t,a[0],b[0])); const pa=toStage(t,a[1],a[2]), pb=toStage(t,b[1],b[2]); pos=[lerp(pa[0],pb[0],e),lerp(pa[1],pb[1],e)]; break; } }
+    show($('cursor'),prog(t,CUR[0][0],CUR[0][0]+0.25)); let press=1;
+    CLICKS.forEach(([ct])=>{ if(t>=ct&&t<ct+0.12) press=0.86; });
+    $('cursor').style.transform=`translate(${pos[0]-3}px,${pos[1]-2}px) scale(${press})`;
+  } else show($('cursor'),0);
+  let rip=false;
+  CLICKS.forEach(([ct,x,y])=>{ if(t>=ct&&t<ct+0.45){ rip=true; const p=toStage(t,x,y), q=prog(t,ct,ct+0.45); const r=$('ripple');
+    r.style.left=(p[0]-30)+'px'; r.style.top=(p[1]-30)+'px'; r.style.transform=`scale(${lerp(0.2,1.4,eout(q))})`; show(r,1-q); } });
+  if(!rip) show($('ripple'),0);
+
+  // result
+  const oh=eout(prog(t,30.2,30.8)), oh2=eout(prog(t,30.8,31.4)), oh3=eout(prog(t,31.4,32.0));
+  show($('outroH'),oh); $('outroH').style.transform=`translateY(${lerp(20,0,oh)}px)`;
+  $('outroH').querySelector('.t2').style.opacity=oh2;
+  const t3=$('outroH').querySelector('.t3'); t3.style.opacity=oh3; t3.style.transform=`translateY(${lerp(10,0,oh3)}px)`;
+}
+
+// ---------- fit the 1920×960 stage above the controls
+const q=new URLSearchParams(location.search);
+function fit(){ const bar=64, st=$('stage'), w=innerWidth, h=innerHeight-bar, k=Math.min(w/1920,h/960);
+  st.style.transform=`translate(${(w-1920*k)/2}px,${Math.max(0,(h-960*k)/2)}px) scale(${k})`; }
+addEventListener('resize',fit); fit();
+
+// ---------- player
+const STEPS=[SC.s1,SC.s2,SC.s3,SC.s4,SC.s5,SC.outro];
+const LEAD=0.3, END=DUR-0.5;
+const startOf=k=> k===0 ? STEPS[0][0] : STEPS[k][0]-LEAD;
+const endOf=k=> k===STEPS.length-1 ? END : STEPS[k][1]-0.12;
+const REDUCED=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let t = q.has('t') ? parseFloat(q.get('t')) : (REDUCED ? 6.95 : 0), playing=false, stopAt=null, last=null, started=false;
+const box=$('steps');
+STEPS.forEach((s,k)=>{ const b=document.createElement('button'); b.className='step'; b.type='button';
+  b.innerHTML=`<span class="bar"><i></i></span><span class="lb"><b>${k<5?'0'+(k+1):'✓'}</b><span class="tx"></span></span>`; b.onclick=()=>go(k); box.appendChild(b); });
+const stepEls=[...box.children];
+applyLang();
+const curStep=()=>{ let k=-1; STEPS.forEach((s,i)=>{ if(t>=s[0]-0.05) k=i; }); return k; };
+function go(k){ k=Math.max(0,Math.min(STEPS.length-1,k)); t=startOf(k); stopAt=endOf(k); playing=true; started=true; }
+function next(){ const k=curStep(); if(k>=STEPS.length-1) return; const n=k+1; t=Math.max(t,startOf(n)); stopAt=endOf(n); playing=true; started=true; }
+function prev(){ const k=curStep(); go(t>startOf(Math.max(k,0))+1.2 ? k : k-1); }
+function toggle(){ if(playing){ playing=false; return; } if(t>=END-0.01) t=0; stopAt=null; playing=true; started=true; }
+$('bPlay').onclick=toggle; $('bNext').onclick=next; $('bPrev').onclick=prev;
+addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){next();e.preventDefault();} else if(e.key==='ArrowLeft'){prev();e.preventDefault();} else if(e.key===' '){toggle();e.preventDefault();} });
+let autoOn=false;
+if(!q.has('t')){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting && !started && !REDUCED){ toggle(); autoOn=true; }
+    else if(!en.isIntersecting && autoOn && playing){ playing=false; }
+  }),{threshold:.4});
+  io.observe(document.body);
+}
+const PLAY='<path d="M7 4.5v15l13-7.5z"/>', PAUSE='<path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/>', REPLAY='<path d="M12 5V2L7.5 6.5 12 11V8a5 5 0 1 1-5 5H5a7 7 0 1 0 7-8z"/>';
+function frame(now){
+  if(last===null) last=now;
+  const dt=Math.min(0.05,(now-last)/1000); last=now;
+  if(playing){ t+=dt; if(stopAt!==null && t>=stopAt){ t=stopAt; playing=false; } if(t>=END){ t=END; playing=false; } }
+  render(t);
+  const k=curStep();
+  stepEls.forEach((el,i)=>{ el.classList.toggle('on',i===k); const a=STEPS[i][0], b=i===STEPS.length-1?END:STEPS[i][1]; el.querySelector('i').style.width=(prog(t,a,b)*100)+'%'; });
+  $('icPlay').innerHTML = playing ? PAUSE : (t>=END-0.01 ? REPLAY : PLAY);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+window.render=render;
+</script>
+</body>
+</html>

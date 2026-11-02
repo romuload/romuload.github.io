@@ -2520,7 +2520,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The direction was to combine operational visibility with a guided path through the claim, reducing the need to reconstruct context across separate tools.", "A direção foi combinar visibilidade operacional com um caminho guiado pelo sinistro, reduzindo a necessidade de reconstruir o contexto entre ferramentas separadas."],
   ["The key design question: how could the experience help an analyst understand the case and move forward with the relevant information at hand?", "A pergunta central de design: como a experiência poderia ajudar o analista a entender o sinistro e avançar com as informações relevantes à mão?"],
   ["The constraint shaping the direction", "A restrição que orientou a direção"],
-  ["A shared Salesforce foundation needed to serve four brands. I worked within Lightning and Financial Services Cloud patterns, focusing the proposal on information structure, sequence and clarity.", "Uma base Salesforce compartilhada precisava atender quatro marcas. Trabalhei dentro dos padrões Lightning e Financial Services Cloud, concentrando a proposta em estrutura da informação, sequência e clareza."],
+  ["I worked within Lightning and Financial Services Cloud patterns, focusing the proposal on information structure, sequence and clarity.", "Trabalhei dentro dos padrões Lightning e Financial Services Cloud, concentrando a proposta em estrutura da informação, sequência e clareza."],
   ["Preview the solution", "Ver a proposta de solução"],
   ["Approach & rationale", "Abordagem e raciocínio"],
   ["Observation, synthesis, content and prototyping connected the operational problem to the proposed interface. Each step below makes the reasoning visible.", "Observação, síntese, conteúdo e prototipação conectaram o problema operacional à interface proposta. Cada etapa abaixo torna esse raciocínio visível."],
@@ -2588,5 +2588,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The information analysts used to hunt for across tabs, in the order they need it.", "As informações que os analistas caçavam pelas abas, na ordem em que precisam delas."],
   ["Analysis time (up to)", "Tempo de análise (até)"],
   ["How I reduced claims analysis time by up to 60% at Porto Seguro", "Como reduzi o tempo de análise de sinistros em até 60% na Porto Seguro"],
-  ["Inside the project: How I reduced claims analysis time by up to 60% at Porto Seguro", "Por dentro do projeto: Como reduzi o tempo de análise de sinistros em até 60% na Porto Seguro"]
+  ["Inside the project: How I reduced claims analysis time by up to 60% at Porto Seguro", "Por dentro do projeto: Como reduzi o tempo de análise de sinistros em até 60% na Porto Seguro"],
+  ["The guided analysis in action", "A análise guiada em ação"],
+  ["Four steps.", "Quatro etapas."],
+  ["No more hunting for fields.", "Sem caçar campos."],
+  ["From the dashboard to the analyst’s opinion, the OmniScript flow brings each piece of information to the step where it is needed.", "Do dashboard ao parecer do analista, o fluxo em OmniScript leva cada informação para a etapa em que ela é necessária."],
+  ["Interactive animation of the guided claim analysis in Salesforce", "Animação interativa da análise guiada de sinistro no Salesforce"],
+  ["Captured from the interactive demo, with fictitious data. Use the controls to move through each step.", "Capturado do demo interativo, com dados fictícios. Use os controles para navegar por cada etapa."]
 ]);
