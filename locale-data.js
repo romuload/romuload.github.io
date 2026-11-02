@@ -2563,7 +2563,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Interactive map of the AS-IS journey: stages, personas and pain points from discovery, and the TO-BE proposal for each stage. Choose a stage, filter by type of friction or switch to TO-BE.", "Mapa interativo da jornada AS-IS: etapas, personas e dores do discovery, e a proposta TO-BE de cada etapa. Escolha uma etapa, filtre por tipo de atrito ou alterne para o TO-BE."],
   ["Brazil’s largest auto insurer · ~14,000 employees", "Maior seguradora de automóveis do Brasil · ~14 mil funcionários"],
   ["How I reduced claims analysis time", "Como reduzi o tempo de análise"],
-  ["by 60% at Porto Seguro.", "de sinistros em 60% na Porto Seguro."],
+  ["by up to 60% at Porto Seguro.", "de sinistros em até 60% na Porto Seguro."],
   ["Strategic redesign of a 40-year-old legacy platform, accelerating decision-making and increasing analyst confidence.", "Redesenho estratégico de uma plataforma legada de 40 anos, acelerando a tomada de decisão e aumentando a confiança dos analistas."],
   ["Porto Seguro had just invested in Salesforce Financial Services Cloud to replace a 40-year-old legacy system. The goal: a modern, scalable experience for the insurance brands operated by the Porto group (Porto, Azul, Itaú and Mitsui), brought together through acquisitions and partnerships.", "A Porto Seguro tinha acabado de investir no Salesforce Financial Services Cloud para substituir um sistema legado de 40 anos. O objetivo: uma experiência moderna e escalável para as marcas de seguro operadas pelo grupo Porto (Porto, Azul, Itaú e Mitsui), reunidas por aquisições e parcerias."],
   ["Azul was acquired in 2003; Itaú Auto e Residência comes from a partnership with Itaú Unibanco since 2009; and Porto runs Mitsui Sumitomo’s auto insurance under a strategic partnership.", "A Azul foi adquirida em 2003; a Itaú Auto e Residência vem de uma parceria com o Itaú Unibanco desde 2009; e a Porto opera o seguro auto da Mitsui Sumitomo por meio de uma parceria estratégica."],
@@ -2585,5 +2585,6 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Policy", "Apólice"],
   ["Summary", "Resumo"],
   ["Opinion", "Parecer"],
-  ["The information analysts used to hunt for across tabs, in the order they need it.", "As informações que os analistas caçavam pelas abas, na ordem em que precisam delas."]
+  ["The information analysts used to hunt for across tabs, in the order they need it.", "As informações que os analistas caçavam pelas abas, na ordem em que precisam delas."],
+  ["Analysis time (up to)", "Tempo de análise (até)"]
 ]);
