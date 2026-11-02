@@ -49,6 +49,46 @@
   gsap.registerPlugin(ScrollTrigger);
   const mm = gsap.matchMedia();
 
+  // The site uses CSS smooth scrolling, which breaks ScrollTrigger: while it measures, it
+  // jumps to the top and back, and a smooth jump leaves every trigger in the wrong place.
+  // On this page scrolling is instant by default, and in-page links scroll smoothly via JS.
+  const html = document.documentElement;
+  html.style.scrollBehavior = 'auto';
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    event.preventDefault();
+    const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    const pad = parseFloat(getComputedStyle(html).scrollPaddingTop) || 0;
+    // Content loading during the scroll (embeds, triggers recalculating) can stop it short,
+    // so check where it landed and continue until the section is in place.
+    let tries = 0;
+    const go = () => {
+      target.scrollIntoView({behavior});
+      clearTimeout(go.timer);
+      go.timer = setTimeout(() => {
+        if (Math.abs(target.getBoundingClientRect().top - pad) > 24 && ++tries < 4) go();
+      }, 900);
+    };
+    go();
+    history.replaceState(null, '', location.pathname + location.search + link.getAttribute('href'));
+  });
+
+  // Embedded pages (journey map, legacy workflow) settle their height after load.
+  // Recalculate every scroll trigger whenever the page height changes, so the
+  // sticky screens and reveals stay aligned with the text.
+  let lastHeight = 0, refreshTimer = null;
+  new ResizeObserver(() => {
+    const height = document.documentElement.scrollHeight;
+    if (Math.abs(height - lastHeight) < 2) return;
+    lastHeight = height;
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 150);
+  }).observe(document.body);
+  document.querySelectorAll('iframe').forEach(frame => frame.addEventListener('load', () => ScrollTrigger.refresh()));
+
   mm.add('(prefers-reduced-motion: no-preference)', () => {
     const root = document.documentElement; root.classList.add('motion');
 
