@@ -2530,5 +2530,14 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Porto Seguro claims experience: business context, design decisions and a guided Salesforce proposal for desktop and mobile.", "Experiência de sinistros da Porto Seguro: contexto de negócio, decisões de design e uma proposta Salesforce guiada para desktop e celular."],
   ["Explore the demo", "Explorar o demo"],
   ["Explore the Porto Seguro demo in a new tab", "Explorar o demo da Porto Seguro em uma nova aba"],
-  ["Explore the interactive demo or get in touch to talk about a product challenge.", "Explore o demo interativo ou entre em contato para conversar sobre um desafio de produto."]
+  ["Explore the interactive demo or get in touch to talk about a product challenge.", "Explore o demo interativo ou entre em contato para conversar sobre um desafio de produto."],
+  ["Claims dashboard captured from the interactive demo", "Dashboard de sinistros capturado do demo interativo"],
+  ["Mobile dashboard captured from the interactive demo", "Dashboard mobile capturado do demo interativo"],
+  ["After: claims overview captured from the interactive demo", "Depois: visão geral de sinistros capturada do demo interativo"],
+  ["Interactive demo dashboard with queue indicators and charts by company and injury type", "Dashboard do demo interativo com indicadores de fila e gráficos por empresa e tipo de lesão"],
+  ["Porto interactive demo captured on a mobile viewport", "Demo interativo da Porto capturado em uma tela de celular"],
+  ["Compare the legacy task list with the dashboard captured from the interactive demo. Move the divider to reveal each interface.", "Compare a lista de tarefas do legado com o dashboard capturado do demo interativo. Mova o divisor para revelar cada interface."],
+  ["Real capture of the interactive demo in a mobile viewport. The handoff scope covers monitoring and case consultation.", "Captura real do demo interativo em uma tela de celular. O escopo do handoff contempla acompanhamento e consulta de sinistros."],
+  ["Drag, tap or use the arrow keys. The legacy capture and demo screens are shown in Portuguese; claim identifiers and plates have been removed from the legacy image.", "Arraste, toque ou use as setas do teclado. A captura do legado e as telas do demo estão em português; identificadores de sinistros e placas foram removidos da imagem do legado."],
+  ["Porto Seguro · Claims experience: interactive demo in a phone mockup", "Porto Seguro · Experiência de sinistros: demo interativo em um mockup de celular"]
 ]);

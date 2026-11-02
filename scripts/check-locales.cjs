@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=porto-demo-5'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-screens-6'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -39,7 +39,7 @@ for(const [en] of portoPairs) {
 const porto = fs.readFileSync('projeto-porto.html', 'utf8');
 assert(porto.includes('id="porto-slider"'));
 assert(porto.includes('Provisional impact figures.'));
-assert(fs.readFileSync('index.html','utf8').includes('images/phone/porto.jpg'));
+assert(fs.readFileSync('index.html','utf8').includes('images/phone/porto-demo.jpg'));
 console.log('Porto copy, metric status, comparison and current iPhone thumbnail: OK');
 
 const processChapters = ['context', 'contribution', 'direction', 'approach', 'discovery', 'content-design', 'prototyping', 'validation', 'solution', 'comparison', 'outcomes'];
