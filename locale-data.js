@@ -2527,5 +2527,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Process", "Processo"],
   ["Solution", "Solução"],
   ["Outcomes", "Resultados"],
-  ["Porto Seguro claims experience: business context, design decisions and a guided Salesforce proposal for desktop and mobile.", "Experiência de sinistros da Porto Seguro: contexto de negócio, decisões de design e uma proposta Salesforce guiada para desktop e celular."]
+  ["Porto Seguro claims experience: business context, design decisions and a guided Salesforce proposal for desktop and mobile.", "Experiência de sinistros da Porto Seguro: contexto de negócio, decisões de design e uma proposta Salesforce guiada para desktop e celular."],
+  ["Explore the demo", "Explorar o demo"],
+  ["Explore the Porto Seguro demo in a new tab", "Explorar o demo da Porto Seguro em uma nova aba"],
+  ["Explore the interactive demo or get in touch to talk about a product challenge.", "Explore o demo interativo ou entre em contato para conversar sobre um desafio de produto."]
 ]);

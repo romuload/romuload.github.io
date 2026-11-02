@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=porto-narrative-4'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-demo-5'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -58,3 +58,12 @@ console.log('Porto narrative order, evidence-to-decision reasoning and bilingual
 assert(!porto.includes('data-star='), 'Porto should use one narrative, without STAR chapter markers');
 assert(porto.includes('<h3>Design constraints</h3>'), 'Preserve the pending English editorial change');
 assert.equal((porto.match(/class="case-nav"/g) || []).length, 1);
+
+for (const page of ['index.html', 'projeto-porto.html']) {
+ const html = fs.readFileSync(page, 'utf8');
+ assert(html.includes('href="https://romuload.github.io/porto-salerforce-demo/"'), `${page}: Porto demo link missing`);
+ assert(!html.includes('View the design'), `${page}: stale Porto CTA`);
+}
+assert.equal(map.get('Explore the demo')?.pt, 'Explorar o demo');
+assert(map.get('Explore the Porto Seguro demo in a new tab')?.pt);
+console.log('Porto demo CTAs and bilingual accessible labels: OK');
