@@ -2417,8 +2417,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Um design viável e alinhado às restrições da plataforma."
   ],
   [
-    "The discovery covered the four brands in the group (Porto, Azul, Itaú and Mitsui) across 56 hours of working sessions, and produced 135 MVP backlog items and 28 business and technical artifacts. The screens shown here focus on the APP/DC workflow.",
-    "O discovery cobriu as quatro marcas do grupo (Porto, Azul, Itaú e Mitsui) em 56 horas de sessões de trabalho e gerou 135 itens de backlog para o MVP e 28 artefatos de negócio e técnicos. As telas deste case focam o fluxo APP/DC."
+    "The discovery covered the four brands in the group (Porto, Azul, Itaú and Mitsui) across 56 hours of working sessions, and produced 135 MVP backlog items and 28 business and technical artifacts.",
+    "O discovery cobriu as quatro marcas do grupo (Porto, Azul, Itaú e Mitsui) em 56 horas de sessões de trabalho e gerou 135 itens de backlog para o MVP e 28 artefatos de negócio e técnicos."
   ],
   [
     "View larger",
@@ -2560,5 +2560,23 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["pain points and business rules mapped", "dores e regras de negócio mapeadas"],
   ["people involved", "pessoas envolvidas"],
   ["Interactive map of friction along the claim journey", "Mapa interativo dos atritos ao longo da jornada do sinistro"],
-  ["Interactive map of the AS-IS journey: stages, personas and pain points from discovery, and the TO-BE proposal for each stage. Choose a stage, filter by type of friction or switch to TO-BE.", "Mapa interativo da jornada AS-IS: etapas, personas e dores do discovery, e a proposta TO-BE de cada etapa. Escolha uma etapa, filtre por tipo de atrito ou alterne para o TO-BE."]
+  ["Interactive map of the AS-IS journey: stages, personas and pain points from discovery, and the TO-BE proposal for each stage. Choose a stage, filter by type of friction or switch to TO-BE.", "Mapa interativo da jornada AS-IS: etapas, personas e dores do discovery, e a proposta TO-BE de cada etapa. Escolha uma etapa, filtre por tipo de atrito ou alterne para o TO-BE."],
+  ["Brazil’s largest auto insurer · ~14,000 employees", "Maior seguradora de automóveis do Brasil · ~14 mil funcionários"],
+  ["How I reduced claims analysis time", "Como reduzi o tempo de análise"],
+  ["by 60% at Porto Seguro.", "de sinistros em 60% na Porto Seguro."],
+  ["Strategic redesign of a 40-year-old legacy platform, accelerating decision-making and increasing analyst confidence.", "Redesenho estratégico de uma plataforma legada de 40 anos, acelerando a tomada de decisão e aumentando a confiança dos analistas."],
+  ["Porto Seguro had just invested in Salesforce Financial Services Cloud to replace a 40-year-old legacy system. The goal: a modern, scalable experience for the insurance brands operated by the Porto group (Porto, Azul, Itaú and Mitsui), brought together through acquisitions and partnerships.", "A Porto Seguro tinha acabado de investir no Salesforce Financial Services Cloud para substituir um sistema legado de 40 anos. O objetivo: uma experiência moderna e escalável para as marcas de seguro operadas pelo grupo Porto (Porto, Azul, Itaú e Mitsui), reunidas por aquisições e parcerias."],
+  ["Azul was acquired in 2003; Itaú Auto e Residência comes from a partnership with Itaú Unibanco since 2009; and Porto runs Mitsui Sumitomo’s auto insurance under a strategic partnership.", "A Azul foi adquirida em 2003; a Itaú Auto e Residência vem de uma parceria com o Itaú Unibanco desde 2009; e a Porto opera o seguro auto da Mitsui Sumitomo por meio de uma parceria estratégica."],
+  ["Moving the screens was not enough.", "Migrar as telas não bastava."],
+  ["The first version migrated to Salesforce revealed the real problem, and a native platform resource became the answer.", "A primeira versão migrada para o Salesforce revelou o problema de verdade, e um recurso nativo da plataforma virou a resposta."],
+  ["The first impression", "A primeira impressão"],
+  ["The technical team’s first migration simply redistributed the legacy data across Salesforce tabs. When we showed it to analysts, the concern was immediate:", "A primeira migração do time técnico apenas redistribuía os dados do legado pelas abas do Salesforce. Quando mostramos aos analistas, a preocupação veio na hora:"],
+  ["“We modernized the system, but now I have to learn everything again. Where did the fields I always look for go?”", "“Modernizamos o sistema, mas agora vou ter que aprender tudo de novo. Para onde foram os campos que eu sempre procuro?”"],
+  ["The question", "A pergunta"],
+  ["How could we customize the experience so analysts would stop hunting for fields, as they did in the legacy system?", "Como customizar a experiência para que o analista não precisasse mais caçar campos pelo produto, como acontecia no legado?"],
+  ["The turning point", "A virada"],
+  ["I took the problem to the Salesforce specialists, and the answer was OmniScript. Native to the platform, it kept Salesforce’s standard information layout while the guided flow brought data from several tabs and sources into each step of the analysis. That is how the guided analysis was born.", "Levei o problema aos especialistas de Salesforce, e a resposta foi o OmniScript. Nativo da plataforma, ele mantinha o padrão de distribuição de informações do Salesforce, enquanto o fluxo guiado reunia em cada etapa da análise dados de várias abas e origens. Foi assim que nasceu a análise guiada."],
+  ["In the first migrated version, legacy fields were spread across Salesforce tabs, and analysts asked where their information had gone.", "Na primeira versão migrada, os campos do legado estavam espalhados pelas abas do Salesforce, e os analistas perguntavam para onde tinham ido suas informações."],
+  ["Changing platforms without changing how information reaches the analyst would only move the search somewhere else.", "Trocar de plataforma sem mudar como a informação chega ao analista só mudaria a busca de lugar."],
+  ["Use OmniScript, native to Salesforce, to gather data from different tabs and sources into a single guided analysis.", "Usar o OmniScript, nativo do Salesforce, para reunir dados de abas e origens diferentes numa única análise guiada."]
 ]);
