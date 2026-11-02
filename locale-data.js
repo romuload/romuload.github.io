@@ -1733,8 +1733,8 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Animação interativa do fluxo de análise de sinistro no sistema legado"
   ],
   [
-    "The legacy workflow, step by step: one claim, five screens and a text file. Use the controls to move through each stage. Personal data has been blurred.",
-    "O fluxo legado, passo a passo: um sinistro, cinco telas e um arquivo de texto. Use os controles para navegar por cada etapa. Os dados pessoais foram borrados."
+    "The legacy workflow, step by step: one claim, five screens and a text file. In the discovery record, the manual analysis step alone lists more than 20 systems and tools. Use the controls to move through each stage. Personal data has been blurred.",
+    "O fluxo legado, passo a passo: um sinistro, cinco telas e um arquivo de texto. No registro do discovery, só a etapa de análise manual lista mais de 20 sistemas e ferramentas. Use os controles para navegar por cada etapa. Os dados pessoais foram borrados."
   ],
   [
     "Open full screen",
@@ -1848,8 +1848,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Para compreender um caso, os analistas alternavam entre avisos, apólices, documentos, notas e ferramentas externas. O recorte detalhado do design é APP/DC: acidentes pessoais de passageiros e danos corporais."
   ],
   [
-    "Information from Porto, the external regulator REIS and payment systems did not always arrive together. A received document could become another task to investigate, rather than a clear next action.",
-    "Informações da Porto, da reguladora externa REIS e dos sistemas de pagamento nem sempre chegavam juntas. Um documento recebido podia virar mais uma tarefa para investigar, em vez de uma próxima ação clara."
+    "Information from Porto, the external service provider and payment systems did not always arrive together. A received document could become another task to investigate, rather than a clear next action.",
+    "Informações da Porto, do prestador de serviço externo e dos sistemas de pagamento nem sempre chegavam juntas. Um documento recebido podia virar mais uma tarefa para investigar, em vez de uma próxima ação clara."
   ],
   [
     "The underlying problem was the effort required to reconstruct context before making a decision.",
@@ -1876,8 +1876,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Responsabilidade pouco clara"
   ],
   [
-    "Analysts checked whether a task belonged to Porto or REIS.",
-    "Analistas precisavam descobrir se a pendência era da Porto ou da REIS."
+    "Analysts checked whether a task belonged to Porto or to the external service provider.",
+    "Analistas precisavam descobrir se a pendência era da Porto ou do prestador de serviço externo."
   ],
   [
     "Limited visibility",
@@ -1972,8 +1972,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "marcas em uma plataforma comum"
   ],
   [
-    "Research scope as recorded in the project case. These figures describe the work, not post-launch performance.",
-    "Escopo de pesquisa registrado no relato do projeto. Estes números descrevem o trabalho, não o desempenho após o lançamento."
+    "Figures from the discovery blueprint delivered to Porto Seguro in March 2024. They describe the work, not post-launch performance.",
+    "Números do blueprint de discovery entregue à Porto Seguro em março de 2024. Eles descrevem o trabalho, não o desempenho após o lançamento."
   ],
   [
     "Miro workshop with expectations for a unified, clear and intuitive system",
@@ -2028,8 +2028,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Pagamento e encerramento"
   ],
   [
-    "The broader journey informed the work. The detailed screens in this case focus on APP/DC, including internal handling and external regulation through REIS.",
-    "A jornada mais ampla orientou o trabalho. As telas detalhadas deste case se concentram em APP/DC, com tratamento interno e regulação externa pela REIS."
+    "The broader journey informed the work. The detailed screens in this case focus on APP/DC, including internal handling and regulation by an external service provider.",
+    "A jornada mais ampla orientou o trabalho. As telas detalhadas deste case se concentram em APP/DC, com tratamento interno e regulação por um prestador de serviço externo."
   ],
   [
     "Process map distinguishing manual activities, automated work, dependencies and waiting",
@@ -2417,8 +2417,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Um design viável e alinhado às restrições da plataforma."
   ],
   [
-    "The project record describes workshops with 100+ collaborators and an organizational context of around 13,000 employees. The screens shown here focus on the APP/DC workflow.",
-    "O relato do projeto descreve workshops com mais de 100 colaboradores e um contexto organizacional de cerca de 13 mil pessoas. As telas deste case focam o fluxo APP/DC."
+    "The discovery covered the four brands in the group (Porto, Azul, Itaú and Mitsui) across 56 hours of working sessions, and produced 135 MVP backlog items and 28 business and technical artifacts. The screens shown here focus on the APP/DC workflow.",
+    "O discovery cobriu as quatro marcas do grupo (Porto, Azul, Itaú e Mitsui) em 56 horas de sessões de trabalho e gerou 135 itens de backlog para o MVP e 28 artefatos de negócio e técnicos. As telas deste case focam o fluxo APP/DC."
   ],
   [
     "View larger",
@@ -2505,7 +2505,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Build a common, scalable experience without carrying the fragmentation of the legacy workflow into the new platform. The migration created an opportunity to revisit how information and decisions were connected.", "Criar uma experiência comum e escalável sem levar a fragmentação do fluxo legado para a nova plataforma. A migração abriu espaço para rever como informações e decisões se conectavam."],
   ["The analyst’s challenge", "O desafio do analista"],
   ["Understanding a claim meant moving between notices, policies, documents, history and external tools. Analysts had to reconnect the information before deciding what to do next.", "Entender um sinistro exigia alternar entre avisos, apólices, documentos, histórico e ferramentas externas. Os analistas precisavam reconectar as informações antes de decidir o próximo passo."],
-  ["The detailed design shown here focuses on APP/DC: passenger personal accident and bodily injury claims, including internal handling and external regulation through REIS.", "O design detalhado apresentado aqui se concentra em APP/DC: acidentes pessoais de passageiros e danos corporais, incluindo tratamento interno e regulação externa pela REIS."],
+  ["The detailed design shown here focuses on APP/DC: passenger personal accident and bodily injury claims, including internal handling and regulation by an external service provider.", "O design detalhado apresentado aqui se concentra em APP/DC: acidentes pessoais de passageiros e danos corporais, incluindo tratamento interno e regulação por um prestador de serviço externo."],
   ["My contribution", "Minha contribuição"],
   ["Connect discovery, design and delivery.", "Conectar discovery, design e entrega."],
   ["As Senior Product Designer working through GFT, I connected discovery, journey mapping, content, interface design and handoff for the new claims workflow.", "Como Senior Product Designer pela GFT, conectei discovery, mapeamento de jornada, conteúdo, design de interface e handoff para o novo fluxo de sinistros."],
@@ -2556,5 +2556,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Claim record with status path, basic data, claim summary and case comments", "Registro do sinistro com trilha de status, dados básicos, resumo do sinistro e comentários do caso"],
   ["Claim documents tab with a documentation request action and the regulation and payment stages", "Aba de documentos do sinistro com a ação de solicitar documentação e as etapas de regulação e pagamento"],
   ["Mobile claim list with priority, company and notice dates", "Lista de sinistros no celular com prioridade, empresa e datas do aviso"],
-  ["Mobile claim record with criticality, dates, status and basic data", "Registro do sinistro no celular com criticidade, datas, status e dados básicos"]
+  ["Mobile claim record with criticality, dates, status and basic data", "Registro do sinistro no celular com criticidade, datas, status e dados básicos"],
+  ["pain points and business rules mapped", "dores e regras de negócio mapeadas"],
+  ["people involved", "pessoas envolvidas"]
 ]);

@@ -83,6 +83,8 @@
   #outroH .t1{font-size:58px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
   #outroH .t1 b{color:#83d5ff}
   #outroH .t2{font-size:26px;color:var(--muted);margin-top:14px;font-weight:500}
+  #outroH .t3{font-size:21px;color:#bed0e0;margin-top:18px;font-weight:500;display:inline-flex;gap:12px;align-items:center;padding:10px 16px;border:1px solid #2b5673;border-radius:10px;background:#0c2339}
+  #outroH .t3 b{color:#83d5ff;font-weight:700}
   #fade{inset:0;background:var(--bg);pointer-events:none}
   #progress{display:none}
   /* controls (outside the scaled stage, real pixels) */
@@ -179,7 +181,7 @@
   <svg id="cursor" class="abs" viewBox="0 0 34 40"><path d="M3 2 L3 33 L11 25.5 L16.5 37.5 L22 35 L16.6 23.2 L27.5 23.2 Z" fill="#fff" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/></svg>
 
   <div id="intro" class="abs"><div class="t1" data-i="i1"></div><div class="t2" data-i="i2"></div></div>
-  <div id="outroH" class="abs"><div class="t1" data-i="o1"></div><div class="t2" data-i="o2"></div></div>
+  <div id="outroH" class="abs"><div class="t1" data-i="o1"></div><div class="t2" data-i="o2"></div><div class="t3" data-i="o3"></div></div>
   <div id="fade" class="abs"></div>
 
 </div>
@@ -231,7 +233,7 @@ function cam(i,t){
   }
 }
 // card placement (whip transitions + outro stack)
-const STACK=[[96,290,-5],[246,350,3],[396,410,-2],[536,470,4],[676,530,-1]];
+const STACK=[[96,325,-5],[246,382,3],[396,439,-2],[536,496,4],[676,553,-1]];
 function place(i,t){
   const st=[0,SC.s1,SC.s2,SC.s3,SC.s4,SC.s5][i];
   let x=0,y=0,op=1,blur=0,sc=1,rot=0;
@@ -477,6 +479,8 @@ function render(t){
   show($('outroH'), oh);
   $('outroH').style.transform=`translateY(${lerp(20,0,oh)}px)`;
   $('outroH').querySelector('.t2').style.opacity=oh2;
+  const oh3=eout(prog(t,24.5,25.1));
+  $('outroH').querySelector('.t3').style.opacity=oh3; $('outroH').querySelector('.t3').style.transform=`translateY(${lerp(10,0,oh3)}px)`;
 
   // final fade (loop-friendly)
   show($('fade'), VIDEO ? prog(t,26.5,27.0) : 0);
@@ -487,7 +491,7 @@ function render(t){
 const TXT = {
  en:{kicker:'Legacy system · Claim analysis',outside:'Outside the system',c1:'screens<br>opened',c2:'copy<br>&amp; paste',c3:'external<br>tools',
   i1:'One claim. One analysis.',i2:'How analysts pieced a claim together in Porto’s legacy system',
-  o1:'<b>5 screens</b>, 2 external tools and 1 .txt file',o2:'to write the assessment for a single claim.',np:'*claim_analysis.txt',
+  o1:'<b>5 screens</b>, 2 external tools and 1 .txt file',o2:'to write the assessment for a single claim.',o3:'And that is a small sample: the discovery record lists <b>20+ systems and tools</b> in the manual analysis step alone.',np:'*claim_analysis.txt',
   play:'Play or pause',prev:'Previous step',next:'Next step',
   caps:['Finds the claim in the task queue','Opens the notice and copies the policyholder’s account','Switches tabs for the other party’s details','Leaves the system to check the addresses on a map','Checks the location on Street View'],
   steps:['Task queue','Policyholder account','Other party','Google Maps','Street View','Summary'],
@@ -498,7 +502,7 @@ const TXT = {
          [['h','> street view'],['','  STOP sign on the street'],['','  fault admitted and'],['','  confirmed']]]},
  pt:{kicker:'Sistema legado · Análise de sinistro',outside:'Fora do sistema',c1:'telas<br>abertas',c2:'copia<br>e cola',c3:'ferramentas<br>externas',
   i1:'Um sinistro. Uma análise.',i2:'Como o analista cruzava dados no sistema legado da Porto',
-  o1:'<b>5 telas</b>, 2 ferramentas externas e 1 arquivo .txt',o2:'para montar o parecer de um único sinistro.',np:'*analise_sinistro.txt',
+  o1:'<b>5 telas</b>, 2 ferramentas externas e 1 arquivo .txt',o2:'para montar o parecer de um único sinistro.',o3:'E isso é só uma amostra: o registro do discovery lista <b>mais de 20 sistemas e ferramentas</b> só na etapa de análise manual.',np:'*analise_sinistro.txt',
   play:'Reproduzir ou pausar',prev:'Etapa anterior',next:'Próxima etapa',
   caps:['Encontra o sinistro na fila de tarefas','Abre o aviso e copia o relato do segurado','Muda de aba para os dados do envolvido','Sai do sistema e cruza os endereços no mapa','Confere o local no Street View'],
   steps:['Fila de tarefas','Relato do segurado','Dados do envolvido','Google Maps','Street View','Resumo'],
