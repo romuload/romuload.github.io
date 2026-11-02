@@ -2539,5 +2539,10 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Compare the legacy task list with the dashboard captured from the interactive demo. Move the divider to reveal each interface.", "Compare a lista de tarefas do legado com o dashboard capturado do demo interativo. Mova o divisor para revelar cada interface."],
   ["Real capture of the interactive demo in a mobile viewport. The handoff scope covers monitoring and case consultation.", "Captura real do demo interativo em uma tela de celular. O escopo do handoff contempla acompanhamento e consulta de sinistros."],
   ["Drag, tap or use the arrow keys. The legacy capture and demo screens are shown in Portuguese; claim identifiers and plates have been removed from the legacy image.", "Arraste, toque ou use as setas do teclado. A captura do legado e as telas do demo estão em português; identificadores de sinistros e placas foram removidos da imagem do legado."],
-  ["Porto Seguro · Claims experience: interactive demo in a phone mockup", "Porto Seguro · Experiência de sinistros: demo interativo em um mockup de celular"]
+  ["Porto Seguro · Claims experience: interactive demo in a laptop mockup", "Porto Seguro · Experiência de sinistros: demo interativo em um mockup de notebook"],
+  ["Guided claim analysis with notice details and the Notice, Policy, Summary and Opinion steps", "Análise guiada do sinistro com os dados do aviso e as etapas Aviso, Apólice, Resumo e Parecer"],
+  ["Claim record with status path, basic data, claim summary and case comments", "Registro do sinistro com trilha de status, dados básicos, resumo do sinistro e comentários do caso"],
+  ["Claim documents tab with a documentation request action and the regulation and payment stages", "Aba de documentos do sinistro com a ação de solicitar documentação e as etapas de regulação e pagamento"],
+  ["Mobile claim list with priority, company and notice dates", "Lista de sinistros no celular com prioridade, empresa e datas do aviso"],
+  ["Mobile claim record with criticality, dates, status and basic data", "Registro do sinistro no celular com criticidade, datas, status e dados básicos"]
 ]);

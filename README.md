@@ -37,7 +37,7 @@ Para novos conteúdos, escreva o HTML em inglês e acrescente seu par inglês/po
 
 O cabeçalho combina o avião de papel simplificado, só contorno, de `images/brand/paper-plane.svg`, o nome Romulo Nascimento e o cargo Product Designer. O SVG foi desenhado à mão, sem fonte, imagem incorporada ou fundo. O favicon usa o mesmo avião em `favicon.svg`; as versões PNG/ICO foram renderizadas a partir desse vetor. A imagem recortada anterior foi removida.
 
-As capas da página inicial usam `phone-mockup.css`: um único iPhone por card, com borda de titânio, Dynamic Island, barra de status e barra flutuante do Safari com `romuload.github.io`. As capturas ficam em `images/phone/` e foram feitas em 390 × 790 px a 2x (a área visível do Safari abaixo da barra de status), por isso preenchem a tela sem cortes. `mockups.css` continua definindo as molduras de navegador usadas nas páginas internas.
+As capas da página inicial usam `phone-mockup.css`: um único iPhone por card, com borda de titânio, Dynamic Island, barra de status e barra flutuante do Safari com `romuload.github.io`. As capturas ficam em `images/phone/` e foram feitas em 390 × 790 px a 2x (a área visível do Safari abaixo da barra de status), por isso preenchem a tela sem cortes. `mockups.css` continua definindo as molduras de navegador usadas nas páginas internas. A capa da Porto Seguro é a exceção: `laptop-mockup.css` mostra um notebook com Safari e a captura desktop do demo.
 
 O carrossel inclui Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT, com tratamento monocromático branco.
 
@@ -54,3 +54,7 @@ The gallery lists Conhecer Repar 3D once. projeto-repar.html presents both the i
 ## FIAT Água em Ciclo
 
 The fourth gallery entry opens projeto-fiat.html, a bilingual case using the established case structure with FIAT-inspired red, white and dark tones. Desktop/mobile screenshots come from the live interactive project. The case links to the interactive water cycle and embeds the supplied YouTube landscape (n9-0C1eda_I) and portrait (c87ghSV32Y4) videos with responsive aspect ratios and direct YouTube links. Video files are not stored or uploaded with the site.
+
+## Porto Seguro
+
+projeto-porto.html uses the same scroll motion as the iLab case (GSAP + ScrollTrigger from cdnjs, in `porto-case.js`): staggered reveals, the hero product straightening on scroll, counting figures, a one-time before/after sweep and, on screens wider than 1050px, sticky desktop and phone screens that change with the text. Reduced motion or no JavaScript leaves every element visible and static. Screens in `images/porto/screen-*.webp` (1440 × 900) and `mobile-*.webp` (390 × 790) are 2x captures of https://romuload.github.io/porto-salerforce-demo/.

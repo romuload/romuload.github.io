@@ -1,0 +1,26 @@
+/* Desktop cover: a laptop showing Safari with a real 1440 × 900 capture at 2x.
+   The stage is a size container, so cqw is card width and the laptop scales with the card. */
+.laptop-stage{position:relative;display:grid;place-items:center;aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate}
+.laptop-stage::before{content:"";position:absolute;left:50%;bottom:13%;width:78%;height:6%;transform:translateX(-50%);border-radius:50%;background:#000;opacity:.36;filter:blur(2.4cqw);z-index:-1}
+.laptop{position:relative;width:72cqw;margin-top:2cqw;transition:transform .6s var(--ease)}
+.project-image:hover .laptop{transform:translateY(-.8cqw)}
+
+/* Black glass lid with an aluminium edge and camera. */
+.laptop-lid{position:relative;padding:1.5cqw 1.5cqw 1.9cqw;border-radius:2.4cqw 2.4cqw .6cqw .6cqw;background:#0a0a0c;box-shadow:0 0 0 .22cqw #a9acb1,inset 0 0 0 .2cqw #2c2e33,0 3cqw 5cqw -1cqw #00000052}
+.laptop-lid::before{content:"";position:absolute;left:50%;top:.55cqw;width:.5cqw;height:.5cqw;transform:translateX(-50%);border-radius:50%;background:#1e2a33;box-shadow:inset 0 0 0 .1cqw #34404a}
+.laptop-screen{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:.4cqw;background:#fff}
+.laptop-screen::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#ffffff1a 0%,#ffffff05 38%,transparent 39%);pointer-events:none}
+
+/* Safari toolbar: traffic lights and the address. */
+.laptop-bar{display:flex;align-items:center;gap:.55cqw;height:3cqw;padding:0 1.1cqw;background:#ececee;border-bottom:.08cqw solid #d0d0d4}
+.laptop-bar i{width:.8cqw;height:.8cqw;border-radius:50%;background:#ff5f57}
+.laptop-bar i:nth-child(2){background:#febc2e}
+.laptop-bar i:nth-child(3){background:#28c840}
+.laptop-bar span{width:34%;margin:0 auto;padding:.45cqw 0;border-radius:.6cqw;background:#dcdce0;color:#4a4b50;font:500 1.05cqw/1 -apple-system,"SF Pro Text",Inter,system-ui,sans-serif;text-align:center}
+.project-image .laptop-screen img{display:block;width:100%;height:auto;padding:0;object-fit:cover;object-position:top;filter:none;transform:none;border-radius:0}
+
+/* Aluminium base with the opening notch. */
+.laptop-base{position:relative;width:116%;height:1.9cqw;margin-left:-8%;border-radius:.3cqw .3cqw 2.4cqw 2.4cqw / .3cqw .3cqw 1.6cqw 1.6cqw;background:linear-gradient(#f1f2f4,#c4c7cb 40%,#8d9095)}
+.laptop-base::before{content:"";position:absolute;left:50%;top:0;width:15%;height:45%;transform:translateX(-50%);border-radius:0 0 1cqw 1cqw;background:linear-gradient(#a3a6ab,#d3d5d8)}
+
+@media(max-width:767px){.laptop-stage{aspect-ratio:1.3}.laptop{width:76cqw}}
