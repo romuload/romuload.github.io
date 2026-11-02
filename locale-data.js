@@ -2558,5 +2558,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Mobile claim list with priority, company and notice dates", "Lista de sinistros no celular com prioridade, empresa e datas do aviso"],
   ["Mobile claim record with criticality, dates, status and basic data", "Registro do sinistro no celular com criticidade, datas, status e dados básicos"],
   ["pain points and business rules mapped", "dores e regras de negócio mapeadas"],
-  ["people involved", "pessoas envolvidas"]
+  ["people involved", "pessoas envolvidas"],
+  ["Interactive map of friction along the claim journey", "Mapa interativo dos atritos ao longo da jornada do sinistro"],
+  ["Interactive map of the AS-IS journey: stages, personas and pain points from discovery, and the TO-BE proposal for each stage. Choose a stage, filter by type of friction or switch to TO-BE.", "Mapa interativo da jornada AS-IS: etapas, personas e dores do discovery, e a proposta TO-BE de cada etapa. Escolha uma etapa, filtre por tipo de atrito ou alterne para o TO-BE."]
 ]);

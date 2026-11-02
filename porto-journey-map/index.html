@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Claim journey friction map · Porto Seguro | Romulo Nascimento</title>
+<style>
+  @font-face{font-family:Manrope;src:url(../fonts/manrope-regular.ttf) format("truetype");font-weight:400 500;font-display:swap}
+  @font-face{font-family:Manrope;src:url(../fonts/manrope-semibold.ttf) format("truetype");font-weight:600 800;font-display:swap}
+  :root{
+    --bg:#061321;--bg2:#0b1e31;--card:#0d2338;--ink:#f1f7fc;--ink2:#bed0e0;--muted:#8da9bf;
+    --line:rgba(187,220,242,.12);--line2:rgba(187,220,242,.24);--blue:#62c2f5;--blue2:#83d5ff;
+    --sys:#f5b942;--man:#ff7a45;--vis:#a78bfa;--ext:#2dd4bf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{min-height:100vh}
+  button{font:inherit;color:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:40px 32px 32px}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+  /* header */
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  h1{font-size:clamp(30px,4.2vw,52px);line-height:1.08;letter-spacing:-.035em;margin:12px 0 12px;font-weight:700}
+  h1 .grad{background:linear-gradient(100deg,#f1f7fc 0%,#83d5ff 70%,#409fda);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--ink2);font-size:16px;line-height:1.7;max-width:62ch}
+  .stats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap}
+  .stat strong{display:block;font-size:30px;font-weight:600;color:var(--blue2);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{font-size:12.5px;color:var(--muted)}
+
+  /* track */
+  .track-wrap{margin-top:40px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .track-wrap::-webkit-scrollbar{display:none}
+  .track{position:relative;height:216px;min-width:720px}
+  .rail,.trail{position:absolute;left:10%;height:3px;top:108px;border-radius:3px}
+  .rail{right:10%;background:repeating-linear-gradient(90deg,#24425c 0 8px,transparent 8px 14px)}
+  .trail{width:0;background:linear-gradient(90deg,#2b80bd,var(--blue2));transition:width .9s cubic-bezier(.65,0,.35,1);box-shadow:0 0 18px #62c2f580}
+  .traveler{position:absolute;top:109px;left:10%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#e9f8ff;
+    box-shadow:0 0 0 6px #62c2f540,0 0 24px #83d5ff;transition:left .9s cubic-bezier(.65,0,.35,1);z-index:3;pointer-events:none}
+  .stage{position:absolute;top:0;width:18%;margin-left:-9%;height:100%;display:flex;flex-direction:column;align-items:center;
+    background:none;border:0;cursor:pointer;text-align:center;padding:0;-webkit-tap-highlight-color:transparent}
+  .sig{height:96px;display:flex;align-items:flex-end;gap:5px;padding-bottom:14px}
+  .sig i{width:9px;border-radius:3px 3px 1px 1px;height:0;transition:height .7s cubic-bezier(.2,.8,.2,1),opacity .3s}
+  .sig i.sys{background:var(--sys)} .sig i.man{background:var(--man)} .sig i.vis{background:var(--vis)} .sig i.ext{background:var(--ext)}
+  .node{width:26px;height:26px;border-radius:50%;background:var(--bg);border:3px solid #3a6585;position:relative;transition:transform .35s cubic-bezier(.3,1.6,.5,1),border-color .3s,background .3s;transform:scale(0)}
+  .node::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid var(--blue2);opacity:0}
+  .stage.on .node{border-color:var(--blue2);background:#0f2c47;transform:scale(1.2)!important}
+  .stage.on .node::after{animation:pulse 1.8s ease-out infinite}
+  .stage.done .node{border-color:#2b80bd;background:#1b4a6e}
+  @keyframes pulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+  .lbl{margin-top:16px;display:flex;flex-direction:column;gap:4px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+  .lbl b{font-size:11px;font-weight:700;color:#5f8099;font-variant-numeric:tabular-nums;letter-spacing:.06em}
+  .lbl span{font-size:14px;font-weight:600;color:var(--muted);line-height:1.3;transition:color .25s}
+  .stage.on .lbl span,.stage:hover .lbl span{color:var(--ink)} .stage.on .lbl b{color:var(--blue2)}
+  .stage:focus-visible{outline:none}.stage:focus-visible .node{outline:3px solid #bce9ff;outline-offset:4px}
+
+  /* controls row */
+  .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px;padding:16px 0 18px;border-bottom:1px solid var(--line)}
+  .row .k{font-size:12px;color:var(--muted);margin-right:4px}
+  .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid #2b4a63;background:transparent;border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:600;color:var(--ink2);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+  .chip i{width:9px;height:9px;border-radius:50%}
+  .chip:hover{background:#10283e}
+  .chip[aria-pressed="true"]{background:#123653;border-color:var(--blue);color:var(--ink)}
+  .chip:focus-visible,.nav:focus-visible{outline:3px solid #bce9ff;outline-offset:3px}
+  .sp{flex:1}
+  .nav{width:40px;height:40px;border-radius:50%;border:1px solid #41637b;background:transparent;color:#badff6;display:grid;place-items:center;cursor:pointer}
+  .nav:hover{background:#123653}
+  .nav svg{width:18px;height:18px;fill:currentColor}
+  .tour{width:auto;padding:0 16px 0 12px;border-radius:999px;display:flex;gap:8px;font-size:13px;font-weight:600}
+
+  /* detail */
+  .detail{display:grid;grid-template-columns:.95fr 1.35fr .95fr;gap:28px;margin-top:28px;min-height:430px}
+  .col h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:14px}
+  .stagehead .num{font-size:12px;color:var(--blue2);font-weight:700;letter-spacing:.08em}
+  .stagehead h2{font-size:28px;letter-spacing:-.02em;line-height:1.15;margin:6px 0 12px}
+  .stagehead p{color:var(--ink2);font-size:14.5px;line-height:1.7}
+  .what h3{margin-top:24px}
+  .steps{display:flex;flex-direction:column;gap:0;margin:22px 0 22px;counter-reset:s}
+  .steps li{list-style:none;position:relative;padding:0 0 12px 22px;font-size:13.5px;color:var(--ink2);counter-increment:s}
+  .steps li::before{content:"";position:absolute;left:4px;top:6px;width:7px;height:7px;border-radius:50%;background:#3a6585}
+  .steps li::after{content:"";position:absolute;left:7px;top:15px;bottom:0;width:1px;background:#24425c}
+  .steps li:last-child::after{display:none}
+  .tools{display:flex;flex-wrap:wrap;gap:7px}
+  .tool{font-size:12px;padding:5px 10px;border-radius:6px;background:#0f2a40;border:1px dashed #3b6584;color:#cfe3f1}
+  .tool.out{border-style:solid;border-color:#7a4a35;background:#2a1a14;color:#ffd2bf}
+  .tools-note{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.6}
+
+  .pains{display:flex;flex-direction:column;gap:10px}
+  .pain{position:relative;display:flex;gap:14px;padding:14px 16px 14px 18px;border-radius:10px;background:var(--card);border:1px solid var(--line);transition:opacity .3s,transform .3s,border-color .3s}
+  .pain::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--c)}
+  .pain .cat{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--c);margin-bottom:5px}
+  .pain p{font-size:14px;line-height:1.55;color:var(--ink)}
+  .pain.dim{opacity:.25}
+  .pain.hit{border-color:color-mix(in srgb,var(--c) 55%,transparent)}
+
+  .persona{display:flex;gap:14px;padding:14px;border-radius:10px;background:linear-gradient(135deg,#12314a,#0c2135);border:1px solid var(--line);margin-bottom:10px}
+  .av{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:16px;color:#032039;background:var(--blue2)}
+  .persona .nm{font-weight:700;font-size:15px}
+  .persona .rl{font-size:12px;color:var(--muted);margin:2px 0 7px}
+  .persona p{font-size:13px;line-height:1.55;color:var(--ink2)}
+  .opp{margin-top:16px;padding:16px;border-radius:10px;border:1px solid #2b5673;background:#0b2033}
+  .opp .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:6px}
+  .opp p{font-size:13.5px;line-height:1.6;color:var(--ink)}
+
+  .enter{animation:enter .55s cubic-bezier(.2,.8,.2,1) backwards}
+  @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  /* cross-stage */
+  .across{margin-top:34px;padding:20px 22px;border-radius:12px;border:1px solid var(--line2);display:grid;grid-template-columns:auto 1fr 1fr;gap:22px;align-items:center;background:linear-gradient(90deg,#0d2338,#081a2b)}
+  .across .tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+  .across p{font-size:13.5px;line-height:1.6;color:var(--ink2)}
+  .src{font-size:11.5px;color:#7f9bb0;margin-top:22px;line-height:1.7;max-width:100ch}
+
+  @media (max-width:980px){ .detail{grid-template-columns:1fr 1fr} .col.who{grid-column:1/-1} .across{grid-template-columns:1fr} }
+  @media (max-width:680px){ .wrap{padding:28px 18px} .detail{grid-template-columns:1fr} .stats{gap:22px} .stat strong{font-size:24px} .row .k{width:100%} .sp{display:none} }
+  /* embedded in the case page */
+  html.embedded body{min-height:0}
+  html.embedded .wrap{padding:4px 0 0;max-width:none}
+  html.embedded h1{font-size:clamp(28px,3.4vw,44px)}
+  /* thread between stages for the selected friction type */
+  .thread{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+  .thread path{fill:none;stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.65,0,.35,1)}
+  /* the claim leaving the system */
+  .detour{position:absolute;top:2px;transform:translateX(-50%) translateY(6px);font-size:11.5px;font-weight:700;color:#ffd2bf;background:#2a1a14;border:1px solid #7a4a35;
+    border-radius:999px;padding:5px 11px;white-space:nowrap;opacity:0;pointer-events:none;z-index:4;transition:opacity .3s,transform .3s}
+  .detour.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  /* TO-BE mode */
+  .moderow{display:flex;align-items:center;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .modes{display:inline-flex;padding:4px;border-radius:999px;border:1px solid #2b4a63;background:#0a1d2f}
+  .modes button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:12.5px;letter-spacing:.06em;padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+  .modes button[aria-pressed="true"]{background:#62c2f5;color:#032039}
+  .modes button:focus-visible{outline:3px solid #bce9ff;outline-offset:2px}
+  .modehint{font-size:12.5px;color:var(--muted)}
+  .track-wrap{margin-top:8px!important}
+  html.tobe .rail{background:linear-gradient(90deg,#2b80bd,#83d5ff);opacity:.35}
+  html.tobe .tool.out{opacity:.35;text-decoration:line-through}
+  .tobecard{padding:18px 18px 16px;border-radius:12px;border:1px solid #3b91c5;background:linear-gradient(135deg,#123854,#0c2339);margin-bottom:16px}
+  .tobecard .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:8px}
+  .tobecard p{font-size:15px;line-height:1.6;color:var(--ink)}
+  .capchips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .capchips span{font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;background:#0b2a44;border:1px solid #2b80bd;color:#cfeaff}
+  .asis-h{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:4px 0 10px}
+  html.tobe .pain{opacity:.42} html.tobe .pain p{color:var(--ink2)}
+  html.tobe .who .opp{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow" data-i="eyebrow"></p>
+    <h1><span data-i="h1a"></span><br><span class="grad" data-i="h1b"></span></h1>
+    <p class="lead" data-i="lead"></p>
+    <div class="stats">
+      <div class="stat"><strong>5</strong><span data-i="s1"></span></div>
+      <div class="stat"><strong>9</strong><span data-i="s2"></span></div>
+      <div class="stat"><strong>382</strong><span data-i="s3"></span></div>
+      <div class="stat"><strong>20+</strong><span data-i="s4"></span></div>
+    </div>
+  </header>
+
+  <div class="moderow"><div class="modes" role="group" id="modes"><button type="button" data-m="0">AS-IS</button><button type="button" data-m="1">TO-BE</button></div><span class="modehint" id="modehint"></span></div>
+  <div class="track-wrap"><div class="track" id="track">
+    <div class="rail"></div><div class="trail" id="trail"></div><svg class="thread" id="thread" aria-hidden="true"></svg><div class="detour" id="detour"></div><div class="traveler" id="traveler"></div>
+  </div></div>
+
+  <div class="row" role="toolbar">
+    <span class="k" data-i="filter"></span>
+    <div id="chips" style="display:contents"></div>
+    <span class="sp"></span>
+    <button class="nav tour" id="tour" type="button"><svg viewBox="0 0 24 24" id="tourIc"><path d="M7 4.5v15l13-7.5z"/></svg><span id="tourTx"></span></button>
+    <button class="nav" id="prev" type="button"><svg viewBox="0 0 24 24"><path d="M15.5 4 7.5 12l8 8 1.6-1.6L10.7 12l6.4-6.4z"/></svg></button>
+    <button class="nav" id="next" type="button"><svg viewBox="0 0 24 24"><path d="M8.5 4 6.9 5.6 13.3 12l-6.4 6.4L8.5 20l8-8z"/></svg></button>
+  </div>
+
+  <main class="detail" id="detail" aria-live="polite">
+    <section class="col what" id="cWhat"></section>
+    <section class="col"><h3 data-i="painsH"></h3><div class="pains" id="cPains"></div></section>
+    <section class="col who" id="cWho"></section>
+  </main>
+
+  <aside class="across" id="across"></aside>
+  <p class="src" data-i="src"></p>
+</div>
+
+<script>
+const CATS = {sys:'var(--sys)',man:'var(--man)',vis:'var(--vis)',ext:'var(--ext)'};
+const T = {
+en:{
+  eyebrow:'Porto Seguro · End-to-end claim journey · AS-IS',
+  h1a:'Where the friction lives', h1b:'from notice to salvage.',
+  lead:'Five stages of an auto claim, the people who carry each one and the pain points mapped during discovery. Choose a stage, or filter by type of friction to see how it runs across the journey.',
+  s1:'journey stages', s2:'personas', s3:'pain points and business rules mapped', s4:'systems and tools in the manual analysis step',
+  filter:'Friction type', all:'All', tour:'Play tour', pause:'Pause tour', prev:'Previous stage', next:'Next stage',
+  cats:{sys:'Fragmented systems',man:'Manual work',vis:'Low visibility',ext:'External handoffs'},
+  stageW:'Stage', stepsH:'Key steps', toolsH:'Systems and tools', outsideNote:'Solid chips are tools outside the core system.', painsH:'Pain points', whoH:'Who feels it', oppH:'TO-BE opportunity',
+  acrossTag:'Across every stage', hintAsis:'Today: where the work breaks down', hintTobe:'Proposal: the same journey on one platform', changesH:'What changes', asisH:'AS-IS pain points', capsH:'Platform capabilities', outside:'tools outside the system', eyebrowTobe:'Porto Seguro · End-to-end claim journey · TO-BE',
+  acrossP:'needs a single view of the operation: queues, at-risk inspections, deadlines and bottlenecks. Today that picture is assembled from tasks and reports in different places.',
+  acrossOpp:'Dashboard with queue status, SLA by stage and alerts for stalled cases.',
+  src:'Synthesized from the AS-IS discovery blueprint and journey maps delivered to Porto Seguro in March 2024 (analysis, regulation, approval & settlement and salvage). TO-BE capabilities follow the blueprint’s capability map. Personas are the fictional profiles created in discovery. System and partner names are generalized; no real customer, employee or partner data is shown.'
+},
+pt:{
+  eyebrow:'Porto Seguro · Jornada do sinistro ponta a ponta · AS-IS',
+  h1a:'Onde mora o atrito', h1b:'do aviso aos salvados.',
+  lead:'As cinco etapas de um sinistro auto, as pessoas que carregam cada uma e as dores mapeadas no discovery. Escolha uma etapa ou filtre por tipo de atrito para ver como ele atravessa a jornada.',
+  s1:'etapas da jornada', s2:'personas', s3:'dores e regras de negócio mapeadas', s4:'sistemas e ferramentas na etapa de análise manual',
+  filter:'Tipo de atrito', all:'Todos', tour:'Fazer o tour', pause:'Pausar tour', prev:'Etapa anterior', next:'Próxima etapa',
+  cats:{sys:'Sistemas fragmentados',man:'Trabalho manual',vis:'Pouca visibilidade',ext:'Dependência externa'},
+  stageW:'Etapa', stepsH:'Principais passos', toolsH:'Sistemas e ferramentas', outsideNote:'Os chips sólidos são ferramentas fora do sistema principal.', painsH:'Dores', whoH:'Quem sente', oppH:'Oportunidade TO-BE',
+  acrossTag:'Em todas as etapas', hintAsis:'Hoje: onde o trabalho trava', hintTobe:'Proposta: a mesma jornada em uma plataforma', changesH:'O que muda', asisH:'Dores no AS-IS', capsH:'Capacidades da plataforma', outside:'ferramentas fora do sistema', eyebrowTobe:'Porto Seguro · Jornada do sinistro ponta a ponta · TO-BE',
+  acrossP:'precisa de uma visão única da operação: filas, vistorias em risco, prazos e gargalos. Hoje esse retrato é montado a partir de tarefas e relatórios em lugares diferentes.',
+  acrossOpp:'Dashboard com status das filas, SLA por etapa e alertas para casos parados.',
+  src:'Síntese do blueprint de discovery AS-IS e dos mapas de jornada entregues à Porto Seguro em março de 2024 (análise, regulação, aprovação e liquidação, e salvados). As capacidades TO-BE seguem o mapa de capacidades do blueprint. As personas são os perfis fictícios criados no discovery. Nomes de sistemas e parceiros foram generalizados; nenhum dado real de cliente, funcionário ou parceiro aparece.'
+}};
+
+// Stage content. Each pain: [category, EN, PT]
+const STAGES = [
+ { en:{name:'Notice & first contact', what:'The claim is reported by the policyholder, a broker or a third party and enters the queue for analysis.',
+       steps:['Notice registered','Rules and queue entry','Assignment to an analyst'], opp:'Coverage rules at the moment of notice, automatic notifications and one shared status timeline for customers and brokers.'},
+   pt:{name:'Aviso e atendimento', what:'O sinistro é avisado pelo segurado, corretor ou terceiro e entra na fila de análise.',
+       steps:['Registro do aviso','Regras e entrada na fila','Atribuição ao analista'], opp:'Regras de cobertura já no aviso, notificações automáticas e uma linha do tempo de status compartilhada com cliente e corretor.'},
+   tools:[['core',0],['timeline',0],['email',1],['chat',1],['phone',1]],
+   pains:[
+    ['vis','Customers and brokers have no clear, sequential view of the claim stages.','Cliente e corretor não têm uma visão clara e sequencial das etapas do sinistro.'],
+    ['vis','There is no alert for previous claims by the same policyholder; history is searched manually.','Não há alerta de sinistros anteriores do mesmo segurado; o histórico é pesquisado à mão.'],
+    ['sys','A passenger accident (APP) notice can be opened even when the policy has no APP coverage.','É possível abrir aviso de APP mesmo quando a apólice não tem essa garantia.'],
+    ['man','Scanned documents are sorted and attached by hand, sometimes to the wrong list.','Documentos digitalizados são triados e anexados à mão, às vezes na lista errada.'],
+    ['ext','Rescheduling an inspection requires going through the contact center.','Remarcar uma vistoria exige passar pela central de atendimento.']],
+   who:[['Maria','customer',null,'Wants clear guidance and automatic notices at each step, without having to call.','cliente',null,'Quer orientação clara e avisos automáticos em cada etapa, sem precisar ligar.'],
+        ['Ricardo','broker',5,'Needs up-to-date status to keep clients informed and to reschedule inspections himself.','corretor',5,'Precisa de status atualizado para informar o cliente e remarcar vistorias sozinho.'],
+        ['Daniela','customer service',4,'Lacks visibility of payments, rental cars and where the vehicle is.','atendimento',4,'Não tem visibilidade de pagamentos, carro reserva e de onde está o veículo.']]},
+ { en:{name:'Claim analysis', what:'The analyst rebuilds the context of the claim, checks coverage and decides whether it moves on.',
+       steps:['Manual analysis','Document requests','Investigation when needed','Coverage released or declined'], opp:'Guided analysis with dynamic forms, a 360° view of the claim and queues ordered by deadline.'},
+   pt:{name:'Análise do sinistro', what:'O analista reconstrói o contexto do sinistro, confere a cobertura e decide se ele segue.',
+       steps:['Análise manual','Solicitação de documentos','Sindicância quando necessário','Cobertura liberada ou recusada'], opp:'Análise guiada com formulários dinâmicos, visão 360° do sinistro e filas ordenadas por prazo.'},
+   tools:[['core',0],['policy',0],['fraud',0],['people',0],['maps',1],['sheets',1],['plate',1],['email',1],['txt',1]],
+   pains:[
+    ['sys','The manual analysis step alone lists more than 20 systems and tools.','Só a etapa de análise manual lista mais de 20 sistemas e ferramentas.'],
+    ['ext','Accident addresses are checked by opening an external map with the addresses from the notice.','Os endereços do acidente são conferidos abrindo um mapa externo com os dados do aviso.'],
+    ['man','Present value and lost-earnings calculations are done by hand in spreadsheets.','Cálculos de valor presente e de perda laborativa são feitos à mão em planilhas.'],
+    ['vis','Status is inferred from tasks; there is no sequential view of where the claim stands.','O status é deduzido pelas tarefas; não existe uma visão sequencial de onde o sinistro está.'],
+    ['man','Victims of the same accident go to different analysts, and nothing flags the other claims before an offer.','Vítimas do mesmo acidente vão para analistas diferentes, e nada sinaliza os outros casos antes da proposta.'],
+    ['vis','Claims are picked without priority by deadline or urgency.','Os processos são escolhidos sem prioridade por prazo ou urgência.']],
+   who:[['Bruna','claims analyst',5,'Wants everything about a claim in one place, without consulting several systems.','analista de sinistros',5,'Quer tudo sobre o sinistro em um só lugar, sem consultar vários sistemas.']]},
+ { en:{name:'Regulation', what:'Damage is assessed through online, digital or on-site inspection. Bodily injury cases are regulated by an external service provider.',
+       steps:['Inspection scheduling','Online or on-site regulation','Report issued','Negotiation'], opp:'A partner community or integration so the external provider updates the claim directly, with inspection status in the workflow.'},
+   pt:{name:'Regulação', what:'O dano é avaliado por vistoria on-line, digital ou presencial. Danos corporais são regulados por um prestador de serviço externo.',
+       steps:['Agendamento da vistoria','Regulação on-line ou presencial','Emissão do laudo','Negociação'], opp:'Comunidade de parceiros ou integração para o prestador externo atualizar o sinistro direto, com o status da vistoria no workflow.'},
+   tools:[['core',0],['parts',0],['provider',1],['email',1],['phone',1]],
+   pains:[
+    ['ext','Claim data is typed again, by hand, into the external provider’s system.','Os dados do sinistro são digitados de novo, à mão, no sistema do prestador externo.'],
+    ['ext','Reports arrive by e-mail and provider updates are manual.','Os laudos chegam por e-mail e as atualizações do prestador são manuais.'],
+    ['vis','Inspection status and deadlines are hard to follow.','É difícil acompanhar status e prazos das vistorias.'],
+    ['man','Inspections are reallocated between inspectors by hand.','As vistorias são remanejadas entre inspetores manualmente.'],
+    ['sys','There is no integrated view of orders and values when several third parties are involved.','Não há visão integrada de ordens e valores quando há vários terceiros.']],
+   who:[['Carla','regulation analyst',4,'Needs inspection status in one place and the investigation workflow connected to the claim.','analista de regulação',4,'Precisa do status das vistorias num só lugar e da sindicância conectada ao sinistro.'],
+        ['João','claims inspector',7,'Lacks access to policy conditions during inspection and a clear view of his workload by region.','inspetor de sinistros',7,'Não tem acesso às condições da apólice na vistoria nem visão clara da carga por região.']]},
+ { en:{name:'Approval & settlement', what:'Values are approved, the agreement is closed and the payment is scheduled.',
+       steps:['Agreement terms','Customer acceptance','Documents, debts and restrictions','Payment scheduled'], opp:'Automated calculations and payment scheduling, signatures captured in the record and alerts for stalled agreements.'},
+   pt:{name:'Aprovação e liquidação', what:'Os valores são aprovados, o acordo é fechado e o pagamento é programado.',
+       steps:['Termo de acordo','Aceite do cliente','Documentos, débitos e restrições','Pagamento programado'], opp:'Cálculos e programação de pagamento automatizados, assinatura registrada no sinistro e alertas para acordos parados.'},
+   tools:[['core',0],['payment',0],['esign',0],['calc',1],['email',1],['mail',1]],
+   pains:[
+    ['man','Payments are generated with manual interventions.','Os pagamentos são gerados com intervenções manuais.'],
+    ['man','The 30-day window for interest is counted by hand, and interest is calculated on an external website.','A janela de 30 dias para juros é contada à mão, e os juros são calculados em um site externo.'],
+    ['ext','Signed terms arrive by e-mail and have to be uploaded manually.','Os termos assinados chegam por e-mail e precisam ser carregados manualmente.'],
+    ['vis','There is no alert for cases waiting for the customer’s acceptance.','Não há alerta para casos aguardando o aceite do cliente.'],
+    ['sys','Documents received by mail are digitized in a separate system.','Documentos recebidos pelo correio são digitalizados em outro sistema.']],
+   who:[['André','settlement & payments analyst',6,'Wants calculations and payments automated, with every check in one place.','analista de liquidação e pagadoria',6,'Quer cálculos e pagamentos automatizados, com todas as checagens num só lugar.']]},
+ { en:{name:'Salvage & recovery', what:'In total losses, the vehicle is removed, assessed and transferred or sold.',
+       steps:['Salvage assessment','Removal to the yard','Transfer documentation','Transfer or sale'], opp:'Vehicle location and status inside the claim record, with yard photos integrated automatically.'},
+   pt:{name:'Salvados e recuperação', what:'Na indenização integral, o veículo é removido, avaliado e transferido ou vendido.',
+       steps:['Avaliação do salvado','Remoção para o pátio','Documentação de transferência','Transferência ou venda'], opp:'Localização e status do veículo dentro do sinistro, com as fotos do pátio integradas automaticamente.'},
+   tools:[['core',0],['partner',1],['email',1]],
+   pains:[
+    ['vis','It is hard to know which yard or base the vehicle is in.','É difícil saber em que pátio ou base o veículo está.'],
+    ['ext','Removal and auction status live in partners’ systems.','O status de remoção e leilão fica nos sistemas dos parceiros.'],
+    ['man','The vehicle’s presence at the yard is checked physically.','A presença do veículo no pátio é conferida fisicamente.'],
+    ['sys','Chassis and engine irregularities only surface when the inspection report arrives.','Irregularidades de chassi e motor só aparecem quando o laudo chega.'],
+    ['ext','Photos are low quality, and yard photos are only on the partner’s website.','As fotos têm baixa qualidade, e as do pátio só estão no site do parceiro.']],
+   who:[['Rodrigo','salvage analyst',8,'Needs reliable location and status of each vehicle without leaving the claim.','analista de salvados',8,'Precisa de localização e status confiáveis de cada veículo sem sair do sinistro.']]}
+];
+const TOOLS = {
+ core:['Legacy core system','Sistema legado principal'], timeline:['Customer timeline','Timeline do cliente'], email:['E-mail','E-mail'], chat:['Chat / WhatsApp','Chat / WhatsApp'],
+ phone:['Phone','Telefone'], policy:['Policy lookup','Consulta de apólice'], fraud:['Fraud dossier','Dossiê de fraude'], people:['People database','Base de pessoas'],
+ maps:['Map website','Site de mapas'], sheets:['Spreadsheets','Planilhas'], plate:['Plate lookup website','Site de consulta de placa'], txt:['Text notes','Notas em .txt'],
+ parts:['Parts & workshop system','Sistema de peças e oficinas'], provider:['External provider portal','Portal do prestador externo'], payment:['Payment & reserves system','Sistema de pagamento e reservas'],
+ esign:['E-signature','Assinatura eletrônica'], calc:['External calculator website','Site externo de cálculo'], mail:['Mail-in documents','Documentos pelo correio'], partner:['Towing & auction partner sites','Sites de guincho e leilão']
+};
+// TO-BE capabilities per stage, from the blueprint's capability map
+const CAPS = [
+ [['Business rules engine','Motor de regras'],['Queues & assignment rules','Filas e regras de atribuição'],['Customer notifications','Notificações ao cliente']],
+ [['OmniScript guided flow','Fluxo guiado (OmniScript)'],['Flex Cards · 360° view','Flex Cards · visão 360°'],['SLA & milestones','SLA e marcos']],
+ [['Partner community','Comunidade de parceiros'],['Integration procedures','Integrações'],['Action plans','Planos de ação']],
+ [['Rules for calculations','Regras para cálculos'],['E-signature in the record','Assinatura no registro'],['Document generation','Geração de documentos']],
+ [['Partner integrations','Integrações com parceiros'],['Flex Cards · vehicle status','Flex Cards · status do veículo'],['Document OCR','OCR de documentos']]
+];
+const PEDRO=['Pedro','senior analyst / manager',8,'analista sênior / gestor'];
+
+// ---------- language
+function detectLang(){
+  try{ if(parent!==window){ const l=parent.document.documentElement.lang; if(l) return l.toLowerCase().startsWith('pt')?'pt':'en'; } }catch(e){}
+  const q=new URLSearchParams(location.search).get('lang'); if(q==='pt'||q==='en') return q;
+  try{ const s=localStorage.getItem('portfolio-language'); if(s==='pt'||s==='en') return s; }catch(e){}
+  return 'en';
+}
+let L=detectLang(), cur=0, filter=null, tourOn=false, tourTimer=null, tobe=false, introDone=false;
+if(window.frameElement) document.documentElement.classList.add('embedded');
+const $=id=>document.getElementById(id);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---------- build track
+const track=$('track'), X=k=>10+k*20;
+STAGES.forEach((s,k)=>{
+  const b=document.createElement('button'); b.className='stage'; b.type='button'; b.style.left=X(k)+'%';
+  const counts={sys:0,man:0,vis:0,ext:0}; s.pains.forEach(p=>counts[p[0]]++);
+  b.innerHTML=`<span class="sig">${Object.keys(counts).map(c=>`<i class="${c}" data-c="${c}" data-h="${counts[c]}"></i>`).join('')}</span><span class="node"></span><span class="lbl"><b>0${k+1}</b><span></span></span>`;
+  b.onclick=()=>{ stopTour(); go(k); };
+  track.appendChild(b);
+});
+const stageEls=[...track.querySelectorAll('.stage')];
+
+// chips
+const chips=$('chips');
+[null,'sys','man','vis','ext'].forEach(c=>{
+  const b=document.createElement('button'); b.className='chip'; b.type='button'; b.dataset.c=c||'';
+  b.innerHTML=(c?`<i style="background:${CATS[c]}"></i>`:'')+'<span></span>';
+  b.onclick=()=>{ filter=c; applyFilter(); };
+  chips.appendChild(b);
+});
+
+function text(){
+  const t=T[L]; document.documentElement.lang=L==='pt'?'pt-BR':'en';
+  document.querySelectorAll('[data-i]').forEach(el=>el.textContent=t[el.dataset.i]);
+  stageEls.forEach((el,k)=>{ el.querySelector('.lbl span').textContent=STAGES[k][L].name; el.setAttribute('aria-label',`${t.stageW} ${k+1}: ${STAGES[k][L].name}`); });
+  [...chips.children].forEach(b=>b.querySelector('span').textContent= b.dataset.c ? t.cats[b.dataset.c] : t.all);
+  if(tobe) document.querySelector('[data-i="eyebrow"]').textContent=t.eyebrowTobe;
+  $('modehint').textContent= tobe ? t.hintTobe : t.hintAsis;
+  document.querySelectorAll('#modes button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.m===+tobe)));
+  $('prev').setAttribute('aria-label',t.prev); $('next').setAttribute('aria-label',t.next);
+  setTourUI();
+  renderAcross(); render(false);
+}
+
+// ---------- detail rendering
+function render(animate=true){
+  const s=STAGES[cur], t=T[L], d=s[L];
+  const anim=(i)=> animate&&!reduce ? `class="enter" style="animation-delay:${i*70}ms"` : '';
+  $('cWhat').innerHTML=`<div class="stagehead" ${anim(0)}><div class="num">${t.stageW.toUpperCase()} 0${cur+1} / 05</div><h2>${d.name}</h2><p>${d.what}</p></div>
+    <h3 ${anim(1)}>${t.stepsH}</h3><ul class="steps" ${anim(2)}>${d.steps.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h3 ${anim(3)}>${t.toolsH}</h3><div class="tools" ${anim(4)}>${s.tools.map(([k,out])=>`<span class="tool${out?' out':''}">${TOOLS[k][L==='pt'?1:0]}</span>`).join('')}</div>
+    <p class="tools-note" ${anim(5)}>${t.outsideNote}</p>`;
+  const painCards=s.pains.map((p,i)=>`<div class="pain ${animate&&!reduce?'enter':''}" data-c="${p[0]}" style="--c:${CATS[p[0]]};animation-delay:${(tobe?260:120)+i*80}ms"><div><div class="cat">${t.cats[p[0]]}</div><p>${L==='pt'?p[2]:p[1]}</p></div></div>`).join('');
+  document.querySelector('.detail .col:nth-child(2) h3').textContent = tobe ? t.changesH : t.painsH;
+  $('cPains').innerHTML = tobe
+    ? `<div class="tobecard ${animate&&!reduce?'enter':''}"><div class="t">${t.oppH}</div><p>${d.opp}</p><div class="capchips">${CAPS[cur].map((c,i)=>`<span class="${animate&&!reduce?'enter':''}" style="animation-delay:${160+i*70}ms">${c[L==='pt'?1:0]}</span>`).join('')}</div></div><div class="asis-h">${t.asisH}</div>`+painCards
+    : painCards;
+  $('cWho').classList.add('who');
+  $('cWho').innerHTML=`<h3 ${anim(1)}>${t.whoH}</h3>`+s.who.map((w,i)=>{
+      const role=L==='pt'?w[4]:w[1], yrs=w[2], need=L==='pt'?w[6]:w[3];
+      const ys=yrs? (L==='pt'?` · ${yrs} anos`:` · ${yrs} yrs`) :'';
+      return `<div class="persona ${animate&&!reduce?'enter':''}" style="animation-delay:${200+i*90}ms"><div class="av" style="background:${['#83d5ff','#b8e6ff','#9be3d6'][i%3]}">${w[0][0]}</div><div><div class="nm">${w[0]}</div><div class="rl">${role}${ys}</div><p>${need}</p></div></div>`;
+    }).join('')+`<div class="opp ${animate&&!reduce?'enter':''}" style="animation-delay:${360}ms"><div class="t">${t.oppH}</div><p>${d.opp}</p></div>`;
+  applyFilter();
+}
+function renderAcross(){
+  const t=T[L];
+  $('across').innerHTML=`<div class="av" style="width:52px;height:52px;font-size:19px">P</div>
+    <div><div class="tag">${t.acrossTag}</div><p><b style="color:var(--ink)">Pedro</b>, ${L==='pt'?PEDRO[3]:PEDRO[1]} · ${PEDRO[2]} ${L==='pt'?'anos':'yrs'}, ${t.acrossP}</p></div>
+    <div><div class="tag">${t.oppH}</div><p>${t.acrossOpp}</p></div>`;
+}
+function applyFilter(){
+  [...chips.children].forEach(b=>b.setAttribute('aria-pressed',String((b.dataset.c||null)===filter)));
+  document.querySelectorAll('.pain').forEach(p=>{ p.classList.toggle('dim',!!filter&&p.dataset.c!==filter); p.classList.toggle('hit',!!filter&&p.dataset.c===filter); });
+  document.querySelectorAll('.sig i').forEach(i=>{ i.style.opacity = !filter||i.dataset.c===filter ? 1 : .18; });
+  drawThread();
+}
+function setBars(){
+  if(!introDone) return;
+  document.querySelectorAll('.sig i').forEach(i=>{ i.style.height = tobe ? '3px' : (i.dataset.h*16)+'px'; });
+}
+// a colored thread ties together the stages where the selected friction type appears
+function drawThread(){
+  const svg=$('thread'), r=track.getBoundingClientRect();
+  svg.setAttribute('viewBox',`0 0 ${r.width} ${r.height}`); svg.innerHTML='';
+  if(!filter||tobe||!introDone) return;
+  const pts=[];
+  stageEls.forEach(el=>{ const bar=el.querySelector(`.sig i[data-c="${filter}"]`); const n=+bar.dataset.h; if(!n) return;
+    const b=bar.getBoundingClientRect(); pts.push({x:b.left-r.left+b.width/2, y:b.top-r.top-8, n}); });
+  for(let k=0;k<pts.length-1;k++){
+    const a=pts[k], b=pts[k+1], mx=(a.x+b.x)/2, my=Math.min(a.y,b.y)-26;
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',`M${a.x},${a.y} Q${mx},${my} ${b.x},${b.y}`);
+    path.setAttribute('stroke',getComputedStyle(document.documentElement).getPropertyValue('--'+filter).trim());
+    path.setAttribute('stroke-width', 1.5+ (a.n+b.n)*0.9);
+    path.setAttribute('opacity','.85');
+    svg.appendChild(path);
+    const len=path.getTotalLength(); path.style.strokeDasharray=len; path.style.strokeDashoffset=len;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ path.style.transitionDelay=(k*0.18)+'s'; path.style.strokeDashoffset=0; }));
+  }
+  pts.forEach(p=>{ const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',p.x); c.setAttribute('cy',p.y); c.setAttribute('r',3.5); c.setAttribute('fill',getComputedStyle(document.documentElement).getPropertyValue('--'+filter).trim()); svg.appendChild(c); });
+}
+addEventListener('resize',()=>drawThread());
+function go(k){
+  cur=(k+STAGES.length)%STAGES.length;
+  stageEls.forEach((el,i)=>{ el.classList.toggle('on',i===cur); el.classList.toggle('done',i<cur); });
+  $('trail').style.width= tobe ? '80%' : (cur*20)+'%';
+  $('traveler').style.left=X(cur)+'%';
+  const el=stageEls[cur], wrap=track.parentElement;
+  if(wrap.scrollWidth>wrap.clientWidth) wrap.scrollTo({left:el.offsetLeft-wrap.clientWidth/2+el.offsetWidth/2,behavior:reduce?'auto':'smooth'});
+  render(true);
+  detour();
+}
+// when a stage depends on tools outside the system, the claim hops off the rail and comes back
+let detourTimer=null, detourAnim=null;
+function detour(){
+  clearTimeout(detourTimer); if(detourAnim) detourAnim.cancel(); $('detour').classList.remove('on');
+  const outs=STAGES[cur].tools.filter(x=>x[1]).length;
+  if(tobe||!outs||reduce) return;
+  detourTimer=setTimeout(()=>{
+    const tag=$('detour'); tag.textContent=`↗ ${outs} ${T[L].outside}`; const tw=track.clientWidth, half=tag.offsetWidth/2+4; tag.style.left=Math.min(tw-half,Math.max(half,tw*X(cur)/100))+'px'; tag.classList.add('on');
+    detourAnim=$('traveler').animate([{transform:'translateY(0)'},{transform:'translateY(-78px)',offset:.3},{transform:'translateY(-78px)',offset:.7},{transform:'translateY(0)'}],{duration:1800,easing:'cubic-bezier(.65,0,.35,1)'});
+    detourAnim.onfinish=()=>{ setTimeout(()=>tag.classList.remove('on'),300); };
+  }, 950);
+}
+function setTobe(on){
+  tobe=on; document.documentElement.classList.toggle('tobe',on);
+  if(on){ $('trail').style.width='80%'; } else { $('trail').style.width=(cur*20)+'%'; }
+  setBars(); text(); render(true); detour();
+}
+document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>{ const on=b.dataset.m==='1'; if(on!==tobe){ stopTour(); setTobe(on); } });
+
+// ---------- tour
+function setTourUI(){
+  const t=T[L]; $('tourTx').textContent= tourOn? t.pause : t.tour;
+  $('tourIc').innerHTML= tourOn? '<path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/>' : '<path d="M7 4.5v15l13-7.5z"/>';
+}
+function stopTour(){ tourOn=false; clearInterval(tourTimer); setTourUI(); }
+function startTour(){ tourOn=true; setTourUI(); go(cur===STAGES.length-1?0:cur+1); tourTimer=setInterval(()=>{ if(cur===STAGES.length-1){stopTour();return;} go(cur+1); },7000); }
+$('tour').onclick=()=> tourOn?stopTour():startTour();
+$('prev').onclick=()=>{ stopTour(); go(cur-1); };
+$('next').onclick=()=>{ stopTour(); go(cur+1); };
+addEventListener('keydown',e=>{ if(e.target.closest('input,textarea')) return;
+  if(e.key==='ArrowRight'){stopTour();go(cur+1);} else if(e.key==='ArrowLeft'){stopTour();go(cur-1);} });
+
+// ---------- intro choreography: rail draws, nodes pop, friction bars rise
+function intro(){
+  const delay=(ms)=>reduce?0:ms;
+  stageEls.forEach((el,k)=>{
+    setTimeout(()=>{ el.querySelector('.node').style.transform='scale(1)'; const l=el.querySelector('.lbl'); l.style.opacity=1; l.style.transform='none'; }, delay(250+k*140));
+    el.querySelectorAll('.sig i').forEach((i,j)=> setTimeout(()=>{ i.style.height= tobe?'3px':(i.dataset.h*16)+'px'; }, delay(700+k*140+j*60)));
+  });
+  setTimeout(()=>go(0), delay(400));
+  setTimeout(()=>{ introDone=true; drawThread(); }, delay(700+5*140+300));
+}
+// keep the iframe as tall as the content when embedded in the case page
+if(window.frameElement){
+  const fit=()=>{ window.frameElement.style.height=Math.ceil(document.documentElement.getBoundingClientRect().height)+'px'; };
+  new ResizeObserver(fit).observe(document.documentElement); addEventListener('load',fit); fit();
+}
+// language sync with the portfolio page
+try{ if(parent!==window){ const sync=()=>{ const n=detectLang(); if(n!==L){ L=n; text(); } };
+  new MutationObserver(sync).observe(parent.document.documentElement,{attributes:true,attributeFilter:['lang']}); parent.addEventListener('portfolio-language-change',sync);} }catch(e){}
+text();
+// start when visible
+const io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ io.disconnect(); intro(); } },{threshold:.2});
+io.observe(track);
+</script>
+</body>
+</html>
