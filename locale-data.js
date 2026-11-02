@@ -2252,8 +2252,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Um fluxo mais claro."
   ],
   [
-    "A measurable ambition.",
-    "Uma ambição mensurável."
+    "Measured by observation.",
+    "Medido por observação."
   ],
   [
     "The design work connects research findings to a common Salesforce experience, with operational visibility, guided analysis and mobile continuity.",
@@ -2264,20 +2264,20 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Tempo de análise"
   ],
   [
-    "Working figure from the project record.",
-    "Número provisório do relato do projeto."
+    "Before/after estimate, timing analysts completing a claim in both versions.",
+    "Estimativa antes/depois, cronometrando analistas concluindo um sinistro nas duas versões."
   ],
   [
     "Navigation steps",
     "Etapas de navegação"
   ],
   [
-    "Working figure from the project record.",
-    "Número provisório do relato do projeto."
+    "Before/after estimate, timing analysts completing a claim in both versions.",
+    "Estimativa antes/depois, cronometrando analistas concluindo um sinistro nas duas versões."
   ],
   [
-    "Provisional impact figures. Baselines and measurement details are being reviewed; these should not be read as independently verified production results.",
-    "Indicadores de impacto provisórios. As bases e os detalhes de medição estão em revisão; estes números não representam resultados de produção verificados de forma independente."
+    "How these were measured: by direct observation, estimating how long an analyst took to complete a claim, and how many steps it took, in the legacy system and in the new version. They are observational estimates, not production analytics.",
+    "Como foram medidos: por observação direta, estimando quanto tempo e quantas etapas um analista levava para concluir um sinistro no sistema legado e na nova versão. São estimativas por observação, não dados de produção."
   ],
   [
     "What the work delivers",
@@ -2532,7 +2532,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The solution", "A solução"],
   ["Outcomes & reflections", "Resultados e reflexões"],
   ["What still needs to be measured", "O que ainda precisa ser medido"],
-  ["The research and design artifacts document the proposed experience. Confirming operational impact requires a consistent baseline, an agreed measurement period and evidence from the implemented workflow.", "Os artefatos de pesquisa e design documentam a experiência proposta. Confirmar o impacto operacional exige uma linha de base consistente, um período de medição acordado e evidências do fluxo implementado."],
+  ["The observed estimates point to a clear gain. Confirming it at scale needs production data over an agreed period: analysis time, rework from incomplete documents and SLA by stage.", "As estimativas por observação apontam um ganho claro. Confirmá-lo em escala exige dados de produção em um período combinado: tempo de análise, retrabalho por documentos incompletos e SLA por etapa."],
   ["Context", "Contexto"],
   ["My role", "Minha atuação"],
   ["Direction", "Direção"],
@@ -2578,5 +2578,6 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["I took the problem to the Salesforce specialists, and the answer was OmniScript. Native to the platform, it kept Salesforce’s standard information layout while the guided flow brought data from several tabs and sources into each step of the analysis. That is how the guided analysis was born.", "Levei o problema aos especialistas de Salesforce, e a resposta foi o OmniScript. Nativo da plataforma, ele mantinha o padrão de distribuição de informações do Salesforce, enquanto o fluxo guiado reunia em cada etapa da análise dados de várias abas e origens. Foi assim que nasceu a análise guiada."],
   ["In the first migrated version, legacy fields were spread across Salesforce tabs, and analysts asked where their information had gone.", "Na primeira versão migrada, os campos do legado estavam espalhados pelas abas do Salesforce, e os analistas perguntavam para onde tinham ido suas informações."],
   ["Changing platforms without changing how information reaches the analyst would only move the search somewhere else.", "Trocar de plataforma sem mudar como a informação chega ao analista só mudaria a busca de lugar."],
-  ["Use OmniScript, native to Salesforce, to gather data from different tabs and sources into a single guided analysis.", "Usar o OmniScript, nativo do Salesforce, para reunir dados de abas e origens diferentes numa única análise guiada."]
+  ["Use OmniScript, native to Salesforce, to gather data from different tabs and sources into a single guided analysis.", "Usar o OmniScript, nativo do Salesforce, para reunir dados de abas e origens diferentes numa única análise guiada."],
+  ["Before/after estimate, counting the steps to complete the same claim in both versions.", "Estimativa antes/depois, contando as etapas para concluir o mesmo sinistro nas duas versões."]
 ]);
