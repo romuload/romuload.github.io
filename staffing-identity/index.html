@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GFT Staffing · Identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: documento corporativo com índice fixo à esquerda; faixa marinho só na abertura; seções em folha branca sobre fundo cinza-azulado */
+:root {
+  --marinho: #001326;
+  --marinho-2: #002852;
+  --azul: #0052a3;
+  --azul-forte: #003879;
+  --azul-claro: #b8d9fa;
+  --azul-fundo: #eaf3fd;
+  --papel: #ffffff;
+  --fundo: #f4f6f9;
+  --linha: #d8dee4;
+  --linha-forte: #b3b8bf;
+  --texto: #001326;
+  --texto-2: #4d535a;
+  --texto-3: #6b727a;
+  --sucesso: #007a74;
+  --sucesso-fundo: #e3f4f2;
+  --atencao: #a63d00;
+  --atencao-marca: #fb610e;
+  --atencao-fundo: #fdeee2;
+  --erro: #b42318;
+  --erro-fundo: #fbeaea;
+  --sobre-marinho: #ffffff;
+  --sobre-marinho-2: #b3c2d3;
+  --sombra: 0 1px 2px rgba(0, 19, 38, .06), 0 8px 24px rgba(0, 19, 38, .08);
+
+  --f-texto: "GFT Corporate", "GFTCorporate", "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --t-12: .75rem; --t-14: .875rem; --t-16: 1rem; --t-20: 1.25rem; --t-24: 1.5rem; --t-32: 2rem; --t-48: 3rem;
+  --r: 4px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --marinho: #001326; --marinho-2: #0b2a4a;
+    --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
+    --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+    --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
+    --sucesso: #4fd8cf; --sucesso-fundo: #062b2a;
+    --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
+    --erro: #f29a9a; --erro-fundo: #341313;
+    --sobre-marinho: #ffffff; --sobre-marinho-2: #b3c2d3;
+    --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --marinho: #001326; --marinho-2: #0b2a4a;
+  --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
+  --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+  --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
+  --sucesso: #4fd8cf; --sucesso-fundo: #062b2a;
+  --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
+  --erro: #f29a9a; --erro-fundo: #341313;
+  --sobre-marinho: #ffffff; --sobre-marinho-2: #b3c2d3;
+  --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--fundo); color: var(--texto);
+  font: 400 var(--t-16)/1.55 var(--f-texto);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { margin: 0; font-weight: 600; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--azul); }
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+.mono { font-family: var(--f-dado); font-size: .9em; }
+.num { font-variant-numeric: tabular-nums; }
+.rotulo { font-size: var(--t-12); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-3); }
+
+/* Abertura */
+.abertura { background: var(--marinho); color: var(--sobre-marinho); }
+.abertura-in {
+  max-width: 1200px; margin: 0 auto;
+  padding-block: 40px 56px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px;
+}
+.lockup { display: flex; align-items: center; gap: 20px; color: inherit; }
+.lockup svg { height: 40px; width: auto; fill: currentColor; display: block; }
+.lockup .div { width: 1px; align-self: stretch; background: currentColor; opacity: .35; }
+.lockup .nome { font-size: 1.6rem; font-weight: 500; letter-spacing: -.01em; line-height: 1; }
+.abertura h1 { font-size: clamp(2rem, 5vw, var(--t-48)); line-height: 1.08; letter-spacing: -.025em; max-width: 18ch; font-weight: 600; }
+.abertura .lead { color: var(--sobre-marinho-2); max-width: 62ch; font-size: var(--t-20); line-height: 1.5; }
+.abertura .meta { display: flex; flex-wrap: wrap; gap: 8px 28px; color: var(--sobre-marinho-2); font-size: var(--t-14); }
+.abertura .meta b { color: var(--sobre-marinho); font-weight: 500; }
+
+/* Corpo */
+.corpo {
+  max-width: 1200px; margin: 0 auto;
+  padding-block: 40px 80px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px));
+  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: start;
+}
+.indice { position: sticky; top: calc(24px + env(safe-area-inset-top, 0px)); display: grid; gap: 2px; font-size: var(--t-14); }
+.indice a { color: var(--texto-2); text-decoration: none; padding: 6px 10px; border-left: 2px solid transparent; }
+.indice a:hover { color: var(--texto); border-left-color: var(--linha-forte); }
+.secoes { display: grid; gap: 32px; min-width: 0; }
+.secao { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 40px; display: grid; gap: 28px; min-width: 0; scroll-margin-top: 24px; }
+.secao > header { display: grid; gap: 8px; max-width: 68ch; }
+.secao h2 { font-size: var(--t-32); letter-spacing: -.02em; line-height: 1.15; }
+.secao h3 { font-size: var(--t-20); letter-spacing: -.01em; }
+.secao > header p { color: var(--texto-2); }
+
+/* Princípios */
+.principios { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid var(--linha); }
+.principio { padding: 20px 20px 20px 0; display: grid; gap: 6px; align-content: start; border-bottom: 1px solid var(--linha); }
+.principio h3 { font-size: var(--t-16); }
+.principio p { color: var(--texto-2); font-size: var(--t-14); }
+.principio .q { width: 10px; height: 10px; background: var(--texto); margin-bottom: 6px; }
+
+/* Marca */
+.marcas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.marca-cx { border: 1px solid var(--linha); border-radius: var(--r); min-height: 200px; display: grid; place-items: center; padding: 32px; position: relative; }
+.marca-cx.claro { background: #ffffff; color: #001326; border-color: var(--linha); }
+.marca-cx.escuro { background: #001326; color: #ffffff; border-color: #001326; }
+.marca-cx .legenda { position: absolute; left: 14px; bottom: 10px; font-size: var(--t-12); opacity: .7; }
+.marca-cx .lockup svg { height: 36px; }
+.protecao { position: relative; padding: 36px; outline: 1px dashed rgba(0, 82, 163, .55); }
+.protecao::before, .protecao::after { content: ""; position: absolute; width: 18px; height: 18px; background: rgba(0, 82, 163, .18); }
+.protecao::before { left: 9px; top: 9px; } .protecao::after { right: 9px; bottom: 9px; }
+.regras-marca { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 32px; font-size: var(--t-14); color: var(--texto-2); }
+.regras-marca li { margin-bottom: 4px; }
+.regras-marca h4 { font-size: var(--t-14); color: var(--texto); margin-bottom: 6px; }
+.regras-marca ul { margin: 0; padding-left: 18px; }
+
+/* Cores */
+.cores-principais { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; }
+.cor { border-radius: var(--r); overflow: hidden; border: 1px solid var(--linha); display: grid; grid-template-rows: 1fr auto; min-height: 168px; }
+.cor .amostra { padding: 16px; display: flex; align-items: flex-end; font-weight: 600; font-size: var(--t-14); }
+.cor .ficha { padding: 12px 16px; background: var(--papel); display: grid; gap: 2px; font-size: var(--t-14); }
+.cor .ficha span { color: var(--texto-3); font-size: var(--t-12); }
+.neutros { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.neutro { display: grid; gap: 6px; font-size: var(--t-12); color: var(--texto-2); }
+.neutro i { display: block; height: 56px; border-radius: var(--r); border: 1px solid var(--linha); }
+.semanticas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.sem { border: 1px solid var(--linha); border-radius: var(--r); padding: 16px; display: grid; gap: 8px; font-size: var(--t-14); }
+.sem .topo { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.sem .topo i { width: 14px; height: 14px; border-radius: 50%; }
+.sem p { color: var(--texto-2); }
+.proporcao { display: flex; height: 14px; border-radius: 2px; overflow: hidden; }
+.proporcao span { display: block; }
+.legenda-prop { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: var(--t-12); color: var(--texto-2); }
+
+/* Tipografia */
+.escala { display: grid; border-top: 1px solid var(--linha); }
+.escala-item { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--linha); }
+.escala-item .spec { font-size: var(--t-12); color: var(--texto-3); font-family: var(--f-dado); }
+.escala-item .ex { overflow-wrap: anywhere; }
+.familias { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.familia { border: 1px solid var(--linha); border-radius: var(--r); padding: 20px; display: grid; gap: 10px; }
+.familia .aa { font-size: 3.5rem; line-height: 1; font-weight: 600; letter-spacing: -.03em; }
+.familia p { color: var(--texto-2); font-size: var(--t-14); }
+
+/* Glossário */
+.tabela-wrap { overflow-x: auto; border: 1px solid var(--linha); border-radius: var(--r); }
+table { border-collapse: collapse; width: 100%; font-size: var(--t-14); }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+th { font-size: var(--t-12); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--texto-3); background: var(--fundo); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.en { color: var(--texto-3); font-family: var(--f-dado); font-size: var(--t-12); white-space: nowrap; }
+td.pt { font-weight: 600; white-space: nowrap; }
+td.obs { color: var(--texto-2); min-width: 240px; }
+.grupo td { background: var(--fundo); font-weight: 600; font-size: var(--t-12); letter-spacing: .04em; text-transform: uppercase; color: var(--texto-2); }
+
+/* Status */
+.status { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 12px; font-size: var(--t-12); font-weight: 600; white-space: nowrap; border: 1px solid transparent; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+.s-neutro { background: var(--fundo); color: var(--texto-2); border-color: var(--linha); }
+.s-aberto { background: var(--papel); color: var(--texto); border-color: var(--linha-forte); }
+.s-aberto::before { background: transparent; border: 1.5px solid currentColor; }
+.s-azul { background: var(--azul-fundo); color: var(--azul); }
+.s-forte { background: var(--azul); color: var(--papel); }
+.s-sucesso { background: var(--sucesso-fundo); color: var(--sucesso); }
+.s-sucesso-borda { background: var(--papel); color: var(--sucesso); border-color: currentColor; }
+.s-atencao { background: var(--atencao-fundo); color: var(--atencao); }
+.s-erro { background: var(--erro-fundo); color: var(--erro); }
+.ciclo { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.etapa { border: 1px solid var(--linha); border-radius: var(--r); padding: 18px; display: grid; gap: 12px; align-content: start; }
+.etapa h3 { font-size: var(--t-14); }
+.etapa .lista-status { display: grid; gap: 10px; }
+.etapa .linha-s { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: center; font-size: var(--t-14); color: var(--texto-2); }
+.etapa .linha-s .status { justify-self: start; }
+
+/* Componentes */
+.comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.comp { border: 1px solid var(--linha); border-radius: var(--r); padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.comp > .rotulo { margin-bottom: 2px; }
+.botoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { font: 600 var(--t-14)/1 var(--f-texto); height: 40px; padding: 0 18px; border-radius: var(--r); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .1s ease, background-color .15s ease; }
+.btn:active { transform: scale(.98); }
+.btn-pri { background: var(--azul); color: var(--papel); }
+.btn-pri:hover { background: var(--azul-forte); }
+.btn-sec { background: var(--papel); color: var(--azul); border-color: var(--azul); }
+.btn-ter { background: transparent; color: var(--azul); padding: 0 8px; }
+.btn-dest { background: var(--papel); color: var(--erro); border-color: var(--erro); }
+.btn[disabled] { background: var(--fundo); color: var(--texto-3); border-color: var(--linha); cursor: not-allowed; }
+.campo { display: grid; gap: 6px; font-size: var(--t-14); }
+.campo label { font-weight: 600; }
+.campo .ajuda { color: var(--texto-3); font-size: var(--t-12); }
+.campo input, .campo select { font: 400 var(--t-14) var(--f-texto); height: 40px; padding: 0 12px; border: 1px solid var(--linha-forte); border-radius: var(--r); background: var(--papel); color: var(--texto); width: 100%; }
+.campo.com-erro input { border-color: var(--erro); box-shadow: inset 3px 0 0 var(--erro); }
+.campo .msg-erro { color: var(--erro); font-size: var(--t-12); font-weight: 500; display: flex; gap: 6px; }
+.prazo { display: grid; gap: 8px; }
+.prazo .barra { height: 6px; border-radius: 3px; background: var(--fundo); border: 1px solid var(--linha); overflow: hidden; }
+.prazo .barra i { display: block; height: 100%; background: var(--azul); }
+.prazo .barra i.fora { background: var(--atencao-marca); }
+.prazo .info { display: flex; justify-content: space-between; gap: 12px; font-size: var(--t-12); color: var(--texto-2); }
+.reserva { border: 1px solid var(--linha); border-radius: var(--r); padding: 16px; display: grid; gap: 10px; box-shadow: inset 3px 0 0 var(--atencao-marca); }
+.reserva .topo { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.reserva b { font-weight: 600; }
+.reserva small { color: var(--texto-2); font-size: var(--t-12); display: block; }
+.aviso { border-radius: var(--r); padding: 14px 16px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; font-size: var(--t-14); }
+.aviso .ic { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 12px; color: var(--papel); grid-row: span 2; }
+.aviso b { font-weight: 600; }
+.aviso p { color: var(--texto-2); grid-column: 2; }
+.aviso.atencao { background: var(--atencao-fundo); } .aviso.atencao .ic { background: var(--atencao); }
+.aviso.sucesso { background: var(--sucesso-fundo); } .aviso.sucesso .ic { background: var(--sucesso); }
+.aviso.erro { background: var(--erro-fundo); } .aviso.erro .ic { background: var(--erro); }
+.notif { border: 1px solid var(--linha); border-radius: var(--r); box-shadow: var(--sombra); background: var(--papel); padding: 14px 16px; display: grid; gap: 6px; font-size: var(--t-14); }
+.notif .q { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.notif .q::before { content: ""; width: 8px; height: 8px; background: var(--azul); }
+.notif p { color: var(--texto-2); }
+.notif .rodape { display: flex; justify-content: space-between; align-items: center; font-size: var(--t-12); color: var(--texto-3); }
+
+/* Escrita */
+.regras-escrita { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 32px; border-top: 1px solid var(--linha); }
+.regra { padding: 16px 0; border-bottom: 1px solid var(--linha); display: grid; gap: 6px; }
+.regra h3 { font-size: var(--t-16); }
+.regra p { color: var(--texto-2); font-size: var(--t-14); }
+.regra .ex { font-size: var(--t-14); display: grid; gap: 2px; }
+.regra .ex .nao { color: var(--erro); text-decoration: line-through; text-decoration-thickness: 1px; }
+.regra .ex .sim { color: var(--sucesso); font-weight: 500; }
+.antes-depois { display: grid; gap: 12px; }
+.ad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; }
+.ad > div { padding: 16px 18px; display: grid; gap: 6px; align-content: start; font-size: var(--t-14); }
+.ad .antes { background: var(--fundo); color: var(--texto-2); }
+.ad .antes q { font-family: var(--f-dado); font-size: var(--t-12); quotes: none; }
+.ad .depois { border-left: 1px solid var(--linha); }
+.ad .depois q { quotes: none; font-weight: 500; color: var(--texto); }
+.ad .onde { font-size: var(--t-12); color: var(--texto-3); }
+
+/* Aplicação */
+.app { border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; background: var(--fundo); box-shadow: var(--sombra); }
+.app-topo { background: var(--marinho); color: var(--sobre-marinho); height: 56px; display: flex; align-items: center; gap: 16px; padding: 0 20px; }
+.app-topo .lockup { gap: 12px; }
+.app-topo .lockup svg { height: 22px; }
+.app-topo .lockup .nome { font-size: 1rem; }
+.app-topo .busca { margin-left: auto; flex: 0 1 360px; min-width: 0; height: 36px; border-radius: var(--r); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--sobre-marinho-2); font-size: var(--t-14); display: flex; align-items: center; padding: 0 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.app-topo .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--azul-claro); color: #001326; display: grid; place-items: center; font-size: var(--t-12); font-weight: 700; flex: none; }
+.app-corpo { display: grid; grid-template-columns: 190px minmax(0, 1fr); min-height: 520px; }
+.app-menu { background: var(--papel); border-right: 1px solid var(--linha); padding: 16px 10px; display: grid; gap: 18px; align-content: start; font-size: var(--t-14); }
+.app-menu .bloco { display: grid; gap: 2px; }
+.app-menu .bloco .rotulo { padding: 0 10px 6px; }
+.app-menu a { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: var(--r); color: var(--texto-2); text-decoration: none; }
+.app-menu a.ativo { background: var(--azul-fundo); color: var(--azul); font-weight: 600; box-shadow: inset 3px 0 0 var(--azul); }
+.app-menu a .n { font-size: var(--t-12); font-variant-numeric: tabular-nums; color: var(--texto-3); }
+.app-menu a.ativo .n { color: var(--azul); }
+.app-folha { padding: 24px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.app-folha .cab { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: end; }
+.app-folha h3 { font-size: var(--t-24); letter-spacing: -.015em; }
+.app-folha .cab p { color: var(--texto-2); font-size: var(--t-14); }
+.contadores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.contador { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 2px; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.contador b { font-size: var(--t-24); font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.contador span { font-size: var(--t-12); color: var(--texto-2); }
+.contador.ativo { border-color: var(--azul); box-shadow: inset 0 3px 0 var(--azul); }
+.lista { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); overflow-x: auto; }
+.lista table { min-width: 620px; }
+.lista td { vertical-align: middle; }
+.pessoa { display: grid; gap: 1px; }
+.pessoa b { font-weight: 600; white-space: nowrap; }
+.pessoa small { color: var(--texto-3); font-size: var(--t-12); }
+.mini-prazo { display: grid; gap: 4px; min-width: 120px; font-size: var(--t-12); color: var(--texto-2); }
+.mini-prazo .barra { height: 4px; background: var(--fundo); border-radius: 2px; overflow: hidden; }
+.mini-prazo .barra i { display: block; height: 100%; background: var(--azul); }
+.mini-prazo .barra i.fora { background: var(--atencao-marca); }
+.lista .acao { text-align: right; white-space: nowrap; }
+.lista .acao .btn { height: 32px; padding: 0 12px; font-size: var(--t-12); }
+
+/* Acessibilidade */
+.contrastes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.ct { border: 1px solid var(--linha); border-radius: var(--r); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: var(--t-14); }
+.ct .par { display: flex; align-items: center; gap: 10px; }
+.ct .par i { width: 28px; height: 28px; border-radius: var(--r); display: grid; place-items: center; font-style: normal; font-weight: 700; font-size: 13px; border: 1px solid var(--linha); }
+.ct .nota { font-family: var(--f-dado); font-size: var(--t-12); color: var(--texto-2); text-align: right; }
+
+.rodape-doc { color: var(--texto-3); font-size: var(--t-12); padding-top: 8px; }
+
+@media (max-width: 960px) {
+  .corpo { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .indice { position: static; display: flex; flex-wrap: wrap; gap: 4px; }
+  .indice a { border: 1px solid var(--linha); border-radius: 14px; padding: 4px 10px; background: var(--papel); }
+  .app-corpo { grid-template-columns: minmax(0, 1fr); }
+  .app-menu { display: none; }
+}
+@media (max-width: 640px) {
+  .secao { padding: 24px 18px; }
+  .cores-principais { grid-template-columns: 1fr; }
+  .neutros { grid-template-columns: repeat(3, 1fr); }
+  .escala-item { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .ad { grid-template-columns: minmax(0, 1fr); }
+  .ad .depois { border-left: 0; border-top: 1px solid var(--linha); }
+  .contadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .app-topo .busca { display: none; }
+  .app-topo .avatar { margin-left: auto; }
+  .app-folha { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-gft" viewBox="0 0 800 310">
+    <path d="M613.9 0h186v186h-186zM91.522 77.386v31.244h41.863v30.346c-9.54 9.744-22.707 14.677-39.166 14.677-33.927 0-57.325-23.286-57.325-60.762 0-37.332 23.474-60.524 57.53-60.524 17.048 0 32.962 6.007 46.017 17.356l1.878 1.639 22.578-21.589-1.843-1.970C146.406 9.891 122.599.428 94.219.428 39.027.429.1 37.580.1 92.882c0 55.446 38.927 92.692 94.119 92.692 32.245 0 58.928-12.356 75.123-34.805l.521-.717V77.386zM340.853 34.967V3.515H202.354v178.566h37.025v-73.45h94.357V77.177H239.38V34.967zM370.284 3.617v31.418h49.126V181.98h36.973V35.035h49.082V3.617zM23.255 308.833v-48.63H5.759v-11.216h47.733v11.215H36.085v48.631zM73.547 308.833v-59.846h42.35v11.215H86.288v12.651h28.981v11.216H86.29v13.549h29.608v11.215zM134.876 278.955c0-18.394 13.907-30.955 31.852-30.955 13.19 0 20.816 7.178 25.033 14.625l-10.946 5.383c-2.513-4.845-7.896-8.703-14.087-8.703-10.857 0-18.753 8.344-18.753 19.65s7.896 19.65 18.753 19.65c6.191 0 11.574-3.77 14.087-8.703l10.946 5.293c-4.306 7.447-11.844 14.715-25.033 14.715-17.945 0-31.852-12.562-31.852-30.955M251.318 308.833V283.71h-28.263v25.123h-12.741v-59.846h12.74v23.507h28.264v-23.507h12.83v59.846zM330.03 308.833l-28.532-39.03v39.03h-12.741v-59.846h13.1l27.725 37.595v-37.595h12.74v59.846zM361.256 278.955c0-18.035 13.19-30.955 31.224-30.955 18.124 0 31.314 12.92 31.314 30.955s-13.19 30.955-31.314 30.955c-18.035 0-31.224-12.92-31.224-30.955m49.438 0c0-11.216-7.178-19.65-18.214-19.65-11.037 0-18.125 8.434-18.125 19.65 0 11.126 7.088 19.65 18.125 19.65s18.214-8.524 18.214-19.65M442.692 308.833v-59.846h12.742v48.630h25.302v11.216zM494.251 278.955c0-18.035 13.19-30.955 31.225-30.955 18.124 0 31.313 12.92 31.313 30.955s-13.19 30.955-31.313 30.955c-18.036 0-31.225-12.920-31.225-30.955m49.438 0c0-11.216-7.178-19.65-18.213-19.65-11.037 0-18.125 8.434-18.125 19.65 0 11.126 7.088 19.65 18.125 19.65 11.035 0 18.213-8.524 18.213-19.65M571.851 278.955c0-18.933 14.356-30.955 31.852-30.955 12.473 0 20.278 6.28 24.765 13.369l-10.588 5.742c-2.692-4.217-7.806-7.806-14.177-7.806-10.856 0-18.752 8.344-18.752 19.65s7.896 19.65 18.752 19.65c5.294 0 10.319-2.333 12.741-4.577v-7.177h-15.791v-11.126h28.533v22.97C623.084 305.513 614.56 310 603.703 310c-17.496 0-31.852-12.203-31.852-31.045M652.143 308.833v-59.846h12.742v59.846zM689.548 308.833v-59.846h42.35v11.215H702.29v12.651h28.98v11.216h-28.98v13.549h29.609v11.215zM750.64 300.4l6.910-9.690c4.217 4.395 10.766 8.074 19.021 8.074 6.999 0 10.408-3.230 10.408-6.640 0-4.396-5.563-5.652-12.113-7.268-9.780-2.242-22.341-4.934-22.341-18.572 0-9.960 8.613-18.215 22.7-18.215 9.511 0 17.407 2.872 23.329 8.345l-7.088 9.332c-4.846-4.487-11.306-6.551-17.407-6.551-5.473 0-8.524 2.423-8.524 6.012 0 3.858 5.473 5.114 11.933 6.640 9.870 2.333 22.432 5.293 22.432 18.842 0 10.946-7.807 19.201-23.957 19.201-11.485 0-19.740-3.858-25.302-9.510"/>
+  </symbol>
+</svg>
+
+<header class="abertura">
+  <div class="abertura-in">
+    <div class="lockup" aria-label="GFT Staffing">
+      <svg viewBox="0 0 800 310" role="img" aria-label="GFT Technologies"><use href="#logo-gft"/></svg>
+      <span class="div" aria-hidden="true"></span>
+      <span class="nome">Staffing</span>
+    </div>
+    <div style="display:grid;gap:18px">
+      <h1>Ninguém fica sem projeto por falta de informação.</h1>
+      <p class="lead">Proposta de identidade visual e de escrita para a nova plataforma de staffing da GFT Brasil. Segue a marca corporativa da GFT e troca os termos em inglês do sistema legado por português claro, do jeito que gestores e o time de Staffing já falam no dia a dia.</p>
+    </div>
+    <div class="meta">
+      <span><b>Produto</b> plataforma interna de alocação</span>
+      <span><b>Perfis</b> Gestor, Gestor IDU, Staffing, Colaborador, Liderança</span>
+      <span><b>Versão</b> proposta 1.0 · nov/2026</span>
+      <span><b>Status</b> conceito exploratório, não é o produto em produção</span>
+    </div>
+  </div>
+</header>
+
+<div class="corpo">
+  <nav class="indice" aria-label="Índice">
+    <a href="#principios">Princípios</a>
+    <a href="#marca">Marca</a>
+    <a href="#cores">Cores</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#status">Status</a>
+    <a href="#glossario">Glossário</a>
+    <a href="#escrita">Escrita</a>
+    <a href="#componentes">Componentes</a>
+    <a href="#aplicacao">Aplicação</a>
+    <a href="#acessibilidade">Acessibilidade</a>
+  </nav>
+
+  <main class="secoes">
+
+    <!-- PRINCÍPIOS -->
+    <section class="secao" id="principios">
+      <header>
+        <span class="rotulo">Princípios</span>
+        <h2>Cinco critérios para decidir qualquer tela</h2>
+        <p>Vêm das entrevistas com gestores e com o time de Staffing. Quando duas soluções parecem boas, escolha a que atende mais destes pontos.</p>
+      </header>
+      <div class="principios">
+        <div class="principio"><i class="q"></i><h3>Status sempre à vista</h3><p>Ninguém precisa abrir o perfil para saber se a pessoa está proposta, reservada ou alocada. O status aparece em toda lista, com cor e texto.</p></div>
+        <div class="principio"><i class="q"></i><h3>Prazo com data e hora</h3><p>Reservas, renovações e o prazo de alocação mostram quando vencem e quanto falta, contando só dias úteis.</p></div>
+        <div class="principio"><i class="q"></i><h3>Uma ação principal por tela</h3><p>Só o próximo passo provável ganha o botão azul. As outras ações ficam em segundo plano, sem competir com ele.</p></div>
+        <div class="principio"><i class="q"></i><h3>Pessoas, não recursos</h3><p>Falamos de colegas. O texto evita "recurso", "ocioso" e "headcount" e usa nome, cargo e nível.</p></div>
+        <div class="principio"><i class="q"></i><h3>A regra aparece antes do erro</h3><p>Limites como os 90 dias de casa e o STAR com 80% são mostrados no campo, antes de a pessoa tentar enviar.</p></div>
+      </div>
+    </section>
+
+    <!-- MARCA -->
+    <section class="secao" id="marca">
+      <header>
+        <span class="rotulo">Marca</span>
+        <h2>Assinatura GFT Staffing</h2>
+        <p>O produto não cria um símbolo próprio. Ele usa o logo oficial da GFT, um filete vertical e o nome "Staffing" em peso médio. Assim fica claro que é uma ferramenta da casa, como os outros sistemas internos.</p>
+      </header>
+      <div class="marcas">
+        <div class="marca-cx claro">
+          <div class="protecao">
+            <div class="lockup"><svg viewBox="0 0 800 310" role="img" aria-label="GFT Technologies"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>
+          </div>
+          <span class="legenda">Positiva · área de proteção = altura do quadrado GFT</span>
+        </div>
+        <div class="marca-cx escuro">
+          <div class="lockup"><svg viewBox="0 0 800 310" role="img" aria-label="GFT Technologies"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>
+          <span class="legenda">Negativa · sobre Marinho GFT</span>
+        </div>
+      </div>
+      <div class="regras-marca">
+        <div>
+          <h4>Use assim</h4>
+          <ul>
+            <li>Logo GFT sempre à esquerda e o nome do produto à direita do filete.</li>
+            <li>Só em marinho sobre fundo claro ou em branco sobre marinho.</li>
+            <li>Altura mínima do logo: 20 px em tela.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Não faça</h4>
+          <ul>
+            <li>Mudar a cor do quadrado ou aplicar gradiente.</li>
+            <li>Colocar o logo sobre foto ou sobre o azul de ação.</li>
+            <li>Trocar "Staffing" por ícone, sigla ou mascote.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>O quadrado como recurso gráfico</h4>
+          <ul>
+            <li>O quadrado do logo vira marcador de seção e de notificação nova.</li>
+            <li>Sempre sólido e em ângulo reto. Nunca arredondado.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORES -->
+    <section class="secao" id="cores">
+      <header>
+        <span class="rotulo">Cores</span>
+        <h2>Marinho para a marca, azul para a ação</h2>
+        <p>A paleta é a mesma do site atual da GFT. O marinho identifica, o azul indica o que pode ser clicado e os neutros organizam a informação. As cores de status ficam reservadas para o que pede atenção.</p>
+      </header>
+      <div class="cores-principais">
+        <div class="cor"><div class="amostra" style="background:#001326;color:#fff">Marinho GFT</div><div class="ficha"><b class="mono">#001326</b><span>Logo, barra superior, títulos e texto principal</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#0052a3;color:#fff">Azul ação</div><div class="ficha"><b class="mono">#0052A3</b><span>Botões, links, seleção e foco</span></div></div>
+        <div class="cor"><div class="amostra" style="background:#b8d9fa;color:#001326">Azul claro</div><div class="ficha"><b class="mono">#B8D9FA</b><span>Destaques e fundo do item ativo</span></div></div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <span class="rotulo">Neutros com fundo azulado</span>
+        <div class="neutros">
+          <div class="neutro"><i style="background:#ffffff"></i><b class="mono">#FFFFFF</b>Folha</div>
+          <div class="neutro"><i style="background:#f4f6f9"></i><b class="mono">#F4F6F9</b>Fundo</div>
+          <div class="neutro"><i style="background:#d8dee4"></i><b class="mono">#D8DEE4</b>Divisórias</div>
+          <div class="neutro"><i style="background:#b3b8bf"></i><b class="mono">#B3B8BF</b>Bordas de campo</div>
+          <div class="neutro"><i style="background:#6b727a"></i><b class="mono">#6B727A</b>Texto auxiliar</div>
+          <div class="neutro"><i style="background:#4d535a"></i><b class="mono">#4D535A</b>Texto secundário</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <span class="rotulo">Cores de estado, sempre junto com texto</span>
+        <div class="semanticas">
+          <div class="sem"><div class="topo"><i style="background:#007a74"></i>Concluído <span class="mono" style="font-weight:400;color:var(--texto-3)">#007A74</span></div><p>Alocado, renovado, pedido aceito. Vem do turquesa da GFT.</p></div>
+          <div class="sem"><div class="topo"><i style="background:#fb610e"></i>Atenção <span class="mono" style="font-weight:400;color:var(--texto-3)">#FB610E</span></div><p>Prazo vencendo, acima do prazo de alocação, pendência de informação. Para texto, use #A63D00.</p></div>
+          <div class="sem"><div class="topo"><i style="background:#b42318"></i>Erro <span class="mono" style="font-weight:400;color:var(--texto-3)">#B42318</span></div><p>Pedido recusado, campo inválido, ação bloqueada.</p></div>
+        </div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <span class="rotulo">Proporção numa tela típica</span>
+        <div class="proporcao" aria-hidden="true">
+          <span style="flex:58;background:#f4f6f9"></span><span style="flex:22;background:#ffffff;outline:1px solid #d8dee4"></span><span style="flex:10;background:#001326"></span><span style="flex:6;background:#0052a3"></span><span style="flex:2;background:#b8d9fa"></span><span style="flex:2;background:#fb610e"></span>
+        </div>
+        <div class="legenda-prop"><span>Neutros 80%</span><span>Marinho 10%</span><span>Azul ação 6%</span><span>Azul claro 2%</span><span>Estado 2%</span></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section class="secao" id="tipografia">
+      <header>
+        <span class="rotulo">Tipografia</span>
+        <h2>Uma família para tudo, uma mono para códigos</h2>
+        <p>A fonte oficial é a GFT Corporate, a mesma do site. Ela é proprietária, então protótipos e esta página usam Hanken Grotesk, que tem proporções parecidas. A mono aparece só em códigos que as pessoas copiam ou comparam.</p>
+      </header>
+      <div class="familias">
+        <div class="familia">
+          <span class="rotulo">Texto e interface</span>
+          <div class="aa">Aa</div>
+          <b>GFT Corporate</b>
+          <p>Em protótipos: Hanken Grotesk. Pesos 400, 500 e 600. O 700 fica só para números grandes de indicadores.</p>
+        </div>
+        <div class="familia">
+          <span class="rotulo">Códigos</span>
+          <div class="aa mono" style="font-family:var(--f-dado);font-weight:500">KE</div>
+          <b>IBM Plex Mono</b>
+          <p>Sigla de 4 letras, número do KE e ID de vaga do Kantata. Exemplo: <span class="mono">ANSO</span> · <span class="mono">KE-204817</span></p>
+        </div>
+      </div>
+      <div class="escala">
+        <div class="escala-item"><span class="spec">Título 1 · 32/38 · 600</span><span class="ex" style="font-size:2rem;font-weight:600;letter-spacing:-.02em;line-height:1.2">Disponíveis</span></div>
+        <div class="escala-item"><span class="spec">Título 2 · 24/30 · 600</span><span class="ex" style="font-size:1.5rem;font-weight:600;letter-spacing:-.015em">Pedido de liberação</span></div>
+        <div class="escala-item"><span class="spec">Título 3 · 20/28 · 600</span><span class="ex" style="font-size:1.25rem;font-weight:600">Últimas avaliações</span></div>
+        <div class="escala-item"><span class="spec">Corpo · 16/24 · 400</span><span class="ex">A reserva vale 2 dias úteis e não conta fins de semana nem ausências aprovadas.</span></div>
+        <div class="escala-item"><span class="spec">Interface · 14/20 · 400</span><span class="ex" style="font-size:.875rem">Java · Spring Boot · Inglês avançado · São Paulo</span></div>
+        <div class="escala-item"><span class="spec">Rótulo · 12/16 · 600 · caixa alta</span><span class="ex rotulo" style="color:var(--texto-2)">Prazo de alocação</span></div>
+        <div class="escala-item"><span class="spec">Indicador · 32 · 700 · tabular</span><span class="ex num" style="font-size:2rem;font-weight:700;letter-spacing:-.02em">13 dias úteis</span></div>
+      </div>
+    </section>
+
+    <!-- STATUS -->
+    <section class="secao" id="status">
+      <header>
+        <span class="rotulo">Status</span>
+        <h2>O ciclo de uma pessoa, do pedido à alocação</h2>
+        <p>Os status são os mesmos do sistema atual, traduzidos. Cada um tem cor, ponto e texto, para ser lido também por quem não distingue cores. Status em aberto usam contorno, e status concluídos usam preenchimento.</p>
+      </header>
+      <div class="ciclo">
+        <div class="etapa">
+          <h3>1 · Pedido de liberação</h3>
+          <div class="lista-status">
+            <div class="linha-s"><span class="status s-neutro">Em análise</span>Staffing ainda não respondeu</div>
+            <div class="linha-s"><span class="status s-atencao">Falta informação</span>Voltou para o gestor completar</div>
+            <div class="linha-s"><span class="status s-erro">Recusado</span>Com motivo informado</div>
+            <div class="linha-s"><span class="status s-neutro">Afastado</span>Licença ou afastamento, com data de volta</div>
+            <div class="linha-s"><span class="status s-neutro">Cancelado</span>Desligamento, pedido de demissão ou erro</div>
+          </div>
+        </div>
+        <div class="etapa">
+          <h3>2 · Disponível para vagas</h3>
+          <div class="lista-status">
+            <div class="linha-s"><span class="status s-aberto">Sem proposta</span>Ninguém indicou ainda</div>
+            <div class="linha-s"><span class="status s-azul">Proposto</span>Indicado a uma vaga, sem exclusividade</div>
+            <div class="linha-s"><span class="status s-forte">Reservado</span>Exclusivo por 2 dias úteis, com fila</div>
+          </div>
+        </div>
+        <div class="etapa">
+          <h3>3 · Saída</h3>
+          <div class="lista-status">
+            <div class="linha-s"><span class="status s-sucesso">Alocado</span>Saiu da lista e o custo parou de contar</div>
+            <div class="linha-s"><span class="status s-azul">Em renovação</span>Contrato perto do fim, decisão pendente</div>
+            <div class="linha-s"><span class="status s-sucesso-borda">Renovado</span>Continua no projeto atual ou foi para um novo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOSSÁRIO -->
+    <section class="secao" id="glossario">
+      <header>
+        <span class="rotulo">Glossário</span>
+        <h2>Do inglês do sistema para o português de quem usa</h2>
+        <p>Nomes de sistemas (Kantata, STAR, SuccessFactors) e siglas da casa (KE, IDU) ficam como estão. O resto é traduzido pelo sentido, não palavra por palavra.</p>
+      </header>
+      <div class="tabela-wrap">
+        <table>
+          <thead><tr><th>No sistema atual</th><th>Na nova proposta</th><th>Por quê</th></tr></thead>
+          <tbody>
+            <tr class="grupo"><td colspan="3">Lugares e listas</td></tr>
+            <tr><td class="en">Available</td><td class="pt">Disponíveis</td><td class="obs">É a tela inicial. "Bench" continua válido na fala, mas na interface usamos a palavra que descreve a pessoa.</td></tr>
+            <tr><td class="en">Unassignment Request</td><td class="pt">Pedido de liberação</td><td class="obs">"Desalocação" é jargão. O gestor libera a pessoa para outras vagas.</td></tr>
+            <tr><td class="en">Sent / Received</td><td class="pt">Enviados / Recebidos</td><td class="obs">Sempre acompanhados de "pedidos", para não parecer caixa de e-mail.</td></tr>
+            <tr><td class="en">Not Eligible (caixa)</td><td class="pt">Afastados</td><td class="obs">Diz o motivo real. "Inelegível" soa como julgamento sobre a pessoa.</td></tr>
+            <tr><td class="en">Pending Items</td><td class="pt">Pendências</td><td class="obs">Checklist do que falta para cada pessoa disponível.</td></tr>
+            <tr><td class="en">Opportunities / Closed Opps</td><td class="pt">Vagas abertas / Vagas encerradas</td><td class="obs">"Oportunidade" é termo comercial. Para quem aloca, é vaga.</td></tr>
+            <tr><td class="en">Matched Candidates</td><td class="pt">Compatíveis com a vaga</td><td class="obs">Mostra o percentual de compatibilidade e os motivos.</td></tr>
+            <tr><td class="en">Internal Projects</td><td class="pt">Projetos internos</td><td class="obs">Tradução direta.</td></tr>
+            <tr><td class="en">Statistics / Reports</td><td class="pt">Indicadores / Relatórios</td><td class="obs">Indicadores são a visão do dia, e relatórios são para exportar.</td></tr>
+            <tr><td class="en">Manage Data</td><td class="pt">Dados e integrações</td><td class="obs">Importações do Kantata, STAR, ADP e SuccessFactors, além de usuários e tabelas.</td></tr>
+            <tr class="grupo"><td colspan="3">Ações</td></tr>
+            <tr><td class="en">Propose</td><td class="pt">Propor</td><td class="obs">Sem exclusividade. Várias pessoas podem propor a mesma pessoa.</td></tr>
+            <tr><td class="en">Reserve</td><td class="pt">Reservar</td><td class="obs">O botão diz o prazo: "Reservar por 2 dias úteis".</td></tr>
+            <tr><td class="en">Reservation IDU</td><td class="pt">Estender reserva</td><td class="obs">Só para o Gestor IDU. Mais 2 dias úteis, até 5 vezes.</td></tr>
+            <tr><td class="en">Allocate</td><td class="pt">Confirmar alocação</td><td class="obs">"Confirmar" deixa claro que a ação encerra o processo.</td></tr>
+            <tr><td class="en">Undo allocation</td><td class="pt">Desfazer alocação</td><td class="obs">Só o Staffing, até 30 dias depois.</td></tr>
+            <tr><td class="en">Missing Info</td><td class="pt">Pedir informação</td><td class="obs">Como ação do Staffing. Como status, aparece "Falta informação".</td></tr>
+            <tr class="grupo"><td colspan="3">Dados e pessoas</td></tr>
+            <tr><td class="en">Manager / Manager IDU</td><td class="pt">Gestor / Gestor IDU</td><td class="obs">IDU é sigla da casa e continua.</td></tr>
+            <tr><td class="en">Line manager</td><td class="pt">Gestor direto</td><td class="obs">Diferente do gestor do projeto, que é quem pede a liberação.</td></tr>
+            <tr><td class="en">Level / Job role / Practice</td><td class="pt">Nível / Cargo / Prática</td><td class="obs">Tradução direta.</td></tr>
+            <tr><td class="en">Deallocation date</td><td class="pt">Data de liberação</td><td class="obs">Primeiro dia em que a pessoa fica disponível.</td></tr>
+            <tr><td class="en">SLA</td><td class="pt">Prazo de alocação</td><td class="obs">15 dias úteis. "SLA" só aparece em relatório para a liderança.</td></tr>
+            <tr><td class="en">Days in WA / Bench days</td><td class="pt">Dias disponível</td><td class="obs">Sempre em dias úteis, e a interface diz isso.</td></tr>
+            <tr><td class="en">Bench cost</td><td class="pt">Custo da disponibilidade</td><td class="obs">Custo diário do nível vezes os dias úteis, sem ausências.</td></tr>
+            <tr><td class="en">Feedback</td><td class="pt">Avaliação</td><td class="obs">Nota geral, conhecimento em skills e comportamento.</td></tr>
+            <tr><td class="en">Working model</td><td class="pt">Modelo de trabalho</td><td class="obs">Presencial, híbrido (com dias por semana) ou remoto.</td></tr>
+            <tr><td class="en">Timesheet</td><td class="pt">Apontamento de horas</td><td class="obs">Termo já usado na GFT Brasil.</td></tr>
+            <tr><td class="en">Staffing Notes</td><td class="pt">Anotações do Staffing</td><td class="obs">Visíveis só para o time de Staffing, salvo indicação.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ESCRITA -->
+    <section class="secao" id="escrita">
+      <header>
+        <span class="rotulo">Escrita</span>
+        <h2>Tom de voz: um colega do Staffing que sabe a regra</h2>
+        <p>Direto, cordial e específico. A interface trata por "você", explica as regras sem tom de bronca e sempre diz o que fazer em seguida.</p>
+      </header>
+      <div class="regras-escrita">
+        <div class="regra"><h3>O botão diz o que acontece</h3><p>Verbo no infinitivo e, se houver prazo ou efeito, ele vai no texto.</p><div class="ex"><span class="nao">OK</span><span class="sim">Reservar por 2 dias úteis</span></div></div>
+        <div class="regra"><h3>Prazo com data, hora e quanto falta</h3><p>Data absoluta para planejar e tempo relativo para priorizar.</p><div class="ex"><span class="nao">SLA end: 2026-03-12T23:59:59Z</span><span class="sim">Vence 12/03 às 23h59 · falta 1 dia útil</span></div></div>
+        <div class="regra"><h3>Erro explica e mostra a saída</h3><p>O que aconteceu, por quê e o próximo passo. Sem "ops", sem pedir desculpas e sem código de erro.</p><div class="ex"><span class="nao">Validation failed</span><span class="sim">Essa pessoa só pode ser alocada a partir de 20/03, a data de liberação dela.</span></div></div>
+        <div class="regra"><h3>Letra maiúscula só no início</h3><p>Títulos, botões e menus começam com maiúscula, e o resto fica em minúscula.</p><div class="ex"><span class="nao">Vagas Abertas</span><span class="sim">Vagas abertas</span></div></div>
+        <div class="regra"><h3>Formatos do Brasil</h3><p>Datas em dd/mm/aaaa, horas em 24h, valores em R$ e milhar com ponto.</p><div class="ex"><span class="sim">20/03/2026 · 14h30 · R$ 1.250,00</span></div></div>
+        <div class="regra"><h3>Sigla explicada na primeira vez</h3><p>Na primeira vez que a sigla aparece na tela, ela vem com dica. Depois, pode aparecer sozinha.</p><div class="ex"><span class="sim">KE (código do projeto no Kantata)</span></div></div>
+      </div>
+      <div class="antes-depois">
+        <span class="rotulo">Mensagens reais do sistema, reescritas</span>
+        <div class="ad">
+          <div class="antes"><span class="onde">Validação ao alocar</span><q>This employee is reserved for another opportunity. In case you have an approved allocation, please contact Staffing team.</q></div>
+          <div class="depois"><span class="onde">Proposta</span><q>Essa pessoa está reservada para outra vaga até 12/03. Se a alocação já foi aprovada, fale com o time de Staffing para liberar.</q></div>
+        </div>
+        <div class="ad">
+          <div class="antes"><span class="onde">Extensão de reserva</span><q>You've already reached the limit of 5 times extending this reservation. Get in touch with the Staffing team in case you need additional days.</q></div>
+          <div class="depois"><span class="onde">Proposta</span><q>Essa reserva já foi estendida 5 vezes, que é o limite. Para mais dias, peça ao time de Staffing.</q></div>
+        </div>
+        <div class="ad">
+          <div class="antes"><span class="onde">Extensão de reserva</span><q>The reservation can only be extended on its last day.</q></div>
+          <div class="depois"><span class="onde">Proposta</span><q>Você poderá estender essa reserva em 12/03, o último dia dela. Vamos te avisar pela manhã.</q></div>
+        </div>
+        <div class="ad">
+          <div class="antes"><span class="onde">Pedido de liberação</span><q>Self-dealocatte is not permitted!</q></div>
+          <div class="depois"><span class="onde">Proposta</span><q>Você não pode pedir a sua própria liberação. Fale com seu gestor direto.</q></div>
+        </div>
+        <div class="ad">
+          <div class="antes"><span class="onde">Notificação</span><q>Your reservation for … expires today. Please confirm your allocation, cancel it if you know it won't go forward or let the staffing team know if you need to extend it.</q></div>
+          <div class="depois"><span class="onde">Proposta</span><q><b>Sua reserva de Marina Costa vence hoje às 23h59.</b> Confirme a alocação, libere a reserva ou peça mais prazo ao Staffing.</q></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTES -->
+    <section class="secao" id="componentes">
+      <header>
+        <span class="rotulo">Componentes</span>
+        <h2>Peças básicas</h2>
+        <p>Cantos de 4 px, bordas finas e sombra só no que flutua. A barra lateral de 3 px marca o item ativo, o que pede atenção e o campo com erro.</p>
+      </header>
+      <div class="comp-grid">
+        <div class="comp">
+          <span class="rotulo">Botões</span>
+          <div class="botoes">
+            <button class="btn btn-pri" type="button">Reservar por 2 dias úteis</button>
+            <button class="btn btn-sec" type="button">Propor</button>
+          </div>
+          <div class="botoes">
+            <button class="btn btn-ter" type="button">Ver avaliações</button>
+            <button class="btn btn-dest" type="button">Recusar pedido</button>
+            <button class="btn" type="button" disabled>Confirmar alocação</button>
+          </div>
+          <p style="font-size:var(--t-12);color:var(--texto-3)">Botão desabilitado sempre tem uma dica dizendo o motivo.</p>
+        </div>
+
+        <div class="comp">
+          <span class="rotulo">Campos</span>
+          <div class="campo">
+            <label for="c-data">Data de liberação</label>
+            <input id="c-data" type="text" value="20/03/2026">
+            <span class="ajuda">Sugestão: hoje + 15 dias úteis, o prazo do Staffing para alocar.</span>
+          </div>
+          <div class="campo com-erro">
+            <label for="c-star">Perfil no STAR</label>
+            <input id="c-star" type="text" value="64% preenchido" aria-invalid="true" aria-describedby="c-star-erro">
+            <span class="msg-erro" id="c-star-erro">O STAR precisa estar com pelo menos 80% preenchido. Peça para a pessoa completar skills e idiomas.</span>
+          </div>
+        </div>
+
+        <div class="comp">
+          <span class="rotulo">Prazo de alocação</span>
+          <div class="prazo">
+            <div class="info"><span>9 de 15 dias úteis</span><span>Dentro do prazo</span></div>
+            <div class="barra"><i style="width:60%"></i></div>
+          </div>
+          <div class="prazo">
+            <div class="info"><span>19 dias úteis</span><span style="color:var(--atencao);font-weight:600">4 acima do prazo</span></div>
+            <div class="barra"><i class="fora" style="width:100%"></i></div>
+          </div>
+          <span class="rotulo" style="margin-top:6px">Status</span>
+          <div class="botoes">
+            <span class="status s-aberto">Sem proposta</span><span class="status s-azul">Proposto</span><span class="status s-forte">Reservado</span><span class="status s-sucesso">Alocado</span><span class="status s-atencao">Falta informação</span>
+          </div>
+        </div>
+
+        <div class="comp">
+          <span class="rotulo">Reserva em andamento</span>
+          <div class="reserva">
+            <div class="topo">
+              <div><b>Marina Costa</b><small>Desenvolvedora Java · Nível 6 · KE <span class="mono">KE-204817</span></small></div>
+              <span class="status s-forte">Reservado</span>
+            </div>
+            <div style="font-size:var(--t-14)">Vence <b>hoje às 23h59</b> · 2 pessoas na fila</div>
+            <div class="botoes"><button class="btn btn-pri" type="button">Confirmar alocação</button><button class="btn btn-ter" type="button">Liberar reserva</button></div>
+          </div>
+        </div>
+
+        <div class="comp">
+          <span class="rotulo">Avisos na página</span>
+          <div class="aviso atencao"><span class="ic" aria-hidden="true">!</span><b>3 pessoas passaram do prazo de alocação</b><p>Elas aparecem primeiro na lista, com a barra em laranja.</p></div>
+          <div class="aviso sucesso"><span class="ic" aria-hidden="true">✓</span><b>Alocação confirmada</b><p>Rafael Lima começa no projeto em 24/03. Você pode desfazer em até 30 dias pelo Staffing.</p></div>
+          <div class="aviso erro"><span class="ic" aria-hidden="true">×</span><b>Não foi possível importar o arquivo</b><p>O arquivo enviado é de férias (ADP), e a importação escolhida foi de ausências. Escolha "Férias" e envie de novo.</p></div>
+        </div>
+
+        <div class="comp">
+          <span class="rotulo">Notificação</span>
+          <div class="notif">
+            <span class="q">Pedido aceito</span>
+            <p>O Staffing aceitou o pedido de liberação de Paulo Mendes. Ele já aparece em Disponíveis.</p>
+            <div class="rodape"><span>há 12 min</span><a href="#aplicacao">Ver pessoa</a></div>
+          </div>
+          <div class="notif">
+            <span class="q">Sua reserva começou</span>
+            <p>A reserva de Júlia Prado para o Banco Atlas vale até 14/03 às 23h59.</p>
+            <div class="rodape"><span>hoje, 09h02</span><a href="#aplicacao">Ver reserva</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APLICAÇÃO -->
+    <section class="secao" id="aplicacao">
+      <header>
+        <span class="rotulo">Aplicação</span>
+        <h2>Tela inicial: Disponíveis</h2>
+        <p>Visão do gestor. A barra marinho traz a assinatura e a busca, e a folha branca concentra o trabalho. Os contadores funcionam como filtros. Nomes, clientes e números são fictícios.</p>
+      </header>
+      <div class="app" role="img" aria-label="Exemplo da tela Disponíveis aplicando a identidade">
+        <div class="app-topo">
+          <div class="lockup"><svg viewBox="0 0 800 310" aria-hidden="true"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>
+          <div class="busca">Buscar por nome, sigla, skill, cidade ou KE</div>
+          <span class="avatar">LS</span>
+        </div>
+        <div class="app-corpo">
+          <nav class="app-menu" aria-label="Menu do exemplo">
+            <div class="bloco">
+              <span class="rotulo">Pessoas</span>
+              <a class="ativo" href="#aplicacao">Disponíveis <span class="n">41</span></a>
+              <a href="#aplicacao">Minhas reservas <span class="n">2</span></a>
+              <a href="#aplicacao">Em renovação <span class="n">6</span></a>
+              <a href="#aplicacao">Alocados <span class="n">118</span></a>
+            </div>
+            <div class="bloco">
+              <span class="rotulo">Pedidos de liberação</span>
+              <a href="#aplicacao">Enviados <span class="n">3</span></a>
+              <a href="#aplicacao">Afastados <span class="n">4</span></a>
+            </div>
+            <div class="bloco">
+              <span class="rotulo">Vagas</span>
+              <a href="#aplicacao">Vagas abertas <span class="n">27</span></a>
+              <a href="#aplicacao">Vagas encerradas</a>
+              <a href="#aplicacao">Projetos internos</a>
+            </div>
+          </nav>
+          <div class="app-folha">
+            <div class="cab">
+              <div><h3>Disponíveis</h3><p>Pessoas liberadas e prontas para vagas, atualizado às 09h00</p></div>
+              <button class="btn btn-sec" type="button">Filtros · 2</button>
+            </div>
+            <div class="contadores">
+              <button class="contador ativo" type="button"><b>41</b><span>Todas</span></button>
+              <button class="contador" type="button"><b>29</b><span>Sem proposta</span></button>
+              <button class="contador" type="button"><b>8</b><span>Propostas</span></button>
+              <button class="contador" type="button"><b>4</b><span>Reservadas</span></button>
+            </div>
+            <div class="lista">
+              <table>
+                <thead><tr><th>Pessoa</th><th>Skills principais</th><th>Dias disponível</th><th>Status</th><th></th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><div class="pessoa"><b>Rafael Lima</b><small><span class="mono">RALI</span> · Dev .NET · Nível 5 · Campinas</small></div></td>
+                    <td>.NET, Azure, SQL Server</td>
+                    <td><div class="mini-prazo"><span>19 dias úteis</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td>
+                    <td><span class="status s-aberto">Sem proposta</span></td>
+                    <td class="acao"><button class="btn btn-pri" type="button">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pessoa"><b>Marina Costa</b><small><span class="mono">MACO</span> · Dev Java · Nível 6 · São Paulo</small></div></td>
+                    <td>Java, Spring Boot, Kafka</td>
+                    <td><div class="mini-prazo"><span>11 dias úteis</span><div class="barra"><i style="width:73%"></i></div></div></td>
+                    <td><span class="status s-forte">Reservado</span></td>
+                    <td class="acao"><button class="btn btn-sec" type="button">Entrar na fila</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pessoa"><b>Júlia Prado</b><small><span class="mono">JUPR</span> · QA · Nível 4 · Curitiba</small></div></td>
+                    <td>Cypress, Playwright, API</td>
+                    <td><div class="mini-prazo"><span>6 dias úteis</span><div class="barra"><i style="width:40%"></i></div></div></td>
+                    <td><span class="status s-azul">Proposto</span></td>
+                    <td class="acao"><button class="btn btn-pri" type="button">Reservar</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="pessoa"><b>Paulo Mendes</b><small><span class="mono">PAME</span> · Analista de dados · Nível 5 · Remoto</small></div></td>
+                    <td>Python, Power BI, Databricks</td>
+                    <td><div class="mini-prazo"><span>2 dias úteis</span><div class="barra"><i style="width:13%"></i></div></div></td>
+                    <td><span class="status s-aberto">Sem proposta</span></td>
+                    <td class="acao"><button class="btn btn-pri" type="button">Reservar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACESSIBILIDADE -->
+    <section class="secao" id="acessibilidade">
+      <header>
+        <span class="rotulo">Acessibilidade</span>
+        <h2>Contraste e leitura</h2>
+        <p>A meta é o nível AA da WCAG 2.2. Os pares abaixo são os que a interface mais usa. Laranja e turquesa da marca servem para marcações; em texto, usamos as versões mais escuras.</p>
+      </header>
+      <div class="contrastes">
+        <div class="ct"><span class="par"><i style="background:#fff;color:#001326">Aa</i>Marinho sobre branco</span><span class="nota">18,7:1<br>AAA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#0052a3">Aa</i>Azul ação sobre branco</span><span class="nota">7,7:1<br>AAA</span></div>
+        <div class="ct"><span class="par"><i style="background:#0052a3;color:#fff">Aa</i>Branco sobre azul ação</span><span class="nota">7,7:1<br>AAA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#6b727a">Aa</i>Texto auxiliar</span><span class="nota">4,9:1<br>AA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#a63d00">Aa</i>Atenção em texto</span><span class="nota">6,4:1<br>AA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#007a74">Aa</i>Concluído em texto</span><span class="nota">5,2:1<br>AA</span></div>
+      </div>
+      <div class="regras-escrita">
+        <div class="regra"><h3>Cor nunca sozinha</h3><p>Todo status tem texto e todo prazo tem número. A barra laranja vem acompanhada de "4 acima do prazo".</p></div>
+        <div class="regra"><h3>Foco visível</h3><p>Contorno azul de 2 px em tudo que recebe teclado. A lista inteira pode ser usada sem mouse.</p></div>
+        <div class="regra"><h3>Menos movimento</h3><p>Quem ativou "reduzir movimento" no sistema vê só transições de opacidade.</p></div>
+      </div>
+      <p class="rodape-doc">Logo e paleta seguem o site gft.com/br/pt. A fonte GFT Corporate é proprietária e deve vir do time de marca da GFT. Conceito de portfólio, sem relação com o produto em produção.</p>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

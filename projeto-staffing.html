@@ -15,17 +15,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="staffing-case.js?v=1" defer></script>
+<script src="staffing-case.js?v=2" defer></script>
 <link rel="stylesheet" href="locale.css">
-<script src="locale-data.js?v=typography-widows-1"></script>
-<script src="locale.js?v=typography-widows-1" defer></script>
+<script src="locale-data.js?v=staffing-identity-1"></script>
+<script src="locale.js?v=staffing-identity-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
 <link rel="icon" type="image/png" href="favicon-32.png?v=plane-2" sizes="32x32">
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=1">
-<link rel="stylesheet" href="staffing-case.css?v=1">
+<link rel="stylesheet" href="staffing-case.css?v=3">
 <link rel="stylesheet" href="typography.css?v=widows-2"><script src="typography.js?v=widows-1" defer></script></head>
 <body>
 <a class="case-skip" href="#conteudo">Skip to content</a>
@@ -271,6 +271,124 @@
 </div>
 <div class="phone-shell"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status and matching roles, with fictitious data" loading="lazy"></div>
 </div>
+</div>
+</section>
+
+<section class="sec identity-section" id="identity" data-chapter="solution">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<p class="eyebrow">Visual identity &amp; writing</p>
+<h2>A language people <span class="grad">already speak.</span></h2>
+<p class="lead">For the 2026 redesign I wrote an identity and writing guide: GFT’s corporate brand, and the Portuguese that managers and Staffing already use instead of the legacy English.</p>
+<blockquote class="identity-quote"><p>“Nobody goes without a project for lack of information.”</p><cite>Guiding line of the identity</cite></blockquote>
+</div>
+
+<div class="specimen" data-reveal>
+<div class="spec-tabs" role="tablist" aria-label="Identity elements">
+<button type="button" role="tab" id="tab-colors" aria-controls="spec-colors" aria-selected="true"><b>01</b>Colours</button>
+<button type="button" role="tab" id="tab-type" aria-controls="spec-type" aria-selected="false"><b>02</b>Typography</button>
+<button type="button" role="tab" id="tab-status" aria-controls="spec-status" aria-selected="false"><b>03</b>Status</button>
+<button type="button" role="tab" id="tab-glossary" aria-controls="spec-glossary" aria-selected="false"><b>04</b>Glossary</button>
+<button type="button" role="tab" id="tab-writing" aria-controls="spec-writing" aria-selected="false"><b>05</b>Writing</button>
+<a class="spec-open" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true">↗</span></a>
+</div>
+
+<div class="spec-sheet">
+<div class="spec-panel" role="tabpanel" id="spec-colors" aria-labelledby="tab-colors">
+<p class="spec-rule">Navy identifies, blue is for what can be clicked, neutrals organise. State colours only for what needs attention, always with text.</p>
+<div class="swatches">
+<button type="button" class="sw on" data-sw="navy" style="--c:#001326"><span>#001326</span></button>
+<button type="button" class="sw" data-sw="action" style="--c:#0052A3"><span>#0052A3</span></button>
+<button type="button" class="sw" data-sw="light" style="--c:#B8D9FA;--t:#001326"><span>#B8D9FA</span></button>
+<button type="button" class="sw" data-sw="done" style="--c:#007A74"><span>#007A74</span></button>
+<button type="button" class="sw" data-sw="attention" style="--c:#FB610E;--t:#001326"><span>#FB610E</span></button>
+<button type="button" class="sw" data-sw="error" style="--c:#B42318"><span>#B42318</span></button>
+</div>
+<div class="sw-info">
+<p data-sw-info="navy"><b>GFT navy</b> Logo, top bar, titles and main text · 18.7:1 on white</p>
+<p data-sw-info="action" hidden><b>Action blue</b> Buttons, links, selection and focus · 7.7:1 on white</p>
+<p data-sw-info="light" hidden><b>Light blue</b> Highlights and the active item · 12.8:1 with navy text</p>
+<p data-sw-info="done" hidden><b>Done</b> Allocated, renewed, request accepted · 5.2:1 on white</p>
+<p data-sw-info="attention" hidden><b>Attention</b> Deadline ending or overdue. Marker only; text uses #A63D00 · 6.4:1</p>
+<p data-sw-info="error" hidden><b>Error</b> Request rejected, invalid field, blocked action · 6.6:1 on white</p>
+</div>
+<div class="neutrals" aria-hidden="true"><i style="--c:#FFFFFF"></i><i style="--c:#F4F6F9"></i><i style="--c:#D8DEE4"></i><i style="--c:#B3B8BF"></i><i style="--c:#6B727A"></i><i style="--c:#4D535A"></i></div>
+<div class="ratio">
+<p class="spec-label">Proportion on a typical screen</p>
+<div class="ratio-bar" aria-hidden="true"><i style="--w:80;--c:#D8DEE4"></i><i style="--w:10;--c:#001326"></i><i style="--w:6;--c:#0052A3"></i><i style="--w:2;--c:#B8D9FA"></i><i style="--w:2;--c:#FB610E"></i></div>
+<p class="ratio-legend">Neutrals 80% · Navy 10% · Action blue 6% · Light blue 2% · State 2%</p>
+</div>
+</div>
+
+<div class="spec-panel" role="tabpanel" id="spec-type" aria-labelledby="tab-type">
+<p class="spec-rule">One family for everything, a mono only for codes people copy or compare. GFT Corporate is proprietary, so prototypes use Hanken Grotesk.</p>
+<div class="type-grid">
+<div class="type-hero"><span class="aa">Aa</span><p>Hanken Grotesk · 400 500 600</p><span class="aa mono">Aa</span><p>IBM Plex Mono · codes</p></div>
+<ul class="type-scale" data-no-translate>
+<li><em>32/38 · 600</em><span class="t1">Disponíveis</span></li>
+<li><em>24/30 · 600</em><span class="t2">Pedido de liberação</span></li>
+<li><em>16/24 · 400</em><span class="t3">A reserva vale 2 dias úteis e não conta fins de semana.</span></li>
+<li><em>12/16 · 600</em><span class="t4">PRAZO DE ALOCAÇÃO</span></li>
+<li><em>32 · 700 · tab</em><span class="t5">13 dias úteis</span></li>
+<li><em>Mono 14</em><span class="t6">ANSO · KE-204817</span></li>
+</ul>
+</div>
+</div>
+
+<div class="spec-panel" role="tabpanel" id="spec-status" aria-labelledby="tab-status">
+<p class="spec-rule">The same statuses as the shipped system, translated. Open statuses use an outline, closed ones a fill, and every one has a dot and text, so it can be read without colour.</p>
+<div class="status-groups" data-no-translate>
+<div><p class="spec-label">1 · Pedido de liberação</p>
+<span class="pill o-info">Em análise</span><span class="pill o-warn">Falta informação</span><span class="pill f-err">Recusado</span><span class="pill o-neutral">Afastado</span><span class="pill f-neutral">Cancelado</span></div>
+<div><p class="spec-label">2 · Disponível para vagas</p>
+<span class="pill o-neutral">Sem proposta</span><span class="pill o-info">Proposto</span><span class="pill f-info">Reservado</span></div>
+<div><p class="spec-label">3 · Saída</p>
+<span class="pill f-done">Alocado</span><span class="pill o-warn">Em renovação</span><span class="pill f-done">Renovado</span></div>
+</div>
+</div>
+
+<div class="spec-panel" role="tabpanel" id="spec-glossary" aria-labelledby="tab-glossary">
+<p class="spec-rule">System names (Kantata, STAR) and company acronyms (KE, IDU) stay. Everything else is translated by meaning, not word for word.</p>
+<div class="gloss" data-voc="new">
+<div class="gloss-switch" role="group" aria-label="Choose the vocabulary">
+<button type="button" data-voc="old" aria-pressed="false">Legacy system</button>
+<button type="button" data-voc="new" aria-pressed="true">New proposal</button>
+</div>
+<ul class="gloss-menu" data-no-translate>
+<li data-why="1"><span class="old">Available</span><span class="new">Disponíveis</span></li>
+<li data-why="2"><span class="old">Unassignment Request</span><span class="new">Pedido de liberação</span></li>
+<li data-why="3"><span class="old">Not Eligible</span><span class="new">Afastados</span></li>
+<li data-why="4"><span class="old">Open Opps.</span><span class="new">Vagas abertas</span></li>
+<li data-why="5"><span class="old">Matched Candidates</span><span class="new">Compatíveis com a vaga</span></li>
+<li data-why="6"><span class="old">SLA</span><span class="new">Prazo de alocação</span></li>
+</ul>
+<div class="gloss-why">
+<p data-why-text="1">The home screen. “Bench” still works in conversation, but the interface uses the word that describes the person.</p>
+<p data-why-text="2" hidden>“Unassignment” is jargon. The manager releases the person to other roles.</p>
+<p data-why-text="3" hidden>It says the real reason. “Not eligible” sounds like a judgement about the person.</p>
+<p data-why-text="4" hidden>“Opportunity” is a sales term. For whoever allocates, it is a role.</p>
+<p data-why-text="5" hidden>It shows the match percentage and the reasons for it.</p>
+<p data-why-text="6" hidden>15 business days. The acronym meant nothing to most managers.</p>
+</div>
+</div>
+</div>
+
+<div class="spec-panel" role="tabpanel" id="spec-writing" aria-labelledby="tab-writing">
+<p class="spec-rule">A Staffing colleague who knows the rule: direct, cordial and specific. Real system messages, rewritten.</p>
+<div class="gloss-switch write-switch" role="group" aria-label="Choose the version of the messages">
+<button type="button" data-ver="before" aria-pressed="false">Before</button>
+<button type="button" data-ver="after" aria-pressed="true">After</button>
+</div>
+<div class="messages" data-ver="after">
+<article><span class="msg-k">Button</span><p class="before" data-no-translate>OK</p><p class="after" data-no-translate>Reservar por 2 dias úteis</p></article>
+<article><span class="msg-k">Deadline</span><p class="before" data-no-translate>SLA end: 2026-03-12T23:59:59Z</p><p class="after" data-no-translate>Vence 12/03 às 23h59 · falta 1 dia útil</p></article>
+<article><span class="msg-k">Reservation extension</span><p class="before" data-no-translate>The reservation can only be extended on its last day.</p><p class="after" data-no-translate>Você poderá estender essa reserva em 12/03, o último dia dela. Vamos te avisar pela manhã.</p></article>
+<article><span class="msg-k">Release request</span><p class="before" data-no-translate>Self-dealocatte is not permitted!</p><p class="after" data-no-translate>Você não pode pedir a sua própria liberação. Fale com seu gestor direto.</p></article>
+</div>
+</div>
+</div>
+</div>
+<a class="btn spec-link-mobile" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true">↗</span></a>
 </div>
 </section>
 
