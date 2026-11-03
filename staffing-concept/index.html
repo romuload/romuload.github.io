@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GFT Staffing · Telas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: seletor de telas no topo; cada tela é a moldura do produto (barra marinho + menu do perfil + folha de trabalho) */
+:root {
+  --marinho: #001326; --azul: #0052a3; --azul-forte: #003879; --azul-claro: #b8d9fa; --azul-fundo: #eaf3fd;
+  --papel: #ffffff; --fundo: #f4f6f9; --linha: #d8dee4; --linha-forte: #b3b8bf;
+  --texto: #001326; --texto-2: #4d535a; --texto-3: #6b727a;
+  --sucesso: #007a74; --sucesso-marca: #00948d; --sucesso-fundo: #e3f4f2;
+  --atencao: #a63d00; --atencao-marca: #fb610e; --atencao-fundo: #fdeee2;
+  --erro: #b42318; --erro-fundo: #fbeaea;
+  --sobre-marinho: #ffffff; --sobre-marinho-2: #b3c2d3;
+  --sombra: 0 1px 2px rgba(0,19,38,.06), 0 8px 24px rgba(0,19,38,.08);
+  --f-texto: "GFT Corporate", "GFTCorporate", "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --r: 4px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
+    --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+    --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
+    --sucesso: #4fd8cf; --sucesso-marca: #2ab8b0; --sucesso-fundo: #062b2a;
+    --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
+    --erro: #f29a9a; --erro-fundo: #341313;
+    --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
+  --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+  --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
+  --sucesso: #4fd8cf; --sucesso-marca: #2ab8b0; --sucesso-fundo: #062b2a;
+  --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
+  --erro: #f29a9a; --erro-fundo: #341313;
+  --sombra: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html.captura .seletor, html.captura .nota-tela { display: none; }
+html.captura body::before { display: none; }
+html.captura .palco { padding: 0; max-width: none; }
+html.captura .app { border: 0; border-radius: 0; box-shadow: none; }
+html.captura .app-corpo { min-height: 844px; }
+html.captura .celular-palco { display: block; }
+html.captura .explica { display: none; }
+html.captura .celular { border: 0; border-radius: 0; max-width: none; box-shadow: none; min-height: 790px; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 400 1rem/1.5 var(--f-texto); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { margin: 0; font-weight: 600; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--azul); }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+.mono { font-family: var(--f-dado); font-size: .88em; }
+.num { font-variant-numeric: tabular-nums; }
+.rotulo { font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-3); }
+.sub { color: var(--texto-2); font-size: .875rem; }
+.fino { color: var(--texto-3); font-size: .75rem; }
+
+/* Seletor de telas */
+.seletor { background: var(--papel); border-bottom: 1px solid var(--linha); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--papel); }
+.seletor-in { max-width: 1320px; margin: 0 auto; padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; gap: 16px; align-items: center; overflow-x: auto; }
+.seletor .titulo { font-weight: 600; white-space: nowrap; font-size: .875rem; }
+.seletor nav { display: flex; gap: 4px; }
+.seletor nav a { white-space: nowrap; text-decoration: none; font-size: .8125rem; color: var(--texto-2); padding: 6px 10px; border-radius: 16px; border: 1px solid transparent; display: grid; line-height: 1.2; }
+.seletor nav a small { font-size: .6875rem; color: var(--texto-3); }
+.seletor nav a[aria-current="page"] { background: var(--azul-fundo); color: var(--azul); border-color: var(--azul-claro); font-weight: 600; }
+.palco { max-width: 1320px; margin: 0 auto; padding-block: 20px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 14px; }
+.nota-tela { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: .875rem; color: var(--texto-2); }
+.nota-tela b { color: var(--texto); }
+
+/* Moldura do produto */
+.app { border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; background: var(--fundo); box-shadow: var(--sombra); }
+.app-topo { background: var(--marinho); color: var(--sobre-marinho); height: 56px; display: flex; align-items: center; gap: 16px; padding: 0 20px; }
+.lockup { display: flex; align-items: center; gap: 12px; color: inherit; }
+.lockup svg { height: 22px; width: auto; fill: currentColor; display: block; }
+.lockup .div { width: 1px; align-self: stretch; background: currentColor; opacity: .35; }
+.lockup .nome { font-size: 1rem; font-weight: 500; }
+.busca { margin-left: auto; flex: 0 1 380px; min-width: 0; height: 36px; border-radius: var(--r); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--sobre-marinho-2); font-size: .875rem; display: flex; align-items: center; padding: 0 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sino { position: relative; width: 32px; height: 32px; display: grid; place-items: center; color: var(--sobre-marinho-2); flex: none; }
+.sino svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.sino i { position: absolute; top: 5px; right: 6px; width: 7px; height: 7px; background: var(--atencao-marca); }
+.perfil-topo { display: flex; align-items: center; gap: 10px; flex: none; font-size: .8125rem; color: var(--sobre-marinho-2); }
+.perfil-topo b { color: var(--sobre-marinho); font-weight: 500; display: block; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--azul-claro); color: #001326; display: grid; place-items: center; font-size: .75rem; font-weight: 700; flex: none; }
+.app-corpo { display: grid; grid-template-columns: 200px minmax(0, 1fr); min-height: 620px; }
+.menu { background: var(--papel); border-right: 1px solid var(--linha); padding: 16px 10px; display: grid; gap: 18px; align-content: start; font-size: .875rem; }
+.menu .bloco { display: grid; gap: 2px; }
+.menu .bloco .rotulo { padding: 0 10px 6px; }
+.menu a { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 7px 10px; border-radius: var(--r); color: var(--texto-2); text-decoration: none; }
+.menu a:hover { background: var(--fundo); }
+.menu a.ativo { background: var(--azul-fundo); color: var(--azul); font-weight: 600; box-shadow: inset 3px 0 0 var(--azul); }
+.menu a .n { font-size: .75rem; font-variant-numeric: tabular-nums; color: var(--texto-3); }
+.menu a .n.alerta { color: var(--atencao); font-weight: 600; }
+.menu a.ativo .n { color: var(--azul); }
+.folha { padding: 24px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.trilha { font-size: .8125rem; color: var(--texto-3); display: flex; gap: 6px; flex-wrap: wrap; }
+.trilha a { color: var(--texto-2); text-decoration: none; }
+.cab { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 20px; align-items: end; }
+.cab h1 { font-size: 1.5rem; letter-spacing: -.015em; line-height: 1.2; }
+.cab .acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Peças */
+.btn { font: 600 .875rem/1 var(--f-texto); height: 40px; padding: 0 16px; border-radius: var(--r); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; transition: transform .1s ease, background-color .15s ease; text-decoration: none; }
+.btn:active { transform: scale(.98); }
+.btn-pri { background: var(--azul); color: var(--papel); }
+.btn-pri:hover { background: var(--azul-forte); }
+.btn-sec { background: var(--papel); color: var(--azul); border-color: var(--azul); }
+.btn-ter { background: transparent; color: var(--azul); padding: 0 8px; }
+.btn-dest { background: var(--papel); color: var(--erro); border-color: var(--erro); }
+.btn-p { height: 32px; padding: 0 12px; font-size: .75rem; }
+.btn[disabled] { background: var(--fundo); color: var(--texto-3); border-color: var(--linha); cursor: not-allowed; }
+.status { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 12px; font-size: .75rem; font-weight: 600; white-space: nowrap; border: 1px solid transparent; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+.s-neutro { background: var(--fundo); color: var(--texto-2); border-color: var(--linha); }
+.s-aberto { background: var(--papel); color: var(--texto); border-color: var(--linha-forte); }
+.s-aberto::before { background: transparent; border: 1.5px solid currentColor; }
+.s-azul { background: var(--azul-fundo); color: var(--azul); }
+.s-forte { background: var(--azul); color: var(--papel); }
+.s-sucesso { background: var(--sucesso-fundo); color: var(--sucesso); }
+.s-sucesso-borda { background: var(--papel); color: var(--sucesso); border-color: currentColor; }
+.s-atencao { background: var(--atencao-fundo); color: var(--atencao); }
+.s-erro { background: var(--erro-fundo); color: var(--erro); }
+.cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 18px 20px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.cartao > h2, .cartao > header h2 { font-size: 1rem; }
+.cartao > header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.pares { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px 20px; font-size: .875rem; }
+.pares div { display: grid; gap: 2px; }
+.pares dt { font-size: .75rem; color: var(--texto-3); }
+.pares dd { margin: 0; font-weight: 500; }
+dl { margin: 0; }
+.aviso { border-radius: var(--r); padding: 12px 14px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 2px 12px; font-size: .875rem; align-items: center; }
+.aviso .ic { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 12px; color: var(--papel); }
+.aviso b { font-weight: 600; }
+.aviso p { color: var(--texto-2); }
+.aviso.atencao { background: var(--atencao-fundo); } .aviso.atencao .ic { background: var(--atencao); }
+.aviso.info { background: var(--azul-fundo); } .aviso.info .ic { background: var(--azul); }
+.aviso.sucesso { background: var(--sucesso-fundo); } .aviso.sucesso .ic { background: var(--sucesso); }
+.aviso.erro { background: var(--erro-fundo); } .aviso.erro .ic { background: var(--erro); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: .75rem; padding: 3px 9px; border-radius: 12px; border: 1px solid var(--linha); background: var(--papel); color: var(--texto-2); white-space: nowrap; }
+.chip.alto { border-color: var(--azul); color: var(--azul); background: var(--azul-fundo); font-weight: 600; }
+.chip.filtro { border-color: var(--azul); color: var(--azul); }
+.chip.filtro::after { content: " ×"; }
+
+/* Listas */
+.lista { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .875rem; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--linha); vertical-align: middle; }
+th { font-size: .6875rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--texto-3); background: var(--fundo); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--fundo); }
+tr.sel td { background: var(--azul-fundo); }
+tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
+.lista .min { min-width: 760px; }
+.pessoa { display: grid; gap: 1px; }
+.pessoa b { font-weight: 600; white-space: nowrap; }
+.pessoa a { color: var(--texto); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.pessoa a:hover { color: var(--azul); text-decoration: underline; }
+.pessoa small { color: var(--texto-3); font-size: .75rem; }
+.acao { text-align: right; white-space: nowrap; }
+.prazo { display: grid; gap: 4px; min-width: 120px; font-size: .75rem; color: var(--texto-2); }
+.barra { height: 4px; background: var(--fundo); border: 1px solid var(--linha); border-radius: 2px; overflow: hidden; }
+.barra i { display: block; height: 100%; background: var(--azul); }
+.barra i.fora { background: var(--atencao-marca); }
+.barra i.ok { background: var(--sucesso-marca); }
+.contadores { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.contador { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 2px; text-align: left; color: inherit; cursor: pointer; }
+.contador b { font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; line-height: 1.2; }
+.contador span { font-size: .75rem; color: var(--texto-2); }
+.contador.ativo { border-color: var(--azul); box-shadow: inset 0 3px 0 var(--azul); }
+.contador.alerta b { color: var(--atencao); }
+.ferramentas { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.ferramentas .esq { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.alternar { display: inline-flex; border: 1px solid var(--linha-forte); border-radius: var(--r); overflow: hidden; }
+.alternar button { border: 0; background: var(--papel); color: var(--texto-2); padding: 0 12px; height: 32px; font-size: .75rem; font-weight: 600; cursor: pointer; }
+.alternar button + button { border-left: 1px solid var(--linha-forte); }
+.alternar button[aria-pressed="true"] { background: var(--azul-fundo); color: var(--azul); }
+
+/* Grades de tela */
+.duas { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
+.lateral { display: grid; gap: 16px; align-content: start; }
+.duas-vagas { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+.duas-triagem { grid-template-columns: minmax(0, 1fr) 360px; }
+.cartoes-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+
+/* Perfil */
+.cabeca-perfil { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 20px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px 20px; align-items: center; }
+.cabeca-perfil .avatar { width: 56px; height: 56px; font-size: 1.1rem; }
+.cabeca-perfil h1 { font-size: 1.5rem; letter-spacing: -.015em; }
+.cabeca-perfil .linha { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .875rem; color: var(--texto-2); margin-top: 2px; }
+.cabeca-perfil .acoes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.acao-painel { border: 1px solid var(--azul); border-radius: var(--r); background: var(--papel); padding: 18px; display: grid; gap: 12px; }
+.acao-painel h2 { font-size: 1rem; }
+.fila { display: grid; gap: 8px; font-size: .875rem; }
+.fila li { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.fila ol { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+.linha-tempo { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .875rem; }
+.linha-tempo li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 12px; padding-bottom: 14px; position: relative; }
+.linha-tempo li::before { content: ""; width: 10px; height: 10px; margin-top: 5px; background: var(--linha-forte); }
+.linha-tempo li.atual::before { background: var(--azul); }
+.linha-tempo li:not(:last-child)::after { content: ""; position: absolute; left: 4.5px; top: 18px; bottom: 0; width: 1px; background: var(--linha); }
+.linha-tempo b { font-weight: 600; }
+.linha-tempo small { display: block; color: var(--texto-3); font-size: .75rem; }
+.avaliacoes { display: grid; gap: 10px; }
+.avaliacao { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; font-size: .875rem; padding-bottom: 10px; border-bottom: 1px solid var(--linha); }
+.avaliacao:last-child { border-bottom: 0; padding-bottom: 0; }
+.avaliacao .data { color: var(--texto-3); font-size: .75rem; }
+.escala5 { display: flex; gap: 3px; margin-top: 3px; }
+.escala5 i { width: 14px; height: 6px; background: var(--linha); }
+.escala5 i.on { background: var(--azul); }
+.skills-grupos { display: grid; gap: 10px; font-size: .875rem; }
+.skills-grupos div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 10px; align-items: start; }
+.star { display: grid; gap: 6px; font-size: .875rem; }
+.star .barra { height: 6px; }
+
+/* Formulário */
+.passos { display: flex; gap: 0; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); overflow-x: auto; }
+.passo { flex: 1 0 160px; padding: 12px 16px; display: grid; gap: 2px; font-size: .8125rem; border-right: 1px solid var(--linha); color: var(--texto-3); }
+.passo:last-child { border-right: 0; }
+.passo b { font-weight: 600; color: var(--texto-2); }
+.passo.feito b { color: var(--sucesso); }
+.passo.atual { box-shadow: inset 0 -3px 0 var(--azul); }
+.passo.atual b { color: var(--azul); }
+.form { display: grid; gap: 18px; }
+.form fieldset { border: 1px solid var(--linha); border-radius: var(--r); background: var(--papel); margin: 0; padding: 20px; display: grid; gap: 16px; min-width: 0; }
+.form legend { font-weight: 600; padding: 0 6px; font-size: 1rem; }
+.campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+.campo { display: grid; gap: 6px; font-size: .875rem; align-content: start; }
+.campo.todo { grid-column: 1 / -1; }
+.campo label, .campo .lbl { font-weight: 600; }
+.campo .ajuda { color: var(--texto-3); font-size: .75rem; }
+.campo input, .campo select, .campo textarea { font: 400 .875rem var(--f-texto); min-height: 40px; padding: 8px 12px; border: 1px solid var(--linha-forte); border-radius: var(--r); background: var(--papel); color: var(--texto); width: 100%; }
+.campo textarea { min-height: 84px; resize: vertical; }
+.campo input[readonly] { background: var(--fundo); color: var(--texto-2); }
+.campo.erro input { border-color: var(--erro); box-shadow: inset 3px 0 0 var(--erro); }
+.campo .msg-erro { color: var(--erro); font-size: .75rem; font-weight: 500; }
+.opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.opcao { position: relative; }
+.opcao input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.opcao span { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 12px; border: 1px solid var(--linha-forte); border-radius: var(--r); font-size: .8125rem; background: var(--papel); color: var(--texto-2); }
+.opcao input:checked + span { border-color: var(--azul); background: var(--azul-fundo); color: var(--azul); font-weight: 600; }
+.opcao input:focus-visible + span { outline: 2px solid var(--azul); outline-offset: 2px; }
+.opcao input:disabled + span { background: var(--fundo); color: var(--texto-3); border-style: dashed; text-decoration: line-through; }
+.notas-comp { display: grid; gap: 8px; }
+.nota-comp { display: grid; grid-template-columns: minmax(140px, 1fr) auto; gap: 12px; align-items: center; font-size: .875rem; padding: 6px 0; border-bottom: 1px solid var(--linha); }
+.nota-comp:last-child { border-bottom: 0; }
+.pontos { display: inline-flex; gap: 4px; }
+.pontos button { width: 30px; height: 30px; border-radius: var(--r); border: 1px solid var(--linha-forte); background: var(--papel); color: var(--texto-2); font-size: .8125rem; font-weight: 600; cursor: pointer; }
+.pontos button[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: var(--papel); }
+.rodape-form { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 14px 18px; }
+
+/* Triagem */
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .875rem; }
+.checklist li { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--linha); }
+.checklist li:last-child { border-bottom: 0; }
+.checklist .ok, .checklist .pend { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+.checklist .ok { background: var(--sucesso-fundo); color: var(--sucesso); }
+.checklist .pend { background: var(--atencao-fundo); color: var(--atencao); }
+.checklist small { color: var(--texto-3); font-size: .75rem; }
+.respostas { display: grid; gap: 8px; }
+.respostas .btn { width: 100%; justify-content: flex-start; }
+.respostas .btn small { font-weight: 400; margin-left: auto; color: inherit; opacity: .8; }
+
+/* Vagas e compatibilidade */
+.compat { display: grid; gap: 10px; }
+.cand { border: 1px solid var(--linha); border-radius: var(--r); padding: 14px 16px; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; background: var(--papel); }
+.pct { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--azul); line-height: 1; }
+.pct small { display: block; font-size: .6875rem; font-weight: 500; color: var(--texto-3); letter-spacing: 0; margin-top: 4px; }
+.motivos { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .75rem; color: var(--texto-2); }
+.motivos span::before { content: "✓ "; color: var(--sucesso); font-weight: 700; }
+.motivos span.nao::before { content: "– "; color: var(--texto-3); }
+.vaga-desc { font-size: .875rem; color: var(--texto-2); }
+
+/* Celular */
+.celular-palco { display: grid; grid-template-columns: 390px minmax(0, 1fr); gap: 32px; align-items: start; }
+.celular { width: 100%; max-width: 390px; border: 10px solid #0b1520; border-radius: 36px; overflow: hidden; background: var(--fundo); box-shadow: var(--sombra); }
+.cel-topo { background: var(--marinho); color: var(--sobre-marinho); padding: 14px 18px 18px; display: grid; gap: 14px; }
+.cel-topo .barra-sis { display: flex; justify-content: space-between; font-size: .75rem; color: var(--sobre-marinho-2); }
+.cel-topo .lockup svg { height: 18px; }
+.cel-topo .lockup .nome { font-size: .875rem; }
+.cel-topo h1 { font-size: 1.25rem; letter-spacing: -.01em; }
+.cel-topo p { color: var(--sobre-marinho-2); font-size: .875rem; }
+.cel-corpo { padding: 14px; display: grid; gap: 12px; }
+.cel-cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
+.cel-cartao h2 { font-size: .9375rem; }
+.etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .8125rem; }
+.etapas li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; padding-bottom: 12px; position: relative; color: var(--texto-3); }
+.etapas li::before { content: ""; width: 10px; height: 10px; margin-top: 4px; border: 1.5px solid var(--linha-forte); background: var(--papel); }
+.etapas li.feito::before { background: var(--sucesso-marca); border-color: var(--sucesso-marca); }
+.etapas li.atual::before { background: var(--azul); border-color: var(--azul); }
+.etapas li.feito, .etapas li.atual { color: var(--texto); }
+.etapas li:not(:last-child)::after { content: ""; position: absolute; left: 5px; top: 17px; bottom: 0; width: 1px; background: var(--linha); }
+.etapas small { display: block; color: var(--texto-3); }
+.cel-vaga { display: grid; gap: 4px; padding: 10px 0; border-bottom: 1px solid var(--linha); font-size: .8125rem; }
+.cel-vaga:last-child { border-bottom: 0; }
+.cel-vaga .t { display: flex; justify-content: space-between; gap: 8px; font-weight: 600; font-size: .875rem; }
+.cel-vaga .t span { color: var(--azul); font-variant-numeric: tabular-nums; }
+.cel-nav { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--papel); border-top: 1px solid var(--linha); font-size: .6875rem; text-align: center; color: var(--texto-3); }
+.cel-nav span { padding: 10px 0 14px; display: grid; gap: 4px; justify-items: center; }
+.cel-nav span::before { content: ""; width: 18px; height: 18px; border: 1.5px solid currentColor; border-radius: 4px; }
+.cel-nav span.ativo { color: var(--azul); font-weight: 600; }
+.cel-nav span.ativo::before { background: var(--azul-fundo); }
+.explica { display: grid; gap: 16px; }
+.explica .cartao p { color: var(--texto-2); font-size: .875rem; }
+
+/* Liderança */
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 16px 18px; display: grid; gap: 4px; align-content: start; }
+.kpi b { font-size: 2rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kpi .var { font-size: .75rem; font-weight: 600; }
+.kpi .var.bom { color: var(--sucesso); }
+.kpi .var.ruim { color: var(--atencao); }
+.grafico svg { width: 100%; height: auto; display: block; overflow: visible; }
+.grafico .eixo { stroke: var(--linha); stroke-width: 1; }
+.grafico .grade { stroke: var(--linha); stroke-width: 1; stroke-dasharray: 2 4; }
+.grafico text { fill: var(--texto-3); font: 500 11px var(--f-texto); }
+.grafico .linha-c { fill: none; stroke: var(--azul); stroke-width: 2.5; }
+.grafico .area-c { fill: var(--azul); opacity: .1; }
+.grafico .ponto { fill: var(--papel); stroke: var(--azul); stroke-width: 2.5; }
+.grafico .ponto-fim { fill: var(--azul); }
+.grafico .val { fill: var(--texto); font-weight: 600; font-size: 12px; }
+.barras-h { display: grid; gap: 10px; font-size: .8125rem; }
+.barras-h .b { display: grid; grid-template-columns: 74px minmax(0, 1fr) 72px; gap: 10px; align-items: center; }
+.barras-h .trilho { height: 14px; background: var(--fundo); border-radius: 2px; overflow: hidden; }
+.barras-h .trilho i { display: block; height: 100%; background: var(--azul); }
+.barras-h .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--texto-2); }
+.previsao { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.prev { border: 1px solid var(--linha); border-radius: var(--r); padding: 12px; display: grid; gap: 2px; font-size: .75rem; color: var(--texto-2); }
+.prev b { font-size: 1.25rem; color: var(--texto); font-variant-numeric: tabular-nums; }
+
+/* Toast */
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--marinho); color: #fff; padding: 12px 14px 12px 18px; border-radius: var(--r); box-shadow: var(--sombra); display: flex; gap: 16px; align-items: center; font-size: .875rem; z-index: 20; max-width: calc(100% - 32px); }
+.toast button { background: transparent; border: 0; color: var(--azul-claro); font-weight: 600; cursor: pointer; padding: 4px 6px; }
+
+@media (max-width: 1080px) {
+  .duas, .duas-vagas, .duas-triagem { grid-template-columns: minmax(0, 1fr); }
+  .contadores { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .celular-palco { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+}
+@media (max-width: 860px) {
+  .app-corpo { grid-template-columns: minmax(0, 1fr); }
+  .menu { display: none; }
+  .busca { display: none; }
+  .perfil-topo > span:first-child { display: none; }
+  .perfil-topo { margin-left: auto; }
+  .cartoes-2, .campos { grid-template-columns: minmax(0, 1fr); }
+  .cabeca-perfil { grid-template-columns: auto minmax(0, 1fr); }
+  .cabeca-perfil .acoes { grid-column: 1 / -1; justify-content: flex-start; }
+}
+@media (max-width: 560px) {
+  .folha { padding: 16px; }
+  .skills-grupos div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .cartao > header { flex-wrap: wrap; }
+  .contadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .previsao { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis { grid-template-columns: minmax(0, 1fr); }
+  .cand { grid-template-columns: 56px minmax(0, 1fr); }
+  .cand .btn { grid-column: 1 / -1; }
+  .celular { border-width: 6px; border-radius: 24px; }
+  .app-topo { padding: 0 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-gft" viewBox="0 0 800 310">
+    <path d="M613.9 0h186v186h-186zM91.522 77.386v31.244h41.863v30.346c-9.54 9.744-22.707 14.677-39.166 14.677-33.927 0-57.325-23.286-57.325-60.762 0-37.332 23.474-60.524 57.53-60.524 17.048 0 32.962 6.007 46.017 17.356l1.878 1.639 22.578-21.589-1.843-1.970C146.406 9.891 122.599.428 94.219.428 39.027.429.1 37.580.1 92.882c0 55.446 38.927 92.692 94.119 92.692 32.245 0 58.928-12.356 75.123-34.805l.521-.717V77.386zM340.853 34.967V3.515H202.354v178.566h37.025v-73.45h94.357V77.177H239.38V34.967zM370.284 3.617v31.418h49.126V181.98h36.973V35.035h49.082V3.617zM23.255 308.833v-48.63H5.759v-11.216h47.733v11.215H36.085v48.631zM73.547 308.833v-59.846h42.35v11.215H86.288v12.651h28.981v11.216H86.29v13.549h29.608v11.215zM134.876 278.955c0-18.394 13.907-30.955 31.852-30.955 13.19 0 20.816 7.178 25.033 14.625l-10.946 5.383c-2.513-4.845-7.896-8.703-14.087-8.703-10.857 0-18.753 8.344-18.753 19.65s7.896 19.65 18.753 19.65c6.191 0 11.574-3.77 14.087-8.703l10.946 5.293c-4.306 7.447-11.844 14.715-25.033 14.715-17.945 0-31.852-12.562-31.852-30.955M251.318 308.833V283.71h-28.263v25.123h-12.741v-59.846h12.74v23.507h28.264v-23.507h12.83v59.846zM330.03 308.833l-28.532-39.03v39.03h-12.741v-59.846h13.1l27.725 37.595v-37.595h12.74v59.846zM361.256 278.955c0-18.035 13.19-30.955 31.224-30.955 18.124 0 31.314 12.92 31.314 30.955s-13.19 30.955-31.314 30.955c-18.035 0-31.224-12.92-31.224-30.955m49.438 0c0-11.216-7.178-19.65-18.214-19.65-11.037 0-18.125 8.434-18.125 19.65 0 11.126 7.088 19.65 18.125 19.65s18.214-8.524 18.214-19.65M442.692 308.833v-59.846h12.742v48.630h25.302v11.216zM494.251 278.955c0-18.035 13.19-30.955 31.225-30.955 18.124 0 31.313 12.92 31.313 30.955s-13.19 30.955-31.313 30.955c-18.036 0-31.225-12.920-31.225-30.955m49.438 0c0-11.216-7.178-19.65-18.213-19.65-11.037 0-18.125 8.434-18.125 19.65 0 11.126 7.088 19.65 18.125 19.65 11.035 0 18.213-8.524 18.213-19.65M571.851 278.955c0-18.933 14.356-30.955 31.852-30.955 12.473 0 20.278 6.28 24.765 13.369l-10.588 5.742c-2.692-4.217-7.806-7.806-14.177-7.806-10.856 0-18.752 8.344-18.752 19.650s7.896 19.650 18.752 19.650c5.294 0 10.319-2.333 12.741-4.577v-7.177h-15.791v-11.126h28.533v22.970C623.084 305.513 614.560 310 603.703 310c-17.496 0-31.852-12.203-31.852-31.045M652.143 308.833v-59.846h12.742v59.846zM689.548 308.833v-59.846h42.350v11.215H702.290v12.651h28.980v11.216h-28.980v13.549h29.609v11.215zM750.640 300.400l6.910-9.690c4.217 4.395 10.766 8.074 19.021 8.074 6.999 0 10.408-3.230 10.408-6.640 0-4.396-5.563-5.652-12.113-7.268-9.780-2.242-22.341-4.934-22.341-18.572 0-9.960 8.613-18.215 22.700-18.215 9.511 0 17.407 2.872 23.329 8.345l-7.088 9.332c-4.846-4.487-11.306-6.551-17.407-6.551-5.473 0-8.524 2.423-8.524 6.012 0 3.858 5.473 5.114 11.933 6.640 9.870 2.333 22.432 5.293 22.432 18.842 0 10.946-7.807 19.201-23.957 19.201-11.485 0-19.740-3.858-25.302-9.510"/>
+  </symbol>
+</svg>
+
+<div class="seletor">
+  <div class="seletor-in">
+    <span class="titulo">GFT Staffing · Telas</span>
+    <nav aria-label="Telas" id="nav-telas">
+      <a href="#disponiveis">Disponíveis<small>Gestor</small></a>
+      <a href="#perfil">Perfil da pessoa<small>Gestor</small></a>
+      <a href="#liberacao">Pedido de liberação<small>Gestor</small></a>
+      <a href="#renovacao">Em renovação<small>Gestor</small></a>
+      <a href="#vagas">Vagas e compatíveis<small>Gestor</small></a>
+      <a href="#triagem">Pedidos recebidos<small>Staffing</small></a>
+      <a href="#colaborador">Meu status<small>Colaborador</small></a>
+      <a href="#lideranca">Indicadores<small>Liderança</small></a>
+    </nav>
+  </div>
+</div>
+
+<main class="palco">
+
+<!-- ============ DISPONÍVEIS ============ -->
+<section class="tela" id="t-disponiveis" data-perfil="gestor" data-menu="disponiveis">
+  <p class="nota-tela"><b>Disponíveis</b>Tela inicial do gestor. Os contadores filtram a lista, e o nome abre o perfil.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab">
+          <div><h1>Disponíveis</h1><p class="sub">Pessoas liberadas e prontas para vagas · atualizado hoje às 09h00</p></div>
+          <div class="acoes"><button class="btn btn-sec" type="button">Exportar lista</button></div>
+        </div>
+        <div class="aviso atencao"><span class="ic" aria-hidden="true">!</span><div><b>Sua reserva de Marina Costa vence hoje às 23h59.</b> <span class="sub">Confirme a alocação, libere a reserva ou peça mais prazo ao Staffing.</span></div><a class="btn btn-p btn-sec" href="#perfil">Ver reserva</a></div>
+        <div class="contadores" role="group" aria-label="Filtrar por situação">
+          <button class="contador ativo" type="button" data-f="todas"><b>41</b><span>Todas</span></button>
+          <button class="contador" type="button" data-f="sem"><b>29</b><span>Sem proposta</span></button>
+          <button class="contador" type="button" data-f="prop"><b>8</b><span>Propostas</span></button>
+          <button class="contador" type="button" data-f="res"><b>4</b><span>Reservadas</span></button>
+          <button class="contador alerta" type="button" data-f="fora"><b>7</b><span>Acima do prazo</span></button>
+        </div>
+        <div class="ferramentas">
+          <div class="esq">
+            <span class="chip filtro">Nível 4 a 6</span><span class="chip filtro">Inglês avançado</span>
+            <button class="btn btn-ter btn-p" type="button">+ Filtros</button>
+          </div>
+          <div class="alternar" role="group" aria-label="Atalhos">
+            <button type="button" aria-pressed="false">Propostos por mim</button>
+            <button type="button" aria-pressed="false">Reservados por mim</button>
+          </div>
+        </div>
+        <div class="lista">
+          <table class="min" id="tab-disp">
+            <thead><tr><th>Pessoa</th><th>Skills principais</th><th>Última avaliação</th><th>Dias disponível</th><th>Situação</th><th><span class="fino" style="text-transform:none;letter-spacing:0">Ação</span></th></tr></thead>
+            <tbody>
+              <tr data-s="sem fora"><td><div class="pessoa"><a href="#perfil">Rafael Lima</a><small><span class="mono">RALI</span> · Dev .NET · Nível 5 · Campinas</small></div></td><td>.NET, Azure, SQL Server</td><td>Alto desempenho</td><td><div class="prazo"><span>19 dias úteis · 4 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Rafael Lima">Reservar</button></td></tr>
+              <tr data-s="res"><td><div class="pessoa"><a href="#perfil">Marina Costa</a><small><span class="mono">MACO</span> · Dev Java · Nível 6 · São Paulo</small></div></td><td>Java, Spring Boot, Kafka</td><td>Atende o esperado</td><td><div class="prazo"><span>11 de 15 dias úteis</span><div class="barra"><i style="width:73%"></i></div></div></td><td><span class="status s-forte">Reservada por você</span></td><td class="acao"><a class="btn btn-pri btn-p" href="#perfil">Confirmar alocação</a></td></tr>
+              <tr data-s="prop"><td><div class="pessoa"><a href="#perfil">Júlia Prado</a><small><span class="mono">JUPR</span> · QA · Nível 4 · Curitiba</small></div></td><td>Cypress, Playwright, API</td><td>Alto desempenho</td><td><div class="prazo"><span>6 de 15 dias úteis</span><div class="barra"><i style="width:40%"></i></div></div></td><td><span class="status s-azul">Proposta · 2 gestores</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Júlia Prado">Reservar</button></td></tr>
+              <tr data-s="res fora"><td><div class="pessoa"><a href="#perfil">Lucas Andrade</a><small><span class="mono">LUAN</span> · Arquiteto · Nível 8 · Recife</small></div></td><td>AWS, Microsserviços, Kubernetes</td><td>Excepcional</td><td><div class="prazo"><span>17 dias úteis · 2 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-forte">Reservado · fila 1</span></td><td class="acao"><button class="btn btn-sec btn-p" type="button">Entrar na fila</button></td></tr>
+              <tr data-s="sem"><td><div class="pessoa"><a href="#perfil">Paulo Mendes</a><small><span class="mono">PAME</span> · Analista de dados · Nível 5 · Remoto</small></div></td><td>Python, Power BI, Databricks</td><td>Atende o esperado</td><td><div class="prazo"><span>2 de 15 dias úteis</span><div class="barra"><i style="width:13%"></i></div></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Paulo Mendes">Reservar</button></td></tr>
+              <tr data-s="prop fora"><td><div class="pessoa"><a href="#perfil">Beatriz Nunes</a><small><span class="mono">BENU</span> · Scrum Master · Nível 6 · Porto Alegre</small></div></td><td>Scrum, Kanban, Jira</td><td>Atende o esperado</td><td><div class="prazo"><span>22 dias úteis · 7 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-azul">Proposta · 1 gestor</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Beatriz Nunes">Reservar</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fino">Mostrando 6 de 41 · dados fictícios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERFIL ============ -->
+<section class="tela" id="t-perfil" data-perfil="gestor" data-menu="disponiveis">
+  <p class="nota-tela"><b>Perfil da pessoa</b>Tudo para decidir sem abrir currículo: skills do STAR, últimas avaliações, ausências e a fila de reservas.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="trilha"><a href="#disponiveis">Disponíveis</a><span>›</span><span>Marina Costa</span></div>
+        <div class="cabeca-perfil">
+          <span class="avatar">MC</span>
+          <div>
+            <h1>Marina Costa</h1>
+            <div class="linha"><span class="mono">MACO</span><span>Desenvolvedora Java</span><span>Nível 6</span><span>Prática Java</span><span>São Paulo · híbrido 2 dias</span></div>
+          </div>
+          <div class="acoes"><span class="status s-forte">Reservada por você</span></div>
+        </div>
+        <div class="duas">
+          <div class="lateral">
+            <div class="cartoes-2">
+              <div class="cartao">
+                <h2>Disponibilidade</h2>
+                <dl class="pares">
+                  <div><dt>Data de liberação</dt><dd>03/03/2026</dd></div>
+                  <div><dt>Dias disponível</dt><dd class="num">11 de 15 dias úteis</dd></div>
+                  <div><dt>Último projeto</dt><dd>Banco Atlas · KE <span class="mono">KE-198220</span></dd></div>
+                  <div><dt>Gestor direto</dt><dd>Fernanda Rocha</dd></div>
+                </dl>
+                <div class="prazo"><span>Prazo de alocação</span><div class="barra"><i style="width:73%"></i></div></div>
+              </div>
+              <div class="cartao">
+                <h2>Perfil no STAR</h2>
+                <div class="star"><div style="display:flex;justify-content:space-between"><span>Preenchido</span><b class="num">92%</b></div><div class="barra"><i class="ok" style="width:92%"></i></div></div>
+                <dl class="pares">
+                  <div><dt>Inglês</dt><dd>Avançado (C1)</dd></div>
+                  <div><dt>Espanhol</dt><dd>Intermediário</dd></div>
+                  <div><dt>Currículo</dt><dd><a href="#perfil">Gerado do STAR · 26/02</a></dd></div>
+                </dl>
+              </div>
+            </div>
+            <div class="cartao">
+              <header><h2>Skills</h2><span class="fino">Fonte: STAR, atualizado em 26/02/2026</span></header>
+              <div class="skills-grupos">
+                <div><span class="fino">Alto</span><div class="chips"><span class="chip alto">Java 17</span><span class="chip alto">Spring Boot</span><span class="chip alto">Kafka</span><span class="chip alto">PostgreSQL</span></div></div>
+                <div><span class="fino">Médio</span><div class="chips"><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Angular</span><span class="chip">Kubernetes</span></div></div>
+                <div><span class="fino">Básico</span><div class="chips"><span class="chip">Python</span><span class="chip">Terraform</span></div></div>
+              </div>
+              <p class="sub"><b style="color:var(--texto)">Observação do gestor:</b> conduziu a migração do motor de pagamentos para eventos com Kafka. Boa com clientes do setor financeiro.</p>
+            </div>
+            <div class="cartao">
+              <header><h2>Últimas avaliações</h2><a class="fino" href="#perfil">Ver as 5</a></header>
+              <div class="avaliacoes">
+                <div class="avaliacao"><div><span class="data">fev/2026</span><div class="escala5" aria-label="Atende o esperado, 3 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div><div><b>Atende o esperado</b> · Recomendo<p class="sub">Entrega consistente e boa comunicação com o cliente. Pode ganhar autonomia em decisões de arquitetura.</p></div></div>
+                <div class="avaliacao"><div><span class="data">ago/2024</span><div class="escala5" aria-label="Alto desempenho, 4 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div><div><b>Alto desempenho</b> · Recomendo<p class="sub">Referência técnica no time. Assumiu a liderança da squad nas férias do tech lead.</p></div></div>
+              </div>
+            </div>
+            <div class="cartao">
+              <h2>Ausências e férias</h2>
+              <dl class="pares">
+                <div><dt>Férias marcadas</dt><dd>06/04 a 15/04/2026</dd></div>
+                <div><dt>Prazo para tirar férias</dt><dd>30/06/2026 · 20 dias</dd></div>
+                <div><dt>Ausências aprovadas</dt><dd>Nenhuma nos próximos 30 dias</dd></div>
+              </dl>
+            </div>
+          </div>
+          <aside class="lateral">
+            <div class="acao-painel">
+              <h2>Sua reserva</h2>
+              <div style="font-size:.875rem">Para <b>Banco Horizonte</b> · Dev Java Sr · KE <span class="mono">KE-204817</span></div>
+              <div class="aviso atencao" style="grid-template-columns:auto minmax(0,1fr)"><span class="ic" aria-hidden="true">!</span><div><b>Vence hoje às 23h59</b><p>Começou em 11/03 às 14h20. Como foi depois do meio-dia, a contagem começou no dia seguinte.</p></div></div>
+              <button class="btn btn-pri" type="button" id="b-alocar">Confirmar alocação</button>
+              <button class="btn btn-sec" type="button" disabled title="Só gestores IDU podem estender reservas">Estender por 2 dias úteis</button>
+              <p class="fino">Só gestores IDU podem estender. Para mais prazo, fale com o time de Staffing.</p>
+              <button class="btn btn-ter" type="button">Liberar reserva</button>
+            </div>
+            <div class="cartao">
+              <h2>Fila de reservas</h2>
+              <div class="fila"><ol>
+                <li><span><b>Você</b> · Banco Horizonte</span><span class="status s-forte">Ativa</span></li>
+                <li><span>Tiago Ramos · Seguradora Sul</span><span class="fino">Próximo</span></li>
+              </ol></div>
+              <p class="fino">Se a sua reserva vencer, a de Tiago começa na hora e ele é avisado.</p>
+            </div>
+            <div class="cartao">
+              <h2>Histórico</h2>
+              <ul class="linha-tempo">
+                <li class="atual"><div><b>Reservada por você</b><small>11/03 às 14h20 · Banco Horizonte</small></div></li>
+                <li><div><b>Proposta por Tiago Ramos</b><small>10/03 · Seguradora Sul</small></div></li>
+                <li><div><b>Pedido aceito pelo Staffing</b><small>03/03 · Carla Dias</small></div></li>
+                <li><div><b>Pedido de liberação enviado</b><small>17/02 · Fernanda Rocha</small></div></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIBERAÇÃO ============ -->
+<section class="tela" id="t-liberacao" data-perfil="gestor" data-menu="liberacao">
+  <p class="nota-tela"><b>Pedido de liberação</b>As regras aparecem no campo, antes do envio. Mude a nota geral para 1 ou 2 e veja "Recomendo" ser desabilitado.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Pedido de liberação</h1><p class="sub">Leva cerca de 8 minutos. O rascunho é salvo sozinho.</p></div></div>
+        <div class="passos" aria-label="Etapas">
+          <div class="passo feito"><b>1 · Dados básicos</b>Concluído</div>
+          <div class="passo feito"><b>2 · Último projeto</b>Concluído</div>
+          <div class="passo feito"><b>3 · Conhecimentos</b>Concluído</div>
+          <div class="passo atual"><b>4 · Avaliação</b>Em preenchimento</div>
+        </div>
+        <form class="form" id="form-lib" onsubmit="return false">
+          <fieldset>
+            <legend>Pessoa</legend>
+            <div class="campos">
+              <div class="campo"><label for="l-pessoa">Quem será liberado</label><input id="l-pessoa" value="Rafael Lima · RALI · Dev .NET · Nível 5" readonly></div>
+              <div class="campo"><label for="l-motivo">Motivo</label><select id="l-motivo"><option>Fim de projeto</option><option>Problemas de desempenho</option><option>Licença médica</option><option>Outro motivo</option></select></div>
+              <div class="campo"><label for="l-data">Data de liberação</label><input id="l-data" value="24/03/2026"><span class="ajuda">Sugerimos hoje + 15 dias, o prazo que o Staffing tem para alocar.</span></div>
+              <div class="campo"><span class="lbl">Perfil no STAR</span><div class="star"><div style="display:flex;justify-content:space-between;font-size:.875rem"><span>86% preenchido</span><span class="fino">mínimo 80%</span></div><div class="barra" style="height:6px"><i class="ok" style="width:86%"></i></div></div><span class="ajuda">Dados do gestor direto e do último projeto vieram do SuccessFactors e do Kantata.</span></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Avaliação</legend>
+            <div class="campo todo">
+              <span class="lbl" id="lbl-nota">Nota geral</span>
+              <div class="opcoes" role="radiogroup" aria-labelledby="lbl-nota">
+                <label class="opcao"><input type="radio" name="nota" value="1"><span>1 · Precisa melhorar</span></label>
+                <label class="opcao"><input type="radio" name="nota" value="2"><span>2 · Quase lá</span></label>
+                <label class="opcao"><input type="radio" name="nota" value="3"><span>3 · Atende o esperado</span></label>
+                <label class="opcao"><input type="radio" name="nota" value="4" checked><span>4 · Alto desempenho</span></label>
+                <label class="opcao"><input type="radio" name="nota" value="5"><span>5 · Excepcional</span></label>
+              </div>
+            </div>
+            <div class="campo todo">
+              <span class="lbl" id="lbl-rec">Você recomendaria essa pessoa para outro projeto?</span>
+              <div class="opcoes" role="radiogroup" aria-labelledby="lbl-rec">
+                <label class="opcao"><input type="radio" name="rec" value="sim" id="rec-sim" checked><span>Recomendo</span></label>
+                <label class="opcao"><input type="radio" name="rec" value="ressalva"><span>Recomendo com ressalvas</span></label>
+                <label class="opcao"><input type="radio" name="rec" value="nao"><span>Não recomendo</span></label>
+              </div>
+              <span class="ajuda" id="rec-ajuda">Com nota 1 ou 2, só é possível recomendar com ressalvas.</span>
+            </div>
+            <div class="campo todo">
+              <span class="lbl">Comportamento · de 1 a 5</span>
+              <div class="notas-comp" id="comp"></div>
+            </div>
+            <div class="campo todo"><label for="l-com">Comentário para quem vai receber essa pessoa</label><textarea id="l-com">Rafael aprende rápido e tem ótima relação com o cliente. Funciona melhor com metas claras e acompanhamento semanal.</textarea><span class="ajuda">Aparece no perfil para todos os gestores. Escreva pensando na próxima equipe.</span></div>
+          </fieldset>
+          <div class="rodape-form">
+            <span class="fino">Rascunho salvo às 10h42</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-ter" type="button">Voltar para conhecimentos</button><button class="btn btn-pri" type="button" id="b-enviar">Enviar para o Staffing</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RENOVAÇÃO ============ -->
+<section class="tela" id="t-renovacao" data-perfil="gestor" data-menu="renovacao">
+  <p class="nota-tela"><b>Em renovação</b>Contratos perto do fim. Cada linha tem as quatro decisões possíveis, incluindo não renovar e liberar, que antes ia por e-mail.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Em renovação</h1><p class="sub">Se você não decidir até a data, a pessoa entra em Disponíveis automaticamente.</p></div></div>
+        <div class="aviso info"><span class="ic" aria-hidden="true">i</span><div><b>2 renovações vencem esta semana.</b> <span class="sub">Você pode adiar a data em até 10 dias.</span></div><span></span></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Pessoa</th><th>Projeto atual</th><th>Data de liberação</th><th>Situação</th><th><span class="fino" style="text-transform:none;letter-spacing:0">Decisão</span></th></tr></thead>
+            <tbody>
+              <tr><td><div class="pessoa"><b>Camila Torres</b><small><span class="mono">CATO</span> · Dev Front-end · Nível 5</small></div></td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td><b>Hoje</b><br><span class="fino">13/03/2026</span></td><td><span class="status s-atencao">Vence hoje</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
+              <tr><td><div class="pessoa"><b>Diego Faria</b><small><span class="mono">DIFA</span> · DevOps · Nível 6</small></div></td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td>17/03/2026<br><span class="fino">em 2 dias úteis</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
+              <tr><td><div class="pessoa"><b>Helena Prates</b><small><span class="mono">HEPR</span> · Analista de negócios · Nível 7</small></div></td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td>27/03/2026<br><span class="fino">em 10 dias úteis · adiada 1 vez</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cartao">
+          <h2>Renovar Camila Torres</h2>
+          <div class="campo"><span class="lbl" id="lbl-ren">Onde ela continua?</span>
+            <div class="opcoes" role="radiogroup" aria-labelledby="lbl-ren">
+              <label class="opcao"><input type="radio" name="ren" checked><span>No projeto atual · Seguradora Sul</span></label>
+              <label class="opcao"><input type="radio" name="ren"><span>Em um novo projeto</span></label>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-pri" type="button">Confirmar renovação</button><button class="btn btn-ter" type="button">Cancelar</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VAGAS ============ -->
+<section class="tela" id="t-vagas" data-perfil="gestor" data-menu="vagas">
+  <p class="nota-tela"><b>Vagas e compatíveis</b>A vaga vem do Kantata. A compatibilidade compara skills do STAR, cargo, nível e as notas da vaga, e mostra o motivo de cada ponto.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Vagas abertas</h1><p class="sub">27 vagas · importadas do Kantata hoje às 07h00</p></div></div>
+        <div class="duas duas-vagas">
+          <div class="lista">
+            <table>
+              <thead><tr><th>Vaga</th><th>Início</th><th>Compatíveis</th></tr></thead>
+              <tbody>
+                <tr class="sel"><td><div class="pessoa"><b>Dev Java Sr · Nível 6</b><small>Banco Horizonte · <span class="mono">KE-204817</span></small></div></td><td class="num">01/04</td><td><b class="num">5</b></td></tr>
+                <tr><td><div class="pessoa"><b>QA Automação · Nível 4</b><small>Seguradora Sul · <span class="mono">KE-187402</span></small></div></td><td class="num">23/03</td><td><b class="num">3</b></td></tr>
+                <tr><td><div class="pessoa"><b>Engenheiro de dados · Nível 5</b><small>Varejo Norte · <span class="mono">KE-201133</span></small></div></td><td class="num">06/04</td><td><b class="num">2</b></td></tr>
+                <tr><td><div class="pessoa"><b>Scrum Master · Nível 6</b><small>Banco Atlas · <span class="mono">KE-198220</span></small></div></td><td class="num">30/03</td><td><b class="num">1</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="lateral">
+            <div class="cartao">
+              <header><h2>Dev Java Sr · Nível 6</h2><span class="status s-aberto">Aberta</span></header>
+              <dl class="pares">
+                <div><dt>Cliente</dt><dd>Banco Horizonte</dd></div>
+                <div><dt>Início previsto</dt><dd>01/04/2026</dd></div>
+                <div><dt>Local</dt><dd>São Paulo · híbrido</dd></div>
+                <div><dt>Responsável</dt><dd>Luana Souza</dd></div>
+              </dl>
+              <p class="vaga-desc"><b style="color:var(--texto)">Notas da vaga:</b> APIs de pagamento em Java e Spring Boot, mensageria com Kafka, inglês para reuniões com o time da Alemanha.</p>
+            </div>
+            <div class="compat">
+              <div class="cand"><div class="pct">87%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Marina Costa</a><small>Dev Java · Nível 6 · 11 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot, Kafka em nível alto</span><span>Mesmo cargo</span><span>Mesmo nível</span></div></div><span class="status s-forte">Reservada por você</span></div>
+              <div class="cand"><div class="pct">70%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Gustavo Reis</a><small>Dev Java · Nível 5 · 3 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot</span><span>Mesmo cargo</span><span class="nao">Um nível abaixo</span></div></div><button class="btn btn-sec btn-p" type="button">Propor</button></div>
+              <div class="cand"><div class="pct">53%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Rafael Lima</a><small>Dev .NET · Nível 5 · 19 dias úteis disponível</small><div class="motivos"><span>Kafka</span><span class="nao">Outro cargo</span><span class="nao">Um nível abaixo</span></div></div><button class="btn btn-sec btn-p" type="button">Propor</button></div>
+            </div>
+            <p class="fino">Mostramos até 10 pessoas, da mais para a menos compatível. Inclui quem tem proposta ou reserva de outro gestor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAGEM ============ -->
+<section class="tela" id="t-triagem" data-perfil="staffing" data-menu="recebidos">
+  <p class="nota-tela"><b>Pedidos recebidos</b>Visão do Staffing. O checklist mostra o que falta antes de aceitar, e cada resposta avisa o gestor na hora.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Pedidos recebidos</h1><p class="sub">5 aguardando análise · 2 com informação pendente</p></div></div>
+        <div class="duas duas-triagem">
+          <div class="lista">
+            <table>
+              <thead><tr><th>Pessoa</th><th>Pedido de</th><th>Liberação</th><th>Situação</th></tr></thead>
+              <tbody>
+                <tr class="sel"><td><div class="pessoa"><b>Rafael Lima</b><small>Dev .NET · Nível 5</small></div></td><td>Fernanda Rocha</td><td class="num">24/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
+                <tr><td><div class="pessoa"><b>Tânia Moreira</b><small>Dev Python · Nível 4</small></div></td><td>André Lopes</td><td class="num">27/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
+                <tr><td><div class="pessoa"><b>Igor Santana</b><small>Tech Lead · Nível 7</small></div></td><td>Luana Souza</td><td class="num">20/03</td><td><span class="status s-atencao">Falta informação</span></td></tr>
+                <tr><td><div class="pessoa"><b>Renata Alves</b><small>UX Designer · Nível 5</small></div></td><td>Fernanda Rocha</td><td class="num">31/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class="lateral">
+            <div class="cartao">
+              <header><h2>Rafael Lima</h2><span class="fino">enviado há 2 dias</span></header>
+              <dl class="pares">
+                <div><dt>Motivo</dt><dd>Fim de projeto</dd></div>
+                <div><dt>Nota geral</dt><dd>4 · Alto desempenho</dd></div>
+                <div><dt>Recomendação</dt><dd>Recomendo</dd></div>
+                <div><dt>Prazo do Staffing</dt><dd>até 24/03 · 7 dias úteis</dd></div>
+              </dl>
+            </div>
+            <div class="cartao">
+              <header><h2>Antes de aceitar</h2><span class="fino">4 de 6</span></header>
+              <ul class="checklist">
+                <li><span class="ok">✓</span><span>STAR acima de 80%<small>86% preenchido</small></span><span></span></li>
+                <li><span class="ok">✓</span><span>Mais de 90 dias de casa<small>desde 05/2022</small></span><span></span></li>
+                <li><span class="ok">✓</span><span>Entrevista com o Staffing<small>feita em 13/03</small></span><span></span></li>
+                <li><span class="ok">✓</span><span>Inglês, cidade e telefone<small>confirmados</small></span><span></span></li>
+                <li><span class="pend">!</span><span>Currículo em inglês<small>falta o arquivo</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
+                <li><span class="pend">!</span><span>Notebook da GFT<small>sem foto do patrimônio</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
+              </ul>
+            </div>
+            <div class="cartao">
+              <h2>Responder</h2>
+              <div class="respostas">
+                <button class="btn btn-pri" type="button">Aceitar <small>entra em Disponíveis</small></button>
+                <button class="btn btn-sec" type="button">Pedir informação <small>volta ao gestor</small></button>
+                <button class="btn btn-sec" type="button">Marcar como afastado <small>com data de volta</small></button>
+                <button class="btn btn-dest" type="button">Recusar <small>com motivo</small></button>
+                <button class="btn btn-ter" type="button">Cancelar pedido</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLABORADOR ============ -->
+<section class="tela" id="t-colaborador">
+  <p class="nota-tela"><b>Meu status</b>Perfil novo, no celular. Responde à pergunta das entrevistas: "Estou concorrendo a alguma vaga?"</p>
+  <div class="celular-palco">
+    <div class="celular" role="img" aria-label="Tela de celular do colaborador">
+      <div class="cel-topo">
+        <div class="barra-sis"><span>09:41</span><span>5G · 82%</span></div>
+        <div class="lockup"><svg viewBox="0 0 800 310" aria-hidden="true"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>
+        <div><h1>Olá, Júlia</h1><p>Você está disponível há 6 dias úteis. Estamos procurando seu próximo projeto.</p></div>
+      </div>
+      <div class="cel-corpo">
+        <div class="cel-cartao">
+          <h2>Onde você está</h2>
+          <ul class="etapas">
+            <li class="feito"><div>Liberação aceita<small>03/03 · Staffing</small></div></li>
+            <li class="feito"><div>Disponível para vagas<small>desde 06/03</small></div></li>
+            <li class="atual"><div><b>Proposta para 2 vagas</b><small>Os gestores estão avaliando seu perfil</small></div></li>
+            <li><div>Reserva<small>quando um gestor pedir exclusividade</small></div></li>
+            <li><div>Alocação</div></li>
+          </ul>
+        </div>
+        <div class="cel-cartao">
+          <h2>Vagas que combinam com você</h2>
+          <div class="cel-vaga"><div class="t">QA Automação · Seguradora Sul <span>82%</span></div><span class="sub">Cypress e Playwright no seu nível · início 23/03</span><span class="status s-azul" style="justify-self:start">Você foi proposta</span></div>
+          <div class="cel-vaga"><div class="t">QA · Banco Atlas <span>64%</span></div><span class="sub">Testes de API · início 06/04</span><button class="btn btn-sec btn-p" type="button" style="justify-self:start">Tenho interesse</button></div>
+        </div>
+        <div class="cel-cartao">
+          <h2>Seu perfil no STAR</h2>
+          <div class="star"><div style="display:flex;justify-content:space-between;font-size:.8125rem"><span>81% preenchido</span><span class="fino">mínimo 80%</span></div><div class="barra" style="height:6px"><i class="ok" style="width:81%"></i></div></div>
+          <p class="sub">Adicionar idiomas e certificados aumenta sua compatibilidade com as vagas. Não precisa mandar currículo: ele é gerado a partir do STAR.</p>
+          <button class="btn btn-ter btn-p" type="button" style="justify-self:start">Atualizar no STAR</button>
+        </div>
+      </div>
+      <div class="cel-nav"><span class="ativo">Status</span><span>Vagas</span><span>Projetos internos</span><span>Perfil</span></div>
+    </div>
+    <div class="explica">
+      <div class="cartao"><h2>O que o colaborador vê</h2><p>A etapa atual do processo, as vagas compatíveis e se foi proposto ou reservado. Não vê nome de gestor, avaliações nem anotações do Staffing.</p></div>
+      <div class="cartao"><h2>O que ele pode fazer</h2><p>Mostrar interesse em uma vaga, completar o STAR e entrar em projetos internos enquanto está disponível. O interesse chega ao Staffing como sugestão, não como candidatura.</p></div>
+      <div class="cartao"><h2>Escrita</h2><p>Segunda pessoa, tom tranquilo e nada de termos internos. "Disponível" no lugar de "bench" e "você foi proposta" no lugar de "Proposed".</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIDERANÇA ============ -->
+<section class="tela" id="t-lideranca" data-perfil="lideranca" data-menu="indicadores">
+  <p class="nota-tela"><b>Indicadores</b>Visão da liderança. Os percentuais são os resultados reais do case; contagens e curva intermediária são ilustrativas.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Indicadores</h1><p class="sub">Janeiro a maio · atualizado hoje às 07h00</p></div><div class="acoes"><div class="alternar" role="group" aria-label="Período"><button type="button" aria-pressed="false">30 dias</button><button type="button" aria-pressed="true">Jan–mai</button><button type="button" aria-pressed="false">12 meses</button></div></div></div>
+        <div class="kpis">
+          <div class="kpi"><span class="rotulo">Custo da disponibilidade</span><b>−72%</b><span class="var bom">de janeiro para maio</span></div>
+          <div class="kpi"><span class="rotulo">Pessoas disponíveis</span><b>−47%</b><span class="var bom">de janeiro para maio</span></div>
+          <div class="kpi"><span class="rotulo">Realocadas internamente</span><b>82%</b><span class="fino">de quem entrou em Disponíveis</span></div>
+          <div class="kpi"><span class="rotulo">Tempo até alocar</span><b>13</b><span class="fino">dias úteis (mediana) · 54% dentro do prazo</span></div>
+        </div>
+        <div class="cartoes-2">
+          <div class="cartao grafico">
+            <header><h2>Custo da disponibilidade</h2><span class="fino">índice, janeiro = 100</span></header>
+            <svg viewBox="0 0 480 220" role="img" aria-label="Índice de custo cai de 100 em janeiro para 28 em maio">
+              <line class="grade" x1="40" x2="460" y1="30" y2="30"/><line class="grade" x1="40" x2="460" y1="85" y2="85"/><line class="grade" x1="40" x2="460" y1="140" y2="140"/>
+              <line class="eixo" x1="40" x2="460" y1="195" y2="195"/>
+              <text x="32" y="34" text-anchor="end">100</text><text x="32" y="89" text-anchor="end">75</text><text x="32" y="144" text-anchor="end">50</text><text x="32" y="199" text-anchor="end">25</text>
+              <!-- y = 195 - (v-25)*2.2 -->
+              <path class="area-c" d="M60 30 L160 69.6 L260 115.8 L360 153.2 L440 188.4 L440 195 L60 195 Z"/>
+              <path class="linha-c" d="M60 30 L160 69.6 L260 115.8 L360 153.2 L440 188.4"/>
+              <circle class="ponto" cx="60" cy="30" r="4"/><circle class="ponto" cx="160" cy="69.6" r="4"/><circle class="ponto" cx="260" cy="115.8" r="4"/><circle class="ponto" cx="360" cy="153.2" r="4"/><circle class="ponto-fim" cx="440" cy="188.4" r="5"/>
+              <text class="val" x="68" y="24">100</text><text class="val" x="440" y="176" text-anchor="middle">28</text>
+              <text x="60" y="214" text-anchor="middle">jan</text><text x="160" y="214" text-anchor="middle">fev</text><text x="260" y="214" text-anchor="middle">mar</text><text x="360" y="214" text-anchor="middle">abr</text><text x="440" y="214" text-anchor="middle">mai</text>
+            </svg>
+            <p class="fino">Janeiro e maio são reais. Fevereiro a abril são ilustrativos.</p>
+          </div>
+          <div class="cartao">
+            <header><h2>Custo por nível em maio</h2><span class="fino">participação no total</span></header>
+            <div class="barras-h">
+              <div class="b"><span>Nível 3–4</span><div class="trilho"><i style="width:18%"></i></div><span class="v">18%</span></div>
+              <div class="b"><span>Nível 5</span><div class="trilho"><i style="width:27%"></i></div><span class="v">27%</span></div>
+              <div class="b"><span>Nível 6</span><div class="trilho"><i style="width:31%"></i></div><span class="v">31%</span></div>
+              <div class="b"><span>Nível 7</span><div class="trilho"><i style="width:15%"></i></div><span class="v">15%</span></div>
+              <div class="b"><span>Nível 8+</span><div class="trilho"><i style="width:9%"></i></div><span class="v">9%</span></div>
+            </div>
+            <p class="fino">Ilustrativo. O custo conta só dias úteis e desconta ausências e extensões de reserva IDU.</p>
+          </div>
+        </div>
+        <div class="cartao">
+          <header><h2>Quem pode ficar disponível nos próximos 30 dias</h2><span class="fino">pedidos enviados e renovações sem decisão · ilustrativo</span></header>
+          <div class="previsao">
+            <div class="prev"><span>Esta semana</span><b>4</b>2 renovações vencem</div>
+            <div class="prev"><span>Próxima semana</span><b>6</b>3 pedidos em análise</div>
+            <div class="prev"><span>Em 15 dias</span><b>3</b>1 volta de licença</div>
+            <div class="prev"><span>Em 30 dias</span><b>5</b>fim de contratos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="toast" id="toast" hidden role="status" aria-live="polite"><span id="toast-txt"></span><button type="button" id="toast-desfazer">Desfazer</button></div>
+
+<script>
+(function () {
+  if (/captura/.test(location.search)) document.documentElement.classList.add("captura");
+  var logo = '<div class="lockup"><svg viewBox="0 0 800 310" aria-hidden="true"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>';
+  var sino = '<span class="sino" aria-label="3 notificações novas"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><i></i></span>';
+  var perfis = {
+    gestor: { ini: 'LS', nome: 'Luana Souza', papel: 'Gestora', menu: [
+      ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['reservas', 'Minhas reservas', '2', '#perfil'], ['renovacao', 'Em renovação', '3', '#renovacao', true], ['alocados', 'Alocados', '118', '#disponiveis']]],
+      ['Pedidos de liberação', [['liberacao', 'Novo pedido', '', '#liberacao'], ['enviados', 'Enviados', '3', '#liberacao']]],
+      ['Vagas', [['vagas', 'Vagas abertas', '27', '#vagas'], ['encerradas', 'Vagas encerradas', '', '#vagas'], ['internos', 'Projetos internos', '', '#vagas']]]
+    ]},
+    staffing: { ini: 'CD', nome: 'Carla Dias', papel: 'Staffing', menu: [
+      ['Pedidos de liberação', [['recebidos', 'Recebidos', '7', '#triagem', true], ['afastados', 'Afastados', '4', '#triagem']]],
+      ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['pendencias', 'Pendências', '12', '#triagem', true], ['renovacao', 'Em renovação', '6', '#renovacao']]],
+      ['Gestão', [['indicadores', 'Indicadores', '', '#lideranca'], ['relatorios', 'Relatórios', '', '#lideranca'], ['dados', 'Dados e integrações', '', '#triagem']]]
+    ]},
+    lideranca: { ini: 'MO', nome: 'Marcos Oliveira', papel: 'Diretoria', menu: [
+      ['Visão geral', [['indicadores', 'Indicadores', '', '#lideranca'], ['relatorios', 'Relatórios', '', '#lideranca']]],
+      ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['renovacao', 'Em renovação', '6', '#renovacao']]]
+    ]}
+  };
+  document.querySelectorAll('.tela[data-perfil]').forEach(function (tela) {
+    var p = perfis[tela.dataset.perfil], ativo = tela.dataset.menu;
+    tela.querySelector('[data-topo]').innerHTML = logo +
+      '<div class="busca">Buscar por nome, sigla, skill, cidade ou KE</div>' + sino +
+      '<div class="perfil-topo"><span><b>' + p.nome + '</b>' + p.papel + '</span><span class="avatar">' + p.ini + '</span></div>';
+    tela.querySelector('[data-menu-slot]').innerHTML = p.menu.map(function (b) {
+      return '<div class="bloco"><span class="rotulo">' + b[0] + '</span>' + b[1].map(function (i) {
+        return '<a href="' + i[3] + '"' + (i[0] === ativo ? ' class="ativo" aria-current="page"' : '') + '>' + i[1] +
+          (i[2] ? ' <span class="n' + (i[4] ? ' alerta' : '') + '">' + i[2] + '</span>' : '') + '</a>';
+      }).join('') + '</div>';
+    }).join('');
+  });
+
+  // Troca de telas pelo hash
+  var nomes = ['disponiveis', 'perfil', 'liberacao', 'renovacao', 'vagas', 'triagem', 'colaborador', 'lideranca'];
+  function mostrar(alvo) {
+    var h = typeof alvo === 'string' ? alvo : (location.hash || '').slice(1);
+    if (nomes.indexOf(h) < 0) h = 'disponiveis';
+    nomes.forEach(function (n) { document.getElementById('t-' + n).hidden = n !== h; });
+    document.querySelectorAll('#nav-telas a').forEach(function (a) {
+      if (a.getAttribute('href') === '#' + h) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', function () { mostrar(); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var alvo = a.getAttribute('href').slice(1);
+    if (nomes.indexOf(alvo) < 0) return;
+    e.preventDefault();
+    mostrar(alvo);
+    try { history.replaceState(null, '', '#' + alvo); } catch (err) {}
+  });
+  mostrar();
+
+  // Filtros por contador
+  var cont = document.querySelectorAll('#t-disponiveis .contador');
+  cont.forEach(function (b) {
+    b.addEventListener('click', function () {
+      cont.forEach(function (x) { x.classList.toggle('ativo', x === b); });
+      var f = b.dataset.f;
+      document.querySelectorAll('#tab-disp tbody tr').forEach(function (tr) {
+        tr.hidden = !(f === 'todas' || tr.dataset.s.split(' ').indexOf(f) >= 0);
+      });
+    });
+  });
+  document.querySelectorAll('.alternar button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var grupo = b.parentElement.querySelectorAll('button');
+      var era = b.getAttribute('aria-pressed') === 'true';
+      if (b.closest('.cab')) grupo.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', String(!era || !!b.closest('.cab')));
+    });
+  });
+
+  // Toast com desfazer
+  var toast = document.getElementById('toast'), txt = document.getElementById('toast-txt'), desfazer = document.getElementById('toast-desfazer'), timer, aoDesfazer;
+  function avisar(msg, undo) {
+    txt.textContent = msg; aoDesfazer = undo; desfazer.hidden = !undo; toast.hidden = false;
+    clearTimeout(timer); timer = setTimeout(function () { toast.hidden = true; }, 6000);
+  }
+  desfazer.addEventListener('click', function () { if (aoDesfazer) aoDesfazer(); toast.hidden = true; });
+
+  document.querySelectorAll('[data-reservar]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var tr = b.closest('tr'), st = tr.querySelector('.status'), antes = st.outerHTML, nome = b.dataset.reservar;
+      st.outerHTML = '<span class="status s-forte">Reserva sua</span>';
+      b.disabled = true; b.textContent = 'Reservado';
+      avisar(nome + ': reserva feita por 2 dias úteis, até 17/03 às 23h59.', function () {
+        tr.querySelector('.status').outerHTML = antes; b.disabled = false; b.textContent = 'Reservar';
+      });
+    });
+  });
+  var bAloc = document.getElementById('b-alocar');
+  bAloc.addEventListener('click', function () {
+    if (bAloc.dataset.conf !== '1') { bAloc.dataset.conf = '1'; bAloc.textContent = 'Clique de novo para confirmar'; return; }
+    bAloc.dataset.conf = ''; bAloc.textContent = 'Alocação confirmada'; bAloc.disabled = true;
+    avisar('Marina Costa alocada no Banco Horizonte a partir de 01/04. A reserva de Tiago foi encerrada e ele foi avisado.');
+  });
+
+  // Formulário: nota baixa desabilita "Recomendo"
+  var comp = ['Comprometimento', 'Trabalho em equipe', 'Foco em resultado', 'Proatividade', 'Planejamento', 'Comunicação', 'Gestão de pessoas'];
+  var valores = [5, 4, 4, 3, 3, 5, 0];
+  document.getElementById('comp').innerHTML = comp.map(function (c, i) {
+    var bts = '';
+    for (var n = 1; n <= 5; n++) bts += '<button type="button" aria-label="' + c + ' ' + n + '" aria-pressed="' + (valores[i] === n) + '">' + n + '</button>';
+    return '<div class="nota-comp"><span>' + c + (i === 6 ? ' <span class="fino">· se liderou pessoas</span>' : '') + '</span><span class="pontos">' + bts + '</span></div>';
+  }).join('');
+  document.querySelectorAll('#comp .pontos').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      if (e.target.tagName !== 'BUTTON') return;
+      g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === e.target)); });
+    });
+  });
+  var recSim = document.getElementById('rec-sim'), ajuda = document.getElementById('rec-ajuda');
+  document.querySelectorAll('input[name="nota"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      var baixa = Number(r.value) <= 2;
+      recSim.disabled = baixa;
+      if (baixa && recSim.checked) document.querySelector('input[name="rec"][value="ressalva"]').checked = true;
+      ajuda.style.color = baixa ? 'var(--atencao)' : '';
+      ajuda.textContent = baixa ? 'Com nota ' + r.value + ', "Recomendo" fica indisponível. Marcamos "Recomendo com ressalvas"; explique no comentário.' : 'Com nota 1 ou 2, só é possível recomendar com ressalvas.';
+    });
+  });
+  document.getElementById('b-enviar').addEventListener('click', function () {
+    avisar('Pedido enviado. O Staffing responde em até 2 dias úteis, e você acompanha em Enviados.');
+  });
+})();
+</script>
+</body>
+</html>
