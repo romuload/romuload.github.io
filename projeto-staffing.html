@@ -15,17 +15,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="staffing-case.js?v=2" defer></script>
+<script src="staffing-case.js?v=3" defer></script>
 <link rel="stylesheet" href="locale.css">
-<script src="locale-data.js?v=staffing-identity-1"></script>
-<script src="locale.js?v=staffing-identity-1" defer></script>
+<script src="locale-data.js?v=staffing-journey-1"></script>
+<script src="locale.js?v=staffing-journey-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
 <link rel="icon" type="image/png" href="favicon-32.png?v=plane-2" sizes="32x32">
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=1">
-<link rel="stylesheet" href="staffing-case.css?v=3">
+<link rel="stylesheet" href="staffing-case.css?v=4">
 <link rel="stylesheet" href="typography.css?v=widows-2"><script src="typography.js?v=widows-1" defer></script></head>
 <body>
 <a class="case-skip" href="#conteudo">Skip to content</a>
@@ -188,16 +188,49 @@
 <article data-reveal><p class="rule-in">Cost came from a spreadsheet nobody trusted.</p><p class="rule-out">Cost in real time by level, role and practice, discounting absences.</p></article>
 </div>
 
-<div class="lifecycle" data-reveal>
-<p class="eyebrow">One person, one status, for everyone</p>
-<ol>
-<li>Released</li>
-<li>Available</li>
-<li>Proposed</li>
-<li>Reserved</li>
-<li>Allocated</li>
-</ol>
-<p class="lc-note">If a reservation expires, the person goes back to the list and the next manager in the queue gets their turn.</p>
+<div class="journey" id="flow" data-reveal data-role="all">
+<div class="jr-head">
+<p class="eyebrow">The flow by role</p>
+<h3>One person, three roles, the same status.</h3>
+<p>Click a step to see what happens there and which rule applies.</p>
+</div>
+<div class="jr-bar">
+<div class="jr-roles" role="group" aria-label="Filter the flow by role">
+<button type="button" data-role="all" aria-pressed="true">All roles</button>
+<button type="button" data-role="rel" aria-pressed="false"><i></i>Manager who releases</button>
+<button type="button" data-role="stf" aria-pressed="false"><i></i>Staffing</button>
+<button type="button" data-role="alloc" aria-pressed="false"><i></i>Manager who allocates</button>
+</div>
+<p class="jr-legend" aria-hidden="true"><span class="lg-main">Main flow</span><span class="lg-back">Goes back</span></p>
+</div>
+<div class="jr-map">
+<svg class="jr-lines" aria-hidden="true"></svg>
+<span class="jr-phase" style="--c:2">Release</span><span class="jr-phase" style="--c:3">Screening</span><span class="jr-phase" style="--c:4">On the list</span><span class="jr-phase" style="--c:5">Match</span><span class="jr-phase" style="--c:6">Proposal</span><span class="jr-phase" style="--c:7">Reservation</span><span class="jr-phase" style="--c:8">Allocation</span>
+<span class="jr-lane" data-lane="alloc" style="--r:3">Manager who allocates</span>
+<span class="jr-lane" data-lane="stf" style="--r:4">Staffing</span>
+<span class="jr-lane" data-lane="rel" style="--r:5">Manager who releases</span>
+<button type="button" class="jn" data-step="1" data-lane="rel" style="--c:2;--r:5"><b>01</b><span class="jn-role">Manager who releases</span><span>Request the release</span></button>
+<button type="button" class="jn" data-step="2" data-lane="stf" style="--c:3;--r:4"><b>02</b><span class="jn-role">Staffing</span><span>Screen the request</span></button>
+<button type="button" class="jn" data-step="3" data-lane="rel" style="--c:3;--r:5"><b>03</b><span class="jn-role">Manager who releases</span><span>Complete the information</span></button>
+<button type="button" class="jn" data-step="4" data-lane="stf" style="--c:4;--r:4"><b>04</b><span class="jn-role">Staffing</span><span>Publish in Available</span></button>
+<button type="button" class="jn" data-step="5" data-lane="alloc" style="--c:5;--r:3"><b>05</b><span class="jn-role">Manager who allocates</span><span>Search and compare</span></button>
+<button type="button" class="jn" data-step="6" data-lane="alloc" style="--c:6;--r:3"><b>06</b><span class="jn-role">Manager who allocates</span><span>Propose for a role</span></button>
+<button type="button" class="jn" data-step="7" data-lane="alloc" style="--c:7;--r:3"><b>07</b><span class="jn-role">Manager who allocates</span><span>Reserve</span></button>
+<button type="button" class="jn" data-step="8" data-lane="stf" style="--c:8;--r:4"><b>08</b><span class="jn-role">Staffing</span><span>Allocate</span></button>
+<button type="button" class="jn" data-step="9" data-lane="rel" style="--c:8;--r:5"><b>09</b><span class="jn-role">Manager who releases</span><span>Renew or release</span></button>
+</div>
+<div class="jr-detail" aria-live="polite">
+<article data-step="1"><p class="jd-k" data-lane="rel"><i></i>Manager who releases · Release</p><h4>Request the release</h4><p>Four sections instead of an email: profile, reason, evaluation and date. The date already suggests today plus 15 days.</p><ul class="jd-facts"><li>STAR profile over 80% complete</li><li>Blocked during the 90-day probation period</li></ul><div class="jd-status" data-no-translate><span class="pill o-info">Em análise</span></div></article>
+<article data-step="2" hidden><p class="jd-k" data-lane="stf"><i></i>Staffing · Screening</p><h4>Screen the request</h4><p>Staffing reads the request and decides. Every answer reaches the manager, with the reason.</p><ul class="jd-facts"><li>Accept, ask for information, reject or mark as not eligible</li></ul><div class="jd-status" data-no-translate><span class="pill o-warn">Falta informação</span><span class="pill f-err">Recusado</span><span class="pill o-neutral">Afastado</span></div></article>
+<article data-step="3" hidden><p class="jd-k" data-lane="rel"><i></i>Manager who releases · Screening</p><h4>Complete the information</h4><p>When something is missing, the request goes back to the manager with what to fix, then returns to screening.</p><ul class="jd-facts"><li>The request goes back, no new email</li></ul><div class="jd-status" data-no-translate><span class="pill o-warn">Falta informação</span><span class="pill o-info">Em análise</span></div></article>
+<article data-step="4" hidden><p class="jd-k" data-lane="stf"><i></i>Staffing · On the list</p><h4>Publish in Available</h4><p>Once accepted, the person enters the list every profile sees, with the same status for everyone.</p><ul class="jd-facts"><li>15 business days to allocate</li><li>Bench cost counts per business day, discounting absences</li></ul><div class="jd-status" data-no-translate><span class="pill o-neutral">Sem proposta</span></div></article>
+<article data-step="5" hidden><p class="jd-k" data-lane="alloc"><i></i>Manager who allocates · Match</p><h4>Search and compare</h4><p>Search by skill connected to STAR, or open a role and see the best candidates by match score, with the reasons for each match.</p><ul class="jd-facts"><li>14 combinable filters</li><li>Ten best candidates per role</li></ul></article>
+<article data-step="6" hidden><p class="jd-k" data-lane="alloc"><i></i>Manager who allocates · Proposal</p><h4>Propose for a role</h4><p>More than one manager can propose the same person. The status tells everyone that the person is already being considered.</p><ul class="jd-facts"><li>A reservation takes priority over proposals</li></ul><div class="jd-status" data-no-translate><span class="pill o-info">Proposto</span></div></article>
+<article data-step="7" hidden><p class="jd-k" data-lane="alloc"><i></i>Manager who allocates · Reservation</p><h4>Reserve</h4><p>The first to reserve holds the person. If the reservation expires, the person goes back to the list and the next manager in the queue gets their turn.</p><ul class="jd-facts"><li>2 business days; after noon it starts the next day</li><li>IDU managers extend on the last day, up to 5 times</li></ul><div class="jd-status" data-no-translate><span class="pill f-info">Reservado</span></div></article>
+<article data-step="8" hidden><p class="jd-k" data-lane="stf"><i></i>Staffing · Allocation</p><h4>Allocate</h4><p>Staffing confirms the allocation and the person leaves the list. Bench time and cost stop counting.</p><ul class="jd-facts"><li>Only Staffing can undo it, within 30 days</li></ul><div class="jd-status" data-no-translate><span class="pill f-done">Alocado</span></div></article>
+<article data-step="9" hidden><p class="jd-k" data-lane="rel"><i></i>Manager who releases · Allocation</p><h4>Renew or release</h4><p>Before the contract ends, the project manager decides. Not renewing starts a new release here, and the cycle begins again.</p><ul class="jd-facts"><li>Came from continuous research</li></ul><div class="jd-status" data-no-translate><span class="pill o-warn">Em renovação</span><span class="pill f-done">Renovado</span></div></article>
+<div class="jd-nav"><button type="button" data-go="-1" aria-label="Previous step">←</button><span class="jd-count" data-no-translate><b>01</b> / 09</span><button type="button" data-go="1" aria-label="Next step">→</button></div>
+</div>
 </div>
 
 <div class="res-sim" data-reveal>

@@ -91,9 +91,72 @@
   specimen.querySelectorAll('button[data-ver]').forEach(b => b.addEventListener('click', () => { clearTimeout(selectTab.timer); setVersion(b.dataset.ver); }));
   gloss.querySelectorAll('button[data-voc]').forEach(b => b.addEventListener('click', () => clearTimeout(selectTab.timer)));
 
-  // Without motion, the lifecycle shows every status as reached.
-  const lifecycle = [...document.querySelectorAll('.lifecycle li')];
-  lifecycle.forEach(step => step.classList.add('on'));
+  // Journey by role: click a step to read it; the lines follow the grid, and on phones the detail opens under the step.
+  const journey = document.querySelector('.journey');
+  const map = journey.querySelector('.jr-map');
+  const svg = map.querySelector('.jr-lines');
+  const detail = journey.querySelector('.jr-detail');
+  const nodes = [...map.querySelectorAll('.jn')];
+  const node = n => nodes[n - 1];
+  const flow = [[1, 2], [2, 3, 'back'], [2, 4], [4, 5], [5, 6], [6, 7], [7, 4, 'back'], [7, 8], [8, 9], [9, 1, 'back']];
+  const NS = 'http://www.w3.org/2000/svg';
+  svg.innerHTML = '<defs>' + [['jr-arrow', '#b8d9fa80'], ['jr-arrow-hot', '#f4f6f9']].map(([id, fill]) =>
+    `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="${fill}" stroke="none"/></marker>`).join('') + '</defs>';
+  const paths = flow.map(([from, to, kind]) => {
+    const path = document.createElementNS(NS, 'path');
+    if (kind) path.classList.add(kind);
+    svg.appendChild(path);
+    return {from, to, kind, path};
+  });
+  const drawLines = () => {
+    if (!svg.getClientRects().length) return;
+    const base = map.getBoundingClientRect();
+    const box = n => {
+      const r = node(n).getBoundingClientRect();
+      return {l: r.left - base.left, r: r.right - base.left, t: r.top - base.top, b: r.bottom - base.top, x: r.left - base.left + r.width / 2, y: r.top - base.top + r.height / 2, c: +node(n).style.getPropertyValue('--c'), row: +node(n).style.getPropertyValue('--r')};
+    };
+    paths.forEach(({from, to, kind, path}) => {
+      const a = box(from), b = box(to);
+      let d;
+      if (a.c === b.c) d = a.row < b.row ? `M${a.x} ${a.b}V${b.t - 2}` : `M${a.x} ${a.t}V${b.b + 2}`;
+      else if (kind && a.row === b.row) { const y = a.b + 30; d = `M${a.x} ${a.b}C${a.x} ${y} ${b.x} ${y} ${b.x} ${b.b + 2}`; }
+      else if (kind) { const y = (a.b + b.t) / 2; d = `M${a.x - 20} ${a.b}C${a.x - 20} ${y} ${b.x + 20} ${y} ${b.x + 20} ${b.t - 2}`; }
+      else { const m = (a.r + b.l) / 2; d = `M${a.r} ${a.y}C${m} ${a.y} ${m} ${b.y} ${b.l - 2} ${b.y}`; }
+      path.setAttribute('d', d);
+    });
+  };
+  const phone = matchMedia('(max-width: 900px)');
+  let current = 1;
+  const selectStep = n => {
+    current = n;
+    nodes.forEach((x, i) => x.setAttribute('aria-pressed', String(i === n - 1)));
+    detail.querySelectorAll('article').forEach(a => { a.hidden = +a.dataset.step !== n; });
+    detail.querySelector('.jd-count b').textContent = String(n).padStart(2, '0');
+    const role = journey.dataset.role;
+    paths.forEach(({from, to, path}) => {
+      path.classList.toggle('hot', from === n || to === n);
+      path.classList.toggle('dim', role !== 'all' && (node(from).dataset.lane !== role || node(to).dataset.lane !== role));
+    });
+    if (phone.matches) node(n).after(detail); else map.after(detail);
+  };
+  const visible = () => nodes.filter(x => journey.dataset.role === 'all' || x.dataset.lane === journey.dataset.role).map(x => +x.dataset.step);
+  nodes.forEach(x => x.addEventListener('click', () => selectStep(+x.dataset.step)));
+  detail.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+    const steps = visible();
+    const i = steps.indexOf(current);
+    selectStep(steps[(Math.max(i, 0) + +b.dataset.go + steps.length) % steps.length]);
+  }));
+  journey.querySelectorAll('.jr-roles button').forEach(b => b.addEventListener('click', () => {
+    journey.dataset.role = b.dataset.role;
+    journey.querySelectorAll('.jr-roles button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    const steps = visible();
+    selectStep(steps.includes(current) ? current : steps[0]);
+  }));
+  phone.addEventListener('change', () => { selectStep(current); drawLines(); });
+  new ResizeObserver(drawLines).observe(map);
+  nodes.forEach(x => new ResizeObserver(drawLines).observe(x));
+  journey.classList.add('js-journey');
+  selectStep(1);
 
   if ('IntersectionObserver' in window) {
     const links = Array.from(document.querySelectorAll('.case-nav a'));
@@ -173,22 +236,14 @@
     gsap.fromTo('.hero-product', {rotateX: 22, scale: .86, y: 40}, {rotateX: 0, scale: 1, y: 0, ease: 'none', scrollTrigger: {trigger: '.hero-stage', start: 'top 92%', end: 'top 18%', scrub: .6}});
     gsap.fromTo('.hero-mobile', {y: 80, opacity: 0}, {y: 0, opacity: 1, ease: 'none', scrollTrigger: {trigger: '.hero-stage', start: 'top 85%', end: 'top 35%', scrub: .6}});
 
-    // Lines that draw as you read: the legacy day, the role timeline and the status lifecycle.
+    // Lines that draw as you read: the legacy day and the role timeline.
     document.querySelectorAll('.legacy-day,.road').forEach(line => {
       gsap.fromTo(line, {'--p': 0}, {'--p': 1, ease: 'none', scrollTrigger: {trigger: line, start: 'top 80%', end: 'bottom 55%', scrub: .5}});
     });
 
-    // Lifecycle: one person walks through every status, then the cycle restarts.
-    const lifeLine = document.querySelector('.lifecycle ol');
-    lifecycle.forEach(step => step.classList.remove('on'));
-    const life = gsap.timeline({repeat: -1, repeatDelay: 1.2, paused: true});
-    life.set(lifeLine, {'--p': 0});
-    lifecycle.forEach((step, i) => {
-      life.call(() => lifecycle.forEach((s, k) => s.classList.toggle('on', k <= i)));
-      if (i < lifecycle.length - 1) life.to(lifeLine, {'--p': (i + 1) / (lifecycle.length - 1), duration: .9, ease: 'power2.inOut'}, '+=0.5');
-    });
-    life.to({}, {duration: 1.6});
-    ScrollTrigger.create({trigger: '.lifecycle', start: 'top 80%', end: 'bottom top', onToggle: e => e.isActive ? life.play() : life.pause()});
+    // Journey: the steps enter in order, as the process runs.
+    gsap.from(nodes, {opacity: 0, y: 14, duration: .5, ease: 'power2.out', stagger: .09, clearProps: 'opacity,transform', scrollTrigger: {trigger: map, start: 'top 75%', once: true}});
+    gsap.from(svg, {opacity: 0, duration: .8, delay: .6, clearProps: 'opacity', scrollTrigger: {trigger: map, start: 'top 75%', once: true}});
 
     // Reservation: the two moments play once when the simulator appears.
     ScrollTrigger.create({trigger: '.res-sim', start: 'top 65%', once: true, onEnter: () => {
@@ -234,8 +289,6 @@
     return () => {
       root.classList.remove('motion');
       counters.forEach(reset => reset());
-      life.kill();
-      lifecycle.forEach(step => step.classList.add('on'));
     };
   });
 })();
