@@ -29,8 +29,7 @@ p,dd,dt,li,blockquote,figcaption,.contact-steps span{ text-wrap:pretty; }
 /* Grid tracks must be able to shrink around readable, non-breaking word pairs. */
 .contact-layout>*,.case-ilab .challenge .grid>*{min-width:0;}
 .case-ilab .lines .ln{grid-template-columns:44px minmax(0,1fr);}
-@media(max-width:900px){
-  .contact-layout,.case-ilab .challenge .grid{grid-template-columns:minmax(0,1fr);}
-}
+@media(max-width:1100px){.contact-layout{grid-template-columns:minmax(0,1fr);}}
+@media(max-width:900px){.case-ilab .challenge .grid{grid-template-columns:minmax(0,1fr);}}
 @media(max-width:600px){.case-ilab .lines .ln{grid-template-columns:24px minmax(0,1fr);gap:12px;}}
 @media(max-width:360px){.case-ilab .lines .ln h3{font-size:20px;}}

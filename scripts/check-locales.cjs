@@ -82,7 +82,7 @@ console.log('Porto TL;DR and Claude Code prototype credit: placement and EN/PT c
 
 for (const file of fs.readdirSync('.').filter(name => name.endsWith('.html') && name !== 'projeto-legado.html')) {
  const html = fs.readFileSync(file, 'utf8');
- assert(html.includes('typography.css?v=widows-1') && html.includes('typography.js?v=widows-1'), `${file}: missing shared text wrapping`);
+ assert(html.includes('typography.css?v=widows-2') && html.includes('typography.js?v=widows-1'), `${file}: missing shared text wrapping`);
 }
 assert.equal(map.get('Design connecting business, technology and people.')?.pt, 'Design conectando negócios, tecnologia e pessoas.');
 console.log('Editorial text wrapping and merged heading translations: OK');
