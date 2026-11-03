@@ -2810,5 +2810,9 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Product Design · Internal product", "Product Design · Produto interno"],
   ["How I helped GFT cut the cost of its bench by 72%", "Como ajudei a GFT a reduzir em 72% o custo do seu bench"],
   ["Inside the project: How I helped GFT cut the cost of its bench by 72%", "Por dentro do projeto: Como ajudei a GFT a reduzir em 72% o custo do seu bench"],
-  ["Explore the GFT Staffing concept in a new tab", "Explorar o conceito do GFT Staffing em uma nova aba"]
+  ["Explore the GFT Staffing concept in a new tab", "Explorar o conceito do GFT Staffing em uma nova aba"],
+  ["Design connecting business, technology and people.","Design conectando negócios, tecnologia e pessoas."],
+  ["Complex systems. Real problems.","Sistemas complexos. Problemas reais."],
+  ["Understand the work before the tool.","Entender o trabalho antes da ferramenta."],
+  ["What challenge shall we","Qual desafio vamos"]
 ]);

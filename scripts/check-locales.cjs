@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=staffing-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=typography-widows-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -79,3 +79,10 @@ assert.equal(map.get('Built with Claude Code')?.pt, 'Feito com Claude Code');
 const prototypeCopy = 'The functional prototype was built with Claude Code and lets you try the four-step claims analysis.';
 assert(map.get(prototypeCopy)?.pt.includes('protótipo funcional'));
 console.log('Porto TL;DR and Claude Code prototype credit: placement and EN/PT copy OK');
+
+for (const file of fs.readdirSync('.').filter(name => name.endsWith('.html') && name !== 'projeto-legado.html')) {
+ const html = fs.readFileSync(file, 'utf8');
+ assert(html.includes('typography.css?v=widows-1') && html.includes('typography.js?v=widows-1'), `${file}: missing shared text wrapping`);
+}
+assert.equal(map.get('Design connecting business, technology and people.')?.pt, 'Design conectando negócios, tecnologia e pessoas.');
+console.log('Editorial text wrapping and merged heading translations: OK');
