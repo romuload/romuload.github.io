@@ -2574,7 +2574,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["“We modernized the system, but now I have to learn everything again. Where did the fields I always look for go?”", "“Modernizamos o sistema, mas agora vou ter que aprender tudo de novo. Para onde foram os campos que eu sempre procuro?”"],
   ["The question", "A pergunta"],
   ["How could we customize the experience so analysts would stop hunting for fields, as they did in the legacy system?", "Como customizar a experiência para que o analista não precisasse mais caçar campos pelo produto, como acontecia no legado?"],
-  ["The turning point", "A virada"],
+  ["The turning point", "O ponto de virada"],
   ["I mapped the fields analysts kept searching for and grouped them into four steps. Then I took the problem to the Salesforce specialists, and the answer was OmniScript: native to the platform, it kept Salesforce’s standard layout while the guided flow brought data from several tabs and sources into each step. That is how the guided analysis was born.", "Mapeei os campos que os analistas viviam procurando e agrupei tudo em quatro etapas. Depois levei o problema aos especialistas de Salesforce, e a resposta foi o OmniScript: nativo da plataforma, ele mantinha o padrão do Salesforce enquanto o fluxo guiado reunia, em cada etapa, dados de várias abas e origens. Foi assim que nasceu a análise guiada."],
   ["In the first migrated version, legacy fields were spread across Salesforce tabs, and analysts asked where their information had gone.", "Na primeira versão migrada, os campos do legado estavam espalhados pelas abas do Salesforce, e os analistas perguntavam para onde tinham ido suas informações."],
   ["Changing platforms without changing how information reaches the analyst would only move the search somewhere else.", "Trocar de plataforma sem mudar como a informação chega ao analista só mudaria a busca de lugar."],
@@ -2616,5 +2616,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Proposal", "Proposta"],
   ["The full proposal · backlog", "A proposta completa · backlog"],
   ["Beyond the guided analysis, the proposal covered the whole workload. These screens come from the interactive demo and went to the backlog for the GFT team.", "Além da análise guiada, a proposta cobria toda a operação. Estas telas vêm do demo interativo e foram para o backlog do time da GFT."],
-  ["Reflections", "Reflexões"]
+  ["Reflections", "Reflexões"],
+  ["TL;DR", "TL;DR"],
+  ["Built with Claude Code", "Feito com Claude Code"],
+  ["The functional prototype was built with Claude Code and lets you try the four-step claims analysis.", "O protótipo funcional foi criado com Claude Code e permite experimentar a análise de sinistros em quatro passos."]
 ]);

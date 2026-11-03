@@ -23,14 +23,18 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=porto-screens-7'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-tldr-claude-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
 assert.equal(map.get("I’ve done work for")?.pt, "Já desenvolvi projetos para");
 assert.equal(map.get("Já desenvolvi projetos para")?.en, "I’ve done work for");
 
-const portoPairs = ctx.window.PORTFOLIO_TRANSLATIONS.filter(([en]) => fs.readFileSync('projeto-porto.html', 'utf8').includes(en));
+const portoSource = fs.readFileSync('projeto-porto.html', 'utf8');
+const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+const portoStrings = new Set([...portoSource.matchAll(/>([^<>]+)</g)].map(match => decode(match[1])));
+for (const match of portoSource.matchAll(/(?:alt|aria-label|title|content)="([^"]+)"/g)) portoStrings.add(decode(match[1]));
+const portoPairs = ctx.window.PORTFOLIO_TRANSLATIONS.filter(([en]) => portoStrings.has(en));
 for(const [en] of portoPairs) {
  const pt = map.get(en).pt;
  assert.equal(map.get(en)?.pt, pt, `Missing Porto Portuguese copy: ${en}`);
@@ -38,18 +42,18 @@ for(const [en] of portoPairs) {
 }
 const porto = fs.readFileSync('projeto-porto.html', 'utf8');
 assert(porto.includes('id="porto-slider"'));
-assert(porto.includes('Provisional impact figures.'));
+assert(porto.includes('From 45–60 min to about 25 min per claim, observed with five analysts.'));
 assert(fs.readFileSync('index.html','utf8').includes('images/porto/screen-dashboard.webp') && fs.readFileSync('index.html','utf8').includes('class="laptop"'));
 console.log('Porto copy, metric status, comparison and current laptop thumbnail: OK');
 
-const processChapters = ['context', 'contribution', 'direction', 'approach', 'discovery', 'content-design', 'prototyping', 'validation', 'solution', 'comparison', 'outcomes'];
+const processChapters = ['context', 'contribution', 'discovery', 'prototyping', 'solution', 'outcomes', 'vision'];
 let previousChapter = -1;
 for (const chapter of processChapters) {
  const position = porto.indexOf(`id="${chapter}"`);
  assert(position > previousChapter, `Porto chapter missing or out of order: ${chapter}`);
  previousChapter = position;
 }
-assert.equal((porto.match(/class="design-reasoning"/g) || []).length, 3);
+assert.equal((porto.match(/class="design-reasoning"/g) || []).length, 1);
 for (const label of ['My contribution', 'Design direction', 'Approach & rationale', 'Evidence', 'Interpretation', 'Design decision', 'Validation approach', 'Design constraints']) {
  assert(map.get(label)?.pt && map.get(label).pt !== label, `Untranslated design process label: ${label}`);
 }
@@ -67,3 +71,11 @@ for (const page of ['index.html', 'projeto-porto.html']) {
 assert.equal(map.get('Explore the demo')?.pt, 'Explorar o demo');
 assert(map.get('Explore the Porto Seguro demo in a new tab')?.pt);
 console.log('Porto demo CTAs and bilingual accessible labels: OK');
+
+const summary = porto.indexOf('id="case-summary-title"');
+const credit = porto.indexOf('id="prototype-credit-title"');
+assert(summary > 0 && summary < credit && credit < porto.indexOf('id="context"'), 'TL;DR and prototype credit must appear at the top of the case');
+assert.equal(map.get('Built with Claude Code')?.pt, 'Feito com Claude Code');
+const prototypeCopy = 'The functional prototype was built with Claude Code and lets you try the four-step claims analysis.';
+assert(map.get(prototypeCopy)?.pt.includes('protótipo funcional'));
+console.log('Porto TL;DR and Claude Code prototype credit: placement and EN/PT copy OK');
