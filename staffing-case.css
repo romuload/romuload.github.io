@@ -188,7 +188,7 @@ h1,h2{font-weight:700}
 .jd-nav{display:flex;align-items:center;gap:10px}
 .jd-nav button{width:40px;height:40px;border-radius:50%;border:1px solid #d8dee4;background:#fff;color:#001326;font-size:18px;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
 .jd-nav button:hover{border-color:#0052a3;color:#0052a3}
-.jd-count{font:500 13px var(--mono);color:#6b727a}
+.jd-count{font:500 13px var(--mono);color:#656c74}
 .jd-count b{color:#001326;font-weight:600}
 @media(prefers-reduced-motion:reduce){.jr-lines path.hot,.js-journey .jr-detail article,.js-spec .spec-panel{animation:none}}
 @media(max-width:900px){
@@ -297,7 +297,7 @@ h1,h2{font-weight:700}
 .js-spec .spec-panel{animation:specIn .45s ease both}
 @keyframes specIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .spec-rule{font-size:15px;line-height:1.55;color:#4d535a;max-width:66ch}
-.spec-label{font:600 11px/1.4 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#6b727a;margin-bottom:10px}
+.spec-label{font:600 11px/1.4 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#656c74;margin-bottom:10px}
 
 .swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
 .sw{height:96px;border:0;border-radius:6px;background:var(--c);color:var(--t,#fff);display:flex;align-items:flex-end;padding:10px;cursor:pointer;font:500 12px/1 var(--mono);box-shadow:inset 0 0 0 1px #0000001a;transition:transform .25s}
@@ -309,16 +309,16 @@ h1,h2{font-weight:700}
 .neutrals i{background:var(--c)}
 .ratio-bar{display:flex;height:14px;border-radius:3px;overflow:hidden}
 .ratio-bar i{width:calc(var(--w) * 1%);background:var(--c);transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
-.ratio-legend{margin-top:8px;font-size:13px;color:#6b727a}
+.ratio-legend{margin-top:8px;font-size:13px;color:#656c74}
 
 .type-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px;align-items:start}
 .type-hero{display:grid;gap:4px}
 .type-hero .aa{font-size:84px;line-height:1;font-weight:600;letter-spacing:-.04em}
 .type-hero .aa.mono{font-family:"IBM Plex Mono",monospace;font-size:44px;font-weight:500;margin-top:18px;color:#0052a3}
-.type-hero p{font-size:12px;color:#6b727a}
+.type-hero p{font-size:12px;color:#656c74}
 .type-scale{list-style:none;margin:0;padding:0;display:grid}
 .type-scale li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid #d8dee4}
-.type-scale em{font:500 11px/1.4 "IBM Plex Mono",monospace;font-style:normal;color:#6b727a}
+.type-scale em{font:500 11px/1.4 "IBM Plex Mono",monospace;font-style:normal;color:#656c74}
 .t1{font-size:32px;line-height:38px;font-weight:600;letter-spacing:-.02em}
 .t2{font-size:24px;line-height:30px;font-weight:600}
 .t3{font-size:16px;line-height:24px}
@@ -337,7 +337,7 @@ h1,h2{font-weight:700}
 .o-warn{--k:#a63d00;--d:#fb610e}
 .f-err{--k:#b42318}
 .o-neutral,.f-neutral{--k:#4d535a}
-.f-done{--k:#007a74}
+.f-done{--k:#00736d}
 
 .gloss{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:16px 32px;align-items:start}
 .gloss-switch{grid-column:1/-1;display:inline-flex;justify-self:start;max-width:100%;background:#fff;border:1px solid #d8dee4;border-radius:6px;padding:3px}
@@ -357,7 +357,7 @@ h1,h2{font-weight:700}
 .write-switch{margin-top:-6px}
 .messages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .messages article{display:grid;align-content:start;gap:8px;padding:16px 18px;background:#fff;border:1px solid #d8dee4;border-radius:6px}
-.msg-k{font:600 11px/1.4 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#6b727a}
+.msg-k{font:600 11px/1.4 "Hanken Grotesk",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#656c74}
 .messages p{grid-area:2/1;font-size:15px;line-height:1.5;transition:opacity .35s}
 .messages .before{font-family:Roboto,Arial,sans-serif;color:#b42318}
 .messages[data-ver="after"] .before,.messages[data-ver="before"] .after{opacity:0;pointer-events:none}

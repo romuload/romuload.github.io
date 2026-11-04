@@ -6,14 +6,14 @@
 <title>GFT Staffing · Telas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: seletor de telas no topo; cada tela é a moldura do produto (barra marinho + menu do perfil + folha de trabalho) */
 :root {
   --marinho: #001326; --azul: #0052a3; --azul-forte: #003879; --azul-claro: #b8d9fa; --azul-fundo: #eaf3fd;
   --papel: #ffffff; --fundo: #f4f6f9; --linha: #d8dee4; --linha-forte: #b3b8bf;
-  --texto: #001326; --texto-2: #4d535a; --texto-3: #6b727a;
-  --sucesso: #007a74; --sucesso-marca: #00948d; --sucesso-fundo: #e3f4f2;
+  --texto: #001326; --texto-2: #4d535a; --texto-3: #656c74;
+  --sucesso: #00736d; --sucesso-marca: #00948d; --sucesso-fundo: #e3f4f2;
   --atencao: #a63d00; --atencao-marca: #fb610e; --atencao-fundo: #fdeee2;
   --erro: #b42318; --erro-fundo: #fbeaea;
   --sobre-marinho: #ffffff; --sobre-marinho-2: #b3c2d3;
@@ -21,12 +21,15 @@
   --f-texto: "GFT Corporate", "GFTCorporate", "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
   --f-dado: "IBM Plex Mono", ui-monospace, Consolas, monospace;
   --r: 4px;
+  --e1: 4px; --e2: 8px; --e3: 12px; --e4: 16px; --e5: 20px; --e6: 24px; --e7: 32px;
+  --t1: .75rem; --t2: .875rem; --t3: 1rem; --t4: 1.25rem; --t5: 1.5rem;
+  --campo: #868e98;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
-    --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+    --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068; --campo: #6b8099;
     --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
     --sucesso: #4fd8cf; --sucesso-marca: #2ab8b0; --sucesso-fundo: #062b2a;
     --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
@@ -37,7 +40,7 @@
 }
 :root[data-theme="dark"] {
   --azul: #71b4f9; --azul-forte: #b8d9fa; --azul-claro: #1d4f82; --azul-fundo: #0b2440;
-  --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068;
+  --papel: #04192e; --fundo: #000b17; --linha: #1f3449; --linha-forte: #3b5068; --campo: #6b8099;
   --texto: #f4f6f9; --texto-2: #b3b8bf; --texto-3: #8f98a3;
   --sucesso: #4fd8cf; --sucesso-marca: #2ab8b0; --sucesso-fundo: #062b2a;
   --atencao: #fdaa7c; --atencao-marca: #ff7f3c; --atencao-fundo: #33190a;
@@ -61,67 +64,68 @@ p { margin: 0; }
 a { color: var(--azul); }
 button { font: inherit; }
 :focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
-.mono { font-family: var(--f-dado); font-size: .88em; }
+.mono { font-family: var(--f-dado); font-size: inherit; letter-spacing: -.02em; }
 .num { font-variant-numeric: tabular-nums; }
-.rotulo { font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--texto-3); }
-.sub { color: var(--texto-2); font-size: .875rem; }
-.fino { color: var(--texto-3); font-size: .75rem; }
+.rotulo { font-size: var(--t1); font-weight: 600; color: var(--texto-3); }
+.sub { color: var(--texto-2); font-size: var(--t2); }
+.fino { color: var(--texto-3); font-size: var(--t1); }
 
 /* Seletor de telas */
 .seletor { background: var(--papel); border-bottom: 1px solid var(--linha); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--papel); }
-.seletor-in { max-width: 1320px; margin: 0 auto; padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; gap: 16px; align-items: center; overflow-x: auto; }
-.seletor .titulo { font-weight: 600; white-space: nowrap; font-size: .875rem; }
-.seletor nav { display: flex; gap: 4px; }
-.seletor nav a { white-space: nowrap; text-decoration: none; font-size: .8125rem; color: var(--texto-2); padding: 6px 10px; border-radius: 16px; border: 1px solid transparent; display: grid; line-height: 1.2; }
-.seletor nav a small { font-size: .6875rem; color: var(--texto-3); }
+.seletor-in { max-width: 1320px; margin: 0 auto; padding-block: var(--e3); padding-left: max(var(--e4), env(safe-area-inset-left, 0px)); padding-right: max(var(--e4), env(safe-area-inset-right, 0px)); display: flex; gap: var(--e4); align-items: center; overflow-x: auto; }
+.seletor .titulo { font-weight: 600; white-space: nowrap; font-size: var(--t2); }
+.seletor nav { display: flex; gap: var(--e1); }
+.seletor nav a { white-space: nowrap; text-decoration: none; font-size: var(--t2); color: var(--texto-2); padding: var(--e2) var(--e3); border-radius: 16px; border: 1px solid transparent; display: grid; line-height: 1.2; }
+.seletor nav a small { font-size: var(--t1); color: var(--texto-3); }
 .seletor nav a[aria-current="page"] { background: var(--azul-fundo); color: var(--azul); border-color: var(--azul-claro); font-weight: 600; }
-.palco { max-width: 1320px; margin: 0 auto; padding-block: 20px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 14px; }
-.nota-tela { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: .875rem; color: var(--texto-2); }
+.palco { max-width: 1320px; margin: 0 auto; padding-block: var(--e5) 56px; padding-left: max(var(--e4), env(safe-area-inset-left, 0px)); padding-right: max(var(--e4), env(safe-area-inset-right, 0px)); display: grid; gap: var(--e4); }
+.nota-tela { display: flex; flex-wrap: wrap; gap: var(--e2) var(--e4); align-items: baseline; font-size: var(--t2); color: var(--texto-2); }
 .nota-tela b { color: var(--texto); }
 
 /* Moldura do produto */
-.app { border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; background: var(--fundo); box-shadow: var(--sombra); }
-.app-topo { background: var(--marinho); color: var(--sobre-marinho); height: 56px; display: flex; align-items: center; gap: 16px; padding: 0 20px; }
-.lockup { display: flex; align-items: center; gap: 12px; color: inherit; }
+.app { border: 1px solid var(--linha); border-radius: var(--r); overflow: hidden; background: var(--fundo); }
+.app-topo { background: var(--marinho); color: var(--sobre-marinho); height: 56px; display: flex; align-items: center; gap: var(--e4); padding: 0 var(--e5); }
+.lockup { display: flex; align-items: center; gap: var(--e3); color: inherit; }
 .lockup svg { height: 22px; width: auto; fill: currentColor; display: block; }
 .lockup .div { width: 1px; align-self: stretch; background: currentColor; opacity: .35; }
-.lockup .nome { font-size: 1rem; font-weight: 500; }
-.busca { margin-left: auto; flex: 0 1 380px; min-width: 0; height: 36px; border-radius: var(--r); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--sobre-marinho-2); font-size: .875rem; display: flex; align-items: center; padding: 0 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lockup .nome { font-size: var(--t3); font-weight: 500; }
+.busca { margin-left: auto; flex: 0 1 380px; min-width: 0; height: 36px; border-radius: var(--r); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--sobre-marinho-2); font-size: var(--t2); display: flex; align-items: center; padding: 0 var(--e3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sino { position: relative; width: 32px; height: 32px; display: grid; place-items: center; color: var(--sobre-marinho-2); flex: none; }
 .sino svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
 .sino i { position: absolute; top: 5px; right: 6px; width: 7px; height: 7px; background: var(--atencao-marca); }
-.perfil-topo { display: flex; align-items: center; gap: 10px; flex: none; font-size: .8125rem; color: var(--sobre-marinho-2); }
+.perfil-topo { display: flex; align-items: center; gap: var(--e3); flex: none; font-size: var(--t2); color: var(--sobre-marinho-2); }
 .perfil-topo b { color: var(--sobre-marinho); font-weight: 500; display: block; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--azul-claro); color: #001326; display: grid; place-items: center; font-size: .75rem; font-weight: 700; flex: none; }
-.app-corpo { display: grid; grid-template-columns: 200px minmax(0, 1fr); min-height: 620px; }
-.menu { background: var(--papel); border-right: 1px solid var(--linha); padding: 16px 10px; display: grid; gap: 18px; align-content: start; font-size: .875rem; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--azul-claro); color: var(--texto); display: grid; place-items: center; font-size: var(--t1); font-weight: 600; flex: none; }
+.app-corpo { display: grid; grid-template-columns: 224px minmax(0, 1fr); min-height: 620px; }
+.menu { background: var(--papel); border-right: 1px solid var(--linha); padding: var(--e4) var(--e3); display: grid; gap: var(--e6); align-content: start; font-size: var(--t2); }
 .menu .bloco { display: grid; gap: 2px; }
-.menu .bloco .rotulo { padding: 0 10px 6px; }
-.menu a { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 7px 10px; border-radius: var(--r); color: var(--texto-2); text-decoration: none; }
+.menu .bloco .rotulo { padding: 0 var(--e3) var(--e1); }
+.menu a { display: flex; justify-content: space-between; align-items: center; gap: var(--e2); min-height: 36px; padding: var(--e2) var(--e3); border-radius: var(--r); color: var(--texto-2); text-decoration: none; }
+.menu a .item { display: flex; align-items: center; gap: var(--e2); min-width: 0; }
 .menu a:hover { background: var(--fundo); }
 .menu a.ativo { background: var(--azul-fundo); color: var(--azul); font-weight: 600; box-shadow: inset 3px 0 0 var(--azul); }
-.menu a .n { font-size: .75rem; font-variant-numeric: tabular-nums; color: var(--texto-3); }
+.menu a .n { font-size: var(--t1); font-variant-numeric: tabular-nums; color: var(--texto-3); }
 .menu a .n.alerta { color: var(--atencao); font-weight: 600; }
 .menu a.ativo .n { color: var(--azul); }
-.folha { padding: 24px; display: grid; gap: 18px; align-content: start; min-width: 0; }
-.trilha { font-size: .8125rem; color: var(--texto-3); display: flex; gap: 6px; flex-wrap: wrap; }
+.folha { padding: var(--e6); display: grid; gap: var(--e4); align-content: start; min-width: 0; }
+.trilha { font-size: var(--t2); color: var(--texto-3); display: flex; gap: var(--e2); flex-wrap: wrap; }
 .trilha a { color: var(--texto-2); text-decoration: none; }
-.cab { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 20px; align-items: end; }
-.cab h1 { font-size: 1.5rem; letter-spacing: -.015em; line-height: 1.2; }
-.cab .acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.cab { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--e3) var(--e5); align-items: end; }
+.cab h1 { font-size: var(--t5); letter-spacing: -.015em; line-height: 1.2; }
+.cab .acoes { display: flex; flex-wrap: wrap; gap: var(--e2); }
 
 /* Peças */
-.btn { font: 600 .875rem/1 var(--f-texto); height: 40px; padding: 0 16px; border-radius: var(--r); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; transition: transform .1s ease, background-color .15s ease; text-decoration: none; }
+.btn { font: 600 .875rem/1 var(--f-texto); height: 40px; padding: 0 var(--e4); border-radius: var(--r); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: var(--e2); white-space: nowrap; transition: transform .1s ease, background-color .15s ease; text-decoration: none; }
 .btn:active { transform: scale(.98); }
 .btn-pri { background: var(--azul); color: var(--papel); }
 .btn-pri:hover { background: var(--azul-forte); }
 .btn-sec { background: var(--papel); color: var(--azul); border-color: var(--azul); }
-.btn-ter { background: transparent; color: var(--azul); padding: 0 8px; }
+.btn-ter { background: transparent; color: var(--azul); padding: 0 var(--e2); }
 .btn-dest { background: var(--papel); color: var(--erro); border-color: var(--erro); }
-.btn-p { height: 32px; padding: 0 12px; font-size: .75rem; }
+.btn-p { height: 32px; padding: 0 var(--e3); font-size: var(--t1); }
 .btn[disabled] { background: var(--fundo); color: var(--texto-3); border-color: var(--linha); cursor: not-allowed; }
-.status { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 12px; font-size: .75rem; font-weight: 600; white-space: nowrap; border: 1px solid transparent; }
+.status { display: inline-flex; align-items: center; gap: var(--e2); height: 24px; padding: 0 var(--e3); border-radius: 12px; font-size: var(--t1); font-weight: 600; white-space: nowrap; border: 1px solid transparent; }
 .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
 .s-neutro { background: var(--fundo); color: var(--texto-2); border-color: var(--linha); }
 .s-aberto { background: var(--papel); color: var(--texto); border-color: var(--linha-forte); }
@@ -132,33 +136,33 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .s-sucesso-borda { background: var(--papel); color: var(--sucesso); border-color: currentColor; }
 .s-atencao { background: var(--atencao-fundo); color: var(--atencao); }
 .s-erro { background: var(--erro-fundo); color: var(--erro); }
-.cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 18px 20px; display: grid; gap: 12px; align-content: start; min-width: 0; }
-.cartao > h2, .cartao > header h2 { font-size: 1rem; }
-.cartao > header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.pares { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px 20px; font-size: .875rem; }
+.cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e4) var(--e5); display: grid; gap: var(--e3); align-content: start; min-width: 0; }
+.cartao > h2, .cartao > header h2 { font-size: var(--t3); }
+.cartao > header { display: flex; justify-content: space-between; align-items: baseline; gap: var(--e3); }
+.pares { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--e3) var(--e5); font-size: var(--t2); }
 .pares div { display: grid; gap: 2px; }
-.pares dt { font-size: .75rem; color: var(--texto-3); }
+.pares dt { font-size: var(--t1); color: var(--texto-3); }
 .pares dd { margin: 0; font-weight: 500; }
 dl { margin: 0; }
-.aviso { border-radius: var(--r); padding: 12px 14px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 2px 12px; font-size: .875rem; align-items: center; }
-.aviso .ic { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 12px; color: var(--papel); }
+.aviso { border-radius: var(--r); padding: var(--e3) var(--e4); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 2px var(--e3); font-size: var(--t2); align-items: center; }
+.aviso .ic { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; font-size: 12px; color: var(--papel); }
 .aviso b { font-weight: 600; }
 .aviso p { color: var(--texto-2); }
 .aviso.atencao { background: var(--atencao-fundo); } .aviso.atencao .ic { background: var(--atencao); }
 .aviso.info { background: var(--azul-fundo); } .aviso.info .ic { background: var(--azul); }
 .aviso.sucesso { background: var(--sucesso-fundo); } .aviso.sucesso .ic { background: var(--sucesso); }
 .aviso.erro { background: var(--erro-fundo); } .aviso.erro .ic { background: var(--erro); }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font-size: .75rem; padding: 3px 9px; border-radius: 12px; border: 1px solid var(--linha); background: var(--papel); color: var(--texto-2); white-space: nowrap; }
+.chips { display: flex; flex-wrap: wrap; gap: var(--e2); }
+.chip { font-size: var(--t1); padding: var(--e1) var(--e2); border-radius: 12px; border: 1px solid var(--linha); background: var(--papel); color: var(--texto-2); white-space: nowrap; }
 .chip.alto { border-color: var(--azul); color: var(--azul); background: var(--azul-fundo); font-weight: 600; }
 .chip.filtro { border-color: var(--azul); color: var(--azul); }
 .chip.filtro::after { content: " ×"; }
 
 /* Listas */
 .lista { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; font-size: .875rem; }
-th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--linha); vertical-align: middle; }
-th { font-size: .6875rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--texto-3); background: var(--fundo); white-space: nowrap; }
+table { border-collapse: collapse; width: 100%; font-size: var(--t2); }
+th, td { text-align: left; padding: var(--e3) var(--e4); border-bottom: 1px solid var(--linha); vertical-align: middle; }
+th { font-size: var(--t1); font-weight: 600; color: var(--texto-2); background: var(--fundo); white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 tbody tr:hover td { background: var(--fundo); }
 tr.sel td { background: var(--azul-fundo); }
@@ -168,185 +172,306 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
 .pessoa b { font-weight: 600; white-space: nowrap; }
 .pessoa a { color: var(--texto); text-decoration: none; font-weight: 600; white-space: nowrap; }
 .pessoa a:hover { color: var(--azul); text-decoration: underline; }
-.pessoa small { color: var(--texto-3); font-size: .75rem; }
+.pessoa small { color: var(--texto-3); font-size: var(--t1); }
 .acao { text-align: right; white-space: nowrap; }
-.prazo { display: grid; gap: 4px; min-width: 120px; font-size: .75rem; color: var(--texto-2); }
+.prazo { display: grid; gap: var(--e1); min-width: 120px; font-size: var(--t1); color: var(--texto-2); }
 .barra { height: 4px; background: var(--fundo); border: 1px solid var(--linha); border-radius: 2px; overflow: hidden; }
 .barra i { display: block; height: 100%; background: var(--azul); }
-.barra i.fora { background: var(--atencao-marca); }
+.barra i.fora { background: var(--atencao); }
 .barra i.ok { background: var(--sucesso-marca); }
-.contadores { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
-.contador { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 2px; text-align: left; color: inherit; cursor: pointer; }
-.contador b { font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; line-height: 1.2; }
-.contador span { font-size: .75rem; color: var(--texto-2); }
-.contador.ativo { border-color: var(--azul); box-shadow: inset 0 3px 0 var(--azul); }
-.contador.alerta b { color: var(--atencao); }
-.ferramentas { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
-.ferramentas .esq { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ferramentas { display: flex; flex-wrap: wrap; gap: var(--e2); align-items: center; justify-content: space-between; }
+.ferramentas .esq { display: flex; flex-wrap: wrap; gap: var(--e2); align-items: center; }
 .alternar { display: inline-flex; border: 1px solid var(--linha-forte); border-radius: var(--r); overflow: hidden; }
-.alternar button { border: 0; background: var(--papel); color: var(--texto-2); padding: 0 12px; height: 32px; font-size: .75rem; font-weight: 600; cursor: pointer; }
+.alternar button { border: 0; background: var(--papel); color: var(--texto-2); padding: 0 var(--e3); height: 32px; font-size: var(--t1); font-weight: 600; cursor: pointer; }
 .alternar button + button { border-left: 1px solid var(--linha-forte); }
 .alternar button[aria-pressed="true"] { background: var(--azul-fundo); color: var(--azul); }
 
 /* Grades de tela */
-.duas { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
-.lateral { display: grid; gap: 16px; align-content: start; }
+.duas { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--e4); align-items: start; }
+.lateral { display: grid; gap: var(--e4); align-content: start; }
 .duas-vagas { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
 .duas-triagem { grid-template-columns: minmax(0, 1fr) 360px; }
-.cartoes-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cartoes-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--e4); }
 
 /* Perfil */
-.cabeca-perfil { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 20px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px 20px; align-items: center; }
-.cabeca-perfil .avatar { width: 56px; height: 56px; font-size: 1.1rem; }
-.cabeca-perfil h1 { font-size: 1.5rem; letter-spacing: -.015em; }
-.cabeca-perfil .linha { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .875rem; color: var(--texto-2); margin-top: 2px; }
-.cabeca-perfil .acoes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
-.acao-painel { border: 1px solid var(--azul); border-radius: var(--r); background: var(--papel); padding: 18px; display: grid; gap: 12px; }
-.acao-painel h2 { font-size: 1rem; }
-.fila { display: grid; gap: 8px; font-size: .875rem; }
-.fila li { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
-.fila ol { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
-.linha-tempo { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .875rem; }
-.linha-tempo li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 12px; padding-bottom: 14px; position: relative; }
+.cabeca-perfil { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e5); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--e4) var(--e5); align-items: center; }
+.cabeca-perfil .avatar { width: 56px; height: 56px; font-size: var(--t4); }
+.cabeca-perfil h1 { font-size: var(--t5); letter-spacing: -.015em; }
+.cabeca-perfil .linha { display: flex; flex-wrap: wrap; gap: var(--e1) var(--e4); font-size: var(--t2); color: var(--texto-2); margin-top: 2px; }
+.cabeca-perfil .acoes { display: flex; flex-wrap: wrap; gap: var(--e2); justify-content: flex-end; }
+.acao-painel { border: 1px solid var(--azul); border-radius: var(--r); background: var(--papel); padding: var(--e4); display: grid; gap: var(--e3); }
+.acao-painel h2 { font-size: var(--t3); }
+.fila { display: grid; gap: var(--e2); font-size: var(--t2); }
+.fila li { display: flex; justify-content: space-between; gap: var(--e3); align-items: center; }
+.fila ol { margin: 0; padding-left: var(--e4); display: grid; gap: var(--e2); }
+.linha-tempo { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: var(--t2); }
+.linha-tempo li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: var(--e3); padding-bottom: var(--e4); position: relative; }
 .linha-tempo li::before { content: ""; width: 10px; height: 10px; margin-top: 5px; background: var(--linha-forte); }
 .linha-tempo li.atual::before { background: var(--azul); }
 .linha-tempo li:not(:last-child)::after { content: ""; position: absolute; left: 4.5px; top: 18px; bottom: 0; width: 1px; background: var(--linha); }
 .linha-tempo b { font-weight: 600; }
-.linha-tempo small { display: block; color: var(--texto-3); font-size: .75rem; }
-.avaliacoes { display: grid; gap: 10px; }
-.avaliacao { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; font-size: .875rem; padding-bottom: 10px; border-bottom: 1px solid var(--linha); }
+.linha-tempo small { display: block; color: var(--texto-3); font-size: var(--t1); }
+.avaliacoes { display: grid; gap: var(--e3); }
+.avaliacao { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: var(--e1) var(--e4); font-size: var(--t2); padding-bottom: var(--e3); border-bottom: 1px solid var(--linha); }
 .avaliacao:last-child { border-bottom: 0; padding-bottom: 0; }
-.avaliacao .data { color: var(--texto-3); font-size: .75rem; }
-.escala5 { display: flex; gap: 3px; margin-top: 3px; }
+.avaliacao .data { color: var(--texto-3); font-size: var(--t1); }
+.escala5 { display: flex; gap: var(--e1); margin-top: 3px; }
 .escala5 i { width: 14px; height: 6px; background: var(--linha); }
 .escala5 i.on { background: var(--azul); }
-.skills-grupos { display: grid; gap: 10px; font-size: .875rem; }
-.skills-grupos div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 10px; align-items: start; }
-.star { display: grid; gap: 6px; font-size: .875rem; }
+.skills-grupos { display: grid; gap: var(--e3); font-size: var(--t2); }
+.skills-grupos > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: var(--e3); align-items: start; }
+.star { display: grid; gap: var(--e2); font-size: var(--t2); }
 .star .barra { height: 6px; }
 
 /* Formulário */
 .passos { display: flex; gap: 0; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); overflow-x: auto; }
-.passo { flex: 1 0 160px; padding: 12px 16px; display: grid; gap: 2px; font-size: .8125rem; border-right: 1px solid var(--linha); color: var(--texto-3); }
+.passo { flex: 1 0 160px; padding: var(--e3) var(--e4); display: grid; gap: 2px; font-size: var(--t2); border-right: 1px solid var(--linha); color: var(--texto-3); }
 .passo:last-child { border-right: 0; }
 .passo b { font-weight: 600; color: var(--texto-2); }
 .passo.feito b { color: var(--sucesso); }
 .passo.atual { box-shadow: inset 0 -3px 0 var(--azul); }
 .passo.atual b { color: var(--azul); }
-.form { display: grid; gap: 18px; }
-.form fieldset { border: 1px solid var(--linha); border-radius: var(--r); background: var(--papel); margin: 0; padding: 20px; display: grid; gap: 16px; min-width: 0; }
-.form legend { font-weight: 600; padding: 0 6px; font-size: 1rem; }
-.campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
-.campo { display: grid; gap: 6px; font-size: .875rem; align-content: start; }
+.form { display: grid; gap: var(--e4); }
+.form fieldset { border: 1px solid var(--linha); border-radius: var(--r); background: var(--papel); margin: 0; padding: var(--e5); display: grid; gap: var(--e4); min-width: 0; }
+.form legend { font-weight: 600; padding: 0 var(--e2); font-size: var(--t3); }
+.campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--e4) var(--e5); }
+.campo { display: grid; gap: var(--e2); font-size: var(--t2); align-content: start; }
 .campo.todo { grid-column: 1 / -1; }
 .campo label, .campo .lbl { font-weight: 600; }
-.campo .ajuda { color: var(--texto-3); font-size: .75rem; }
-.campo input, .campo select, .campo textarea { font: 400 .875rem var(--f-texto); min-height: 40px; padding: 8px 12px; border: 1px solid var(--linha-forte); border-radius: var(--r); background: var(--papel); color: var(--texto); width: 100%; }
+.campo .ajuda { color: var(--texto-3); font-size: var(--t1); }
+.campo input, .campo select, .campo textarea { font: 400 .875rem var(--f-texto); min-height: 40px; padding: var(--e2) var(--e3); border: 1px solid var(--linha-forte); border-radius: var(--r); background: var(--papel); color: var(--texto); width: 100%; }
 .campo textarea { min-height: 84px; resize: vertical; }
 .campo input[readonly] { background: var(--fundo); color: var(--texto-2); }
 .campo.erro input { border-color: var(--erro); box-shadow: inset 3px 0 0 var(--erro); }
-.campo .msg-erro { color: var(--erro); font-size: .75rem; font-weight: 500; }
-.opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.campo .msg-erro { color: var(--erro); font-size: var(--t1); font-weight: 500; }
+.opcoes { display: flex; flex-wrap: wrap; gap: var(--e2); }
 .opcao { position: relative; }
 .opcao input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-.opcao span { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 12px; border: 1px solid var(--linha-forte); border-radius: var(--r); font-size: .8125rem; background: var(--papel); color: var(--texto-2); }
+.opcao span { display: inline-flex; align-items: center; min-height: 36px; padding: var(--e2) var(--e3); border: 1px solid var(--linha-forte); border-radius: var(--r); font-size: var(--t2); background: var(--papel); color: var(--texto-2); }
 .opcao input:checked + span { border-color: var(--azul); background: var(--azul-fundo); color: var(--azul); font-weight: 600; }
 .opcao input:focus-visible + span { outline: 2px solid var(--azul); outline-offset: 2px; }
 .opcao input:disabled + span { background: var(--fundo); color: var(--texto-3); border-style: dashed; text-decoration: line-through; }
-.notas-comp { display: grid; gap: 8px; }
-.nota-comp { display: grid; grid-template-columns: minmax(140px, 1fr) auto; gap: 12px; align-items: center; font-size: .875rem; padding: 6px 0; border-bottom: 1px solid var(--linha); }
+.notas-comp { display: grid; gap: var(--e2); }
+.nota-comp { display: grid; grid-template-columns: minmax(140px, 1fr) auto; gap: var(--e3); align-items: center; font-size: var(--t2); padding: var(--e2) 0; border-bottom: 1px solid var(--linha); }
 .nota-comp:last-child { border-bottom: 0; }
-.pontos { display: inline-flex; gap: 4px; }
-.pontos button { width: 30px; height: 30px; border-radius: var(--r); border: 1px solid var(--linha-forte); background: var(--papel); color: var(--texto-2); font-size: .8125rem; font-weight: 600; cursor: pointer; }
+.pontos { display: inline-flex; gap: var(--e1); }
+.pontos button { width: 30px; height: 30px; border-radius: var(--r); border: 1px solid var(--linha-forte); background: var(--papel); color: var(--texto-2); font-size: var(--t2); font-weight: 600; cursor: pointer; }
 .pontos button[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: var(--papel); }
-.rodape-form { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 14px 18px; }
+.rodape-form { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--e3); align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e4) var(--e4); }
 
 /* Triagem */
-.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .875rem; }
-.checklist li { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--linha); }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: var(--t2); }
+.checklist li { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: var(--e3); align-items: center; padding: var(--e2) 0; border-bottom: 1px solid var(--linha); }
 .checklist li:last-child { border-bottom: 0; }
-.checklist .ok, .checklist .pend { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+.checklist .ok, .checklist .pend { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; }
 .checklist .ok { background: var(--sucesso-fundo); color: var(--sucesso); }
 .checklist .pend { background: var(--atencao-fundo); color: var(--atencao); }
-.checklist small { color: var(--texto-3); font-size: .75rem; }
-.respostas { display: grid; gap: 8px; }
+.checklist small { display: block; color: var(--texto-3); font-size: var(--t1); }
+.respostas { display: grid; gap: var(--e2); }
 .respostas .btn { width: 100%; justify-content: flex-start; }
 .respostas .btn small { font-weight: 400; margin-left: auto; color: inherit; opacity: .8; }
 
 /* Vagas e compatibilidade */
-.compat { display: grid; gap: 10px; }
-.cand { border: 1px solid var(--linha); border-radius: var(--r); padding: 14px 16px; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; background: var(--papel); }
-.pct { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--azul); line-height: 1; }
-.pct small { display: block; font-size: .6875rem; font-weight: 500; color: var(--texto-3); letter-spacing: 0; margin-top: 4px; }
-.motivos { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .75rem; color: var(--texto-2); }
-.motivos span::before { content: "✓ "; color: var(--sucesso); font-weight: 700; }
+.compat { display: grid; gap: var(--e3); }
+.cand { border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e4) var(--e4); display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: var(--e2) var(--e4); align-items: center; background: var(--papel); }
+.pct { font-size: var(--t5); font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--azul); line-height: 1; }
+.pct small { display: block; font-size: var(--t1); font-weight: 500; color: var(--texto-3); letter-spacing: 0; margin-top: 4px; }
+.motivos { display: flex; flex-wrap: wrap; gap: var(--e1) var(--e3); font-size: var(--t1); color: var(--texto-2); }
+.motivos span::before { content: "✓ "; color: var(--sucesso); font-weight: 600; }
 .motivos span.nao::before { content: "– "; color: var(--texto-3); }
-.vaga-desc { font-size: .875rem; color: var(--texto-2); }
+.vaga-desc { font-size: var(--t2); color: var(--texto-2); }
 
 /* Celular */
-.celular-palco { display: grid; grid-template-columns: 390px minmax(0, 1fr); gap: 32px; align-items: start; }
-.celular { width: 100%; max-width: 390px; border: 10px solid #0b1520; border-radius: 36px; overflow: hidden; background: var(--fundo); box-shadow: var(--sombra); }
-.cel-topo { background: var(--marinho); color: var(--sobre-marinho); padding: 14px 18px 18px; display: grid; gap: 14px; }
-.cel-topo .barra-sis { display: flex; justify-content: space-between; font-size: .75rem; color: var(--sobre-marinho-2); }
+.celular-palco { display: grid; grid-template-columns: 390px minmax(0, 1fr); gap: var(--e7); align-items: start; }
+.celular { width: 100%; max-width: 390px; border: 10px solid #0b1520; border-radius: 36px; overflow: hidden; background: var(--fundo); }
+.cel-topo { background: var(--marinho); color: var(--sobre-marinho); padding: var(--e4) var(--e4) var(--e4); display: grid; gap: var(--e4); }
+.cel-topo .barra-sis { display: flex; justify-content: space-between; font-size: var(--t1); color: var(--sobre-marinho-2); }
 .cel-topo .lockup svg { height: 18px; }
-.cel-topo .lockup .nome { font-size: .875rem; }
-.cel-topo h1 { font-size: 1.25rem; letter-spacing: -.01em; }
-.cel-topo p { color: var(--sobre-marinho-2); font-size: .875rem; }
-.cel-corpo { padding: 14px; display: grid; gap: 12px; }
-.cel-cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: 14px; display: grid; gap: 10px; }
-.cel-cartao h2 { font-size: .9375rem; }
-.etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: .8125rem; }
-.etapas li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; padding-bottom: 12px; position: relative; color: var(--texto-3); }
+.cel-topo .lockup .nome { font-size: var(--t2); }
+.cel-topo h1 { font-size: var(--t4); letter-spacing: -.01em; }
+.cel-topo p { color: var(--sobre-marinho-2); font-size: var(--t2); }
+.cel-corpo { padding: var(--e4); display: grid; gap: var(--e3); }
+.cel-cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: 8px; padding: var(--e4); display: grid; gap: var(--e3); }
+.cel-cartao h2 { font-size: var(--t3); }
+.etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: var(--t2); }
+.etapas li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: var(--e3); padding-bottom: var(--e3); position: relative; color: var(--texto-3); }
 .etapas li::before { content: ""; width: 10px; height: 10px; margin-top: 4px; border: 1.5px solid var(--linha-forte); background: var(--papel); }
 .etapas li.feito::before { background: var(--sucesso-marca); border-color: var(--sucesso-marca); }
 .etapas li.atual::before { background: var(--azul); border-color: var(--azul); }
 .etapas li.feito, .etapas li.atual { color: var(--texto); }
 .etapas li:not(:last-child)::after { content: ""; position: absolute; left: 5px; top: 17px; bottom: 0; width: 1px; background: var(--linha); }
 .etapas small { display: block; color: var(--texto-3); }
-.cel-vaga { display: grid; gap: 4px; padding: 10px 0; border-bottom: 1px solid var(--linha); font-size: .8125rem; }
+.cel-vaga { display: grid; gap: var(--e1); padding: var(--e3) 0; border-bottom: 1px solid var(--linha); font-size: var(--t2); }
 .cel-vaga:last-child { border-bottom: 0; }
-.cel-vaga .t { display: flex; justify-content: space-between; gap: 8px; font-weight: 600; font-size: .875rem; }
+.cel-vaga .t { display: flex; justify-content: space-between; gap: var(--e2); font-weight: 600; font-size: var(--t2); }
 .cel-vaga .t span { color: var(--azul); font-variant-numeric: tabular-nums; }
-.cel-nav { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--papel); border-top: 1px solid var(--linha); font-size: .6875rem; text-align: center; color: var(--texto-3); }
-.cel-nav span { padding: 10px 0 14px; display: grid; gap: 4px; justify-items: center; }
+.cel-nav { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--papel); border-top: 1px solid var(--linha); font-size: var(--t1); text-align: center; color: var(--texto-3); }
+.cel-nav span { padding: var(--e3) 0 var(--e4); display: grid; gap: var(--e1); justify-items: center; }
 .cel-nav span::before { content: ""; width: 18px; height: 18px; border: 1.5px solid currentColor; border-radius: 4px; }
 .cel-nav span.ativo { color: var(--azul); font-weight: 600; }
 .cel-nav span.ativo::before { background: var(--azul-fundo); }
-.explica { display: grid; gap: 16px; }
-.explica .cartao p { color: var(--texto-2); font-size: .875rem; }
+.explica { display: grid; gap: var(--e4); }
+.explica .cartao p { color: var(--texto-2); font-size: var(--t2); }
 
 /* Liderança */
-.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.kpi { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: 16px 18px; display: grid; gap: 4px; align-content: start; }
-.kpi b { font-size: 2rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
-.kpi .var { font-size: .75rem; font-weight: 600; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e3); }
+.kpi { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e4) var(--e4); display: grid; gap: var(--e1); align-content: start; }
+.kpi b { font-size: 2rem; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kpi .var { font-size: var(--t1); font-weight: 600; }
 .kpi .var.bom { color: var(--sucesso); }
 .kpi .var.ruim { color: var(--atencao); }
 .grafico svg { width: 100%; height: auto; display: block; overflow: visible; }
 .grafico .eixo { stroke: var(--linha); stroke-width: 1; }
 .grafico .grade { stroke: var(--linha); stroke-width: 1; stroke-dasharray: 2 4; }
-.grafico text { fill: var(--texto-3); font: 500 11px var(--f-texto); }
+.grafico text { fill: var(--texto-3); font: 500 12px var(--f-texto); }
 .grafico .linha-c { fill: none; stroke: var(--azul); stroke-width: 2.5; }
 .grafico .area-c { fill: var(--azul); opacity: .1; }
 .grafico .ponto { fill: var(--papel); stroke: var(--azul); stroke-width: 2.5; }
 .grafico .ponto-fim { fill: var(--azul); }
 .grafico .val { fill: var(--texto); font-weight: 600; font-size: 12px; }
-.barras-h { display: grid; gap: 10px; font-size: .8125rem; }
-.barras-h .b { display: grid; grid-template-columns: 74px minmax(0, 1fr) 72px; gap: 10px; align-items: center; }
+.barras-h { display: grid; gap: var(--e3); font-size: var(--t2); }
+.barras-h .b { display: grid; grid-template-columns: 74px minmax(0, 1fr) 72px; gap: var(--e3); align-items: center; }
 .barras-h .trilho { height: 14px; background: var(--fundo); border-radius: 2px; overflow: hidden; }
 .barras-h .trilho i { display: block; height: 100%; background: var(--azul); }
 .barras-h .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--texto-2); }
-.previsao { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.prev { border: 1px solid var(--linha); border-radius: var(--r); padding: 12px; display: grid; gap: 2px; font-size: .75rem; color: var(--texto-2); }
-.prev b { font-size: 1.25rem; color: var(--texto); font-variant-numeric: tabular-nums; }
+.previsao { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e2); }
+.prev { border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e3); display: grid; gap: 2px; font-size: var(--t1); color: var(--texto-2); }
+.prev b { font-size: var(--t4); color: var(--texto); font-variant-numeric: tabular-nums; }
+
+/* Botão principal do menu */
+.menu .novo-pedido { justify-content: center; gap: var(--e2); background: var(--azul); color: var(--papel); font-weight: 600; min-height: 40px; white-space: nowrap; }
+.menu .novo-pedido:hover { background: var(--azul-forte); color: var(--papel); }
+.menu .novo-pedido.ativo { background: var(--azul-forte); color: var(--papel); box-shadow: none; }
+
+/* Menu de três pontinhos */
+th.acao { text-align: right; }
+.mais { width: 36px; height: 36px; display: inline-grid; place-items: center; padding: 0; border: 0; border-radius: var(--r); background: transparent; color: var(--texto-2); cursor: pointer; vertical-align: middle; }
+
+.mais:hover { background: var(--linha); color: var(--texto); }
+.mais[aria-expanded="true"] { background: var(--azul-fundo); color: var(--azul); }
+.menu-acoes { position: fixed; z-index: 30; min-width: 208px; padding: var(--e1); background: var(--papel); border: 1px solid var(--linha-forte); border-radius: var(--r); box-shadow: var(--sombra); display: grid; }
+.menu-acoes button { font: 500 .875rem/1.3 var(--f-texto); text-align: left; border: 0; background: transparent; color: var(--texto); padding: var(--e2) var(--e3); border-radius: 2px; cursor: pointer; white-space: nowrap; }
+.menu-acoes button:hover, .menu-acoes button:focus-visible { background: var(--azul-fundo); color: var(--azul); outline: 0; }
+.menu-acoes button.perigo { color: var(--erro); }
+.menu-acoes button.perigo:hover, .menu-acoes button.perigo:focus-visible { background: var(--erro-fundo); color: var(--erro); }
+.menu-acoes hr { border: 0; border-top: 1px solid var(--linha); margin: 4px 0; width: 100%; }
+
+/* Diálogo */
+.dlg { border: 1px solid var(--linha-forte); border-radius: var(--r); background: var(--papel); color: var(--texto); padding: 0; width: min(480px, calc(100vw - 32px)); box-shadow: var(--sombra); }
+.dlg::backdrop { background: rgba(0, 19, 38, .45); }
+.dlg-in { padding: var(--e6); display: grid; gap: var(--e4); }
+.dlg h2 { font-size: var(--t4); }
+.dlg-acoes { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--e2); margin-top: 4px; }
+.campo [aria-invalid="true"] { border-color: var(--erro); box-shadow: inset 3px 0 0 var(--erro); }
+
+/* Caixa, filtros e novidades */
+.tag-novo { display: inline-block; margin-left: 6px; padding: 0 var(--e2); border-radius: 8px; font-size: var(--t1); font-weight: 600; line-height: 1.5; background: var(--sucesso-fundo); color: var(--sucesso); vertical-align: 1px; }
+.pessoa .nome-linha { display: block; white-space: nowrap; }
+.pessoa .nome-linha a { display: inline; }
+.chip.filtro { cursor: pointer; font-family: inherit; }
+.painel-filtros { background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: var(--e4) var(--e5); display: grid; gap: var(--e4); }
+.painel-filtros .campos { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--e3) var(--e4); }
+.painel-filtros .pe { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--e2); }
+.linha-acao { cursor: pointer; }
+.fim-caixa { background: var(--papel); border: 1px dashed var(--linha-forte); border-radius: var(--r); padding: var(--e7); text-align: center; color: var(--texto-2); font-size: var(--t2); }
+.nota-pessoa { display: grid; gap: 2px; padding-bottom: var(--e3); border-bottom: 1px solid var(--linha); font-size: var(--t2); }
+.nota-pessoa:last-child { border-bottom: 0; padding-bottom: 0; }
+.nota-pessoa small { color: var(--texto-3); font-size: var(--t1); }
+.lista-simples { display: grid; gap: var(--e3); }
+.vaga-perfil { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: var(--e1) var(--e3); align-items: center; padding-bottom: var(--e3); border-bottom: 1px solid var(--linha); }
+.vaga-perfil:last-child { border-bottom: 0; padding-bottom: 0; }
+.vaga-perfil .pct { font-size: var(--t4); }
+.cand-fim { display: flex; align-items: center; gap: var(--e2); }
 
 /* Toast */
-.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--marinho); color: #fff; padding: 12px 14px 12px 18px; border-radius: var(--r); box-shadow: var(--sombra); display: flex; gap: 16px; align-items: center; font-size: .875rem; z-index: 20; max-width: calc(100% - 32px); }
-.toast button { background: transparent; border: 0; color: var(--azul-claro); font-weight: 600; cursor: pointer; padding: 4px 6px; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--marinho); color: #fff; padding: var(--e3) var(--e4) var(--e3) var(--e4); border-radius: var(--r); box-shadow: var(--sombra); display: flex; gap: var(--e4); align-items: center; font-size: var(--t2); z-index: 20; max-width: calc(100% - 32px); }
+.toast button { background: transparent; border: 0; color: var(--azul-claro); font-weight: 600; cursor: pointer; padding: var(--e1) var(--e2); }
+
+/* Ícones (Lucide, licença ISC, aviso no início do body) */
+.i { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; display: block; }
+.i-20 { width: 20px; height: 20px; }
+.i-12 { width: 12px; height: 12px; stroke-width: 2.25; }
+.btn .i { margin-left: -2px; }
+.aviso .ic { width: 20px; height: 20px; background: none !important; display: grid; place-items: center; border-radius: 0; }
+.aviso.atencao .ic { color: var(--atencao); } .aviso.info .ic { color: var(--azul); } .aviso.sucesso .ic { color: var(--sucesso); } .aviso.erro .ic { color: var(--erro); }
+.aviso.fino-aviso { padding: var(--e2) var(--e2) var(--e2) var(--e3); }
+.trilha { align-items: center; }
+.menu-acoes button { display: flex; align-items: center; gap: var(--e2); border-radius: var(--r); }
+.menu-acoes button .i { color: var(--texto-3); }
+.menu-acoes button:hover .i, .menu-acoes button:focus-visible .i, .menu-acoes button.perigo .i { color: inherit; }
+.chip.filtro { display: inline-flex; align-items: center; gap: var(--e1); min-height: 28px; padding: var(--e1) var(--e2) var(--e1) var(--e3); }
+.chip.filtro::after { content: ""; width: 12px; height: 12px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center / contain no-repeat; }
+.motivos span::before { content: ""; display: inline-block; width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; background: var(--sucesso); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat; }
+.motivos span.nao::before { content: ""; background: var(--texto-3); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") center / contain no-repeat; }
+.cel-nav span::before { content: none; }
+.cel-nav span.ativo .i { color: var(--azul); }
+
+/* Topo */
+.busca { gap: var(--e2); padding: 0 var(--e3); cursor: text; }
+.busca input { flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; color: var(--sobre-marinho); font: 400 var(--t2) var(--f-texto); outline: 0; }
+.busca input::placeholder { color: var(--sobre-marinho-2); opacity: 1; }
+.busca:focus-within { border-color: var(--azul-claro); }
+.sino { border-radius: var(--r); text-decoration: none; }
+.sino:hover { background: rgba(255,255,255,.1); }
+.b-menu { display: none; width: 36px; height: 36px; margin-left: -8px; place-items: center; background: none; border: 0; border-radius: var(--r); color: var(--sobre-marinho); cursor: pointer; flex: none; }
+
+/* Status: cor sólida só para o que é seu */
+.s-aberto { background: transparent; border-color: transparent; color: var(--texto-2); padding-left: 0; }
+.s-outro { background: var(--azul-fundo); color: var(--azul); border-color: var(--azul); }
+.tag-novo { background: var(--azul-fundo); color: var(--azul); }
+
+/* Campos: borda com contraste de 3:1 */
+.campo input, .campo select, .campo textarea, .opcao span, .pontos button, .alternar { border-color: var(--campo); }
+.alternar button + button { border-left-color: var(--campo); }
+.pontos button { width: 32px; height: 32px; }
+.cartao > header a.fino { display: inline-flex; align-items: center; min-height: 24px; }
+
+/* Layout */
+.folha { gap: var(--e4); }
+.cab { margin-bottom: var(--e1); }
+.acao .btn { min-width: 148px; }
+.pares { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.prazo span { white-space: nowrap; }
+.mono { white-space: nowrap; }
+.acao-painel { padding: var(--e4) var(--e5); }
+.prazo .fora-txt { display: flex; align-items: center; gap: var(--e1); color: var(--atencao); font-weight: 500; }
+.prazo small { color: var(--texto-3); font-size: var(--t1); }
+.fim-caixa { display: grid; justify-items: center; gap: var(--e2); }
+#tab-res.minhas th:nth-child(6), #tab-res.minhas td:nth-child(6) { display: none; }
+
+/* Abas de situação */
+.abas { display: flex; gap: var(--e1); border-bottom: 1px solid var(--linha); overflow-x: auto; }
+.aba { display: inline-flex; align-items: center; gap: var(--e2); height: 40px; padding: 0 var(--e3); border: 0; background: none; color: var(--texto-2); font: 500 var(--t2) var(--f-texto); cursor: pointer; white-space: nowrap; }
+.aba b { font-weight: 500; font-size: var(--t1); color: var(--texto-3); font-variant-numeric: tabular-nums; }
+.aba:hover { color: var(--texto); }
+.aba.ativo { color: var(--azul); font-weight: 600; box-shadow: inset 0 -2px 0 var(--azul); }
+.aba.ativo b { color: var(--azul); font-weight: 600; }
+.aba.alerta b { color: var(--atencao); font-weight: 600; }
+.rapidos { display: flex; flex-wrap: wrap; gap: var(--e2); }
+.rapido { display: inline-flex; align-items: center; gap: var(--e2); height: 32px; padding: 0 var(--e3); border: 1px solid var(--campo); border-radius: var(--r); background: var(--papel); color: var(--texto-2); font: 500 var(--t1) var(--f-texto); cursor: pointer; white-space: nowrap; }
+.rapido b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.rapido[aria-pressed="true"] { background: var(--azul-fundo); border-color: var(--azul); color: var(--azul); }
+.abas-linha { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--e2) var(--e4); border-bottom: 1px solid var(--linha); }
+.abas-linha .abas { border-bottom: 0; }
+.abas-linha .rapidos { padding-bottom: var(--e1); }
+
+/* Tabela de disponíveis */
+#tab-disp th, #tab-disp td { padding-inline: var(--e3); }
+#tab-disp .pessoa small { white-space: nowrap; }
+.skills-curtas { white-space: nowrap; }
+.skills-curtas small { color: var(--texto-3); font-size: var(--t1); margin-left: var(--e1); }
+.th-ordem { display: inline-flex; align-items: center; gap: var(--e1); padding: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+.th-ordem:hover { color: var(--azul); }
+.paginas { display: flex; justify-content: space-between; align-items: center; gap: var(--e3); flex-wrap: wrap; padding: var(--e2) var(--e4); border-top: 1px solid var(--linha); }
+.paginas div { display: flex; gap: var(--e1); }
+.paginas button { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--linha); border-radius: var(--r); background: var(--papel); color: var(--texto-2); cursor: pointer; }
+.paginas button:disabled { color: var(--linha-forte); cursor: not-allowed; }
+.sem-resultado { display: grid; justify-items: center; gap: var(--e2); padding: var(--e7) var(--e4); text-align: center; color: var(--texto-2); font-size: var(--t2); }
+.passo.afazer { color: var(--texto-3); }
+.paginas, .sem-resultado { position: sticky; left: 0; }
 
 @media (max-width: 1080px) {
   .duas, .duas-vagas, .duas-triagem { grid-template-columns: minmax(0, 1fr); }
-  .contadores { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .celular-palco { grid-template-columns: minmax(0, 1fr); justify-items: center; }
 }
@@ -354,6 +479,9 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   .app-corpo { grid-template-columns: minmax(0, 1fr); }
   .menu { display: none; }
   .busca { display: none; }
+  .b-menu { display: grid; }
+  .app-corpo.menu-aberto::before { content: ""; position: fixed; inset: 0; z-index: 24; background: rgba(0, 19, 38, .45); }
+  .app-corpo.menu-aberto .menu { display: grid; position: fixed; inset: 0 auto 0 0; width: min(280px, 85vw); z-index: 25; overflow-y: auto; border-right: 1px solid var(--linha-forte); box-shadow: var(--sombra); }
   .perfil-topo > span:first-child { display: none; }
   .perfil-topo { margin-left: auto; }
   .cartoes-2, .campos { grid-template-columns: minmax(0, 1fr); }
@@ -361,21 +489,82 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   .cabeca-perfil .acoes { grid-column: 1 / -1; justify-content: flex-start; }
 }
 @media (max-width: 560px) {
-  .folha { padding: 16px; }
-  .skills-grupos div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .folha { padding: var(--e4); }
+  .skills-grupos > div { grid-template-columns: minmax(0, 1fr); gap: var(--e1); }
   .cartao > header { flex-wrap: wrap; }
-  .contadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .previsao { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kpis { grid-template-columns: minmax(0, 1fr); }
   .cand { grid-template-columns: 56px minmax(0, 1fr); }
-  .cand .btn { grid-column: 1 / -1; }
+  .cand .cand-fim { grid-column: 1 / -1; justify-content: space-between; }
   .celular { border-width: 6px; border-radius: 24px; }
-  .app-topo { padding: 0 14px; }
+  .app-topo { padding: 0 var(--e4); }
 }
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
 </style>
 <link rel="stylesheet" href="../typography.css?v=widows-2"><script src="../typography.js?v=widows-1" defer></script></head>
 <body>
+<!-- Ícones: Lucide v0.460.0 (lucide.dev)
+ISC License
+
+Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+<symbol id="i-archive" viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1" /><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" /><path d="M10 12h4" /></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></symbol>
+<symbol id="i-arrow-up-down" viewBox="0 0 24 24"><path d="m21 16-4 4-4-4" /><path d="M17 20V4" /><path d="m3 8 4-4 4 4" /><path d="M7 4v16" /></symbol>
+<symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></symbol>
+<symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="m4.9 4.9 14.2 14.2" /></symbol>
+<symbol id="i-bell-plus" viewBox="0 0 24 24"><path d="M19.3 14.8C20.1 16.4 21 17 21 17H3s3-2 3-9c0-3.3 2.7-6 6-6 1 0 1.9.2 2.8.7" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /><path d="M15 8h6" /><path d="M18 5v6" /></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></symbol>
+<symbol id="i-bookmark-plus" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" /><line x1="12" x2="12" y1="7" y2="13" /><line x1="15" x2="9" y1="10" y2="10" /></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" /></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-calendar-check" viewBox="0 0 24 24"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /><path d="m9 16 2 2 4-4" /></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></symbol>
+<symbol id="i-chart-column-big" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><rect x="15" y="5" width="4" height="12" rx="1" /><rect x="7" y="8" width="4" height="9" rx="1" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-circle-pause" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><line x1="10" x2="10" y1="15" y2="9" /><line x1="14" x2="14" y1="15" y2="9" /></symbol>
+<symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" /></symbol>
+<symbol id="i-clipboard-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="M12 11h4" /><path d="M12 16h4" /><path d="M8 11h.01" /><path d="M8 16h.01" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-ellipsis-vertical" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1" /><circle cx="12" cy="5" r="1" /><circle cx="12" cy="19" r="1" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></symbol>
+<symbol id="i-list-filter" viewBox="0 0 24 24"><path d="M3 6h18" /><path d="M7 12h10" /><path d="M10 18h4" /></symbol>
+<symbol id="i-list-plus" viewBox="0 0 24 24"><path d="M11 12H3" /><path d="M16 6H3" /><path d="M16 18H3" /><path d="M18 9v6" /><path d="M21 12h-6" /></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="M12 5v14" /></symbol>
+<symbol id="i-refresh-cw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /><path d="M8 16H3v5" /></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></symbol>
+<symbol id="i-undo-2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5" /><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol>
+<symbol id="i-user-check" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><polyline points="16 11 18 13 22 9" /></symbol>
+<symbol id="i-user-search" viewBox="0 0 24 24"><circle cx="10" cy="7" r="4" /><path d="M10.3 15H7a4 4 0 0 0-4 4v2" /><circle cx="17" cy="17" r="3" /><path d="m21 21-1.9-1.9" /></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></symbol>
+</svg>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo-gft" viewBox="0 0 800 310">
@@ -387,12 +576,20 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   <div class="seletor-in">
     <span class="titulo">GFT Staffing · Telas</span>
     <nav aria-label="Telas" id="nav-telas">
-      <a href="#disponiveis">Disponíveis<small>Gestor</small></a>
-      <a href="#perfil">Perfil da pessoa<small>Gestor</small></a>
-      <a href="#liberacao">Pedido de liberação<small>Gestor</small></a>
+      <a href="#caixa">Precisa de você<small>Gestor</small></a>
+      <a href="#enviados">Enviados<small>Gestor</small></a>
+      <a href="#reservas">Reservas e propostas<small>Gestor</small></a>
       <a href="#renovacao">Em renovação<small>Gestor</small></a>
+      <a href="#afastados">Afastados<small>Gestor</small></a>
+      <a href="#disponiveis">Disponíveis<small>Gestor</small></a>
+      <a href="#alocados">Alocados<small>Gestor</small></a>
+      <a href="#renovados">Renovados<small>Gestor</small></a>
+      <a href="#perfil">Perfil da pessoa<small>Gestor</small></a>
+      <a href="#liberacao">Nova requisição<small>Gestor</small></a>
       <a href="#vagas">Vagas e compatíveis<small>Gestor</small></a>
-      <a href="#triagem">Pedidos recebidos<small>Staffing</small></a>
+      <a href="#encerradas">Vagas encerradas<small>Gestor</small></a>
+      <a href="#internos">Projetos internos<small>Gestor</small></a>
+      <a href="#triagem">Requisições recebidas<small>Staffing</small></a>
       <a href="#colaborador">Meu status<small>Colaborador</small></a>
       <a href="#lideranca">Indicadores<small>Liderança</small></a>
     </nav>
@@ -403,7 +600,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
 
 <!-- ============ DISPONÍVEIS ============ -->
 <section class="tela" id="t-disponiveis" data-perfil="gestor" data-menu="disponiveis">
-  <p class="nota-tela"><b>Disponíveis</b>Tela inicial do gestor. Os contadores filtram a lista, e o nome abre o perfil.</p>
+  <p class="nota-tela"><b>Disponíveis</b>Todas as pessoas prontas para vagas. As abas filtram a lista, os três pontinhos reúnem as ações de cada pessoa, e "Novo" mostra quem entrou desde a sua última visita.</p>
   <div class="app">
     <div class="app-topo" data-topo></div>
     <div class="app-corpo">
@@ -411,40 +608,60 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
       <div class="folha">
         <div class="cab">
           <div><h1>Disponíveis</h1><p class="sub">Pessoas liberadas e prontas para vagas · atualizado hoje às 09h00</p></div>
-          <div class="acoes"><button class="btn btn-sec" type="button">Exportar lista</button></div>
         </div>
-        <div class="aviso atencao"><span class="ic" aria-hidden="true">!</span><div><b>Sua reserva de Marina Costa vence hoje às 23h59.</b> <span class="sub">Confirme a alocação, libere a reserva ou peça mais prazo ao Staffing.</span></div><a class="btn btn-p btn-sec" href="#perfil">Ver reserva</a></div>
-        <div class="contadores" role="group" aria-label="Filtrar por situação">
-          <button class="contador ativo" type="button" data-f="todas"><b>41</b><span>Todas</span></button>
-          <button class="contador" type="button" data-f="sem"><b>29</b><span>Sem proposta</span></button>
-          <button class="contador" type="button" data-f="prop"><b>8</b><span>Propostas</span></button>
-          <button class="contador" type="button" data-f="res"><b>4</b><span>Reservadas</span></button>
-          <button class="contador alerta" type="button" data-f="fora"><b>7</b><span>Acima do prazo</span></button>
+        <div class="aviso atencao fino-aviso"><span class="ic" aria-hidden="true"><svg class="i i-20" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span><div><b>4 itens precisam de você.</b> <span class="sub">O mais urgente: a reserva de Marina Costa vence hoje às 23h59.</span></div><a class="btn btn-p btn-sec" href="#caixa">Ver itens</a></div>
+        <div class="abas-linha">
+          <div class="abas" id="disp-abas" role="group" aria-label="Filtrar por situação">
+            <button class="aba ativo" type="button" data-f="todas" aria-pressed="true">Todas <b>41</b></button>
+            <button class="aba" type="button" data-f="sem" aria-pressed="false">Sem proposta <b>29</b></button>
+            <button class="aba" type="button" data-f="prop" aria-pressed="false">Propostas <b>8</b></button>
+            <button class="aba" type="button" data-f="res" aria-pressed="false">Reservadas <b>4</b></button>
+          </div>
+          <div class="rapidos" id="disp-rapidos" role="group" aria-label="Destaques">
+            <button class="rapido" type="button" data-f="novo" aria-pressed="false">Novas desde sua visita <b>3</b></button>
+            <button class="rapido" type="button" data-f="fora" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Acima do prazo <b>7</b></button>
+          </div>
         </div>
         <div class="ferramentas">
-          <div class="esq">
-            <span class="chip filtro">Nível 4 a 6</span><span class="chip filtro">Inglês avançado</span>
-            <button class="btn btn-ter btn-p" type="button">+ Filtros</button>
+          <div class="esq" id="chips-filtro">
+            <button class="chip filtro" type="button" data-chip aria-label="Remover filtro Nível 4 a 6">Nível 4 a 6</button>
+            <button class="chip filtro" type="button" data-chip aria-label="Remover filtro Inglês avançado">Inglês avançado</button>
+            <button class="btn btn-ter btn-p" type="button" id="b-filtros" aria-expanded="false" aria-controls="p-filtros"><svg class="i" aria-hidden="true"><use href="#i-list-filter"/></svg>Filtros</button>
           </div>
-          <div class="alternar" role="group" aria-label="Atalhos">
-            <button type="button" aria-pressed="false">Propostos por mim</button>
-            <button type="button" aria-pressed="false">Reservados por mim</button>
-          </div>
+          <button class="btn btn-ter btn-p" type="button" id="b-alerta"><svg class="i" aria-hidden="true"><use href="#i-bell-plus"/></svg>Avisar quando entrar alguém assim</button>
         </div>
+        <form class="painel-filtros" id="p-filtros" hidden onsubmit="return false" aria-label="Filtros">
+          <div class="campos">
+            <div class="campo"><label for="f-pratica">Prática</label><select id="f-pratica" data-f-nome="Prática"><option value="">Todas</option><option>BAC</option><option>Cloud</option><option>Data</option><option>Design</option><option>Java</option><option>.NET</option><option>Mobile</option><option>QA</option><option>SAP</option></select></div>
+            <div class="campo"><label for="f-cargo">Cargo</label><select id="f-cargo" data-f-nome="Cargo"><option value="">Todos</option><option>Dev Java</option><option>Dev .NET</option><option>Dev Front-end</option><option>QA</option><option>Arquiteto</option><option>Scrum Master</option><option>Analista de dados</option></select></div>
+            <div class="campo"><label for="f-skill">Skill principal</label><select id="f-skill" data-f-nome="Skill"><option value="">Todas</option><option>Java</option><option>.NET</option><option>Python</option><option>AWS</option><option>Cypress</option></select></div>
+            <div class="campo"><label for="f-det">Skill detalhada</label><select id="f-det" data-f-nome="Detalhe"><option value="">Todas</option><option>Backend / Java / Kafka</option><option>Backend / .NET / Azure</option><option>Dados / BI / Power BI</option></select></div>
+            <div class="campo"><label for="f-aval">Última avaliação</label><select id="f-aval" data-f-nome="Avaliação"><option value="">Todas</option><option>Precisa melhorar</option><option>Quase lá</option><option>Atende o esperado</option><option>Alto desempenho</option><option>Excepcional</option></select></div>
+            <div class="campo"><label for="f-cidade">Cidade</label><select id="f-cidade" data-f-nome="Cidade"><option value="">Todas</option><option>São Paulo</option><option>Campinas</option><option>Curitiba</option><option>Porto Alegre</option><option>Recife</option><option>Remoto</option></select></div>
+            <div class="campo"><label for="f-modelo">Modelo de trabalho</label><select id="f-modelo" data-f-nome="Modelo"><option value="">Todos</option><option>Presencial</option><option>Híbrido, 1 dia</option><option>Híbrido, 2 dias</option><option>Híbrido, 3 dias</option><option>Híbrido, 4 dias</option><option>A confirmar</option></select></div>
+            <div class="campo"><label for="f-area">Área de origem</label><select id="f-area" data-f-nome="Área"><option value="">Todas</option><option>Pagamentos</option><option>Canais digitais</option><option>Plataforma de dados</option><option>Sinistros</option></select></div>
+            <div class="campo"><label for="f-prazo">Prazo de alocação</label><select id="f-prazo" data-f-nome="Prazo"><option value="">Todos</option><option>Padrão, 15 dias úteis</option><option>Outro prazo</option></select></div>
+            <div class="campo"><label for="f-de">Liberação a partir de</label><input id="f-de" type="date" data-f-nome="A partir de"></div>
+            <div class="campo"><label for="f-ate">Liberação até</label><input id="f-ate" type="date" data-f-nome="Até"></div>
+          </div>
+          <div class="pe"><span class="fino">Nível e inglês ficam nos chips acima, situação nos contadores, e nome e sigla na busca do topo.</span><div style="display:flex;gap:8px"><button class="btn btn-ter btn-p" type="button" id="f-limpar">Limpar</button><button class="btn btn-pri btn-p" type="button" id="f-aplicar">Aplicar</button></div></div>
+        </form>
         <div class="lista">
-          <table class="min" id="tab-disp">
-            <thead><tr><th>Pessoa</th><th>Skills principais</th><th>Última avaliação</th><th>Dias disponível</th><th>Situação</th><th><span class="fino" style="text-transform:none;letter-spacing:0">Ação</span></th></tr></thead>
+          <table class="min" id="tab-disp" style="min-width:960px">
+            <thead><tr><th>Pessoa</th><th>Prática e cidade</th><th>Skills principais</th><th>Última avaliação</th><th aria-sort="descending"><button class="th-ordem" type="button" id="ordem-dias">Dias disponível <svg class="i" aria-hidden="true"><use href="#i-arrow-down"/></svg></button></th><th>Situação</th><th class="acao">Ações</th></tr></thead>
             <tbody>
-              <tr data-s="sem fora"><td><div class="pessoa"><a href="#perfil">Rafael Lima</a><small><span class="mono">RALI</span> · Dev .NET · Nível 5 · Campinas</small></div></td><td>.NET, Azure, SQL Server</td><td>Alto desempenho</td><td><div class="prazo"><span>19 dias úteis · 4 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Rafael Lima">Reservar</button></td></tr>
-              <tr data-s="res"><td><div class="pessoa"><a href="#perfil">Marina Costa</a><small><span class="mono">MACO</span> · Dev Java · Nível 6 · São Paulo</small></div></td><td>Java, Spring Boot, Kafka</td><td>Atende o esperado</td><td><div class="prazo"><span>11 de 15 dias úteis</span><div class="barra"><i style="width:73%"></i></div></div></td><td><span class="status s-forte">Reservada por você</span></td><td class="acao"><a class="btn btn-pri btn-p" href="#perfil">Confirmar alocação</a></td></tr>
-              <tr data-s="prop"><td><div class="pessoa"><a href="#perfil">Júlia Prado</a><small><span class="mono">JUPR</span> · QA · Nível 4 · Curitiba</small></div></td><td>Cypress, Playwright, API</td><td>Alto desempenho</td><td><div class="prazo"><span>6 de 15 dias úteis</span><div class="barra"><i style="width:40%"></i></div></div></td><td><span class="status s-azul">Proposta · 2 gestores</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Júlia Prado">Reservar</button></td></tr>
-              <tr data-s="res fora"><td><div class="pessoa"><a href="#perfil">Lucas Andrade</a><small><span class="mono">LUAN</span> · Arquiteto · Nível 8 · Recife</small></div></td><td>AWS, Microsserviços, Kubernetes</td><td>Excepcional</td><td><div class="prazo"><span>17 dias úteis · 2 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-forte">Reservado · fila 1</span></td><td class="acao"><button class="btn btn-sec btn-p" type="button">Entrar na fila</button></td></tr>
-              <tr data-s="sem"><td><div class="pessoa"><a href="#perfil">Paulo Mendes</a><small><span class="mono">PAME</span> · Analista de dados · Nível 5 · Remoto</small></div></td><td>Python, Power BI, Databricks</td><td>Atende o esperado</td><td><div class="prazo"><span>2 de 15 dias úteis</span><div class="barra"><i style="width:13%"></i></div></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Paulo Mendes">Reservar</button></td></tr>
-              <tr data-s="prop fora"><td><div class="pessoa"><a href="#perfil">Beatriz Nunes</a><small><span class="mono">BENU</span> · Scrum Master · Nível 6 · Porto Alegre</small></div></td><td>Scrum, Kanban, Jira</td><td>Atende o esperado</td><td><div class="prazo"><span>22 dias úteis · 7 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div></div></td><td><span class="status s-azul">Proposta · 1 gestor</span></td><td class="acao"><button class="btn btn-pri btn-p" type="button" data-reservar="Beatriz Nunes">Reservar</button></td></tr>
+              <tr data-s="prop fora" data-dias="22"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Beatriz Nunes</a></span><small><span class="mono">BENU</span> · Scrum Master · Nível 6</small></div></td><td><div class="pessoa"><span>BAC</span><small>Porto Alegre</small></div></td><td class="skills-curtas">Scrum, Kanban<small>+1</small></td><td>Atende o esperado</td><td><div class="prazo"><span class="fora-txt"><svg class="i" aria-hidden="true"><use href="#i-triangle-alert"/></svg>22 dias · 7 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div><small>desde 11/02/2026</small></div></td><td><span class="status s-azul">Proposta · 1 gestor</span></td><td class="acao"><button class="mais" type="button" data-nome="Beatriz Nunes" data-acoes="reservar propor perfil" aria-label="Ações para Beatriz Nunes"></button></td></tr>
+              <tr data-s="sem fora" data-dias="19"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Rafael Lima</a></span><small><span class="mono">RALI</span> · Dev .NET · Nível 5</small></div></td><td><div class="pessoa"><span>.NET</span><small>Campinas</small></div></td><td class="skills-curtas">.NET, Azure<small>+1</small></td><td>Alto desempenho</td><td><div class="prazo"><span class="fora-txt"><svg class="i" aria-hidden="true"><use href="#i-triangle-alert"/></svg>19 dias · 4 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div><small>desde 16/02/2026</small></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="mais" type="button" data-nome="Rafael Lima" data-acoes="reservar propor perfil" aria-label="Ações para Rafael Lima"></button></td></tr>
+              <tr data-s="res fora" data-dias="17"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Lucas Andrade</a></span><small><span class="mono">LUAN</span> · Arquiteto · Nível 8</small></div></td><td><div class="pessoa"><span>Cloud</span><small>Recife</small></div></td><td class="skills-curtas">AWS, Microsserviços<small>+1</small></td><td>Excepcional</td><td><div class="prazo"><span class="fora-txt"><svg class="i" aria-hidden="true"><use href="#i-triangle-alert"/></svg>17 dias · 2 acima</span><div class="barra"><i class="fora" style="width:100%"></i></div><small>desde 18/02/2026</small></div></td><td><span class="status s-outro">Reserva de outro · fila 1</span></td><td class="acao"><button class="mais" type="button" data-nome="Lucas Andrade" data-acoes="fila propor perfil" aria-label="Ações para Lucas Andrade"></button></td></tr>
+              <tr data-s="res" data-dias="11"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Marina Costa</a></span><small><span class="mono">MACO</span> · Dev Java · Nível 6</small></div></td><td><div class="pessoa"><span>Java</span><small>São Paulo</small></div></td><td class="skills-curtas">Java, Spring Boot<small>+1</small></td><td>Atende o esperado</td><td><div class="prazo"><span>11 de 15 dias úteis</span><div class="barra"><i style="width:73%"></i></div><small>desde 26/02/2026</small></div></td><td><span class="status s-forte">Sua reserva</span></td><td class="acao"><button class="mais" type="button" data-nome="Marina Costa" data-acoes="confirmar perfil liberar" aria-label="Ações para Marina Costa"></button></td></tr>
+              <tr data-s="prop" data-dias="6"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Júlia Prado</a></span><small><span class="mono">JUPR</span> · QA · Nível 4</small></div></td><td><div class="pessoa"><span>QA</span><small>Curitiba</small></div></td><td class="skills-curtas">Cypress, Playwright<small>+1</small></td><td>Alto desempenho</td><td><div class="prazo"><span>6 de 15 dias úteis</span><div class="barra"><i style="width:40%"></i></div><small>desde 05/03/2026</small></div></td><td><span class="status s-azul">Proposta · 2 gestores</span></td><td class="acao"><button class="mais" type="button" data-nome="Júlia Prado" data-acoes="reservar propor perfil" aria-label="Ações para Júlia Prado"></button></td></tr>
+              <tr data-s="sem novo" data-dias="2"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Paulo Mendes</a><span class="tag-novo">Novo</span></span><small><span class="mono">PAME</span> · Analista de dados · Nível 5</small></div></td><td><div class="pessoa"><span>Data</span><small>Remoto</small></div></td><td class="skills-curtas">Python, Power BI<small>+1</small></td><td>Atende o esperado</td><td><div class="prazo"><span>2 de 15 dias úteis</span><div class="barra"><i style="width:13%"></i></div><small>desde 11/03/2026</small></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="mais" type="button" data-nome="Paulo Mendes" data-acoes="reservar propor perfil" aria-label="Ações para Paulo Mendes"></button></td></tr>
+              <tr data-s="sem novo" data-dias="1"><td><div class="pessoa"><span class="nome-linha"><a href="#perfil">Thiago Melo</a><span class="tag-novo">Novo</span></span><small><span class="mono">THME</span> · Dev Java · Nível 3</small></div></td><td><div class="pessoa"><span>Java</span><small>São Paulo</small></div></td><td class="skills-curtas">Java, Spring Boot</td><td>Atende o esperado</td><td><div class="prazo"><span>1 de 15 dias úteis</span><div class="barra"><i style="width:7%"></i></div><small>desde 12/03/2026</small></div></td><td><span class="status s-aberto">Sem proposta</span></td><td class="acao"><button class="mais" type="button" data-nome="Thiago Melo" data-acoes="reservar propor perfil" aria-label="Ações para Thiago Melo"></button></td></tr>
             </tbody>
           </table>
+          <div class="sem-resultado" id="disp-vazio" hidden><svg class="i i-20" aria-hidden="true"><use href="#i-user-search"/></svg><span>Ninguém com esses critérios nesta amostra.</span><button class="btn btn-ter btn-p" type="button" id="disp-limpar">Limpar seleção</button></div>
+          <div class="paginas"><span class="fino" id="disp-conta">Mostrando 7 de 41 · dados fictícios</span><div><button type="button" disabled aria-label="Página anterior"><svg class="i" aria-hidden="true"><use href="#i-chevron-left"/></svg></button><button type="button" id="disp-prox" aria-label="Próxima página"><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></button></div></div>
         </div>
-        <p class="fino">Mostrando 6 de 41 · dados fictícios</p>
       </div>
     </div>
   </div>
@@ -458,27 +675,30 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
     <div class="app-corpo">
       <nav class="menu" data-menu-slot aria-label="Menu"></nav>
       <div class="folha">
-        <div class="trilha"><a href="#disponiveis">Disponíveis</a><span>›</span><span>Marina Costa</span></div>
+        <div class="trilha"><a href="#disponiveis">Disponíveis</a><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg><span>Marina Costa</span></div>
         <div class="cabeca-perfil">
           <span class="avatar">MC</span>
           <div>
             <h1>Marina Costa</h1>
             <div class="linha"><span class="mono">MACO</span><span>Desenvolvedora Java</span><span>Nível 6</span><span>Prática Java</span><span>São Paulo · híbrido 2 dias</span></div>
           </div>
-          <div class="acoes"><span class="status s-forte">Reservada por você</span></div>
+          <div class="acoes"><span class="status s-forte">Sua reserva</span></div>
         </div>
         <div class="duas">
           <div class="lateral">
-            <div class="cartoes-2">
+            <div class="lateral">
               <div class="cartao">
                 <h2>Disponibilidade</h2>
                 <dl class="pares">
-                  <div><dt>Data de liberação</dt><dd>03/03/2026</dd></div>
-                  <div><dt>Dias disponível</dt><dd class="num">11 de 15 dias úteis</dd></div>
-                  <div><dt>Último projeto</dt><dd>Banco Atlas · KE <span class="mono">KE-198220</span></dd></div>
+                  <div><dt>Data de liberação</dt><dd>26/02/2026</dd></div>
+                                    <div><dt>Último projeto</dt><dd>Banco Atlas · <span class="mono">KE-198220</span></dd></div>
+                  <div><dt>Área do último projeto</dt><dd>Pagamentos</dd></div>
                   <div><dt>Gestor direto</dt><dd>Fernanda Rocha</dd></div>
+                  <div><dt>Telefone</dt><dd class="num">(11) 90000-0000</dd></div>
+                  <div><dt>Modelo de trabalho</dt><dd>Híbrido, 2 dias por semana</dd></div>
                 </dl>
-                <div class="prazo"><span>Prazo de alocação</span><div class="barra"><i style="width:73%"></i></div></div>
+                <p class="fino">Nota sobre o modelo: prefere projetos com reuniões pela manhã.</p>
+                <div class="prazo"><span>Prazo de alocação: 11 de 15 dias úteis</span><div class="barra"><i style="width:73%"></i></div></div>
               </div>
               <div class="cartao">
                 <h2>Perfil no STAR</h2>
@@ -489,6 +709,15 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
                   <div><dt>Currículo</dt><dd><a href="#perfil">Gerado do STAR · 26/02</a></dd></div>
                 </dl>
               </div>
+            </div>
+            <div class="cartao">
+              <header><h2>Vagas compatíveis</h2><a class="fino" href="#vagas">Ver todas as vagas</a></header>
+              <div class="lista-simples">
+                <div class="vaga-perfil"><div class="pct">87%</div><div class="pessoa"><b>Dev Java Sr · Nível 6</b><small>Banco Horizonte · <span class="mono">KE-204817</span> · início 01/04</small></div><span class="status s-forte">Sua reserva</span></div>
+                <div class="vaga-perfil"><div class="pct">74%</div><div class="pessoa"><b>Dev Java · Nível 6</b><small>Seguradora Sul · <span class="mono">KE-187655</span> · início 23/03</small></div><div class="cand-fim"><button class="mais" type="button" data-nome="Marina Costa" data-acoes="propor" aria-label="Ações para Marina Costa"></button></div></div>
+                <div class="vaga-perfil"><div class="pct">61%</div><div class="pessoa"><b>Dev Back-end · Nível 5</b><small>Banco Atlas · <span class="mono">KE-198301</span> · início 06/04</small></div><div class="cand-fim"><button class="mais" type="button" data-nome="Marina Costa" data-acoes="propor" aria-label="Ações para Marina Costa"></button></div></div>
+              </div>
+              <p class="fino">Mesmo cálculo da tela de vagas, visto a partir da pessoa.</p>
             </div>
             <div class="cartao">
               <header><h2>Skills</h2><span class="fino">Fonte: STAR, atualizado em 26/02/2026</span></header>
@@ -507,6 +736,22 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
               </div>
             </div>
             <div class="cartao">
+              <header><h2>Notas sobre a pessoa</h2><span class="fino">Visíveis para todos os gestores</span></header>
+              <div class="lista-simples">
+                <div class="nota-pessoa"><span>Currículo revisado com a pessoa e atualizado com o último projeto.</span><small>Carla Dias · Staffing · 05/03/2026</small></div>
+                <div class="nota-pessoa"><span>Disponível para entrevistas a partir de 09/03. Prefere o modelo híbrido.</span><small>Carla Dias · Staffing · 03/03/2026</small></div>
+              </div>
+            </div>
+            <div class="cartao">
+              <h2>Projetos internos</h2>
+              <dl class="pares">
+                <div><dt>Projeto</dt><dd>Academia interna de Kafka</dd></div>
+                <div><dt>Desde</dt><dd>05/03/2026</dd></div>
+                <div><dt>Solicitado por</dt><dd>Tiago Ramos</dd></div>
+              </dl>
+              <p class="fino">Quem está em projeto interno fica bloqueado para alocação por alguns dias.</p>
+            </div>
+            <div class="cartao">
               <h2>Ausências e férias</h2>
               <dl class="pares">
                 <div><dt>Férias marcadas</dt><dd>06/04 a 15/04/2026</dd></div>
@@ -518,12 +763,12 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
           <aside class="lateral">
             <div class="acao-painel">
               <h2>Sua reserva</h2>
-              <div style="font-size:.875rem">Para <b>Banco Horizonte</b> · Dev Java Sr · KE <span class="mono">KE-204817</span></div>
-              <div class="aviso atencao" style="grid-template-columns:auto minmax(0,1fr)"><span class="ic" aria-hidden="true">!</span><div><b>Vence hoje às 23h59</b><p>Começou em 11/03 às 14h20. Como foi depois do meio-dia, a contagem começou no dia seguinte.</p></div></div>
+              <div style="font-size:.875rem">Para <b>Banco Horizonte</b> · Dev Java Sr · <span class="mono">KE-204817</span></div>
+              <div class="aviso atencao" style="grid-template-columns:auto minmax(0,1fr)"><span class="ic" aria-hidden="true"><svg class="i i-20" aria-hidden="true"><use href="#i-triangle-alert"/></svg></span><div><b>Vence hoje às 23h59</b><p>Começou em 11/03 às 14h20. Como foi depois do meio-dia, a contagem começou no dia seguinte.</p></div></div>
               <button class="btn btn-pri" type="button" id="b-alocar">Confirmar alocação</button>
               <button class="btn btn-sec" type="button" disabled title="Só gestores IDU podem estender reservas">Estender por 2 dias úteis</button>
               <p class="fino">Só gestores IDU podem estender. Para mais prazo, fale com o time de Staffing.</p>
-              <button class="btn btn-ter" type="button">Liberar reserva</button>
+              <button class="btn btn-ter" type="button" id="b-liberar-perfil">Cancelar reserva</button>
             </div>
             <div class="cartao">
               <h2>Fila de reservas</h2>
@@ -534,12 +779,21 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
               <p class="fino">Se a sua reserva vencer, a de Tiago começa na hora e ele é avisado.</p>
             </div>
             <div class="cartao">
+              <h2>Situação do processo</h2>
+              <ul class="checklist">
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Sabe da desalocação</span><span></span></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Perfil no STAR acima de 80%</span><span class="fino num">92%</span></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Entrevista com o Staffing</span><span class="fino num">24/02</span></li>
+                <li><span class="pend" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-clock"/></svg></span><span>Entrevista com o cliente</span><span class="fino">Não marcada</span></li>
+              </ul>
+            </div>
+            <div class="cartao">
               <h2>Histórico</h2>
               <ul class="linha-tempo">
-                <li class="atual"><div><b>Reservada por você</b><small>11/03 às 14h20 · Banco Horizonte</small></div></li>
+                <li class="atual"><div><b>Sua reserva começou</b><small>11/03 às 14h20 · Banco Horizonte</small></div></li>
                 <li><div><b>Proposta por Tiago Ramos</b><small>10/03 · Seguradora Sul</small></div></li>
-                <li><div><b>Pedido aceito pelo Staffing</b><small>03/03 · Carla Dias</small></div></li>
-                <li><div><b>Pedido de liberação enviado</b><small>17/02 · Fernanda Rocha</small></div></li>
+                <li><div><b>Requisição aceita pelo Staffing</b><small>26/02 · Carla Dias</small></div></li>
+                <li><div><b>Requisição de liberação enviada</b><small>17/02 · Fernanda Rocha</small></div></li>
               </ul>
             </div>
           </aside>
@@ -551,30 +805,32 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
 
 <!-- ============ LIBERAÇÃO ============ -->
 <section class="tela" id="t-liberacao" data-perfil="gestor" data-menu="liberacao">
-  <p class="nota-tela"><b>Pedido de liberação</b>As regras aparecem no campo, antes do envio. Mude a nota geral para 1 ou 2 e veja "Recomendo" ser desabilitado.</p>
+  <p class="nota-tela"><b>Nova requisição</b>As regras aparecem no campo, antes do envio. Mude a nota geral para 1 ou 2 e veja "Recomendo" ser desabilitado.</p>
   <div class="app">
     <div class="app-topo" data-topo></div>
     <div class="app-corpo">
       <nav class="menu" data-menu-slot aria-label="Menu"></nav>
       <div class="folha">
-        <div class="cab"><div><h1>Pedido de liberação</h1><p class="sub">Leva cerca de 8 minutos. O rascunho é salvo sozinho.</p></div></div>
-        <div class="passos" aria-label="Etapas">
-          <div class="passo feito"><b>1 · Dados básicos</b>Concluído</div>
-          <div class="passo feito"><b>2 · Último projeto</b>Concluído</div>
-          <div class="passo feito"><b>3 · Conhecimentos</b>Concluído</div>
-          <div class="passo atual"><b>4 · Avaliação</b>Em preenchimento</div>
+        <div class="cab"><div><h1>Nova requisição de liberação</h1><p class="sub">Leva cerca de 8 minutos. O rascunho é salvo sozinho.</p></div></div>
+        <div class="passos" aria-label="Etapas" id="l-passos">
+          <div class="passo atual"><b>Dados básicos</b><span>Em preenchimento</span></div>
+          <div class="passo afazer"><b>Último projeto</b><span>A fazer</span></div>
+          <div class="passo afazer"><b>Conhecimentos</b><span>A fazer</span></div>
+          <div class="passo afazer"><b>Avaliação</b><span>A fazer</span></div>
         </div>
         <form class="form" id="form-lib" onsubmit="return false">
           <fieldset>
             <legend>Pessoa</legend>
             <div class="campos">
-              <div class="campo"><label for="l-pessoa">Quem será liberado</label><input id="l-pessoa" value="Rafael Lima · RALI · Dev .NET · Nível 5" readonly></div>
-              <div class="campo"><label for="l-motivo">Motivo</label><select id="l-motivo"><option>Fim de projeto</option><option>Problemas de desempenho</option><option>Licença médica</option><option>Outro motivo</option></select></div>
-              <div class="campo"><label for="l-data">Data de liberação</label><input id="l-data" value="24/03/2026"><span class="ajuda">Sugerimos hoje + 15 dias, o prazo que o Staffing tem para alocar.</span></div>
-              <div class="campo"><span class="lbl">Perfil no STAR</span><div class="star"><div style="display:flex;justify-content:space-between;font-size:.875rem"><span>86% preenchido</span><span class="fino">mínimo 80%</span></div><div class="barra" style="height:6px"><i class="ok" style="width:86%"></i></div></div><span class="ajuda">Dados do gestor direto e do último projeto vieram do SuccessFactors e do Kantata.</span></div>
+              <div class="campo"><label for="l-pessoa">Quem será liberado *</label><input id="l-pessoa" list="l-time" placeholder="Busque por nome ou sigla" autocomplete="off" required><datalist id="l-time"><option value="Gustavo Reis · GURE · Dev Java · Nível 5"></option><option value="Estela Uchoa · ESUC · Analista de dados · Nível 6"></option><option value="Pedro Paiva · PEPA · DevOps · Nível 5"></option></datalist><span class="ajuda">Pessoas do seu time. Os dados vêm do SuccessFactors, do Kantata e do STAR.</span><span class="msg-erro" id="l-pessoa-erro" hidden>Escolha a pessoa para continuar.</span></div>
+              <div class="campo"><label for="l-motivo">Motivo</label><select id="l-motivo" aria-describedby="l-motivo-ajuda"><option>Fim de projeto</option><option>Renovação de projeto</option><option>Problemas de desempenho</option><option>Licença médica</option><option>Outro motivo</option></select><span class="ajuda" id="l-motivo-ajuda">Depois de aceito, a pessoa entra em Disponíveis.</span></div>
+              <div class="campo"><label for="l-data">Data de liberação</label><input id="l-data" type="date" value="2026-03-28"><span class="ajuda">Sugerimos hoje + 15 dias, o prazo que o Staffing tem para alocar.</span></div>
+              <div class="campo"><span class="lbl" id="lbl-ciente">A pessoa já sabe da desalocação?</span><div class="opcoes" role="radiogroup" aria-labelledby="lbl-ciente"><label class="opcao"><input type="radio" name="ciente" checked><span>Sim, já conversamos</span></label><label class="opcao"><input type="radio" name="ciente"><span>Ainda não</span></label></div></div>
+              <div class="campo"><span class="lbl" id="lbl-banco">A pessoa tem banco de horas?</span><div class="opcoes" role="radiogroup" aria-labelledby="lbl-banco"><label class="opcao"><input type="radio" name="banco" value="sim"><span>Sim</span></label><label class="opcao"><input type="radio" name="banco" value="nao" checked><span>Não</span></label></div><span class="ajuda" id="l-banco-ajuda">Confirme com a pessoa antes de enviar.</span></div>
+              <div class="campo"><span class="lbl">Perfil no STAR</span><div class="star"><div style="display:flex;justify-content:space-between;font-size:.875rem"><span id="l-star-txt">Escolha a pessoa</span><span class="fino">mínimo 80%</span></div><div class="barra" style="height:6px"><i class="ok" id="l-star-barra" style="width:0"></i></div></div><span class="ajuda" id="l-star-ajuda">O preenchimento aparece aqui.</span></div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset id="l-aval" hidden>
             <legend>Avaliação</legend>
             <div class="campo todo">
               <span class="lbl" id="lbl-nota">Nota geral</span>
@@ -599,11 +855,11 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
               <span class="lbl">Comportamento · de 1 a 5</span>
               <div class="notas-comp" id="comp"></div>
             </div>
-            <div class="campo todo"><label for="l-com">Comentário para quem vai receber essa pessoa</label><textarea id="l-com">Rafael aprende rápido e tem ótima relação com o cliente. Funciona melhor com metas claras e acompanhamento semanal.</textarea><span class="ajuda">Aparece no perfil para todos os gestores. Escreva pensando na próxima equipe.</span></div>
+            <div class="campo todo"><label for="l-com">Comentário para quem vai receber essa pessoa</label><textarea id="l-com">Aprende rápido e tem ótima relação com o cliente. Funciona melhor com metas claras e acompanhamento semanal.</textarea><span class="ajuda">Aparece no perfil para todos os gestores. Escreva pensando na próxima equipe.</span></div>
           </fieldset>
           <div class="rodape-form">
-            <span class="fino">Rascunho salvo às 10h42</span>
-            <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-ter" type="button">Voltar para conhecimentos</button><button class="btn btn-pri" type="button" id="b-enviar">Enviar para o Staffing</button></div>
+            <span class="fino" id="l-rodape">Escolha a pessoa para continuar</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-pri" type="button" id="b-enviar">Enviar para o Staffing</button></div>
           </div>
         </form>
       </div>
@@ -613,33 +869,33 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
 
 <!-- ============ RENOVAÇÃO ============ -->
 <section class="tela" id="t-renovacao" data-perfil="gestor" data-menu="renovacao">
-  <p class="nota-tela"><b>Em renovação</b>Contratos perto do fim. Cada linha tem as quatro decisões possíveis, incluindo não renovar e liberar, que antes ia por e-mail.</p>
+  <p class="nota-tela"><b>Em renovação</b>Contratos perto do fim. As pessoas entram aqui por uma requisição com o motivo "Renovação de projeto". Os três pontinhos reúnem as decisões, incluindo não renovar e liberar, que antes ia por e-mail.</p>
   <div class="app">
     <div class="app-topo" data-topo></div>
     <div class="app-corpo">
       <nav class="menu" data-menu-slot aria-label="Menu"></nav>
       <div class="folha">
         <div class="cab"><div><h1>Em renovação</h1><p class="sub">Se você não decidir até a data, a pessoa entra em Disponíveis automaticamente.</p></div></div>
-        <div class="aviso info"><span class="ic" aria-hidden="true">i</span><div><b>2 renovações vencem esta semana.</b> <span class="sub">Você pode adiar a data em até 10 dias.</span></div><span></span></div>
+        <div class="aviso info"><span class="ic" aria-hidden="true"><svg class="i i-20" aria-hidden="true"><use href="#i-info"/></svg></span><div><b>2 renovações vencem esta semana.</b> <span class="sub">Você pode adiar a data em até 10 dias.</span></div><span></span></div>
         <div class="lista">
           <table class="min">
-            <thead><tr><th>Pessoa</th><th>Projeto atual</th><th>Data de liberação</th><th>Situação</th><th><span class="fino" style="text-transform:none;letter-spacing:0">Decisão</span></th></tr></thead>
+            <thead><tr><th>Pessoa</th><th>Projeto atual</th><th>Data de liberação</th><th>Situação</th><th class="acao">Ações</th></tr></thead>
             <tbody>
-              <tr><td><div class="pessoa"><b>Camila Torres</b><small><span class="mono">CATO</span> · Dev Front-end · Nível 5</small></div></td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td><b>Hoje</b><br><span class="fino">13/03/2026</span></td><td><span class="status s-atencao">Vence hoje</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
-              <tr><td><div class="pessoa"><b>Diego Faria</b><small><span class="mono">DIFA</span> · DevOps · Nível 6</small></div></td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td>17/03/2026<br><span class="fino">em 2 dias úteis</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
-              <tr><td><div class="pessoa"><b>Helena Prates</b><small><span class="mono">HEPR</span> · Analista de negócios · Nível 7</small></div></td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td>27/03/2026<br><span class="fino">em 10 dias úteis · adiada 1 vez</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><div style="display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap"><button class="btn btn-pri btn-p" type="button">Renovar</button><button class="btn btn-sec btn-p" type="button">Adiar data</button><button class="btn btn-ter btn-p" type="button">Não renovar e liberar</button></div></td></tr>
+              <tr><td><div class="pessoa"><b>Camila Torres</b><small><span class="mono">CATO</span> · Dev Front-end · Nível 5</small></div></td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td><b>Hoje</b><br><span class="fino">13/03/2026</span></td><td><span class="status s-atencao">Vence hoje</span></td><td class="acao"><button class="mais" type="button" data-nome="Camila Torres" data-acoes="renovar adiar naorenovar" aria-label="Ações para Camila Torres"></button></td></tr>
+              <tr><td><div class="pessoa"><b>Diego Faria</b><small><span class="mono">DIFA</span> · DevOps · Nível 6</small></div></td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td>17/03/2026<br><span class="fino">em 2 dias úteis</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><button class="mais" type="button" data-nome="Diego Faria" data-acoes="renovar adiar naorenovar" aria-label="Ações para Diego Faria"></button></td></tr>
+              <tr><td><div class="pessoa"><b>Helena Prates</b><small><span class="mono">HEPR</span> · Analista de negócios · Nível 7</small></div></td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td>27/03/2026<br><span class="fino">em 10 dias úteis · adiada 1 vez</span></td><td><span class="status s-azul">Em renovação</span></td><td class="acao"><button class="mais" type="button" data-nome="Helena Prates" data-acoes="renovar adiar naorenovar" aria-label="Ações para Helena Prates"></button></td></tr>
             </tbody>
           </table>
         </div>
-        <div class="cartao">
-          <h2>Renovar Camila Torres</h2>
-          <div class="campo"><span class="lbl" id="lbl-ren">Onde ela continua?</span>
+        <div class="cartao" id="ren-painel" hidden>
+          <h2 id="ren-titulo">Renovar Camila Torres</h2>
+          <div class="campo"><span class="lbl" id="lbl-ren">Onde a pessoa continua?</span>
             <div class="opcoes" role="radiogroup" aria-labelledby="lbl-ren">
-              <label class="opcao"><input type="radio" name="ren" checked><span>No projeto atual · Seguradora Sul</span></label>
+              <label class="opcao"><input type="radio" name="ren" checked><span id="ren-atual">No projeto atual · Seguradora Sul</span></label>
               <label class="opcao"><input type="radio" name="ren"><span>Em um novo projeto</span></label>
             </div>
           </div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-pri" type="button">Confirmar renovação</button><button class="btn btn-ter" type="button">Cancelar</button></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-pri" type="button" id="ren-ok">Confirmar renovação</button><button class="btn btn-ter" type="button" id="ren-cancelar">Cancelar</button></div>
         </div>
       </div>
     </div>
@@ -679,9 +935,9 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
               <p class="vaga-desc"><b style="color:var(--texto)">Notas da vaga:</b> APIs de pagamento em Java e Spring Boot, mensageria com Kafka, inglês para reuniões com o time da Alemanha.</p>
             </div>
             <div class="compat">
-              <div class="cand"><div class="pct">87%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Marina Costa</a><small>Dev Java · Nível 6 · 11 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot, Kafka em nível alto</span><span>Mesmo cargo</span><span>Mesmo nível</span></div></div><span class="status s-forte">Reservada por você</span></div>
-              <div class="cand"><div class="pct">70%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Gustavo Reis</a><small>Dev Java · Nível 5 · 3 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot</span><span>Mesmo cargo</span><span class="nao">Um nível abaixo</span></div></div><button class="btn btn-sec btn-p" type="button">Propor</button></div>
-              <div class="cand"><div class="pct">53%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Rafael Lima</a><small>Dev .NET · Nível 5 · 19 dias úteis disponível</small><div class="motivos"><span>Kafka</span><span class="nao">Outro cargo</span><span class="nao">Um nível abaixo</span></div></div><button class="btn btn-sec btn-p" type="button">Propor</button></div>
+              <div class="cand"><div class="pct">87%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Marina Costa</a><small>Dev Java · Nível 6 · 11 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot, Kafka em nível alto</span><span>Mesmo cargo</span><span>Mesmo nível</span></div></div><div class="cand-fim"><span class="status s-forte">Sua reserva</span><button class="mais" type="button" data-nome="Marina Costa" data-acoes="confirmar perfil liberar" aria-label="Ações para Marina Costa"></button></div></div>
+              <div class="cand"><div class="pct">70%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Gustavo Reis</a><small>Dev Java · Nível 5 · 3 dias úteis disponível</small><div class="motivos"><span>Java, Spring Boot</span><span>Mesmo cargo</span><span class="nao">Um nível abaixo</span></div></div><div class="cand-fim"><span class="status s-aberto">Sem proposta</span><button class="mais" type="button" data-nome="Gustavo Reis" data-acoes="propor reservar perfil" aria-label="Ações para Gustavo Reis"></button></div></div>
+              <div class="cand"><div class="pct">53%<small>compatível</small></div><div class="pessoa"><a href="#perfil">Rafael Lima</a><small>Dev .NET · Nível 5 · 19 dias úteis disponível</small><div class="motivos"><span>Kafka</span><span class="nao">Outro cargo</span><span class="nao">Um nível abaixo</span></div></div><div class="cand-fim"><span class="status s-aberto">Sem proposta</span><button class="mais" type="button" data-nome="Rafael Lima" data-acoes="propor reservar perfil" aria-label="Ações para Rafael Lima"></button></div></div>
             </div>
             <p class="fino">Mostramos até 10 pessoas, da mais para a menos compatível. Inclui quem tem proposta ou reserva de outro gestor.</p>
           </div>
@@ -691,21 +947,229 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   </div>
 </section>
 
-<!-- ============ TRIAGEM ============ -->
-<section class="tela" id="t-triagem" data-perfil="staffing" data-menu="recebidos">
-  <p class="nota-tela"><b>Pedidos recebidos</b>Visão do Staffing. O checklist mostra o que falta antes de aceitar, e cada resposta avisa o gestor na hora.</p>
+<!-- ============ PRECISA DE VOCÊ ============ -->
+<section class="tela" id="t-caixa" data-perfil="gestor" data-menu="caixa">
+  <p class="nota-tela"><b>Precisa de você</b>A caixa de entrada do gestor. Reúne só o que depende de uma resposta sua, do mais urgente para o menos urgente.</p>
   <div class="app">
     <div class="app-topo" data-topo></div>
     <div class="app-corpo">
       <nav class="menu" data-menu-slot aria-label="Menu"></nav>
       <div class="folha">
-        <div class="cab"><div><h1>Pedidos recebidos</h1><p class="sub">5 aguardando análise · 2 com informação pendente</p></div></div>
+        <div class="cab"><div><h1>Precisa de você</h1><p class="sub" id="caixa-sub">4 itens aguardando sua resposta</p></div></div>
+        <div class="lista" id="caixa-lista">
+          <table class="min">
+            <thead><tr><th>O que aconteceu</th><th>Pessoa</th><th>Prazo</th><th class="acao">Ações</th></tr></thead>
+            <tbody id="caixa-itens">
+              <tr><td><b>Reserva vence hoje</b><br><span class="fino">Confirme a alocação, cancele a reserva ou peça mais prazo ao Staffing.</span></td><td><div class="pessoa"><a href="#perfil">Marina Costa</a><small>Banco Horizonte · <span class="mono">KE-204817</span></small></div></td><td><span class="status s-atencao">Hoje, 23h59</span></td><td class="acao"><a class="btn btn-sec btn-p" href="#perfil">Ver reserva</a></td></tr>
+              <tr><td><b>Renovação vence hoje</b><br><span class="fino">Renove, adie a data ou libere a pessoa.</span></td><td><div class="pessoa"><a href="#perfil">Camila Torres</a><small>Seguradora Sul · <span class="mono">KE-187402</span></small></div></td><td><span class="status s-atencao">Hoje</span></td><td class="acao"><button class="btn btn-sec btn-p" type="button" data-ir-renovar>Decidir renovação</button></td></tr>
+              <tr><td><b>Requisição devolvida pelo Staffing</b><br><span class="fino">Falta o currículo em inglês e a foto do patrimônio do notebook.</span></td><td><div class="pessoa"><a href="#perfil">Igor Santana</a><small>Tech Lead · Nível 7</small></div></td><td><span class="status s-azul">Até 18/03</span></td><td class="acao"><button class="btn btn-sec btn-p" type="button" data-ir-corrigir>Corrigir requisição</button></td></tr>
+              <tr id="caixa-lucas"><td><b>Informe por que a reserva não andou</b><br><span class="fino">A reserva expirou em 10/03. O motivo ajuda a melhorar a gestão de disponíveis.</span></td><td><div class="pessoa"><a href="#perfil">Lucas Andrade</a><small>Varejo Norte · <span class="mono">KE-201133</span></small></div></td><td><span class="status s-neutro">Sem prazo</span></td><td class="acao"><button class="btn btn-sec btn-p" type="button" data-motivo-lucas>Informar motivo</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fim-caixa" id="caixa-vazia" hidden><svg class="i i-20" aria-hidden="true"><use href="#i-inbox"/></svg>Nada precisa de você agora. Avisamos aqui e no sino quando algo chegar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVIADOS ============ -->
+<section class="tela" id="t-enviados" data-perfil="gestor" data-menu="enviados">
+  <p class="nota-tela"><b>Enviados</b>O que aconteceu com cada requisição de liberação que você criou. Aceita, a pessoa vai para Disponíveis. Afastada, vai para Afastados.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Enviados</h1><p class="sub">Requisições de liberação criadas por você</p></div></div>
+        <div class="abas" id="env-cont" role="group" aria-label="Filtrar por situação">
+          <button class="aba ativo" type="button" data-f="todas" aria-pressed="true">Todas <b>3</b></button>
+          <button class="aba" type="button" data-f="analise" aria-pressed="false">Em análise <b data-env="analise">1</b></button>
+          <button class="aba alerta" type="button" data-f="falta" aria-pressed="false">Falta informação <b data-env="falta">1</b></button>
+          <button class="aba" type="button" data-f="recusado" aria-pressed="false">Recusadas <b>1</b></button>
+        </div>
+        <div class="lista">
+          <table class="min" id="tab-env">
+            <thead><tr><th>Pessoa</th><th>Enviado em</th><th>Liberação</th><th>Prazo do Staffing</th><th>Situação</th><th class="acao">Ações</th></tr></thead>
+            <tbody>
+              <tr class="linha-acao sel" data-s="falta" data-ped="igor"><td><div class="pessoa"><b>Igor Santana</b><small><span class="mono">IGSA</span> · Tech Lead · Nível 7</small></div></td><td class="num">05/03/2026</td><td class="num">20/03/2026</td><td>Parado até você responder</td><td data-st><span class="status s-atencao">Falta informação</span></td><td class="acao"><button class="mais" type="button" data-nome="Igor Santana" data-acoes="corrigir detalhes cancelar" aria-label="Ações para Igor Santana"></button></td></tr>
+              <tr class="linha-acao" data-s="analise" data-ped="bruno"><td><div class="pessoa"><b>Bruno Pires</b><small><span class="mono">BRPI</span> · Mobile · Nível 5</small></div></td><td class="num">11/03/2026</td><td class="num">27/03/2026</td><td>até 18/03 · 3 dias úteis</td><td data-st><span class="status s-azul">Em análise</span></td><td class="acao"><button class="mais" type="button" data-nome="Bruno Pires" data-acoes="detalhes cancelar" aria-label="Ações para Bruno Pires"></button></td></tr>
+              <tr class="linha-acao" data-s="recusado" data-ped="aline"><td><div class="pessoa"><b>Aline Duarte</b><small><span class="mono">ALDU</span> · SAP ABAP · Nível 6</small></div></td><td class="num">02/03/2026</td><td class="num">17/03/2026</td><td>Respondido em 04/03</td><td data-st><span class="status s-erro">Recusada</span></td><td class="acao"><button class="mais" type="button" data-nome="Aline Duarte" data-acoes="detalhes cancelar" aria-label="Ações para Aline Duarte"></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cartao" id="env-detalhe" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVAS E PROPOSTAS ============ -->
+<section class="tela" id="t-reservas" data-perfil="gestor" data-menu="reservas">
+  <p class="nota-tela"><b>Reservas e propostas</b>O que você reservou ou propôs, com a data de cada uma. O atalho "Todas as reservas" mostra a fila de todos os gestores, com quem pediu cada reserva.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Reservas e propostas</h1><p class="sub" id="res-sub">Só as suas</p></div>
+          <div class="alternar" role="group" aria-label="Quais mostrar" id="res-alt">
+            <button type="button" aria-pressed="true" data-v="minhas">Minhas</button>
+            <button type="button" aria-pressed="false" data-v="todas">Todas as reservas</button>
+          </div>
+        </div>
+        <div class="lista">
+          <table class="min minhas" id="tab-res">
+            <thead><tr><th>Pessoa</th><th>Tipo</th><th>Vaga</th><th>Início</th><th>Fim</th><th>Solicitado por</th><th>Situação</th><th class="acao">Ações</th></tr></thead>
+            <tbody>
+              <tr data-v="minhas"><td><div class="pessoa"><a href="#perfil">Marina Costa</a><small><span class="mono">MACO</span> · Dev Java · Nível 6</small></div></td><td>Reserva</td><td>Banco Horizonte<br><span class="fino mono">KE-204817</span></td><td class="num">11/03</td><td class="num">13/03, 23h59</td><td>Você</td><td><span class="status s-atencao">Vence hoje</span></td><td class="acao"><button class="mais" type="button" data-nome="Marina Costa" data-acoes="confirmar perfil liberar" aria-label="Ações para Marina Costa"></button></td></tr>
+              <tr data-v="minhas" id="res-lucas"><td><div class="pessoa"><a href="#perfil">Lucas Andrade</a><small><span class="mono">LUAN</span> · Arquiteto · Nível 8</small></div></td><td>Reserva</td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td class="num">06/03</td><td class="num">10/03, 23h59</td><td>Você</td><td data-st><span class="status s-erro">Expirada · falta motivo</span></td><td class="acao"><button class="mais" type="button" data-nome="Lucas Andrade" data-acoes="motivo perfil" aria-label="Ações para Lucas Andrade"></button></td></tr>
+              <tr data-v="minhas"><td><div class="pessoa"><a href="#perfil">Júlia Prado</a><small><span class="mono">JUPR</span> · QA · Nível 4</small></div></td><td>Proposta</td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td class="fino">A definir</td><td class="fino">A definir</td><td>Você</td><td><span class="status s-azul">Proposta</span></td><td class="acao"><button class="mais" type="button" data-nome="Júlia Prado" data-acoes="reservar perfil retirar" aria-label="Ações para Júlia Prado"></button></td></tr>
+              <tr data-v="minhas"><td><div class="pessoa"><a href="#perfil">Beatriz Nunes</a><small><span class="mono">BENU</span> · Scrum Master · Nível 6</small></div></td><td>Proposta</td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td class="fino">A definir</td><td class="fino">A definir</td><td>Você</td><td><span class="status s-azul">Proposta</span></td><td class="acao"><button class="mais" type="button" data-nome="Beatriz Nunes" data-acoes="reservar perfil retirar" aria-label="Ações para Beatriz Nunes"></button></td></tr>
+              <tr data-v="todas" style="display:none"><td><div class="pessoa"><a href="#perfil">Lucas Andrade</a><small><span class="mono">LUAN</span> · Arquiteto · Nível 8</small></div></td><td>Reserva</td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td class="num">12/03</td><td class="num">16/03, 23h59</td><td>Tiago Ramos</td><td><span class="status s-forte">Ativa · fila 1</span></td><td class="acao"><button class="mais" type="button" data-nome="Lucas Andrade" data-acoes="fila perfil" aria-label="Ações para Lucas Andrade"></button></td></tr>
+              <tr data-v="todas" style="display:none"><td><div class="pessoa"><a href="#perfil">Marina Costa</a><small><span class="mono">MACO</span> · Dev Java · Nível 6</small></div></td><td>Reserva</td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td class="fino">A definir</td><td class="fino">A definir</td><td>Tiago Ramos</td><td><span class="status s-neutro">Fila · próximo</span></td><td class="acao"><button class="mais" type="button" data-nome="Marina Costa" data-acoes="perfil" aria-label="Ações para Marina Costa"></button></td></tr>
+              <tr data-v="todas" style="display:none"><td><div class="pessoa"><a href="#perfil">Camila Reis</a><small><span class="mono">CARE</span> · Dev Python · Nível 5</small></div></td><td>Reserva</td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td class="num">11/03</td><td class="num">13/03, 23h59</td><td>André Lopes</td><td><span class="status s-forte">Ativa · fila 1</span></td><td class="acao"><button class="mais" type="button" data-nome="Camila Reis" data-acoes="fila perfil" aria-label="Ações para Camila Reis"></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFASTADOS ============ -->
+<section class="tela" id="t-afastados" data-perfil="gestor" data-menu="afastados">
+  <p class="nota-tela"><b>Afastados</b>Requisições suas de pessoas em afastamento ou licença. Quando a pessoa volta, o Staffing aceita a requisição e ela entra em Disponíveis.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Afastados</h1><p class="sub">Pessoas das suas requisições que estão afastadas</p></div></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Pessoa</th><th>Motivo</th><th>Desde</th><th>Volta prevista</th><th>Situação</th><th class="acao">Ações</th></tr></thead>
+            <tbody>
+              <tr><td><div class="pessoa"><a href="#perfil">Sofia Lacerda</a><small><span class="mono">SOLA</span> · QA · Nível 4</small></div></td><td>Licença médica</td><td class="num">02/02/2026</td><td class="num"><b>06/04/2026</b></td><td><span class="status s-neutro">Afastada</span></td><td class="acao"><button class="mais" type="button" data-nome="Sofia Lacerda" data-acoes="perfil" aria-label="Ações para Sofia Lacerda"></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fino">Quando a data de volta ainda não foi informada, a coluna mostra "A confirmar".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALOCADOS ============ -->
+<section class="tela" id="t-alocados" data-perfil="gestor" data-menu="alocados">
+  <p class="nota-tela"><b>Alocados</b>Quem já foi alocado, em toda a empresa. Só nas alocações feitas por você aparece a opção de pedir a liberação.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Alocados</h1><p class="sub">118 pessoas alocadas a partir da plataforma</p></div></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Pessoa</th><th>Prática</th><th>Projeto</th><th>Início no projeto</th><th>Alocado por</th><th class="acao">Ações</th></tr></thead>
+            <tbody>
+              <tr><td><div class="pessoa"><a href="#perfil">Gustavo Reis</a><small><span class="mono">GURE</span> · Dev Java · Nível 5</small></div></td><td>Java</td><td>Banco Horizonte<br><span class="fino mono">KE-204102</span></td><td class="num">02/03/2026</td><td>Você</td><td class="acao"><button class="mais" type="button" data-nome="Gustavo Reis" data-acoes="perfil pedir" aria-label="Ações para Gustavo Reis"></button></td></tr>
+              <tr><td><div class="pessoa"><a href="#perfil">Renata Alves</a><small><span class="mono">REAL</span> · UX Designer · Nível 5</small></div></td><td>Design</td><td>Varejo Norte<br><span class="fino mono">KE-201133</span></td><td class="num">23/02/2026</td><td>André Lopes</td><td class="acao"><button class="mais" type="button" data-nome="Renata Alves" data-acoes="perfil" aria-label="Ações para Renata Alves"></button></td></tr>
+              <tr><td><div class="pessoa"><a href="#perfil">Hugo Esteves</a><small><span class="mono">HUES</span> · Scrum Master · Nível 8</small></div></td><td>BAC</td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td class="num">09/02/2026</td><td>Tiago Ramos</td><td class="acao"><button class="mais" type="button" data-nome="Hugo Esteves" data-acoes="perfil" aria-label="Ações para Hugo Esteves"></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fino">Mostrando 3 de 118 · dados fictícios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RENOVADOS ============ -->
+<section class="tela" id="t-renovados" data-perfil="gestor" data-menu="renovados">
+  <p class="nota-tela"><b>Renovados</b>Renovações suas que já foram confirmadas. Se o projeto acabar, a liberação começa daqui.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Renovados</h1><p class="sub">11 renovações suas</p></div></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Pessoa</th><th>Prática</th><th>Projeto</th><th>Renovado em</th><th>Nova data de fim</th><th class="acao">Ações</th></tr></thead>
+            <tbody>
+              <tr><td><div class="pessoa"><a href="#perfil">Estela Uchoa</a><small><span class="mono">ESUC</span> · Analista de dados · Nível 6</small></div></td><td>Data</td><td>Banco Atlas<br><span class="fino mono">KE-198220</span></td><td class="num">27/02/2026</td><td class="num">31/08/2026</td><td class="acao"><button class="mais" type="button" data-nome="Estela Uchoa" data-acoes="perfil pedir" aria-label="Ações para Estela Uchoa"></button></td></tr>
+              <tr><td><div class="pessoa"><a href="#perfil">Pedro Paiva</a><small><span class="mono">PEPA</span> · DevOps · Nível 5</small></div></td><td>Cloud</td><td>Seguradora Sul<br><span class="fino mono">KE-187402</span></td><td class="num">16/02/2026</td><td class="num">30/06/2026</td><td class="acao"><button class="mais" type="button" data-nome="Pedro Paiva" data-acoes="perfil pedir" aria-label="Ações para Pedro Paiva"></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fino">Mostrando 2 de 11 · dados fictícios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VAGAS ENCERRADAS ============ -->
+<section class="tela" id="t-encerradas" data-perfil="gestor" data-menu="encerradas">
+  <p class="nota-tela"><b>Vagas encerradas</b>O que aconteceu com as vagas que já fecharam, para consulta.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Vagas encerradas</h1><p class="sub">Importadas do Kantata</p></div></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Vaga</th><th>Encerrada em</th><th>Resultado</th><th>Preenchida por</th></tr></thead>
+            <tbody>
+              <tr><td><div class="pessoa"><b>Dev Java · Nível 5</b><small>Banco Horizonte · <span class="mono">KE-204102</span></small></div></td><td class="num">02/03/2026</td><td><span class="status s-sucesso">Preenchida</span></td><td>Gustavo Reis</td></tr>
+              <tr><td><div class="pessoa"><b>Dev Python · Nível 4</b><small>Varejo Norte · <span class="mono">KE-199871</span></small></div></td><td class="num">24/02/2026</td><td><span class="status s-neutro">Cancelada pelo cliente</span></td><td class="fino">Ninguém</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJETOS INTERNOS ============ -->
+<section class="tela" id="t-internos" data-perfil="gestor" data-menu="internos">
+  <p class="nota-tela"><b>Projetos internos</b>Projetos da própria GFT para ocupar quem está disponível. Quem está em projeto interno fica bloqueado para alocação por alguns dias.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Projetos internos</h1><p class="sub">Pessoas disponíveis podem participar enquanto aguardam vaga</p></div></div>
+        <div class="lista">
+          <table class="min">
+            <thead><tr><th>Projeto</th><th>Responsável</th><th>Skills procuradas</th><th>Pessoas</th><th>Situação</th></tr></thead>
+            <tbody>
+              <tr><td><b>Academia interna de Kafka</b><br><span class="fino mono">KE-110482</span></td><td>Tiago Ramos</td><td>Java, Kafka</td><td class="num">3</td><td><span class="status s-sucesso">Aberto</span></td></tr>
+              <tr><td><b>Portal de benefícios</b><br><span class="fino mono">KE-110517</span></td><td>André Lopes</td><td>Angular, UX</td><td class="num">2</td><td><span class="status s-sucesso">Aberto</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAGEM ============ -->
+<section class="tela" id="t-triagem" data-perfil="staffing" data-menu="recebidos">
+  <p class="nota-tela"><b>Requisições recebidas</b>Visão do Staffing. O checklist mostra o que falta antes de aceitar, e cada resposta avisa o gestor na hora.</p>
+  <div class="app">
+    <div class="app-topo" data-topo></div>
+    <div class="app-corpo">
+      <nav class="menu" data-menu-slot aria-label="Menu"></nav>
+      <div class="folha">
+        <div class="cab"><div><h1>Requisições recebidas</h1><p class="sub">5 aguardando análise · 2 com informação pendente</p></div></div>
         <div class="duas duas-triagem">
           <div class="lista">
             <table>
-              <thead><tr><th>Pessoa</th><th>Pedido de</th><th>Liberação</th><th>Situação</th></tr></thead>
+              <thead><tr><th>Pessoa</th><th>Aberta por</th><th>Liberação</th><th>Situação</th></tr></thead>
               <tbody>
-                <tr class="sel"><td><div class="pessoa"><b>Rafael Lima</b><small>Dev .NET · Nível 5</small></div></td><td>Fernanda Rocha</td><td class="num">24/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
+                <tr class="sel"><td><div class="pessoa"><b>Natália Freitas</b><small>Dev .NET · Nível 5</small></div></td><td>Fernanda Rocha</td><td class="num">24/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
                 <tr><td><div class="pessoa"><b>Tânia Moreira</b><small>Dev Python · Nível 4</small></div></td><td>André Lopes</td><td class="num">27/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
                 <tr><td><div class="pessoa"><b>Igor Santana</b><small>Tech Lead · Nível 7</small></div></td><td>Luana Souza</td><td class="num">20/03</td><td><span class="status s-atencao">Falta informação</span></td></tr>
                 <tr><td><div class="pessoa"><b>Renata Alves</b><small>UX Designer · Nível 5</small></div></td><td>Fernanda Rocha</td><td class="num">31/03</td><td><span class="status s-neutro">Em análise</span></td></tr>
@@ -714,7 +1178,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
           </div>
           <aside class="lateral">
             <div class="cartao">
-              <header><h2>Rafael Lima</h2><span class="fino">enviado há 2 dias</span></header>
+              <header><h2>Natália Freitas</h2><span class="fino">enviado há 2 dias</span></header>
               <dl class="pares">
                 <div><dt>Motivo</dt><dd>Fim de projeto</dd></div>
                 <div><dt>Nota geral</dt><dd>4 · Alto desempenho</dd></div>
@@ -725,12 +1189,12 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
             <div class="cartao">
               <header><h2>Antes de aceitar</h2><span class="fino">4 de 6</span></header>
               <ul class="checklist">
-                <li><span class="ok">✓</span><span>STAR acima de 80%<small>86% preenchido</small></span><span></span></li>
-                <li><span class="ok">✓</span><span>Mais de 90 dias de casa<small>desde 05/2022</small></span><span></span></li>
-                <li><span class="ok">✓</span><span>Entrevista com o Staffing<small>feita em 13/03</small></span><span></span></li>
-                <li><span class="ok">✓</span><span>Inglês, cidade e telefone<small>confirmados</small></span><span></span></li>
-                <li><span class="pend">!</span><span>Currículo em inglês<small>falta o arquivo</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
-                <li><span class="pend">!</span><span>Notebook da GFT<small>sem foto do patrimônio</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>STAR acima de 80%<small>86% preenchido</small></span><span></span></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Mais de 90 dias de casa<small>desde 05/2022</small></span><span></span></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Entrevista com o Staffing<small>feita em 13/03</small></span><span></span></li>
+                <li><span class="ok" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-check"/></svg></span><span>Inglês, cidade e telefone<small>confirmados</small></span><span></span></li>
+                <li><span class="pend" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-clock"/></svg></span><span>Currículo em inglês<small>falta o arquivo</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
+                <li><span class="pend" aria-hidden="true"><svg class="i i-12" aria-hidden="true"><use href="#i-clock"/></svg></span><span>Notebook da GFT<small>sem foto do patrimônio</small></span><button class="btn btn-ter btn-p" type="button">Pedir</button></li>
               </ul>
             </div>
             <div class="cartao">
@@ -740,7 +1204,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
                 <button class="btn btn-sec" type="button">Pedir informação <small>volta ao gestor</small></button>
                 <button class="btn btn-sec" type="button">Marcar como afastado <small>com data de volta</small></button>
                 <button class="btn btn-dest" type="button">Recusar <small>com motivo</small></button>
-                <button class="btn btn-ter" type="button">Cancelar pedido</button>
+                <button class="btn btn-ter" type="button">Cancelar requisição</button>
               </div>
             </div>
           </aside>
@@ -764,8 +1228,8 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
         <div class="cel-cartao">
           <h2>Onde você está</h2>
           <ul class="etapas">
-            <li class="feito"><div>Liberação aceita<small>03/03 · Staffing</small></div></li>
-            <li class="feito"><div>Disponível para vagas<small>desde 06/03</small></div></li>
+            <li class="feito"><div>Liberação aceita<small>26/02 · Staffing</small></div></li>
+            <li class="feito"><div>Disponível para vagas<small>desde 26/02</small></div></li>
             <li class="atual"><div><b>Proposta para 2 vagas</b><small>Os gestores estão avaliando seu perfil</small></div></li>
             <li><div>Reserva<small>quando um gestor pedir exclusividade</small></div></li>
             <li><div>Alocação</div></li>
@@ -783,7 +1247,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
           <button class="btn btn-ter btn-p" type="button" style="justify-self:start">Atualizar no STAR</button>
         </div>
       </div>
-      <div class="cel-nav"><span class="ativo">Status</span><span>Vagas</span><span>Projetos internos</span><span>Perfil</span></div>
+      <div class="cel-nav"><span class="ativo"><svg class="i i-20" aria-hidden="true"><use href="#i-house"/></svg>Status</span><span><svg class="i i-20" aria-hidden="true"><use href="#i-briefcase"/></svg>Vagas</span><span><svg class="i i-20" aria-hidden="true"><use href="#i-folder"/></svg>Projetos internos</span><span><svg class="i i-20" aria-hidden="true"><use href="#i-user"/></svg>Perfil</span></div>
     </div>
     <div class="explica">
       <div class="cartao"><h2>O que o colaborador vê</h2><p>A etapa atual do processo, as vagas compatíveis e se foi proposto ou reservado. Não vê nome de gestor, avaliações nem anotações do Staffing.</p></div>
@@ -837,10 +1301,10 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
           </div>
         </div>
         <div class="cartao">
-          <header><h2>Quem pode ficar disponível nos próximos 30 dias</h2><span class="fino">pedidos enviados e renovações sem decisão · ilustrativo</span></header>
+          <header><h2>Quem pode ficar disponível nos próximos 30 dias</h2><span class="fino">requisições enviadas e renovações sem decisão · ilustrativo</span></header>
           <div class="previsao">
             <div class="prev"><span>Esta semana</span><b>4</b>2 renovações vencem</div>
-            <div class="prev"><span>Próxima semana</span><b>6</b>3 pedidos em análise</div>
+            <div class="prev"><span>Próxima semana</span><b>6</b>3 requisições em análise</div>
             <div class="prev"><span>Em 15 dias</span><b>3</b>1 volta de licença</div>
             <div class="prev"><span>Em 30 dias</span><b>5</b>fim de contratos</div>
           </div>
@@ -852,21 +1316,24 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
 
 </main>
 
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-t"><form class="dlg-in" id="dlg-form" method="dialog" novalidate></form></dialog>
+<div class="menu-acoes" id="menu-acoes" role="menu" hidden></div>
 <div class="toast" id="toast" hidden role="status" aria-live="polite"><span id="toast-txt"></span><button type="button" id="toast-desfazer">Desfazer</button></div>
 
 <script>
 (function () {
   if (/captura/.test(location.search)) document.documentElement.classList.add("captura");
+  function ic(n, c) { return '<svg class="i' + (c ? ' ' + c : '') + '" aria-hidden="true"><use href="#i-' + n + '"/></svg>'; }
+  var ICONES = { caixa: 'inbox', enviados: 'send', reservas: 'bookmark', renovacao: 'refresh-cw', afastados: 'circle-pause', disponiveis: 'users', alocados: 'user-check', renovados: 'calendar-check', vagas: 'briefcase', encerradas: 'archive', internos: 'folder', recebidos: 'inbox', pendencias: 'clipboard-list', indicadores: 'chart-column-big', relatorios: 'file-text', dados: 'refresh-cw' };
   var logo = '<div class="lockup"><svg viewBox="0 0 800 310" aria-hidden="true"><use href="#logo-gft"/></svg><span class="div"></span><span class="nome">Staffing</span></div>';
-  var sino = '<span class="sino" aria-label="3 notificações novas"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><i></i></span>';
   var perfis = {
-    gestor: { ini: 'LS', nome: 'Luana Souza', papel: 'Gestora', menu: [
-      ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['reservas', 'Minhas reservas', '2', '#perfil'], ['renovacao', 'Em renovação', '3', '#renovacao', true], ['alocados', 'Alocados', '118', '#disponiveis']]],
-      ['Pedidos de liberação', [['liberacao', 'Novo pedido', '', '#liberacao'], ['enviados', 'Enviados', '3', '#liberacao']]],
-      ['Vagas', [['vagas', 'Vagas abertas', '27', '#vagas'], ['encerradas', 'Vagas encerradas', '', '#vagas'], ['internos', 'Projetos internos', '', '#vagas']]]
+    gestor: { ini: 'LS', nome: 'Luana Souza', papel: 'Gestora', cta: ['liberacao', 'Nova requisição', '#liberacao'], menu: [
+      ['Minha caixa', [['caixa', 'Precisa de você', '4', '#caixa', true], ['enviados', 'Enviados', '3', '#enviados'], ['reservas', 'Reservas e propostas', '4', '#reservas'], ['renovacao', 'Em renovação', '3', '#renovacao'], ['afastados', 'Afastados', '1', '#afastados']]],
+      ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['alocados', 'Alocados', '118', '#alocados'], ['renovados', 'Renovados', '11', '#renovados']]],
+      ['Vagas', [['vagas', 'Abertas', '27', '#vagas'], ['encerradas', 'Encerradas', '', '#encerradas'], ['internos', 'Projetos internos', '', '#internos']]]
     ]},
     staffing: { ini: 'CD', nome: 'Carla Dias', papel: 'Staffing', menu: [
-      ['Pedidos de liberação', [['recebidos', 'Recebidos', '7', '#triagem', true], ['afastados', 'Afastados', '4', '#triagem']]],
+      ['Requisições de liberação', [['recebidos', 'Recebidas', '7', '#triagem', true], ['afastados', 'Afastados', '4', '#triagem']]],
       ['Pessoas', [['disponiveis', 'Disponíveis', '41', '#disponiveis'], ['pendencias', 'Pendências', '12', '#triagem', true], ['renovacao', 'Em renovação', '6', '#renovacao']]],
       ['Gestão', [['indicadores', 'Indicadores', '', '#lideranca'], ['relatorios', 'Relatórios', '', '#lideranca'], ['dados', 'Dados e integrações', '', '#triagem']]]
     ]},
@@ -877,19 +1344,21 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   };
   document.querySelectorAll('.tela[data-perfil]').forEach(function (tela) {
     var p = perfis[tela.dataset.perfil], ativo = tela.dataset.menu;
-    tela.querySelector('[data-topo]').innerHTML = logo +
-      '<div class="busca">Buscar por nome, sigla, skill, cidade ou KE</div>' + sino +
+    tela.querySelector('[data-topo]').innerHTML = '<button class="b-menu" type="button" aria-label="Abrir menu" aria-expanded="false">' + ic('menu', 'i-20') + '</button>' + logo +
+      '<label class="busca">' + ic('search') + '<input type="search" placeholder="Buscar por nome, sigla, skill, cidade ou KE" aria-label="Buscar"></label>' +
+      '<a class="sino" href="' + (tela.dataset.perfil === 'gestor' ? '#caixa' : '#' + tela.id.slice(2)) + '" aria-label="3 notificações novas">' + ic('bell', 'i-20') + '<i></i></a>' +
       '<div class="perfil-topo"><span><b>' + p.nome + '</b>' + p.papel + '</span><span class="avatar">' + p.ini + '</span></div>';
-    tela.querySelector('[data-menu-slot]').innerHTML = p.menu.map(function (b) {
+    tela.querySelector('[data-menu-slot]').innerHTML = (p.cta ? '<a class="novo-pedido' + (p.cta[0] === ativo ? ' ativo" aria-current="page' : '') + '" href="' + p.cta[2] + '">' + ic('plus') + '<span>' + p.cta[1] + '</span></a>' : '') + p.menu.map(function (b) {
       return '<div class="bloco"><span class="rotulo">' + b[0] + '</span>' + b[1].map(function (i) {
-        return '<a href="' + i[3] + '"' + (i[0] === ativo ? ' class="ativo" aria-current="page"' : '') + '>' + i[1] +
-          (i[2] ? ' <span class="n' + (i[4] ? ' alerta' : '') + '">' + i[2] + '</span>' : '') + '</a>';
+        return '<a href="' + i[3] + '"' + (i[0] === ativo ? ' class="ativo" aria-current="page"' : '') + '><span class="item">' + ic(ICONES[i[0]] || 'folder') + i[1] + '</span>' +
+          (i[2] ? ' <span class="n' + (i[4] ? ' alerta' : '') + '" data-cont="' + i[0] + '">' + i[2] + '</span>' : '') + '</a>';
       }).join('') + '</div>';
     }).join('');
   });
 
   // Troca de telas pelo hash
-  var nomes = ['disponiveis', 'perfil', 'liberacao', 'renovacao', 'vagas', 'triagem', 'colaborador', 'lideranca'];
+  var nomes = ['caixa', 'enviados', 'reservas', 'renovacao', 'afastados', 'disponiveis', 'alocados', 'renovados', 'perfil', 'liberacao', 'vagas', 'encerradas', 'internos', 'triagem', 'colaborador', 'lideranca'];
+  function ir(alvo) { mostrar(alvo); try { history.replaceState(null, '', '#' + alvo); } catch (err) {} }
   function mostrar(alvo) {
     var h = typeof alvo === 'string' ? alvo : (location.hash || '').slice(1);
     if (nomes.indexOf(h) < 0) h = 'disponiveis';
@@ -911,17 +1380,44 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   });
   mostrar();
 
-  // Filtros por contador
-  var cont = document.querySelectorAll('#t-disponiveis .contador');
-  cont.forEach(function (b) {
+  // Disponíveis: abas de situação combinadas com os destaques
+  var abasDisp = document.querySelectorAll('#disp-abas .aba'), rapidos = document.querySelectorAll('#disp-rapidos .rapido');
+  function filtrarDisp() {
+    var f = document.querySelector('#disp-abas .aba.ativo').dataset.f, n = 0;
+    var exig = Array.prototype.filter.call(rapidos, function (b) { return b.getAttribute('aria-pressed') === 'true'; }).map(function (b) { return b.dataset.f; });
+    document.querySelectorAll('#tab-disp tbody tr').forEach(function (tr) {
+      var tags = tr.dataset.s.split(' ');
+      var ok = (f === 'todas' || tags.indexOf(f) >= 0) && exig.every(function (x) { return tags.indexOf(x) >= 0; });
+      tr.hidden = !ok;
+      if (ok) n++;
+    });
+    document.getElementById('disp-vazio').hidden = n > 0;
+    document.querySelector('#tab-disp thead').hidden = n === 0;
+    document.getElementById('disp-conta').textContent = 'Mostrando ' + n + ' desta amostra · dados fictícios';
+    if (f === 'todas' && !exig.length) document.getElementById('disp-conta').textContent = 'Mostrando 7 de 41 · dados fictícios';
+  }
+  abasDisp.forEach(function (b) {
     b.addEventListener('click', function () {
-      cont.forEach(function (x) { x.classList.toggle('ativo', x === b); });
-      var f = b.dataset.f;
-      document.querySelectorAll('#tab-disp tbody tr').forEach(function (tr) {
-        tr.hidden = !(f === 'todas' || tr.dataset.s.split(' ').indexOf(f) >= 0);
-      });
+      abasDisp.forEach(function (x) { x.classList.toggle('ativo', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+      filtrarDisp();
     });
   });
+  rapidos.forEach(function (b) {
+    b.addEventListener('click', function () { b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); filtrarDisp(); });
+  });
+  document.getElementById('disp-limpar').addEventListener('click', function () {
+    abasDisp.forEach(function (x, i) { x.classList.toggle('ativo', i === 0); x.setAttribute('aria-pressed', String(i === 0)); });
+    rapidos.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    filtrarDisp();
+  });
+  document.getElementById('ordem-dias').addEventListener('click', function () {
+    var th = this.closest('th'), asc = th.getAttribute('aria-sort') === 'descending';
+    th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+    this.innerHTML = 'Dias disponível ' + ic(asc ? 'arrow-up' : 'arrow-down');
+    var corpo = document.querySelector('#tab-disp tbody');
+    Array.prototype.slice.call(corpo.children).sort(function (a, b) { return (asc ? 1 : -1) * (a.dataset.dias - b.dataset.dias); }).forEach(function (tr) { corpo.appendChild(tr); });
+  });
+  document.getElementById('disp-prox').addEventListener('click', function () { avisar('Este protótipo mostra só a primeira página.'); });
   document.querySelectorAll('.alternar button').forEach(function (b) {
     b.addEventListener('click', function () {
       var grupo = b.parentElement.querySelectorAll('button');
@@ -939,21 +1435,346 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
   }
   desfazer.addEventListener('click', function () { if (aoDesfazer) aoDesfazer(); toast.hidden = true; });
 
-  document.querySelectorAll('[data-reservar]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var tr = b.closest('tr'), st = tr.querySelector('.status'), antes = st.outerHTML, nome = b.dataset.reservar;
-      st.outerHTML = '<span class="status s-forte">Reserva sua</span>';
-      b.disabled = true; b.textContent = 'Reservado';
+  // Contadores do menu
+  function contagem(chave, delta) {
+    document.querySelectorAll('[data-cont="' + chave + '"]').forEach(function (n) {
+      n.textContent = String(Math.max(0, Number(n.textContent) + delta));
+    });
+  }
+
+  // Diálogo único: título, texto, campos e confirmação
+  var dlg = document.getElementById('dlg'), dlgForm = document.getElementById('dlg-form'), dlgOk, abridor;
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function abrirDialogo(o) {
+    abridor = document.activeElement;
+    var campos = (o.campos || []).map(function (c, i) {
+      var id = 'dlg-c' + i, ctl;
+      if (c.tipo === 'select') ctl = '<select id="' + id + '"' + (c.obrig ? ' required' : '') + '><option value="">Selecione</option>' + c.opcoes.map(function (x) { return '<option>' + esc(x) + '</option>'; }).join('') + '</select>';
+      else if (c.tipo === 'textarea') ctl = '<textarea id="' + id + '" maxlength="700"' + (c.obrig ? ' required' : '') + '></textarea>';
+      else ctl = '<input id="' + id + '" type="' + (c.tipo || 'text') + '"' + (c.min ? ' min="' + c.min + '"' : '') + (c.max ? ' max="' + c.max + '"' : '') + (c.valor ? ' value="' + c.valor + '"' : '') + (c.obrig ? ' required' : '') + '>';
+      return '<div class="campo"><label for="' + id + '">' + esc(c.rotulo) + (c.obrig ? ' *' : '') + '</label>' + ctl + (c.ajuda ? '<span class="ajuda">' + esc(c.ajuda) + '</span>' : '') + '<span class="msg-erro" hidden>Este campo é obrigatório.</span></div>';
+    }).join('');
+    dlgForm.innerHTML = '<h2 id="dlg-t">' + esc(o.titulo) + '</h2>' + (o.texto ? '<p class="sub">' + esc(o.texto) + '</p>' : '') + campos +
+      '<div class="dlg-acoes"><button class="btn btn-ter" type="button" data-dlg-fechar>Voltar</button><button class="btn ' + (o.perigo ? 'btn-dest' : 'btn-pri') + '" type="button" data-dlg-ok>' + esc(o.confirmar) + '</button></div>';
+    dlgOk = o.aoConfirmar;
+    dlg.showModal();
+  }
+  dlgForm.addEventListener('click', function (e) {
+    if (e.target.closest('[data-dlg-fechar]')) { dlg.close(); return; }
+    if (!e.target.closest('[data-dlg-ok]')) return;
+    var valido = true, valores = [];
+    dlgForm.querySelectorAll('.campo').forEach(function (c) {
+      var ctl = c.querySelector('input, select, textarea'), vazio = ctl.required && !ctl.value.trim();
+      c.querySelector('.msg-erro').hidden = !vazio;
+      if (vazio) { ctl.setAttribute('aria-invalid', 'true'); if (valido) ctl.focus(); valido = false; } else ctl.removeAttribute('aria-invalid');
+      valores.push(ctl.value.trim());
+    });
+    if (!valido) return;
+    dlg.close();
+    if (dlgOk) dlgOk(valores);
+  });
+  dlg.addEventListener('close', function () { if (abridor && abridor.isConnected) abridor.focus(); });
+
+  // Os 11 motivos do legado, obrigatórios: é o dado que ensina por que uma reserva ou proposta não andou
+  var MOTIVOS = ['Recusado pela pessoa', 'Recusado pelo cliente: comportamento', 'Recusado pelo cliente: técnico', 'Recusado pelo cliente: currículo', 'Vaga perdida', 'Vaga cancelada', 'Vaga preenchida por outra pessoa', 'Cliente sem retorno', 'Inglês abaixo do nível', 'Registro reprovado pelo cliente', 'Outro motivo'];
+  function camposMotivo() {
+    return [{ rotulo: 'Motivo', tipo: 'select', opcoes: MOTIVOS, obrig: true }, { rotulo: 'Detalhes', tipo: 'textarea', obrig: true, ajuda: 'Esses dados ajudam a melhorar a gestão de disponíveis.' }];
+  }
+
+  // Menu de três pontinhos: um único menu, posicionado junto ao botão, para não ser cortado pela rolagem da tabela
+  var iconeMais = ic('ellipsis-vertical', 'i-20');
+  document.querySelectorAll('.mais').forEach(function (b) { b.innerHTML = iconeMais; b.setAttribute('aria-haspopup', 'menu'); b.setAttribute('aria-expanded', 'false'); });
+  var menuAcoes = document.getElementById('menu-acoes'), botaoMenu = null;
+  var ROTULOS = { reservar: 'Reservar', propor: 'Propor para uma vaga', fila: 'Entrar na fila', confirmar: 'Confirmar alocação', perfil: 'Ver perfil', liberar: 'Cancelar reserva', retirar: 'Retirar proposta', motivo: 'Informar motivo', renovar: 'Renovar', adiar: 'Adiar data', naorenovar: 'Não renovar e liberar', pedir: 'Nova requisição', corrigir: 'Corrigir e reenviar', detalhes: 'Ver detalhes', cancelar: 'Cancelar requisição' };
+  var PERIGO = { liberar: 1, retirar: 1, naorenovar: 1, cancelar: 1 };
+  var ICONE_ACAO = { reservar: 'bookmark-plus', propor: 'send', fila: 'list-plus', confirmar: 'check', perfil: 'user', liberar: 'ban', retirar: 'undo-2', motivo: 'pencil', renovar: 'refresh-cw', adiar: 'calendar', naorenovar: 'ban', pedir: 'plus', corrigir: 'pencil', detalhes: 'file-text', cancelar: 'x' };
+  function fecharMenu(devolverFoco) {
+    if (menuAcoes.hidden) return;
+    menuAcoes.hidden = true;
+    if (botaoMenu) { botaoMenu.setAttribute('aria-expanded', 'false'); if (devolverFoco) botaoMenu.focus(); }
+    botaoMenu = null;
+  }
+  function abrirMenu(b) {
+    var acoes = b.dataset.acoes.split(' ');
+    var html = '';
+    acoes.forEach(function (a) {
+      if (PERIGO[a] && acoes.length > 1) html += '<hr>';
+      html += '<button type="button" role="menuitem" tabindex="-1" data-acao="' + a + '"' + (PERIGO[a] ? ' class="perigo"' : '') + '>' + ic(ICONE_ACAO[a]) + ROTULOS[a] + '</button>';
+    });
+    menuAcoes.innerHTML = html;
+    menuAcoes.setAttribute('aria-label', b.getAttribute('aria-label'));
+    menuAcoes.hidden = false;
+    botaoMenu = b;
+    b.setAttribute('aria-expanded', 'true');
+    var r = b.getBoundingClientRect(), w = menuAcoes.offsetWidth, h = menuAcoes.offsetHeight;
+    menuAcoes.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.right - w)) + 'px';
+    menuAcoes.style.top = (r.bottom + h + 8 > window.innerHeight && r.top - h - 4 > 8 ? r.top - h - 4 : r.bottom + 4) + 'px';
+    menuAcoes.querySelector('button').focus();
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.mais');
+    if (b) {
+      e.stopPropagation();
+      var mesmo = botaoMenu === b;
+      fecharMenu(false);
+      if (!mesmo) abrirMenu(b);
+      return;
+    }
+    var item = e.target.closest('[data-acao]');
+    if (item) {
+      var origem = botaoMenu;
+      fecharMenu(true);
+      executar(item.dataset.acao, origem);
+      return;
+    }
+    if (!e.target.closest('#menu-acoes')) fecharMenu(false);
+  });
+  menuAcoes.addEventListener('keydown', function (e) {
+    var itens = Array.prototype.slice.call(menuAcoes.querySelectorAll('button')), i = itens.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); itens[(i + 1) % itens.length].focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); itens[(i - 1 + itens.length) % itens.length].focus(); }
+    else if (e.key === 'Home') { e.preventDefault(); itens[0].focus(); }
+    else if (e.key === 'End') { e.preventDefault(); itens[itens.length - 1].focus(); }
+    else if (e.key === 'Escape') { e.preventDefault(); fecharMenu(true); }
+    else if (e.key === 'Tab') { fecharMenu(true); }
+  });
+  window.addEventListener('scroll', function () { fecharMenu(false); }, true);
+  window.addEventListener('resize', function () { fecharMenu(false); });
+
+  // O que cada opção faz
+  function trocarStatus(linha, html) { var st = linha && linha.querySelector('.status'); if (st) st.outerHTML = html; }
+  function executar(acao, b) {
+    var nome = b.dataset.nome, linha = b.closest('tr, .cand');
+    if (acao === 'perfil') return ir('perfil');
+    if (acao === 'pedir') {
+      var op = Array.prototype.filter.call(document.querySelectorAll('#l-time option'), function (o) { return o.value.indexOf(nome) === 0; })[0];
+      lPessoa.value = op ? op.value : '';
+      atualizarPessoa();
+      return ir('liberacao');
+    }
+    if (acao === 'reservar') {
+      var stAntes = linha.querySelector('.status').outerHTML, acoesAntes = b.dataset.acoes;
+      trocarStatus(linha, '<span class="status s-forte">Sua reserva</span>');
+      b.dataset.acoes = 'confirmar perfil liberar';
+      contagem('reservas', 1);
       avisar(nome + ': reserva feita por 2 dias úteis, até 17/03 às 23h59.', function () {
-        tr.querySelector('.status').outerHTML = antes; b.disabled = false; b.textContent = 'Reservar';
+        trocarStatus(linha, stAntes); b.dataset.acoes = acoesAntes; contagem('reservas', -1);
       });
+      return;
+    }
+    if (acao === 'fila') {
+      var filaAntes = linha.querySelector('.status').outerHTML, filaAcoes = b.dataset.acoes;
+      trocarStatus(linha, '<span class="status s-azul">Você na fila · 2º</span>');
+      b.dataset.acoes = 'perfil';
+      avisar(nome + ': você entrou na fila, em 2º lugar. Avisamos quando sua reserva começar.', function () { trocarStatus(linha, filaAntes); b.dataset.acoes = filaAcoes; });
+      return;
+    }
+    if (acao === 'propor' && b.closest('.cand, .vaga-perfil')) {
+      var fim = b.closest('.cand-fim'), fimAntes = fim.innerHTML;
+      fim.innerHTML = '<span class="status s-azul">Sua proposta</span>';
+      contagem('reservas', 1);
+      avisar(nome + ': proposta enviada para esta vaga.', function () { fim.innerHTML = fimAntes; contagem('reservas', -1); });
+      return;
+    }
+    if (acao === 'propor') {
+      abrirDialogo({ titulo: 'Propor ' + nome, texto: 'A proposta avisa o Staffing e não bloqueia a pessoa. Vagas da mais para a menos compatível.', confirmar: 'Enviar proposta',
+        campos: [{ rotulo: 'Vaga', tipo: 'select', obrig: true, opcoes: ['Dev Java Sr · Banco Horizonte · KE-204817', 'QA Automação · Seguradora Sul · KE-187402', 'Engenheiro de dados · Varejo Norte · KE-201133', 'Scrum Master · Banco Atlas · KE-198220'] }],
+        aoConfirmar: function (v) { contagem('reservas', 1); avisar(nome + ': proposta enviada para ' + v[0].split(' · ')[1] + '.'); } });
+      return;
+    }
+    if (acao === 'confirmar') {
+      abrirDialogo({ titulo: 'Confirmar alocação de ' + nome + '?', texto: 'A pessoa será alocada no Banco Horizonte (KE-204817).', confirmar: 'Confirmar alocação',
+        campos: [{ rotulo: 'Data de início', tipo: 'date', obrig: true, min: '2026-03-13', max: '2026-03-28', valor: '2026-03-16', ajuda: 'Até 15 dias a partir de hoje, em um dia útil.' }],
+        aoConfirmar: function () { avisar(nome + ': alocação confirmada no Banco Horizonte. A próxima reserva da fila foi encerrada e o gestor foi avisado.'); } });
+      return;
+    }
+    if (acao === 'liberar' || acao === 'retirar') {
+      var tipo = acao === 'liberar' ? 'reserva' : 'proposta';
+      abrirDialogo({ titulo: (acao === 'liberar' ? 'Cancelar reserva de ' : 'Retirar proposta de ') + nome, texto: 'Conte por que a ' + tipo + ' não vai seguir.', confirmar: acao === 'liberar' ? 'Cancelar reserva' : 'Retirar proposta', perigo: true, campos: camposMotivo(),
+        aoConfirmar: function () { contagem('reservas', -1); if (linha.closest('#tab-res')) linha.hidden = true; avisar(nome + ': ' + tipo + ' encerrada. A próxima da fila foi avisada.'); } });
+      return;
+    }
+    if (acao === 'motivo') return informarMotivoLucas();
+    if (acao === 'renovar') return abrirRenovacao(nome, linha);
+    if (acao === 'adiar') {
+      abrirDialogo({ titulo: 'Adiar a data de ' + nome, texto: 'Você pode adiar em até 10 dias.', confirmar: 'Adiar data',
+        campos: [{ rotulo: 'Nova data de liberação', tipo: 'date', obrig: true, min: '2026-03-14', max: '2026-03-23', valor: '2026-03-23' }],
+        aoConfirmar: function (v) { var d = v[0].split('-').reverse().join('/'); var cel = linha.children[2]; cel.innerHTML = d + '<br><span class="fino">adiada 1 vez</span>'; trocarStatus(linha, '<span class="status s-azul">Em renovação</span>'); avisar(nome + ': nova data de liberação em ' + d + '.'); } });
+      return;
+    }
+    if (acao === 'naorenovar') {
+      abrirDialogo({ titulo: 'Não renovar ' + nome + '?', texto: 'A pessoa será liberada na data combinada e entrará em Disponíveis.', confirmar: 'Não renovar e liberar', perigo: true,
+        aoConfirmar: function () { linha.hidden = true; contagem('renovacao', -1); avisar(nome + ': sem renovação. A pessoa entra em Disponíveis na data combinada.', function () { linha.hidden = false; contagem('renovacao', 1); }); } });
+      return;
+    }
+    if (acao === 'detalhes') { selecionarPedido(linha); return; }
+    if (acao === 'corrigir') { selecionarPedido(linha); return corrigirPedido(); }
+    if (acao === 'cancelar') return cancelarPedido(linha, nome);
+  }
+
+  // Precisa de você
+  function atualizarCaixa() {
+    var n = Array.prototype.filter.call(document.querySelectorAll('#caixa-itens tr'), function (t) { return !t.hidden; }).length;
+    document.getElementById('caixa-sub').textContent = n === 1 ? '1 item aguardando sua resposta' : n + ' itens aguardando sua resposta';
+    document.getElementById('caixa-lista').hidden = n === 0;
+    document.getElementById('caixa-vazia').hidden = n !== 0;
+    document.querySelectorAll('[data-cont="caixa"]').forEach(function (c) { c.textContent = String(n); });
+  }
+  function informarMotivoLucas() {
+    abrirDialogo({ titulo: 'Por que a reserva de Lucas Andrade não andou?', texto: 'A reserva para a Varejo Norte expirou em 10/03.', confirmar: 'Enviar motivo', campos: camposMotivo(),
+      aoConfirmar: function (v) {
+        document.getElementById('caixa-lucas').hidden = true;
+        atualizarCaixa();
+        var l = document.getElementById('res-lucas');
+        l.querySelector('[data-st]').innerHTML = '<span class="status s-neutro">Expirada · ' + esc(v[0]) + '</span>';
+        l.querySelector('.mais').dataset.acoes = 'perfil';
+        avisar('Motivo registrado. Obrigado.');
+      } });
+  }
+  document.querySelector('[data-motivo-lucas]').addEventListener('click', informarMotivoLucas);
+
+  // Enviados
+  var PEDIDOS = {
+    igor: { titulo: 'Igor Santana', st: '<span class="status s-atencao">Falta informação</span>', msg: 'O Staffing devolveu a requisição, e ela fica parada até você responder.', fala: 'Falta o currículo em inglês e a foto do patrimônio do notebook.', quem: 'Carla Dias · Staffing · 12/03', corrigir: true },
+    bruno: { titulo: 'Bruno Pires', st: '<span class="status s-azul">Em análise</span>', msg: 'O Staffing está entrevistando a pessoa. Nada depende de você agora.', fala: 'Recebemos a requisição. A entrevista está marcada para 16/03.', quem: 'Carla Dias · Staffing · 12/03' },
+    aline: { titulo: 'Aline Duarte', st: '<span class="status s-erro">Recusada</span>', msg: 'A requisição foi recusada. Cancele para encerrar, ou crie outro depois de resolver o motivo.', fala: 'A pessoa tem menos de 90 dias de casa, então a requisição ainda não pode seguir.', quem: 'Carla Dias · Staffing · 04/03' }
+  };
+  var pedidoAtual = 'igor', detalheEnv = document.getElementById('env-detalhe');
+  function linhaPedido(k) { return document.querySelector('#tab-env [data-ped="' + k + '"]'); }
+  function desenharPedido() {
+    var p = PEDIDOS[pedidoAtual];
+    detalheEnv.innerHTML = '<header><h2>' + p.titulo + '</h2>' + p.st + '</header><p class="sub">' + p.msg + '</p>' +
+      '<div class="nota-pessoa"><span>"' + p.fala + '"</span><small>' + p.quem + '</small></div>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap">' + (p.corrigir ? '<button class="btn btn-pri" type="button" data-corrigir>Corrigir e reenviar</button>' : '') + '<button class="btn btn-ter" type="button" data-cancelar>Cancelar requisição</button></div>';
+  }
+  function selecionarPedido(tr) {
+    pedidoAtual = tr.dataset.ped;
+    document.querySelectorAll('#tab-env tbody tr').forEach(function (x) { x.classList.toggle('sel', x === tr); });
+    desenharPedido();
+  }
+  function corrigirPedido() {
+    var k = pedidoAtual, p = PEDIDOS[k];
+    abrirDialogo({ titulo: 'Corrigir a requisição de ' + p.titulo, texto: 'O Staffing disse: ' + p.fala, confirmar: 'Reenviar para o Staffing', campos: [{ rotulo: 'O que você corrigiu', tipo: 'textarea', obrig: true }],
+      aoConfirmar: function () {
+        var tr = linhaPedido(k);
+        p.st = '<span class="status s-azul">Em análise</span>'; p.msg = 'Requisição reenviada. O Staffing volta a analisar.'; p.corrigir = false;
+        tr.dataset.s = 'analise';
+        tr.querySelector('[data-st]').innerHTML = p.st;
+        tr.children[3].textContent = 'até 18/03 · 3 dias úteis';
+        tr.querySelector('.mais').dataset.acoes = 'detalhes cancelar';
+        document.querySelector('[data-env="analise"]').textContent = '2';
+        document.querySelector('[data-env="falta"]').textContent = '0';
+        var itemCaixa = Array.prototype.filter.call(document.querySelectorAll('#caixa-itens tr'), function (t) { return t.textContent.indexOf('Igor Santana') >= 0; })[0];
+        if (itemCaixa) itemCaixa.hidden = true;
+        atualizarCaixa();
+        desenharPedido();
+        avisar('Requisição reenviada. Você acompanha aqui em Enviados.');
+      } });
+  }
+  function cancelarPedido(tr, nome) {
+    abrirDialogo({ titulo: 'Cancelar a requisição de ' + nome + '?', texto: 'A requisição sai de Enviados e a pessoa continua no projeto atual.', confirmar: 'Cancelar requisição', perigo: true,
+      aoConfirmar: function () {
+        tr.hidden = true;
+        contagem('enviados', -1);
+        var outra = Array.prototype.filter.call(document.querySelectorAll('#tab-env tbody tr'), function (t) { return !t.hidden; })[0];
+        if (outra) selecionarPedido(outra); else detalheEnv.hidden = true;
+        avisar('Requisição de ' + nome + ' cancelada.', function () { tr.hidden = false; detalheEnv.hidden = false; contagem('enviados', 1); selecionarPedido(tr); });
+      } });
+  }
+  document.querySelector('#tab-env tbody').addEventListener('click', function (e) {
+    if (e.target.closest('.mais')) return;
+    var tr = e.target.closest('tr'); if (tr) selecionarPedido(tr);
+  });
+  detalheEnv.addEventListener('click', function (e) {
+    if (e.target.closest('[data-corrigir]')) corrigirPedido();
+    if (e.target.closest('[data-cancelar]')) cancelarPedido(linhaPedido(pedidoAtual), PEDIDOS[pedidoAtual].titulo);
+  });
+  var contEnv = document.querySelectorAll('#env-cont .aba');
+  contEnv.forEach(function (b) {
+    b.addEventListener('click', function () {
+      contEnv.forEach(function (x) { x.classList.toggle('ativo', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+      document.querySelectorAll('#tab-env tbody tr').forEach(function (tr) { tr.style.display = b.dataset.f === 'todas' || tr.dataset.s === b.dataset.f ? '' : 'none'; });
     });
   });
+  desenharPedido();
+
+  // Reservas e propostas: minhas ou todas
+  document.querySelectorAll('#res-alt button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var v = b.dataset.v;
+      document.querySelectorAll('#tab-res tbody tr').forEach(function (tr) { tr.style.display = tr.dataset.v === v ? '' : 'none'; });
+      document.getElementById('tab-res').classList.toggle('minhas', v === 'minhas');
+      document.getElementById('res-sub').textContent = v === 'minhas' ? 'Só as suas' : 'Reservas de todos os gestores, com quem pediu cada uma';
+    });
+  });
+
+  // Renovação
+  var renPainel = document.getElementById('ren-painel'), renLinha = null, renNome = '';
+  function abrirRenovacao(nome, linha) {
+    renNome = nome; renLinha = linha;
+    document.getElementById('ren-titulo').textContent = 'Renovar ' + nome;
+    document.getElementById('ren-atual').textContent = 'No projeto atual · ' + linha.children[1].firstChild.textContent;
+    renPainel.hidden = false;
+    document.getElementById('ren-ok').focus();
+  }
+  document.getElementById('ren-cancelar').addEventListener('click', function () { renPainel.hidden = true; });
+  document.getElementById('ren-ok').addEventListener('click', function () {
+    renPainel.hidden = true;
+    renLinha.hidden = true;
+    contagem('renovacao', -1); contagem('renovados', 1);
+    var l = renLinha, n = renNome;
+    avisar(n + ': renovação confirmada. A pessoa agora está em Renovados.', function () { l.hidden = false; contagem('renovacao', 1); contagem('renovados', -1); });
+  });
+
+  // Perfil
   var bAloc = document.getElementById('b-alocar');
   bAloc.addEventListener('click', function () {
-    if (bAloc.dataset.conf !== '1') { bAloc.dataset.conf = '1'; bAloc.textContent = 'Clique de novo para confirmar'; return; }
-    bAloc.dataset.conf = ''; bAloc.textContent = 'Alocação confirmada'; bAloc.disabled = true;
-    avisar('Marina Costa alocada no Banco Horizonte a partir de 01/04. A reserva de Tiago foi encerrada e ele foi avisado.');
+    abrirDialogo({ titulo: 'Confirmar alocação de Marina Costa?', texto: 'A pessoa será alocada no Banco Horizonte (KE-204817).', confirmar: 'Confirmar alocação',
+      campos: [{ rotulo: 'Data de início', tipo: 'date', obrig: true, min: '2026-03-13', max: '2026-03-28', valor: '2026-03-16', ajuda: 'Até 15 dias a partir de hoje, em um dia útil.' }],
+      aoConfirmar: function () {
+        bAloc.textContent = 'Alocação confirmada'; bAloc.disabled = true;
+        avisar('Marina Costa: alocação confirmada no Banco Horizonte. A reserva de Tiago foi encerrada e ele foi avisado.');
+      } });
+  });
+  document.getElementById('b-liberar-perfil').addEventListener('click', function () {
+    abrirDialogo({ titulo: 'Cancelar reserva de Marina Costa', texto: 'Conte por que a reserva não vai seguir.', confirmar: 'Cancelar reserva', perigo: true, campos: camposMotivo(),
+      aoConfirmar: function () { avisar('Reserva cancelada. A de Tiago começa agora e ele foi avisado.'); } });
+  });
+
+  // Disponíveis: chips, painel de filtros e alerta de busca salva
+  var painelF = document.getElementById('p-filtros'), bFiltros = document.getElementById('b-filtros'), areaChips = document.getElementById('chips-filtro');
+  bFiltros.addEventListener('click', function () {
+    painelF.hidden = !painelF.hidden;
+    bFiltros.setAttribute('aria-expanded', String(!painelF.hidden));
+  });
+  areaChips.addEventListener('click', function (e) { var c = e.target.closest('[data-chip]'); if (c) c.remove(); });
+  document.getElementById('f-limpar').addEventListener('click', function () { painelF.reset(); });
+  document.getElementById('f-aplicar').addEventListener('click', function () {
+    painelF.querySelectorAll('select, input').forEach(function (c) {
+      if (!c.value) return;
+      var v = c.type === 'date' ? c.value.split('-').reverse().join('/') : c.value, rot = c.dataset.fNome + ': ' + v;
+      var chip = document.createElement('button');
+      chip.type = 'button'; chip.className = 'chip filtro'; chip.dataset.chip = ''; chip.textContent = rot; chip.setAttribute('aria-label', 'Remover filtro ' + rot);
+      areaChips.insertBefore(chip, bFiltros);
+    });
+    painelF.reset(); painelF.hidden = true; bFiltros.setAttribute('aria-expanded', 'false');
+  });
+  document.getElementById('b-alerta').addEventListener('click', function () {
+    var f = Array.prototype.map.call(areaChips.querySelectorAll('[data-chip]'), function (c) { return c.textContent; });
+    avisar(f.length ? 'Combinado. Avisamos quando entrar alguém com ' + f.join(' e ') + '.' : 'Escolha ao menos um filtro para criar o aviso.');
+  });
+
+  // Pedido: o motivo muda o destino, e banco de horas pede uma providência antes
+  var ajudaMotivo = document.getElementById('l-motivo-ajuda');
+  document.getElementById('l-motivo').addEventListener('change', function (e) {
+    ajudaMotivo.textContent = e.target.value === 'Renovação de projeto' ? 'A pessoa entra em Em renovação, e não em Disponíveis.' : 'Depois de aceito, a pessoa entra em Disponíveis.';
+  });
+  document.querySelectorAll('input[name="banco"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      var a = document.getElementById('l-banco-ajuda');
+      a.textContent = r.value === 'sim' ? 'Antes de ser liberada do projeto, a pessoa precisa tirar essas horas.' : 'Confirme com a pessoa antes de enviar.';
+      a.style.color = r.value === 'sim' ? 'var(--atencao)' : '';
+    });
   });
 
   // Formulário: nota baixa desabilita "Recomendo"
@@ -980,9 +1801,61 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--azul); }
       ajuda.textContent = baixa ? 'Com nota ' + r.value + ', "Recomendo" fica indisponível. Marcamos "Recomendo com ressalvas"; explique no comentário.' : 'Com nota 1 ou 2, só é possível recomendar com ressalvas.';
     });
   });
-  document.getElementById('b-enviar').addEventListener('click', function () {
-    avisar('Pedido enviado. O Staffing responde em até 2 dias úteis, e você acompanha em Enviados.');
+  var STAR = { 'Gustavo Reis': 86, 'Estela Uchoa': 92, 'Pedro Paiva': 74 };
+  var lPessoa = document.getElementById('l-pessoa'), lEnviar = document.getElementById('b-enviar'), lValida = false;
+  function atualizarPessoa() {
+    var nome = lPessoa.value.split(' · ')[0], pct = STAR[nome], tem = pct !== undefined, abaixo = tem && pct < 80;
+    lValida = tem && !abaixo;
+    document.getElementById('l-aval').hidden = !tem;
+    document.getElementById('l-star-txt').textContent = tem ? pct + '% preenchido' : 'Escolha a pessoa';
+    var barra = document.getElementById('l-star-barra');
+    barra.style.width = (tem ? pct : 0) + '%';
+    barra.className = abaixo ? 'fora' : 'ok';
+    var aj = document.getElementById('l-star-ajuda');
+    aj.textContent = !tem ? 'O preenchimento aparece aqui.' : abaixo ? 'Abaixo do mínimo. A pessoa precisa atualizar o STAR antes do envio.' : 'Dados do gestor direto e do último projeto vieram do SuccessFactors e do Kantata.';
+    aj.style.color = abaixo ? 'var(--atencao)' : '';
+    document.getElementById('l-rodape').textContent = !tem ? 'Escolha a pessoa para continuar' : abaixo ? 'STAR abaixo de 80%: não dá para enviar ainda' : 'Rascunho salvo às 10h42';
+    lEnviar.disabled = abaixo;
+    document.getElementById('l-pessoa-erro').hidden = true;
+    lPessoa.removeAttribute('aria-invalid');
+    var est = tem ? ['feito', 'feito', 'feito', 'atual'] : ['atual', 'afazer', 'afazer', 'afazer'], txt = { feito: 'Veio dos sistemas', atual: 'Em preenchimento', afazer: 'A fazer' };
+    document.querySelectorAll('#l-passos .passo').forEach(function (p, i) { p.className = 'passo ' + est[i]; p.querySelector('span').textContent = txt[est[i]]; });
+  }
+  lPessoa.addEventListener('input', atualizarPessoa);
+  lEnviar.addEventListener('click', function () {
+    if (!lValida) { document.getElementById('l-pessoa-erro').hidden = false; lPessoa.setAttribute('aria-invalid', 'true'); lPessoa.focus(); return; }
+    avisar('Requisição enviada. O Staffing responde em até 2 dias úteis, e você acompanha em Enviados.');
   });
+
+  // Atalhos de Precisa de você: abrem o item, não só a tela
+  document.querySelector('[data-ir-renovar]').addEventListener('click', function () {
+    ir('renovacao');
+    abrirRenovacao('Camila Torres', document.querySelector('#t-renovacao tbody tr'));
+  });
+  document.querySelector('[data-ir-corrigir]').addEventListener('click', function () {
+    ir('enviados');
+    selecionarPedido(linhaPedido('igor'));
+    corrigirPedido();
+  });
+
+  // Menu lateral no celular
+  function fecharGaveta() {
+    document.querySelectorAll('.app-corpo.menu-aberto').forEach(function (c) { c.classList.remove('menu-aberto'); });
+    document.querySelectorAll('.b-menu').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.b-menu');
+    if (b) {
+      var corpo = b.closest('.app').querySelector('.app-corpo'), abre = !corpo.classList.contains('menu-aberto');
+      fecharGaveta();
+      corpo.classList.toggle('menu-aberto', abre);
+      b.setAttribute('aria-expanded', String(abre));
+      if (abre) { var alvo = corpo.querySelector('.menu a'); if (alvo) alvo.focus(); }
+      return;
+    }
+    if (e.target.classList && e.target.classList.contains('app-corpo') || e.target.closest('.menu a')) fecharGaveta();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharGaveta(); });
 })();
 </script>
 </body>

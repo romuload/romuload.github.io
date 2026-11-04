@@ -22,8 +22,8 @@
   --linha-forte: #b3b8bf;
   --texto: #001326;
   --texto-2: #4d535a;
-  --texto-3: #6b727a;
-  --sucesso: #007a74;
+  --texto-3: #656c74;
+  --sucesso: #00736d;
   --sucesso-fundo: #e3f4f2;
   --atencao: #a63d00;
   --atencao-marca: #fb610e;
@@ -449,16 +449,16 @@ td.obs { color: var(--texto-2); min-width: 240px; }
           <div class="neutro"><i style="background:#f4f6f9"></i><b class="mono">#F4F6F9</b>Fundo</div>
           <div class="neutro"><i style="background:#d8dee4"></i><b class="mono">#D8DEE4</b>Divisórias</div>
           <div class="neutro"><i style="background:#b3b8bf"></i><b class="mono">#B3B8BF</b>Bordas de campo</div>
-          <div class="neutro"><i style="background:#6b727a"></i><b class="mono">#6B727A</b>Texto auxiliar</div>
+          <div class="neutro"><i style="background:#656c74"></i><b class="mono">#656C74</b>Texto auxiliar</div>
           <div class="neutro"><i style="background:#4d535a"></i><b class="mono">#4D535A</b>Texto secundário</div>
         </div>
       </div>
       <div style="display:grid;gap:10px">
         <span class="rotulo">Cores de estado, sempre junto com texto</span>
         <div class="semanticas">
-          <div class="sem"><div class="topo"><i style="background:#007a74"></i>Concluído <span class="mono" style="font-weight:400;color:var(--texto-3)">#007A74</span></div><p>Alocado, renovado, pedido aceito. Vem do turquesa da GFT.</p></div>
+          <div class="sem"><div class="topo"><i style="background:#00736d"></i>Concluído <span class="mono" style="font-weight:400;color:var(--texto-3)">#00736D</span></div><p>Alocado, renovado, requisição aceita. Vem do turquesa da GFT.</p></div>
           <div class="sem"><div class="topo"><i style="background:#fb610e"></i>Atenção <span class="mono" style="font-weight:400;color:var(--texto-3)">#FB610E</span></div><p>Prazo vencendo, acima do prazo de alocação, pendência de informação. Para texto, use #A63D00.</p></div>
-          <div class="sem"><div class="topo"><i style="background:#b42318"></i>Erro <span class="mono" style="font-weight:400;color:var(--texto-3)">#B42318</span></div><p>Pedido recusado, campo inválido, ação bloqueada.</p></div>
+          <div class="sem"><div class="topo"><i style="background:#b42318"></i>Erro <span class="mono" style="font-weight:400;color:var(--texto-3)">#B42318</span></div><p>Requisição recusada, campo inválido, ação bloqueada.</p></div>
         </div>
       </div>
       <div style="display:grid;gap:10px">
@@ -493,7 +493,7 @@ td.obs { color: var(--texto-2); min-width: 240px; }
       </div>
       <div class="escala">
         <div class="escala-item"><span class="spec">Título 1 · 32/38 · 600</span><span class="ex" style="font-size:2rem;font-weight:600;letter-spacing:-.02em;line-height:1.2">Disponíveis</span></div>
-        <div class="escala-item"><span class="spec">Título 2 · 24/30 · 600</span><span class="ex" style="font-size:1.5rem;font-weight:600;letter-spacing:-.015em">Pedido de liberação</span></div>
+        <div class="escala-item"><span class="spec">Título 2 · 24/30 · 600</span><span class="ex" style="font-size:1.5rem;font-weight:600;letter-spacing:-.015em">Requisição de liberação</span></div>
         <div class="escala-item"><span class="spec">Título 3 · 20/28 · 600</span><span class="ex" style="font-size:1.25rem;font-weight:600">Últimas avaliações</span></div>
         <div class="escala-item"><span class="spec">Corpo · 16/24 · 400</span><span class="ex">A reserva vale 2 dias úteis e não conta fins de semana nem ausências aprovadas.</span></div>
         <div class="escala-item"><span class="spec">Interface · 14/20 · 400</span><span class="ex" style="font-size:.875rem">Java · Spring Boot · Inglês avançado · São Paulo</span></div>
@@ -506,12 +506,12 @@ td.obs { color: var(--texto-2); min-width: 240px; }
     <section class="secao" id="status">
       <header>
         <span class="rotulo">Status</span>
-        <h2>O ciclo de uma pessoa, do pedido à alocação</h2>
+        <h2>O ciclo de uma pessoa, da requisição à alocação</h2>
         <p>Os status são os mesmos do sistema atual, traduzidos. Cada um tem cor, ponto e texto, para ser lido também por quem não distingue cores. Status em aberto usam contorno, e status concluídos usam preenchimento.</p>
       </header>
       <div class="ciclo">
         <div class="etapa">
-          <h3>1 · Pedido de liberação</h3>
+          <h3>1 · Requisição de liberação</h3>
           <div class="lista-status">
             <div class="linha-s"><span class="status s-neutro">Em análise</span>Staffing ainda não respondeu</div>
             <div class="linha-s"><span class="status s-atencao">Falta informação</span>Voltou para o gestor completar</div>
@@ -552,8 +552,8 @@ td.obs { color: var(--texto-2); min-width: 240px; }
           <tbody>
             <tr class="grupo"><td colspan="3">Lugares e listas</td></tr>
             <tr><td class="en">Available</td><td class="pt">Disponíveis</td><td class="obs">É a tela inicial. "Bench" continua válido na fala, mas na interface usamos a palavra que descreve a pessoa.</td></tr>
-            <tr><td class="en">Unassignment Request</td><td class="pt">Pedido de liberação</td><td class="obs">"Desalocação" é jargão. O gestor libera a pessoa para outras vagas.</td></tr>
-            <tr><td class="en">Sent / Received</td><td class="pt">Enviados / Recebidos</td><td class="obs">Sempre acompanhados de "pedidos", para não parecer caixa de e-mail.</td></tr>
+            <tr><td class="en">Unassignment Request</td><td class="pt">Requisição de liberação</td><td class="obs">"Desalocação" é jargão. O gestor libera a pessoa para outras vagas.</td></tr>
+            <tr><td class="en">Sent / Received</td><td class="pt">Enviados / Recebidas</td><td class="obs">Mantêm a lógica de caixa de entrada: o gestor escreve, envia e acompanha.</td></tr>
             <tr><td class="en">Not Eligible (caixa)</td><td class="pt">Afastados</td><td class="obs">Diz o motivo real. "Inelegível" soa como julgamento sobre a pessoa.</td></tr>
             <tr><td class="en">Pending Items</td><td class="pt">Pendências</td><td class="obs">Checklist do que falta para cada pessoa disponível.</td></tr>
             <tr><td class="en">Opportunities / Closed Opps</td><td class="pt">Vagas abertas / Vagas encerradas</td><td class="obs">"Oportunidade" é termo comercial. Para quem aloca, é vaga.</td></tr>
@@ -615,7 +615,7 @@ td.obs { color: var(--texto-2); min-width: 240px; }
           <div class="depois"><span class="onde">Proposta</span><q>Você poderá estender essa reserva em 12/03, o último dia dela. Vamos te avisar pela manhã.</q></div>
         </div>
         <div class="ad">
-          <div class="antes"><span class="onde">Pedido de liberação</span><q>Self-dealocatte is not permitted!</q></div>
+          <div class="antes"><span class="onde">Requisição de liberação</span><q>Self-dealocatte is not permitted!</q></div>
           <div class="depois"><span class="onde">Proposta</span><q>Você não pode pedir a sua própria liberação. Fale com seu gestor direto.</q></div>
         </div>
         <div class="ad">
@@ -641,7 +641,7 @@ td.obs { color: var(--texto-2); min-width: 240px; }
           </div>
           <div class="botoes">
             <button class="btn btn-ter" type="button">Ver avaliações</button>
-            <button class="btn btn-dest" type="button">Recusar pedido</button>
+            <button class="btn btn-dest" type="button">Recusar requisição</button>
             <button class="btn" type="button" disabled>Confirmar alocação</button>
           </div>
           <p style="font-size:var(--t-12);color:var(--texto-3)">Botão desabilitado sempre tem uma dica dizendo o motivo.</p>
@@ -699,8 +699,8 @@ td.obs { color: var(--texto-2); min-width: 240px; }
         <div class="comp">
           <span class="rotulo">Notificação</span>
           <div class="notif">
-            <span class="q">Pedido aceito</span>
-            <p>O Staffing aceitou o pedido de liberação de Paulo Mendes. Ele já aparece em Disponíveis.</p>
+            <span class="q">Requisição aceita</span>
+            <p>O Staffing aceitou a requisição de liberação de Paulo Mendes. A pessoa já aparece em Disponíveis.</p>
             <div class="rodape"><span>há 12 min</span><a href="#aplicacao">Ver pessoa</a></div>
           </div>
           <div class="notif">
@@ -735,7 +735,7 @@ td.obs { color: var(--texto-2); min-width: 240px; }
               <a href="#aplicacao">Alocados <span class="n">118</span></a>
             </div>
             <div class="bloco">
-              <span class="rotulo">Pedidos de liberação</span>
+              <span class="rotulo">Requisições de liberação</span>
               <a href="#aplicacao">Enviados <span class="n">3</span></a>
               <a href="#aplicacao">Afastados <span class="n">4</span></a>
             </div>
@@ -808,9 +808,9 @@ td.obs { color: var(--texto-2); min-width: 240px; }
         <div class="ct"><span class="par"><i style="background:#fff;color:#001326">Aa</i>Marinho sobre branco</span><span class="nota">18,7:1<br>AAA</span></div>
         <div class="ct"><span class="par"><i style="background:#fff;color:#0052a3">Aa</i>Azul ação sobre branco</span><span class="nota">7,7:1<br>AAA</span></div>
         <div class="ct"><span class="par"><i style="background:#0052a3;color:#fff">Aa</i>Branco sobre azul ação</span><span class="nota">7,7:1<br>AAA</span></div>
-        <div class="ct"><span class="par"><i style="background:#fff;color:#6b727a">Aa</i>Texto auxiliar</span><span class="nota">4,9:1<br>AA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#656c74">Aa</i>Texto auxiliar</span><span class="nota">4,9:1<br>AA</span></div>
         <div class="ct"><span class="par"><i style="background:#fff;color:#a63d00">Aa</i>Atenção em texto</span><span class="nota">6,4:1<br>AA</span></div>
-        <div class="ct"><span class="par"><i style="background:#fff;color:#007a74">Aa</i>Concluído em texto</span><span class="nota">5,2:1<br>AA</span></div>
+        <div class="ct"><span class="par"><i style="background:#fff;color:#00736d">Aa</i>Concluído em texto</span><span class="nota">5,2:1<br>AA</span></div>
       </div>
       <div class="regras-escrita">
         <div class="regra"><h3>Cor nunca sozinha</h3><p>Todo status tem texto e todo prazo tem número. A barra laranja vem acompanhada de "4 acima do prazo".</p></div>
