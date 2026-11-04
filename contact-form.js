@@ -6,9 +6,8 @@
   const t = text => window.portfolioI18n?.t(text) || text;
   // Option values stay in Portuguese so the WhatsApp message reads the same in both languages.
   const fields = [
-    ['name', 'Nome'], ['email', 'E-mail'], ['phone', 'Telefone/WhatsApp'], ['company', 'Empresa'],
-    ['size', 'Colaboradores'], ['website', 'Site'], ['type', 'Tipo de projeto'], ['budget', 'Orçamento'],
-    ['deadline', 'Prazo'], ['details', 'Sobre o projeto']
+    ['name', 'Nome'], ['email', 'E-mail'], ['company', 'Empresa'],
+    ['type', 'Tipo de projeto'], ['deadline', 'Prazo'], ['details', 'Sobre o projeto']
   ];
 
   form.addEventListener('submit', event => {

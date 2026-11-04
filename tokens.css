@@ -1,0 +1,29 @@
+/* Design tokens shared by every page. Change a value here, not in the page stylesheets.
+   Project colours stay in each case's own :root; this file holds what must not vary. */
+:root{
+  /* Type scale. 14px is the floor for anything meant to be read. */
+  --text-xs:.875rem;      /* 14 labels, captions, source notes */
+  --text-sm:1rem;         /* 16 card copy, buttons, navigation */
+  --text-md:1.125rem;     /* 18 running text */
+  --text-lg:1.375rem;     /* 22 small headings */
+  --text-xl:1.75rem;      /* 28 headings */
+  --text-2xl:2.5rem;      /* 40 sub-page headings */
+  --text-lead:clamp(1.125rem,1.6vw,1.375rem);
+  --text-statement:clamp(1.375rem,2.2vw,1.75rem);
+  --text-h3:clamp(1.75rem,2.6vw,2.5rem);
+  --text-h2-sm:clamp(2rem,3.4vw,2.5rem);
+  --text-h2:clamp(2.25rem,4.4vw,4rem);
+  --text-title:clamp(2rem,4.4vw,4rem);      /* long result sentences */
+  --text-display:clamp(2.5rem,6.2vw,5.5rem);/* short case titles */
+  --leading-body:1.6;
+
+  /* Layout */
+  --container:1280px;
+  --gutter:clamp(20px,4vw,56px);
+  --section:clamp(80px,9vw,128px);
+
+  /* Shape and targets */
+  --radius-control:8px;
+  --radius-card:12px;
+  --target:44px;
+}

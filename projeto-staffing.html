@@ -12,21 +12,21 @@
 <meta property="og:image" content="https://romuload.github.io/images/staffing/screen-disponiveis.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="staffing-case.js?v=3" defer></script>
-<link rel="stylesheet" href="locale.css">
-<script src="locale-data.js?v=staffing-inbox-1"></script>
+<link rel="stylesheet" href="locale.css?v=ux-1">
+<script src="locale-data.js?v=ux-1"></script>
 <script src="locale.js?v=staffing-inbox-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
 <link rel="icon" type="image/png" href="favicon-32.png?v=plane-2" sizes="32x32">
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
-<link rel="stylesheet" href="repar-case.css?v=1">
-<link rel="stylesheet" href="staffing-case.css?v=4">
-<link rel="stylesheet" href="typography.css?v=widows-2"><script src="typography.js?v=widows-1" defer></script></head>
+<link rel="stylesheet" href="repar-case.css?v=ux-1">
+<link rel="stylesheet" href="staffing-case.css?v=ux-1">
+<link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=widows-1" defer></script><link rel="stylesheet" href="system.css?v=ux-1"></head>
 <body>
 <a class="case-skip" href="#conteudo">Skip to content</a>
 <header class="top">
@@ -43,6 +43,15 @@
 <div class="client-signature"><img src="images/gft.svg" alt="GFT Technologies" width="88" height="34"><span>Global technology consultancy · internal product</span></div>
 <h1 class="result-title">How I helped GFT cut <span class="grad">the cost of its bench by 72%.</span></h1>
 <p class="lead">An internal product that replaced a spreadsheet emailed every morning, and turned reallocating people between projects into a process with clear rules.</p>
+<div class="hero-stage">
+<div class="hero-product">
+<div class="hero-desktop browser">
+<div class="bar">Available · Desktop</div>
+<img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline, with fictitious data" fetchpriority="high">
+</div>
+<div class="hero-mobile"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status, with fictitious data"></div>
+</div>
+</div>
 <div class="case-summary" role="region" aria-labelledby="case-summary-title">
 <h2 id="case-summary-title" class="tldr-heading">TL;DR</h2>
 <dl class="tldr">
@@ -56,11 +65,11 @@
 <h3 id="prototype-credit-title">Built with Claude Code</h3>
 <p>The screens in this case are a 2026 redesign concept, faithful to the rules in the real code and aligned with GFT’s identity. The original screens are confidential.</p>
 </div>
-<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the concept</span><span aria-hidden="true">↗</span></a>
+<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the concept</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 </aside>
 <div class="hero-actions">
-<a class="btn pri" href="#context">Read the case <span aria-hidden="true">↓</span></a>
-<a class="btn" href="#solution">See the screens <span aria-hidden="true">↓</span></a>
+<a class="btn pri" href="#context">Read the case <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+<a class="btn" href="#solution">See the screens <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
 </div>
 <dl class="case-meta">
 <div><dt>Role</dt><dd>Product Designer &amp; Product Owner</dd></div>
@@ -68,15 +77,6 @@
 <div><dt>Period</dt><dd>October 2021–July 2023</dd></div>
 <div><dt>Platform</dt><dd>Angular and .NET on AWS</dd></div>
 </dl>
-<div class="hero-stage">
-<div class="hero-product">
-<div class="hero-desktop browser">
-<div class="bar">Available · Desktop</div>
-<img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline, with fictitious data" fetchpriority="high">
-</div>
-<div class="hero-mobile"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status, with fictitious data"></div>
-</div>
-</div>
 </div>
 </section>
 
@@ -229,7 +229,7 @@
 <article data-step="7" hidden><p class="jd-k" data-lane="alloc"><i></i>Manager who allocates · Reservation</p><h4>Reserve</h4><p>The first to reserve holds the person. If the reservation expires, the person goes back to the list and the next manager in the queue gets their turn.</p><ul class="jd-facts"><li>2 business days; after noon it starts the next day</li><li>IDU managers extend on the last day, up to 5 times</li></ul><div class="jd-status" data-no-translate><span class="pill f-info">Reservado</span></div></article>
 <article data-step="8" hidden><p class="jd-k" data-lane="stf"><i></i>Staffing · Allocation</p><h4>Allocate</h4><p>Staffing confirms the allocation and the person leaves the list. Bench time and cost stop counting.</p><ul class="jd-facts"><li>Only Staffing can undo it, within 30 days</li></ul><div class="jd-status" data-no-translate><span class="pill f-done">Alocado</span></div></article>
 <article data-step="9" hidden><p class="jd-k" data-lane="rel"><i></i>Manager who releases · Allocation</p><h4>Renew or release</h4><p>Before the contract ends, the project manager decides. Not renewing starts a new release here, and the cycle begins again.</p><ul class="jd-facts"><li>Came from continuous research</li></ul><div class="jd-status" data-no-translate><span class="pill o-warn">Em renovação</span><span class="pill f-done">Renovado</span></div></article>
-<div class="jd-nav"><button type="button" data-go="-1" aria-label="Previous step">←</button><span class="jd-count" data-no-translate><b>01</b> / 09</span><button type="button" data-go="1" aria-label="Next step">→</button></div>
+<div class="jd-nav"><button type="button" data-go="-1" aria-label="Previous step"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><span class="jd-count" data-no-translate><b>01</b> / 09</span><button type="button" data-go="1" aria-label="Next step"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
 </div>
 </div>
 
@@ -325,7 +325,7 @@
 <button type="button" role="tab" id="tab-status" aria-controls="spec-status" aria-selected="false"><b>03</b>Status</button>
 <button type="button" role="tab" id="tab-glossary" aria-controls="spec-glossary" aria-selected="false"><b>04</b>Glossary</button>
 <button type="button" role="tab" id="tab-writing" aria-controls="spec-writing" aria-selected="false"><b>05</b>Writing</button>
-<a class="spec-open" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true">↗</span></a>
+<a class="spec-open" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 </div>
 
 <div class="spec-sheet">
@@ -423,7 +423,7 @@
 </div>
 </div>
 </div>
-<a class="btn spec-link-mobile" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true">↗</span></a>
+<a class="btn spec-link-mobile" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 </div>
 </section>
 
@@ -498,7 +498,7 @@
 <p class="lead">Explore the redesign concept or get in touch to talk about a product challenge.</p>
 </div>
 <div class="hero-actions">
-<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the concept</span><span aria-hidden="true">↗</span></a>
+<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the concept</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 <a class="btn" href="trabalhe-comigo.html">Work with me</a>
 </div>
 <p class="source-note">All names in the screens are fictitious. Interviewees are identified by role only.</p>
@@ -507,7 +507,7 @@
 </main>
 <footer class="wrap case-footer">
 <span>© <span id="year">2026</span> Romulo Nascimento</span>
-<a href="index.html">← All projects</a>
+<a href="index.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
 <a href="trabalhe-comigo.html">Work with me</a>
 </footer>
 </body>

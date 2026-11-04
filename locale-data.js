@@ -2935,5 +2935,12 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Before the contract ends, the project manager decides. Not renewing starts a new release here, and the cycle begins again.", "Antes do fim do contrato, o gestor do projeto decide. Não renovar abre uma nova liberação aqui, e o ciclo recomeça."],
   ["Came from continuous research", "Veio da pesquisa contínua"],
   ["Previous step", "Etapa anterior"],
-  ["Next step", "Próxima etapa"]
+  ["Next step", "Próxima etapa"],
+  ["All projects","Todos os projetos"],
+  ["Email","E-mail"],
+  ["you@email.com","voce@email.com"],
+  ["Your goals, scope and timeline help me see where design can make the biggest difference.","Seus objetivos, escopo e prazo me ajudam a ver onde o design pode fazer mais diferença."],
+  ["Spatial","Espacial"],
+  ["AI","IA"],
+  ["Learnings","Aprendizados"]
 ]);

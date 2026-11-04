@@ -1,0 +1,113 @@
+/* Shared components. Loaded last on every page so all cases resolve to the same chrome.
+   Values come from tokens.css. */
+
+/* ---------- Type ---------- */
+.eyebrow{font-size:var(--text-xs);line-height:1.4;letter-spacing:.06em;font-weight:600}
+.hero .eyebrow{font-size:var(--text-xs)}
+time,.case-meta dt,.step-k,.jd-count,.rb-row em{font-variant-numeric:tabular-nums}
+.sec p,.about-page p,.contact-page p{max-width:65ch}
+.sec-head .lead,.hero .lead{max-width:62ch}
+.porto-hero .lead,.stf-hero .lead{max-width:min(100%,62ch)}
+.source-note,.metric-status,.scope-statement,.brand-note{max-width:65ch}
+.hero h1{max-width:none}
+.hero h1:not(.result-title) .grad{display:block;padding-bottom:.14em;margin-bottom:-.14em}
+.porto-hero h1.result-title,.stf-hero h1.result-title{max-width:none}
+.sec-head{max-width:min(100%,1040px)}
+.sec-head h2,.headline-line{max-width:none}
+.ico{width:1em;height:1em;flex:none;vertical-align:-.125em}
+
+/* ---------- Buttons: one shape, one size, on every page ---------- */
+.btn,.button,.form-submit,.contact-cta{min-height:var(--target);height:auto;padding:12px 20px;gap:8px;border-radius:var(--radius-control);font-size:var(--text-sm);font-weight:600;line-height:1.25}
+.contact-cta span{font-size:inherit}
+.hero-actions .btn{font-size:var(--text-sm)}
+.flow-open,.evidence-zoom,.comparison-actions button{min-height:var(--target);font-size:var(--text-xs)}
+.status-tag{font-size:var(--text-xs);letter-spacing:.04em}
+
+/* ---------- Header: identical on every inner page ---------- */
+.inner-header .header{max-width:none;height:72px;padding-inline:var(--gutter)}
+.top{min-height:72px;padding:12px var(--gutter)}
+.brand-symbol,.inner-header .identity .brand-symbol{width:52px;height:38px;border-radius:0}
+.name-text{font-size:var(--text-sm);line-height:1.3;font-weight:600}
+.name-text small,.top .name-text small{margin-top:0;font-size:var(--text-xs);font-weight:400;letter-spacing:0}
+.top nav a,.inner-header .header nav{font-size:var(--text-sm)}
+.lang-switch button{min-width:40px;min-height:36px;font-size:var(--text-xs)}
+.case-nav,.case-nav.case-nav{top:72px}
+html{scroll-padding-top:136px}
+
+/* ---------- Page frame: one container on Sobre and Trabalhe comigo ---------- */
+.about-page .wrap,.contact-page .wrap,.inner-header~footer.wrap{max-width:var(--container);padding-inline:var(--gutter)}
+.inner-header~footer.wrap{border-top:0;font-size:var(--text-xs)}
+
+/* ---------- Sobre ---------- */
+.profile-section{padding-top:clamp(48px,6vw,80px)}
+.profile-title{margin-bottom:48px}
+.profile-title h1{margin-bottom:16px;font-size:var(--text-h2);line-height:1.1;letter-spacing:-.03em}
+.profile-title p{font-size:var(--text-md)}
+.profile-photo{aspect-ratio:1;border-radius:var(--radius-card)}
+.profile-photo img{object-position:50% 12%}
+.profile-bio p{margin-bottom:24px;font-size:var(--text-md);line-height:var(--leading-body);color:var(--ink)}
+.profile-skills,.profile-industries{padding-top:var(--section)}
+.profile-skills h2,.profile-industries h2{margin-bottom:32px;font-size:var(--text-xl)}
+.skill-grid,.industry-grid{gap:32px;font-size:var(--text-sm)}
+.skill-grid li,.industry-grid li{gap:12px;font-size:var(--text-sm);line-height:1.4}
+.profile-contact{padding-block:var(--section)}
+.profile-contact h2{font-size:var(--text-2xl)}
+
+/* ---------- Trabalhe comigo ---------- */
+.contact-page .contact{padding-top:clamp(48px,6vw,80px);padding-bottom:var(--section)}
+.contact-page .contact h1{font-size:var(--text-h2);letter-spacing:-.03em;line-height:1.1}
+.contact-lead{font-size:var(--text-md);line-height:var(--leading-body);color:var(--ink)}
+.contact-steps span{font-size:var(--text-sm)}
+.contact-alt{font-size:var(--text-sm)}
+.contact-alt .email{display:inline-block;margin:0;padding-block:8px;font-size:var(--text-sm)}
+.project-form{gap:16px;padding:32px;border-radius:var(--radius-card)}
+.field label{font-size:var(--text-xs)}
+.field input,.field select,.field textarea{font-size:var(--text-sm)}
+.field ::placeholder{color:#6f7077}
+.field select:invalid,.field select:has(option[value=""]:checked){color:#6f7077}
+.form-submit{justify-content:space-between}
+@media(min-width:901px){.contact-intro{position:sticky;top:32px}}
+
+/* ---------- iLAB section menu, same pattern as Porto and Staffing ---------- */
+.case-ilab .case-nav{position:sticky;z-index:30;background:#0b1a13;border-block:1px solid var(--line)}
+.case-ilab .case-nav .wrap{display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.case-ilab .case-nav a{flex:0 0 auto;padding:12px 16px;color:var(--muted);font-size:var(--text-xs);text-decoration:none;white-space:nowrap;transition:color .2s,background .2s}
+.case-ilab .case-nav a:hover{color:var(--ink)}
+.case-ilab .case-nav a.active{color:var(--ink);background:#36b05e24}
+.case-ilab .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:24px 32px;max-width:960px;margin:40px auto 0}
+.case-ilab .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+
+/* ---------- Phone ---------- */
+@media(max-width:767px){
+  .header nav a{display:inline-flex;align-items:center;min-height:var(--target);padding:0;font-size:var(--text-xs)}
+  .lang-switch button{min-width:var(--target);min-height:var(--target)}
+  .inner-header .header{height:auto;padding-block:12px}
+  .project-links{align-items:stretch}
+  .project-links .button{padding:12px 8px;font-size:var(--text-xs)}
+  .inner-header~footer.wrap a{display:inline-block;padding-block:12px}
+  .profile-section{padding-top:32px}
+  .profile-title h1{font-size:2.25rem}
+  .profile-title p{max-width:none;font-size:var(--text-sm)}
+  .profile-bio p{font-size:var(--text-sm)}
+  .skill-grid,.industry-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+  .skill-grid li,.industry-grid li{flex-direction:column;align-items:flex-start}
+  .contact-lead{font-size:var(--text-sm)}
+  .project-form{padding:20px}
+}
+@media(max-width:760px){
+  /* The chrome leaves the screen on scroll; only the section menu stays. */
+  .top{position:static;min-height:0;gap:8px;padding-block:12px}
+  html{scroll-padding-top:64px}
+  .case-nav,.case-nav.case-nav{top:0}
+  .top nav{display:flex;order:3;width:100%;justify-content:space-between;margin:0}
+  .top nav a{display:inline-flex;align-items:center;min-height:var(--target);padding:0;border-radius:0;font-size:var(--text-xs)}
+  .top .lang-switch{margin-left:auto}
+  .name-text{font-size:var(--text-sm)}
+  .name-text small{font-size:var(--text-xs)}
+  .lang-switch button{min-width:var(--target);min-height:var(--target)}
+  .case-nav a{min-height:var(--target)}
+  .case-ilab .case-nav .wrap{justify-content:flex-start;padding-inline:0}
+  .hero-actions{gap:8px}
+  .hero-actions .btn{padding-inline:16px}
+}
+@media(max-width:600px){.pain-grid{grid-template-columns:1fr}}
