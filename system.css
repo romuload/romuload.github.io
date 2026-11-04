@@ -50,6 +50,14 @@ html{scroll-padding-top:154px}
   .header nav,.top nav{gap:22px}
 }
 
+/* The header stays on screen from tablet up, as on the cases. The home's sits over the hero until the page scrolls. */
+@media(min-width:768px){
+  .inner-header{position:sticky;top:0;z-index:50}
+  .opening:not(.inner-header){z-index:50;padding-top:var(--header-h)}
+  .opening:not(.inner-header)>.header{position:fixed;inset:0 0 auto;z-index:50;max-width:none;margin:0;padding-inline:max(var(--header-pad),calc((100% - 1440px)/2 + var(--header-pad)));transition:background-color .2s}
+  .opening:not(.inner-header)>.header.is-stuck{background:rgba(28,29,31,.97);backdrop-filter:blur(16px)}
+}
+
 /* ---------- Page frame: one container on Sobre and Trabalhe comigo ---------- */
 .about-page main.wrap,.about-page main .wrap,.contact-page main.wrap,.contact-page main .wrap,.inner-header~footer.wrap{max-width:var(--container);padding-inline:var(--gutter)}
 .inner-header~footer.wrap{border-top:0;font-size:var(--text-xs)}
@@ -82,7 +90,7 @@ html{scroll-padding-top:154px}
 .field ::placeholder{color:#6f7077}
 .field select:invalid,.field select:has(option[value=""]:checked){color:#6f7077}
 .form-submit{justify-content:space-between}
-@media(min-width:901px){.contact-intro{position:sticky;top:32px}}
+@media(min-width:901px){.contact-intro{position:sticky;top:calc(var(--header-h) + 32px)}}
 
 /* ---------- iLAB section menu, same pattern as Porto and Staffing ---------- */
 .case-ilab .case-nav{position:sticky;z-index:30;background:#0b1a13;border-block:1px solid var(--line)}
