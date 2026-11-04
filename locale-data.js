@@ -2618,8 +2618,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Beyond the guided analysis, the proposal covered the whole workload. These screens come from the interactive demo and went to the backlog for the GFT team.", "Além da análise guiada, a proposta cobria toda a operação. Estas telas vêm do demo interativo e foram para o backlog do time da GFT."],
   ["Reflections", "Reflexões"],
   ["TL;DR", "TL;DR"],
-  ["Built with Claude Code", "Feito com Claude Code"],
-  ["The functional prototype was built with Claude Code and lets you try the four-step claims analysis.", "O protótipo funcional foi criado com Claude Code e permite experimentar a análise de sinistros em quatro passos."]
+  ["I built the working examples and the interactive prototype in this case with Claude Code, from the design in Figma. Try the four-step claims analysis.", "Construí os exemplos funcionais e o protótipo interativo deste case com Claude Code, a partir do design no Figma. Experimente a análise de sinistros em quatro passos."],
+  ["From Figma to code", "Do Figma ao código"]
 ]);
 
 // GFT Staffing Platform case.
@@ -2633,7 +2633,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The bench lived in a spreadsheet emailed daily. Reservations went by email and Teams, and matching people to roles was done by hand.", "O bench ficava numa planilha enviada por e-mail todo dia. Reservas iam por e-mail e Teams, e o cruzamento entre pessoas e vagas era feito à mão."],
   ["As the only designer and the Product Owner, I took a business case from paper to launch in three months and evolved it for almost two years.", "Como único designer e Product Owner, levei um business case do papel ao lançamento em três meses e evoluí o produto por quase dois anos."],
   ["Between January and May 2023, 47% fewer people on the bench and 72% lower bench cost. About 82% were reallocated internally.", "Entre janeiro e maio de 2023, 47% menos pessoas no bench e custo do bench 72% menor. Cerca de 82% foram realocadas internamente."],
-  ["The screens in this case are a 2026 redesign concept, faithful to the rules in the real code and aligned with GFT’s identity. The original screens are confidential.", "As telas deste case são um conceito de redesign de 2026, fiel às regras do código real e alinhado à identidade da GFT. As telas originais são confidenciais."],
+  ["I built the screens of the product’s working example with Claude Code, from the design in Figma.", "Construí as telas do exemplo funcional do produto com Claude Code, a partir do design no Figma."],
   ["Explore the concept", "Explorar o conceito"],
   ["See the screens", "Ver as telas"],
   ["Product Designer & Product Owner", "Product Designer & Product Owner"],
