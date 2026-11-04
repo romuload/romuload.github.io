@@ -2618,7 +2618,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Beyond the guided analysis, the proposal covered the whole workload. These screens come from the interactive demo and went to the backlog for the GFT team.", "Além da análise guiada, a proposta cobria toda a operação. Estas telas vêm do demo interativo e foram para o backlog do time da GFT."],
   ["Reflections", "Reflexões"],
   ["TL;DR", "TL;DR"],
-  ["I built the working examples and the interactive prototype in this case with Claude Code, from the design in Figma. Try the four-step claims analysis.", "Construí os exemplos funcionais e o protótipo interativo deste case com Claude Code, a partir do design no Figma. Experimente a análise de sinistros em quatro passos."],
+  ["In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours. Try the four-step claims analysis.", "Em 2026, voltei a este projeto com as ferramentas de hoje, que não existiam na época. Parti do Figma que eu já tinha e, com o Claude Code, construí esta versão funcional em 2h. Experimente a análise de sinistros em quatro passos."],
   ["From Figma to code", "Do Figma ao código"]
 ]);
 
@@ -2633,7 +2633,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The bench lived in a spreadsheet emailed daily. Reservations went by email and Teams, and matching people to roles was done by hand.", "O bench ficava numa planilha enviada por e-mail todo dia. Reservas iam por e-mail e Teams, e o cruzamento entre pessoas e vagas era feito à mão."],
   ["As the only designer and the Product Owner, I took a business case from paper to launch in three months and evolved it for almost two years.", "Como único designer e Product Owner, levei um business case do papel ao lançamento em três meses e evoluí o produto por quase dois anos."],
   ["Between January and May 2023, 47% fewer people on the bench and 72% lower bench cost. About 82% were reallocated internally.", "Entre janeiro e maio de 2023, 47% menos pessoas no bench e custo do bench 72% menor. Cerca de 82% foram realocadas internamente."],
-  ["I built the screens of the product’s working example with Claude Code, from the design in Figma.", "Construí as telas do exemplo funcional do produto com Claude Code, a partir do design no Figma."],
+  ["In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours.", "Em 2026, voltei a este projeto com as ferramentas de hoje, que não existiam na época. Parti do Figma que eu já tinha e, com o Claude Code em 2h, construí esta versão funcional."],
   ["Explore the concept", "Explorar o conceito"],
   ["See the screens", "Ver as telas"],
   ["Product Designer & Product Owner", "Product Designer & Product Owner"],
