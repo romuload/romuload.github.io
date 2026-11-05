@@ -2969,7 +2969,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The current website","O website atual"],
   ["Created in 2021 and still live, sharing the product roadmap with customers.","Criado em 2021 e ainda no ar, divulgando o roadmap de produtos aos clientes."],
   ["Open the current website","Abrir o website atual"],
-  ["The roadmap organized by quarter, with a map and filters, in Portuguese and English.","O roadmap organizado por trimestre, com mapa e filtros, em português e inglês."],
+  ["The roadmap organized by quarter, with a map, search and filters, in Portuguese and English.","O roadmap organizado por trimestre, com mapa, busca e filtros, em português e inglês."],
   ["Open the proposal","Abrir a proposta"],
   ["Thomson Reuters roadmap proposal: desktop and mobile screens in laptop and phone mockups","Proposta do roadmap Thomson Reuters: telas desktop e mobile em mockups de notebook e celular"],
   ["Web design · Proposal","Web design · Proposta"],
@@ -3046,9 +3046,9 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Last updated date","Data de atualização"],
   ["Observed in November 2026, on desktop, without logging in. “No” means I didn’t find it on that page, not that the company doesn’t offer it elsewhere.","Observado em novembro de 2026, no desktop e sem login. “Não” significa que não encontrei o recurso nessa página, não que a empresa não o ofereça em outro lugar."],
   ["From AI suggestion to my decision","Da sugestão da IA à minha decisão"],
-  ["The AI suggested improvements based on this comparison. I analyzed them and decided to implement three, which aren’t in the published version yet.","A IA sugeriu melhorias a partir dessa comparação. Analisei e decidi implementar três, que ainda não estão na versão publicada."],
+  ["The AI suggested improvements based on this comparison. I analyzed them and decided to implement three, which are now in the proposal.","A IA sugeriu melhorias a partir dessa comparação. Analisei e decidi implementar três, que já estão na proposta."],
   ["In a regulatory roadmap, customers need to know whether the information is current.","Num roadmap regulatório, o cliente precisa saber se a informação está em dia."],
   ["What changed","O que mudou"],
-  ["A record of changed dates and statuses, with the reason, because tax authority deadlines move and customers plan around them.","Um registro de prazos e status alterados, com o motivo, porque os prazos do Fisco mudam e o cliente planeja com base neles."],
+  ["A record of changed dates and statuses, with the reason, because tax authority deadlines move and customers plan around them. In this concept, the entries are marked as examples.","Um registro de prazos e status alterados, com o motivo, porque os prazos do Fisco mudam e o cliente planeja com base neles. Neste conceito, as entradas estão marcadas como exemplo."],
   ["With 108 items, it helps people looking for a specific obligation, such as DeRE or NFS-e.","Com 108 itens, ajuda quem procura uma obrigação específica, como DeRE ou NFS-e."]
 ]);
