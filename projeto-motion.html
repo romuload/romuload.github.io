@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#121212">
+<title>Itaú · Motion in acts | Romulo Nascimento</title>
+<meta name="description" content="How I taught AI to speak Itaú's motion language, then turned it into an agent anyone at the bank can call from Teams.">
+<meta property="og:title" content="Itaú · Motion in acts | Romulo Nascimento">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://romuload.github.io/projeto-motion.html">
+<meta property="og:image" content="https://romuload.github.io/images/motion/pix-agendado-poster.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap">
+<script src="motion-case.js?v=1" defer></script>
+<link rel="stylesheet" href="locale.css?v=ux-1">
+<script src="locale-data.js?v=motion-1"></script>
+<script src="locale.js?v=motion-1" defer></script>
+<link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico?v=plane-2">
+<link rel="icon" type="image/png" href="favicon-32.png?v=plane-2" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
+<link rel="stylesheet" href="repar-case.css?v=ux-1">
+<link rel="stylesheet" href="motion-case.css?v=1">
+<link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=widows-1" defer></script><link rel="stylesheet" href="system.css?v=ux-3"></head>
+<body class="case-motion">
+<a class="case-skip" href="#conteudo">Skip to content</a>
+<header class="top">
+<a class="portfolio-home" href="index.html" aria-label="Romulo Nascimento, projects page"><img class="brand-symbol" src="images/brand/paper-plane.svg?v=2" width="52" height="38" alt=""><span class="name-text">Romulo Nascimento<small>Product Designer</small></span></a>
+<span class="sp"></span>
+<nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="sobre.html">About me</a><a href="trabalhe-comigo.html">Work with me</a></nav>
+<div class="lang-switch" role="group" aria-label="Choose language"><button type="button" data-language="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-language="pt" aria-pressed="false" lang="pt-BR" aria-label="Português">PT</button></div>
+</header>
+<main id="conteudo">
+
+<section class="mc-hero">
+<div class="squircles" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap mc-hero-grid">
+<div>
+<div class="mc-sign"><img src="images/itau.svg" alt="Itaú" width="44" height="44"><span>Itaú Unibanco · AI-assisted motion design</span></div>
+<h1 class="type-in"><span class="w" style="--i:0">How I taught AI to speak</span> <span class="kw" style="--i:3">Itaú's motion language.</span></h1>
+<p class="lead">A 25 to 30 second product video in the bank's style used to take a motion designer up to 4 hours. I turned that style into a method, and the method into an agent anyone at Itaú calls from Teams.</p>
+<div class="mc-actions">
+<a class="btn pri" href="#teste">Watch the test video <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+<a class="btn" href="motion-pix-agendado/index.html" target="_blank" rel="noopener">Try the interactive demo <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+</div>
+</div>
+<div class="float-screen" data-acts-video="hero">
+<video src="images/motion/pix-agendado.mp4" poster="images/motion/pix-agendado-poster.webp" muted loop playsinline autoplay preload="metadata" aria-label="Pix Agendado test video, made with the nine-act method, with fictional screens"></video>
+<div class="act-chip" aria-hidden="true"><b>1</b><span>Hook</span></div>
+<button class="video-ctl" type="button" aria-label="Pause video"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+</div>
+</div>
+</section>
+
+<section class="sec mc-dark" aria-labelledby="glance-title">
+<div class="wrap">
+<div class="mc-head"><h2 id="glance-title">At a <span class="kw">glance.</span></h2></div>
+<div class="glance">
+<div><strong>~20 min</strong><span>per 25–30 s video, down from up to 4 hours</span></div>
+<div><strong>3 days</strong><span>deadline for the first delivery, met</span></div>
+<div><strong>9 acts</strong><span>the pattern behind every Itaú motion video</span></div>
+<div><strong>Teams</strong><span>where anyone at the bank calls the agent</span></div>
+</div>
+<dl class="mc-tldr">
+<div><dt>Problem</dt><dd>I needed a product video in Itaú's motion style, with no motion designer available and no After Effects.</dd></div>
+<div><dt>What I did</dt><dd>I had Claude decode the bank's public videos into nine acts, proved them on a new subject, packed them into a skill and rebuilt the result inside the bank's Copilot.</dd></div>
+<div><dt>Result</dt><dd>The video shipped within the 3-day deadline. The agent is published for everyone: a script in, a finished video out in about 20 minutes.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="exp-title">
+<div class="wrap">
+<div class="mc-head">
+<p class="part-kicker">The experiment</p>
+<h2 id="exp-title">Could AI learn a motion language <span class="kw">by watching it?</span></h2>
+<p class="lead">Before touching the bank's tools, I tested the idea with Claude alone, on public material and fictional screens.</p>
+</div>
+<div class="cols2">
+<div><h3>The problem</h3><p>I had to deliver a product video in Itaú's motion style. No motion designer was available and I don't work in After Effects. The question was whether I could reach the level of the official videos without that dependency.</p></div>
+<div><h3>The bet: Claude's native motion</h3><p>Claude generates motion as code: every frame is calculated, rendered and exported as MP4. That gives exact timing, quick rounds of changes and output up to 4K. What was missing was teaching it what looking like Itaú means.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="source-title" style="padding-top:0">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="source-title">The source: the bank's <span class="kw">public videos.</span></h2>
+<p class="lead">I downloaded official Itaú motion videos from YouTube and gave them to Claude for a frame-by-frame analysis. Instead of describing the style with adjectives, I let the reference speak.</p>
+</div>
+<div class="strip">
+<figure><img src="images/motion/source-1.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: the keyword in orange" loading="lazy"></figure>
+<figure><img src="images/motion/source-2.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: the app screen with a tap" loading="lazy"></figure>
+<figure><img src="images/motion/source-3.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: sliders on the transfer screen" loading="lazy"></figure>
+<figure><img src="images/motion/source-4.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: the confirmation button" loading="lazy"></figure>
+<figure><img src="images/motion/source-5.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: the processing ring on orange" loading="lazy"></figure>
+<figure><img src="images/motion/source-6.webp" width="640" height="360" alt="Frame from Itaú's public tutorial: the closing signature" loading="lazy"></figure>
+</div>
+</div>
+</section>
+
+<section class="sec mc-white" aria-labelledby="read-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="read-title">Reading the <span class="kw">movements.</span></h2>
+<p class="lead">The analysis separated how each object moves. These eight behaviours appear in every video, rebuilt here in code.</p>
+</div>
+<div class="spec-grid" id="specimens">
+<article class="spec"><div class="stage st-open" aria-hidden="true"><i class="sq"></i></div><h3>Opening</h3><p>The orange screen opens into a white squircle.</p></article>
+<article class="spec"><div class="stage st-text" aria-hidden="true"><div class="line"><span>Bill due at</span> <span class="k">month-end?</span></div></div><h3>Text</h3><p>Words enter one by one as the spacing closes. The keyword arrives in orange at twice the size, then settles.</p></article>
+<article class="spec"><div class="stage st-impact" aria-hidden="true"><b>Easy</b></div><h3>Impact word</h3><p>One word lands at once, with weight.</p></article>
+<article class="spec"><div class="stage st-screen" aria-hidden="true"><div class="ph"><i></i><i></i><i></i><i></i><i></i></div></div><h3>App screen</h3><p>The screen floats with an orange outline, scrolls, zooms and swaps.</p></article>
+<article class="spec"><div class="stage st-high" aria-hidden="true"><div class="row r1"></div><div class="row r2"></div><div class="row r3"></div></div><h3>Highlight</h3><p>One element lifts out of the screen and becomes a card.</p></article>
+<article class="spec"><div class="stage st-touch" aria-hidden="true"><div class="val"></div><div class="track"></div><div class="fill"></div><div class="knob"></div><div class="cur"></div></div><h3>Interaction</h3><p>A peach cursor taps with a ripple and drags while the values change live.</p></article>
+<article class="spec"><div class="stage st-proc" aria-hidden="true"><div class="ring"></div><div class="check"></div><div class="wipe"></div></div><h3>Processing</h3><p>A ring loads, a check appears and a white circle clears the screen.</p></article>
+<article class="spec"><div class="stage st-sign" aria-hidden="true"><div class="s">Easy, <b>Pix Agendado</b>, done.</div><div class="logo"><img src="images/itau.svg" alt="" width="60" height="60"></div></div><h3>Signature and logo</h3><p>A three-part sentence shrinks away and the logo closes with the sound signature.</p></article>
+</div>
+<div class="spec-ctl"><button type="button" id="specToggle" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><span>Pause animations</span></button></div>
+</div>
+</section>
+
+<section class="sec mc-dark" aria-labelledby="acts-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="acts-title">The pattern: <span class="kw">nine acts.</span></h2>
+<p class="lead">The loose movements revealed a structure that repeats in every video. This was the turning point of the project.</p>
+</div>
+<ol class="acts">
+<li class="fixed"><span class="n">0</span><h3>Opening</h3><p>The brand opens.</p><span class="tag">Fixed in every video</span></li>
+<li><span class="n">1</span><h3>Hook</h3><p>The question that names the pain.</p></li>
+<li><span class="n">2</span><h3>Promise</h3><p>One impact word.</p></li>
+<li><span class="n">3</span><h3>Path</h3><p>Navigation to the feature.</p></li>
+<li><span class="n">4</span><h3 data-no-translate data-act-name="Action">Action</h3><p>Tap, drag, fill in, confirm.</p></li>
+<li><span class="n">5</span><h3>Processing</h3><p>The system at work.</p></li>
+<li><span class="n">6</span><h3>Confirmation</h3><p>The result on screen.</p></li>
+<li><span class="n">7</span><h3>Signature</h3><p>The sentence that closes the story.</p></li>
+<li class="fixed"><span class="n">8</span><h3>Logo</h3><p>The brand closes.</p><span class="tag">Fixed in every video</span></li>
+</ol>
+<div class="rules">
+<h3>Identity as rules</h3>
+<span><i class="sw" style="background:#fff"></i>White background</span>
+<span><i class="sw" style="background:#FD5D00"></i>Orange #FD5D00</span>
+<span>Light text, bold keyword</span>
+<span>One text and screen effect per act</span>
+</div>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="val-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="val-title">The validation: <span class="kw">recreate the original.</span></h2>
+<p class="lead">Before using the pattern on a new subject, I tested whether it could reproduce a video that already existed. I recreated Itaú's public Transfer Limits tutorial with its own screens and compared it with the original. The movements matched, and the act structure held.</p>
+</div>
+<div class="vs">
+<div class="float-screen"><video src="images/motion/itau-tutorial-original.mp4" poster="images/motion/original-poster.webp" muted playsinline preload="metadata" aria-label="Original Itaú tutorial, public on YouTube"></video><span class="tagline">Original · public on YouTube</span></div>
+<div class="float-screen"><video src="images/motion/itau-tutorial-recreated.mp4" poster="images/motion/recreated-poster.webp" muted playsinline preload="metadata" aria-label="The same tutorial recreated with the nine-act method"></video><span class="tagline new">Recreated with the method</span></div>
+</div>
+<div class="vs-ctl"><button class="btn pri" type="button" id="playBoth">Play both from the start <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+</div>
+</section>
+
+<section class="sec mc-white" aria-labelledby="method-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="method-title">From pattern <span class="kw">to method.</span></h2>
+<p class="lead">For any subject to fit the acts, content comes in through a Word script: one scene per page, with the screen's SVG. Claude reads the scenes, places each one in an act and applies that act's effect.</p>
+</div>
+<div class="method">
+<div class="m-card"><h3>The script</h3><div class="doc-page" aria-hidden="true"><b>Scene 3</b><i></i><i class="s"></i><div class="mini"></div></div><p>One scene per page, the screen embedded as SVG.</p></div>
+<div class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+<div class="m-card"><h3>The act</h3><div class="act-list" aria-hidden="true"><span>Hook</span><span>Promise</span><span class="on">Path</span><span data-no-translate data-act-name="Action">Action</span><span>Processing</span></div><p>Each scene is placed in the act it serves.</p></div>
+<div class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+<div class="m-card"><h3>The effect</h3><div class="fx-line"><i aria-hidden="true"></i>Floating screen, scroll and tap</div><p>The act decides how the scene moves.</p></div>
+</div>
+<div class="layers">
+<div class="layer-card"><div class="flat" aria-hidden="true"></div><div><h3>A screenshot is locked</h3><p>A flat image can only move as a whole.</p></div></div>
+<div class="layer-card"><div class="stack" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Layers, not screenshots</h3><p>Screens must arrive as SVG layers, so each element can be tapped, dragged or lifted.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec mc-dark" id="teste" aria-labelledby="test-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="test-title">The test: <span class="kw">Pix Agendado.</span></h2>
+<p class="lead">To prove the pattern didn't depend on the source videos, I picked a subject that wasn't in them and used fictional screens. The script was text only. The video came out with the same rhythm and language as the official ones.</p>
+</div>
+<div class="test-grid">
+<div class="script">
+<h3>The script, as written in Portuguese</h3>
+<ol data-no-translate lang="pt-BR">
+<li data-act="1"><em>1</em>“Tem uma conta para pagar só no fim do mês?”</li>
+<li data-act="2"><em>2</em>“Fácil”</li>
+<li data-act="3"><em>3</em>Pix → Agendar Pix</li>
+<li data-act="4"><em>4</em>Valor, data e repetição</li>
+<li data-act="5"><em>5</em>“Agendando seu Pix”</li>
+<li data-act="6"><em>6</em>Pix agendado</li>
+<li data-act="7"><em>7</em>“Fácil, Pix Agendado, pronto.”</li>
+</ol>
+</div>
+<div>
+<div class="float-screen" data-acts-video="test">
+<video src="images/motion/pix-agendado.mp4" poster="images/motion/pix-agendado-poster.webp" muted loop playsinline preload="metadata" aria-label="Pix Agendado test video with the act timeline below"></video>
+<button class="video-ctl" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+</div>
+<div class="ribbon" role="group" aria-label="Jump to an act"></div>
+<p class="act-now" aria-live="polite"></p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="beyond-title">
+<div class="wrap">
+<div class="beyond">
+<a class="shot" href="motion-pix-agendado/index.html" target="_blank" rel="noopener" aria-label="Open the interactive Pix Agendado demo in a new tab"><img src="images/motion/interactive.webp" width="1600" height="1122" alt="Interactive demo in Try mode, waiting for a tap on Pix" loading="lazy"></a>
+<div class="mc-head" style="margin:0">
+<h2 id="beyond-title">Beyond video: <span class="kw">try it.</span></h2>
+<p class="lead">The same test became an interactive page. In Watch mode it plays like a video. In Try mode it pauses at each tap and waits for the visitor to click or drag, with chapters you can jump to by act.</p>
+<div class="mc-actions"><a class="btn pri" href="motion-pix-agendado/index.html" target="_blank" rel="noopener">Try the interactive demo <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></div>
+</div>
+</div>
+<div class="verdict"><i class="sq" aria-hidden="true"></i><p><b>Result of the experiment:</b> the pattern reproduces on any of the bank's subjects, as video or as HTML. It was validated, but still outside the environment where I had to deliver.</p></div>
+</div>
+</section>
+
+<section class="sec mc-dark" aria-labelledby="app-title">
+<div class="wrap">
+<div class="mc-head">
+<p class="part-kicker">The application</p>
+<h2 id="app-title">Same model, <span class="kw">different room.</span></h2>
+<p class="lead">What worked in Claude had to work inside the bank, where the tools are different.</p>
+</div>
+<div class="app-grid">
+<article class="app-card">
+<div class="file" aria-hidden="true"><div class="fbar"><i></i>skill · motion-itau.md</div><ul><li>Nine acts, in order</li><li>Text and screen effects per act</li><li>Identity rules</li><li>Word script template</li></ul></div>
+<h3>The experiment becomes a skill</h3>
+<p>I packed the learning into a skill: a file with the nine acts, each act's effects and the identity rules, plus the Word script template. What travels is the knowledge, not the tool.</p>
+</article>
+<article class="app-card">
+<div class="rooms">
+<div class="room"><h4>In the experiment</h4><ul><li class="yes">Claude app</li><li class="yes">Figma</li><li class="yes">Native motion</li></ul></div>
+<div class="room bank"><h4>At the bank</h4><ul><li class="no">No Claude app</li><li class="no">No Figma access</li><li class="yes">Opus 5.5 in Microsoft Copilot</li></ul></div>
+</div>
+<h3>The real environment's constraints</h3>
+<p>The Claude app can't be installed at the bank and there is no Figma access. But the premium Office licence gives access to the Opus 5.5 model inside Microsoft Copilot. The same model, in another environment.</p>
+</article>
+<article class="app-card">
+<span class="model-pill">Skill + script + SVG → Copilot</span>
+<h3>Reproducing in Copilot</h3>
+<p>I took the skill to Copilot together with the script and the screens' SVGs. Because the pattern was written as rules, not kept in a chat history, the model reproduced the same movements inside the bank.</p>
+</article>
+<article class="app-card">
+<div class="big-stat"><strong>3 days</strong><span>from request to delivery</span></div>
+<h3>The delivery</h3>
+<p>The motion shipped within the 3-day deadline, counted from the request, at the level of the official videos.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="scale-title">
+<div class="wrap">
+<div class="mc-head">
+<p class="part-kicker">The scale</p>
+<h2 id="scale-title">From my deliverable <span class="kw">to the bank's tool.</span></h2>
+<p class="lead">After the delivery, I created a motion agent in Copilot with the prompt instructions and the skill fixed inside. Nobody needs to know the method to use it. The main rule: the video never starts until the person approves the plan.</p>
+</div>
+<div class="agent-grid">
+<div class="chat" role="img" aria-label="Example conversation with the motion agent, from the script to the finished video">
+<div class="chat-bar"><span class="av" aria-hidden="true"><i></i></span><div><b>Motion creator</b><small>Agent in Microsoft Copilot · Teams</small></div></div>
+<div class="chat-body" aria-hidden="true">
+<div class="msg bot">Send me your video script as a Word or PowerPoint file.</div>
+<div class="msg me"><span class="attach"><i></i><span>roteiro-pix-agendado.docx<small>Word script</small></span></span></div>
+<div class="msg bot">Here is the plan I extracted. Check it before we go on.
+<table class="plan"><thead><tr><th>Thumbnail</th><th>Time</th><th>Scene</th><th>Motion</th></tr></thead><tbody>
+<tr><td><img src="images/motion/plan-1.webp" width="64" height="36" alt=""></td><td>0:00</td><td><span data-no-translate>Fim do mês?</span></td><td>Hook · keyword in orange</td></tr>
+<tr><td><img src="images/motion/plan-2.webp" width="64" height="36" alt=""></td><td>0:05</td><td><span data-no-translate>Fácil</span></td><td>Promise · impact word</td></tr>
+<tr><td><img src="images/motion/plan-3.webp" width="64" height="36" alt=""></td><td>0:06</td><td>Home → Pix</td><td>Path · floating screen, tap</td></tr>
+<tr><td><img src="images/motion/plan-4.webp" width="64" height="36" alt=""></td><td>0:12</td><td>Amount, date, repeat</td><td>Action · tap, drag, live values</td></tr>
+</tbody></table></div>
+<div class="msg bot">How long should it be? Which format?<div class="chips"><span class="on">30 seconds</span><span class="on">16:9</span><span>9:16</span></div></div>
+<div class="msg bot">Quality, with the time and size estimate for each.<div class="chips"><span class="on">1080p</span><span>4K</span></div></div>
+<div class="msg bot">Language and soundtrack?<div class="chips"><span class="on">Portuguese</span><span>English</span><span>Track 1</span><span class="on">Track 2</span><span>Track 3</span></div></div>
+<div class="msg me">Plan approved.</div>
+<div class="msg bot"><span class="attach"><i class="mp4"></i><span>pix-agendado-final.mp4<small>Ready to download</small></span></span></div>
+</div>
+</div>
+<div>
+<h3>How the agent leads the conversation</h3>
+<ol class="steps">
+<li><span><b>Waits for the script</b> in Word or PowerPoint, and asks for it if it doesn't come.</span></li>
+<li><span><b>Returns an execution plan</b> as a table with thumbnail, time, scene and motion.</span></li>
+<li><span><b>Asks for the duration</b> in seconds or minutes.</span></li>
+<li><span><b>Asks for the format,</b> such as 16:9 or 9:16.</span></li>
+<li><span><b>Asks for the quality,</b> with time and file size estimates.</span></li>
+<li><span><b>Confirms the language:</b> Portuguese or English.</span></li>
+<li><span><b>Asks which soundtrack</b> of the bank's three to use.</span></li>
+<li><span><b>Asks for the plan's approval.</b></span></li>
+<li><span><b>Only then generates the video</b> and makes it available to download.</span></li>
+</ol>
+</div>
+</div>
+<blockquote class="prompt" data-no-translate lang="en">“Make a dynamic motion graphics video for Itaú Bank that follows the roteiro attached and demonstrates the content like a show reel.”</blockquote>
+<p class="prompt-note">The final command is short, because the whole pattern already lives in the skill.</p>
+
+<div class="edit-grid">
+<div>
+<h3>The complete edit, automated</h3>
+<p>The opening and closing are the same in every bank video, so both clips sit ready in a folder the skill references. Itaú's videos have no narration, but they have their own soundtrack, as in the YouTube references. I chose three tracks the bank already uses and made the choice part of the agent's questions.</p>
+<p style="margin-top:16px">The file arrives already edited: opening, the motion from the script, closing and the chosen track. Nobody needs to open an editor afterwards.</p>
+</div>
+<div class="timeline" aria-label="The delivered file: opening, motion from the script, closing and the chosen soundtrack" role="img">
+<div class="tl-row" aria-hidden="true"><div class="tl-open">Opening</div><div class="tl-main">Motion from the script</div><div class="tl-close">Closing</div></div>
+<div class="tl-audio" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="tracks" aria-hidden="true"><span>Track 1</span><span class="on">Track 2</span><span>Track 3</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec mc-white" aria-labelledby="result-title">
+<div class="wrap">
+<div class="mc-head">
+<h2 id="result-title">The real <span class="kw">result.</span></h2>
+<p class="lead">Motion no longer depends on whoever knows After Effects. A one-off request with a deadline became a capability open to the whole bank.</p>
+</div>
+<div class="result-grid">
+<table class="cmp">
+<thead><tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col">Before</th><th scope="col" class="after">After</th></tr></thead>
+<tbody>
+<tr><th scope="row">Who produces</th><td>A motion designer</td><td class="after">Anyone with a script</td></tr>
+<tr><th scope="row">Tool</th><td>After Effects</td><td class="after">Agent in Copilot, via Teams</td></tr>
+<tr><th scope="row">Time per video (25–30 s)</th><td>Up to 4 hours</td><td class="after">About 20 minutes</td></tr>
+<tr><th scope="row">Opening, closing and soundtrack</th><td>Assembled by hand in the editor</td><td class="after">Already in the delivered file</td></tr>
+</tbody>
+</table>
+<div class="tbars">
+<h3>Time per video</h3>
+<div class="tbar"><span>Before, by hand<b>up to 240 min</b></span><i></i></div>
+<div class="tbar now"><span>With the agent<b>~20 min</b></span><i></i></div>
+<p>With the script ready, what remains is rendering time.</p>
+</div>
+</div>
+<p class="seen">The agent is published and open to anyone at the bank. I can't measure usage, but I've followed at least five videos made by other people.</p>
+</div>
+</section>
+
+<section class="sec mc-light" aria-labelledby="learn-title">
+<div class="wrap">
+<div class="mc-head"><h2 id="learn-title">What I <span class="kw">learned.</span></h2></div>
+<div class="learn-grid">
+<article class="learn"><i aria-hidden="true"></i><h3>References become rules</h3><p>Breaking down what already exists did more than asking for something nice.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>The acts are the grammar</h3><p>Once the structure is defined, the subject becomes a variable.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>Layers, not screenshots</h3><p>Only what exists as a layer can be animated.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>Content becomes the bottleneck</h3><p>With the pattern ready, the hard part is deciding what to say.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>The plan before the render</h3><p>Showing scene by scene before generating avoids rework: a mistake shows up in a table, not in a 20-minute video.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>Knowledge travels</h3><p>The skill worked wherever the model was, even without the original tool.</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>Constraints shape the method</h3><p>Without Figma or the app, the flow was designed for Word, SVG and Copilot.</p></article>
+<article class="learn turma"><i aria-hidden="true"></i><h3>From deliverable to tool</h3><p>Solving my own problem, then opening the solution to everyone, multiplied the impact. As we practise at the bank: Vamos de turma! 🧡</p></article>
+</div>
+</div>
+</section>
+
+<section class="mc-orange mc-final" aria-labelledby="final-title">
+<div class="contours" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<h2 id="final-title" data-no-translate>Vamos de turma.</h2>
+<p class="lead">Try the interactive demo, or get in touch to talk about a product challenge.</p>
+<div class="mc-actions">
+<a class="btn pri" href="motion-pix-agendado/index.html" target="_blank" rel="noopener">Try the interactive demo <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+<a class="btn" href="trabalhe-comigo.html">Work with me</a>
+</div>
+<p class="source-note">The Pix Agendado screens are fictional. The Transfer Limits tutorial is public on Itaú's YouTube channel. The Itaú brand belongs to Itaú Unibanco.</p>
+</div>
+</section>
+</main>
+<footer class="wrap case-footer">
+<span>© <span id="year">2026</span> Romulo Nascimento</span>
+<a href="index.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+<a href="trabalhe-comigo.html">Work with me</a>
+</footer>
+</body>
+</html>
