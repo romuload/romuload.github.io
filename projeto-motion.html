@@ -17,7 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="motion-case.js?v=6" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=motion-4"></script>
+<script src="locale-data.js?v=motion-5"></script>
 <script src="locale.js?v=motion-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -94,7 +94,7 @@
 <p class="lead">Before touching the bank's tools, I tested the idea with Claude alone, on public material and fictional screens.</p>
 </div>
 <div class="cols2">
-<div><h3>The problem</h3><p>I had to deliver a product video in Itaú's motion style. No motion designer was available and I don't work in After Effects. The question was whether I could reach the level of the official videos without that dependency.</p></div>
+<div><h3>The problem</h3><p>I had to deliver a product video in Itaú's motion style, and I had no After Effects licence. At the bank, only motion professionals have one, and their schedules and time are in extremely high demand. The question was whether I could reach the level of the official videos without that dependency.</p></div>
 <div><h3>The bet: Claude's native motion</h3><p>Claude generates motion as code: every frame is calculated, rendered and exported as MP4. That gives exact timing, quick rounds of changes and output up to 4K. What was missing was teaching it what looking like Itaú means.</p></div>
 </div>
 </div>
@@ -168,11 +168,11 @@
 <div class="wrap">
 <div class="mc-head">
 <h2 id="val-title">The validation: <span class="kw">recreate the original.</span></h2>
-<p class="lead">Before using the pattern on a new subject, I recreated Itaú's public tutorial and compared it with the original: the movements matched and the act structure held. Below, side by side, the original and the Pix Agendado test made with the same method: the same acts, at the same pace.</p>
+<p class="lead">Before using the pattern on a new subject, I recreated Itaú's public tutorial and compared it with the original: the movements matched and the act structure held. Below, side by side, the original and the Transfer Limits test made with the same method: the same acts, at the same pace.</p>
 </div>
 <div class="vs">
 <div class="float-screen"><video src="images/motion/itau-tutorial-original.mp4" poster="images/motion/original-poster.webp" muted playsinline preload="metadata" aria-label="Original Itaú tutorial, public on YouTube"></video><span class="tagline">Original · public on YouTube</span></div>
-<div class="float-screen"><video src="images/motion/pix-agendado.mp4" poster="images/motion/pix-agendado-poster.webp" muted playsinline preload="metadata" aria-label="Pix Agendado test made with the nine-act method, with fictional screens"></video><span class="tagline new">Pix Agendado · made with the method</span></div>
+<div class="float-screen"><video src="images/motion/itau-tutorial-recreated.mp4" poster="images/motion/recreated-poster.webp" muted playsinline preload="metadata" aria-label="Transfer Limits test made with the nine-act method"></video><span class="tagline new">Transfer Limits · made with the method</span></div>
 </div>
 <div class="vs-ctl"><button class="btn pri" type="button" id="playBoth">Play both from the start <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button></div>
 </div>
@@ -259,10 +259,10 @@
 <article class="app-card">
 <div class="rooms">
 <div class="room"><h4>In the experiment</h4><ul><li class="yes">Claude app</li><li class="yes">Figma</li><li class="yes">Native motion</li></ul></div>
-<div class="room bank"><h4>At the bank</h4><ul><li class="no">No Claude app</li><li class="no">No Figma access</li><li class="yes">Opus 5.5 in Microsoft Copilot</li></ul></div>
+<div class="room bank"><h4>At the bank</h4><ul><li class="no">No Claude app</li><li class="yes">Figma screens exported as SVG and inserted into the Word script file</li><li class="yes">Opus 5.5 in Microsoft Copilot</li></ul></div>
 </div>
 <h3>The real environment's constraints</h3>
-<p>The Claude app can't be installed at the bank and there is no Figma access. But the premium Office licence gives access to the Opus 5.5 model inside Microsoft Copilot. The same model, in another environment.</p>
+<p>The Claude app can't be installed at the bank and there is no access to Figma with MCP. But the premium Office licence gives access to the Opus 5.5 model inside Microsoft Copilot. The same model, in another environment.</p>
 </article>
 <article class="app-card">
 <span class="model-pill">Skill + script + SVG → Copilot</span>
@@ -394,8 +394,8 @@
 <article class="learn"><i aria-hidden="true"></i><h3>Content becomes the bottleneck</h3><p>With the pattern ready, the hard part is deciding what to say.</p></article>
 <article class="learn"><i aria-hidden="true"></i><h3>The plan before the render</h3><p>Showing scene by scene before generating avoids rework: a mistake shows up in a table, not in a 20-minute video.</p></article>
 <article class="learn"><i aria-hidden="true"></i><h3>Knowledge travels</h3><p>The skill worked wherever the model was, even without the original tool.</p></article>
-<article class="learn"><i aria-hidden="true"></i><h3>Constraints shape the method</h3><p>Without Figma or the app, the flow was designed for Word, SVG and Copilot.</p></article>
-<article class="learn turma"><i aria-hidden="true"></i><h3>From deliverable to tool</h3><p>Solving my own problem, then opening the solution to everyone, multiplied the impact. As we practise at the bank: Vamos de turma! 🧡</p></article>
+<article class="learn"><i aria-hidden="true"></i><h3>Constraints shape the method</h3><p>The flow was adapted for Word, SVG and Copilot. The skill holds the instructions and makes it happen.</p></article>
+<article class="learn turma"><i aria-hidden="true"></i><h3>From deliverable to tool</h3><p>Solving my own problem, then opening the solution to everyone, multiplied the impact.</p></article>
 </div>
 </div>
 </section>
