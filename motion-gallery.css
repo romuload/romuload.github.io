@@ -1,8 +1,6 @@
-/* Gallery cover for the Itaú motion case: the test video on a floating screen. */
-.image-motion{background:#121212;display:grid;place-items:center;container-type:inline-size;aspect-ratio:1.3;isolation:isolate}
-.image-motion .mg-sq{position:absolute;right:-18cqw;bottom:-34cqw;width:78cqw;aspect-ratio:1;border-radius:32%;background:linear-gradient(200deg,rgba(255,98,0,.1),rgba(255,98,0,.55));transform:rotate(-18deg)}
-.image-motion .mg-sq::after{content:"";position:absolute;inset:22%;border-radius:32%;background:linear-gradient(200deg,rgba(255,110,10,.3),#FF6200 70%)}
-.image-motion .mg-screen{position:relative;width:74cqw;border-radius:1.6cqw;overflow:hidden;outline:3px solid #FF6200;background:#fff;box-shadow:0 4cqw 8cqw rgba(0,0,0,.45);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+/* Gallery cover for the Itaú motion case: the test video looping on a floating screen.
+   Same proportions as the laptop covers; the bank's orange fading into black. */
+.image-motion{display:grid;place-items:center;aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate;background:radial-gradient(ellipse at 50% 15%,#FF6200,#121212 92%)}
+.image-motion .mg-screen{position:relative;width:74cqw;border-radius:1.6cqw;overflow:hidden;outline:3px solid #FF6200;background:#fff;box-shadow:0 4cqw 8cqw rgba(0,0,0,.45)}
 .image-motion .mg-screen video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;padding:0;filter:none}
-.project:hover .image-motion .mg-screen{transform:scale(1.02)}
-@media (prefers-reduced-motion:reduce){.project:hover .image-motion .mg-screen{transform:none}}
+@media(max-width:767px){.image-motion{aspect-ratio:1.3}}
