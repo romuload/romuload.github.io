@@ -3322,3 +3322,28 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Application","Aplicação"],
   ["Scale","Escala"]
 ]);
+
+// Motion in acts: the animated agent conversation.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["Animated conversation with the motion agent in Teams, from the script to the finished video","Conversa animada com o agente de motion no Teams, do roteiro ao vídeo pronto"],
+  ["Activity","Atividade"],
+  ["Chat","Chat"],
+  ["Calendar","Calendário"],
+  ["Files","Arquivos"],
+  ["Motion AI","Motion IA"],
+  ["How long should it be?","Qual a duração?"],
+  ["15 seconds","15 segundos"],
+  ["60 seconds","60 segundos"],
+  ["Which format?","Qual o formato?"],
+  ["Which language is the content in?","Em qual idioma está o conteúdo?"],
+  ["Which soundtrack?","Qual trilha?"],
+  ["Shall I generate the video with this plan?","Posso gerar o vídeo com este plano?"],
+  ["Approve","Aprovar"],
+  ["Adjust","Ajustar"],
+  ["Generating your video…","Gerando seu vídeo…"],
+  ["Opening, motion, closing and soundtrack in one file","Abertura, motion, encerramento e trilha num arquivo só"],
+  ["Type a message","Digite uma mensagem"],
+  ["Pause conversation","Pausar conversa"],
+  ["Play conversation","Reproduzir conversa"],
+  ["Replay","Ver de novo"]
+]);

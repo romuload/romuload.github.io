@@ -445,3 +445,69 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
 .tl-audio i:nth-child(2n){animation-delay:-.5s}.tl-audio i:nth-child(3n){animation-delay:-.9s}.tl-audio i:nth-child(5n){animation-delay:-.25s}.tl-audio i:nth-child(7n){animation-delay:-.7s}
 @media (max-width:960px){.mc-hero{background:radial-gradient(ellipse at 50% 100%,#FF6200,#121212 70%)}}
 .acts h3{font-size:clamp(.9rem,1.05vw,1.0625rem);hyphens:auto;-webkit-hyphens:auto}
+
+/* ---------- the agent, played in a Teams-style window ---------- */
+.tm{display:grid;grid-template-columns:76px minmax(0,1fr);height:660px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(20,20,20,.14)}
+.tm-rail{background:#EBEBF0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 0}
+.tm-ico{position:relative;width:60px;padding:9px 0 7px;border-radius:12px;display:grid;justify-items:center;gap:4px;color:#8C8C96}
+.tm-ico svg{width:22px;height:22px}
+.tm-ico small{font-size:10.5px;font-weight:600;line-height:1}
+.tm-ico.on{color:var(--o-deep);background:#fff;box-shadow:0 4px 12px rgba(255,98,0,.18)}
+.tm-ico.on::before{content:"";position:absolute;left:-8px;top:12px;bottom:12px;width:3px;border-radius:2px;background:var(--o)}
+.tm-ico.on .spark{transform-origin:12px 10px;animation:spark 2.4s ease-in-out infinite}
+.tm-ico.on .s2{transform-origin:18.5px 18px;animation-delay:-1.2s}
+@keyframes spark{0%,100%{scale:1;opacity:1}50%{scale:.78;opacity:.65}}
+.tm-main{display:flex;flex-direction:column;min-width:0;min-height:0}
+.tm-top{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #E8E8EC}
+.tm-top b{display:block;font-size:var(--text-sm);color:var(--k)}
+.tm-top small{display:block;font-size:12px;color:var(--k3);font-weight:500}
+.tm-dots{display:flex;gap:6px;margin-right:6px}
+.tm-dots i{width:10px;height:10px;border-radius:50%;background:#E2E2E7}
+.tm-av{width:36px;height:36px;border-radius:30%;background:var(--o);color:#fff;display:grid;place-items:center}
+.tm-av svg{width:20px;height:20px}
+.tm-body{flex:1;min-height:0;overflow:hidden;background:#F7F7F9;position:relative}
+.tm-body::before{content:"";position:absolute;left:0;right:0;top:0;height:28px;background:linear-gradient(#F7F7F9,rgba(247,247,249,0));z-index:1}
+.tm-feed{display:flex;flex-direction:column;gap:12px;padding:20px 18px 18px;transition:transform .6s var(--ease)}
+.tm-feed .msg{display:none;flex:none}
+.tm-feed .msg.me{align-self:flex-end}
+.tm-feed .msg.in{display:block;animation:msgIn .45s var(--ease) both}
+@keyframes msgIn{from{opacity:0;transform:translateY(14px) scale(.97)}}
+.tm-feed .plan tbody tr{display:none}
+.tm-feed .plan tbody tr.in{display:table-row;animation:rowIn .4s var(--ease) both}
+@keyframes rowIn{from{opacity:0}}
+.tm-feed .chips span{transition:background .25s,border-color .25s,color .25s}
+.tm-feed .chips span.on{animation:pick .35s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pick{from{scale:.86}}
+.typing{display:none;align-self:flex-start;gap:5px;padding:14px 16px;border-radius:14px;border-top-left-radius:4px;background:#fff;border:1px solid #E6E7EA}
+.typing.in{display:inline-flex}
+.typing i{width:7px;height:7px;border-radius:50%;background:#B9BAC2;animation:dot 1s ease-in-out infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,100%{translate:0 0;opacity:.5}40%{translate:0 -4px;opacity:1}}
+.gen-bar{display:block;height:8px;border-radius:4px;background:#EFE5DE;margin-top:10px;overflow:hidden;width:240px;max-width:100%}
+.gen-bar i{display:block;height:100%;width:0;background:var(--o);border-radius:4px}
+.gen.in .gen-bar i{animation:gen 2.6s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes gen{to{width:100%}}
+.tm-input{display:flex;align-items:center;justify-content:space-between;margin:12px 18px 16px;padding:12px 16px;border-radius:10px;border:1px solid #E2E2E7;color:#9A9AA3;font-size:var(--text-sm)}
+.tm-input svg{width:18px;height:18px;color:var(--o)}
+.tm-ctl{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.tm-ctl button{display:inline-flex;align-items:center;gap:8px;min-height:var(--target);padding:0 16px;border:1px solid #C9CBD0;border-radius:var(--radius-control);background:#fff;color:var(--k);font:600 var(--text-sm) var(--sans);cursor:pointer;transition:transform .2s var(--ease)}
+.tm-ctl button:hover{transform:translateY(-2px)}
+/* the steps light up with the conversation */
+.steps li{transition:color .3s}
+.steps li::before{transition:background .3s,color .3s}
+.steps li:last-child::before{background:#fff;color:var(--o-deep)}
+.steps li.now::before{background:var(--o);color:#fff}
+.steps li.now{color:var(--k)}
+.steps li.done::before{content:"✓";background:var(--peach);color:var(--o-deep)}
+@media (max-width:600px){
+  .tm{grid-template-columns:56px minmax(0,1fr);height:600px}
+  .tm-ico{width:46px}.tm-ico small{display:none}
+  .tm-ico.on::before{left:-5px}
+  .tm-dots{display:none}
+  .tm-feed{padding:16px 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tm-feed .msg,.tm-feed .plan tbody tr{animation:none!important}
+  .tm-ico.on .spark,.typing i{animation:none}
+  .gen.in .gen-bar i{animation:none;width:100%}
+}

@@ -15,9 +15,9 @@
 <link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="motion-case.js?v=5" defer></script>
+<script src="motion-case.js?v=6" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=motion-3"></script>
+<script src="locale-data.js?v=motion-4"></script>
 <script src="locale.js?v=motion-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=ux-1">
-<link rel="stylesheet" href="motion-case.css?v=4">
+<link rel="stylesheet" href="motion-case.css?v=5">
 <link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=widows-1" defer></script><link rel="stylesheet" href="system.css?v=ux-3"></head>
 <body class="case-motion">
 <a class="case-skip" href="#conteudo">Skip to content</a>
@@ -286,28 +286,47 @@
 <p class="lead">After the delivery, I created a motion agent in Copilot with the prompt instructions and the skill fixed inside. Nobody needs to know the method to use it. The main rule: the video never starts until the person approves the plan.</p>
 </div>
 <div class="agent-grid">
-<div class="chat" role="img" aria-label="Example conversation with the motion agent, from the script to the finished video">
-<div class="chat-bar"><span class="av" aria-hidden="true"><i></i></span><div><b>Motion creator</b><small>Agent in Microsoft Copilot · Teams</small></div></div>
-<div class="chat-body" aria-hidden="true">
-<div class="msg bot">Send me your video script as a Word or PowerPoint file.</div>
+<div class="tm-wrap">
+<div class="tm" id="agentDemo" role="img" aria-label="Animated conversation with the motion agent in Teams, from the script to the finished video">
+<nav class="tm-rail" aria-hidden="true">
+<span class="tm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><small>Activity</small></span>
+<span class="tm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg><small>Chat</small></span>
+<span class="tm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M15 14.3c2.6-.4 4.8 1.2 5.5 4.7"/></svg><small>Teams</small></span>
+<span class="tm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><small>Calendar</small></span>
+<span class="tm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg><small>Files</small></span>
+<span class="tm-ico on"><svg viewBox="0 0 24 24" fill="currentColor"><path class="spark" d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9z"/><path class="spark s2" d="M18.5 14.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/></svg><small>Motion AI</small></span>
+</nav>
+<div class="tm-main">
+<div class="tm-top"><span class="tm-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="tm-av" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9z"/></svg></span><div><b>Motion creator</b><small>Agent in Microsoft Copilot · Teams</small></div></div>
+<div class="tm-body" aria-hidden="true"><div class="tm-feed">
+<div class="msg bot" data-s="1">Send me your video script as a Word or PowerPoint file.</div>
 <div class="msg me"><span class="attach"><i></i><span>roteiro-pix-agendado.docx<small>Word script</small></span></span></div>
-<div class="msg bot">Here is the plan I extracted. Check it before we go on.
+<div class="msg bot" data-s="2">Here is the plan I extracted. Check it before we go on.
 <table class="plan"><thead><tr><th>Thumbnail</th><th>Time</th><th>Scene</th><th>Motion</th></tr></thead><tbody>
 <tr><td><img src="images/motion/plan-1.webp" width="64" height="36" alt=""></td><td>0:00</td><td><span data-no-translate>Fim do mês?</span></td><td>Hook · keyword in orange</td></tr>
 <tr><td><img src="images/motion/plan-2.webp" width="64" height="36" alt=""></td><td>0:05</td><td><span data-no-translate>Fácil</span></td><td>Promise · impact word</td></tr>
 <tr><td><img src="images/motion/plan-3.webp" width="64" height="36" alt=""></td><td>0:06</td><td>Home → Pix</td><td>Path · floating screen, tap</td></tr>
 <tr><td><img src="images/motion/plan-4.webp" width="64" height="36" alt=""></td><td>0:12</td><td>Amount, date, repeat</td><td>Action · tap, drag, live values</td></tr>
 </tbody></table></div>
-<div class="msg bot">How long should it be? Which format?<div class="chips"><span class="on">30 seconds</span><span class="on">16:9</span><span>9:16</span></div></div>
-<div class="msg bot">Quality, with the time and size estimate for each.<div class="chips"><span class="on">1080p</span><span>4K</span></div></div>
-<div class="msg bot">Language and soundtrack?<div class="chips"><span class="on">Portuguese</span><span>English</span><span>Track 1</span><span class="on">Track 2</span><span>Track 3</span></div></div>
+<div class="msg bot" data-s="3">How long should it be?<div class="chips"><span>15 seconds</span><span data-pick>30 seconds</span><span>60 seconds</span></div></div>
+<div class="msg bot" data-s="4">Which format?<div class="chips"><span data-pick>16:9</span><span>9:16</span></div></div>
+<div class="msg bot" data-s="5">Quality, with the time and size estimate for each.<div class="chips"><span data-pick>1080p</span><span>4K</span></div></div>
+<div class="msg bot" data-s="6">Which language is the content in?<div class="chips"><span data-pick>Portuguese</span><span>English</span></div></div>
+<div class="msg bot" data-s="7">Which soundtrack?<div class="chips"><span>Track 1</span><span data-pick>Track 2</span><span>Track 3</span></div></div>
+<div class="msg bot" data-s="8">Shall I generate the video with this plan?<div class="chips"><span data-pick>Approve</span><span>Adjust</span></div></div>
 <div class="msg me">Plan approved.</div>
-<div class="msg bot"><span class="attach"><i class="mp4"></i><span>pix-agendado-final.mp4<small>Ready to download</small></span></span></div>
+<div class="msg bot gen" data-s="9">Generating your video…<span class="gen-bar"><i></i></span></div>
+<div class="msg bot"><span class="attach"><i class="mp4"></i><span>pix-agendado-final.mp4<small>Opening, motion, closing and soundtrack in one file</small></span></span></div>
+<div class="typing"><i></i><i></i><i></i></div>
+</div></div>
+<div class="tm-input" aria-hidden="true"><span>Type a message</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20l18-8L3 4l2 8z"/></svg></div>
 </div>
+</div>
+<div class="tm-ctl"><button type="button" id="agentToggle" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><span>Pause conversation</span></button><button type="button" id="agentReplay"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg><span>Replay</span></button></div>
 </div>
 <div>
 <h3>How the agent leads the conversation</h3>
-<ol class="steps">
+<ol class="steps" id="agentSteps">
 <li><span><b>Waits for the script</b> in Word or PowerPoint, and asks for it if it doesn't come.</span></li>
 <li><span><b>Returns an execution plan</b> as a table with thumbnail, time, scene and motion.</span></li>
 <li><span><b>Asks for the duration</b> in seconds or minutes.</span></li>

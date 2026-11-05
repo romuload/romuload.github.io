@@ -142,6 +142,80 @@
     new IntersectionObserver(([entry]) => grid.classList.toggle('resting', !entry.isIntersecting), { rootMargin: '10% 0px' }).observe(grid);
   }
 
+  // The agent: the Teams window plays the conversation step by step, in sync with the list.
+  const demo = document.getElementById('agentDemo');
+  if (demo) {
+    const feed = demo.querySelector('.tm-feed');
+    const body = demo.querySelector('.tm-body');
+    const typing = feed.querySelector('.typing');
+    const msgs = [...feed.querySelectorAll('.msg')];
+    const steps = [...document.querySelectorAll('#agentSteps li')];
+    const toggle = document.getElementById('agentToggle');
+    const replay = document.getElementById('agentReplay');
+    const scroll = () => requestAnimationFrame(() => {
+      const off = Math.max(0, feed.scrollHeight - body.clientHeight);
+      feed.style.transform = `translateY(${-off}px)`;
+    });
+    const mark = n => steps.forEach((li, k) => { li.classList.toggle('done', k < n - 1); li.classList.toggle('now', k === n - 1); });
+    const show = m => {
+      typing.classList.remove('in');
+      m.classList.add('in');
+      if (m.dataset.s) mark(Number(m.dataset.s));
+      scroll();
+    };
+    const type = m => { feed.insertBefore(typing, m); typing.classList.add('in'); scroll(); };
+    const seq = [];
+    msgs.forEach(m => {
+      const bot = m.classList.contains('bot');
+      if (bot) { seq.push([700, () => type(m)]); seq.push([900, () => show(m)]); }
+      else seq.push([900, () => show(m)]);
+      m.querySelectorAll('tbody tr').forEach(tr => seq.push([380, () => { tr.classList.add('in'); scroll(); }]));
+      const pick = m.querySelector('[data-pick]');
+      if (pick) seq.push([1000, () => pick.classList.add('on')]);
+      if (m.classList.contains('gen')) seq.push([2700, () => {}]);
+    });
+    seq.push([600, () => { steps.forEach(li => { li.classList.remove('now'); li.classList.add('done'); }); }]);
+    seq.push([5000, () => reset()]);
+    let i = 0, timer = 0, paused = false, visible = false, held = false;
+    const run = () => {
+      clearTimeout(timer);
+      if (paused || held || !visible) return;
+      if (i >= seq.length) i = 0;
+      const [wait, fn] = seq[i];
+      timer = setTimeout(() => { fn(); i += 1; run(); }, wait);
+    };
+    const reset = () => {
+      msgs.forEach(m => m.classList.remove('in'));
+      feed.querySelectorAll('tr.in').forEach(tr => tr.classList.remove('in'));
+      feed.querySelectorAll('[data-pick]').forEach(p => p.classList.remove('on'));
+      typing.classList.remove('in');
+      steps.forEach(li => li.classList.remove('now', 'done'));
+      feed.style.transform = 'none';
+      i = 0;
+    };
+    const label = () => {
+      toggle.setAttribute('aria-pressed', String(held));
+      toggle.querySelector('span').textContent = t(held ? 'Play conversation' : 'Pause conversation');
+      toggle.querySelector('svg').outerHTML = held
+        ? '<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
+        : '<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+    };
+    toggle.addEventListener('click', () => { held = !held; label(); run(); });
+    replay.addEventListener('click', () => { clearTimeout(timer); reset(); held = false; label(); run(); });
+    window.addEventListener('portfolio-language-change', () => { label(); scroll(); });
+    if (reduce) {
+      msgs.forEach(m => m.classList.add('in'));
+      feed.querySelectorAll('tbody tr').forEach(tr => tr.classList.add('in'));
+      feed.querySelectorAll('[data-pick]').forEach(p => p.classList.add('on'));
+      steps.forEach(li => li.classList.add('done'));
+      body.style.overflowY = 'auto';
+      toggle.closest('.tm-ctl').hidden = true;
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => entries.forEach(e => { visible = e.isIntersecting; if (visible) run(); else clearTimeout(timer); }), { threshold: .35 }).observe(demo);
+    } else { visible = true; run(); }
+    label();
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
