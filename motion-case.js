@@ -55,6 +55,13 @@
     video.addEventListener('timeupdate', paint);
     window.addEventListener('portfolio-language-change', paint);
     wireControl(hero); paint();
+    // The hero video rests once it leaves the screen, unless the visitor took control of it.
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        if (hero.dataset.user) return;
+        if (entry.isIntersecting) video.play().catch(() => {}); else video.pause();
+      }).observe(hero);
+    }
   }
 
   // Test: a ribbon of acts that tracks and seeks the video.
@@ -130,6 +137,167 @@
     if (reduce) toggle.hidden = true;
   }
 
+  // Specimens rest while off screen, so scrolling stays smooth.
+  if (grid && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => grid.classList.toggle('resting', !entry.isIntersecting), { rootMargin: '10% 0px' }).observe(grid);
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  // Chapter bar and reading progress, as in the other cases. These do not depend on GSAP.
+  const nav = document.querySelector('.case-nav');
+  const navRow = nav.querySelector('.wrap');
+  const links = [...nav.querySelectorAll('a')];
+  const chapters = [...document.querySelectorAll('[data-chapter]')];
+  const bar = nav.querySelector('.reading-progress');
+  let current = null, queued = false;
+  const setChapter = id => {
+    if (id === current) return;
+    current = id;
+    links.forEach(link => {
+      const active = link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('active', active);
+      if (active) {
+        link.setAttribute('aria-current', 'location');
+        // Narrow screens: keep the active tab visible without moving the page.
+        const row = navRow.getBoundingClientRect(), tab = link.getBoundingClientRect();
+        navRow.scrollTo({ left: navRow.scrollLeft + tab.left - row.left - (row.width - tab.width) / 2, behavior: reduce ? 'auto' : 'smooth' });
+      } else link.removeAttribute('aria-current');
+    });
+  };
+  const updateProgress = () => {
+    queued = false;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${total > 0 ? Math.min(1, window.scrollY / total) : 0})`;
+    const line = window.innerHeight * .35;
+    let id = null;
+    for (const section of chapters) if (section.getBoundingClientRect().top <= line) id = section.dataset.chapter;
+    setChapter(id);
+  };
+  window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(updateProgress); } }, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  window.addEventListener('portfolio-language-change', updateProgress);
+  updateProgress();
+
+  // Scroll motion follows the other cases. Without GSAP or with reduced motion, the page stays static and complete.
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ScrollTrigger needs instant scrolling; in-page links scroll smoothly via JS.
+  const html = document.documentElement;
+  html.style.scrollBehavior = 'auto';
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    event.preventDefault();
+    const behavior = reduce ? 'auto' : 'smooth';
+    const pad = parseFloat(getComputedStyle(html).scrollPaddingTop) || 0;
+    let tries = 0;
+    const go = () => {
+      target.scrollIntoView({ behavior });
+      clearTimeout(go.timer);
+      go.timer = setTimeout(() => {
+        if (Math.abs(target.getBoundingClientRect().top - pad) > 24 && ++tries < 4) go();
+      }, 900);
+    };
+    go();
+    history.replaceState(null, '', location.pathname + location.search + link.getAttribute('href'));
+  });
+
+  let lastHeight = 0, refreshTimer = null;
+  new ResizeObserver(() => {
+    const height = document.documentElement.scrollHeight;
+    if (Math.abs(height - lastHeight) < 2) return;
+    lastHeight = height;
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 150);
+  }).observe(document.body);
+
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const root = document.documentElement;
+    root.classList.add('motion');
+    const all = selector => [...document.querySelectorAll(selector)];
+
+    // Cascading reveal. A long jump can enter many items at once, so the cascade has a ceiling.
+    const items = all('.mc-head>*,.glance>div>*,.mc-tldr>div,.cols2>div,.strip>figure,.spec,.spec-ctl,.acts>li,.rules,.vs-ctl,.m-card,.m-arrow,.layer-card,.script,.ribbon,.beyond>.shot,.verdict,.app-card,.chat-bar,.msg,.agent-grid>div>h3,.steps>li,.prompt,.prompt-note,.edit-grid>div:first-child,.timeline,.cmp tr,.tbars,.seen,.learn,.mc-final h2,.mc-final .lead,.mc-final .mc-actions,.mc-final .source-note');
+    items.forEach(node => node.classList.add('rv'));
+    ScrollTrigger.batch(items, { start: 'top 88%', once: true, onEnter: batch => gsap.to(batch, {
+      opacity: 1, y: 0, duration: .9, ease: 'power3.out', stagger: Math.min(.08, .6 / batch.length), overwrite: true,
+      onComplete() { this.targets().forEach(node => { node.classList.remove('rv'); gsap.set(node, { clearProps: 'opacity,transform' }); }); }
+    }) });
+
+    // The Itaú keyword: it lands in orange, larger, then settles into the sentence.
+    // Scaled only on entry and only as far as the line allows, so it never widens the page.
+    all('.mc-head h2 .kw').forEach(word => {
+      const heading = word.closest('h2');
+      ScrollTrigger.create({ trigger: heading, start: 'top 88%', once: true, onEnter: () => {
+        const box = word.getBoundingClientRect();
+        const room = (heading.getBoundingClientRect().right - box.left) / box.width;
+        gsap.fromTo(word, { scale: Math.max(1, Math.min(1.5, room)), opacity: 0 }, { scale: 1, opacity: 1, duration: 1.1, delay: .2, ease: 'power3.out', clearProps: 'transform,opacity' });
+      } });
+    });
+
+    // Framed videos open like the bank's orange screen: from a squircle to the full frame.
+    all('.vs .float-screen,[data-acts-video="test"]').forEach((frame, i) => gsap.fromTo(frame,
+      { clipPath: 'inset(22% 22% 22% 22% round 48px)' },
+      { clipPath: 'inset(-30% -30% -30% -30% round 20px)', duration: 1.2, delay: frame.closest('.vs') ? i * .12 : 0, ease: 'power3.inOut', clearProps: 'clipPath',
+        scrollTrigger: { trigger: frame, start: 'top 85%', once: true } }));
+
+    // Hero: copy and video drift apart as the page leaves it.
+    const leave = { trigger: '.mc-hero', start: 'top top', end: 'bottom top', scrub: .6 };
+    gsap.to('.mc-hero .float-screen', { y: -56, ease: 'none', scrollTrigger: leave });
+    gsap.to('.mc-hero-grid>div:first-child', { y: 40, ease: 'none', scrollTrigger: leave });
+
+    // Numbers count up when they appear, reading the text only then so the language is settled.
+    const counters = all('.glance strong,.big-stat strong').filter(node => /\d/.test(node.textContent)).map(node => {
+      const count = { v: 0 };
+      let source = '', value = 0;
+      const tween = gsap.to(count, { v: 1, duration: 1.4, ease: 'power2.out', paused: true,
+        onUpdate() { node.textContent = node.textContent.replace(/\d+/, Math.round(count.v * value)); },
+        onComplete() { node.textContent = window.portfolioI18n ? window.portfolioI18n.t(source) : source; } });
+      ScrollTrigger.create({ trigger: node, start: 'top 88%', once: true, onEnter: () => {
+        source = node.textContent;
+        value = +source.match(/\d+/)[0];
+        tween.play();
+      } });
+      return tween;
+    });
+
+    // The nine acts: each number pops in, then a light runs through them in order.
+    ScrollTrigger.batch('.acts .n', { start: 'top 88%', once: true, onEnter: batch => gsap.fromTo(batch, { scale: 0 }, { scale: 1, duration: .6, delay: .15, ease: 'back.out(2.2)', stagger: Math.min(.07, .6 / batch.length), clearProps: 'transform' }) });
+    const timers = [];
+    const lit = all('.acts>li');
+    ScrollTrigger.create({ trigger: '.acts', start: 'top 70%', once: true, onEnter: () => lit.forEach((act, i) => {
+      timers.push(gsap.delayedCall(.9 + i * .13, () => act.classList.add('lit')), gsap.delayedCall(1.3 + i * .13, () => act.classList.remove('lit')));
+    }) });
+
+    // Layers, not screenshots: the flat stack separates into its parts.
+    ScrollTrigger.create({ trigger: '.stack', start: 'top 85%', once: true, onEnter: () => document.querySelector('.stack').classList.add('split') });
+
+    // The delivered file assembles in order: opening, motion, closing, then the track.
+    const wipe = { clipPath: 'inset(0% 100% 0% 0%)' };
+    const clear = { clipPath: 'inset(0% 0% 0% 0%)', clearProps: 'clipPath', ease: 'power2.inOut' };
+    const file = gsap.timeline({ scrollTrigger: { trigger: '.timeline', start: 'top 80%', once: true } });
+    file.fromTo('.tl-open', wipe, { ...clear, duration: .45 }, .35)
+      .fromTo('.tl-main', wipe, { ...clear, duration: .9 }, '>-.1')
+      .fromTo('.tl-close', wipe, { ...clear, duration: .45 }, '>-.1')
+      .fromTo('.tl-audio', wipe, { ...clear, duration: 1.1 }, '<-.5');
+
+    // Time per video: bars grow in proportion to the time they stand for, 12 to 1.
+    const bars = gsap.timeline({ scrollTrigger: { trigger: '.tbars', start: 'top 80%', once: true } });
+    bars.fromTo('.tbar:not(.now) i', { scaleX: 0 }, { scaleX: 1, duration: 2.4, ease: 'power1.inOut', clearProps: 'transform' }, .3)
+      .fromTo('.tbar.now i', { scaleX: 0 }, { scaleX: 1, duration: .2, ease: 'power1.out', clearProps: 'transform' }, .3);
+
+    // The finale's squircles open as it arrives.
+    gsap.from('.contours i', { scale: .55, ease: 'none', scrollTrigger: { trigger: '.mc-final', start: 'top bottom', end: 'top 25%', scrub: .6 } });
+
+    return () => {
+      root.classList.remove('motion');
+      timers.forEach(timer => timer.kill());
+      counters.forEach(tween => tween.progress() > 0 && tween.progress(1));
+    };
+  });
 })();

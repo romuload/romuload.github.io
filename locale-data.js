@@ -3315,5 +3315,10 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["How I taught AI to speak Itaú's motion language","Como ensinei a IA a falar a linguagem de motion do Itaú"],
   ["A method decoded from the bank's public videos, then an agent in Copilot that turns any script into a finished video in about 20 minutes.","Um método decodificado dos vídeos públicos do banco e, depois, um agente no Copilot que transforma qualquer roteiro em vídeo pronto em cerca de 20 minutos."],
   ["Inside the project: How I taught AI to speak Itaú's motion language","Por dentro do projeto: Como ensinei a IA a falar a linguagem de motion do Itaú"],
-  ["Explore the interactive Pix Agendado demo in a new tab","Explorar a demo interativa do Pix Agendado numa nova aba"]
+  ["Explore the interactive Pix Agendado demo in a new tab","Explorar a demo interativa do Pix Agendado numa nova aba"],
+  ["Experiment","Experimento"],
+  ["Pattern","Padrão"],
+  ["The test","O teste"],
+  ["Application","Aplicação"],
+  ["Scale","Escala"]
 ]);

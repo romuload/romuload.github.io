@@ -13,9 +13,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap">
-<script src="motion-case.js?v=1" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="motion-case.js?v=5" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=motion-2"></script>
+<script src="locale-data.js?v=motion-3"></script>
 <script src="locale.js?v=motion-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -23,7 +25,7 @@
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=ux-1">
-<link rel="stylesheet" href="motion-case.css?v=3">
+<link rel="stylesheet" href="motion-case.css?v=4">
 <link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=widows-1" defer></script><link rel="stylesheet" href="system.css?v=ux-3"></head>
 <body class="case-motion">
 <a class="case-skip" href="#conteudo">Skip to content</a>
@@ -54,7 +56,20 @@
 </div>
 </section>
 
-<section class="sec mc-dark" aria-labelledby="glance-title">
+<nav class="case-nav" aria-label="Case study chapters">
+<div class="reading-progress" aria-hidden="true"></div>
+<div class="wrap">
+<a href="#overview">Overview</a>
+<a href="#experiment">Experiment</a>
+<a href="#pattern">Pattern</a>
+<a href="#teste">The test</a>
+<a href="#application">Application</a>
+<a href="#scale">Scale</a>
+<a href="#result">Outcomes</a>
+</div>
+</nav>
+
+<section class="sec mc-dark" id="overview" data-chapter="overview" aria-labelledby="glance-title">
 <div class="wrap">
 <div class="mc-head"><h2 id="glance-title">At a <span class="kw">glance.</span></h2></div>
 <div class="glance">
@@ -71,7 +86,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="exp-title">
+<section class="sec mc-light" id="experiment" data-chapter="experiment" aria-labelledby="exp-title">
 <div class="wrap">
 <div class="mc-head">
 <p class="part-kicker">The experiment</p>
@@ -85,7 +100,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="source-title" style="padding-top:0">
+<section class="sec mc-light" data-chapter="experiment" aria-labelledby="source-title" style="padding-top:0">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="source-title">The source: the bank's <span class="kw">public videos.</span></h2>
@@ -102,7 +117,7 @@
 </div>
 </section>
 
-<section class="sec mc-white" aria-labelledby="read-title">
+<section class="sec mc-white" data-chapter="experiment" aria-labelledby="read-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="read-title">Reading the <span class="kw">movements.</span></h2>
@@ -122,7 +137,7 @@
 </div>
 </section>
 
-<section class="sec mc-dark" aria-labelledby="acts-title">
+<section class="sec mc-dark" id="pattern" data-chapter="pattern" aria-labelledby="acts-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="acts-title">The pattern: <span class="kw">nine acts.</span></h2>
@@ -149,7 +164,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="val-title">
+<section class="sec mc-light" data-chapter="pattern" aria-labelledby="val-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="val-title">The validation: <span class="kw">recreate the original.</span></h2>
@@ -163,7 +178,7 @@
 </div>
 </section>
 
-<section class="sec mc-white" aria-labelledby="method-title">
+<section class="sec mc-white" data-chapter="pattern" aria-labelledby="method-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="method-title">From pattern <span class="kw">to method.</span></h2>
@@ -183,7 +198,7 @@
 </div>
 </section>
 
-<section class="sec mc-dark" id="teste" aria-labelledby="test-title">
+<section class="sec mc-dark" id="teste" data-chapter="teste" aria-labelledby="test-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="test-title">The test: <span class="kw">Pix Agendado.</span></h2>
@@ -214,7 +229,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="beyond-title">
+<section class="sec mc-light" data-chapter="teste" aria-labelledby="beyond-title">
 <div class="wrap">
 <div class="beyond">
 <a class="shot" href="motion-pix-agendado/index.html" target="_blank" rel="noopener" aria-label="Open the interactive Pix Agendado demo in a new tab"><img src="images/motion/interactive.webp" width="1600" height="1122" alt="Interactive demo in Try mode, waiting for a tap on Pix" loading="lazy"></a>
@@ -228,7 +243,7 @@
 </div>
 </section>
 
-<section class="sec mc-dark" aria-labelledby="app-title">
+<section class="sec mc-dark" id="application" data-chapter="application" aria-labelledby="app-title">
 <div class="wrap">
 <div class="mc-head">
 <p class="part-kicker">The application</p>
@@ -263,7 +278,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="scale-title">
+<section class="sec mc-light" id="scale" data-chapter="scale" aria-labelledby="scale-title">
 <div class="wrap">
 <div class="mc-head">
 <p class="part-kicker">The scale</p>
@@ -323,7 +338,7 @@
 </div>
 </section>
 
-<section class="sec mc-white" aria-labelledby="result-title">
+<section class="sec mc-white" id="result" data-chapter="result" aria-labelledby="result-title">
 <div class="wrap">
 <div class="mc-head">
 <h2 id="result-title">The real <span class="kw">result.</span></h2>
@@ -350,7 +365,7 @@
 </div>
 </section>
 
-<section class="sec mc-light" aria-labelledby="learn-title">
+<section class="sec mc-light" data-chapter="result" aria-labelledby="learn-title">
 <div class="wrap">
 <div class="mc-head"><h2 id="learn-title">What I <span class="kw">learned.</span></h2></div>
 <div class="learn-grid">
