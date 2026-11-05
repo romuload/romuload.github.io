@@ -2969,7 +2969,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The current website","O website atual"],
   ["Created in 2021 and still live, sharing the product roadmap with customers.","Criado em 2021 e ainda no ar, divulgando o roadmap de produtos aos clientes."],
   ["Open the current website","Abrir o website atual"],
-  ["The roadmap organized by quarter, with a map and filters.","O roadmap organizado por trimestre, com mapa e filtros."],
+  ["The roadmap organized by quarter, with a map and filters, in Portuguese and English.","O roadmap organizado por trimestre, com mapa e filtros, em português e inglês."],
   ["Open the proposal","Abrir a proposta"],
   ["Thomson Reuters roadmap proposal: desktop and mobile screens in laptop and phone mockups","Proposta do roadmap Thomson Reuters: telas desktop e mobile em mockups de notebook e celular"],
   ["Web design · Proposal","Web design · Proposta"],
@@ -2981,7 +2981,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The Tax Reform roadmap gathers 108 items across 11 product lines. The problem isn’t the amount of information, but the lack of hierarchy: everything carries the same weight.","O roadmap da Reforma Tributária reúne 108 itens em 11 frentes de produto. O problema não é a quantidade de informação, e sim a falta de hierarquia: tudo aparece com o mesmo peso."],
   ["The proposal organizes the content around the question people bring to it: what changes, and when? The four quarters of 2026 become the axis of the experience, with layers that go from the overview to the detail. It’s a concept proposal, not an official Thomson Reuters website.","A proposta organiza o conteúdo em torno da pergunta de quem o consulta: o que muda e quando? Os quatro trimestres de 2026 viram o eixo da experiência, com camadas que vão da visão geral ao detalhe. É uma proposta conceitual, não um site oficial da Thomson Reuters."],
   ["Design decisions","Decisões de design"],
-  ["Ten decisions, one question: what changes, and when?","Dez decisões, uma pergunta: o que muda e quando?"],
+  ["Twelve decisions, one question: what changes, and when?","Doze decisões, uma pergunta: o que muda e quando?"],
   ["Quarters as the axis","Trimestres como eixo"],
   ["Time is what all product lines have in common, and it’s how a regulatory change gets planned.","O tempo é o que todas as frentes têm em comum e é como se planeja uma adaptação regulatória."],
   ["Reading in layers","Leitura em camadas"],
@@ -3004,5 +3004,9 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Publishing stays simple, and the text remains available even if the scripts fail.","A publicação fica simples, e o texto continua disponível mesmo se os scripts falharem."],
   ["A hypothesis to validate.","Uma hipótese a validar."],
   ["This proposal hasn’t been tested with users. The hypothesis is that customers will find what they need faster, and the next step would be to validate that with them.","Esta proposta não foi testada com usuários. A hipótese é que os clientes encontrem mais rápido o que procuram, e o próximo passo seria validar isso com eles."],
-  ["The 30 minutes show the speed of exploration, not the time of a complete project. Validation, content review and font and photo licensing are still to come.","Os 30 minutos mostram a velocidade de exploração, não o tempo de um projeto completo. Validação, revisão de conteúdo e licenças de fonte e fotos ainda ficam por fazer."]
+  ["The 30 minutes show the speed of exploration, not the time of a complete project. Validation, content review and font and photo licensing are still to come.","Os 30 minutos mostram a velocidade de exploração, não o tempo de um projeto completo. Validação, revisão de conteúdo e licenças de fonte e fotos ainda ficam por fazer."],
+  ["Portuguese and English","Português e inglês"],
+  ["A switch in the header changes the language and keeps the current section, for customers who follow the roadmap in either language.","Um seletor no cabeçalho troca o idioma e mantém a seção atual, para clientes que acompanham o roadmap em qualquer uma das línguas."],
+  ["Contrast measured","Contraste medido"],
+  ["Text contrast was measured in both languages, on desktop and mobile, against the WCAG AA minimum, including active filters.","O contraste dos textos foi medido nos dois idiomas, no desktop e no celular, contra o mínimo WCAG AA, inclusive com filtros ativos."]
 ]);
