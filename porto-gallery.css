@@ -1,2 +1,6 @@
 .image-porto{background:radial-gradient(ellipse at 50% 15%,#6da8c9,#173e62)}
 .image-staffing{background:radial-gradient(ellipse at 50% 15%,#71b4f9,#001326)}
+.image-roadmap{background:radial-gradient(ellipse at 50% 15%,#fa6400,#123021 92%)}
+.image-roadmap .laptop{width:66cqw;margin-left:-11cqw}
+.image-roadmap .iphone{position:absolute;right:7cqw;bottom:7cqw;width:19cqw}
+@media(max-width:767px){.image-roadmap .laptop{width:68cqw;margin-left:-11cqw}.image-roadmap .iphone{width:20cqw;right:6cqw}}
