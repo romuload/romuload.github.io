@@ -33,7 +33,7 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
 .mc-orange .part-kicker{color:#fff}.mc-orange .part-kicker::before{background:#fff}
 
 /* ---------- hero ---------- */
-.mc-hero{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:clamp(56px,7vw,104px) 0 clamp(64px,8vw,112px);min-height:calc(100svh - 90px);display:flex;align-items:center}
+.mc-hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 72% 18%,#FF6200,#121212 72%);color:#fff;padding:clamp(56px,7vw,104px) 0 clamp(64px,8vw,112px);min-height:calc(100svh - 90px);display:flex;align-items:center}
 .mc-hero::before{content:none}
 .mc-hero .wrap{position:relative;z-index:1;width:100%}
 .mc-hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,5vw,72px);align-items:center}
@@ -59,12 +59,6 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
 @keyframes wordIn{to{opacity:1;transform:none;letter-spacing:0}}
 @keyframes kwSettle{0%{scale:1.5}100%{scale:1}}
 
-/* layered squircles, from the bank's slide covers */
-.squircles{position:absolute;right:-12vw;bottom:-22vw;width:min(70vw,1000px);aspect-ratio:1;pointer-events:none;z-index:0}
-.squircles i{position:absolute;inset:0;border-radius:32%;background:linear-gradient(200deg,rgba(255,98,0,.0) 10%,rgba(255,98,0,.28) 60%,rgba(255,98,0,.55));transform:rotate(-18deg);animation:sqIn 1.6s var(--ease) both}
-.squircles i:nth-child(2){inset:12%;background:linear-gradient(200deg,rgba(255,98,0,.05) 10%,rgba(255,98,0,.45) 60%,rgba(255,98,0,.8));animation-delay:.12s}
-.squircles i:nth-child(3){inset:26%;background:linear-gradient(200deg,rgba(255,110,10,.25),#FF6200 70%);animation-delay:.24s}
-@keyframes sqIn{from{opacity:0;transform:rotate(-8deg) scale(.9)}}
 
 /* the floating screen: orange outline, like the bank's showreels */
 .float-screen{position:relative;border-radius:20px;overflow:hidden;background:#fff;outline:4px solid var(--o);outline-offset:0;box-shadow:0 40px 90px rgba(0,0,0,.45)}
@@ -403,7 +397,6 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
 }
 @media (prefers-reduced-motion:reduce){
   .type-in .w,.type-in .kw{animation:none;opacity:1;transform:none;letter-spacing:0;scale:1}
-  .squircles i{animation:none}
   .stage *,.tl-audio i{animation:none!important}
   .st-open .sq{scale:3}.st-text .line span{opacity:1;letter-spacing:0}.st-text .line .k{scale:1}
   .st-impact b{opacity:1}.st-screen .ph{opacity:1}.st-proc .check{opacity:1}.st-sign .s{opacity:1}
@@ -417,3 +410,4 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
   .tl-main{flex:4}
 }
 .tl-audio i:nth-child(2n){animation-delay:-.5s}.tl-audio i:nth-child(3n){animation-delay:-.9s}.tl-audio i:nth-child(5n){animation-delay:-.25s}.tl-audio i:nth-child(7n){animation-delay:-.7s}
+@media (max-width:960px){.mc-hero{background:radial-gradient(ellipse at 50% 100%,#FF6200,#121212 70%)}}
