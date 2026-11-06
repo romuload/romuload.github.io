@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=transfer-limits-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=transfer-limits-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -106,3 +106,7 @@ for(const string of strings) {
 }
 for (const image of ['hub.png','journey.png','transfer.png']) assert(fs.statSync(`images/transferir-limites/${image}`).size > 0);
 console.log('Transfer credit limits: all copy, metadata, controls and image labels bilingual; language navigation and unlisted home status OK');
+for(const id of ['contribution','process']) assert(transfer.includes(`id="${id}"`), `Missing transfer design evidence: ${id}`);
+for(const text of ['151s → 62s','customers with 3+ products','4.5 → 4.77','38,000 users','Claude throughout the design process']) assert(transfer.includes(text), `Missing transfer evidence or cohort context: ${text}`);
+assert(transfer.includes('class="additional-results"') && transfer.includes('https://altarendablog.com.br/2026/03/09/'));
+console.log('Transfer case: contribution, research scope, Claude process, outcome cohorts and public reference OK');

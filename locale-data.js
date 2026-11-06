@@ -3571,3 +3571,140 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Detalhe da interface na apresentação do Figma: valores transferidos e limites restantes nos produtos elegíveis."
   ]
 ]);
+
+// Transfer case: contribution, validation and outcomes supplied by Romulo.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "I designed the end-to-end flows, mapped rules and edge cases, and validated interaction patterns through research and A/B/C testing.",
+    "Desenhei os fluxos de ponta a ponta, mapeei regras e casos de exceção e validei padrões de interação com pesquisa e testes A/B/C."
+  ],
+  [
+    "Completion time fell from 151s to 62s for customers with 3+ products; CES improved from 4.5 to 4.77.",
+    "O tempo de conclusão caiu de 151s para 62s para clientes com 3 ou mais produtos; o CES passou de 4,5 para 4,77."
+  ],
+  [
+    "My role",
+    "Minha atuação"
+  ],
+  [
+    "Design process",
+    "Processo de design"
+  ],
+  [
+    "The feature in the real world: public coverage describes transferring limits between cards and overdraft directly in the Itaú app.",
+    "A funcionalidade no mundo real: uma matéria pública descreve a transferência de limites entre cartões e limite da conta diretamente no app Itaú."
+  ],
+  [
+    "Read the coverage · Alta Renda Blog (Portuguese)",
+    "Ler a matéria · Alta Renda Blog (em português)"
+  ],
+  [
+    "My role: connect the journey.",
+    "Minha atuação: conectar a jornada."
+  ],
+  [
+    "I designed self-service and limit-management journeys across multiple credit products, translating financial and regulatory ambiguity into clear product logic.",
+    "Desenhei jornadas de autoatendimento e gestão de limites entre diferentes produtos de crédito, transformando requisitos financeiros e regulatórios ambíguos em uma lógica de produto clara."
+  ],
+  [
+    "From rules to interactions",
+    "Das regras às interações"
+  ],
+  [
+    "I architected end-to-end behavioral flows: states, edge cases and interaction logic across products with different eligibility rules and credit constraints.",
+    "Estruturei fluxos comportamentais de ponta a ponta: estados, casos de exceção e lógica de interação entre produtos com regras de elegibilidade e restrições de crédito diferentes."
+  ],
+  [
+    "Within a triad model, I partnered with Product Owners and Engineers, alongside Data Analysts and Credit teams, to align experience decisions with business and technical constraints.",
+    "No modelo de tríade, trabalhei com Product Owners e Engenharia, em parceria com Analistas de Dados e times de Crédito, para alinhar decisões de experiência às restrições de negócio e tecnologia."
+  ],
+  [
+    "3.9M",
+    "3,9 mi"
+  ],
+  [
+    "Eligible customers in the project’s scope",
+    "Clientes elegíveis no escopo do projeto"
+  ],
+  [
+    "38K",
+    "38 mil"
+  ],
+  [
+    "Users in A/B/C testing",
+    "Usuários nos testes A/B/C"
+  ],
+  [
+    "Evidence shaped the redesign.",
+    "Evidências guiaram o redesenho."
+  ],
+  [
+    "Production behavior, qualitative research and experimentation informed the interaction patterns.",
+    "Comportamento em produção, pesquisa qualitativa e experimentação orientaram os padrões de interação."
+  ],
+  [
+    "Identify the friction",
+    "Identificar o atrito"
+  ],
+  [
+    "I used production data and CES analysis to identify behavioral bottlenecks and turn them into redesign opportunities.",
+    "Usei dados de produção e análise de CES para identificar gargalos comportamentais e transformá-los em oportunidades de redesenho."
+  ],
+  [
+    "Make the logic explicit",
+    "Explicitar a lógica"
+  ],
+  [
+    "I mapped how the journey behaves across products, eligibility conditions and credit constraints, so simplicity would not hide the decisions customers needed to make.",
+    "Mapeei o comportamento da jornada entre produtos, condições de elegibilidade e restrições de crédito, para que a simplicidade não escondesse as decisões que o cliente precisava tomar."
+  ],
+  [
+    "Test the interaction patterns",
+    "Testar os padrões de interação"
+  ],
+  [
+    "I validated patterns balancing simplicity and control through A/B/C testing with 38,000 users and qualitative research with real customers.",
+    "Validei padrões que equilibram simplicidade e controle com testes A/B/C envolvendo 38 mil usuários e pesquisa qualitativa com clientes reais."
+  ],
+  [
+    "Claude throughout the design process",
+    "Claude ao longo do processo de design"
+  ],
+  [
+    "I used Claude for ideation, pressure-testing design decisions and building functional prototypes to discuss with stakeholders before engineering implementation.",
+    "Usei Claude para ideação, para colocar decisões de design à prova e para construir protótipos funcionais que pudesse discutir com stakeholders antes da implementação pela Engenharia."
+  ],
+  [
+    "A faster journey, with less effort for customers.",
+    "Uma jornada mais rápida, com menos esforço para o cliente."
+  ],
+  [
+    "Completion time for customers with 3+ products",
+    "Tempo de conclusão para clientes com 3 ou mais produtos"
+  ],
+  [
+    "4.5 → 4.77",
+    "4,5 → 4,77"
+  ],
+  [
+    "Customer Effort Score (CES)",
+    "Índice de Esforço do Cliente (CES)"
+  ],
+  [
+    "Completion time and CES are reported in my project experience. The A/B/C test involved 38,000 users; the time result refers specifically to customers with three or more products.",
+    "O tempo de conclusão e o CES são resultados relatados na minha experiência no projeto. O teste A/B/C envolveu 38 mil usuários; o resultado de tempo se refere especificamente a clientes com três ou mais produtos."
+  ],
+  [
+    "More business indicators",
+    "Outros indicadores de negócio"
+  ],
+  [
+    "The project presentation also reports the following indicators.",
+    "A apresentação do projeto também reporta os indicadores abaixo."
+  ],
+  [
+    "The presentation does not detail the measurement periods or samples for these additional indicators. They should not be treated as results from the same population as the A/B/C test.",
+    "A apresentação não detalha os períodos de medição ou as amostras desses indicadores adicionais. Eles não devem ser tratados como resultados da mesma população do teste A/B/C."
+  ]
+]);
+window.PORTFOLIO_TRANSLATIONS.push(['151s → 62s', '151s → 62s']);
