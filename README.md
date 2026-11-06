@@ -80,7 +80,7 @@ Porto case structure (restructured for a linear story, ~1,100 words): hero with 
 
 ## Thomson Reuters roadmap proposal
 
-projeto-roadmap.html uses the projeto-repar.html structure and repar-case.js, with Thomson Reuters colours in `roadmap-case.css`. The home cover combines the laptop and phone mockups (`.image-roadmap` in `porto-gallery.css`). Screens in `images/roadmap/` and `images/phone/roadmap.jpg` are 2x captures of https://romuload.github.io/roadmap-tr/ and https://roadmap.thomsonreuters.com/reforma_2026.html. It is described only as a proposal, and the demo states it is not an official Thomson Reuters website.
+projeto-roadmap.html uses the projeto-repar.html structure and repar-case.js, with Thomson Reuters colours in `roadmap-case.css`. The opportunity section holds an interactive review panel (`roadmap-panel.js`): a concept with example items, no tool connected, where the published side only changes after an approval. The home cover combines the laptop and phone mockups (`.image-roadmap` in `porto-gallery.css`). Screens in `images/roadmap/` and `images/phone/roadmap.jpg` are 2x captures of https://romuload.github.io/roadmap-tr/ and https://roadmap.thomsonreuters.com/reforma_2026.html. It is described only as a proposal, and the demo states it is not an official Thomson Reuters website.
 
 ## Itaú · Motion in acts
 
