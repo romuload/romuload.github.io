@@ -20,12 +20,12 @@ Cada card tem somente duas ações, nesta ordem: Por dentro do projeto (página 
 
 - `styles.css`: layout responsivo, mockups, revelações e carrossel contínuo.
 - `main.js`: revelação com IntersectionObserver, controle de pausa do carrossel e ano do rodapé.
-- `images/`: retrato e capturas dos projetos. As capturas do iLab vêm do seu case; os demais projetos foram capturados em suas páginas públicas, inclusive em largura de 390px.
+- `images/`: retrato e capturas dos projetos. As capturas do iLAB vêm do seu case; os demais projetos foram capturados em suas páginas públicas, inclusive em largura de 390px.
 - `fonts/`: Manrope, hospedada localmente com licença SIL Open Font License.
 
 O carrossel pode ser pausado pelo botão e ao passar o cursor. Movimento reduzido desativa a animação e mantém as três marcas visíveis. O conteúdo e a navegação funcionam sem JavaScript.
 
-## Idiomas e case iLab
+## Idiomas e case iLAB
 
 O HTML é entregue em inglês. O seletor EN / PT traduz o texto editorial, navegação, botões, títulos, metadados e descrições acessíveis. `locale-data.js` contém os pares de texto; `locale.js` aplica a escolha, salva a preferência quando possível e a mantém nos links internos com `?lang=en` ou `?lang=pt`. Os protótipos externos e suas capturas preservam o conteúdo original.
 
@@ -49,7 +49,7 @@ Skill icons: Tabler Icons, MIT license (https://github.com/tabler/tabler-icons);
 
 ## Unified REPAR case
 
-The gallery lists Conhecer Repar 3D once. projeto-repar.html presents both the illustrated legacy version and the 3D evolution, using the iLab case palette and typography. The before/after range works with touch, mouse and keyboard, and both prototypes remain directly accessible. The former projeto-legado.html URL redirects to the unified comparison, retaining an explicit EN/PT selection. New narrative copy is bilingual and avoids unsupported outcome metrics.
+The gallery lists Conhecer REPAR 3D once. projeto-repar.html presents both the illustrated legacy version and the 3D evolution, using the iLAB case palette and typography. The before/after range works with touch, mouse and keyboard, and both prototypes remain directly accessible. The former projeto-legado.html URL redirects to the unified comparison, retaining an explicit EN/PT selection. New narrative copy is bilingual and avoids unsupported outcome metrics.
 
 ## FIAT Água em Ciclo
 
@@ -57,7 +57,7 @@ The fourth gallery entry opens projeto-fiat.html, a bilingual case using the est
 
 ## Porto Seguro
 
-projeto-porto.html uses the same scroll motion as the iLab case (GSAP + ScrollTrigger from cdnjs, in `porto-case.js`): staggered reveals, the hero product straightening on scroll, counting figures, a one-time before/after sweep and, on screens wider than 1050px, sticky desktop and phone screens that change with the text. Reduced motion or no JavaScript leaves every element visible and static. Screens in `images/porto/screen-*.webp` (1440 × 900) and `mobile-*.webp` (390 × 790) are 2x captures of https://romuload.github.io/porto-salerforce-demo/.
+projeto-porto.html uses the same scroll motion as the iLAB case (GSAP + ScrollTrigger from cdnjs, in `porto-case.js`): staggered reveals, the hero product straightening on scroll, counting figures, a one-time before/after sweep and, on screens wider than 1050px, sticky desktop and phone screens that change with the text. Reduced motion or no JavaScript leaves every element visible and static. Screens in `images/porto/screen-*.webp` (1440 × 900) and `mobile-*.webp` (390 × 790) are 2x captures of https://romuload.github.io/porto-salerforce-demo/.
 
 ## Porto Seguro legacy workflow animation
 
@@ -69,7 +69,7 @@ Case figures come from the discovery blueprint delivered to Porto Seguro in Marc
 
 The discovery section embeds `porto-journey-map/index.html`, an interactive friction map of the end-to-end claim journey (notice, analysis, regulation, approval & settlement, salvage). Each stage shows key steps, systems and tools (tools outside the core system highlighted), pain points tagged by friction type, the discovery personas and the TO-BE opportunity with capabilities from the blueprint's capability map. Interactions: stage buttons, prev/next and arrow keys, a guided tour, a friction-type filter that draws a thread across the stages where that friction appears, and an AS-IS / TO-BE switch. When a stage depends on tools outside the system, the claim marker leaves the rail briefly. Content is synthesized from the AS-IS journey maps; personas are the fictional discovery profiles and system/partner names are generalized. The page sizes its own iframe when embedded (same origin) and follows the EN/PT switch. The legacy workflow animation sits after "From observations to priorities"; the Miro workshop, agreements, journey and process-map images were removed from the page and the repository.
 
-Porto hero and context: the title leads with the result ("How I reduced claims analysis time by up to 60% at Porto Seguro"), the client line describes Porto (Brazil's largest auto insurer, ~14,000 employees per Porto's investor relations page) and the context explains how Azul (acquired 2003), Itaú Auto e Residência (Itaú Unibanco partnership since 2009) and Mitsui Sumitomo's auto business (strategic partnership) relate to the group. The Prototyping & constraints section tells the OmniScript pivot in three steps (first migrated version, the question, the turning point).
+Porto hero and context: the title leads with the result ("How I cut claims analysis from up to 60 minutes to about 25 at Porto Seguro"), the client line describes Porto (Brazil's largest auto insurer, ~14,000 employees per Porto's investor relations page) and the context explains how Azul (acquired 2003), Itaú Auto e Residência (Itaú Unibanco partnership since 2009) and Mitsui Sumitomo's auto business (strategic partnership) relate to the group. The Prototyping & constraints section tells the OmniScript pivot in three steps (first migrated version, the question, the turning point).
 
 Scroll triggers on the Porto case: CSS smooth scrolling breaks ScrollTrigger's measurements (it jumps to the top and back while measuring), so `porto-case.js` sets instant scrolling on this page and scrolls in-page links smoothly with JS, checking that the section was reached. Triggers are also recalculated whenever the page height changes (the embedded journey map and legacy workflow settle their height after load), which keeps the sticky solution screens in sync with the text.
 

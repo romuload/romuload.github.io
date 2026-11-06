@@ -136,3 +136,19 @@ html{scroll-padding-top:154px}
   .hero-actions .btn{padding-inline:16px}
 }
 @media(max-width:600px){.pain-grid{grid-template-columns:1fr}}
+
+/* ---------- Case pages: one voice for titles and labels ---------- */
+/* Titles carry one colour. A solid accent marks only a measured result. */
+.grad{background:none!important;color:inherit!important;-webkit-text-fill-color:currentColor}
+.hl{color:var(--lime)}
+/* The dark ground of each case stays; the coloured glow behind the hero goes. */
+body .hero::before,body .hero-product::before{display:none}
+/* Same role, same size across cases. */
+.hero h1{font-size:clamp(38px,4.6vw,66px)!important;max-width:24ch}
+.porto-hero h1,.stf-hero h1{margin-inline:auto}
+/* Labels read as labels: sentence case, neutral colour. */
+.eyebrow{text-transform:none!important;letter-spacing:0!important;font-weight:500;font-family:inherit;color:var(--ink2)!important}
+.mini-h,.voices cite,.identity-quote cite,.meta b,.scroll-cue,.sp-cap,.pstep .k{text-transform:none!important;letter-spacing:0!important}
+/* No lone words: headings balance their lines, running text avoids a short last line. */
+main h1,main h2,main h3{text-wrap:balance}
+main p,main li,main dd,main dt,main figcaption{text-wrap:pretty}

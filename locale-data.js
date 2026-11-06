@@ -841,16 +841,16 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Conheça a REPAR 3D: telas reais em mockups de desktop e celular"
   ],
   [
-    "Inside the project: iLab 3.0",
-    "Por dentro do projeto: iLab 3.0"
+    "Inside the project: iLAB 3.0",
+    "Por dentro do projeto: iLAB 3.0"
   ],
   [
-    "Explore iLab 3.0 in a new tab",
-    "Explorar iLab 3.0 em nova aba"
+    "Explore iLAB 3.0 in a new tab",
+    "Explorar iLAB 3.0 em nova aba"
   ],
   [
-    "iLab 3.0: real desktop and mobile screens in device mockups",
-    "iLab 3.0: telas reais em mockups de desktop e celular"
+    "iLAB 3.0: real desktop and mobile screens in device mockups",
+    "iLAB 3.0: telas reais em mockups de desktop e celular"
   ],
   [
     "Inside the project: Conheça a REPAR: legado",
@@ -909,12 +909,12 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Por dentro: Conheça a REPAR 3D. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."
   ],
   [
-    "Inside: iLab 3.0 | Romulo Nascimento",
-    "Por dentro: iLab 3.0 | Romulo Nascimento"
+    "Inside: iLAB 3.0 | Romulo Nascimento",
+    "Por dentro: iLAB 3.0 | Romulo Nascimento"
   ],
   [
-    "Inside: iLab 3.0. Romulo Nascimento’s UX portfolio: digital products, 3D experiences and games.",
-    "Por dentro: iLab 3.0. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."
+    "Inside: iLAB 3.0. Romulo Nascimento’s UX portfolio: digital products, 3D experiences and games.",
+    "Por dentro: iLAB 3.0. Portfólio de UX de Romulo Nascimento: produtos digitais, experiências 3D e jogos."
   ],
   [
     "Inside: Conheça a REPAR: legado | Romulo Nascimento",
@@ -1062,7 +1062,7 @@ window.PORTFOLIO_TRANSLATIONS = [
   ],
   [
     "Explore REPAR 3D brings two generations of the same project together: the original visual journey and an interactive 3D experience that makes the path of oil tangible.",
-    "Conhecer Repar 3D reúne duas gerações do mesmo projeto: a jornada visual original e uma experiência 3D interativa que torna o caminho do petróleo tangível."
+    "Conhecer REPAR 3D reúne duas gerações do mesmo projeto: a jornada visual original e uma experiência 3D interativa que torna o caminho do petróleo tangível."
   ],
   [
     "Compare before and after",
@@ -1202,15 +1202,15 @@ window.PORTFOLIO_TRANSLATIONS = [
   ],
   [
     "Inside the project: Explore REPAR 3D",
-    "Por dentro do projeto: Conhecer Repar 3D"
+    "Por dentro do projeto: Conhecer REPAR 3D"
   ],
   [
     "Open Explore REPAR 3D in a new tab",
-    "Explorar Conhecer Repar 3D em uma nova aba"
+    "Explorar Conhecer REPAR 3D em uma nova aba"
   ],
   [
     "Explore REPAR 3D: real desktop and mobile screens in device mockups",
-    "Conhecer Repar 3D: telas reais de desktop e celular em mockups de dispositivos"
+    "Conhecer REPAR 3D: telas reais de desktop e celular em mockups de dispositivos"
   ],
   [
     "Petrobras · Games & learning",
@@ -1490,7 +1490,7 @@ window.PORTFOLIO_TRANSLATIONS = [
   ],
   [
     "Explore REPAR 3D",
-    "Conhecer Repar 3D"
+    "Conhecer REPAR 3D"
   ],
   [
     "REPAR Word Search | Romulo Nascimento",
@@ -1502,15 +1502,15 @@ window.PORTFOLIO_TRANSLATIONS = [
   ],
   [
     "Explore REPAR 3D | Romulo Nascimento",
-    "Conhecer Repar 3D | Romulo Nascimento"
+    "Conhecer REPAR 3D | Romulo Nascimento"
   ],
   [
     "Explore REPAR 3D: mobile screen in a phone mockup",
-    "Conhecer Repar 3D: tela de celular em um mockup de iPhone"
+    "Conhecer REPAR 3D: tela de celular em um mockup de iPhone"
   ],
   [
-    "iLab 3.0: mobile screen in a phone mockup",
-    "iLab 3.0: tela de celular em um mockup de iPhone"
+    "iLAB 3.0: mobile screen in a phone mockup",
+    "iLAB 3.0: tela de celular em um mockup de iPhone"
   ],
   [
     "REPAR Word Search: mobile screen in a phone mockup",
@@ -2814,8 +2814,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["How I helped GFT cut the cost of its bench by 72%", "Como ajudei a GFT a reduzir em 72% o custo do seu bench"],
   ["Inside the project: How I helped GFT cut the cost of its bench by 72%", "Por dentro do projeto: Como ajudei a GFT a reduzir em 72% o custo do seu bench"],
   ["Explore the GFT Staffing demo in a new tab", "Explorar o demo do GFT Staffing em uma nova aba"],
-  ["Explore the REPAR 3D demo in a new tab", "Explorar o demo do Repar 3D em uma nova aba"],
-  ["Explore the iLab 3.0 demo in a new tab", "Explorar o demo do iLab 3.0 em uma nova aba"],
+  ["Explore the REPAR 3D demo in a new tab", "Explorar o demo do REPAR 3D em uma nova aba"],
+  ["Explore the iLAB 3.0 demo in a new tab", "Explorar o demo do iLAB 3.0 em uma nova aba"],
   ["Explore the REPAR Word Search demo in a new tab", "Explorar o demo do Caça-Palavras REPAR em uma nova aba"],
   ["Explore the FIAT · Water Cycle demo in a new tab", "Explorar o demo do FIAT · Água em Ciclo em uma nova aba"],
   ["Design connecting business, technology and people.","Design conectando negócios, tecnologia e pessoas."],
@@ -2976,7 +2976,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["A new proposal for the Thomson Reuters product roadmap","Uma nova proposta para o roadmap de produtos da Thomson Reuters"],
   ["I created this website in 2021, and it’s still live for customers. With Claude, I created a new proposal in 30 minutes.","Criei este website em 2021, e ele segue no ar para os clientes. Com o Claude, criei uma nova proposta em 30 minutos."],
   ["Inside the project: A new proposal for the Thomson Reuters product roadmap","Por dentro do projeto: Uma nova proposta para o roadmap de produtos da Thomson Reuters"],
-  ["Explore the Thomson Reuters roadmap demo in a new tab","Explorar a demo do roadmap Thomson Reuters em uma nova aba"],
+  ["Explore the Thomson Reuters roadmap demo in a new tab","Explorar o demo do roadmap Thomson Reuters em uma nova aba"],
   ["The roadmap as an annual report.","O roadmap como relatório anual."],
   ["The Tax Reform roadmap gathers 108 items across 11 product lines. The problem isn’t the amount of information, but the lack of hierarchy: everything carries the same weight.","O roadmap da Reforma Tributária reúne 108 itens em 11 frentes de produto. O problema não é a quantidade de informação, e sim a falta de hierarquia: tudo aparece com o mesmo peso."],
   ["The proposal organizes the content around the question people bring to it: what changes, and when? The four quarters of 2026 become the axis of the experience, with layers that go from the overview to the detail. It’s a concept proposal, not an official Thomson Reuters website.","A proposta organiza o conteúdo em torno da pergunta de quem o consulta: o que muda e quando? Os quatro trimestres de 2026 viram o eixo da experiência, com camadas que vão da visão geral ao detalhe. É uma proposta conceitual, não um site oficial da Thomson Reuters."],
@@ -3062,7 +3062,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Itaú's motion language.","a linguagem de motion do Itaú."],
   ["A 25 to 30 second product video in the bank's style used to take a motion designer up to 4 hours. I turned that style into a method, and the method into an agent anyone at Itaú calls from Teams.","Um vídeo de produto de 25 a 30 segundos no padrão do banco levava até 4 horas de um motion designer. Transformei esse padrão em método, e o método num agente que qualquer pessoa do Itaú chama pelo Teams."],
   ["Watch the test video","Ver o vídeo de teste"],
-  ["Try the interactive demo","Experimentar a demo interativa"],
+  ["Try the interactive demo","Experimentar o demo interativo"],
   ["Pix Agendado test video, made with the nine-act method, with fictional screens","Vídeo de teste do Pix Agendado, feito com o método dos nove atos, com telas fictícias"],
   ["Play video","Reproduzir vídeo"],
   ["Pause video","Pausar vídeo"],
@@ -3178,7 +3178,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Beyond video:","Além do vídeo:"],
   ["try it.","experimente."],
   ["The same test became an interactive page. In Watch mode it plays like a video. In Try mode it pauses at each tap and waits for the visitor to click or drag, with chapters you can jump to by act.","O mesmo teste virou uma página interativa. No modo Assistir, roda como vídeo. No modo Experimentar, pausa em cada toque e espera o visitante clicar ou arrastar, com capítulos navegáveis por ato."],
-  ["Open the interactive Pix Agendado demo in a new tab","Abrir a demo interativa do Pix Agendado numa nova aba"],
+  ["Open the interactive Pix Agendado demo in a new tab","Abrir o demo interativo do Pix Agendado numa nova aba"],
   ["Interactive demo in Try mode, waiting for a tap on Pix","Demo interativa no modo Experimentar, esperando um toque em Pix"],
   ["Result of the experiment:","Resultado do experimento:"],
   ["the pattern reproduces on any of the bank's subjects, as video or as HTML. It was validated, but still outside the environment where I had to deliver.","o padrão se reproduz em qualquer assunto do banco, em vídeo ou em HTML. Estava validado, mas ainda fora do ambiente onde eu precisava entregar."],
@@ -3304,7 +3304,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["The flow was adapted for Word, SVG and Copilot. The skill holds the instructions and makes it happen.","O fluxo foi adaptado para Word, SVG e Copilot. A skill tem as instruções e faz acontecer."],
   ["From deliverable to tool","Do entregável à ferramenta"],
   ["Solving my own problem, then opening the solution to everyone, multiplied the impact.","Resolver o próprio problema e depois abrir a solução para todos multiplicou o impacto."],
-  ["Try the interactive demo, or get in touch to talk about a product challenge.","Experimente a demo interativa ou fale comigo sobre um desafio de produto."],
+  ["Try the interactive demo, or get in touch to talk about a product challenge.","Experimente o demo interativo ou fale comigo sobre um desafio de produto."],
   ["The Pix Agendado screens are fictional. The Transfer Limits tutorial is public on Itaú's YouTube channel. The Itaú brand belongs to Itaú Unibanco.","As telas do Pix Agendado são fictícias. O tutorial de Transferir Limites é público no canal do Itaú no YouTube. A marca Itaú pertence ao Itaú Unibanco."]
 ]);
 
@@ -3315,7 +3315,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["How I taught AI to speak Itaú's motion language","Como ensinei a IA a falar a linguagem de motion do Itaú"],
   ["A method decoded from the bank's public videos, then an agent in Copilot that turns any script into a finished video in about 20 minutes.","Um método decodificado dos vídeos públicos do banco e, depois, um agente no Copilot que transforma qualquer roteiro em vídeo pronto em cerca de 20 minutos."],
   ["Inside the project: How I taught AI to speak Itaú's motion language","Por dentro do projeto: Como ensinei a IA a falar a linguagem de motion do Itaú"],
-  ["Explore the interactive Pix Agendado demo in a new tab","Explorar a demo interativa do Pix Agendado numa nova aba"],
+  ["Explore the interactive Pix Agendado demo in a new tab","Explorar o demo interativo do Pix Agendado numa nova aba"],
   ["Experiment","Experimento"],
   ["Pattern","Padrão"],
   ["The test","O teste"],
@@ -3881,5 +3881,54 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["today","hoje"],
   ["No changes published yet.","Nenhuma alteração publicada ainda."],
   ["Three changes are waiting for your review.","Três alterações aguardam sua revisão."],
-  ["Waiting","Na fila"]
+  ["Waiting","Na fila"],
+  ["Product design for complex work, from insurance claims to refinery labs.","Design de produto para trabalhos complexos, de sinistros de seguro a laboratórios de refinaria."],
+  ["Redesign of a 40-year-old claims platform: a four-step guided analysis in Salesforce, so analysts stop hunting for fields across tabs.","Redesenho de uma plataforma de sinistros de 40 anos: uma análise guiada em quatro etapas no Salesforce, para os analistas pararem de caçar campos entre abas."],
+  ["I design products for people who handle complex work every day, such as claims analysts, staffing teams and laboratories.","Desenho produtos para quem lida com trabalho complexo todos os dias, como analistas de sinistro, equipes de staffing e laboratórios."],
+  ["I start with interviews and usability tests, and bring working prototypes to the conversation while the decision can still change.","Começo com entrevistas e testes de usabilidade, e levo protótipos funcionais para a conversa enquanto a decisão ainda pode mudar."],
+  ["At Porto Seguro, I redesigned a 40-year-old platform and brought claims analysis to about 25 minutes. At GFT, I helped cut bench cost by 72%. At Itaú, I turned the bank's motion language into an agent in Copilot.","Na Porto Seguro, redesenhei uma plataforma de 40 anos e levei a análise de sinistros para cerca de 25 minutos. Na GFT, ajudei a cortar em 72% o custo do bench. No Itaú, transformei a linguagem de motion do banco em um agente no Copilot."],
+  ["Tell me about your project.","Conte sobre o seu projeto."],
+  ["Design with AI: prototypes, skills and agents","Design com IA: protótipos, skills e agentes"],
+  ["A first conversation about scope, timeline and how we could work together.","Uma primeira conversa sobre escopo, prazo e como podemos trabalhar juntos."],
+  ["How I cut claims analysis from up to 60 minutes to","Como reduzi a análise de sinistros de até 60 minutos para"],
+  ["about 25","cerca de 25"],
+  ["at Porto Seguro.","na Porto Seguro."],
+  ["How I cut claims analysis from up to 60 minutes to about 25 at Porto Seguro","Como reduzi a análise de sinistros de até 60 minutos para cerca de 25 na Porto Seguro"],
+  ["How I cut claims analysis from up to 60 minutes to about 25 at Porto Seguro.","Como reduzi a análise de sinistros de até 60 minutos para cerca de 25 na Porto Seguro."],
+  ["Inside the project: How I cut claims analysis from up to 60 minutes to about 25 at Porto Seguro","Por dentro do projeto: Como reduzi a análise de sinistros de até 60 minutos para cerca de 25 na Porto Seguro"],
+  ["A 40-year-old system was moving to Salesforce.","Um sistema de 40 anos estava indo para o Salesforce."],
+  ["About 25 minutes per claim, measured by observation.","Cerca de 25 minutos por sinistro, medidos por observação."],
+  ["The rest of the proposal: dashboard, queues, documents and payments.","O resto da proposta: dashboard, filas, documentos e pagamentos."],
+  ["Try the four-step analysis in the demo.","Experimente a análise em quatro etapas no demo."],
+  ["Or get in touch to talk about a product challenge.","Ou entre em contato para conversar sobre um desafio de produto."],
+  ["Analysis time per claim","Tempo de análise por sinistro"],
+  ["How I helped GFT cut the cost of its bench","Como ajudei a GFT a reduzir o custo do seu bench"],
+  ["by 72%.","em 72%."],
+  ["Try the working version.","Experimente a versão funcional."],
+  ["A decade-old lab system, rebuilt to find and compare quality data.","Um sistema de laboratório de uma década, refeito para encontrar e comparar dados de qualidade."],
+  ["An integrated experience for refinery labs, from the original 2013–2015 project to a 2026 working prototype.","Uma experiência integrada para laboratórios de refinaria, do projeto original de 2013–2015 a um protótipo funcional de 2026."],
+  ["Eight modules, and the same query rebuilt every day.","Oito módulos e a mesma consulta refeita todo dia."],
+  ["The same result answers different questions.","O mesmo resultado responde a perguntas diferentes."],
+  ["In 2026, I rebuilt it as a working prototype.","Em 2026, refiz o projeto como um protótipo funcional."],
+  ["Four decisions for daily lab work.","Quatro decisões para o dia a dia do laboratório."],
+  ["The lab as a 3D bench.","O laboratório como bancada 3D."],
+  ["AI wrote the code. The decisions stayed mine.","A IA escreveu o código. As decisões continuaram minhas."],
+  ["Open the prototype.","Abra o protótipo."],
+  ["The same refinery, from Flash in 2007 to a 3D model.","A mesma refinaria, do Flash em 2007 a um modelo 3D."],
+  ["Follow oil from the terminal to the finished products.","Acompanhe o petróleo do terminal aos produtos do refino."],
+  ["Compare the 2D and 3D versions.","Compare as versões 2D e 3D."],
+  ["Move the divider to see both.","Mova o divisor para ver as duas."],
+  ["Try both versions.","Experimente as duas versões."],
+  ["A word search made for REPAR’s 30th anniversary in 2007.","Um caça-palavras feito para os 30 anos da REPAR, em 2007."],
+  ["How a round works.","Como funciona uma rodada."],
+  ["Play on your computer or phone.","Jogue no computador ou no celular."],
+  ["The path of industrial water, from the factory to reuse.","O caminho da água industrial, da fábrica ao reúso."],
+  ["What happens to water after it is used in production?","O que acontece com a água depois de usada na produção?"],
+  ["The experience follows treatment, purification, membranes, storage and the paths toward reuse or final destination.","A experiência acompanha tratamento, purificação, membranas, armazenamento e os caminhos para o reúso ou o destino final."],
+  ["The same story in 16:9 and 9:16.","A mesma história em 16:9 e 9:16."],
+  ["Compare the current page and the proposal.","Compare a página atual e a proposta."],
+  ["Open both versions.","Abra as duas versões."],
+  ["From up to 4 hours to about 20 minutes per video.","De até 4 horas para cerca de 20 minutos por vídeo."],
+  ["62 seconds instead of 151, with less effort.","62 segundos em vez de 151, com menos esforço."],
+  ["See how I work on other projects.","Veja como trabalho em outros projetos."]
 ]);

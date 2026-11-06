@@ -11,7 +11,7 @@ for (const [en, pt] of ctx.window.PORTFOLIO_TRANSLATIONS) {
 const names = [
   ['REPAR Word Search', 'Caça-Palavras REPAR'],
   ['FIAT · Water Cycle', 'FIAT · Água em Ciclo'],
-  ['Explore REPAR 3D', 'Conhecer Repar 3D']
+  ['Explore REPAR 3D', 'Conhecer REPAR 3D']
 ];
 for (const [en, pt] of names) {
   for (const source of [en, pt]) {
@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=transfer-evolution-2'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=audit-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -82,7 +82,7 @@ console.log('Porto TL;DR and Claude Code prototype credit: placement and EN/PT c
 
 for (const file of fs.readdirSync('.').filter(name => name.endsWith('.html') && name !== 'projeto-legado.html')) {
  const html = fs.readFileSync(file, 'utf8');
- assert(html.includes('typography.css?v=ux-1') && html.includes('typography.js?v=widows-1'), `${file}: missing shared text wrapping`);
+ assert(html.includes('typography.css?v=ux-1') && html.includes('typography.js?v=audit-3'), `${file}: missing shared text wrapping`);
 }
 assert.equal(map.get('Design connecting business, technology and people.')?.pt, 'Design conectando negócios, tecnologia e pessoas.');
 console.log('Editorial text wrapping and merged heading translations: OK');
@@ -94,7 +94,7 @@ assert(!fs.readFileSync('index.html', 'utf8').includes(transferFile), 'Keep the 
 assert(transfer.includes('name="robots" content="noindex,follow"'));
 assert(fs.readFileSync('locale.js', 'utf8').includes(transferFile), 'Preserve the selected language on transfer case navigation');
 assert(transfer.includes('data-language="en"') && transfer.includes('data-language="pt"'));
-const identity = new Set(['EN', 'PT', 'TL;DR', 'Romulo Nascimento', 'Product Designer', '2026', '©', '×', '© 2026 Romulo Nascimento']);
+const identity = new Set(['EN', 'PT', 'TL;DR', 'Romulo Nascimento', 'Product Designer', '2026', '©', '×', '© 2026 Romulo Nascimento', 'Latam Pass Black •••• 1226', 'R$']);
 const strings = new Set([...transfer.matchAll(/>([^<>]+)</g)].map(match => decode(match[1])).filter(value => /[A-Za-zÀ-ÿ]/.test(value)));
 for (const match of transfer.matchAll(/(?:alt|aria-label|title)="([^"]+)"/g)) if(match[1]) strings.add(decode(match[1]));
 for (const match of transfer.matchAll(/<meta (?:name="description"|property="og:(?:title|description)") content="([^"]+)"/g)) strings.add(decode(match[1]));
@@ -104,7 +104,7 @@ for(const string of strings) {
  const pair = map.get(string);
  assert.equal(map.get(pair.pt)?.en, pair.en, `Transfer case round-trip mismatch: ${string}`);
 }
-for (const image of ['hub.png','journey.png','transfer.png']) assert(fs.statSync(`images/transferir-limites/${image}`).size > 0);
+for (const image of ['hub.png','transfer.png']) assert(fs.statSync(`images/transferir-limites/${image}`).size > 0);
 console.log('Transfer credit limits: all copy, metadata, controls and image labels bilingual; language navigation and unlisted home status OK');
 for(const id of ['contribution','process']) assert(transfer.includes(`id="${id}"`), `Missing transfer design evidence: ${id}`);
 for(const text of ['151s → 62s','customers with 3+ products','4.5 → 4.77','38,000 users','Claude throughout the design process']) assert(transfer.includes(text), `Missing transfer evidence or cohort context: ${text}`);

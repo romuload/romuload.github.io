@@ -1,7 +1,7 @@
 /* Motion em atos · Itaú-inspired case. Orange, white and near-black, from the bank's slides and showreels. */
 :root{
   color-scheme:light;
-  --o:#FF6200;--o-deep:#E04F00;--peach:#F9D7C3;--peach-l:#FDEDE3;
+  --o:#FF6200;--o-deep:#B93700;--peach:#F9D7C3;--peach-l:#FDEDE3;
   --navy:#00036B;
   --paper:#F0F1F3;--white:#FFFFFF;
   --k:#141414;--k2:#3D3D3D;--k3:#6B6B6B;
@@ -511,3 +511,10 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
   .tm-ico.on .spark,.typing i{animation:none}
   .gen.in .gen-bar i{animation:none;width:100%}
 }
+/* Contrast: orange stays the ground; text on it is near-black, and orange text on light grounds is deepened. */
+.case-motion .btn.pri,.case-motion .btn.pri:hover,.act-chip b,.acts .n,.ribbon button.on,.m-arrow,.chips span.on,.act-list span.on,.vs .tagline.new,.model-pill,.steps li:last-child::before,.tl-open,.tl-close,.learn.turma,.learn.turma h3,.learn.turma p{color:#141414}
+.mc-light .kw,.mc-white .kw{color:#E04F00}
+.mc-light .part-kicker,.mc-white .part-kicker{color:#B93700}
+.mc-final .lead,.mc-final .source-note,.mc-orange .btn:not(.pri){color:#141414}
+.mc-orange .btn:not(.pri){border-color:rgba(20,20,20,.55)}
+.mc-orange .btn.pri{color:#141414}

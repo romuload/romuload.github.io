@@ -67,9 +67,21 @@
     }
     edits.set(location.node, { original, patched });
   };
+  // Very short words stay with the next word. Headings also keep two-character words and numbers attached.
+  const bindShortWords = () => {
+    document.querySelectorAll(selector).forEach(element => {
+      if (element.closest(excluded)) return;
+      const short = element.matches('h1,h2,h3,h4') ? /(?<=^|[\s(])([\p{L}\p{N}]{1,2})[ \t\r\n]+(?=\S)/gu : /(?<=^|[\s(])(\p{L})[ \t\r\n]+(?=\S)/gu;
+      textNodes(element).forEach(node => {
+        const bound = node.nodeValue.replace(short, '$1\u00a0');
+        if (bound !== node.nodeValue) node.nodeValue = bound;
+      });
+    });
+  };
   const refresh = () => {
     frame = 0;
     restore();
+    bindShortWords();
     document.querySelectorAll(selector).forEach(protect);
     document.documentElement.dataset.typographyState = !document.fonts || document.fonts.status === 'loaded' ? 'ready' : 'pending';
   };
