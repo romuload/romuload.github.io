@@ -3837,5 +3837,16 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Move the limit.","Mova o limite."],
   ["Keep the control.","Mantenha o controle."],
   ["More useful credit.","Crédito mais útil."],
-  ["Less friction.","Menos atrito."]
+  ["Less friction.","Menos atrito."],
+  ["Opportunity","Oportunidade"],
+  ["A roadmap that stays up to date.","Um roadmap que se mantém em dia."],
+  ["Today the website is static and someone has to update the data by hand. That’s 108 items across 11 product lines, with deadlines that move with the tax authority. When customers plan by the date, outdated data weighs as much as a confusing screen.","Hoje o site é estático e alguém precisa atualizar os dados à mão. São 108 itens em 11 frentes, com prazos que mudam junto com o Fisco. Quando o cliente planeja pela data, um dado desatualizado pesa tanto quanto uma tela confusa."],
+  ["The hypothesis is that AI could take on the repetitive part of this work, connected to whichever project management tool the company uses.","A hipótese é que a IA possa assumir a parte repetitiva desse trabalho, conectada a qualquer ferramenta de gestão de projetos que a empresa use."],
+  ["AI connects to the company’s project management tool and reads how each item is progressing.","A IA se conecta à ferramenta de gestão de projetos da empresa e lê o andamento de cada item."],
+  ["Propose","Propor"],
+  ["It compares that with what’s published and suggests what changed: status, date and reason, in Portuguese and English.","Compara com o que está publicado e sugere o que mudou: status, prazo e motivo, em português e inglês."],
+  ["Human approval","Aprovação humana"],
+  ["In a panel, the project manager approves, adjusts or moves an item to another quarter. Nothing goes live without that approval.","Num painel, o project manager aprova, ajusta ou muda um item de trimestre. Nada vai ao ar sem essa aprovação."],
+  ["The website stays static and simple to publish. What changes is the path to it: the last updated date and the change history would come from this flow.","O site continua estático e simples de publicar. O que muda é o caminho até ele: a data de atualização e o histórico de mudanças nasceriam desse fluxo."],
+  ["This is still a hypothesis, not something built. It would need to confirm which tools are in use, how reliable their data is and how the panel fits into the team’s routine.","Ainda é uma hipótese, não algo construído. Falta confirmar quais ferramentas estão em uso, se os dados são confiáveis e como o painel entra na rotina do time."]
 ]);
