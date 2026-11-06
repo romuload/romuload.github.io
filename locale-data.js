@@ -3451,20 +3451,8 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "Receba feedback do processamento e a confirmação da transferência."
   ],
   [
-    "Enlarge the credit transfer journey",
-    "Ampliar a jornada de transferência de limites"
-  ],
-  [
-    "Figma presentation showing amount entry, processing and successful limit reallocation",
-    "Apresentação do Figma com definição do valor, processamento e realocação de limite concluída"
-  ],
-  [
     "Enlarge image",
     "Ampliar imagem"
-  ],
-  [
-    "Journey visuals from the supplied Figma presentation. Screens and embedded annotations are in English.",
-    "Visuais da jornada extraídos da apresentação fornecida no Figma. Telas e anotações incorporadas estão em inglês."
   ],
   [
     "See what changes.",
@@ -3846,5 +3834,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Pause demo","Pausar demonstração"],
   ["Jump to a moment of the demo","Ir para um momento da demonstração"],
   ["The need","A necessidade"],
-  ["Demo rebuilt as live layers from the Figma screens and the project showreel. Amounts are illustrative.","Demonstração reconstruída em camadas a partir das telas do Figma e do showreel do projeto. Os valores são ilustrativos."]
+  ["Demo rebuilt as live layers from the Figma screens and the project showreel. Amounts are illustrative.","Demonstração reconstruída em camadas a partir das telas do Figma e do showreel do projeto. Os valores são ilustrativos."],
+  ["The credit was there.","O crédito existia."],
+  ["The flexibility wasn’t.","A flexibilidade, não."],
+  ["Move the limit.","Mova o limite."],
+  ["Keep the control.","Mantenha o controle."],
+  ["More useful credit.","Crédito mais útil."],
+  ["Less friction.","Menos atrito."]
 ]);

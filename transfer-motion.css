@@ -119,6 +119,12 @@
 .sec .tx-phone p{color:#3f3f3f}
 .sec .tx-phone .tx-label,.sec .tx-phone .tx-sum .tx-name,.sec .tx-phone .tx-sum .tx-new{color:#141414}
 
+/* Line breaks: sentences stay whole in headings, and no text ends on a lone word. */
+.sentence{display:inline-block}
+.case-transfer h1,.case-transfer h2,.case-transfer h3,.case-transfer summary{text-wrap:balance}
+.case-transfer main p,.case-transfer main dd,.case-transfer main dt,.case-transfer main li,.case-transfer main figcaption{text-wrap:pretty}
+.transfer-steps{margin-bottom:0}
+
 /* ---------- reading progress and chapter bar ---------- */
 .transfer-nav{border-block:1px solid var(--line);backdrop-filter:blur(14px);background:rgba(37,33,31,.94)}
 .transfer-nav .reading-progress{position:absolute;left:0;top:-1px;width:100%;height:2px;transform:scaleX(0);transform-origin:left;background:var(--lime)}
@@ -141,6 +147,7 @@
   .tx-chip.a{left:3%;top:40%}.tx-chip.b{right:3%;top:55%}
 }
 /* Narrow screens: the same canvas, cropped to its centre column and laid out for it. */
+@media(max-width:480px){.transfer-steps{grid-template-columns:minmax(0,1fr);gap:28px}}
 @media(max-width:700px){
   .tm-stage{aspect-ratio:4/5}
   .tm-title{left:560px;right:560px;top:70px;font-size:66px}

@@ -42,6 +42,22 @@
     sync();
   }
   document.getElementById('year').textContent = new Date().getFullYear();
+  // Very short words ("a", "e", "o") stay with the next word instead of ending a line.
+  const bindShortWords = () => {
+    const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT, {
+      acceptNode: node => node.parentElement.closest('.tm-canvas,.tx-phone,.tx-chip,[data-no-translate]') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+    });
+    let node;
+    while ((node = walker.nextNode())) {
+      // Headings are read at a glance, so there two-letter words ("do", "de") stay attached too.
+      const short = node.parentElement.closest('h1,h2,h3') ? /(?<=^|[\s(])(\p{L}{1,2})[ \t\r\n]+(?=\S)/gu : /(?<=^|[\s(])(\p{L})[ \t\r\n]+(?=\S)/gu;
+      const bound = node.nodeValue.replace(short, '$1 ');
+      if (bound !== node.nodeValue) node.nodeValue = bound;
+    }
+  };
+  bindShortWords();
+  window.addEventListener('portfolio-language-change', bindShortWords);
+
   const links = [...document.querySelectorAll('.transfer-nav a')];
   const chapters = [...document.querySelectorAll('main > section[id]')];
 
@@ -110,7 +126,7 @@
     root.classList.add('motion');
 
     // Cascading reveal. A long jump can enter many items at once, so the cascade has a ceiling.
-    const items = [...document.querySelectorAll('.transfer-summary h2,.transfer-summary dl>div,.context-story>div,.public-reference,.sec-head>*,.contribution-grid>div:first-child>*,.scope-facts>div,.process-narrative>article,.claude-process,.evolution-version,.evolution-note,.tm,.transfer-steps>li,.solution-section>.wrap>.case-figure,.decision-list>article,.decision-image,.primary-metrics>div,.outcomes-section .wrap>.source-note,.additional-results,.closing-section .wrap>*')];
+    const items = [...document.querySelectorAll('.transfer-summary h2,.transfer-summary dl>div,.context-story>div,.public-reference,.sec-head>*,.contribution-grid>div:first-child>*,.scope-facts>div,.process-narrative>article,.claude-process,.evolution-version,.evolution-note,.tm,.transfer-steps>li,.decision-list>article,.decision-image,.primary-metrics>div,.outcomes-section .wrap>.source-note,.additional-results,.closing-section .wrap>*')];
     items.forEach(node => node.classList.add('rv'));
     ScrollTrigger.batch(items, {start: 'top 88%', once: true, onEnter: batch => gsap.to(batch, {
       opacity: 1, y: 0, duration: .9, ease: 'power3.out', stagger: Math.min(.09, .6 / batch.length), overwrite: true,
