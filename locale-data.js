@@ -3708,3 +3708,103 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ]
 ]);
 window.PORTFOLIO_TRANSLATIONS.push(['151s → 62s', '151s → 62s']);
+
+// Journey evolution: dates and versions from CASE-TRANSFERIR.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "How the journey evolved.",
+    "Como a jornada evoluiu."
+  ],
+  [
+    "Four versions document the shift from distributing a total limit across cards to choosing how much to transfer between products.",
+    "Quatro versões mostram a mudança: de distribuir o limite total entre cartões a escolher quanto transferir entre produtos."
+  ],
+  [
+    "Journey version navigation",
+    "Navegação entre versões da jornada"
+  ],
+  [
+    "Previous version",
+    "Versão anterior"
+  ],
+  [
+    "Next version",
+    "Próxima versão"
+  ],
+  [
+    "Journey versions from 2024 to 2026",
+    "Versões da jornada de 2024 a 2026"
+  ],
+  [
+    "Launch",
+    "Lançamento"
+  ],
+  [
+    "Enlarge 2024 launch screen",
+    "Ampliar tela de 2024: lançamento"
+  ],
+  [
+    "2024 launch: blue sliders for distributing the total credit limit between two cards",
+    "Lançamento de 2024: sliders azuis para distribuir o limite total entre dois cartões"
+  ],
+  [
+    "The first version used one slider per card to distribute the total limit, with a summary at the end.",
+    "A primeira versão usava um slider por cartão para distribuir o limite total, com um resumo ao final."
+  ],
+  [
+    "Visual refresh",
+    "Atualização visual"
+  ],
+  [
+    "Enlarge 2025 visual refresh screen",
+    "Ampliar tela de 2025: atualização visual"
+  ],
+  [
+    "2025 visual refresh: orange sliders, current-limit labels and transfer confirmation",
+    "Atualização visual de 2025: sliders laranjas, identificação do limite atual e confirmação da transferência"
+  ],
+  [
+    "The card-to-card model remained, with an orange slider, clearer current-limit labels and a more explicit transfer confirmation action.",
+    "O modelo entre cartões foi mantido, com slider laranja, identificação do limite atual e uma ação mais explícita de confirmação da transferência."
+  ],
+  [
+    "Overdraft joins",
+    "Limite da conta"
+  ],
+  [
+    "Enlarge 2025 overdraft joins screen",
+    "Ampliar tela de 2025: limite da conta"
+  ],
+  [
+    "2025 overdraft version: card and overdraft limits in the same slider-based flow",
+    "Versão de 2025 com limite da conta: cartão e conta no mesmo fluxo com sliders"
+  ],
+  [
+    "The journey expanded beyond cards to include the overdraft limit, keeping both products in the same adjustment flow.",
+    "A jornada passou a incluir o limite da conta, além dos cartões, mantendo os dois produtos no mesmo fluxo de ajuste."
+  ],
+  [
+    "New experience",
+    "Nova experiência"
+  ],
+  [
+    "Enlarge 2026 new experience screen",
+    "Ampliar tela de 2026: nova experiência"
+  ],
+  [
+    "2026 experience: source transfer amounts, remaining limits and current versus new destination limit",
+    "Experiência de 2026: valores por origem, limites restantes e comparação entre os limites atual e novo do destino"
+  ],
+  [
+    "The focus moved to the amount being transferred. A source list shows what remains, while the destination summary compares the current and new limits before confirmation.",
+    "O foco passou para o valor a transferir. A lista de origens mostra o que sobra, enquanto o resumo do destino compara os limites atual e novo antes de confirmar."
+  ],
+  [
+    "Sequence and dates follow the versions documented in Figma. Original screens are shown in Portuguese; open any image to inspect the details.",
+    "A sequência e as datas seguem as versões documentadas no Figma. As telas originais estão em português; amplie qualquer imagem para ver os detalhes."
+  ],
+  [
+    "Evolution",
+    "Evolução"
+  ]
+]);

@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=transfer-limits-3'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=transfer-evolution-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -112,3 +112,10 @@ assert(transfer.includes('class="additional-results"') && transfer.includes('htt
 console.log('Transfer case: contribution, research scope, Claude process, outcome cohorts and public reference OK');
 
 assert.equal(map.get('Customer Effort Score (CES)')?.pt, 'Índice de Esforço do Cliente (CES)');
+assert(transfer.includes('id="evolution"') && transfer.includes('href="#evolution"'));
+assert.equal((transfer.match(/class="evolution-version"/g)||[]).length,4,'Keep all four historical versions');
+for(const name of ['2024-launch','2025-facelift','2025-overdraft','2026-experience']) {
+ assert(transfer.includes(`images/transferir-limites/${name}.png`));
+ assert(fs.statSync(`images/transferir-limites/${name}.png`).size>0);
+}
+console.log('Transfer evolution: four dated versions, original assets, bilingual captions and controls OK');
