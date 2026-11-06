@@ -3932,3 +3932,5 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["62 seconds instead of 151, with less effort.","62 segundos em vez de 151, com menos esforço."],
   ["See how I work on other projects.","Veja como trabalho em outros projetos."]
 ]);
+
+// Home headline intentionally restored by Romulo after the 2026-11-06 audit.
