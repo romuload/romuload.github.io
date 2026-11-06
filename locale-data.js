@@ -3347,3 +3347,227 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Play conversation","Reproduzir conversa"],
   ["Replay","Ver de novo"]
 ]);
+
+// Transfer credit limits · initial case.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Itaú · Transfer credit limits | Romulo Nascimento",
+    "Itaú · Transferir limites | Romulo Nascimento"
+  ],
+  [
+    "A concise case about giving Itaú customers control over available credit across cards and overdraft.",
+    "Um case sobre dar aos clientes Itaú controle do limite disponível entre cartões e limite da conta."
+  ],
+  [
+    "Itaú · Mobile banking",
+    "Itaú · Banco digital"
+  ],
+  [
+    "Transfer credit limits.",
+    "Transferir limites."
+  ],
+  [
+    "Your credit, where you need it.",
+    "Seu crédito, onde você precisa."
+  ],
+  [
+    "Move available credit between cards and overdraft, with a clear view of what changes before you confirm.",
+    "Transfira limite disponível entre cartões e limite da conta, com clareza sobre o que muda antes de confirmar."
+  ],
+  [
+    "Discover the solution",
+    "Conheça a solução"
+  ],
+  [
+    "See the results",
+    "Veja os resultados"
+  ],
+  [
+    "Credit was available, but tied to the wrong product for the customer’s immediate need.",
+    "Havia crédito disponível, mas vinculado ao produto errado para a necessidade imediata do cliente."
+  ],
+  [
+    "Let customers redistribute available limits, choose an amount and review the new balance before confirming.",
+    "Permitir que o cliente redistribua limites disponíveis, escolha o valor e confira o novo saldo antes de confirmar."
+  ],
+  [
+    "The impact",
+    "O impacto"
+  ],
+  [
+    "The project presentation reports 84% top-box satisfaction and R$37 billion in reallocated limits.",
+    "A apresentação do projeto reporta 84% de satisfação top-box e R$ 37 bilhões em limites realocados."
+  ],
+  [
+    "The credit was there. The flexibility wasn’t.",
+    "O crédito existia. A flexibilidade, não."
+  ],
+  [
+    "A customer could have unused credit on one card and insufficient credit on another card or their overdraft. The total available amount did not reflect what they could actually use in that moment.",
+    "Um cliente podia ter limite sobrando em um cartão e limite insuficiente em outro cartão ou na conta. O total disponível não refletia o que ele conseguia usar naquele momento."
+  ],
+  [
+    "The opportunity was to make existing credit more useful: give customers control over how it is distributed across eligible products.",
+    "A oportunidade era tornar o crédito existente mais útil: dar ao cliente controle sobre como ele é distribuído entre os produtos elegíveis."
+  ],
+  [
+    "Move the limit. Keep the control.",
+    "Mova o limite. Mantenha o controle."
+  ],
+  [
+    "A guided journey makes the transfer concrete: where the limit comes from, how much moves and what remains in each product.",
+    "Uma jornada guiada torna a transferência concreta: de onde vem o limite, quanto será movido e o que sobra em cada produto."
+  ],
+  [
+    "Choose the source",
+    "Escolher a origem"
+  ],
+  [
+    "See the products with available limits.",
+    "Veja os produtos com limite disponível."
+  ],
+  [
+    "Define the amount",
+    "Definir o valor"
+  ],
+  [
+    "Move only what you need and check the remaining limit.",
+    "Mova só o necessário e confira o limite restante."
+  ],
+  [
+    "Review and confirm",
+    "Revisar e confirmar"
+  ],
+  [
+    "Compare the current and new limits before committing.",
+    "Compare os limites atual e novo antes de concluir."
+  ],
+  [
+    "See the result",
+    "Conferir o resultado"
+  ],
+  [
+    "Get clear processing feedback and a transfer confirmation.",
+    "Receba feedback do processamento e a confirmação da transferência."
+  ],
+  [
+    "Enlarge the credit transfer journey",
+    "Ampliar a jornada de transferência de limites"
+  ],
+  [
+    "Figma presentation showing amount entry, processing and successful limit reallocation",
+    "Apresentação do Figma com definição do valor, processamento e realocação de limite concluída"
+  ],
+  [
+    "Enlarge image",
+    "Ampliar imagem"
+  ],
+  [
+    "Journey visuals from the supplied Figma presentation. Screens and embedded annotations are in English.",
+    "Visuais da jornada extraídos da apresentação fornecida no Figma. Telas e anotações incorporadas estão em inglês."
+  ],
+  [
+    "See what changes.",
+    "Veja o que muda."
+  ],
+  [
+    "The interface connects the transfer action to its effect on the customer’s available credit.",
+    "A interface conecta a ação de transferir ao efeito sobre o crédito disponível do cliente."
+  ],
+  [
+    "Show what remains",
+    "Mostrar o que sobra"
+  ],
+  [
+    "Each source shows the transfer amount and the remaining limit. Customers can see the trade-off before moving credit.",
+    "Cada origem mostra o valor transferido e o limite restante. O cliente consegue visualizar a troca antes de movimentar o crédito."
+  ],
+  [
+    "Compare before confirming",
+    "Comparar antes de confirmar"
+  ],
+  [
+    "Current and new limits appear together, close to the confirmation action. The change is explicit rather than left to mental calculation.",
+    "Os limites atual e novo aparecem juntos, próximos da ação de confirmação. A mudança fica explícita, sem depender de cálculo mental."
+  ],
+  [
+    "Guide with plain language",
+    "Orientar com linguagem simples"
+  ],
+  [
+    "Direct prompts, editable amounts and distinct processing and success states help people follow the journey.",
+    "Instruções diretas, valores editáveis e estados distintos de processamento e sucesso ajudam a acompanhar a jornada."
+  ],
+  [
+    "More useful credit. Less friction.",
+    "Crédito mais útil. Menos atrito."
+  ],
+  [
+    "Indicators reported in the project presentation.",
+    "Indicadores reportados na apresentação do projeto."
+  ],
+  [
+    "84%",
+    "84%"
+  ],
+  [
+    "Top-box satisfaction",
+    "Satisfação top-box"
+  ],
+  [
+    "R$37bn",
+    "R$ 37 bi"
+  ],
+  [
+    "Credit limit reallocated",
+    "Limite de crédito realocado"
+  ],
+  [
+    "≈60.4%",
+    "≈60,4%"
+  ],
+  [
+    "Fewer declines due to insufficient limit",
+    "Menos recusas por limite insuficiente"
+  ],
+  [
+    "24%",
+    "24%"
+  ],
+  [
+    "Eligible customers who made at least one transfer",
+    "Clientes elegíveis que fizeram ao menos uma transferência"
+  ],
+  [
+    "These figures come from the supplied presentation. It does not detail the measurement period, sample or attribution method.",
+    "Esses números vêm da apresentação fornecida. O material não detalha período de medição, amostra ou método de atribuição."
+  ],
+  [
+    "Financial control starts with clarity.",
+    "Controle financeiro começa com clareza."
+  ],
+  [
+    "Make the available options, their consequences and the next step easy to understand.",
+    "Torne as opções disponíveis, suas consequências e o próximo passo fáceis de entender."
+  ],
+  [
+    "Project images",
+    "Imagens do projeto"
+  ],
+  [
+    "Itaú transfer screen showing the remaining limit and the current and new destination limits",
+    "Tela de transferência Itaú com limite restante e limites atual e novo do destino"
+  ],
+  [
+    "Enlarge the available limits detail",
+    "Ampliar o detalhe dos limites disponíveis"
+  ],
+  [
+    "Available limits detail showing transfer amounts and remaining credit across three products",
+    "Detalhe dos limites disponíveis com valores de transferência e crédito restante em três produtos"
+  ],
+  [
+    "Interface detail from the Figma presentation: transfer amounts and remaining limits across eligible products.",
+    "Detalhe da interface na apresentação do Figma: valores transferidos e limites restantes nos produtos elegíveis."
+  ]
+]);
