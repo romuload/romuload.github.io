@@ -3787,10 +3787,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "The focus moved to the amount being transferred. A source list shows what remains, while the destination summary compares the current and new limits before confirmation.",
     "O foco passou para o valor a transferir. A lista de origens mostra o que sobra, enquanto o resumo do destino compara os limites atual e novo antes de confirmar."
   ],
-  [
-    "Sequence and dates follow the versions documented in Figma. Original screens are shown in Portuguese; open any image to inspect the details.",
-    "A sequência e as datas seguem as versões documentadas no Figma. As telas originais estão em português; amplie qualquer imagem para ver os detalhes."
-  ],
+  ["Open any image to inspect the details.", "Abra qualquer imagem para ver os detalhes."],
   [
     "Evolution",
     "Evolução"
