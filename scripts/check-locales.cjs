@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=audit-home-restore-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=transfer-donor-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -121,3 +121,11 @@ for(const name of ['2024-launch','2025-facelift','2025-overdraft','2026-experien
 console.log('Transfer evolution: four dated versions, original assets, bilingual captions and controls OK');
 
 assert(fs.readFileSync('index.html', 'utf8').includes('<h1>Design connecting business, technology and people.</h1>'), 'Preserve Romulo’s approved home headline');
+
+// Opening story must agree with the donor shown throughout the functional example.
+assert(/class="tm-card credit[^\n]+Insufficient credit limit/.test(transfer));
+assert(/class="tm-card overdraft[^\n]+Excess credit limit/.test(transfer));
+const motion = fs.readFileSync('transfer-motion.js', 'utf8');
+assert(motion.includes('scaleX: 842 / 1376') && motion.includes('scaleX: 368 / 688'));
+assert(fs.readFileSync('transfer-motion.css','utf8').includes('transform-origin:100% 50%'));
+console.log('Transfer motion: card needs limit; overdraft donates; opening bars match updated Figma frames');

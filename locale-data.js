@@ -3934,3 +3934,6 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 ]);
 
 // Home headline intentionally restored by Romulo after the 2026-11-06 audit.
+
+// Opening motion: overdraft donates limit; the credit card receives it.
+window.PORTFOLIO_TRANSLATIONS.push(["Animated demo: the card needs more credit and the overdraft has available limit to transfer. The customer changes the transfer from R$ 4,950 to R$ 2,000, sees the card limit reach R$ 12,000 and confirms.", "Demo animado: o cartão precisa de mais crédito e a conta tem limite disponível para transferir. O cliente altera a transferência de R$ 4.950 para R$ 2.000, vê o limite do cartão chegar a R$ 12.000 e confirma."]);

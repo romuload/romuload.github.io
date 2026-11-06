@@ -73,9 +73,9 @@
     gsap.set('.tm-adjust', { autoAlpha: 0 });
     gsap.set('.tm-define', { autoAlpha: 1 });
     gsap.set('.tm-title', { y: 34, letterSpacing: '.03em' });
-    gsap.set('.tm-card.one', { y: 90 });
-    gsap.set('.tm-card.low', { x: 2000 });
-    gsap.set('.tm-card.one .tm-fill,.tm-card.low .tm-fill', { scaleX: 0 });
+    gsap.set('.tm-card.credit', { y: 90 });
+    gsap.set('.tm-card.overdraft', { x: 2000 });
+    gsap.set('.tm-card.credit .tm-fill,.tm-card.overdraft .tm-fill', { scaleX: 0 });
     gsap.set('.tm-flow', { scaleX: 0 });
     gsap.set('.tm-word span', { y: 44, autoAlpha: 0 });
     gsap.set('.tm-word .k', { scale: 1.9 });
@@ -114,27 +114,28 @@
       tl.to('.tm-tap', { autoAlpha: 0, duration: .2 }, at + 1.15);
     };
 
-    /* The need: limit left over in one product, missing in another. */
+    /* The card needs credit; overdraft supplies it. Match the three opening Figma frames. */
     tl.addLabel('need', 0);
     tl.to('.tm-title', { autoAlpha: 1, y: 0, letterSpacing: '-.035em', duration: .9, ease: 'power3.out' }, .2);
-    tl.to('.tm-card.one', { autoAlpha: 1, y: 0, duration: .7, ease: 'power3.out' }, .55);
-    tl.to('.tm-card.one .tm-fill', { scaleX: .91, duration: 1.2, ease: 'power2.inOut' }, .9);
-    tl.to('.tm-card.one', { x: -2000, duration: .7 }, 2.9);
-    tl.to('.tm-card.low', { autoAlpha: 1, x: 0, duration: .7 }, 2.9);
-    tl.to('.tm-card.low .tm-fill', { scaleX: .1, duration: .6, ease: 'power2.out' }, 3.5);
+    tl.to('.tm-card.credit', { autoAlpha: 1, y: 0, duration: .7, ease: 'power3.out' }, .55);
+    tl.to('.tm-card.credit .tm-fill', { scaleX: .91, duration: 1.2, ease: 'power2.inOut' }, .9);
+    tl.to('.tm-card.credit', { x: -2000, duration: .7 }, 2.9);
+    tl.to('.tm-card.overdraft', { autoAlpha: 1, x: 0, duration: .7 }, 2.9);
+    tl.to('.tm-card.overdraft .tm-fill', { scaleX: 842 / 1376, duration: .6, ease: 'power2.out' }, 3.5);
+    tl.to('.tm-card.overdraft .tm-fill', { scaleX: 368 / 688, duration: .8 }, 4.4);
     if (narrow) {
-      tl.set('.tm-card.one', { x: 0, y: -250, scale: 1 }, 4.4);
-      tl.to('.tm-card.one', { autoAlpha: 1, duration: .01 }, 4.4);
-      tl.fromTo('.tm-card.one', { x: -1400 }, { x: 0, duration: .7, immediateRender: false }, 4.4);
-      tl.to('.tm-card.low', { y: 0, duration: .7 }, 4.4);
+      tl.set('.tm-card.credit', { x: 0, y: -250, scale: 1 }, 4.4);
+      tl.to('.tm-card.credit', { autoAlpha: 1, duration: .01 }, 4.4);
+      tl.fromTo('.tm-card.credit', { x: -1400 }, { x: 0, duration: .7, immediateRender: false }, 4.4);
+      tl.to('.tm-card.overdraft', { y: 0, duration: .7 }, 4.4);
     } else {
-      tl.fromTo('.tm-card.one', { x: -2000, y: 0, scale: .5 }, { x: -106, y: 0, scale: .5, duration: .8, immediateRender: false }, 4.4);
-      tl.to('.tm-card.low', { x: 814, scale: .5, duration: .8 }, 4.4);
+      tl.fromTo('.tm-card.credit', { x: -2000, y: 0, scale: .5 }, { x: -106, y: 0, scale: .5, duration: .8, immediateRender: false }, 4.4);
+      tl.to('.tm-card.overdraft', { x: 814, scale: .5, duration: .8 }, 4.4);
       tl.set('.tm-flow', { autoAlpha: 1 }, 5.3);
       tl.to('.tm-flow', { scaleX: 1, duration: .55, ease: 'power2.inOut' }, 5.3);
       tl.to('.tm-flow', { autoAlpha: 0, duration: .25 }, 6);
     }
-    tl.to('.tm-title,.tm-card.one,.tm-card.low', { autoAlpha: 0, duration: .35 }, 6.7);
+    tl.to('.tm-title,.tm-card.credit,.tm-card.overdraft', { autoAlpha: 0, duration: .35 }, 6.7);
 
     /* Choose: the source appears, and the pencil opens the amount. */
     tl.addLabel('choose', 7.1);
