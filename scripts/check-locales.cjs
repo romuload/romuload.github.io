@@ -18,12 +18,12 @@ for (const [en, pt] of names) {
     assert.equal(map.get(source)?.en, en);
     assert.equal(map.get(source)?.pt, pt);
   }
-  assert(fs.readFileSync('propostas.html', 'utf8').includes(`<h3>${en}</h3>`));
+  assert(fs.readFileSync('propostas.html', 'utf8').includes(`aria-label="Explore the ${en === "Explore REPAR 3D" ? "REPAR 3D" : en} demo in a new tab"`));
 }
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=ilab-copy-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=proposal-copy-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -158,3 +158,5 @@ assert(proposalsGallery.includes("images/ilab-case/d-bancada.jpg"));
 assert(map.get("iLAB 3.0: 3D laboratory on desktop and mobile in laptop and phone mockups")?.pt);
 
 for (const [en,pt] of [["From a query system to an interactive 3D laboratory", "De um sistema de consultas a um laboratório 3D interativo"], ["A proposal for iLAB that connects samples, results and equipment on a virtual bench, making lab analysis easier to follow.", "Uma proposta para o iLAB que conecta amostras, resultados e equipamentos em uma bancada virtual, tornando o acompanhamento das análises mais visual e direto."], ["Inside the project: From a query system to an interactive 3D laboratory", "Por dentro do projeto: De um sistema de consultas a um laboratório 3D interativo"]]) { assert(proposalsGallery.includes(en)); assert.equal(map.get(en)?.pt,pt); assert.equal(map.get(pt)?.en,en); }
+
+for(const [en,pt] of [["From an illustrated journey to an interactive 3D refinery", "De uma jornada ilustrada a uma refinaria 3D interativa"], ["A new proposal for Explore REPAR, turning the path of oil into an exploratory experience, with navigation through the refinery and discoveries at every stage.", "Uma nova proposta para o Conhecer REPAR, transformando o caminho do petróleo em uma experiência de exploração, com navegação pelo ambiente e descobertas em cada etapa."], ["Inside the project: From an illustrated journey to an interactive 3D refinery", "Por dentro do projeto: De uma jornada ilustrada a uma refinaria 3D interativa"], ["A game from 2007, reimagined for any screen", "Um jogo de 2007, repensado para jogar em qualquer tela"], ["A proposal to update REPAR’s word search, preserving its educational content while redesigning the interactions for desktop and mobile.", "Uma proposta para atualizar o caça-palavras da REPAR, preservando seu conteúdo educativo e renovando as interações para desktop e celular."], ["Inside the project: A game from 2007, reimagined for any screen", "Por dentro do projeto: Um jogo de 2007, repensado para jogar em qualquer tela"], ["The factory’s water cycle, turned into an interactive experience", "O ciclo da água na fábrica, transformado em uma experiência interativa"], ["A proposal combining 3D exploration and motion design videos to explain how FIAT treats and reuses water in its industrial operations.", "Uma proposta que combina exploração 3D e vídeos em motion design para explicar como a FIAT trata e reutiliza a água em sua operação industrial."], ["Inside the project: The factory’s water cycle, turned into an interactive experience", "Por dentro do projeto: O ciclo da água na fábrica, transformado em uma experiência interativa"]]) { assert(proposalsGallery.includes(en)); assert.equal(map.get(en)?.pt,pt); assert.equal(map.get(pt)?.en,en); }
