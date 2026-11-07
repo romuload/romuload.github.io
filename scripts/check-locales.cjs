@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=metadata-a-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=motion-method-full-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -181,7 +181,7 @@ for(const [en,pt] of reviewCopy) {
 }
 for(const file of ['index.html','sobre.html','projeto-motion.html','projeto-porto.html','projeto-staffing.html']) {
  const source=fs.readFileSync(file,'utf8');
- assert(source.includes('review.css?v=1')&&source.includes('review.js?v=1'));
+ assert(source.includes('review.css?v=2')&&source.includes('review.js?v=1'));
  const ids=[...source.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
  assert.equal(new Set(ids).size,ids.length,`${file}: duplicate IDs`);
  for(const match of source.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]),`${file}: missing anchor ${match[1]}`);
@@ -190,3 +190,7 @@ assert(porto.indexOf('id="case-summary-title"') < porto.indexOf('class="hero-sta
 assert(porto.includes('five analysts') && porto.includes('not production analytics'));
 assert(!homeGallery.includes('any script'));
 console.log('Review: original delivery / reconstruction separation, bounded claims, bilingual copy and valid deep links: OK');
+
+assert(motionCaseCopy.includes('id="details"'));
+assert(!motionCaseCopy.includes('<summary>Explore the nine acts, motion examples and full test</summary>'));
+for (const id of ["experiment","pattern","teste","application"]) assert(motionCaseCopy.includes(`id="${id}" data-chapter="details"`),`Motion method must be inline: ${id}`);

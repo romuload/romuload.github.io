@@ -83,3 +83,6 @@
  .review-reading .mc-head h2{font-size:30px}
  .review-reading .glance strong{font-size:32px}
 }
+/* The Itaú method is part of the main narrative again, with full-width chapters. */
+.case-motion #details{padding-bottom:0}
+.case-motion #details+.sec{padding-top:32px}
