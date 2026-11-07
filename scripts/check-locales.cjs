@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=ilab-dual-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=ilab-copy-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -156,3 +156,5 @@ assert.equal(map.get("How I connect strategy, design and technology to solve com
 assert(proposalsGallery.includes("image-ilab laptop-stage"));
 assert(proposalsGallery.includes("images/ilab-case/d-bancada.jpg"));
 assert(map.get("iLAB 3.0: 3D laboratory on desktop and mobile in laptop and phone mockups")?.pt);
+
+for (const [en,pt] of [["From a query system to an interactive 3D laboratory", "De um sistema de consultas a um laboratório 3D interativo"], ["A proposal for iLAB that connects samples, results and equipment on a virtual bench, making lab analysis easier to follow.", "Uma proposta para o iLAB que conecta amostras, resultados e equipamentos em uma bancada virtual, tornando o acompanhamento das análises mais visual e direto."], ["Inside the project: From a query system to an interactive 3D laboratory", "Por dentro do projeto: De um sistema de consultas a um laboratório 3D interativo"]]) { assert(proposalsGallery.includes(en)); assert.equal(map.get(en)?.pt,pt); assert.equal(map.get(pt)?.en,en); }

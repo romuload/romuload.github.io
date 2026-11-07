@@ -3946,3 +3946,6 @@ window.PORTFOLIO_TRANSLATIONS.push(["Real projects from my career, revisited wit
 window.PORTFOLIO_TRANSLATIONS.push(["How I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.", "Como conecto estratégia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e negócios."]);
 
 window.PORTFOLIO_TRANSLATIONS.push(["iLAB 3.0: 3D laboratory on desktop and mobile in laptop and phone mockups", "iLAB 3.0: laboratório 3D no desktop e no celular em mockups de notebook e iPhone"]);
+
+// iLAB proposal: transformation delivered by the interactive laboratory concept.
+window.PORTFOLIO_TRANSLATIONS.push(...[["From a query system to an interactive 3D laboratory", "De um sistema de consultas a um laboratório 3D interativo"], ["A proposal for iLAB that connects samples, results and equipment on a virtual bench, making lab analysis easier to follow.", "Uma proposta para o iLAB que conecta amostras, resultados e equipamentos em uma bancada virtual, tornando o acompanhamento das análises mais visual e direto."], ["Inside the project: From a query system to an interactive 3D laboratory", "Por dentro do projeto: De um sistema de consultas a um laboratório 3D interativo"]]);
