@@ -3943,4 +3943,4 @@ window.PORTFOLIO_TRANSLATIONS.push(...[["Proposals", "Propostas"], ["Case studie
 
 window.PORTFOLIO_TRANSLATIONS.push(["Real projects from my career, revisited with the experience I bring today and AI tools to explore new possibilities for the user experience.", "Projetos reais em que trabalhei ao longo da minha carreira, revisitados com a experiência que tenho hoje e o apoio de ferramentas de IA para explorar novas possibilidades de experiência."]);
 
-window.PORTFOLIO_TRANSLATIONS.push(["My current work and recent projects, showing how I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.", "Meu trabalho atual e projetos recentes, mostrando como conecto estratégia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e negócios."]);
+window.PORTFOLIO_TRANSLATIONS.push(["How I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.", "Como conecto estratégia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e negócios."]);

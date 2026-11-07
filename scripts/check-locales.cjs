@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=work-intro-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=work-intro-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -150,5 +150,5 @@ assert(map.get("Real projects from my career, revisited with the experience I br
 let proposalPosition = -1;
 for (const file of ["projeto-roadmap.html","projeto-ilab.html","projeto-repar.html","projeto-games.html","projeto-fiat.html"]) { const next = proposalsGallery.indexOf(`href="${file}"`); assert(next > proposalPosition); proposalPosition = next; }
 
-assert(homeGallery.includes("My current work and recent projects, showing how I connect strategy, design and technology to solve complex problems and deliver results for people and businesses."));
-assert.equal(map.get("My current work and recent projects, showing how I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.")?.pt, "Meu trabalho atual e projetos recentes, mostrando como conecto estrat\u00e9gia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e neg\u00f3cios.");
+assert(homeGallery.includes("How I connect strategy, design and technology to solve complex problems and deliver results for people and businesses."));
+assert.equal(map.get("How I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.")?.pt, "Como conecto estrat\u00e9gia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e neg\u00f3cios.");
