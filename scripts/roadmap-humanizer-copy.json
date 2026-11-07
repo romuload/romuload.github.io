@@ -1,0 +1,62 @@
+[
+  [
+    "The Tax Reform roadmap contains 108 items across 11 product lines. On the page I analysed, the items have the same visual weight, making priorities difficult to distinguish.",
+    "O roadmap da Reforma Tributária reúne 108 itens em 11 frentes de produto. Na página analisada, os itens aparecem com o mesmo peso visual, dificultando distinguir prioridades."
+  ],
+  [
+    "I organised the content around the four quarters of 2026, with access to the overview, product lines and individual items. This is a concept proposal, not an official Thomson Reuters website.",
+    "Organizei o conteúdo pelos quatro trimestres de 2026, com acesso à visão geral, às frentes de produto e aos itens. A proposta é conceitual e não representa um site oficial da Thomson Reuters."
+  ],
+  [
+    "I separated navigation into year, map, product line and item, allowing people to browse the overview or open the details.",
+    "Separei a navegação em ano, mapa, frente de produto e item, permitindo consultar o panorama ou acessar os detalhes."
+  ],
+  [
+    "I used panels that stack on scroll to mark the transition between quarters.",
+    "Usei painéis que se empilham durante a rolagem para marcar a passagem entre os trimestres."
+  ],
+  [
+    "I kept the four cards on the entry page and developed the product line with the most content to explore how to organise its items.",
+    "Mantive os quatro cards na entrada e desenvolvi a frente com maior volume de conteúdo para explorar a organização dos itens."
+  ],
+  [
+    "I displayed each item’s status before its details are opened: delivered, planned or no status provided.",
+    "Exibi o status de cada item antes da abertura dos detalhes: entregue, previsto ou sem status informado."
+  ],
+  [
+    "How other vendors present their roadmaps.",
+    "Como outros fornecedores apresentam seus roadmaps."
+  ],
+  [
+    "I used Claude to find references and compared the Tax Reform delivery pages from Senior, Omie and TOTVS Datasul with the proposal.",
+    "Usei o Claude para buscar referências e comparei as páginas de entregas da Reforma Tributária de Senior, Omie e TOTVS Datasul com a proposta."
+  ],
+  [
+    "Based on the comparison and Claude’s suggestions, I chose to add a last updated date, a change history and text search.",
+    "A partir da comparação e das sugestões do Claude, escolhi incluir data de atualização, histórico de mudanças e busca textual."
+  ],
+  [
+    "I created and published the initial proposal with Claude in 30 minutes. This excludes user testing, content review and checks on font and photo licences.",
+    "Criei e publiquei a proposta inicial em 30 minutos com o Claude. Esse tempo não inclui testes com usuários, revisão do conteúdo nem verificação das licenças de fontes e fotos."
+  ],
+  [
+    "The static website is updated manually. Updates need to track deadline changes across 108 items and 11 product lines. Outdated dates can affect customers’ planning.",
+    "O site estático é atualizado manualmente. A atualização precisa acompanhar mudanças de prazo nos 108 itens das 11 frentes. Datas desatualizadas podem comprometer o planejamento dos clientes."
+  ],
+  [
+    "The proposed flow could use AI for repetitive update work and connect to the company’s project management tool, subject to checking its integrations and data quality.",
+    "Uma possibilidade seria usar IA na parte repetitiva das atualizações e conectar o fluxo à ferramenta de gestão usada pela empresa, após verificar suas integrações e a qualidade dos dados disponíveis."
+  ],
+  [
+    "In the proposed flow, AI would check item progress in the project management tool and suggest updates for the person responsible to review.",
+    "No fluxo proposto, a IA consultaria o andamento dos itens na ferramenta de gestão e sugeriria atualizações para revisão do responsável."
+  ],
+  [
+    "After approval by the person responsible, the flow would update the published content, the last updated date and the change history. The website would remain static.",
+    "Após a aprovação do responsável, o fluxo atualizaria o conteúdo publicado, a data de atualização e o histórico de mudanças. O site continuaria estático."
+  ],
+  [
+    "The panel demonstrates the workflow with example items. The project-management integration and AI-generated suggestions have not been implemented. The available data would need to be checked and the workflow tested with the team.",
+    "O painel demonstra o fluxo com itens de exemplo. A integração com ferramentas de gestão e a geração de sugestões por IA ainda não foram implementadas. Seria necessário verificar os dados disponíveis e testar o fluxo com o time."
+  ]
+]
