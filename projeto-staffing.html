@@ -17,7 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="staffing-case.js?v=3" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=porto-humanizer-1"></script>
+<script src="locale-data.js?v=gft-humanizer-1"></script>
 <script src="locale.js?v=proposals-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -56,14 +56,14 @@
 <h2 id="case-summary-title" class="tldr-heading">TL;DR</h2>
 <dl class="tldr">
 <div><dt>Problem</dt><dd>The bench lived in a spreadsheet emailed daily. Reservations went by email and Teams, and matching people to roles was done by hand.</dd></div>
-<div><dt>What I did</dt><dd>As the only designer and the Product Owner, I took a business case from paper to launch in three months and evolved it for almost two years.</dd></div>
-<div><dt>Result</dt><dd>Between January and May 2023, 47% fewer people on the bench and 72% lower bench cost. About 82% were reallocated internally.</dd></div>
+<div><dt>What I did</dt><dd>I was the only designer and also acted as Product Owner. I led the product to launch in three months and continued developing it for almost two years.</dd></div>
+<div><dt>Result</dt><dd>Between January and May 2023, the number of people on the bench fell by 47% and monthly bench cost fell by 72%. In records covering January 2022 to February 2023, about 82% of people entering the bench were reallocated internally.</dd></div>
 </dl>
 </div>
 <aside class="prototype-credit" aria-labelledby="prototype-credit-title">
 <div>
 <h3 id="prototype-credit-title">From Figma to code</h3>
-<p>In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours.</p>
+<p>In 2026, I used the original Figma design to rebuild this working version with Claude Code in two hours.</p>
 </div>
 <a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the working version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 </aside>
@@ -102,7 +102,7 @@
 <article><h3>An outdated list</h3><p>A spreadsheet updated and emailed to every manager, every day.</p></article>
 <article><h3>Requests scattered</h3><p>Reservations, allocations and releases were asked for by email and Teams.</p></article>
 <article><h3>Matching by hand</h3><p>About three times a day, Staffing crossed people and roles by opening CV after CV.</p></article>
-<article><h3>Cost nobody trusted</h3><p>The cost came from another spreadsheet with complex formulas, and the figures were questioned.</p></article>
+<article><h3>Questioned cost calculation</h3><p>The cost was calculated in another spreadsheet with complex formulas, and the figures were questioned.</p></article>
 </div>
 <figure class="legacy-day-figure">
 <ol class="legacy-day">
@@ -176,8 +176,8 @@
 <div class="wrap">
 <div class="sec-head" data-reveal>
 
-<h2>Every insight <span class="grad">became a rule in the interface.</span></h2>
-<p class="lead">As Product Owner, the business rules were my product decisions. The interface was where they became visible, so nobody had to remember them.</p>
+<h2>How I translated research findings into rules and interactions.</h2>
+<p class="lead">As Product Owner, I defined the business rules with the development team and designed how they would appear in the interface.</p>
 </div>
 <div class="rules">
 <article data-reveal><p class="rule-in">Managers reserved people from an old copy of the spreadsheet.</p><p class="rule-out">Real-time status and a reservation queue. A reservation takes priority over proposals, expires on its own and passes to the next in line.</p></article>
@@ -185,7 +185,7 @@
 <article data-reveal><p class="rule-in">Releases were requested by email.</p><p class="rule-out">A four-section release request with clear statuses. The date already suggests today plus 15 days, the Staffing deadline.</p></article>
 <article data-reveal><p class="rule-in">Allocation criteria were subjective.</p><p class="rule-out">A structured evaluation. With a rating of 1 or 2, “I recommend” is disabled and only a recommendation with reservations is possible.</p></article>
 <article data-reveal><p class="rule-in">“Again? The CV?”</p><p class="rule-out">CVs stored once and reused. Only people with their STAR profile over 80% complete enter the list.</p></article>
-<article data-reveal><p class="rule-in">Cost came from a spreadsheet nobody trusted.</p><p class="rule-out">Cost in real time by level, role and practice, discounting absences.</p></article>
+<article data-reveal><p class="rule-in">Cost came from a spreadsheet whose figures were questioned.</p><p class="rule-out">Cost in real time by level, role and practice, discounting absences.</p></article>
 </div>
 
 <div class="journey" id="flow" data-reveal data-role="all">
@@ -268,7 +268,7 @@
 <div class="wrap">
 <div class="sec-head" data-reveal>
 
-<h2>One list, one queue, <span class="grad">one version of the truth.</span></h2>
+<h2>Shared status for availability and reservations.</h2>
 <p class="lead">The flows below were shipped between 2022 and 2023. I revisited the project in 2026 to demonstrate my delivery skills with Claude Code. The screens use fictitious data.</p>
 </div>
 <div class="vision-story">
@@ -432,11 +432,11 @@
 <div class="sec-head" data-reveal>
 
 <h2>Fewer people waiting. <span class="grad">Less cost for GFT.</span></h2>
-<p class="lead">Measured over time by the number of people allocated, and reported to the executive board.</p>
+<p class="lead">I tracked results through the bench reports presented to the executive board and the platform’s reallocation, timing and usage records.</p>
 </div>
 <div class="impact-metrics" data-reveal>
 <article><strong>−47%</strong><h3>People on the bench</h3><p>From January to May 2023.</p></article>
-<article><strong>−72%</strong><h3>Monthly bench cost</h3><p>Same period, same calculation.</p></article>
+<article><strong>−72%</strong><h3>Monthly bench cost</h3><p>Comparison of monthly bench cost between January and May 2023.</p></article>
 </div>
 <div class="result-bars" data-reveal>
 <div class="rb"><p class="rb-label">People on the bench</p><div class="rb-row"><em>Jan 2023</em><i style="--v:100"></i></div><div class="rb-row now"><em>May 2023</em><i style="--v:53"></i></div></div>
@@ -457,7 +457,7 @@
 <div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="eyebrow">Before &amp; after</p>
-<h2>From the morning file <span class="grad">to a list that is always current.</span></h2>
+<h2>From an emailed spreadsheet to checking availability in the platform.</h2>
 </div>
 <div class="stf-comparison" id="stf-comparison" style="--split:50%">
 <div class="comparison-surface">
@@ -482,11 +482,11 @@
 <div class="sec-head" data-reveal><p class="eyebrow">Reflections</p></div>
 <div class="lessons" data-reveal>
 <h3>What I take forward</h3>
-<p>A feature nobody finds does not exist. In continuous research, none of the five people knew the top search found skills: they all used it for names. This version makes the search say what it finds. The other lesson is about rules: when the interface shows the rule, people stop negotiating it by email.</p>
+<p>In ongoing research interviews, none of the five participants knew the top search also found skills. They all used it to search for names. In the 2026 proposal, I made that capability explicit in the search field. I displayed reservation deadlines and conditions in the interface so managers could check them while taking action.</p>
 </div>
 <div class="open-questions" data-reveal>
 <h3>What I would do next</h3>
-<p>Close the gap with the people on the bench, who still learned about roles from others, and measure time to allocation by practice, to see where the market, not the process, is the bottleneck.</p>
+<p>I would test the proposal for people on the bench to track their status, view matching roles and express interest. I would also track time to allocation by practice, investigating the influence of demand for each specialism and the steps in the process.</p>
 </div>
 </div>
 </section>
