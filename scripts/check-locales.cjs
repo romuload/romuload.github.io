@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['projeto-roadmap.html', 'index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v='+(file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v='+(file === 'projeto-ilab.html' ? 'ilab-humanizer-1' : file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -236,3 +236,12 @@ for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/roadmap-humanizer-copy.
  assert.equal(map.get(pt)?.en,en,`Roadmap Humanizer English round trip mismatch: ${pt}`);
 }
 console.log('Thomson Reuters Humanizer: bilingual copy, hypothesis scope and implementation status OK');
+
+const ilabCase=fs.readFileSync('projeto-ilab.html','utf8');
+for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/ilab-humanizer-copy.json','utf8'))) {
+ assert(ilabCase.includes(en.replaceAll('&','&amp;')),`Approved iLAB copy missing: ${en}`);
+ assert.equal(map.get(en)?.pt,pt,`iLAB Portuguese missing: ${en}`);
+ assert.equal(map.get(pt)?.en,en,`iLAB English round trip mismatch: ${pt}`);
+}
+assert(!ilabCase.includes('AI accelerated the making.'));
+console.log('iLAB Humanizer: approved bilingual copy and round trips OK');

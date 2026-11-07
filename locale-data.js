@@ -3980,3 +3980,87 @@ window.PORTFOLIO_TRANSLATIONS.push(...[["Available", "Disponíveis"], ["People r
 
 // Approved Humanizer edits for Thomson Reuters proposal.
 window.PORTFOLIO_TRANSLATIONS.push(...[["The Tax Reform roadmap contains 108 items across 11 product lines. On the page I analysed, the items have the same visual weight, making priorities difficult to distinguish.", "O roadmap da Reforma Tributária reúne 108 itens em 11 frentes de produto. Na página analisada, os itens aparecem com o mesmo peso visual, dificultando distinguir prioridades."], ["I organised the content around the four quarters of 2026, with access to the overview, product lines and individual items. This is a concept proposal, not an official Thomson Reuters website.", "Organizei o conteúdo pelos quatro trimestres de 2026, com acesso à visão geral, às frentes de produto e aos itens. A proposta é conceitual e não representa um site oficial da Thomson Reuters."], ["I separated navigation into year, map, product line and item, allowing people to browse the overview or open the details.", "Separei a navegação em ano, mapa, frente de produto e item, permitindo consultar o panorama ou acessar os detalhes."], ["I used panels that stack on scroll to mark the transition between quarters.", "Usei painéis que se empilham durante a rolagem para marcar a passagem entre os trimestres."], ["I kept the four cards on the entry page and developed the product line with the most content to explore how to organise its items.", "Mantive os quatro cards na entrada e desenvolvi a frente com maior volume de conteúdo para explorar a organização dos itens."], ["I displayed each item’s status before its details are opened: delivered, planned or no status provided.", "Exibi o status de cada item antes da abertura dos detalhes: entregue, previsto ou sem status informado."], ["How other vendors present their roadmaps.", "Como outros fornecedores apresentam seus roadmaps."], ["I used Claude to find references and compared the Tax Reform delivery pages from Senior, Omie and TOTVS Datasul with the proposal.", "Usei o Claude para buscar referências e comparei as páginas de entregas da Reforma Tributária de Senior, Omie e TOTVS Datasul com a proposta."], ["Based on the comparison and Claude’s suggestions, I chose to add a last updated date, a change history and text search.", "A partir da comparação e das sugestões do Claude, escolhi incluir data de atualização, histórico de mudanças e busca textual."], ["I created and published the initial proposal with Claude in 30 minutes. This excludes user testing, content review and checks on font and photo licences.", "Criei e publiquei a proposta inicial em 30 minutos com o Claude. Esse tempo não inclui testes com usuários, revisão do conteúdo nem verificação das licenças de fontes e fotos."], ["The static website is updated manually. Updates need to track deadline changes across 108 items and 11 product lines. Outdated dates can affect customers’ planning.", "O site estático é atualizado manualmente. A atualização precisa acompanhar mudanças de prazo nos 108 itens das 11 frentes. Datas desatualizadas podem comprometer o planejamento dos clientes."], ["The proposed flow could use AI for repetitive update work and connect to the company’s project management tool, subject to checking its integrations and data quality.", "Uma possibilidade seria usar IA na parte repetitiva das atualizações e conectar o fluxo à ferramenta de gestão usada pela empresa, após verificar suas integrações e a qualidade dos dados disponíveis."], ["In the proposed flow, AI would check item progress in the project management tool and suggest updates for the person responsible to review.", "No fluxo proposto, a IA consultaria o andamento dos itens na ferramenta de gestão e sugeriria atualizações para revisão do responsável."], ["After approval by the person responsible, the flow would update the published content, the last updated date and the change history. The website would remain static.", "Após a aprovação do responsável, o fluxo atualizaria o conteúdo publicado, a data de atualização e o histórico de mudanças. O site continuaria estático."], ["The panel demonstrates the workflow with example items. The project-management integration and AI-generated suggestions have not been implemented. The available data would need to be checked and the workflow tested with the team.", "O painel demonstra o fluxo com itens de exemplo. A integração com ferramentas de gestão e a geração de sugestões por IA ainda não foram implementadas. Seria necessário verificar os dados disponíveis e testar o fluxo com o time."]]);
+
+// Approved iLAB Humanizer copy, English and Brazilian Portuguese.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "iLAB, Petrobras: research and design for laboratory queries and result comparison. Original project from 2013–2015, revisited as a working prototype in 2026. Case study by Romulo Nascimento.",
+    "iLAB, Petrobras: pesquisa e design para consultas e comparação de resultados de laboratório. Projeto original de 2013–2015, revisitado em um protótipo funcional em 2026. Case de Romulo Nascimento."
+  ],
+  [
+    "The research combined a quantitative survey across business units with interviews about routines and usability problems. We identified six personas, from the operator collecting samples to the supervisor deciding whether operations could continue.",
+    "A pesquisa combinou um levantamento quantitativo nas unidades de negócio com entrevistas sobre rotinas e dificuldades de uso. Identificamos seis personas, do operador que coleta a amostra ao supervisor que decide sobre a continuidade da operação."
+  ],
+  [
+    "Consolidating refinery servers reduced infrastructure costs by 70%. My design work focused on queries and result comparison.",
+    "A consolidação dos servidores das refinarias reduziu os custos de infraestrutura em 70%. Minha atuação no design concentrou-se nas consultas e na comparação de resultados."
+  ],
+  [
+    "In 2026, I used the original research to build a working prototype with saved queries, result comparison and a 3D lab bench. All data shown is fictional.",
+    "Em 2026, usei a pesquisa original para construir um protótipo funcional com consultas salvas, comparação de resultados e uma bancada 3D. Os dados apresentados são fictícios."
+  ],
+  [
+    "The configuration stays saved; variable parameters are entered when the query runs.",
+    "A configuração fica salva; os parâmetros variáveis são preenchidos na execução."
+  ],
+  [
+    "Results open in tabs. Two runs can be compared side by side, with out-of-spec values highlighted.",
+    "Os resultados abrem em abas. Duas execuções podem ser comparadas lado a lado, com os valores fora da especificação destacados."
+  ],
+  [
+    "Comparison takes place within the results screen.",
+    "A comparação acontece na própria tela de resultados."
+  ],
+  [
+    "Each status combines an icon, colour and text. The guide maps the new labels to their legacy names to help users make the transition.",
+    "Cada status combina ícone, cor e texto. O guia relaciona os novos rótulos aos nomes do legado para ajudar na transição."
+  ],
+  [
+    "Status identification does not rely on colour alone and follows the same pattern across screens.",
+    "A identificação do status não depende apenas da cor e segue o mesmo padrão entre as telas."
+  ],
+  [
+    "Cards show the essential information for each result first.",
+    "Os cards apresentam primeiro as informações essenciais de cada resultado."
+  ],
+  [
+    "Each sample appears as a bottle on the bench. Its liquid and badge indicate the product and status. Selecting a bottle moves the camera closer to the test details.",
+    "Cada amostra aparece como um frasco na bancada. O líquido e a identificação indicam produto e status. Ao selecionar o frasco, a câmera aproxima os detalhes do ensaio."
+  ],
+  [
+    "Specification limits and test methods.",
+    "Limites de especificação e métodos de ensaio."
+  ],
+  [
+    "How I used AI to build the prototype.",
+    "Como usei IA para construir o protótipo."
+  ],
+  [
+    "I used ChatGPT, Claude Code, Cursor and Blender via MCP to develop the interface, narrative and 3D bench. I was responsible for research, information architecture, interaction, visual direction and reviewing the output.",
+    "Usei ChatGPT, Claude Code, Cursor e Blender via MCP para desenvolver a interface, a narrativa e a bancada 3D. Fiquei responsável pela pesquisa, arquitetura da informação, interação, direção visual e revisão das entregas."
+  ],
+  [
+    "Mapping the routine helped set priorities.",
+    "Mapear a rotina orientou as prioridades."
+  ],
+  [
+    "Mapping the five journey stages helped separate usability problems from technology dependencies.",
+    "O mapeamento das cinco etapas da jornada ajudou a separar problemas de uso de dependências tecnológicas."
+  ],
+  [
+    "Reducing repetitive query work.",
+    "Reduzir a repetição nas consultas."
+  ],
+  [
+    "The two priorities were saving query configurations and comparing results within the same screen.",
+    "As duas prioridades foram salvar configurações de consulta e permitir a comparação de resultados na mesma tela."
+  ],
+  [
+    "Separating infrastructure results from UX decisions.",
+    "Separar o resultado de infraestrutura das decisões de UX."
+  ],
+  [
+    "The 70% reduction came from server consolidation. The UX decisions addressed repetitive queries and result comparison.",
+    "A redução de 70% veio da consolidação dos servidores. As decisões de UX trataram das consultas repetitivas e da comparação de resultados."
+  ]
+]);
