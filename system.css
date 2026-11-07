@@ -156,3 +156,5 @@ main p,main li,main dd,main dt,main figcaption{text-wrap:pretty}
 /* The two project collections share the existing gallery and navigation. */
 .section-line h1{font-size:clamp(30px,3.2vw,44px);line-height:1.2;letter-spacing:-1.2px;margin:0}
 @media(max-width:767px){.header nav,.top nav{gap:12px;justify-content:space-between}.section-line h1{font-size:30px}}
+.section-line>.proposals-intro{color:#64666f;text-wrap:pretty;max-width:76ch;margin:24px 0 0;text-align:left;font-size:18px;line-height:1.65}
+@media(max-width:767px){.section-line>.proposals-intro{margin-top:20px;font-size:16px}}

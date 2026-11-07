@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=proposals-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=proposals-2'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -145,3 +145,7 @@ for(const label of ['Proposals','Case studies — recent work','Proposals and st
 assert(fs.readFileSync('locale.js','utf8').includes("'propostas.html'"));
 assert(!proposalsGallery.includes('href="projeto-transferir-limites.html"'));
 console.log('Recent case studies / proposals split, bilingual headings and language-preserving navigation: OK');
+
+assert(map.get("Real projects from my career, revisited with the experience I bring today and AI tools to explore new possibilities for the user experience.")?.pt === "Projetos reais em que trabalhei ao longo da minha carreira, revisitados com a experi\u00eancia que tenho hoje e o apoio de ferramentas de IA para explorar novas possibilidades de experi\u00eancia.");
+let proposalPosition = -1;
+for (const file of ["projeto-roadmap.html","projeto-ilab.html","projeto-repar.html","projeto-games.html","projeto-fiat.html"]) { const next = proposalsGallery.indexOf(`href="${file}"`); assert(next > proposalPosition); proposalPosition = next; }
