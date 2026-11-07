@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=case-restore-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=motion-humanizer-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -192,3 +192,11 @@ for (const page of ['index.html','propostas.html']) {
   assert(!group.includes('target="_blank"'));
  }
 }
+
+for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/motion-humanizer-copy.json','utf8'))) {
+ assert.equal(map.get(en)?.pt,pt,`Motion Humanizer Portuguese missing: ${en}`);
+ assert.equal(map.get(pt)?.en,en,`Motion Humanizer English round trip mismatch: ${pt}`);
+}
+assert(!motionCaseCopy.includes('20-minute video'));
+assert(!motionCaseCopy.includes("any of the bank's subjects"));
+console.log('Approved motion Humanizer copy: bilingual round trips and corrected claim scope OK');

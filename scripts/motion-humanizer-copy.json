@@ -1,0 +1,74 @@
+[
+  [
+    "I analysed the video style, documented its rules in a skill and used it to create an agent available through Microsoft Teams.",
+    "Analisei o padrão dos vídeos, registrei as regras em uma skill e a usei para criar um agente disponível pelo Microsoft Teams."
+  ],
+  [
+    "I downloaded official Itaú videos from YouTube and asked Claude to analyse the movements frame by frame.",
+    "Baixei vídeos oficiais do Itaú no YouTube e pedi ao Claude uma análise quadro a quadro dos movimentos."
+  ],
+  [
+    "I identified eight movement behaviours in the references I analysed and recreated them in code.",
+    "Identifiquei oito comportamentos de movimento nas referências analisadas e os recriei em código."
+  ],
+  [
+    "I organised the movements into nine acts and used this structure to guide the next videos.",
+    "Organizei os movimentos em nove atos e usei essa estrutura para orientar os próximos vídeos."
+  ],
+  [
+    "I applied the pattern to Pix Agendado, a different subject from the original tutorial, as a video and an interactive page. I still needed to test it with the tools available inside the bank.",
+    "Consegui aplicar o padrão ao Pix Agendado, um tema diferente do tutorial original, em vídeo e em uma página interativa. Ainda precisava testá-lo com as ferramentas disponíveis dentro do banco."
+  ],
+  [
+    "I documented the nine acts, their effects and the identity rules in a skill, alongside a Word script template. This let me reuse the rules in Copilot without relying on the Claude conversation history.",
+    "Registrei os nove atos, seus efeitos e as regras de identidade em uma skill, junto de um modelo de roteiro em Word. Assim, pude reutilizar as regras no Copilot sem depender do histórico da conversa com o Claude."
+  ],
+  [
+    "I delivered the motion video within three days of the request, following the visual and movement rules of the official references.",
+    "Entreguei o motion em três dias, contados a partir do pedido, seguindo o padrão visual e de movimento das referências oficiais."
+  ],
+  [
+    "After the first delivery, I published the agent in Copilot so other people at the bank could use it.",
+    "Depois da primeira entrega, publiquei o agente no Copilot para outras pessoas do banco utilizarem."
+  ],
+  [
+    "People with access to the agent and a prepared script",
+    "Pessoas com acesso ao agente e um roteiro preparado"
+  ],
+  [
+    "To animate interface elements separately, I needed the screens as SVG layers.",
+    "Para animar os elementos da interface separadamente, precisei das telas em camadas SVG."
+  ],
+  [
+    "Reviewing the plan scene by scene let me correct errors before waiting about 20 minutes for the video to be generated.",
+    "A revisão do plano cena a cena permitia corrigir erros antes de esperar cerca de 20 minutos pela geração do vídeo."
+  ],
+  [
+    "I made the agent available to others and followed at least five videos they produced. I do not have access to usage metrics.",
+    "Disponibilizei o agente para outras pessoas e acompanhei pelo menos cinco vídeos produzidos por elas. Não tenho acesso aos indicadores de uso."
+  ],
+  [
+    "Nine acts structured each video",
+    "Nove atos estruturavam cada vídeo"
+  ],
+  [
+    "Preparing the script still took work",
+    "Preparar o roteiro ainda exigia trabalho"
+  ],
+  [
+    "Reusing the rules in Copilot",
+    "Reutilizar as regras no Copilot"
+  ],
+  [
+    "Adapting the method to Microsoft Copilot.",
+    "Adaptar o método ao Microsoft Copilot."
+  ],
+  [
+    "Making the agent available across Itaú.",
+    "Disponibilizar o agente para outras pessoas do Itaú."
+  ],
+  [
+    "A 25 to 30 second product video in the bank's style used to take a motion designer up to 4 hours. I analysed the video style, documented its rules in a skill and used it to create an agent available through Microsoft Teams.",
+    "Um vídeo de produto de 25 a 30 segundos no padrão do banco levava até 4 horas de um motion designer. Analisei o padrão dos vídeos, registrei as regras em uma skill e a usei para criar um agente disponível pelo Microsoft Teams."
+  ]
+]
