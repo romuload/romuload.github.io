@@ -185,7 +185,7 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Scroll motion follows the Porto case. Without GSAP or with reduced motion, the page stays static and complete.
-  if (!window.gsap || !window.ScrollTrigger) return;
+  if (!window.gsap || !window.ScrollTrigger || document.body.classList.contains('review-reading')) return;
   gsap.registerPlugin(ScrollTrigger);
   const mm = gsap.matchMedia();
 

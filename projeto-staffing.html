@@ -15,9 +15,9 @@
 <link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="staffing-case.js?v=3" defer></script>
+<script src="staffing-case.js?v=revisao-1" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=motion-problem-1"></script>
+<script src="locale-data.js?v=revisao-1"></script>
 <script src="locale.js?v=proposals-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -26,8 +26,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=ux-1">
 <link rel="stylesheet" href="staffing-case.css?v=ux-1">
-<link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=audit-3" defer></script><link rel="stylesheet" href="system.css?v=proposals-2"></head>
-<body>
+<link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=audit-3" defer></script><link rel="stylesheet" href="system.css?v=proposals-2"><link rel="stylesheet" href="review.css?v=1"><script src="review.js?v=1" defer></script></head>
+<body class="review-reading">
 <a class="case-skip" href="#conteudo">Skip to content</a>
 <header class="top">
 <a class="portfolio-home" href="index.html" aria-label="Romulo Nascimento, projects page"><img class="brand-symbol" src="images/brand/paper-plane.svg?v=2" width="52" height="38" alt=""><span class="name-text">Romulo Nascimento<small>Product Designer</small></span></a>
@@ -42,77 +42,46 @@
 <div class="wrap">
 <div class="client-signature"><img src="images/gft.svg" alt="GFT Technologies" width="88" height="34"><span>Global technology consultancy · internal product</span></div>
 <h1 class="result-title">How I helped GFT cut the cost of its bench <span class="hl">by 72%.</span></h1>
-<p class="lead">An internal product that replaced a spreadsheet emailed every morning, and turned reallocating people between projects into a process with clear rules.</p>
-<div class="hero-stage">
-<div class="hero-product">
-<div class="hero-desktop browser">
-<div class="bar">Available · Desktop</div>
-<img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline, with fictitious data" fetchpriority="high">
-</div>
-<div class="hero-mobile"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status, with fictitious data"></div>
-</div>
-</div>
-<div class="case-summary" role="region" aria-labelledby="case-summary-title">
-<h2 id="case-summary-title" class="tldr-heading">TL;DR</h2>
-<dl class="tldr">
-<div><dt>Problem</dt><dd>The bench lived in a spreadsheet emailed daily. Reservations went by email and Teams, and matching people to roles was done by hand.</dd></div>
-<div><dt>What I did</dt><dd>As the only designer and the Product Owner, I took a business case from paper to launch in three months and evolved it for almost two years.</dd></div>
-<div><dt>Result</dt><dd>Between January and May 2023, 47% fewer people on the bench and 72% lower bench cost. About 82% were reallocated internally.</dd></div>
-</dl>
-</div>
-<aside class="prototype-credit" aria-labelledby="prototype-credit-title">
-<div>
-<h3 id="prototype-credit-title">From Figma to code</h3>
-<p>In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours.</p>
-</div>
-<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the working version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-</aside>
-<div class="hero-actions">
-<a class="btn pri" href="#context">Read the case <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
-<a class="btn" href="#solution">See the screens <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
-</div>
+<p class="lead">As designer and Product Owner, I took the staffing platform to launch in three months, working with engineering and Staffing. Bench means professionals not allocated to client projects.</p>
+
+
+
+
+
 <dl class="case-meta">
 <div><dt>Role</dt><dd>Product Designer &amp; Product Owner</dd></div>
 <div><dt>Team</dt><dd>GFT Brasil · Staffing, HR and engineering</dd></div>
 <div><dt>Period</dt><dd>October 2021–July 2023</dd></div>
 <div><dt>Platform</dt><dd>Angular and .NET on AWS</dd></div>
+</dl><div class="case-summary" role="region" aria-labelledby="case-summary-title">
+<h2 id="case-summary-title" class="tldr-heading">TL;DR</h2>
+<dl class="tldr">
+<div><dt>Problem</dt><dd>The bench lived in a spreadsheet emailed daily. Reservations went by email and Teams, and matching people to roles was done by hand.</dd></div>
+<div><dt>What I did</dt><dd>As the only designer and the Product Owner, I took a business case from paper to launch in three months and evolved it for almost two years.</dd></div>
+<div><dt>Result</dt><dd>Between January and May 2023, 47% fewer unallocated professionals and 72% lower monthly bench cost.</dd></div>
 </dl>
+</div><div class="hero-actions"><a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener">Try the staffing demo</a><a class="btn" href="#decisions">See my decisions</a></div><p class="review-provenance">Demo rebuilt in 2026 with Claude Code; fictional data. The original product shipped between 2022 and 2023. New proposals are labelled separately.</p><div class="hero-stage">
+<div class="hero-product">
+<div class="hero-desktop browser">
+<div class="bar">Available · Desktop</div>
+<img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline, with fictitious data" fetchpriority="high">
 </div>
+
+</div>
+</div></div>
 </section>
 
-<nav class="case-nav" aria-label="Case study chapters">
-<div class="wrap">
-<a href="#context">Context</a>
-<a href="#contribution">My role</a>
-<a href="#discovery">Discovery</a>
-<a href="#decisions">Decisions</a>
-<a href="#solution">Solution</a>
-<a href="#outcomes">Outcomes</a>
-</div>
-</nav>
+<nav class="case-nav" aria-label="Case study chapters"><div class="wrap"><a href="#context">Context</a><a href="#decisions">My decisions</a><a href="#solution">Delivered workflow</a><a href="#outcomes">Outcomes</a><a href="#details">Details</a></div></nav>
 
 <section class="sec narrative-context" id="context" data-chapter="context">
 <div class="wrap">
 <div class="sec-head" data-reveal>
 
-<h2>Every day on the bench has a cost. <span class="grad">The list lived in a spreadsheet.</span></h2>
-<p class="lead">GFT sells specialists allocated to client projects. When a contract ends, the person goes to the bench and their cost falls on GFT. An internal Staffing team tries to reallocate them before anyone looks outside.</p>
+<h2>An outdated spreadsheet controlled who was available.</h2>
+<p class="lead">Staffing emailed the bench list daily. Managers reserved people by email or Microsoft Teams, while matching people to roles meant opening CV after CV. I needed one status shared by everyone.</p>
 </div>
-<div class="pain-grid" data-reveal>
-<article><h3>An outdated list</h3><p>A spreadsheet updated and emailed to every manager, every day.</p></article>
-<article><h3>Requests scattered</h3><p>Reservations, allocations and releases were asked for by email and Teams.</p></article>
-<article><h3>Matching by hand</h3><p>About three times a day, Staffing crossed people and roles by opening CV after CV.</p></article>
-<article><h3>Cost nobody trusted</h3><p>The cost came from another spreadsheet with complex formulas, and the figures were questioned.</p></article>
-</div>
-<figure class="legacy-day-figure">
-<ol class="legacy-day">
-<li><time>09:00</time><b>The spreadsheet arrives</b><span>Staffing emails the day’s bench list to every manager.</span></li>
-<li><time>10:30</time><b>A request on Teams</b><span>A manager asks to reserve a developer. The answer depends on who reads it first.</span></li>
-<li><time>14:00</time><b>Matching by hand</b><span>Staffing opens one CV after another to find who fits each role.</span></li>
-<li class="is-stale"><time>16:30</time><b>Already gone</b><span>Another manager reserves her from the morning’s file. She was allocated yesterday.</span></li>
-</ol>
-<figcaption>A typical day before the platform, rebuilt from the discovery record.</figcaption>
-</figure>
+
+
 <figure class="evidence full-evidence sheet-evidence">
 <div class="browser"><div class="bar">Bench_16-01_v3_FINAL (2).xlsx</div><img src="images/staffing/legacy-sheet.webp" width="1440" height="900" alt="Recreation of the daily bench spreadsheet with conflicting statuses, notes and formula errors, with fictitious data" loading="lazy"></div>
 <figcaption><span>A recreation of the daily spreadsheet. Names are fictitious and costs are hidden: the real file contains personal data and salaries.</span></figcaption>
@@ -120,34 +89,146 @@
 </div>
 </section>
 
-<section class="sec narrative-role" id="contribution" data-chapter="contribution">
+
+
+
+
+
+
+<section class="sec review-section " id="decisions" data-chapter="decisions"><div class="wrap"><h2>Three product decisions I owned.</h2><p>As the only designer and Product Owner, I prioritised the backlog with engineering and Staffing. Interviews covered three access profiles; after launch, research continued with five roles.</p><div class="review-decisions"><article><h3>One status and a reservation queue</h3><p>Managers worked from different copies of the list. I defined real-time status, reservation priority and expiry, so everyone could see who was available and who was next in line.</p></article><article><h3>Match by skills, with reasons</h3><p>I connected search to STAR skills and designed 14 combinable filters and the ten best candidates for each role, with match reasons. Research also exposed that people read the search as names-only.</p></article><article><h3>Make deadlines and ownership visible</h3><p>I turned release and reservation rules into explicit states and actions. The reservation counts two business days, skips weekends and absences, and shows exactly when it expires.</p></article></div></div></section><section class="sec review-section " id="reservation-rule" data-chapter="reservation-rule"><div class="wrap"><h2>A deadline people can verify.</h2><div class="res-sim" data-reveal>
+<div class="res-head">
+<p class="eyebrow">How a reservation counts</p>
+<h3>Two business days. But which days?</h3>
+<p>In continuous research, managers said the deadline counted holidays. The rule became: only business days, skipping weekends and approved absences. Reserved after noon, it starts the next day.</p>
+</div>
+<div class="res-toggle" role="group" aria-label="Choose when the reservation was made">
+<button type="button" data-at="am" aria-pressed="true">Reserved Thursday 10:00</button>
+<button type="button" data-at="pm" aria-pressed="false">Reserved Thursday 15:00</button>
+</div>
+<ol class="res-days">
+<li data-day="thu">Thu</li>
+<li data-day="fri">Fri</li>
+<li data-day="sat" class="wk">Sat</li>
+<li data-day="sun" class="wk">Sun</li>
+<li data-day="mon">Mon</li>
+<li data-day="tue">Tue</li>
+</ol>
+<p class="res-out" data-at="am">Counts Thursday and Friday. Expires Friday at 23:59.</p>
+<p class="res-out" data-at="pm" hidden>Starts on Friday and skips the weekend. Expires Monday at 23:59.</p>
+<p class="source-note">29 automated test scenarios covered these rules: before and after noon, weekends and conflicts between managers.</p>
+</div></div></section><section class="sec guided-section" id="solution" data-chapter="solution">
 <div class="wrap">
 <div class="sec-head" data-reveal>
 
-<h2>From an idea on paper <span class="grad">to a product the board followed.</span></h2>
-<p class="lead">The 2021 business case estimated 45 hours a week spent managing the spreadsheet. I joined in October 2021 as the only designer, end to end, and also acted as Product Owner, accountable to GFT’s executive board for the product’s results.</p>
+<h2>Release, reserve and allocate.</h2>
+<p class="lead">These screens demonstrate the original workflow using a 2026 reconstruction with fictional data. Availability, reservations and allocation belonged to the shipped product; the refreshed copy and search cues are part of this reconstruction.</p>
 </div>
-<ol class="road" data-reveal>
+<div class="vision-story">
+<div class="solution-story">
+
+<div class="solution-list">
+
+
+
+
+
+
+
+
+<article class="solution-step"><h3>Release request</h3><p>Four sections instead of an email. STAR completeness is checked, the date is suggested and people under 90 days are blocked.</p><figure class="step-inline browser"><img src="images/staffing/screen-liberacao.webp" width="1440" height="900" alt="Release request form with STAR completeness, suggested date and structured evaluation" loading="lazy"></figure></article><article class="solution-step"><h3>Available</h3><p>The first screen for every profile. Search says what it finds, and a bar shows business days on the bench against the 15-day deadline.</p><figure class="step-inline browser"><img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline" loading="lazy"></figure></article><article class="solution-step"><h3>Profile and reservation</h3><p>Skills, the last feedback and matching roles in one place. Reserving shows exactly when it expires, and can be undone.</p><figure class="step-inline browser"><img src="images/staffing/screen-perfil.webp" width="1440" height="900" alt="Person profile with skills, last feedback, matching roles and the reservation action" loading="lazy"></figure></article></div>
+</div>
+</div>
+<div class="phone-feature" data-reveal>
+
+<div class="phone-shell"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status and matching roles, with fictitious data" loading="lazy"></div>
+</div>
+</div>
+</section>
+
+
+
+<section class="sec results-section" id="outcomes" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+
+<h2>Fewer people waiting. <span class="grad">Less cost for GFT.</span></h2>
+<p class="lead">Measured over time by the number of people allocated, and reported to the executive board.</p>
+</div>
+<div class="impact-metrics" data-reveal>
+<article><strong>−47%</strong><h3>People on the bench</h3><p>From January to May 2023.</p></article>
+<article><strong>−72%</strong><h3>Monthly bench cost</h3><p>Same period, same calculation.</p></article>
+</div>
+<div class="result-bars" data-reveal>
+<div class="rb"><p class="rb-label">People on the bench</p><div class="rb-row"><em>Jan 2023</em><i style="--v:100"></i></div><div class="rb-row now"><em>May 2023</em><i style="--v:53"></i></div></div>
+<div class="rb"><p class="rb-label">Monthly bench cost</p><div class="rb-row"><em>Jan 2023</em><i style="--v:100"></i></div><div class="rb-row now"><em>May 2023</em><i style="--v:28"></i></div></div>
+<p class="rb-note">Index: January 2023 = 100.</p>
+</div>
+<div class="research-metrics more-metrics" data-reveal>
+<article><strong>82%</strong><p>of people who entered the bench were reallocated internally</p></article>
+<article><strong>13</strong><p>business days, median time to allocation</p></article>
+<article><strong>54%</strong><p>allocated within the 15-day deadline</p></article>
+<article><strong>~5×</strong><p>usage growth from Q1 to Q2 2022</p></article>
+</div>
+<p class="metric-status">How these were measured: people and cost come from the bench reports the board followed, comparing January and May 2023. Reallocation, time to allocation and usage were calculated from the platform’s own records, January 2022 to February 2023, using totals only. Values in currency are not shown.</p>
+</div>
+</section>
+
+<section class="sec comparison vision-section" id="vision" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<p class="eyebrow">Before &amp; after</p>
+<h2>From the morning file <span class="grad">to a list that is always current.</span></h2>
+</div>
+<div class="stf-comparison" id="stf-comparison" style="--split:50%">
+<div class="comparison-surface">
+<img src="images/staffing/legacy-sheet.webp" width="1440" height="900" alt="Before: recreation of the daily bench spreadsheet" loading="lazy">
+<img class="comparison-after" src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="After: available people list in the platform" loading="lazy">
+<span class="compare-label before-label">Before · Spreadsheet</span>
+<span class="compare-label after-label">After · Platform</span>
+<input type="range" min="0" max="100" value="50" id="stf-slider" aria-label="Compare the spreadsheet and the platform">
+<span class="compare-handle" aria-hidden="true"><b>↔</b></span>
+</div>
+</div>
+<div class="comparison-actions">
+<button type="button" data-compare="100" aria-pressed="false">Show spreadsheet</button>
+<button type="button" data-compare="0" aria-pressed="false">Show platform</button>
+</div>
+<p class="source-note">Drag, tap or use the arrow keys. Both images use fictitious data.</p>
+</div>
+</section>
+
+<section class="sec reflections-section" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal><p class="eyebrow">Reflections</p></div>
+<div class="lessons" data-reveal>
+<h3>What I take forward</h3>
+<p>A feature nobody finds does not exist. In continuous research, none of the five people knew the top search found skills: they all used it for names. This version makes the search say what it finds. The other lesson is about rules: when the interface shows the rule, people stop negotiating it by email.</p>
+</div>
+<div class="open-questions" data-reveal>
+<h3>What I would do next</h3>
+<p>Close the gap with the people on the bench, who still learned about roles from others, and measure time to allocation by practice, to see where the market, not the process, is the bottleneck.</p>
+</div>
+</div>
+</section>
+
+<section class="sec review-section " id="details" data-chapter="details"><div class="wrap"><h2>Research, full workflow and 2026 proposals.</h2><details class="review-details"><summary>Explore the research and delivery timeline</summary><div class="review-detail-body"><ol class="road" data-reveal>
 <li><time>Feb 2021</time><b>Business case</b><span>The idea is approved on paper.</span></li>
 <li><time>Oct 2021</time><b>I join the project</b><span>Two weeks of discovery and the inception.</span></li>
 <li class="is-key"><time>Jan 2022</time><b>Version 1.0 live</b><span>Three months after I joined.</span></li>
 <li><time>Oct 2022</time><b>Version 1.12</b><span>Continuous research feeds the backlog.</span></li>
 <li><time>Jul 2023</time><b>Handover</b><span>The whole backlog delivered.</span></li>
-</ol>
-<h3 class="mini-h">What I was responsible for</h3>
-<div class="principles" data-reveal>
-<article><h3>Research &amp; discovery</h3><p>Interviews with managers, Staffing and people on the bench; personas, journeys and the inception.</p></article>
-<article><h3>Product decisions</h3><p>Backlog, roadmap and business rules, prioritised with the development team.</p></article>
-<article><h3>Interface &amp; adoption</h3><p>UI and documented design system, usability tests with a navigable prototype, quick guide and video manual.</p></article>
-</div>
-<div class="constraint-panel" data-reveal>
+</ol><div class="constraint-panel" data-reveal>
 <h3>Design constraints</h3>
 <p>Three access profiles (manager, IDU manager and Staffing) and five systems to integrate: Kimble for roles and people, STAR for skills, SuccessFactors for absences, ADP for holidays and SharePoint for CVs.</p>
-</div>
-</div>
-</section>
-
-<section class="sec" id="discovery" data-chapter="discovery">
+</div><figure class="legacy-day-figure">
+<ol class="legacy-day">
+<li><time>09:00</time><b>The spreadsheet arrives</b><span>Staffing emails the day’s bench list to every manager.</span></li>
+<li><time>10:30</time><b>A request on Teams</b><span>A manager asks to reserve a developer. The answer depends on who reads it first.</span></li>
+<li><time>14:00</time><b>Matching by hand</b><span>Staffing opens one CV after another to find who fits each role.</span></li>
+<li class="is-stale"><time>16:30</time><b>Already gone</b><span>Another manager reserves her from the morning’s file. She was allocated yesterday.</span></li>
+</ol>
+<figcaption>A typical day before the platform, rebuilt from the discovery record.</figcaption>
+</figure><section class="sec" id="discovery" data-chapter="discovery">
 <div class="wrap">
 <div class="sec-head" data-reveal>
 
@@ -170,25 +251,7 @@
 <article><h3>Bench time means different things</h3><p>For some, a warning sign. For others, no market for that technology, or “I’ve already talked to them”.</p></article>
 </div>
 </div>
-</section>
-
-<section class="sec process-prototype" id="decisions" data-chapter="decisions">
-<div class="wrap">
-<div class="sec-head" data-reveal>
-
-<h2>Every insight <span class="grad">became a rule in the interface.</span></h2>
-<p class="lead">As Product Owner, the business rules were my product decisions. The interface was where they became visible, so nobody had to remember them.</p>
-</div>
-<div class="rules">
-<article data-reveal><p class="rule-in">Managers reserved people from an old copy of the spreadsheet.</p><p class="rule-out">Real-time status and a reservation queue. A reservation takes priority over proposals, expires on its own and passes to the next in line.</p></article>
-<article data-reveal><p class="rule-in">“I only know whether someone fits when I open the CV.”</p><p class="rule-out">Search by skill connected to STAR, 14 combinable filters and the ten best candidates for each role, by match score.</p></article>
-<article data-reveal><p class="rule-in">Releases were requested by email.</p><p class="rule-out">A four-section release request with clear statuses. The date already suggests today plus 15 days, the Staffing deadline.</p></article>
-<article data-reveal><p class="rule-in">Allocation criteria were subjective.</p><p class="rule-out">A structured evaluation. With a rating of 1 or 2, “I recommend” is disabled and only a recommendation with reservations is possible.</p></article>
-<article data-reveal><p class="rule-in">“Again? The CV?”</p><p class="rule-out">CVs stored once and reused. Only people with their STAR profile over 80% complete enter the list.</p></article>
-<article data-reveal><p class="rule-in">Cost came from a spreadsheet nobody trusted.</p><p class="rule-out">Cost in real time by level, role and practice, discounting absences.</p></article>
-</div>
-
-<div class="journey" id="flow" data-reveal data-role="all">
+</section></div></details><details class="review-details"><summary>Explore all roles, states and exceptions</summary><div class="review-detail-body"><div class="journey" id="flow" data-reveal data-role="all">
 <div class="jr-head">
 <p class="eyebrow">The flow by role</p>
 <h3>One person, three roles, the same status.</h3>
@@ -231,85 +294,11 @@
 <article data-step="9" hidden><p class="jd-k" data-lane="rel"><i></i>Manager who releases · Allocation</p><h4>Renew or release</h4><p>Before the contract ends, the project manager decides. Not renewing starts a new release here, and the cycle begins again.</p><ul class="jd-facts"><li>Came from continuous research</li></ul><div class="jd-status" data-no-translate><span class="pill o-warn">Em renovação</span><span class="pill f-done">Renovado</span></div></article>
 <div class="jd-nav"><button type="button" data-go="-1" aria-label="Previous step"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><span class="jd-count" data-no-translate><b>01</b> / 09</span><button type="button" data-go="1" aria-label="Next step"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
 </div>
-</div>
-
-<div class="res-sim" data-reveal>
-<div class="res-head">
-<p class="eyebrow">How a reservation counts</p>
-<h3>Two business days. But which days?</h3>
-<p>In continuous research, managers said the deadline counted holidays. The rule became: only business days, skipping weekends and approved absences. Reserved after noon, it starts the next day.</p>
-</div>
-<div class="res-toggle" role="group" aria-label="Choose when the reservation was made">
-<button type="button" data-at="am" aria-pressed="true">Reserved Thursday 10:00</button>
-<button type="button" data-at="pm" aria-pressed="false">Reserved Thursday 15:00</button>
-</div>
-<ol class="res-days">
-<li data-day="thu">Thu</li>
-<li data-day="fri">Fri</li>
-<li data-day="sat" class="wk">Sat</li>
-<li data-day="sun" class="wk">Sun</li>
-<li data-day="mon">Mon</li>
-<li data-day="tue">Tue</li>
-</ol>
-<p class="res-out" data-at="am">Counts Thursday and Friday. Expires Friday at 23:59.</p>
-<p class="res-out" data-at="pm" hidden>Starts on Friday and skips the weekend. Expires Monday at 23:59.</p>
-<p class="source-note">29 automated test scenarios covered these rules: before and after noon, weekends and conflicts between managers.</p>
-</div>
-
-<dl class="design-reasoning" data-reveal>
-<div><dt>Evidence</dt><dd>Managers kept their own reservations in spreadsheets and on Teams, and said two days was short for the pace of clients.</dd></div>
-<div><dt>Interpretation</dt><dd>The problem was not only the length, but what counts as a day and who knows the deadline.</dd></div>
-<div><dt>Design decision</dt><dd>Count only business days, show the exact expiry on every reservation, add “My reservations” and let IDU managers extend on the last day, up to five times.</dd></div>
-</dl>
-</div>
-</section>
-
-<section class="sec guided-section" id="solution" data-chapter="solution">
-<div class="wrap">
-<div class="sec-head" data-reveal>
-
-<h2>One list, one queue, <span class="grad">one version of the truth.</span></h2>
-<p class="lead">The flows below were shipped between 2022 and 2023. I revisited the project in 2026 to demonstrate my delivery skills with Claude Code. The screens use fictitious data.</p>
-</div>
-<div class="vision-story">
-<div class="solution-story">
-<div class="solution-stage browser">
-<div class="bar">GFT Staffing</div>
-<div class="stage-screens">
-<img class="on" src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline" loading="lazy">
-<img src="images/staffing/screen-perfil.webp" width="1440" height="900" alt="Person profile with skills, last feedback, matching roles and the reservation action" loading="lazy">
-<img src="images/staffing/screen-liberacao.webp" width="1440" height="900" alt="Release request form with STAR completeness, suggested date and structured evaluation" loading="lazy">
-<img src="images/staffing/screen-triagem.webp" width="1440" height="900" alt="Staffing screening of received release requests with accept, missing information and reject actions" loading="lazy">
-<img src="images/staffing/screen-vagas.webp" width="1440" height="900" alt="Open role with the best candidates ranked by match score" loading="lazy">
-<img src="images/staffing/screen-renovacao.webp" width="1440" height="900" alt="Contract renewal screen where a non-renewal starts the release" loading="lazy">
-<img src="images/staffing/screen-caixa.webp" width="1440" height="900" alt="Manager inbox listing what needs an answer, with a named action for each item" loading="lazy">
-<img src="images/staffing/screen-lideranca.webp" width="1440" height="900" alt="Leadership indicators with bench size, cost trend and allocation time" loading="lazy">
-</div>
-</div>
-<div class="solution-list">
-<article class="solution-step"><h3>Available</h3><p>The first screen for every profile. Search says what it finds, and a bar shows business days on the bench against the 15-day deadline.</p><figure class="step-inline browser"><img src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="Available people list with status tabs, filters and business days against the deadline" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Profile and reservation</h3><p>Skills, the last feedback and matching roles in one place. Reserving shows exactly when it expires, and can be undone.</p><figure class="step-inline browser"><img src="images/staffing/screen-perfil.webp" width="1440" height="900" alt="Person profile with skills, last feedback, matching roles and the reservation action" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Release request</h3><p>Four sections instead of an email. STAR completeness is checked, the date is suggested and people under 90 days are blocked.</p><figure class="step-inline browser"><img src="images/staffing/screen-liberacao.webp" width="1440" height="900" alt="Release request form with STAR completeness, suggested date and structured evaluation" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Screening by Staffing</h3><p>Accept, ask for missing information, reject with a reason or mark as not eligible. Every answer reaches the manager.</p><figure class="step-inline browser"><img src="images/staffing/screen-triagem.webp" width="1440" height="900" alt="Staffing screening of received release requests with accept, missing information and reject actions" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Roles and matching</h3><p>Roles imported automatically, with the ten best candidates by match score and the reasons for each match.</p><figure class="step-inline browser"><img src="images/staffing/screen-vagas.webp" width="1440" height="900" alt="Open role with the best candidates ranked by match score" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Renewals</h3><p>When a contract is not renewed, the release starts here, not by email. It came from continuous research.</p><figure class="step-inline browser"><img src="images/staffing/screen-renovacao.webp" width="1440" height="900" alt="Contract renewal screen where a non-renewal starts the release" loading="lazy"></figure></article>
-<article class="solution-step"><h3>Manager inbox</h3><p>Built like an email inbox. A fixed button opens a new request, Sent shows what happened to each one, and Needs You, new in this version, gathers only what depends on an answer. Each row keeps its actions in one menu, with the options valid for that person.</p><figure class="step-inline browser"><img src="images/staffing/screen-caixa.webp" width="1440" height="900" alt="Manager inbox listing what needs an answer, with a named action for each item" loading="lazy"></figure></article>
-<article class="solution-step"><span class="status-tag">Proposal</span><h3>Leadership indicators</h3><p>In the shipped version these reports lived in Power BI. The proposal brings them into the product, with the same figures the board followed.</p><figure class="step-inline browser"><img src="images/staffing/screen-lideranca.webp" width="1440" height="900" alt="Leadership indicators with bench size, cost trend and allocation time" loading="lazy"></figure></article>
-</div>
-</div>
-</div>
-<div class="phone-feature" data-reveal>
-<div class="phone-copy">
+</div></div></details><details class="review-details"><summary>See more screens and the new proposals</summary><div class="review-detail-body"><article class="solution-step"><h3>Screening by Staffing</h3><p>Accept, ask for missing information, reject with a reason or mark as not eligible. Every answer reaches the manager.</p><figure class="step-inline browser"><img src="images/staffing/screen-triagem.webp" width="1440" height="900" alt="Staffing screening of received release requests with accept, missing information and reject actions" loading="lazy"></figure></article><article class="solution-step"><h3>Roles and matching</h3><p>Roles imported automatically, with the ten best candidates by match score and the reasons for each match.</p><figure class="step-inline browser"><img src="images/staffing/screen-vagas.webp" width="1440" height="900" alt="Open role with the best candidates ranked by match score" loading="lazy"></figure></article><article class="solution-step"><h3>Renewals</h3><p>When a contract is not renewed, the release starts here, not by email. It came from continuous research.</p><figure class="step-inline browser"><img src="images/staffing/screen-renovacao.webp" width="1440" height="900" alt="Contract renewal screen where a non-renewal starts the release" loading="lazy"></figure></article><article class="solution-step"><h3>Manager inbox</h3><p>Built like an email inbox. A fixed button opens a new request, Sent shows what happened to each one, and Needs You, new in this version, gathers only what depends on an answer. Each row keeps its actions in one menu, with the options valid for that person.</p><figure class="step-inline browser"><img src="images/staffing/screen-caixa.webp" width="1440" height="900" alt="Manager inbox listing what needs an answer, with a named action for each item" loading="lazy"></figure><p class="review-provenance">2026 reconstruction: “Needs You” and the revised action menus are new proposals.</p></article><article class="solution-step"><span class="status-tag">Proposal</span><h3>Leadership indicators</h3><p>In the shipped version these reports lived in Power BI. The proposal brings them into the product, with the same figures the board followed.</p><figure class="step-inline browser"><img src="images/staffing/screen-lideranca.webp" width="1440" height="900" alt="Leadership indicators with bench size, cost trend and allocation time" loading="lazy"></figure></article><div class="phone-copy">
 <span class="status-tag">Proposal</span>
 <h3>The side that was missing: the person on the bench.</h3>
 <p>“Am I being considered for any role?” was the one insight the shipped version did not answer, because there was no profile for the people themselves. The proposal gives them their status, the roles that match them and a way to show interest.</p>
-</div>
-<div class="phone-shell"><img src="images/staffing/mobile-status.webp" width="390" height="790" alt="Mobile view where the person on the bench follows their status and matching roles, with fictitious data" loading="lazy"></div>
-</div>
-</div>
-</section>
-
-<section class="sec identity-section" id="identity" data-chapter="solution">
+</div></div></details><details class="review-details"><summary>Open the 2026 identity and writing guide</summary><div class="review-detail-body"><section class="sec identity-section" id="identity" data-chapter="solution">
 <div class="wrap">
 <div class="sec-head" data-reveal>
 <p class="eyebrow">Visual identity &amp; writing</p>
@@ -425,73 +414,13 @@
 </div>
 <a class="btn spec-link-mobile" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
 </div>
-</section>
-
-<section class="sec results-section" id="outcomes" data-chapter="outcomes">
-<div class="wrap">
-<div class="sec-head" data-reveal>
-
-<h2>Fewer people waiting. <span class="grad">Less cost for GFT.</span></h2>
-<p class="lead">Measured over time by the number of people allocated, and reported to the executive board.</p>
+</section></div></details><details class="review-details"><summary>How I rebuilt the demo with Claude Code</summary><div class="review-detail-body"><aside class="prototype-credit" aria-labelledby="prototype-credit-title">
+<div>
+<h3 id="prototype-credit-title">From Figma to code</h3>
+<p>In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours.</p>
 </div>
-<div class="impact-metrics" data-reveal>
-<article><strong>−47%</strong><h3>People on the bench</h3><p>From January to May 2023.</p></article>
-<article><strong>−72%</strong><h3>Monthly bench cost</h3><p>Same period, same calculation.</p></article>
-</div>
-<div class="result-bars" data-reveal>
-<div class="rb"><p class="rb-label">People on the bench</p><div class="rb-row"><em>Jan 2023</em><i style="--v:100"></i></div><div class="rb-row now"><em>May 2023</em><i style="--v:53"></i></div></div>
-<div class="rb"><p class="rb-label">Monthly bench cost</p><div class="rb-row"><em>Jan 2023</em><i style="--v:100"></i></div><div class="rb-row now"><em>May 2023</em><i style="--v:28"></i></div></div>
-<p class="rb-note">Index: January 2023 = 100.</p>
-</div>
-<div class="research-metrics more-metrics" data-reveal>
-<article><strong>82%</strong><p>of people who entered the bench were reallocated internally</p></article>
-<article><strong>13</strong><p>business days, median time to allocation</p></article>
-<article><strong>54%</strong><p>allocated within the 15-day deadline</p></article>
-<article><strong>~5×</strong><p>usage growth from Q1 to Q2 2022</p></article>
-</div>
-<p class="metric-status">How these were measured: people and cost come from the bench reports the board followed, comparing January and May 2023. Reallocation, time to allocation and usage were calculated from the platform’s own records, January 2022 to February 2023, using totals only. Values in currency are not shown.</p>
-</div>
-</section>
-
-<section class="sec comparison vision-section" id="vision" data-chapter="outcomes">
-<div class="wrap">
-<div class="sec-head" data-reveal>
-<p class="eyebrow">Before &amp; after</p>
-<h2>From the morning file <span class="grad">to a list that is always current.</span></h2>
-</div>
-<div class="stf-comparison" id="stf-comparison" style="--split:50%">
-<div class="comparison-surface">
-<img src="images/staffing/legacy-sheet.webp" width="1440" height="900" alt="Before: recreation of the daily bench spreadsheet" loading="lazy">
-<img class="comparison-after" src="images/staffing/screen-disponiveis.webp" width="1440" height="900" alt="After: available people list in the platform" loading="lazy">
-<span class="compare-label before-label">Before · Spreadsheet</span>
-<span class="compare-label after-label">After · Platform</span>
-<input type="range" min="0" max="100" value="50" id="stf-slider" aria-label="Compare the spreadsheet and the platform">
-<span class="compare-handle" aria-hidden="true"><b>↔</b></span>
-</div>
-</div>
-<div class="comparison-actions">
-<button type="button" data-compare="100" aria-pressed="false">Show spreadsheet</button>
-<button type="button" data-compare="0" aria-pressed="false">Show platform</button>
-</div>
-<p class="source-note">Drag, tap or use the arrow keys. Both images use fictitious data.</p>
-</div>
-</section>
-
-<section class="sec reflections-section" data-chapter="outcomes">
-<div class="wrap">
-<div class="sec-head" data-reveal><p class="eyebrow">Reflections</p></div>
-<div class="lessons" data-reveal>
-<h3>What I take forward</h3>
-<p>A feature nobody finds does not exist. In continuous research, none of the five people knew the top search found skills: they all used it for names. This version makes the search say what it finds. The other lesson is about rules: when the interface shows the rule, people stop negotiating it by email.</p>
-</div>
-<div class="open-questions" data-reveal>
-<h3>What I would do next</h3>
-<p>Close the gap with the people on the bench, who still learned about roles from others, and measure time to allocation by practice, to see where the market, not the process, is the bottleneck.</p>
-</div>
-</div>
-</section>
-
-<section class="sec final-section" data-chapter="outcomes">
+<a class="btn pri" href="staffing-concept/index.html" target="_blank" rel="noopener"><span>Explore the working version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+</aside></div></details></div></section><section class="sec final-section" data-chapter="outcomes">
 <div class="wrap">
 <div class="sec-head" data-reveal>
 <h2>Try the working version.</h2>

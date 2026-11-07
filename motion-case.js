@@ -255,7 +255,7 @@
   updateProgress();
 
   // Scroll motion follows the other cases. Without GSAP or with reduced motion, the page stays static and complete.
-  if (!window.gsap || !window.ScrollTrigger) return;
+  if (!window.gsap || !window.ScrollTrigger || document.body.classList.contains('review-reading')) return;
   gsap.registerPlugin(ScrollTrigger);
 
   // ScrollTrigger needs instant scrolling; in-page links scroll smoothly via JS.
