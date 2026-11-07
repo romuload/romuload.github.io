@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=motion-humanizer-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=porto-humanizer-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -75,7 +75,7 @@ const summary = porto.indexOf('id="case-summary-title"');
 const credit = porto.indexOf('id="prototype-credit-title"');
 assert(summary > 0 && summary < credit && credit < porto.indexOf('id="context"'), 'TL;DR and prototype credit must appear at the top of the case');
 assert.equal(map.get('From Figma to code')?.pt, 'Do Figma ao código');
-const prototypeCopy = 'In 2026, I returned to this project with today’s tools, which didn’t exist at the time. Starting from the Figma I already had, I built this working version with Claude Code in 2 hours. Try the four-step claims analysis.';
+const prototypeCopy = 'In 2026, I used the original Figma design to rebuild this working version with Claude Code in two hours. The demo lets you try the four-step claims analysis.';
 assert(porto.includes(prototypeCopy) && map.get(prototypeCopy)?.pt.includes('Claude Code'));
 console.log('Porto TL;DR and Claude Code prototype credit: placement and EN/PT copy OK');
 
@@ -200,3 +200,10 @@ for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/motion-humanizer-copy.j
 assert(!motionCaseCopy.includes('20-minute video'));
 assert(!motionCaseCopy.includes("any of the bank's subjects"));
 console.log('Approved motion Humanizer copy: bilingual round trips and corrected claim scope OK');
+
+for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/porto-humanizer-copy.json','utf8'))) {
+ assert(porto.includes(en.replaceAll('&','&amp;')),`Approved Porto copy missing: ${en}`);
+ assert.equal(map.get(en)?.pt,pt,`Porto Humanizer Portuguese missing: ${en}`);
+ assert.equal(map.get(pt)?.en,en,`Porto Humanizer English round trip mismatch: ${pt}`);
+}
+console.log('Approved Porto Humanizer copy: original claims retained and bilingual round trips OK');
