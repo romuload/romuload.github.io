@@ -3056,11 +3056,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 // Motion in acts (Itaú) case.
 window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Itaú · Motion in acts | Romulo Nascimento","Itaú · Motion em atos | Romulo Nascimento"],
-  ["How I taught AI to speak Itaú's motion language, then turned it into an agent anyone at the bank can call from Teams.","Como ensinei a IA a falar a linguagem de motion do Itaú e transformei isso num agente que qualquer pessoa do banco chama pelo Teams."],
+  ["How I taught AI to speak Itaú's motion language, then turned it into an agent anyone at the bank can call from Microsoft Teams.","Como ensinei a IA a falar a linguagem de motion do Itaú e transformei isso num agente que qualquer pessoa do banco chama pelo Microsoft Teams."],
   ["Itaú Unibanco · AI-assisted motion design","Itaú Unibanco · motion design com IA"],
   ["How I taught AI to speak","Como ensinei a IA a falar"],
   ["Itaú's motion language.","a linguagem de motion do Itaú."],
-  ["A 25 to 30 second product video in the bank's style used to take a motion designer up to 4 hours. I turned that style into a method, and the method into an agent anyone at Itaú calls from Teams.","Um vídeo de produto de 25 a 30 segundos no padrão do banco levava até 4 horas de um motion designer. Transformei esse padrão em método, e o método num agente que qualquer pessoa do Itaú chama pelo Teams."],
+  ["A 25 to 30 second product video in the bank's style used to take a motion designer up to 4 hours. I turned that style into a method, and the method into an agent anyone at Itaú calls from Microsoft Teams.","Um vídeo de produto de 25 a 30 segundos no padrão do banco levava até 4 horas de um motion designer. Transformei esse padrão em método, e o método num agente que qualquer pessoa do Itaú chama pelo Microsoft Teams."],
   ["Watch the test video","Ver o vídeo de teste"],
   ["Try the interactive demo","Experimentar o demo interativo"],
   ["Pix Agendado test video, made with the nine-act method, with fictional screens","Vídeo de teste do Pix Agendado, feito com o método dos nove atos, com telas fictícias"],
@@ -3213,7 +3213,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["After the delivery, I created a motion agent in Copilot with the prompt instructions and the skill fixed inside. Nobody needs to know the method to use it. The main rule: the video never starts until the person approves the plan.","Depois da entrega, criei no Copilot um agente de motion com as instruções de prompt e a skill já fixadas. Ninguém precisa conhecer o método para usá-lo. A regra principal: o vídeo nunca começa sem que a pessoa aprove o plano."],
   ["Example conversation with the motion agent, from the script to the finished video","Exemplo de conversa com o agente de motion, do roteiro ao vídeo pronto"],
   ["Motion creator","Criador de motion"],
-  ["Agent in Microsoft Copilot · Teams","Agente no Microsoft Copilot · Teams"],
+  ["Agent in Microsoft Copilot · Microsoft Teams","Agente no Microsoft Copilot · Microsoft Teams"],
   ["Send me your video script as a Word or PowerPoint file.","Me envie o roteiro do vídeo em Word ou PowerPoint."],
   ["Word script","Roteiro em Word"],
   ["Here is the plan I extracted. Check it before we go on.","Este é o plano que extraí. Confira antes de seguirmos."],
@@ -3274,7 +3274,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Anyone with a script","Qualquer pessoa com um roteiro"],
   ["Tool","Ferramenta"],
   ["After Effects","After Effects"],
-  ["Agent in Copilot, via Teams","Agente no Copilot, via Teams"],
+  ["Agent in Copilot, via Microsoft Teams","Agente no Copilot, via Microsoft Teams"],
   ["Time per video (25–30 s)","Tempo por vídeo (25–30 s)"],
   ["Up to 4 hours","Até 4 horas"],
   ["About 20 minutes","Cerca de 20 minutos"],
@@ -3325,7 +3325,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 
 // Motion in acts: the animated agent conversation.
 window.PORTFOLIO_TRANSLATIONS.push(...[
-  ["Animated conversation with the motion agent in Teams, from the script to the finished video","Conversa animada com o agente de motion no Teams, do roteiro ao vídeo pronto"],
+  ["Animated conversation with the motion agent in Microsoft Teams, from the script to the finished video","Conversa animada com o agente de motion no Microsoft Teams, do roteiro ao vídeo pronto"],
   ["Activity","Atividade"],
   ["Chat","Chat"],
   ["Calendar","Calendário"],

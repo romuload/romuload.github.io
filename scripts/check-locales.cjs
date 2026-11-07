@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=motion-copy-2'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=microsoft-teams-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -165,3 +165,6 @@ const motionCaseCopy = fs.readFileSync("projeto-motion.html","utf8");
 assert(!motionCaseCopy.includes('class="prompt" data-no-translate'));
 assert(!motionCaseCopy.includes('id="final-title" data-no-translate'));
 for (const [en,pt] of [["“Make a dynamic motion graphics video for Itaú Bank that follows the script attached and demonstrates the content like a show reel.”", "“Crie um vídeo dinâmico de motion graphics para o Itaú que siga o roteiro anexado e apresente o conteúdo no estilo de um showreel.”"], ["Let’s do this together.", "Vamos de turma."]]) { assert(motionCaseCopy.includes(en)); assert.equal(map.get(en)?.pt,pt); assert.equal(map.get(pt)?.en,en); }
+
+assert(!/(?<!Microsoft )\bTeams\b/.test(motionCaseCopy), "Use the full Microsoft Teams name throughout the motion case");
+for(const label of ["Agent in Microsoft Copilot · Microsoft Teams", "Agent in Copilot, via Microsoft Teams", "Animated conversation with the motion agent in Microsoft Teams, from the script to the finished video"]) assert(map.get(label)?.pt.includes("Microsoft Teams"));
