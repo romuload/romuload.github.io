@@ -4144,3 +4144,39 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "FIAT Água em Ciclo: experiência 3D interativa sobre tratamento e reúso da água, acompanhada de vídeos de motion em formatos horizontal e vertical. Case de Romulo Nascimento."
   ]
 ]);
+
+// Approved home and About Humanizer copy.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Recent work at Itaú, Porto and GFT, showing my design decisions and the results of each project.",
+    "Trabalhos recentes no Itaú, na Porto e na GFT, com minhas decisões de design e os resultados de cada projeto."
+  ],
+  [
+    "I documented Itaú’s motion rules and adapted them for Copilot. With the script ready, generating a video lasting 25 to 30 seconds takes about 20 minutes.",
+    "Documentei as regras de motion do Itaú e as adaptei ao Copilot. Com o roteiro pronto, gerar um vídeo de 25 a 30 segundos leva cerca de 20 minutos."
+  ],
+  [
+    "I designed a four-step Salesforce workflow and supported its implementation. The reduction in analysis time was observed with five analysts.",
+    "Desenhei e acompanhei a implementação de um fluxo em quatro etapas no Salesforce. A redução no tempo de análise foi observada com cinco analistas."
+  ],
+  [
+    "I worked as designer and Product Owner through launch, which took three months. Between January and May 2023, the monthly cost of unallocated professionals, known as the bench, fell by 72%.",
+    "Atuei como designer e Product Owner até o lançamento, em três meses. Entre janeiro e maio de 2023, o custo mensal dos profissionais sem alocação em projetos, o bench, caiu 72%."
+  ],
+  [
+    "I design tools for people producing product videos, claims analysts and staffing teams. I use research and working prototypes to discuss and test decisions with product and engineering.",
+    "Desenho ferramentas para quem produz vídeos de produto, analistas de sinistros e equipes de alocação de profissionais. Uso pesquisa e protótipos funcionais para discutir e testar decisões com produto e engenharia."
+  ],
+  [
+    "At Itaú, I documented the motion rules and adapted them into a reusable agent. At Porto, I worked with Salesforce specialists to design a four-step guided analysis workflow. At GFT, I was a designer and Product Owner, prioritising the backlog with engineering.",
+    "No Itaú, documentei as regras de motion e as adaptei a um agente reutilizável. Na Porto, trabalhei com especialistas de Salesforce para desenhar um fluxo de análise guiada em quatro etapas. Na GFT, fui designer e Product Owner, priorizando o backlog junto à engenharia."
+  ],
+  [
+    "AI in design: working prototypes, reusable instructions and agents.",
+    "IA no design: protótipos funcionais, instruções reutilizáveis e agentes."
+  ],
+  [
+    "Romulo Nascimento, Product Designer. Experience in AI-assisted video production, claims analysis and staffing, working with product and engineering.",
+    "Romulo Nascimento, Product Designer. Experiência em produção de vídeos com IA, análise de sinistros e alocação de profissionais, trabalhando com produto e engenharia."
+  ]
+]);

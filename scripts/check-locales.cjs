@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['projeto-roadmap.html', 'index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v='+(['projeto-repar.html','projeto-games.html','projeto-fiat.html'].includes(file) ? 'proposals-humanizer-1' : file === 'projeto-ilab.html' ? 'ilab-humanizer-1' : file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v='+(['index.html','sobre.html'].includes(file) ? 'home-about-humanizer-1' : ['projeto-repar.html','projeto-games.html','projeto-fiat.html'].includes(file) ? 'proposals-humanizer-1' : file === 'projeto-ilab.html' ? 'ilab-humanizer-1' : file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -149,7 +149,7 @@ assert(map.get("Real projects from my career, revisited with the experience I br
 let proposalPosition = -1;
 for (const file of ["projeto-roadmap.html","projeto-ilab.html","projeto-repar.html","projeto-games.html","projeto-fiat.html"]) { const next = proposalsGallery.indexOf(`href="${file}"`); assert(next > proposalPosition); proposalPosition = next; }
 
-assert(homeGallery.includes("Claims analysis, staffing and video production: three projects where I turned research and business rules into working tools."));
+assert(homeGallery.includes("Recent work at Itaú, Porto and GFT, showing my design decisions and the results of each project."));
 assert.equal(map.get("How I connect strategy, design and technology to solve complex problems and deliver results for people and businesses.")?.pt, "Como conecto estrat\u00e9gia, design e tecnologia para resolver problemas complexos e gerar resultados para pessoas e neg\u00f3cios.");
 
 assert(proposalsGallery.includes("image-ilab laptop-stage"));
@@ -255,3 +255,15 @@ for(const [name,pairs] of Object.entries(JSON.parse(fs.readFileSync('scripts/pro
  }
 }
 console.log('REPAR, Word Search and FIAT Humanizer: bilingual copy and round trips OK');
+
+for(const [file,pairs] of Object.entries(JSON.parse(fs.readFileSync('scripts/home-about-humanizer-copy.json','utf8')))) {
+ const source=fs.readFileSync(file,'utf8');
+ for(const [en,pt] of pairs) {
+  assert(source.includes(en.replaceAll('&','&amp;')),`Approved ${file} copy missing: ${en}`);
+  assert.equal(map.get(en)?.pt,pt,`${file}: Portuguese missing`);
+  assert.equal(map.get(pt)?.en,en,`${file}: English round trip mismatch`);
+ }
+}
+const aboutBio=fs.readFileSync('sobre.html','utf8').split('class="profile-bio"')[1].split('</div>')[0];
+assert(aboutBio.indexOf('At Itaú')<aboutBio.indexOf('At Porto') && aboutBio.indexOf('At Porto')<aboutBio.indexOf('At GFT'));
+console.log('Home and About: approved bilingual copy and Itaú, Porto, GFT order OK');
