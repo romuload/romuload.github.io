@@ -430,5 +430,37 @@
   [
     "Grouping information around the analyst’s task mattered more than reproducing legacy screens. I would validate the observed time savings with production data, including rework and SLA by stage.",
     "Agrupar informações em torno da tarefa do analista importou mais do que reproduzir telas do legado. Eu validaria o ganho observado com dados de produção, incluindo retrabalho e SLA por etapa."
+  ],
+  [
+    "I analysed public Itaú videos frame by frame with Claude and turned their movements into rules I could reuse on a new script.",
+    "Analisei vídeos públicos do Itaú quadro a quadro com o Claude e transformei seus movimentos em regras que eu pudesse reutilizar em um novo roteiro."
+  ],
+  [
+    "Frames from Itaú’s public tutorial, used as motion references.",
+    "Quadros do tutorial público do Itaú, usados como referências de motion."
+  ],
+  [
+    "From references to motion rules.",
+    "Das referências às regras de motion."
+  ],
+  [
+    "Overview",
+    "Visão geral"
+  ],
+  [
+    "Method",
+    "Método"
+  ],
+  [
+    "Validation",
+    "Validação"
+  ],
+  [
+    "The agent",
+    "O agente"
+  ],
+  [
+    "Outcomes",
+    "Resultados"
   ]
 ]

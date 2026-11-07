@@ -23,7 +23,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=motion-method-full-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=motion-flow-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -169,7 +169,7 @@ for (const [en,pt] of [["“Make a dynamic motion graphics video for Itaú Bank 
 assert(!/(?<!Microsoft )\bTeams\b/.test(motionCaseCopy), "Use the full Microsoft Teams name throughout the motion case");
 for(const label of ["Agent in Microsoft Copilot · Microsoft Teams", "Agent in Copilot, via Microsoft Teams", "Animated conversation with the motion agent in Microsoft Teams, from the script to the finished video"]) assert(map.get(label)?.pt.includes("Microsoft Teams"));
 
-assert(motionCaseCopy.includes("I needed to deliver a product video in Ita\u00fa's style, with no access to After Effects and no availability from the motion team. The challenge was to match the quality of the official videos without relying on those resources."));
+assert(!motionCaseCopy.includes("The challenge was to match the quality of the official videos without relying on those resources."));
 assert.equal(map.get("I needed to deliver a product video in Ita\u00fa's style, with no access to After Effects and no availability from the motion team. The challenge was to match the quality of the official videos without relying on those resources.")?.pt,"Eu precisava entregar um vídeo de produto no padrão do Itaú, sem acesso ao After Effects e com o time de motion sem disponibilidade. O desafio era manter a qualidade dos vídeos oficiais sem depender desses recursos.");
 assert.equal(map.get("Eu precisava entregar um vídeo de produto no padrão do Itaú, sem acesso ao After Effects e com o time de motion sem disponibilidade. O desafio era manter a qualidade dos vídeos oficiais sem depender desses recursos.")?.en,"I needed to deliver a product video in Ita\u00fa's style, with no access to After Effects and no availability from the motion team. The challenge was to match the quality of the official videos without relying on those resources.");
 
@@ -193,4 +193,9 @@ console.log('Review: original delivery / reconstruction separation, bounded clai
 
 assert(motionCaseCopy.includes('id="details"'));
 assert(!motionCaseCopy.includes('<summary>Explore the nine acts, motion examples and full test</summary>'));
-for (const id of ["experiment","pattern","teste","application"]) assert(motionCaseCopy.includes(`id="${id}" data-chapter="details"`),`Motion method must be inline: ${id}`);
+for (const id of ["details","pattern","teste","application"]) assert(motionCaseCopy.includes(`id="${id}"`),`Motion chapter retained: ${id}`);
+
+let chapterOrder = -1;
+for(const id of ["overview","decisions","details","pattern","teste","application","scale","result","learnings"]) { const at=motionCaseCopy.indexOf(`id="${id}"`); assert(at>chapterOrder,`Motion narrative out of sequence: ${id}`); chapterOrder=at; }
+assert(!motionCaseCopy.includes("Method and production details."));
+assert(motionCaseCopy.includes("mc-lessons-grid"));
