@@ -3937,3 +3937,6 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
 
 // Opening motion: overdraft donates limit; the credit card receives it.
 window.PORTFOLIO_TRANSLATIONS.push(["Animated demo: the card needs more credit and the overdraft has available limit to transfer. The customer changes the transfer from R$ 4,950 to R$ 2,000, sees the card limit reach R$ 12,000 and confirms.", "Demo animado: o cartão precisa de mais crédito e a conta tem limite disponível para transferir. O cliente altera a transferência de R$ 4.950 para R$ 2.000, vê o limite do cartão chegar a R$ 12.000 e confirma."]);
+
+// Separate recent client case studies from proposals and AI studies.
+window.PORTFOLIO_TRANSLATIONS.push(...[["Proposals", "Propostas"], ["Case studies — recent work", "Estudos de caso - trabalhos recentes"], ["Proposals and studies with AI", "Propostas e estudos com IA"], ["Proposals | Romulo Nascimento", "Propostas | Romulo Nascimento"], ["Recent case studies for Itaú, Porto Seguro and GFT, by Product Designer Romulo Nascimento.", "Estudos de caso recentes para Itaú, Porto Seguro e GFT, por Romulo Nascimento, Product Designer."], ["Proposals and studies with AI: interfaces, interactive experiences, 3D and games by Romulo Nascimento.", "Propostas e estudos com IA: interfaces, experiências interativas, 3D e jogos por Romulo Nascimento."]]);

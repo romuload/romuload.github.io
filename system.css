@@ -152,3 +152,7 @@ body .hero::before,body .hero-product::before{display:none}
 /* No lone words: headings balance their lines, running text avoids a short last line. */
 main h1,main h2,main h3{text-wrap:balance}
 main p,main li,main dd,main dt,main figcaption{text-wrap:pretty}
+
+/* The two project collections share the existing gallery and navigation. */
+.section-line h1{font-size:clamp(30px,3.2vw,44px);line-height:1.2;letter-spacing:-1.2px;margin:0}
+@media(max-width:767px){.header nav,.top nav{gap:12px;justify-content:space-between}.section-line h1{font-size:30px}}

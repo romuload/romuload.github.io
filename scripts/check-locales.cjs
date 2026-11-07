@@ -18,12 +18,12 @@ for (const [en, pt] of names) {
     assert.equal(map.get(source)?.en, en);
     assert.equal(map.get(source)?.pt, pt);
   }
-  assert(fs.readFileSync('index.html', 'utf8').includes(`<h3>${en}</h3>`));
+  assert(fs.readFileSync('propostas.html', 'utf8').includes(`<h3>${en}</h3>`));
 }
-for (const file of ['index.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
+for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=transfer-donor-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v=proposals-1'), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -129,3 +129,19 @@ const motion = fs.readFileSync('transfer-motion.js', 'utf8');
 assert(motion.includes('scaleX: 842 / 1376') && motion.includes('scaleX: 368 / 688'));
 assert(fs.readFileSync('transfer-motion.css','utf8').includes('transform-origin:100% 50%'));
 console.log('Transfer motion: card needs limit; overdraft donates; opening bars match updated Figma frames');
+
+const homeGallery = fs.readFileSync('index.html', 'utf8');
+const proposalsGallery = fs.readFileSync('propostas.html', 'utf8');
+assert.equal((homeGallery.match(/<article class="project reveal">/g)||[]).length, 3);
+assert.equal((proposalsGallery.match(/<article class="project reveal">/g)||[]).length, 5);
+for (const file of ['projeto-motion.html','projeto-porto.html','projeto-staffing.html']) assert(homeGallery.includes(`href="${file}"`));
+for (const file of ['projeto-roadmap.html','projeto-repar.html','projeto-ilab.html','projeto-games.html','projeto-fiat.html']) {
+ assert(!homeGallery.includes(`href="${file}"`));
+ assert(proposalsGallery.includes(`href="${file}"`));
+}
+for(const label of ['Proposals','Case studies — recent work','Proposals and studies with AI','Proposals | Romulo Nascimento']) {
+ assert(map.get(label)?.pt); assert.equal(map.get(map.get(label).pt)?.en,label);
+}
+assert(fs.readFileSync('locale.js','utf8').includes("'propostas.html'"));
+assert(!proposalsGallery.includes('href="projeto-transferir-limites.html"'));
+console.log('Recent case studies / proposals split, bilingual headings and language-preserving navigation: OK');
