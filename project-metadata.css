@@ -1,12 +1,23 @@
-/* Static project information: client and discipline read as one group, not controls. */
-.project .project-meta{display:flex;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:12px;margin:0 0 20px;letter-spacing:0;line-height:1.5;color:#30333b}
-.project .project-meta>span:first-child{font-size:16px;font-weight:600;color:#25272d}
-.project .project-meta>span:last-child{padding:7px 12px;background:#eef0f3;color:#454a52;border-radius:999px;font-size:14px;font-weight:400;line-height:1.4;cursor:default}
+/* Variation B: project identifiers live on the thumbnail, before the case title. */
+.project .project-meta{position:absolute;z-index:5;left:20px;top:20px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0;max-width:calc(100% - 40px);letter-spacing:0;line-height:1.4;pointer-events:none}
+.project .project-meta>span{display:block;padding:7px 12px;border-radius:999px;font-size:14px;line-height:1.4;cursor:default}
+.project .project-meta>span:first-child{background:#fff;color:#25272d;font-weight:600}
+.project .project-meta>span:last-child{background:#25272d;color:#fff;font-weight:400}
+.project-grid .project .project-image{order:0;margin:0 0 26px}
 .project-grid .project h3{margin:0 0 16px}
-.project-grid .project>p{flex:0;margin:0 0 26px}
-.project-grid .project .project-image{margin-top:auto}
-.project-grid .project .project-links{margin-top:24px}
-@media(max-width:767px){.project .project-meta{gap:10px;margin-bottom:20px}}
-/* Cards now have a single case-study action. */
+.project-grid .project>p{flex:0;margin:0 0 24px}
+.project-grid .project .project-links{margin-top:auto;padding-top:0}
 .project .project-links:has(>a:only-child){display:flex;flex-wrap:wrap}
 .project .project-links>a:only-child{white-space:nowrap}
+@media(max-width:767px){
+ .project .project-meta{left:14px;top:14px;gap:6px;max-width:calc(100% - 28px)}
+ .project .project-meta>span{font-size:12px;padding:6px 10px}
+ .project-grid .project .project-image{margin-bottom:24px}
+}
+/* Reserve room for identifiers without covering the product screens. */
+.project .project-image>.laptop,.project .project-image>.iphone,.project .project-image>.mg-screen{scale:.86;translate:0 5cqw}
+@media(max-width:767px){.project .project-image>.laptop,.project .project-image>.iphone,.project .project-image>.mg-screen{scale:.82;translate:0 6cqw}}
+@media(min-width:768px) and (max-width:1000px){
+ .project .project-meta{left:14px;top:14px;gap:6px;max-width:calc(100% - 28px)}
+ .project .project-meta>span{font-size:12px;padding:6px 10px}
+}
