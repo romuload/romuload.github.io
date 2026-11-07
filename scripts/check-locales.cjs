@@ -18,7 +18,6 @@ for (const [en, pt] of names) {
     assert.equal(map.get(source)?.en, en);
     assert.equal(map.get(source)?.pt, pt);
   }
-  assert(fs.readFileSync('propostas.html', 'utf8').includes(`aria-label="Explore the ${en === "Explore REPAR 3D" ? "REPAR 3D" : en} demo in a new tab"`));
 }
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
@@ -63,7 +62,7 @@ assert(!porto.includes('data-star='), 'Porto should use one narrative, without S
 assert(porto.includes('<h3>Design constraints</h3>'), 'Preserve the pending English editorial change');
 assert.equal((porto.match(/class="case-nav"/g) || []).length, 1);
 
-for (const page of ['index.html', 'projeto-porto.html']) {
+for (const page of ['projeto-porto.html']) {
  const html = fs.readFileSync(page, 'utf8');
  assert(html.includes('href="https://romuload.github.io/porto-salerforce-demo/"'), `${page}: Porto demo link missing`);
  assert(!html.includes('View the design'), `${page}: stale Porto CTA`);
@@ -182,3 +181,14 @@ for (const file of ['projeto-motion.html','projeto-porto.html','projeto-staffing
  for(const match of source.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]),`${file}: missing anchor ${match[1]}`);
 }
 console.log('Restored cases: full content, valid anchors and original presentation OK');
+
+for (const page of ['index.html','propostas.html']) {
+ const html=fs.readFileSync(page,'utf8');
+ const groups=[...html.matchAll(/<div class="project-links">([\s\S]*?)<\/div>/g)];
+ assert.equal(groups.length,page==='index.html'?3:5);
+ for(const [,group] of groups) {
+  assert.equal((group.match(/<a /g)||[]).length,1,`${page}: one case-study action per card`);
+  assert(group.includes('button-primary'));
+  assert(!group.includes('target="_blank"'));
+ }
+}

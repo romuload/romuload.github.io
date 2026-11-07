@@ -7,3 +7,6 @@
 .project-grid .project .project-image{margin-top:auto}
 .project-grid .project .project-links{margin-top:24px}
 @media(max-width:767px){.project .project-meta{gap:10px;margin-bottom:20px}}
+/* Cards now have a single case-study action. */
+.project .project-links:has(>a:only-child){display:flex;flex-wrap:wrap}
+.project .project-links>a:only-child{white-space:nowrap}
