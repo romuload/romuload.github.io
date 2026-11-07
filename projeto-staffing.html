@@ -15,9 +15,9 @@
 <link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="staffing-case.js?v=3" defer></script>
+<script src="staffing-case.js?v=identity-content-1" defer></script>
 <link rel="stylesheet" href="locale.css?v=ux-1">
-<script src="locale-data.js?v=gft-humanizer-1"></script>
+<script src="locale-data.js?v=gft-identity-1"></script>
 <script src="locale.js?v=proposals-1" defer></script>
 <link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico?v=plane-2">
@@ -25,7 +25,7 @@
 <link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
 <link rel="stylesheet" href="repar-case.css?v=ux-1">
-<link rel="stylesheet" href="staffing-case.css?v=ux-1">
+<link rel="stylesheet" href="staffing-case.css?v=identity-content-1">
 <link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=audit-3" defer></script><link rel="stylesheet" href="system.css?v=proposals-2"></head>
 <body>
 <a class="case-skip" href="#conteudo">Skip to content</a>
@@ -314,7 +314,7 @@
 <div class="sec-head" data-reveal>
 <p class="eyebrow">Visual identity &amp; writing</p>
 <h2>A language people <span class="grad">already speak.</span></h2>
-<p class="lead">When I revisited the project in 2026, I wrote an identity and writing guide: GFT’s corporate brand, and the Portuguese that managers and Staffing already use instead of the legacy English.</p>
+
 <blockquote class="identity-quote"><p>“Nobody goes without a project for lack of information.”</p><cite>Guiding line of the identity</cite></blockquote>
 </div>
 
@@ -382,45 +382,9 @@
 </div>
 </div>
 
-<div class="spec-panel" role="tabpanel" id="spec-glossary" aria-labelledby="tab-glossary">
-<p class="spec-rule">System names (Kantata, STAR) and company acronyms (KE, IDU) stay. Everything else is translated by meaning, not word for word.</p>
-<div class="gloss" data-voc="new">
-<div class="gloss-switch" role="group" aria-label="Choose the vocabulary">
-<button type="button" data-voc="old" aria-pressed="false">Legacy system</button>
-<button type="button" data-voc="new" aria-pressed="true">New proposal</button>
-</div>
-<ul class="gloss-menu" data-no-translate>
-<li data-why="1"><span class="old">Available</span><span class="new">Disponíveis</span></li>
-<li data-why="2"><span class="old">Unassignment Request</span><span class="new">Pedido de liberação</span></li>
-<li data-why="3"><span class="old">Not Eligible</span><span class="new">Afastados</span></li>
-<li data-why="4"><span class="old">Open Opps.</span><span class="new">Vagas abertas</span></li>
-<li data-why="5"><span class="old">Matched Candidates</span><span class="new">Compatíveis com a vaga</span></li>
-<li data-why="6"><span class="old">SLA</span><span class="new">Prazo de alocação</span></li>
-</ul>
-<div class="gloss-why">
-<p data-why-text="1">The home screen. “Bench” still works in conversation, but the interface uses the word that describes the person.</p>
-<p data-why-text="2" hidden>“Unassignment” is jargon. The manager releases the person to other roles.</p>
-<p data-why-text="3" hidden>It says the real reason. “Not eligible” sounds like a judgement about the person.</p>
-<p data-why-text="4" hidden>“Opportunity” is a sales term. For whoever allocates, it is a role.</p>
-<p data-why-text="5" hidden>It shows the match percentage and the reasons for it.</p>
-<p data-why-text="6" hidden>15 business days. The acronym meant nothing to most managers.</p>
-</div>
-</div>
-</div>
+<div class="spec-panel" role="tabpanel" id="spec-glossary" aria-labelledby="tab-glossary"><dl class="product-glossary"><div><dt>Available</dt><dd>People released from a project and available for allocation to another role.</dd></div><div><dt>Release request</dt><dd>Request sent by a manager for Staffing to review a person’s release from a project.</dd></div><div><dt>On leave</dt><dd>People temporarily unavailable for allocation because of a recorded absence.</dd></div><div><dt>Open roles</dt><dd>Project positions available for allocation.</dd></div><div><dt>Matching candidates</dt><dd>People ranked by their match score for a role, with the reasons for each match.</dd></div><div><dt>Allocation deadline</dt><dd>Target of 15 business days to allocate a person on the bench.</dd></div><div><dt>Bench</dt><dd>Professionals not currently allocated to client projects, whose cost is carried by GFT.</dd></div><div><dt>Staffing</dt><dd>Internal team that reviews release requests and confirms allocations.</dd></div><div><dt>Proposed</dt><dd>Person being considered for a role; more than one manager can submit a proposal.</dd></div><div><dt>Reserved</dt><dd>Person held for a manager until the reservation’s stated expiry.</dd></div><div><dt>Allocated</dt><dd>Person whose allocation has been confirmed by Staffing and who leaves the available list.</dd></div><div><dt>Renewals</dt><dd>Decisions about continuing a project allocation before the contract ends.</dd></div></dl></div>
 
-<div class="spec-panel" role="tabpanel" id="spec-writing" aria-labelledby="tab-writing">
-<p class="spec-rule">A Staffing colleague who knows the rule: direct, cordial and specific. Real system messages, rewritten.</p>
-<div class="gloss-switch write-switch" role="group" aria-label="Choose the version of the messages">
-<button type="button" data-ver="before" aria-pressed="false">Before</button>
-<button type="button" data-ver="after" aria-pressed="true">After</button>
-</div>
-<div class="messages" data-ver="after">
-<article><span class="msg-k">Button</span><p class="before" data-no-translate>OK</p><p class="after" data-no-translate>Reservar por 2 dias úteis</p></article>
-<article><span class="msg-k">Deadline</span><p class="before" data-no-translate>SLA end: 2026-03-12T23:59:59Z</p><p class="after" data-no-translate>Vence 12/03 às 23h59 · falta 1 dia útil</p></article>
-<article><span class="msg-k">Reservation extension</span><p class="before" data-no-translate>The reservation can only be extended on its last day.</p><p class="after" data-no-translate>Você poderá estender essa reserva em 12/03, o último dia dela. Vamos te avisar pela manhã.</p></article>
-<article><span class="msg-k">Release request</span><p class="before" data-no-translate>Self-dealocatte is not permitted!</p><p class="after" data-no-translate>Você não pode pedir a sua própria liberação. Fale com seu gestor direto.</p></article>
-</div>
-</div>
+<div class="spec-panel" role="tabpanel" id="spec-writing" aria-labelledby="tab-writing"><div class="messages" data-ver="after"><article><span class="msg-k">Button</span><p class="after">Reserve for 2 business days</p></article><article><span class="msg-k">Deadline</span><p class="after">Expires 12 March at 23:59 · 1 business day left</p></article><article><span class="msg-k">Reservation extension</span><p class="after">You can extend this reservation on 12 March, its last day. We will notify you in the morning.</p></article><article><span class="msg-k">Release request</span><p class="after">You cannot request your own release. Speak to your direct manager.</p></article></div></div>
 </div>
 </div>
 <a class="btn spec-link-mobile" href="staffing-identity/index.html" target="_blank" rel="noopener">Open the full guide <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>

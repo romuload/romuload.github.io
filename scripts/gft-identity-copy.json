@@ -1,0 +1,130 @@
+[
+  [
+    "Available",
+    "Disponíveis"
+  ],
+  [
+    "People released from a project and available for allocation to another role.",
+    "Pessoas liberadas de um projeto e disponíveis para alocação em outra vaga."
+  ],
+  [
+    "Release request",
+    "Pedido de liberação"
+  ],
+  [
+    "Request sent by a manager for Staffing to review a person’s release from a project.",
+    "Solicitação enviada pelo gestor para o Staffing analisar a liberação de uma pessoa de um projeto."
+  ],
+  [
+    "On leave",
+    "Afastados"
+  ],
+  [
+    "People temporarily unavailable for allocation because of a recorded absence.",
+    "Pessoas temporariamente indisponíveis para alocação por um afastamento registrado."
+  ],
+  [
+    "Open roles",
+    "Vagas abertas"
+  ],
+  [
+    "Project positions available for allocation.",
+    "Posições em projetos disponíveis para alocação."
+  ],
+  [
+    "Matching candidates",
+    "Compatíveis com a vaga"
+  ],
+  [
+    "People ranked by their match score for a role, with the reasons for each match.",
+    "Pessoas ordenadas pelo score de aderência a uma vaga, com os motivos de cada compatibilidade."
+  ],
+  [
+    "Allocation deadline",
+    "Prazo de alocação"
+  ],
+  [
+    "Target of 15 business days to allocate a person on the bench.",
+    "Meta de 15 dias úteis para alocar uma pessoa no bench."
+  ],
+  [
+    "Bench",
+    "Bench"
+  ],
+  [
+    "Professionals not currently allocated to client projects, whose cost is carried by GFT.",
+    "Profissionais sem alocação em projetos de clientes, cujo custo fica com a GFT."
+  ],
+  [
+    "Staffing",
+    "Staffing"
+  ],
+  [
+    "Internal team that reviews release requests and confirms allocations.",
+    "Time interno que analisa pedidos de liberação e confirma alocações."
+  ],
+  [
+    "Proposed",
+    "Proposto"
+  ],
+  [
+    "Person being considered for a role; more than one manager can submit a proposal.",
+    "Pessoa em avaliação para uma vaga; mais de um gestor pode apresentar uma proposta."
+  ],
+  [
+    "Reserved",
+    "Reservado"
+  ],
+  [
+    "Person held for a manager until the reservation’s stated expiry.",
+    "Pessoa reservada para um gestor até o vencimento informado na reserva."
+  ],
+  [
+    "Allocated",
+    "Alocado"
+  ],
+  [
+    "Person whose allocation has been confirmed by Staffing and who leaves the available list.",
+    "Pessoa com alocação confirmada pelo Staffing, que sai da lista de disponíveis."
+  ],
+  [
+    "Renewals",
+    "Renovações"
+  ],
+  [
+    "Decisions about continuing a project allocation before the contract ends.",
+    "Decisões sobre a continuidade de uma alocação antes do fim do contrato."
+  ],
+  [
+    "Button",
+    "Botão"
+  ],
+  [
+    "Reserve for 2 business days",
+    "Reservar por 2 dias úteis"
+  ],
+  [
+    "Deadline",
+    "Prazo"
+  ],
+  [
+    "Expires 12 March at 23:59 · 1 business day left",
+    "Vence 12/03 às 23h59 · falta 1 dia útil"
+  ],
+  [
+    "Reservation extension",
+    "Extensão de reserva"
+  ],
+  [
+    "You can extend this reservation on 12 March, its last day. We will notify you in the morning.",
+    "Você poderá estender essa reserva em 12/03, o último dia dela. Vamos te avisar pela manhã."
+  ],
+  [
+    "Release request",
+    "Pedido de liberação"
+  ],
+  [
+    "You cannot request your own release. Speak to your direct manager.",
+    "Você não pode pedir a sua própria liberação. Fale com seu gestor direto."
+  ]
+]

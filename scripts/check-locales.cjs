@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v=gft-humanizer-1'), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v='+(file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -216,3 +216,15 @@ for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/gft-humanizer-copy.json
 }
 assert(gftCase.includes('In records covering January 2022 to February 2023, about 82%'));
 console.log('Approved GFT Humanizer copy: bilingual round trips and distinct metric periods OK');
+
+for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/gft-identity-copy.json','utf8'))) {
+ assert.equal(map.get(en)?.pt,pt,`GFT glossary Portuguese missing: ${en}`);
+ assert.equal(map.get(pt)?.en,en,`GFT glossary English round trip mismatch: ${pt}`);
+}
+const glossary=gftCase.split('id="spec-glossary"')[1].split('id="spec-writing"')[0];
+assert(glossary.includes('product-glossary'));
+assert(!glossary.includes('data-no-translate')&&!glossary.includes('data-voc'));
+const writing=gftCase.split('id="spec-writing"')[1].split('</section>')[0];
+assert(!writing.includes('write-switch')&&!writing.includes('class="before"')&&!writing.includes('data-no-translate'));
+assert(!gftCase.includes('When I revisited the project in 2026, I wrote an identity and writing guide'));
+console.log('GFT identity: product glossary and final messages bilingual, comparison switches removed OK');
