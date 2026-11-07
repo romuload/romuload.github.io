@@ -22,7 +22,7 @@ for (const [en, pt] of names) {
 for (const file of ['projeto-roadmap.html', 'index.html', 'propostas.html', 'sobre.html', 'trabalhe-comigo.html', 'projeto-ilab.html', 'projeto-repar.html', 'projeto-games.html', 'projeto-fiat.html', 'projeto-porto.html', 'projeto-staffing.html']) {
   const html = fs.readFileSync(file, 'utf8');
   assert(html.includes('data-language="en"') && html.includes('data-language="pt"'), `${file}: missing language switch`);
-  assert(html.includes('locale-data.js?v='+(file === 'projeto-ilab.html' ? 'ilab-humanizer-1' : file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
+  assert(html.includes('locale-data.js?v='+(['projeto-repar.html','projeto-games.html','projeto-fiat.html'].includes(file) ? 'proposals-humanizer-1' : file === 'projeto-ilab.html' ? 'ilab-humanizer-1' : file === 'projeto-roadmap.html' ? 'roadmap-humanizer-1' : file === 'projeto-staffing.html' ? 'gft-identity-1' : 'gft-humanizer-1')), `${file}: stale dictionary version`);
 }
 console.log('Bilingual project titles, reverse translation, language selectors and dictionary versions: OK');
 
@@ -245,3 +245,13 @@ for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/ilab-humanizer-copy.jso
 }
 assert(!ilabCase.includes('AI accelerated the making.'));
 console.log('iLAB Humanizer: approved bilingual copy and round trips OK');
+
+for(const [name,pairs] of Object.entries(JSON.parse(fs.readFileSync('scripts/proposals-humanizer-copy.json','utf8')))) {
+ const source=fs.readFileSync(`projeto-${name}.html`,'utf8');
+ for(const [en,pt] of pairs) {
+  assert(source.includes(en.replaceAll('&','&amp;')),`Approved ${name} copy missing: ${en}`);
+  assert.equal(map.get(en)?.pt,pt,`${name}: Portuguese copy missing`);
+  assert.equal(map.get(pt)?.en,en,`${name}: English round trip mismatch`);
+ }
+}
+console.log('REPAR, Word Search and FIAT Humanizer: bilingual copy and round trips OK');

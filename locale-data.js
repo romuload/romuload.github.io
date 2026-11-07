@@ -4064,3 +4064,83 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
     "A redução de 70% veio da consolidação dos servidores. As decisões de UX trataram das consultas repetitivas e da comparação de resultados."
   ]
 ]);
+
+// Approved REPAR, Word Search and FIAT Humanizer copy.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  [
+    "Explore REPAR 3D brings together the original illustrated journey and an interactive version that follows the path of oil through the refinery.",
+    "Conhecer REPAR 3D reúne a jornada ilustrada original e uma versão interativa em que é possível acompanhar o caminho do petróleo pela refinaria."
+  ],
+  [
+    "The original project was created in Flash in 2007. The legacy version retains the illustrated sequence; the 3D version offers a guided tour and free exploration of the refinery.",
+    "O projeto original foi criado em Flash em 2007. A versão legado mantém a sequência ilustrada; a versão 3D permite seguir uma visita guiada ou explorar a refinaria livremente."
+  ],
+  [
+    "In the legacy version, a character introduces the ten stages of refining through 2D illustrations.",
+    "Na versão legado, um personagem conduz a apresentação das dez etapas do refino por meio de ilustrações 2D."
+  ],
+  [
+    "The 3D version uses a Blender model, camera movements and illuminated pipes to show the connections between refining stages. Visitors can follow the guided journey or explore freely.",
+    "A versão 3D usa um modelo feito no Blender, movimentos de câmera e tubulações iluminadas para mostrar as conexões entre as etapas do refino. É possível seguir a jornada guiada ou explorar livremente."
+  ],
+  [
+    "Explore REPAR 3D: the evolution of an illustrated journey created in Flash in 2007 into an experience with guided and free exploration of the refinery. Case study by Romulo Nascimento.",
+    "Conhecer REPAR 3D: evolução de uma jornada ilustrada criada em Flash em 2007 para uma experiência com visita guiada e exploração livre da refinaria. Case de Romulo Nascimento."
+  ],
+  [
+    "In REPAR Word Search, players have five minutes to find 12 refining-related terms. The 2007 project was rebuilt for desktop and mobile.",
+    "No Caça-Palavras REPAR, o desafio é encontrar 12 termos ligados ao refino em cinco minutos. O projeto de 2007 foi reconstruído para desktop e celular."
+  ],
+  [
+    "The game introduces terms related to the refinery and its refining processes.",
+    "O jogo apresenta termos ligados à refinaria e aos processos de refino."
+  ],
+  [
+    "The words are terms related to the refinery and its refining processes.",
+    "As palavras são termos ligados à refinaria e aos processos de refino."
+  ],
+  [
+    "The round ends when time runs out. The challenge is to find all 12 words before then.",
+    "A partida termina quando o tempo se esgota. O desafio é encontrar as 12 palavras antes disso."
+  ],
+  [
+    "To select a word, drag across its letters or tap its first and last letters.",
+    "Para selecionar uma palavra, arraste sobre as letras ou toque na primeira e na última letra."
+  ],
+  [
+    "Word positions change with each new game.",
+    "A posição das palavras muda a cada nova partida."
+  ],
+  [
+    "Records and sound settings saved in the browser.",
+    "Recordes e som salvos no navegador."
+  ],
+  [
+    "The browser saves records and the sound setting for future rounds.",
+    "O navegador guarda os recordes e a preferência de som para as próximas partidas."
+  ],
+  [
+    "REPAR Word Search: a game created for the refinery’s 30th anniversary in 2007, rebuilt for desktop and mobile with 12 words and five-minute rounds.",
+    "Caça-Palavras REPAR: jogo criado para os 30 anos da refinaria em 2007, reconstruído para desktop e celular com 12 palavras e partidas de cinco minutos."
+  ],
+  [
+    "Water Cycle explains water treatment and reuse in FIAT’s industrial operations through an interactive 3D experience and motion videos.",
+    "Água em Ciclo apresenta o tratamento e o reúso da água na operação industrial da FIAT por meio de uma experiência 3D interativa e vídeos de motion."
+  ],
+  [
+    "The 3D model shows the connections between treatment and reuse stages. Camera movements, labels and narration guide the explanation.",
+    "A maquete 3D mostra as conexões entre as etapas de tratamento e reúso. Movimentos de câmera, legendas e narração conduzem a explicação."
+  ],
+  [
+    "The narrative has five chapters: factory and treatment; purification; membranes and reuse; return and destination; and an overview of the complete cycle.",
+    "A narrativa tem cinco capítulos: fábrica e tratamento; purificação; membranas e reúso; retorno e destinação; e visão completa do ciclo."
+  ],
+  [
+    "The videos present the water cycle in landscape, 16:9, and portrait, 9:16, formats.",
+    "Os vídeos apresentam o ciclo da água nos formatos horizontal, 16:9, e vertical, 9:16."
+  ],
+  [
+    "FIAT Water Cycle: an interactive 3D experience about water treatment and reuse, accompanied by landscape and portrait motion videos. Case study by Romulo Nascimento.",
+    "FIAT Água em Ciclo: experiência 3D interativa sobre tratamento e reúso da água, acompanhada de vídeos de motion em formatos horizontal e vertical. Case de Romulo Nascimento."
+  ]
+]);
