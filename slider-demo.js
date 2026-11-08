@@ -28,7 +28,7 @@
     {at: 0, target: 'foot', text: 'The Platinum card went up to R$ 79,800. Now R$ 76,600 has to come out of the other products.'},
     {at: 2.4, target: 'track', text: 'Each point of the track is worth about R$ 250. A fingertip covers thousands of reais.'},
     {at: 6.6, target: 'foot', text: 'It went past the mark. Now the screen asks to increase R$ 874.'},
-    {at: 8.2, target: 'track', text: 'The slider moves in R$ 100 steps from R$ 17,988. R$ 28,862 isn’t one of them.', small: 'Steps inferred from the values in the recording.'},
+    {at: 8.2, target: 'track', text: 'On this slider, every value ends in 88. The amount that balances the total ends in 62.', small: 'It moves in R$ 100 steps from R$ 17,988, the amount in use.'},
     {at: 13.8, target: 'foot', text: 'The exact amount only came from outside the slider. The total closes and the button turns on.'}
   ];
   const chapterButtons = [...root.querySelectorAll('.sd-chapters button')];
@@ -166,6 +166,86 @@
   // Plays once when it comes into view.
   if (!reduce && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { io.disconnect(); setTimeout(() => !trying && time === 0 && play(), 400); } }, {threshold: .55});
+    io.observe(phone);
+  }
+})();
+
+(() => {
+  'use strict';
+  // Context demo: from the card's limits hub, one tap opens the transfer already set up.
+  const root = document.getElementById('contextDemo');
+  if (!root) return;
+  const q = s => root.querySelector(s);
+  const t = text => (window.portfolioI18n ? window.portfolioI18n.t(text) : text);
+  const lang = () => (window.portfolioI18n ? window.portfolioI18n.language : 'en');
+  const money = v => Number(v).toLocaleString(lang() === 'pt' ? 'pt-BR' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const phone = q('.sd-phone'), finger = q('.sd-finger'), calls = q('.sd-calls'), call = q('.sd-call');
+  const row = q('.cx-transfer'), cta = q('.cx-cta');
+  const END = 13;
+  // Each chapter: start, what the callout points at, text.
+  const chapters = [
+    {at: 0, el: '.cx-transfer', text: 'The customer is in the Uniclass Black limits hub. Transfer limits already shows R$ 8,230: the most the other products can give.'},
+    {at: 3.4, el: '.cx-title', text: 'The card they came from is already the receiver, in the title and in the footer.'},
+    {at: 6.5, el: '.cx-donors', text: 'Donors come in with the most they can give: R$ 3,000 from the Platinum card and R$ 5,230 from the overdraft limit.'},
+    {at: 9.5, el: '.cx-foot', text: 'New limit: R$ 113,692, the same total the slider couldn’t close. One tap to confirm.'}
+  ];
+  // Finger taps: [start, end, element].
+  const taps = [[2.4, 3.0, row], [11.0, 11.5, cta]];
+  const buttons = [...root.querySelectorAll('.cx-chapters button')];
+  const play = q('.cx-play');
+  const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  const pauseIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  let time = 0, playing = false, last = 0, current = -1, hl = null;
+
+  const paint = () => root.querySelectorAll('[data-n]').forEach(n => { n.textContent = money(n.dataset.n); });
+  const place = () => {
+    const c = chapters[Math.max(0, current)], el = q(c.el);
+    const r = el.getBoundingClientRect(), box = calls.getBoundingClientRect();
+    call.style.setProperty('--y', (r.top + r.height / 2 - box.top) + 'px');
+  };
+  const say = i => {
+    current = i;
+    call.classList.remove('on');
+    call.textContent = t(chapters[i].text);
+    hl?.classList.remove('cx-hl'); hl = q(chapters[i].el); hl.classList.add('cx-hl');
+    requestAnimationFrame(() => { place(); call.classList.add('on'); });
+  };
+  const render = () => {
+    root.classList.toggle('on-new', time >= 3.2);
+    let idx = 0;
+    chapters.forEach((c, i) => { if (time >= c.at) idx = i; });
+    if (idx !== current) say(idx);
+    buttons.forEach((b, i) => {
+      const s = chapters[i].at, e = chapters[i + 1] ? chapters[i + 1].at : END;
+      b.style.setProperty('--p', Math.max(0, Math.min(1, (time - s) / (e - s))).toFixed(3));
+      b.classList.toggle('on', i === idx);
+    });
+    const tap = taps.find(([s, e]) => time >= s && time < e);
+    row.classList.toggle('press', !!tap && tap[2] === row);
+    cta.classList.toggle('press', !!tap && tap[2] === cta);
+    finger.classList.toggle('on', !!tap);
+    if (tap) {
+      const r = tap[2].getBoundingClientRect(), p = phone.getBoundingClientRect();
+      finger.style.left = (r.left + r.width * .45 - p.left) + 'px';
+      finger.style.top = (r.top + r.height / 2 - p.top) + 'px';
+    }
+  };
+  const sync = () => { play.innerHTML = playing ? pauseIcon : playIcon; play.setAttribute('aria-label', t(playing ? 'Pause demo' : 'Play demo')); };
+  const tick = now => {
+    if (!playing) return;
+    time = Math.min(END, time + (now - last) / 1000); last = now; render();
+    if (time >= END) { playing = false; sync(); return; }
+    requestAnimationFrame(tick);
+  };
+  const start = () => { if (time >= END) time = 0; playing = true; last = performance.now(); sync(); requestAnimationFrame(tick); };
+  play.addEventListener('click', () => (playing ? (playing = false, sync()) : start()));
+  buttons.forEach((b, i) => b.addEventListener('click', () => { time = chapters[i].at; render(); start(); }));
+
+  paint(); sync(); render();
+  addEventListener('resize', place);
+  addEventListener('portfolio-language-change', () => { paint(); sync(); const i = current; current = -1; say(i); });
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { io.disconnect(); setTimeout(() => time === 0 && start(), 400); } }, {threshold: .55});
     io.observe(phone);
   }
 })();

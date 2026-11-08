@@ -4465,3 +4465,42 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Pause demo", "Pausar demonstração"],
   ["Play demo", "Reproduzir demonstração"]
 ]);
+
+// Transfer credit limits · block 02 revision.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["Each product had its own slider. The minimum was what was already in use; the maximum, the sum available in the other products, and some also had a ceiling. The slider moved in R$ 100 steps from an uneven minimum, while the amount that balanced the total came from the other products’ uneven values. Most of the time, that amount simply didn’t exist on the slider. Adding the overdraft limit only added one more rule.", "Cada produto tinha seu slider. O mínimo era o que já estava em uso; o máximo, a soma do disponível nos outros produtos, e alguns ainda tinham teto. O slider andava de R$ 100 em R$ 100 a partir de um mínimo quebrado, enquanto o valor que fechava a conta saía dos valores quebrados dos outros produtos. Na maioria dos casos, esse valor simplesmente não existia no slider. Incluir o Limite da Conta só acrescentou mais uma regra."],
+  ["The more products, the harder it got. Some customers have five cards plus the overdraft limit, and every extra slider means more time in the journey and more rules to balance. Looking at customers with many cards, we found they end up concentrating the limit on a single card, the one they use most. That was the key data point behind the new proposals: open the screen with a receiving card already set and the other products as donors.", "Quanto mais produtos, mais difícil. Há clientes com cinco cartões mais o Limite da Conta, e cada slider a mais significa mais tempo na jornada e mais regras para equilibrar. Observando clientes com muitos cartões, chegamos ao dado de que eles acabam concentrando o limite em um único cartão, o de maior uso. Esse foi o dado-chave que orientou as novas propostas: entrar na tela já com um cartão recebedor e os demais produtos como doadores."],
+  ["On this slider, every value ends in 88. The amount that balances the total ends in 62.", "Neste slider, todos os valores terminam em 88. O valor que fecha a conta termina em 62."],
+  ["It moves in R$ 100 steps from R$ 17,988, the amount in use.", "Ele anda de R$ 100 em R$ 100 a partir de R$ 17.988, o valor em uso."]
+]);
+
+// Transfer credit limits · context demo.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["Card limit", "Limite do cartão"],
+  ["In use", "Em uso"],
+  ["Available limit", "Disponível"],
+  ["Immediate release", "Liberação imediata"],
+  ["Transfer limits", "Transferir limites"],
+  ["New", "Novo"],
+  ["Pay bill", "Pagar fatura"],
+  ["Guaranteed limit", "Limite Garantido"],
+  ["Total of your limits", "Total dos seus limites"],
+  ["Define how much to transfer to", "Defina quanto quer transferir para o"],
+  ["Limits available for transfer", "Limites disponíveis para transferência"],
+  ["Transfer: R$", "Transferir: R$"],
+  ["Remaining limit: R$", "Limite restante: R$"],
+  ["Customize limits ›", "Personalizar limites ›"],
+  ["Current limit", "Limite atual"],
+  ["New limit", "Novo limite"],
+  ["Transfer limit", "Transferir limite"],
+  ["Recreation of the new experience in the Itaú app: from the Uniclass Black limits hub, one tap opens the transfer screen with the card as receiver and the Platinum card and overdraft limit as donors at their maximum.", "Recriação da experiência nova no app Itaú: no hub de limites do Uniclass Black, um toque abre a tela de transferência com o cartão como recebedor e o Platinum e o Limite da Conta como doadores no máximo."],
+  ["Where they come from", "De onde vem"],
+  ["Receiver set", "Recebedor definido"],
+  ["Donors at the max", "Doadores no máximo"],
+  ["One tap", "Um toque"],
+  ["Recreated from a screen recording of the new experience in the Itaú app. Values and card names come from the recording.", "Recriado a partir de uma gravação de tela da experiência nova no app Itaú. Valores e nomes de cartão vêm da gravação."],
+  ["The customer is in the Uniclass Black limits hub. Transfer limits already shows R$ 8,230: the most the other products can give.", "O cliente está no hub de limites do Uniclass Black. Transferir limites já mostra R$ 8.230: o máximo que os outros produtos podem doar."],
+  ["The card they came from is already the receiver, in the title and in the footer.", "O cartão de onde a pessoa veio já é o recebedor, no título e no rodapé."],
+  ["Donors come in with the most they can give: R$ 3,000 from the Platinum card and R$ 5,230 from the overdraft limit.", "Os doadores já vêm com o máximo que podem doar: R$ 3.000 do Platinum e R$ 5.230 do Limite da Conta."],
+  ["New limit: R$ 113,692, the same total the slider couldn’t close. One tap to confirm.", "Novo limite: R$ 113.692, a mesma conta que o slider não fechava. Um toque para confirmar."]
+]);

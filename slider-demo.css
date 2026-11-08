@@ -60,3 +60,51 @@
 @media(max-width:1000px){.sd-stage{grid-template-columns:minmax(0,1fr);justify-items:center;gap:24px;padding:28px 20px}.sd-calls{width:100%;max-width:420px;min-height:0}.sd-call{position:relative;top:auto;transform:none;max-width:none}.sd-call::before,.sd-call::after{display:none}}
 @media(max-width:767px){.sd-stage{padding:20px 12px}.sd-bar{gap:8px}.sd-chapters{order:3;flex-basis:100%}.sd-try{margin-left:auto}}
 @media(max-width:400px){.sd-phone{width:300px;border-radius:44px;padding:8px}.sd-screen{height:770px;border-radius:36px}.sd-prod{padding-inline:16px}}
+
+/* Context demo · limits hub → new transfer screen. */
+.cx .sd-screen{position:relative}
+.cx-view{position:absolute;inset:44px 0 0;background:#fff;display:flex;flex-direction:column;transition:opacity .35s,transform .35s}
+.cx-new-view{opacity:0;transform:translateX(24px);pointer-events:none}
+.cx.on-new .cx-hub{opacity:0;transform:translateX(-24px)}
+.cx.on-new .cx-new-view{opacity:1;transform:none}
+.cx-navrow{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 6px}
+.cx-navrow>span{display:flex;gap:14px;align-items:center}
+.cx-back{width:11px;height:18px}.cx-cards{width:20px;height:18px}.cx-navrow .sd-info{width:20px;height:20px}
+.cx-kick{margin:8px 20px 0;font-size:11px;color:#141414!important}
+.cx-h{margin:4px 20px 0;font-size:17px;font-weight:600;color:#141414!important}
+.cx-big{display:flex;justify-content:space-between;align-items:center;margin:16px 20px 0;padding-bottom:5px;border-bottom:1px solid #8c8c8c;font-size:18px;font-weight:600}
+.cx-uses{display:flex;justify-content:space-between;margin:8px 20px 0;font-size:10.5px;line-height:1.5;color:#444}
+.cx-uses .r{text-align:right}.cx-uses b{color:var(--sd-blue);font-weight:600}
+.cx-track{margin:22px 26px 0}
+.cx-used{position:absolute;inset:0 auto 0 0;width:17%;border-radius:4px 0 0 4px;background:#8f8f8f;z-index:1}
+.cx-hub .sd-mm{margin:14px 20px 0}
+.cx-band{flex:1;margin-top:18px;background:#efefef;padding:16px 14px}
+.cx-sub{margin:0 6px 10px;font-size:11.5px;font-weight:600;color:#141414!important}
+.cx-list{background:#fff;border-radius:10px;padding:4px 12px;margin-bottom:18px}
+.cx-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #ececec;font-size:11.5px}
+.cx-item:last-child{border-bottom:0}
+.cx-item>span{flex:1;display:flex;flex-direction:column;gap:3px}
+.cx-item b{font-weight:600}.cx-item small{font-size:10.5px;color:#444}
+.cx-gly{width:18px;text-align:center;font-style:normal;color:var(--sd-blue);font-size:13px}
+.cx-new{font-style:normal;font-size:9.5px;font-weight:600;color:#fff;background:#0f7a3c;border-radius:4px;padding:2px 6px}
+.cx-chev{width:7px;height:12px;flex:none}
+.cx-transfer{transition:background .2s;margin:0 -12px;padding-inline:12px;border-radius:8px}
+.cx-transfer.press{background:#e4e4e4}
+.cx-tag{align-self:flex-start;border:1px solid #bbb;border-radius:4px;padding:1px 6px}
+.cx-total{font-size:15px}
+.cx-title{margin:12px 20px 0;font-size:17px;line-height:1.3;font-weight:600;color:#141414!important}
+.cx-label{margin:24px 20px 6px;font-size:11px;font-weight:600;color:#141414!important}
+.cx-donor{display:flex;align-items:flex-start;gap:12px;padding:14px 20px;border-bottom:1px solid #ececec}
+.cx-donor .sd-ico{margin-top:6px}
+.cx-donor>span{flex:1;display:flex;flex-direction:column;gap:3px;font-size:11px}
+.cx-donor b{font-weight:600}.cx-donor small{font-size:10.5px}.cx-rem{font-weight:600}
+.cx-donor .sd-pen{color:#141414;margin-top:8px}
+.cx-custom{margin:16px 20px 0;font-size:11px;font-weight:600;color:var(--sd-orange)!important}
+.cx-foot{margin-top:auto;padding:14px 20px 26px;border-top:1px solid #e2e2e2}
+.cx-dest{margin:0 0 8px;font-size:11px;font-weight:600;color:#141414!important}
+.cx-line{display:flex;justify-content:space-between;margin:0 0 4px;font-size:11px;color:#141414!important;font-variant-numeric:tabular-nums}
+.cx-line b{color:#0f7a3c;font-weight:600}
+.cx-cta{margin-top:12px;padding:13px;border-radius:8px;text-align:center;font-size:12.5px;font-weight:600;background:var(--sd-blue);color:#fff;transition:transform .15s,filter .15s}
+.cx-cta.press{transform:scale(.97);filter:brightness(.85)}
+.cx-hl{outline:2px solid #ec7000;outline-offset:3px;border-radius:6px}
+.cx .sd-call small{display:none}
