@@ -72,8 +72,9 @@
   const placeFinger = down => {
     finger.classList.toggle('on', !!down);
     uni.el.classList.toggle('drag', !!down);
-    const c = center(uni.el.querySelector('.sd-knob'), phone.getBoundingClientRect());
-    finger.style.left = c.x + 'px'; finger.style.top = c.y + 'px';
+    // The phone is scaled as a whole (CSS zoom), so screen pixels are divided back into its own units.
+    const c = center(uni.el.querySelector('.sd-knob'), phone.getBoundingClientRect()), z = phone.getBoundingClientRect().width / phone.offsetWidth || 1;
+    finger.style.left = c.x / z + 'px'; finger.style.top = c.y / z + 'px';
   };
   const ease = x => x < .5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;
   const valueAt = s => {
@@ -238,9 +239,9 @@
     cta.classList.toggle('press', !!tap && tap[2] === cta);
     finger.classList.toggle('on', !!tap);
     if (tap) {
-      const r = tap[2].getBoundingClientRect(), p = phone.getBoundingClientRect();
-      finger.style.left = (r.left + r.width * .45 - p.left) + 'px';
-      finger.style.top = (r.top + r.height / 2 - p.top) + 'px';
+      const r = tap[2].getBoundingClientRect(), p = phone.getBoundingClientRect(), z = p.width / phone.offsetWidth || 1;
+      finger.style.left = (r.left + r.width * .45 - p.left) / z + 'px';
+      finger.style.top = (r.top + r.height / 2 - p.top) / z + 'px';
     }
   };
   const sync = () => { play.innerHTML = playing ? pauseIcon : playIcon; play.setAttribute('aria-label', t(playing ? 'Pause demo' : 'Play demo')); };

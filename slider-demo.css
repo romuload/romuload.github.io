@@ -156,18 +156,55 @@
 .vr-stats{display:flex;gap:24px;margin:0}.vr-stats dt{font-size:var(--text-xs);color:#6b5d52}.vr-stats dd{margin:0;font-size:var(--text-lg);font-weight:600;color:#a83c00;font-variant-numeric:tabular-nums}
 @media(max-width:1100px){.vr-grid{grid-template-columns:minmax(0,1fr);max-width:420px;margin-inline:auto}.vr-desc{min-height:0}}
 
-/* Problem and Direction demos: a shorter 3:4 phone with larger type; the list scrolls like in the app. */
-.sd .sd-stage{grid-template-columns:420px minmax(0,1fr)}
-.sd .sd-phone{width:420px;border-radius:46px}
-.sd .sd-screen{zoom:1.2;height:calc(560px / 1.2);border-radius:32px}
-.sd .sd-list{overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
-.sd .sd-list::-webkit-scrollbar{display:none}
-.sd .cx-view{overflow:hidden}
-@media(max-width:1000px){.sd .sd-stage{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:520px){.sd .sd-phone{width:100%;max-width:340px;border-radius:40px;padding:8px}.sd .sd-screen{zoom:1;height:467px;border-radius:32px}}
-.sd .sd-phone{touch-action:pan-y}.sd .sd-track{touch-action:none}
+/* Problem and Direction demos use the same phone as the Solution motion:
+   a 442 × 931 device with the motion's type sizes, scaled as a whole by --k. */
+.sd{--k:.72}
+.sd .sd-stage{grid-template-columns:calc(442px * var(--k)) minmax(0,1fr)}
+.sd .sd-phone{width:442px;height:931px;padding:0;zoom:var(--k);border-radius:74px;background:#050505;box-shadow:0 0 0 3px #6f5b56,0 0 0 4px #c9b4ac,0 44px 90px rgba(60,30,15,.28);touch-action:pan-y}
+.sd .sd-screen{position:absolute;inset:18px;height:auto;border-radius:56px;font-family:"Hanken Grotesk",Manrope,system-ui,sans-serif}
+.sd .sd-island{top:14px;width:122px;height:36px;margin-left:-61px;border-radius:20px}
+.sd .sd-status{padding:22px 40px 0 50px;font-size:19px}.sd .sd-status svg{width:70px}
+.sd .sd-nav,.sd .cx-navrow{padding:26px 28px 8px}
+.sd .sd-nav>svg,.sd .cx-back{width:15px;height:26px}.sd .sd-nav .sd-info,.sd .cx-navrow .sd-info{width:28px;height:28px}.sd .cx-cards{width:28px;height:26px}
+.sd .sd-title{margin:14px 29px 10px;font-size:27px;line-height:34px;letter-spacing:-.025em}
+.sd .sd-list{overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}.sd .sd-list::-webkit-scrollbar{display:none}
+.sd .sd-prod{padding:18px 29px 16px}
+.sd .sd-ph{gap:14px;font-size:18px}.sd .sd-ph .sd-info{width:21px;height:21px}
+.sd .sd-ico{width:30px;height:20px;border-radius:4px}
+.sd .sd-val{margin-top:16px;padding-bottom:6px;font-size:24px}.sd .sd-val small{font-size:17px}
+.sd .sd-pen{width:22px;height:22px}
+.sd .sd-track{height:9px;margin:28px 9px 0;border-radius:5px}.sd .sd-fill{border-radius:5px}
+.sd .sd-knob{width:40px;height:40px;margin:-20px 0 0 -20px;border-width:2px}.sd .sd-knob svg{width:20px;height:20px}
+.sd .sd-mm{margin-top:20px;font-size:15px}
+.sd .sd-auto{margin-top:14px;padding:8px 18px;font-size:16px}
+.sd .sd-foot{padding:18px 29px 34px}
+.sd .sd-sum{font-size:19px;line-height:26px}
+.sd .sd-cta,.sd .cx-cta{margin-top:16px;padding:0;height:68px;display:grid;place-items:center;border-radius:12px;font-size:21px;font-weight:500}
+.sd .sd-finger{width:64px;height:64px;margin:-32px 0 0 -32px}
+.sd .cx-view{inset:66px 0 0;overflow:hidden}
+.sd .cx-kick{margin:14px 29px 0;font-size:17px}
+.sd .cx-h{margin:4px 29px 0;font-size:26px}
+.sd .cx-big{margin:24px 29px 0;font-size:27px}
+.sd .cx-uses{margin:12px 29px 0;font-size:16px}
+.sd .cx-track{margin:32px 38px 0}
+.sd .cx-hub .sd-mm{margin:20px 29px 0}
+.sd .cx-band{margin-top:26px;padding:22px 20px}
+.sd .cx-sub{margin:0 8px 14px;font-size:18px}
+.sd .cx-list{border-radius:14px;padding:4px 18px;margin-bottom:24px}
+.sd .cx-item{gap:16px;padding:18px 0;font-size:18px}.sd .cx-item small{font-size:16px}
+.sd .cx-transfer{margin:0 -18px;padding-inline:18px}
+.sd .cx-gly{width:24px;font-size:19px}.sd .cx-new{font-size:14px;padding:3px 8px}.sd .cx-chev{width:10px;height:17px}.sd .cx-total{font-size:22px}
+.sd .cx-title{margin:14px 29px 0;font-size:27px;line-height:34px;letter-spacing:-.025em}
+.sd .cx-label{margin:26px 29px 8px;font-size:19px}
+.sd .cx-donor{gap:16px;padding:18px 29px}.sd .cx-donor .sd-ico{margin-top:8px}
+.sd .cx-donor>span{gap:4px;font-size:19px}.sd .cx-donor small{font-size:18px}
+.sd .cx-custom{margin:18px 29px 18px;font-size:18px}
+.sd .cx-foot{flex:none;margin-top:0;padding:20px 29px 34px}
+.sd .cx-dest{margin-bottom:12px;font-size:19px}
+.sd .cx-line{margin-bottom:8px;font-size:20px;line-height:26px}
 .cx-scroll{flex:1;min-height:0;overflow:hidden}
-.cx-new-view .cx-foot{flex:none;margin-top:0}
-.cx-new-view .cx-label{margin-top:16px}
-.cx-new-view .cx-donor{padding-block:11px}
-.cx-new-view .cx-custom{margin:12px 20px 14px}
+.sd .sd-track{touch-action:none}
+@media(max-width:1000px){.sd .sd-stage{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){.sd{--k:.68}}
+@media(max-width:380px){.sd{--k:.66}}
+.sd .sd-sum{font-size:17px;align-items:baseline}.sd .sd-sum b{flex:none;white-space:nowrap}
