@@ -145,3 +145,4 @@ html{scroll-padding-top:76px}.transfer-nav{top:0}.transfer-nav .wrap{padding-inl
 @media(max-width:420px){.tl-meta,.transfer-metrics{grid-template-columns:minmax(0,1fr)}}
 
 .tl-solution .tl-motion{margin-bottom:48px}.tl-solution .tl-compare{margin-top:0}
+.tl-results{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:1000px){.tl-results{grid-template-columns:minmax(0,1fr)}}

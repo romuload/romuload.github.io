@@ -4520,3 +4520,28 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Enter an amount.", "Digite um valor."],
   ["The most you can transfer is R$", "O máximo que dá para transferir é R$"]
 ]);
+
+// Transfer credit limits · period.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["Aug 2024 — present", "Ago/2024 — atualmente no projeto"]
+]);
+
+// Transfer credit limits · narrative pass.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["How behavioral data showed the experience was built for a behavior few customers had, and how I redesigned everything from there.", "Como dados comportamentais revelaram que a experiência estava construída para um comportamento que poucos clientes tinham, e como redesenhei tudo a partir disso."],
+  ["A self-service flow that broke on simple cases", "Um autoatendimento que travava nos casos simples"],
+  ["The business needed to add the overdraft limit, but the interdependent sliders already struggled with simple cases.", "O negócio precisava incluir o Limite da Conta, mas os sliders interdependentes já não davam conta dos casos simples."],
+  ["Data from the internal platform showed the pattern. The more products, the harder it got: some customers have five cards plus the overdraft limit, and every extra slider means more time in the journey and more rules to balance. Customers with many cards end up concentrating the limit on the card they use most. That was the key data point behind the new proposals: open the screen with a receiving card already set and the other products as donors.", "Os dados da plataforma interna mostraram o padrão. Quanto mais produtos, mais difícil: há clientes com cinco cartões mais o Limite da Conta, e cada slider a mais significa mais tempo na jornada e mais regras para equilibrar. Clientes com muitos cartões acabam concentrando o limite no cartão de maior uso. Esse foi o dado-chave que orientou as novas propostas: entrar na tela já com um cartão recebedor e os demais produtos como doadores."],
+  ["With the overdraft limit in the journey, another pain appeared: doubts about interest and risk. CES stayed neutral, but trust and repeat use took a hit.", "Com o Limite da Conta na jornada, surgiu outra dor: dúvidas sobre juros e risco. O CES ficou neutro, mas a confiança e a recorrência foram afetadas."],
+  ["With overdraft limit", "Com Limite da Conta"],
+  ["Customers over 46 were hit hardest.", "Os clientes acima de 46 anos foram os mais afetados."],
+  ["A Design, Engineering and Product triad. Design drives the discovery agenda. At the bank, access to data is controlled by design.", "Tríade Design, Engenharia e Produto. Design puxa as agendas de discovery. No banco, acesso a dados é controlado por design."],
+  ["Three ways to give, tested with customers", "Três formas de doar, testadas com clientes"],
+  ["We tested the receiver-and-donors model in two variants, against the slider as the control.", "Testamos o modelo de recebedor e doadores em duas variantes, contra o slider como controle."],
+  ["Went back to the old model", "Voltaram ao modelo antigo"],
+  ["Usability tests: 6 participants per variant (Nov 2025). The icon signaled editing before the interaction began. “Remaining limit” raised questions in both variants, for different reasons.", "Testes de usabilidade: 6 participantes por variante (nov/2025). O ícone comunicava edição antes da interação começar. “Limite restante” gerou dúvidas nas duas variantes, por razões diferentes."],
+  ["Customers arrive knowing the destination and confirm with one tap.", "O cliente entra sabendo o destino e confirma com um toque."],
+  ["Next step", "Próximo passo"],
+  ["A bigger agenda: making the bank’s limit solutions work together instead of competing.", "Uma agenda maior: fazer as soluções de limite do banco funcionarem juntas, sem competir."],
+  ["With receiver and donors set on entry, transferring limit became a confirmation. The next step is a screen that edits amounts and products in the same gesture.", "Com recebedor e doadores definidos na entrada, transferir limite virou uma confirmação. O próximo passo é a tela que edita valores e produtos no mesmo gesto."]
+]);
