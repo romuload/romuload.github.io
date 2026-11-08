@@ -4432,3 +4432,36 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Itaú · Transfer credit limits | Romulo Nascimento", "Itaú · Transferir limites | Romulo Nascimento"],
   ["How behavioral data reshaped Itaú’s credit limit transfer journey.", "Como dados comportamentais mudaram a jornada de transferir limites do Itaú."]
 ]);
+
+// Transfer credit limits · slider demo.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["Transfer your limits", "Transfira seus limites"],
+  ["Adjust automatically", "Ajustar automaticamente"],
+  ["Confirm limit transfer", "Confirmar transferência de limites"],
+  ["Total transfer", "Transferência total"],
+  ["Value above total,", "Valor acima do total,"],
+  ["Value below total,", "Valor abaixo do total,"],
+  ["decrease:", "diminua:"],
+  ["increase:", "aumente:"],
+  ["Recreation of the slider screen in the Itaú app: the Platinum card goes up to R$ 79,800 and the customer drags the Uniclass Black slider back and forth without reaching the exact amount.", "Recriação da tela de sliders do app Itaú: o Platinum sobe para R$ 79.800 e o cliente arrasta o slider do Uniclass Black para lá e para cá sem chegar ao valor exato."],
+  ["The request", "O pedido"],
+  ["Drag down", "Arrastar"],
+  ["Past the mark", "Passou do ponto"],
+  ["Back and forth", "Vai e volta"],
+  ["Outside the slider", "Fora do slider"],
+  ["Try it yourself", "Tente você"],
+  ["Recreated from a screen recording of the slider experience in the Itaú app. Values and card names come from the recording.", "Recriado a partir de uma gravação de tela da experiência com sliders no app Itaú. Valores e nomes de cartão vêm da gravação."],
+  ["The Platinum card went up to R$ 79,800. Now R$ 76,600 has to come out of the other products.", "O Platinum subiu para R$ 79.800. Agora R$ 76.600 precisam sair dos outros produtos."],
+  ["Each point of the track is worth about R$ 250. A fingertip covers thousands of reais.", "Cada ponto da barra vale cerca de R$ 250. A ponta do dedo cobre milhares de reais."],
+  ["It went past the mark. Now the screen asks to increase R$ 874.", "Passou do ponto. Agora a tela pede para aumentar R$ 874."],
+  ["The slider moves in R$ 100 steps from R$ 17,988. R$ 28,862 isn’t one of them.", "O slider anda de R$ 100 em R$ 100 a partir de R$ 17.988. R$ 28.862 não é um desses passos."],
+  ["Steps inferred from the values in the recording.", "Passos deduzidos dos valores da gravação."],
+  ["The exact amount only came from outside the slider. The total closes and the button turns on.", "O valor exato só veio de fora do slider. A conta fecha e o botão acende."],
+  ["Still off? Tap Adjust automatically.", "Não fechou? Toque em Ajustar automaticamente."],
+  ["Drag the Uniclass Black slider until the footer closes the total.", "Arraste o slider do Uniclass Black até o rodapé fechar a conta."],
+  ["Attempts:", "Tentativas:"],
+  ["Closed. Only possible because you landed exactly on it.", "Fechou. Só porque você acertou o valor exato."],
+  ["Closed, but only with the button. Dragging never gets there.", "Fechou, mas só com o botão. Arrastando, não chega lá."],
+  ["Pause demo", "Pausar demonstração"],
+  ["Play demo", "Reproduzir demonstração"]
+]);
