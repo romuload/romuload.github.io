@@ -1,0 +1,106 @@
+[
+  [
+    "I redesigned credit-limit transfers between cards and overdraft.",
+    "Redesenhei a transferência de limites entre cartões e limite da conta."
+  ],
+  [
+    "Customers could have available credit on one product and insufficient credit on another for what they needed to do.",
+    "O cliente podia ter limite disponível em um produto e insuficiente em outro para o que precisava fazer."
+  ],
+  [
+    "The goal was to let customers redistribute available credit limits between eligible products.",
+    "O objetivo era permitir que o cliente redistribuísse o limite disponível entre os produtos elegíveis."
+  ],
+  [
+    "My role in designing the journey.",
+    "Minha atuação no desenho da jornada."
+  ],
+  [
+    "I designed self-service and limit-management journeys across credit products. I worked with financial and regulatory requirements to define how the interface should behave.",
+    "Desenhei jornadas de autoatendimento e gestão de limites entre diferentes produtos de crédito. Trabalhei com requisitos financeiros e regulatórios para definir o comportamento da interface."
+  ],
+  [
+    "I mapped journey states, edge cases and interactions between products, accounting for their eligibility rules and credit constraints.",
+    "Mapeei os estados da jornada, os casos de exceção e as interações entre produtos, considerando suas regras de elegibilidade e restrições de crédito."
+  ],
+  [
+    "I worked in a triad with Product Owners and Engineering, alongside Data and Credit teams, to define a journey that met business rules and technical constraints.",
+    "Trabalhei no modelo de tríade com Product Owners e Engenharia, em parceria com Dados e Crédito, para definir uma jornada compatível com as regras de negócio e as restrições técnicas."
+  ],
+  [
+    "I used production data and CES analysis to identify difficulties in the journey and guide the redesign.",
+    "Usei dados de produção e análises de CES para identificar dificuldades na jornada e orientar o redesenho."
+  ],
+  [
+    "I mapped how eligibility rules and credit constraints affected the available products, transfer amounts and remaining limits.",
+    "Mapeei como as regras de elegibilidade e as restrições de crédito afetavam os produtos disponíveis, os valores de transferência e os limites restantes."
+  ],
+  [
+    "I validated the interaction patterns through A/B/C testing with 38,000 users and qualitative research with customers.",
+    "Validei os padrões de interação em testes A/B/C com 38 mil usuários e em pesquisa qualitativa com clientes."
+  ],
+  [
+    "I used Claude to explore ideas, challenge design decisions and build working prototypes to discuss with stakeholders before engineering implementation.",
+    "Usei Claude para explorar ideias, questionar decisões de design e construir protótipos funcionais que pudesse apresentar às pessoas envolvidas antes da implementação pela Engenharia."
+  ],
+  [
+    "The journey shows which product supplies the limit, how much will be transferred and how much remains available before confirmation.",
+    "A jornada mostra de qual produto sai o limite, quanto será transferido e quanto permanece disponível antes da confirmação."
+  ],
+  [
+    "The current and new limits appear together, close to the confirmation action, so customers can check the effect of the transfer.",
+    "Os limites atual e novo aparecem juntos, próximos da confirmação, para que o cliente confira o efeito da transferência."
+  ],
+  [
+    "Available credit on one product,",
+    "Limite disponível em um produto,"
+  ],
+  [
+    "insufficient credit on another.",
+    "insuficiente em outro."
+  ],
+  [
+    "From choosing the source",
+    "Da escolha da origem"
+  ],
+  [
+    "to confirming the transfer.",
+    "à confirmação da transferência."
+  ],
+  [
+    "Available credit on one product, insufficient credit on another.",
+    "Limite disponível em um produto, insuficiente em outro."
+  ],
+  [
+    "From choosing the source to confirming the transfer.",
+    "Da escolha da origem à confirmação da transferência."
+  ],
+  [
+    "How I showed the effect of the transfer.",
+    "Como mostrei o efeito da transferência."
+  ],
+  [
+    "From 151 to 62 seconds for customers with three or more products.",
+    "De 151 para 62 segundos para clientes com três ou mais produtos."
+  ],
+  [
+    "Demo of a credit-limit transfer from overdraft to a card. Amounts are illustrative.",
+    "Demonstração da transferência de limite da conta para o cartão. Os valores são ilustrativos."
+  ],
+  [
+    "Itaú credit-limit transfers: journey design across cards and overdraft, with research, A/B/C testing and the evolution of the experience from 2024 to 2026. Case study by Romulo Nascimento.",
+    "Itaú Transferir Limites: desenho de jornadas entre cartões e limite da conta, com pesquisa, testes A/B/C e evolução da experiência de 2024 a 2026. Case de Romulo Nascimento."
+  ],
+  [
+    "Completion time fell from 151 to 62 seconds among customers with three or more products. CES increased from 4.5 to 4.77. The A/B/C test involved 38,000 users; this total does not necessarily match the sample for each metric.",
+    "O tempo de conclusão passou de 151 para 62 segundos entre clientes com três ou mais produtos. O CES passou de 4,5 para 4,77. O teste A/B/C envolveu 38 mil usuários; esse total não corresponde necessariamente à amostra de cada indicador."
+  ],
+  [
+    "The project presentation also records the indicators below, but does not specify their measurement periods or samples.",
+    "A apresentação do projeto registra também os indicadores abaixo, mas não informa seus períodos de medição ou amostras."
+  ],
+  [
+    "They should be read separately from the A/B/C test results.",
+    "Eles devem ser lidos separadamente dos resultados do teste A/B/C."
+  ]
+]

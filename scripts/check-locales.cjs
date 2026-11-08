@@ -267,3 +267,12 @@ for(const [file,pairs] of Object.entries(JSON.parse(fs.readFileSync('scripts/hom
 const aboutBio=fs.readFileSync('sobre.html','utf8').split('class="profile-bio"')[1].split('</div>')[0];
 assert(aboutBio.indexOf('At Itaú')<aboutBio.indexOf('At Porto') && aboutBio.indexOf('At Porto')<aboutBio.indexOf('At GFT'));
 console.log('Home and About: approved bilingual copy and Itaú, Porto, GFT order OK');
+
+assert(transfer.includes('locale-data.js?v=transfer-humanizer-1'));
+for(const [en,pt] of JSON.parse(fs.readFileSync('scripts/transfer-humanizer-copy.json','utf8'))) {
+ assert(transfer.includes(en.replaceAll('&','&amp;')) || transfer.replace(/<[^>]*>/g,'').includes(en.replaceAll('&','&amp;')),`Approved transfer copy missing: ${en}`);
+ assert.equal(map.get(en)?.pt,pt,`Transfer Humanizer Portuguese missing: ${en}`);
+ assert.equal(map.get(pt)?.en,en,`Transfer Humanizer English round trip mismatch: ${pt}`);
+}
+assert(!fs.readFileSync('propostas.html','utf8').includes(transferFile));
+console.log('Transfer Humanizer: bilingual copy, cohort distinctions and unlisted status OK');
