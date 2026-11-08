@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  // Slider demo: replays the drag from the screen recording, then lets the visitor try.
+  // Slider demo: one goal in three acts. Two linked cards, then the overdraft limit joins and the sliders stop compensating.
   const root = document.getElementById('sliderDemo');
   if (!root) return;
   const q = s => root.querySelector(s);
@@ -9,103 +9,155 @@
   const money = v => Number(v).toLocaleString(lang() === 'pt' ? 'pt-BR' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const TARGET = 76600; // Platinum went from R$ 3,200 to R$ 79,800.
-  const EXACT = 28862;  // 1416 value that closes the total.
+  // Real values from the screen recording.
+  const BASE = {plat: 3200, uni: 105462, ldc: 5730};
+  const TOTAL = BASE.plat + BASE.uni + BASE.ldc;
+  const EXACT = {uni: 96462, ldc: 4730}; // R$ 9,000 and R$ 1,000 out.
+  // Each maximum is the product's own limit plus what the others have available.
+  const MAX2 = {plat: 90674, uni: 108462};
+  const MAX3 = {plat: 95904, uni: 113692};
   const prods = {};
   root.querySelectorAll('.sd-prod').forEach(el => {
-    prods[el.dataset.k] = {el, min: +el.dataset.min, max: +el.dataset.max, v: +el.dataset.v, track: el.querySelector('.sd-track'), num: el.querySelector('.sd-num')};
+    prods[el.dataset.k] = {k: el.dataset.k, el, min: +el.dataset.min, max: +el.dataset.max, v: +el.dataset.v,
+      track: el.querySelector('.sd-track'), num: el.querySelector('.sd-num'), maxEl: el.querySelector('.sd-max'), pen: el.querySelector('.sd-pen')};
   });
-  const uni = prods.uni;
-  const phone = q('.sd-phone'), finger = q('.sd-finger'), calls = q('.sd-calls'), call = q('.sd-call');
+  const {plat, uni, ldc} = prods;
+  const phone = q('.sd-phone'), finger = q('.sd-finger'), calls = q('.sd-calls'), call = q('.sd-call'), list = q('.sd-list');
   const sumL = q('.sd-sum-l'), sumV = q('.sd-sum-v');
-  // The app's slider moves in R$ 100 steps from the minimum (every value in the recording fits).
-  const snap = v => Math.max(uni.min, Math.min(uni.max, uni.min + Math.round((v - uni.min) / 100) * 100));
+  // The app's sliders move in R$ 100 steps from the minimum.
+  const snap = (p, v) => Math.max(p.min, Math.min(p.max, p.min + Math.round((v - p.min) / 100) * 100));
+  const clamp = x => Math.max(0, Math.min(1, x));
+  const ease = x => x < .5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;
+  const smooth = x => x * x * (3 - 2 * x);
 
-  // Recording, compressed: [seconds, 1416 value, finger down].
-  const keys = [[0,105462,0],[2.4,105462,0],[2.8,105462,1],[5.6,29388,1],[6.6,29388,1],[7.2,27988,1],[8.2,27988,1],[8.6,29388,1],[9.2,29088,1],[9.6,29088,0],[10.4,29088,1],[11,26088,1],[11.6,29088,1],[12,29988,1],[12.5,29388,1],[12.9,29388,0],[13.79,29388,0],[13.8,EXACT,0],[17,EXACT,0]];
-  const END = 17;
+  const T = {two: 3, ldc: 9, three: 12};
+  const END = 34;
+  // [start, end, product, from, to]
+  const moves = [
+    [3.6, 6.6, 'plat', 3200, 13200],
+    [12.4, 14.6, 'plat', 3200, 13200],
+    [15.8, 18.2, 'uni', 105462, 96488], [19, 19.8, 'uni', 96488, 96388], [20.4, 21.2, 'uni', 96388, 96488],
+    [22.8, 24.8, 'ldc', 5730, 4800], [25.4, 26, 'ldc', 4800, 4700], [26.6, 27.2, 'ldc', 4700, 4800], [27.8, 28.3, 'ldc', 4800, 4700]
+  ];
+  // Taps on the pencil: [time, product, typed value].
+  const taps = [[29.4, 'uni', EXACT.uni], [30.8, 'ldc', EXACT.ldc]];
+  // List scroll inside the phone: [start, end, element to bring into view].
+  const scrolls = [[9.4, 10.4, 'ldc'], [11.2, 11.8, null], [15, 15.6, 'uni'], [22, 22.6, 'ldc']];
   const chapters = [
-    {at: 0, target: 'foot', text: 'The Platinum card went up to R$ 79,800. Now R$ 76,600 has to come out of the other products.'},
-    {at: 2.4, target: 'track', text: 'Each point of the track is worth about R$ 250. A fingertip covers thousands of reais.'},
-    {at: 6.6, target: 'foot', text: 'It went past the mark. Now the screen asks to increase R$ 874.'},
-    {at: 8.2, target: 'track', text: 'On this slider, every value ends in 88. The amount that balances the total ends in 62.', small: 'It moves in R$ 100 steps from R$ 17,988, the amount in use.'},
-    {at: 13.8, target: 'foot', text: 'The exact amount only came from outside the slider. The total closes and the button turns on.'}
+    {at: 0, target: 'goal', text: 'The customer starts from a goal: R$ 10,000 more on the Platinum card.'},
+    {at: T.two, target: 'plat', text: 'With two cards, the sliders were linked. Raising the Platinum by R$ 10,000 lowered the Uniclass Black by the same amount.', small: 'The total always closed, so the button was always ready.'},
+    {at: T.ldc, target: 'ldc', text: 'Then the overdraft limit joined the screen. With three products, the sliders stopped moving together.'},
+    {at: T.three, target: 'foot', text: 'Same goal. The Platinum goes up R$ 10,000, and now that amount has to come out of the other products by hand.'},
+    {at: 15.6, target: 'uni', text: 'R$ 9,000 from the Uniclass Black means R$ 96,462. The slider only stops at R$ 96,388 or R$ 96,488.', small: 'It moves in R$ 100 steps from R$ 17,988, the amount in use.'},
+    {at: 22.4, target: 'ldc', text: 'R$ 1,000 from the overdraft limit means R$ 4,730. That amount isn’t on the slider either, so the total misses by R$ 4.'},
+    {at: 29, target: 'foot', text: 'The exact amounts only came from typing them in with the pencil. Then the total closes and the button turns on.'}
   ];
   const chapterButtons = [...root.querySelectorAll('.sd-chapters button')];
   const playButton = q('.sd-play'), tryButton = q('.sd-try');
   const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
   const pauseIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
 
-  let time = 0, playing = false, last = 0, trying = false, attempts = 0, current = null, lastSign = null, dragging = false;
+  let time = 0, playing = false, last = 0, trying = false, attempts = 0, current = null, lastSign = null, drag = null, three = true;
   const callState = {text: '', small: '', target: 'foot'};
 
   const paintProduct = p => {
-    p.track.style.setProperty('--p', ((p.v - p.min) / (p.max - p.min)).toFixed(4));
+    p.track.style.setProperty('--p', clamp((p.v - p.min) / (p.max - p.min)).toFixed(4));
     p.num.textContent = money(p.v);
   };
+  const setMode = isThree => {
+    three = isThree;
+    root.classList.toggle('three', isThree);
+    const m = isThree ? MAX3 : MAX2;
+    [plat, uni].forEach(p => { p.max = m[p.k]; p.maxEl.textContent = money(p.max); });
+  };
   const paintFooter = () => {
-    const rest = uni.v - EXACT;
-    const sign = Math.sign(rest);
-    root.classList.toggle('balanced', sign === 0);
+    const diff = three ? plat.v + uni.v + ldc.v - TOTAL : 0;
+    const sign = Math.sign(diff);
+    const moved = Object.values(prods).reduce((sum, p) => sum + Math.max(0, p.v - BASE[p.k]), 0);
+    root.classList.toggle('balanced', sign === 0 && moved > 0);
     root.classList.toggle('unbalanced', sign !== 0);
-    if (sign === 0) { sumL.textContent = t('Total transfer'); sumV.textContent = 'R$ ' + money(TARGET); }
+    if (sign === 0) { sumL.textContent = t('Total transfer'); sumV.textContent = 'R$ ' + money(moved); }
     else {
       sumL.innerHTML = `${t(sign > 0 ? 'Value above total,' : 'Value below total,')} <em>${t(sign > 0 ? 'decrease:' : 'increase:')}</em>`;
-      sumV.textContent = 'R$ ' + money(Math.abs(rest));
+      sumV.textContent = 'R$ ' + money(Math.abs(diff));
     }
     if (lastSign !== null && sign !== lastSign) { root.classList.remove('sd-flash'); void root.offsetWidth; root.classList.add('sd-flash'); }
     lastSign = sign;
   };
   const center = (el, box) => { const r = el.getBoundingClientRect(); return {x: r.left + r.width / 2 - box.left, y: r.top + r.height / 2 - box.top}; };
+  const targetEl = k => (k === 'foot' ? q('.sd-sum') : k === 'goal' ? null : prods[k].track);
   const placeCall = () => {
-    const el = callState.target === 'track' ? uni.track : q('.sd-sum');
-    call.style.setProperty('--y', center(el, calls.getBoundingClientRect()).y + 'px');
+    const el = targetEl(callState.target);
+    call.style.setProperty('--y', (el ? center(el, calls.getBoundingClientRect()).y : 60) + 'px');
   };
   const say = (text, small, target) => {
-    if (callState.text === text && callState.small === small) return placeCall();
+    if (callState.text === text && callState.small === (small || '')) { callState.target = target; return placeCall(); }
     Object.assign(callState, {text, small: small || '', target});
     call.classList.remove('on');
     call.innerHTML = t(text) + (small ? `<small>${t(small)}</small>` : '');
     placeCall();
     requestAnimationFrame(() => call.classList.add('on'));
   };
-  const placeFinger = down => {
+  let fingerAt = {k: 'plat', at: 'knob'};
+  const placeFinger = (down, k = fingerAt.k, at = 'knob') => {
+    fingerAt = {k, at};
     finger.classList.toggle('on', !!down);
-    uni.el.classList.toggle('drag', !!down);
+    Object.values(prods).forEach(p => p.el.classList.toggle('drag', !!down && at === 'knob' && p.k === k));
     // The phone is scaled as a whole (CSS zoom), so screen pixels are divided back into its own units.
-    const c = center(uni.el.querySelector('.sd-knob'), phone.getBoundingClientRect()), z = phone.getBoundingClientRect().width / phone.offsetWidth || 1;
+    const el = at === 'pen' ? prods[k].pen : prods[k].el.querySelector('.sd-knob');
+    const c = center(el, phone.getBoundingClientRect()), z = phone.getBoundingClientRect().width / phone.offsetWidth || 1;
     finger.style.left = c.x / z + 'px'; finger.style.top = c.y / z + 'px';
   };
-  const ease = x => x < .5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2;
-  const valueAt = s => {
-    let i = 0;
-    while (i < keys.length - 2 && keys[i + 1][0] <= s) i++;
-    const [t0, v0, f0] = keys[i], [t1, v1] = keys[i + 1];
-    const k = t1 > t0 ? Math.min(1, Math.max(0, (s - t0) / (t1 - t0))) : 1;
-    // Keyframe values come straight from the recording; only in-between values use the slider's steps.
-    const v = k <= 0 ? v0 : k >= 1 ? v1 : snap(v0 + (v1 - v0) * ease(k));
-    return {v, down: f0 && (k < 1 || keys[i + 1][2])};
+  // Scroll that brings an element's bottom edge into view (null goes back to the top).
+  const scrollGoal = k => {
+    if (!k) return 0;
+    const el = prods[k].el;
+    return Math.max(0, el.offsetTop + el.offsetHeight - list.offsetTop - list.clientHeight + 8);
   };
-  const list = q('.sd-list');
-  // k: 0 keeps the top of the list, 1 brings the element to the top.
-  const scrollList = (el, k = 1) => {
-    const goal = el ? Math.max(0, el.offsetTop - list.offsetTop - 6) : 0;
-    list.scrollTop = goal * Math.max(0, Math.min(1, k));
+  const scrollAt = s => {
+    let y = 0;
+    for (const [a, b, k] of scrolls) { if (s < a) break; y += (scrollGoal(k) - y) * smooth(clamp((s - a) / (b - a))); }
+    return y;
   };
+
+  const stateAt = s => {
+    const v = {...BASE};
+    let active = null, down = false, at = 'knob';
+    const isThree = s >= T.ldc;
+    for (const [a, b, k, from, to] of moves) {
+      if (isThree && a < T.ldc) continue;
+      if (s < a) break;
+      const x = clamp((s - a) / (b - a));
+      v[k] = x >= 1 ? to : snap(prods[k], from + (to - from) * ease(x));
+      if (x < 1) { active = k; down = true; }
+    }
+    for (const [a, k, val] of taps) {
+      if (s >= a + .4) v[k] = val;
+      if (s >= a && s < a + .6) { active = k; down = true; at = 'pen'; }
+    }
+    if (!isThree) v.uni = BASE.uni - (v.plat - BASE.plat); // Two cards: linked sliders.
+    return {v, isThree, active, down, at};
+  };
+
   const render = () => {
-    const {v, down} = valueAt(time);
-    // The list scrolls inside the phone, as in the app: first the Platinum card, then down to the 1416 slider.
-    const s = Math.max(0, Math.min(1, (time - 2) / .7));
-    scrollList(uni.el, s * s * (3 - 2 * s));
-    uni.v = v; paintProduct(uni); paintFooter(); placeFinger(down);
+    const st = stateAt(time);
+    setMode(st.isThree);
+    ldc.el.style.setProperty('--in', st.isThree ? smooth(clamp((time - T.ldc) / .9)).toFixed(3) : 0);
+    root.classList.toggle('goal-focus', time < T.two);
+    Object.values(prods).forEach(p => { p.v = st.v[p.k]; paintProduct(p); });
+    list.scrollTop = scrollAt(time);
+    paintFooter();
+    placeFinger(st.down, st.active || fingerAt.k, st.at);
     let idx = 0;
     chapters.forEach((c, i) => { if (time >= c.at) idx = i; });
     chapterButtons.forEach((b, i) => {
       const start = chapters[i].at, end = chapters[i + 1] ? chapters[i + 1].at : END;
-      b.style.setProperty('--p', Math.max(0, Math.min(1, (time - start) / (end - start))).toFixed(3));
+      b.style.setProperty('--p', clamp((time - start) / (end - start)).toFixed(3));
       b.classList.toggle('on', i === idx);
     });
-    if (idx !== current || !call.classList.contains('on')) { current = idx; const c = chapters[idx]; say(c.text, c.small, c.target); }
+    const c = chapters[idx];
+    if (idx !== current || !call.classList.contains('on')) { current = idx; say(c.text, c.small, c.target); }
+    else placeCall();
   };
   const syncPlay = () => {
     playButton.innerHTML = playing ? pauseIcon : playIcon;
@@ -127,56 +179,65 @@
   playButton.addEventListener('click', () => (playing ? pause() : play()));
   chapterButtons.forEach((b, i) => b.addEventListener('click', () => { if (trying) stopTrying(); time = chapters[i].at; current = null; render(); play(); }));
 
-  // Try it yourself: the same slider, the same steps.
-  const tryText = () => say(attempts >= 3 ? 'Still off? Tap Adjust automatically.' : 'Drag the Uniclass Black slider until the footer closes the total.', `${t('Attempts:')} ${attempts}`, 'track');
+  // Try it yourself: Platinum already at the goal; the visitor takes R$ 9,000 and R$ 1,000 from the others.
+  const tryText = () => say(attempts >= 3 ? 'Still off? Tap Adjust automatically.' : 'Take R$ 9,000 from the Uniclass Black and R$ 1,000 from the overdraft limit. Drag until the footer closes the total.', `${t('Attempts:')} ${attempts}`, 'uni');
   const startTrying = () => {
     pause(); trying = true; attempts = 0; lastSign = null;
-    root.classList.add('trying'); tryButton.setAttribute('aria-pressed', 'true');
+    root.classList.add('trying'); root.classList.remove('goal-focus'); tryButton.setAttribute('aria-pressed', 'true');
     chapterButtons.forEach(b => { b.classList.remove('on'); b.style.setProperty('--p', 0); });
-    scrollList(uni.el, 1);
-    uni.v = 105462; paintProduct(uni); paintFooter(); placeFinger(false); tryText();
+    setMode(true); ldc.el.style.setProperty('--in', 1);
+    plat.v = BASE.plat + 10000; uni.v = BASE.uni; ldc.v = BASE.ldc;
+    Object.values(prods).forEach(paintProduct); paintFooter();
+    list.scrollTop = scrollGoal('ldc');
+    placeFinger(false, 'uni'); tryText();
   };
-  function stopTrying() { trying = false; root.classList.remove('trying'); tryButton.setAttribute('aria-pressed', 'false'); }
+  function stopTrying() { trying = false; drag = null; root.classList.remove('trying'); tryButton.setAttribute('aria-pressed', 'false'); }
   tryButton.setAttribute('aria-pressed', 'false');
   tryButton.addEventListener('click', () => (trying ? (stopTrying(), time = 0, current = null, render()) : startTrying()));
-  const fromPointer = e => {
-    const r = uni.track.getBoundingClientRect();
-    uni.v = snap(uni.min + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (uni.max - uni.min));
-    paintProduct(uni); paintFooter(); placeFinger(true);
+  const fromPointer = (p, e) => {
+    const r = p.track.getBoundingClientRect();
+    p.v = snap(p, p.min + clamp((e.clientX - r.left) / r.width) * (p.max - p.min));
+    paintProduct(p); paintFooter(); placeFinger(true, p.k);
   };
-  uni.track.parentElement.addEventListener('pointerdown', e => {
-    if (!trying || e.target.closest('.sd-auto') || !e.target.closest('.sd-track,.sd-mm,.sd-val')) return;
-    dragging = true; uni.track.setPointerCapture?.(e.pointerId); fromPointer(e); e.preventDefault();
-  });
-  uni.track.parentElement.addEventListener('pointermove', e => { if (dragging) fromPointer(e); });
-  const release = () => {
-    if (!dragging) return;
-    dragging = false; placeFinger(false); attempts++;
-    uni.v === EXACT ? say('Closed. Only possible because you landed exactly on it.', '', 'foot') : tryText();
-  };
-  uni.track.parentElement.addEventListener('pointerup', release);
-  uni.track.parentElement.addEventListener('pointercancel', release);
-  uni.el.querySelector('.sd-auto').addEventListener('click', () => {
-    if (!trying) return;
-    uni.v = EXACT; paintProduct(uni); paintFooter();
-    say('Closed, but only with the button. Dragging never gets there.', `${t('Attempts:')} ${attempts}`, 'foot');
+  [uni, ldc].forEach(p => {
+    const box = p.track.parentElement;
+    box.addEventListener('pointerdown', e => {
+      if (!trying || e.target.closest('.sd-auto') || !e.target.closest('.sd-track,.sd-mm,.sd-val')) return;
+      drag = p; p.track.setPointerCapture?.(e.pointerId); fromPointer(p, e); e.preventDefault();
+    });
+    box.addEventListener('pointermove', e => { if (drag === p) fromPointer(p, e); });
+    const release = () => {
+      if (drag !== p) return;
+      drag = null; placeFinger(false, p.k); attempts++;
+      plat.v + uni.v + ldc.v === TOTAL ? say('Closed. Only possible because you landed exactly on it.', '', 'foot') : tryText();
+    };
+    box.addEventListener('pointerup', release);
+    box.addEventListener('pointercancel', release);
+    p.el.querySelector('.sd-auto').addEventListener('click', () => {
+      if (!trying) return;
+      const goal = TOTAL - (plat.v + uni.v + ldc.v - p.v);
+      if (goal < p.min || goal > p.max) return say('This product can’t close the total on its own. Adjust the other one first.', `${t('Attempts:')} ${attempts}`, p.k);
+      p.v = goal; paintProduct(p); paintFooter();
+      say('Closed, but only with the button. Dragging never gets there.', `${t('Attempts:')} ${attempts}`, 'foot');
+    });
   });
 
   const paintStatic = () => {
     root.querySelectorAll('[data-n]').forEach(n => { n.textContent = money(n.dataset.n); });
+    setMode(three);
     Object.values(prods).forEach(paintProduct);
   };
   paintStatic(); syncPlay(); render();
-  addEventListener('resize', () => { placeCall(); placeFinger(finger.classList.contains('on')); });
+  addEventListener('resize', () => { placeCall(); placeFinger(finger.classList.contains('on'), fingerAt.k, fingerAt.at); });
   addEventListener('portfolio-language-change', () => {
     paintStatic(); syncPlay(); lastSign = null;
     const text = callState.text, small = callState.small; callState.text = '';
-    trying ? tryText() : (paintFooter(), say(text, small, callState.target));
+    trying ? (paintFooter(), tryText()) : (paintFooter(), say(text, small, callState.target));
   });
 
   // Plays once when it comes into view.
   if (!reduce && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { io.disconnect(); setTimeout(() => !trying && time === 0 && play(), 400); } }, {threshold: .55});
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { io.disconnect(); setTimeout(() => !trying && time === 0 && play(), 400); } }, {threshold: .45});
     io.observe(phone);
   }
 })();
