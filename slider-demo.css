@@ -208,3 +208,4 @@
 @media(max-width:520px){.sd{--k:.68}}
 @media(max-width:380px){.sd{--k:.66}}
 .sd .sd-sum{font-size:17px;align-items:baseline}.sd .sd-sum b{flex:none;white-space:nowrap}
+.sd .cx-hub>*{flex-shrink:0}
