@@ -1,51 +1,10 @@
 (() => {
   'use strict';
-  const dialog = document.querySelector('.transfer-dialog');
-  let trigger;
-  document.querySelectorAll('.image-open').forEach(button => button.addEventListener('click', () => {
-    trigger = button;
-    const image = button.querySelector('img');
-    const expanded = dialog.querySelector('img');
-    expanded.src = image.src;
-    expanded.alt = image.alt;
-    dialog.showModal();
-  }));
-  dialog.querySelector('.close-image').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if(event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
-  dialog.addEventListener('close', () => trigger?.focus());
-
-  const track = document.querySelector('.evolution-track');
-  if (track) {
-    const versions = [...track.children];
-    const previous = document.querySelector('.evolution-prev');
-    const next = document.querySelector('.evolution-next');
-    const count = document.querySelector('.evolution-count');
-    const activeIndex = () => versions.reduce((best, item, index) => Math.abs(item.offsetLeft - track.scrollLeft) < Math.abs(versions[best].offsetLeft - track.scrollLeft) ? index : best, 0);
-    const sync = () => {
-      const index = activeIndex();
-      previous.disabled = index === 0;
-      next.disabled = index === versions.length - 1;
-      count.textContent = `${index + 1} / ${versions.length}`;
-    };
-    const move = direction => {
-      const index = Math.max(0, Math.min(versions.length - 1, activeIndex() + direction));
-      track.scrollTo({left: versions[index].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
-    };
-    previous.addEventListener('click', () => move(-1));
-    next.addEventListener('click', () => move(1));
-    track.addEventListener('scroll', sync, {passive:true});
-    track.addEventListener('keydown', event => {
-      if(event.target !== track || !matchMedia('(max-width:767px)').matches) return;
-      if(event.key === 'ArrowRight' || event.key === 'ArrowLeft') {event.preventDefault();move(event.key === 'ArrowRight' ? 1 : -1);}
-    });
-    window.addEventListener('resize', sync);
-    sync();
-  }
   document.getElementById('year').textContent = new Date().getFullYear();
   // Very short words ("a", "e", "o") stay with the next word instead of ending a line.
   const bindShortWords = () => {
     const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT, {
-      acceptNode: node => node.parentElement.closest('.tm-canvas,.tx-phone,.tx-chip,[data-no-translate]') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+      acceptNode: node => node.parentElement.closest('.tm-canvas,[data-no-translate]') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
     });
     let node;
     while ((node = walker.nextNode())) {
@@ -126,17 +85,16 @@
     root.classList.add('motion');
 
     // Cascading reveal. A long jump can enter many items at once, so the cascade has a ceiling.
-    const items = [...document.querySelectorAll('.transfer-summary h2,.transfer-summary dl>div,.context-story>div,.public-reference,.sec-head>*,.contribution-grid>div:first-child>*,.scope-facts>div,.process-narrative>article,.claude-process,.evolution-version,.evolution-note,.tm,.transfer-steps>li,.decision-list>article,.decision-image,.primary-metrics>div,.outcomes-section .wrap>.source-note,.additional-results,.closing-section .wrap>*')];
+    const items = [...document.querySelectorAll('[data-reveal]')];
     items.forEach(node => node.classList.add('rv'));
     ScrollTrigger.batch(items, {start: 'top 88%', once: true, onEnter: batch => gsap.to(batch, {
       opacity: 1, y: 0, duration: .9, ease: 'power3.out', stagger: Math.min(.09, .6 / batch.length), overwrite: true,
-      onStart() { this.targets().forEach(node => { if (node.matches('.transfer-steps>li')) requestAnimationFrame(() => node.classList.add('rv-pop')); }); },
-      onComplete() { this.targets().forEach(node => { node.classList.remove('rv', 'rv-pop'); gsap.set(node, {clearProps: 'opacity,transform'}); }); }
+      onComplete() { this.targets().forEach(node => { node.classList.remove('rv'); gsap.set(node, {clearProps: 'opacity,transform'}); }); }
     })});
 
     // Results count toward their final value: 151s falls to 62s; the text is read only on entry, so the language is settled.
     const number = /\d+(?:[.,]\d+)?/g;
-    const counters = [...document.querySelectorAll('.primary-metrics dd,.scope-facts dd')].map(node => {
+    const counters = [...document.querySelectorAll('.primary-metrics dd')].map(node => {
       const count = {v: 0};
       let source = '', from = 0, to = 0, places = 0, comma = false;
       const tween = gsap.to(count, {v: 1, duration: 1.6, ease: 'power2.out', paused: true,
@@ -160,11 +118,6 @@
       }});
       return tween;
     });
-
-    // Hero: phone and callouts drift apart as the page leaves it.
-    const leave = {trigger: '.transfer-hero', start: 'top top', end: 'bottom top', scrub: .6};
-    gsap.to('.tx-chip.a', {y: -40, ease: 'none', scrollTrigger: leave});
-    gsap.to('.tx-chip.b', {y: -90, ease: 'none', scrollTrigger: leave});
 
     return () => { root.classList.remove('motion'); counters.forEach(tween => tween.progress() > 0 && tween.progress(1)); };
   });
