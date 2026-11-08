@@ -155,3 +155,19 @@
 .vr-edit .vr-ok{margin:auto 20px 26px;border:0;font-family:inherit;cursor:pointer}
 .vr-stats{display:flex;gap:24px;margin:0}.vr-stats dt{font-size:var(--text-xs);color:#6b5d52}.vr-stats dd{margin:0;font-size:var(--text-lg);font-weight:600;color:#a83c00;font-variant-numeric:tabular-nums}
 @media(max-width:1100px){.vr-grid{grid-template-columns:minmax(0,1fr);max-width:420px;margin-inline:auto}.vr-desc{min-height:0}}
+
+/* Problem and Direction demos: a shorter 3:4 phone with larger type; the list scrolls like in the app. */
+.sd .sd-stage{grid-template-columns:420px minmax(0,1fr)}
+.sd .sd-phone{width:420px;border-radius:46px}
+.sd .sd-screen{zoom:1.2;height:calc(560px / 1.2);border-radius:32px}
+.sd .sd-list{overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
+.sd .sd-list::-webkit-scrollbar{display:none}
+.sd .cx-view{overflow:hidden}
+@media(max-width:1000px){.sd .sd-stage{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){.sd .sd-phone{width:100%;max-width:340px;border-radius:40px;padding:8px}.sd .sd-screen{zoom:1;height:467px;border-radius:32px}}
+.sd .sd-phone{touch-action:pan-y}.sd .sd-track{touch-action:none}
+.cx-scroll{flex:1;min-height:0;overflow:hidden}
+.cx-new-view .cx-foot{flex:none;margin-top:0}
+.cx-new-view .cx-label{margin-top:16px}
+.cx-new-view .cx-donor{padding-block:11px}
+.cx-new-view .cx-custom{margin:12px 20px 14px}

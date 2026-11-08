@@ -85,8 +85,17 @@
     const v = k <= 0 ? v0 : k >= 1 ? v1 : snap(v0 + (v1 - v0) * ease(k));
     return {v, down: f0 && (k < 1 || keys[i + 1][2])};
   };
+  const list = q('.sd-list');
+  // k: 0 keeps the top of the list, 1 brings the element to the top.
+  const scrollList = (el, k = 1) => {
+    const goal = el ? Math.max(0, el.offsetTop - list.offsetTop - 6) : 0;
+    list.scrollTop = goal * Math.max(0, Math.min(1, k));
+  };
   const render = () => {
     const {v, down} = valueAt(time);
+    // The list scrolls inside the phone, as in the app: first the Platinum card, then down to the 1416 slider.
+    const s = Math.max(0, Math.min(1, (time - 2) / .7));
+    scrollList(uni.el, s * s * (3 - 2 * s));
     uni.v = v; paintProduct(uni); paintFooter(); placeFinger(down);
     let idx = 0;
     chapters.forEach((c, i) => { if (time >= c.at) idx = i; });
@@ -123,6 +132,7 @@
     pause(); trying = true; attempts = 0; lastSign = null;
     root.classList.add('trying'); tryButton.setAttribute('aria-pressed', 'true');
     chapterButtons.forEach(b => { b.classList.remove('on'); b.style.setProperty('--p', 0); });
+    scrollList(uni.el, 1);
     uni.v = 105462; paintProduct(uni); paintFooter(); placeFinger(false); tryText();
   };
   function stopTrying() { trying = false; root.classList.remove('trying'); tryButton.setAttribute('aria-pressed', 'false'); }
@@ -212,6 +222,9 @@
   };
   const render = () => {
     root.classList.toggle('on-new', time >= 3.2);
+    // The new screen scrolls above its fixed footer, as in the app: title first, then the donors.
+    const k = Math.max(0, Math.min(1, (time - 6.3) / .6)), sc = q('.cx-scroll');
+    sc.scrollTop = Math.max(0, q('.cx-label').offsetTop - sc.offsetTop - 4) * k * k * (3 - 2 * k);
     let idx = 0;
     chapters.forEach((c, i) => { if (time >= c.at) idx = i; });
     if (idx !== current) say(idx);

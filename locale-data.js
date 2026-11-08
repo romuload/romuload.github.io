@@ -4545,3 +4545,11 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["A bigger agenda: making the bank’s limit solutions work together instead of competing.", "Uma agenda maior: fazer as soluções de limite do banco funcionarem juntas, sem competir."],
   ["With receiver and donors set on entry, transferring limit became a confirmation. The next step is a screen that edits amounts and products in the same gesture.", "Com recebedor e doadores definidos na entrada, transferir limite virou uma confirmação. O próximo passo é a tela que edita valores e produtos no mesmo gesto."]
 ]);
+
+// Transfer credit limits · review fixes.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["With help from the data analytics team, I found that the more cards, the harder it got: some customers have five cards plus the overdraft limit, and every extra slider means more time in the journey and more rules to balance. Customers with many cards end up concentrating the limit on the card they use most. That was the key data point behind the new proposals: open the screen with a receiving card already set and the other products as donors.", "Com ajuda do time de análise de dados, identifiquei que quanto mais cartões, mais difícil: há clientes com cinco cartões mais o Limite da Conta, e cada slider a mais significa mais tempo na jornada e mais regras para equilibrar. Clientes com muitos cartões acabam concentrando o limite no cartão de maior uso. Esse foi o dado-chave que orientou as novas propostas: entrar na tela já com um cartão recebedor e os demais produtos como doadores."],
+  ["“The app forces me to send an amount to my overdraft limit, I really don’t like it.”", "“O aplicativo me obriga a mandar um valor para o limite da conta, acho muito ruim.”"],
+  ["The destination can be changed through the link; “Customize limits” leads to the previous slider experience.", "Destino trocável pelo link; “Personalizar limites” leva à experiência anterior com sliders."],
+  ["Latam Pass Black card", "Cartão Latam Pass Black"]
+]);
