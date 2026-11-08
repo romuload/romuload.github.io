@@ -1,0 +1,83 @@
+/* Home thumbnail for the Transfer limits case: a 9s loop of the final solution (section 06). */
+.image-limits{aspect-ratio:1.4;container-type:inline-size;isolation:isolate;background:radial-gradient(90% 70% at 100% 100%,#f0c7ab 0,#f3e4da 46%,#f6f6f6 78%);--tt:9s}
+@media(max-width:767px){.image-limits{aspect-ratio:1.3}}
+.tt-stage{position:absolute;inset:0;overflow:hidden}
+.tt-canvas{position:absolute;left:50%;top:50%;width:1400px;height:1000px;transform:translate(-50%,-50%) scale(var(--s,.42));font-family:var(--tx-sans);color:#141414}
+.tt-canvas>*{position:absolute}
+.tt-canvas p{max-width:none}
+
+/* phone */
+.tt-phone{left:479px;top:40px;width:442px;height:931px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.project-image:hover .tt-phone{transform:translateY(-10px)}
+.tt-phone .tx-phone{left:0;top:0}
+.tt-phone .tx-title{font-family:var(--tx-sans)}
+.tt-phone .tx-view{animation:var(--tt) linear infinite both}
+.tt-defA{animation-name:ttDefA!important}
+.tt-adjust{animation-name:ttAdjust!important;opacity:0}
+.tt-defB{animation-name:ttDefB!important;opacity:0}
+.tt-defB .tx-new{border-radius:8px;animation:ttGlow var(--tt) linear infinite both}
+.tt-adjust .tx-btn{animation:ttPressA var(--tt) linear infinite both}
+.tt-defB .tx-btn{animation:ttPressB var(--tt) linear infinite both}
+.tt-swap{display:inline-grid}
+.tt-swap>span{grid-area:1/1;text-align:right;animation:var(--tt) linear infinite both}
+.tt-swap .tt-a{animation-name:ttSwapA}
+.tt-swap .tt-b{animation-name:ttSwapB;opacity:0}
+.tt-tap{position:absolute;left:0;top:0;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(247,205,178,.92);box-shadow:0 0 0 6px rgba(255,140,74,.35),0 10px 22px rgba(120,50,10,.28);opacity:0;animation:ttTap var(--tt) linear infinite both;z-index:6}
+
+/* floating context */
+.tt-chip,.tt-call{border-radius:28px;background:#fff;box-shadow:0 28px 60px rgba(70,35,15,.18);opacity:0;animation:var(--tt) cubic-bezier(.2,.7,.2,1) infinite both}
+.tt-chip{left:20px;top:330px;display:flex;align-items:center;gap:20px;padding:24px 30px 24px 24px;animation-name:ttChip}
+.tt-chip .tm-chipicon{width:72px;height:72px;border-radius:20px}
+.tt-chip .tm-chipicon svg{width:50px;height:50px}
+.tt-chip-txt{display:grid;gap:6px}
+.tt-chip b{font-size:32px;line-height:1.1;font-weight:700;letter-spacing:-.02em}
+.tt-chip em{font-style:normal;font-size:24px;font-weight:600;color:#F05A00}
+.tt-call{left:970px;display:grid;gap:6px;padding:28px 34px;font-size:25px;line-height:1.3;color:#4a4a4a}
+.tt-call b{font-size:46px;line-height:1.1;font-weight:700;letter-spacing:-.03em;color:#141414;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-avail{top:300px;animation-name:ttAvail}
+.tt-result{top:560px;animation-name:ttResult}
+.tt-result b{color:var(--tx-green)}
+
+/* closing */
+.tt-final{inset:0;display:flex;align-items:center;justify-content:center;padding:0 140px;background:radial-gradient(60% 110% at 100% 40%,#f3c5a3 0,#e4733a 26%,#7a3413 50%,#050505 72%);clip-path:circle(0% at 50% 87%);animation:ttFinal var(--tt) cubic-bezier(.7,0,.2,1) infinite both;z-index:12}
+.tt-final p{margin:0;text-align:center;font-size:88px;line-height:1.1;font-weight:700;letter-spacing:-.035em;color:#fff;animation:ttFinalText var(--tt) cubic-bezier(.2,.7,.2,1) infinite both}
+
+/* 1s = 11.1% */
+@keyframes ttDefA{0%,18%{opacity:1}20%,92%{opacity:0}95%,100%{opacity:1}}
+@keyframes ttAdjust{0%,18%{opacity:0}20%,45%{opacity:1}47%,100%{opacity:0}}
+@keyframes ttDefB{0%,45%{opacity:0}47%,92%{opacity:1}95%,100%{opacity:0}}
+@keyframes ttSwapA{0%,30%{opacity:1}31%,100%{opacity:0}}
+@keyframes ttSwapB{0%,30%{opacity:0}31%,100%{opacity:1}}
+@keyframes ttGlow{0%,50%{box-shadow:0 0 0 0 rgba(10,154,60,0);background:transparent}54%,62%{box-shadow:0 0 0 8px rgba(10,154,60,.14);background:rgba(10,154,60,.14)}68%,100%{box-shadow:0 0 0 0 rgba(10,154,60,0);background:transparent}}
+@keyframes ttPressA{0%,42.5%{transform:none}43.5%{transform:scale(.96)}45%,100%{transform:none}}
+@keyframes ttPressB{0%,63.5%{transform:none}64.5%{transform:scale(.96)}66%,100%{transform:none}}
+@keyframes ttTap{
+  0%,11%{opacity:0;transform:translate(380px,360px) scale(1.5)}
+  14%{opacity:1;transform:translate(380px,360px) scale(1)}
+  15.5%{transform:translate(380px,360px) scale(.82)}
+  17%{opacity:1;transform:translate(380px,360px) scale(1)}
+  19%{opacity:0;transform:translate(380px,360px) scale(1)}
+  39%{opacity:0;transform:translate(221px,851px) scale(1.5)}
+  42%{opacity:1;transform:translate(221px,851px) scale(1)}
+  43.5%{transform:translate(221px,851px) scale(.82)}
+  45%{opacity:1;transform:translate(221px,851px) scale(1)}
+  47%{opacity:0;transform:translate(221px,851px) scale(1)}
+  60%{opacity:0;transform:translate(221px,847px) scale(1.5)}
+  63%{opacity:1;transform:translate(221px,847px) scale(1)}
+  64.5%{transform:translate(221px,847px) scale(.82)}
+  66%{opacity:1;transform:translate(221px,847px) scale(1)}
+  68%,100%{opacity:0;transform:translate(221px,847px) scale(1)}}
+@keyframes ttChip{0%,2%{opacity:0;transform:translateY(24px) scale(.96)}7%,92%{opacity:1;transform:none}95%,100%{opacity:0;transform:none}}
+@keyframes ttAvail{0%,5%{opacity:0;transform:translateY(24px) scale(.96)}10%,28%{opacity:1;transform:none}31%,100%{opacity:0;transform:translateY(-12px)}}
+@keyframes ttResult{0%,50%{opacity:0;transform:translateY(24px) scale(.96)}55%,92%{opacity:1;transform:none}95%,100%{opacity:0;transform:none}}
+@keyframes ttFinal{0%,68%{clip-path:circle(0% at 50% 87%);opacity:1}76%,93%{clip-path:circle(150% at 50% 87%);opacity:1}99%{clip-path:circle(150% at 50% 87%);opacity:0}100%{clip-path:circle(0% at 50% 87%);opacity:0}}
+@keyframes ttFinalText{0%,74%{opacity:0;transform:translateY(40px)}80%,100%{opacity:1;transform:none}}
+
+/* Off screen or hidden tab: the loop waits. */
+.image-limits.tt-off *{animation-play-state:paused!important}
+
+@media(prefers-reduced-motion:reduce){
+  .image-limits *{animation:none!important}
+  .tt-defA,.tt-adjust,.tt-avail,.tt-tap,.tt-final{opacity:0!important}
+  .tt-defB,.tt-chip,.tt-result{opacity:1!important}
+}
