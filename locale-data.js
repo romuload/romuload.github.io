@@ -4374,7 +4374,7 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Fallback to the escape hatch", "Desvio para escape hatch"],
   ["Card limit increases", "Aumento de cartões"],
   ["Why the pencil won", "Por que o lápis venceu"],
-  ["22% fell back to the old model with the pencil, against 45% with the checkbox. The checkbox converted slightly better, but its binary logic created uncertainty. The pencil’s granularity gave people the confidence to finish. It was faster, led in volume and was the only one whose TopBox improved consistently.", "22% de desvio para o modelo antigo no lápis, contra 45% no checkbox. O checkbox converteu um pouco mais, mas a lógica binária gerava insegurança. A granularidade do lápis deu confiança para concluir. Foi mais rápido, liderou em volume e foi o único cujo TopBox melhorou consistentemente."],
+  ["The checkbox converted slightly better, but its binary logic created uncertainty. The pencil’s granularity gave people the confidence to finish. It was faster, led in volume and was the only one whose TopBox improved consistently.", "O checkbox converteu um pouco mais, mas a lógica binária gerava insegurança. A granularidade do lápis deu confiança para concluir. Foi mais rápido, liderou em volume e foi o único cujo TopBox melhorou consistentemente."],
   ["6 participants per variant (Nov 2025). The icon signaled editing before the interaction began. “Remaining limit” raised questions in both variants, for different reasons.", "6 participantes por variante (nov/2025). O ícone comunicava edição antes da interação começar. “Limite restante” gerou dúvidas nas duas variantes, por razões diferentes."],
   ["06 · Final solution", "06 · Solução final"],
   ["Mental math became a confirmation", "Um cálculo mental virou uma confirmação"],
