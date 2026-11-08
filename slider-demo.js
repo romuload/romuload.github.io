@@ -249,3 +249,90 @@
     io.observe(phone);
   }
 })();
+
+(() => {
+  'use strict';
+  // Variants A/B/C: the same customer and values, each with its own interaction.
+  const root = document.getElementById('variants');
+  if (!root) return;
+  const t = text => (window.portfolioI18n ? window.portfolioI18n.t(text) : text);
+  const lang = () => (window.portfolioI18n ? window.portfolioI18n.language : 'en');
+  const money = v => Number(v).toLocaleString(lang() === 'pt' ? 'pt-BR' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const CURRENT = 105462;
+  const paintStatic = () => root.querySelectorAll('[data-n]').forEach(n => { n.textContent = money(n.dataset.n); });
+
+  // A · slider: every product moves, the footer balances against the total.
+  const a = root.querySelector('.vr-a');
+  const sliders = [...a.querySelectorAll('.vr-sl')].map(el => {
+    const s = {el, v: +el.dataset.v, start: +el.dataset.v, min: +el.dataset.min, max: +el.dataset.max, input: el.querySelector('input'), track: el.querySelector('.sd-track'), num: el.querySelector('.sd-num')};
+    s.input.value = s.v;
+    s.input.addEventListener('input', () => { s.v = +s.input.value; paintA(); });
+    return s;
+  });
+  const TOTAL = sliders.reduce((sum, s) => sum + s.start, 0);
+  function paintA() {
+    sliders.forEach(s => {
+      s.track.style.setProperty('--p', ((s.v - s.min) / (s.max - s.min)).toFixed(4));
+      s.num.textContent = money(s.v);
+      s.input.setAttribute('aria-valuetext', 'R$ ' + money(s.v));
+    });
+    const rest = sliders.reduce((sum, s) => sum + s.v, 0) - TOTAL;
+    const moved = sliders.reduce((sum, s) => sum + Math.max(0, s.v - s.start), 0);
+    const ok = rest === 0 && moved > 0;
+    a.classList.toggle('balanced', ok);
+    a.classList.toggle('unbalanced', rest !== 0);
+    a.querySelector('.vr-btn').disabled = !ok;
+    const label = a.querySelector('.sd-sum-l'), value = a.querySelector('.sd-sum-v');
+    if (rest === 0) { label.textContent = t('Total transfer'); value.textContent = 'R$ ' + money(moved); }
+    else {
+      label.innerHTML = `${t(rest > 0 ? 'Value above total,' : 'Value below total,')} <em>${t(rest > 0 ? 'decrease:' : 'increase:')}</em>`;
+      value.textContent = 'R$ ' + money(Math.abs(rest));
+    }
+  }
+
+  // B and C · donors at the maximum; the footer adds what each one gives.
+  const setups = ['b', 'c'].map(kind => {
+    const screen = root.querySelector('.vr-' + kind);
+    const donors = [...screen.querySelectorAll('.vr-donor')].map(el => ({el, max: +el.dataset.max, name: el.dataset.name, v: +el.dataset.max, on: true}));
+    const paint = () => {
+      donors.forEach(d => {
+        d.el.classList.toggle('off', !d.on);
+        d.el.querySelector('.vr-amt').textContent = money(d.v);
+        d.el.querySelector('.vr-rem').textContent = money(d.max - d.v + (d.name.includes('6984') ? 200 : 500));
+      });
+      const sum = donors.reduce((s, d) => s + (d.on ? d.v : 0), 0);
+      screen.querySelector('.vr-new').textContent = money(CURRENT + sum);
+      screen.querySelector('.vr-btn').disabled = sum === 0;
+    };
+    return {kind, screen, donors, paint};
+  });
+  const [b, c] = setups;
+  b.donors.forEach(d => d.el.querySelector('input').addEventListener('change', e => { d.on = e.target.checked; b.paint(); }));
+
+  // C · the pencil opens an adjustment screen, as in the app.
+  const edit = c.screen.querySelector('.vr-edit'), field = edit.querySelector('input'), err = edit.querySelector('.vr-edit-err');
+  let editing = null, opener = null;
+  const parse = text => { const digits = String(text).replace(/[^\d,.]/g, '').replace(lang() === 'pt' ? /\./g : /,/g, '').replace(',', '.'); return digits === '' ? NaN : Math.round(parseFloat(digits)); };
+  c.donors.forEach(d => d.el.querySelector('.vr-pen').addEventListener('click', e => {
+    editing = d; opener = e.currentTarget;
+    edit.querySelector('.vr-edit-from').textContent = d.name.includes('6984') ? d.name : t('Overdraft limit');
+    edit.querySelector('.vr-edit-max').textContent = money(d.max);
+    field.value = money(d.v); err.textContent = '';
+    c.screen.classList.add('editing');
+    setTimeout(() => { field.focus(); field.select(); }, 260);
+  }));
+  field.addEventListener('input', () => { err.textContent = ''; });
+  const close = () => { c.screen.classList.remove('editing'); opener?.focus(); };
+  edit.querySelector('.vr-ok').addEventListener('click', () => {
+    const v = parse(field.value);
+    if (Number.isNaN(v)) { err.textContent = t('Enter an amount.'); return; }
+    if (v > editing.max) { err.textContent = `${t('The most you can transfer is R$')} ${money(editing.max)}`; return; }
+    editing.v = v; editing.on = v > 0; c.paint(); close();
+  });
+  field.addEventListener('keydown', e => { if (e.key === 'Enter') edit.querySelector('.vr-ok').click(); if (e.key === 'Escape') close(); });
+  edit.querySelector('.cx-back').addEventListener('click', close);
+
+  const paintAll = () => { paintStatic(); paintA(); b.paint(); c.paint(); };
+  paintAll();
+  addEventListener('portfolio-language-change', paintAll);
+})();

@@ -4504,3 +4504,19 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Donors come in with the most they can give: R$ 3,000 from the Platinum card and R$ 5,230 from the overdraft limit.", "Os doadores já vêm com o máximo que podem doar: R$ 3.000 do Platinum e R$ 5.230 do Limite da Conta."],
   ["New limit: R$ 113,692, the same total the slider couldn’t close. One tap to confirm.", "Novo limite: R$ 113.692, a mesma conta que o slider não fechava. Um toque para confirmar."]
 ]);
+
+// Transfer credit limits · variants A/B/C.
+window.PORTFOLIO_TRANSLATIONS.push(...[
+  ["The three variants, side by side", "As três variantes, lado a lado"],
+  ["Same customer, same values. Try each one.", "Mesmo cliente, mesmos valores. Experimente cada uma."],
+  ["Pencil", "Lápis"],
+  ["The previous experience, used as the control. Every product has a slider and the footer only closes when the total balances.", "A experiência anterior, usada como controle. Cada produto tem um slider e o rodapé só fecha quando a conta bate."],
+  ["Donors come in at the maximum. Unchecking a product removes it from the transfer and from the footer.", "Os doadores já vêm no máximo. Desmarcar um produto tira ele da transferência e do cálculo do rodapé."],
+  ["Donors come in at the maximum. The pencil opens a screen to type any amount up to what’s available.", "Os doadores já vêm no máximo. O lápis abre uma tela para digitar qualquer valor até o disponível."],
+  ["Not part of this transfer", "Fora desta transferência"],
+  ["Edit amount", "Editar valor"],
+  ["Adjust the limit you want to transfer", "Ajuste o limite que quer transferir"],
+  ["Amount to transfer", "Valor a transferir"],
+  ["Enter an amount.", "Digite um valor."],
+  ["The most you can transfer is R$", "O máximo que dá para transferir é R$"]
+]);

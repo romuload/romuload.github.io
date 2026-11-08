@@ -143,3 +143,5 @@ html{scroll-padding-top:76px}.transfer-nav{top:0}.transfer-nav .wrap{padding-inl
 .tl-callout,.tl-compare article{padding:24px}
 .transfer-metrics dd{font-size:44px}}
 @media(max-width:420px){.tl-meta,.transfer-metrics{grid-template-columns:minmax(0,1fr)}}
+
+.tl-solution .tl-motion{margin-bottom:48px}.tl-solution .tl-compare{margin-top:0}
