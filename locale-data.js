@@ -4627,5 +4627,21 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["Next time you transfer limit in the Itaú app, notice: the card is already chosen.", "Da próxima vez que transferir limite no app do Itaú, repare: o cartão já vem escolhido."],
   ["Itaú · Transfer limits: the customer picks the card, adjusts the overdraft amount and confirms the transfer", "Itaú · Transferir limites: o cliente escolhe o cartão, ajusta o valor do limite da conta e confirma a transferência"],
   ["In the Itaú app, customers pick the card that receives the limit, and the other products already start at their maximum. The new flow took 62s to complete, against 85s with the sliders.", "No app Itaú, o cliente escolhe o cartão que recebe o limite, e os outros produtos já começam no máximo disponível. O novo fluxo levou 62s para ser concluído, contra 85s com os sliders."],
-  ["Read the case: Transfer limits: from mental math to 5 million transfers.", "Ler o case: Transferir limites: da conta de cabeça a 5 milhões de transferências."]
+  ["Read the case: Transfer limits: from mental math to 5 million transfers.", "Ler o case: Transferir limites: da conta de cabeça a 5 milhões de transferências."],
+  ["Most people accept the suggestion and confirm. Customers who want to leave a product out go through four steps:", "A maioria aceita a sugestão e confirma. Quem quer deixar um produto de fora passa por quatro passos:"],
+  ["Steps to remove a product", "Passos para remover um produto"],
+  ["Edit", "Editar"],
+  ["Set the amount to zero", "Zerar o valor"],
+  ["Turn on “Keep limit as it is”", "Ativar “Manter o limite como está”"],
+  ["Confirm", "Confirmar"],
+  ["A screen where customers adjust amount and product in the same gesture. It is in design, and the next tests come after it.", "Uma tela em que o cliente ajusta valor e produto no mesmo gesto. Está em design, e os próximos testes vêm em seguida."],
+  ["What I take from this project", "O que levo deste projeto"],
+  ["The detail that changed the problem", "O detalhe que mudou o problema"],
+  ["Many customers who asked for more limit already had it, only in the wrong product. The problem was moving limit between products, not granting more.", "Muitos clientes que pediam mais limite já tinham limite, só que no produto errado. O problema era mover limite entre produtos, não conceder mais."],
+  ["We waited for both challengers to be ready before testing, and that pushed the launch back. Today I would negotiate with product to release one variant, test it, read the results and only then build the next.", "Esperamos as duas desafiantes ficarem prontas para testar, e isso atrasou o lançamento. Hoje eu negociaria com produto para subir uma variante, testar, ler os resultados e só então construir a próxima."],
+  ["The delay had a cost: the 4 steps in the previous section only showed up in production. Testing one variant at a time, they would have shown up in the test cycle.", "O atraso teve um custo: os 4 passos da seção anterior só apareceram em produção. Testando uma variante por vez, teriam aparecido no ciclo de teste."],
+  ["Open questions", "Perguntas em aberto"],
+  ["Will the new screen remove the 4 steps without losing the exact amount the pencil allows? And do customers still need access to the sliders, which we kept because we feared they were attached to them?", "A nova tela vai eliminar os 4 passos sem perder o valor exato que o lápis permite? E o cliente ainda precisa do acesso aos sliders, que mantivemos por medo de que ele fosse apegado a eles?"],
+  ["What I learned", "O que aprendi"],
+  ["Conversion does not settle a decision on its own. The checkbox converted slightly better but left customers unsure. In the triad, we chose the pencil because it lets customers set the exact amount.", "Conversão sozinha não decide. O checkbox converteu um pouco mais, mas deixava o cliente inseguro. Em tríade, escolhemos o lápis porque ele permite definir o valor exato."]
 ]);

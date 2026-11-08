@@ -173,3 +173,21 @@ html{scroll-padding-top:76px}.transfer-nav{top:0}.transfer-nav .wrap{padding-inl
 .tl-facets-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin:0 0 48px;max-width:960px}
 @media(max-width:767px){.tl-facets-2{grid-template-columns:minmax(0,1fr);gap:24px}}
 .tl-stake .tl-facet-k{color:var(--lime)!important}
+
+/* 08 · steps to remove a product, next step */
+.tl-flow{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tl-flow li{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid var(--line2);border-radius:var(--radius-card);background:var(--bg2);font-size:var(--text-sm);line-height:1.4;color:var(--ink)}
+.tl-flow b{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--lime);color:#111;font-size:14px;font-weight:700}
+.tl-next{margin-top:40px;max-width:72ch}
+.tl-next p:last-child{margin:8px 0 0;font-size:var(--text-md);line-height:1.6;color:var(--ink)}
+/* 09 · four reflection blocks */
+.tl-reflect{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.tl-reflect article{padding:28px 28px 32px;border:1px solid var(--line2);border-radius:var(--radius-card);background:var(--bg2)}
+.tl-ico{display:grid;place-items:center;width:44px;height:44px;margin-bottom:20px;border-radius:50%;background:var(--lime);color:#111}
+.tl-ico svg{width:22px;height:22px}
+.tl-reflect h3{font-size:var(--text-lg);line-height:1.3;margin:0 0 12px;color:var(--ink)}
+.tl-reflect p{margin:0;font-size:var(--text-sm);line-height:1.65;color:var(--ink2)}
+.tl-reflect p+p{margin-top:12px}
+@media(max-width:1000px){.tl-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.tl-flow,.tl-reflect{grid-template-columns:minmax(0,1fr)}.tl-reflect article{padding:22px}}
+.tl-next .tl-facet-k{color:var(--lime)!important}
