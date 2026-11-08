@@ -166,3 +166,10 @@ html{scroll-padding-top:76px}.transfer-nav{top:0}.transfer-nav .wrap{padding-inl
 .tl-voice{margin-top:40px;max-width:72ch}
 .tl-open{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:767px){.tl-timeline{grid-template-columns:minmax(0,1fr)}.tl-open{grid-template-columns:minmax(0,1fr)}}
+/* Labeled facets (Context, Approach) */
+.tl-facets{display:grid;gap:24px;margin:32px 0 0}
+.tl-facets dt,.tl-facet-k{font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);margin:0 0 8px}
+.tl-facets dd{margin:0;color:var(--ink2);line-height:1.6}
+.tl-facets-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin:0 0 48px;max-width:960px}
+@media(max-width:767px){.tl-facets-2{grid-template-columns:minmax(0,1fr);gap:24px}}
+.tl-stake .tl-facet-k{color:var(--lime)!important}
