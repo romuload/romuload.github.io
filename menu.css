@@ -1,0 +1,25 @@
+/* Phone menu: one-row header with the language switch and a menu button; the links open full screen. */
+.menu-toggle{display:none}
+@media(max-width:767px){
+  header.has-menu{min-height:0!important;flex-wrap:nowrap!important;align-items:center;gap:8px!important;padding-block:12px!important}
+  header.has-menu>a:first-child{flex:1 1 auto;min-width:0}
+  header.has-menu .lang-switch{order:2;margin-left:auto!important}
+  header.has-menu .name-text{white-space:nowrap}
+  header.has-menu .lang-switch button{min-width:38px!important;min-height:38px!important;padding-inline:8px}
+  header.has-menu nav.main-nav{display:none!important}
+  .menu-toggle{order:3;position:relative;z-index:202;display:inline-grid;place-items:center;flex:none;width:44px;height:44px;margin:0 -8px 0 0;padding:0;border:0;border-radius:50%;background:transparent;color:#fff;cursor:pointer}
+  .menu-toggle svg{width:26px;height:26px;overflow:visible}
+  .menu-toggle path{transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-origin:12px 12px}
+  header.menu-open .menu-toggle .mt-a{transform:translateY(4px) rotate(45deg)}
+  header.menu-open .menu-toggle .mt-b{transform:translateY(-4px) rotate(-45deg)}
+  header.menu-open nav.main-nav{display:flex!important;position:fixed;inset:0;z-index:201;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;width:auto!important;margin:0!important;padding:96px 28px 48px;background:#141416;animation:menuIn .3s cubic-bezier(.2,.7,.2,1)}
+  header.menu-open nav.main-nav a{display:block!important;min-height:0!important;padding:10px 0!important;border:0!important;color:#fff!important;font-size:2rem!important;line-height:1.2!important;font-weight:300!important;letter-spacing:-.03em}
+  header.menu-open nav.main-nav a[aria-current="page"]{color:#ff8b45!important}
+  header.menu-open .lang-switch,header.menu-open>a:first-child{position:relative;z-index:202}
+  header.has-menu.menu-open{z-index:300!important}
+  header.has-menu.menu-open{position:relative;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important;filter:none!important}
+  html.menu-lock .opening{position:relative;z-index:300}
+  html.menu-lock,html.menu-lock body{overflow:hidden}
+}
+@keyframes menuIn{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.menu-toggle path,header.menu-open nav.main-nav{transition:none;animation:none}}
