@@ -518,3 +518,8 @@ body.case-motion{background:var(--paper);color:var(--k);font-family:var(--sans)}
 .mc-final .lead,.mc-final .source-note,.mc-orange .btn:not(.pri){color:#141414}
 .mc-orange .btn:not(.pri){border-color:rgba(20,20,20,.55)}
 .mc-orange .btn.pri{color:#141414}
+/* Hero stacked: text and buttons on top, video below, so the copy has room. */
+.mc-hero-grid{grid-template-columns:minmax(0,1fr);gap:clamp(40px,5vw,64px);align-items:start}
+.mc-hero h1{max-width:20ch}
+.mc-hero .lead{max-width:62ch}
+.mc-hero .float-screen{width:min(100%,1040px)}
