@@ -33,3 +33,10 @@
 @media(max-width:767px){.industry-grid li{flex-direction:column;align-items:flex-start;gap:12px}}
 .profile-bio .profile-lead{font-size:var(--text-lg);line-height:1.35;letter-spacing:-.01em;color:var(--ink)}
 .profile-bio .profile-where{font-size:var(--text-sm);color:var(--muted)}
+.profile-bio .profile-lead a{color:inherit;text-decoration:underline;text-underline-offset:.18em}
+.profile-bio .profile-how{font-size:var(--text-lg);line-height:1.3;letter-spacing:-.01em;margin:48px 0 24px}
+.profile-steps{list-style:none;padding:0;margin:0 0 40px;counter-reset:step;display:grid;gap:24px}
+.profile-steps li{counter-increment:step;display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:16px;line-height:var(--leading-body)}
+.profile-steps li::before{content:counter(step,decimal-leading-zero);grid-row:1/span 2;font-size:var(--text-sm);font-weight:600;color:var(--muted);padding-top:.2em;font-variant-numeric:tabular-nums}
+.profile-steps strong{display:block;color:var(--ink);margin-bottom:4px}
+@media(max-width:767px){.profile-bio .profile-how{margin-top:40px}.profile-steps li{font-size:var(--text-sm)}}
