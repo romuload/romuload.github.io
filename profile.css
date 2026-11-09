@@ -40,3 +40,13 @@
 .profile-steps li::before{content:counter(step,decimal-leading-zero);grid-row:1/span 2;font-size:var(--text-sm);font-weight:600;color:var(--muted);padding-top:.2em;font-variant-numeric:tabular-nums}
 .profile-steps strong{display:block;color:var(--ink);margin-bottom:4px}
 @media(max-width:767px){.profile-bio .profile-how{margin-top:40px}.profile-steps li{font-size:var(--text-sm)}}
+.result-cards{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.result-card{position:relative;display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 20px 22px;border:1px solid var(--line);border-radius:var(--radius-card);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+.result-card:hover,.result-card:focus-visible{border-color:var(--ink);transform:translateY(-2px)}
+.result-client{font-size:var(--text-xs);color:var(--muted)}
+.result-num{font-size:var(--text-xl);line-height:1.1;letter-spacing:-.02em;font-weight:600;font-variant-numeric:tabular-nums}
+.result-text{font-size:var(--text-xs);line-height:1.45;color:var(--muted);padding-right:20px}
+.result-card .ico{position:absolute;right:16px;bottom:18px;width:16px;height:16px;color:var(--muted);transition:transform .2s,color .2s}
+.result-card:hover .ico{transform:translateX(3px);color:var(--ink)}
+@media(max-width:420px){.result-cards{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.result-card,.result-card .ico{transition:none}.result-card:hover{transform:none}}

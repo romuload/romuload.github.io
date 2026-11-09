@@ -4665,4 +4665,12 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["I define what we’ll do in that period and what we’ll test along the way.", "Defino o que vamos fazer naquele período e o que vamos testar ao longo dele."],
   ["I test and iterate.", "Testo e itero."],
   ["Each round of usability and user testing shows where the product should go next, whether that means easier to use or more conversion.", "A cada rodada de teste de usabilidade e com usuários, os resultados mostram para onde o produto deve ir, seja para ficar mais fácil de usar ou para converter mais."],
+  ["How I work", "Como eu trabalho"],
+  ["With product and engineering, I build a CSD matrix (certainties, assumptions and doubts), so we all agree on the problem we’re solving. Then we raise solution hypotheses.", "Junto com produto e engenharia, monto uma matriz CSD (certezas, suposições e dúvidas). Assim todo mundo concorda sobre qual problema estamos resolvendo. Levantamos hipóteses de solução."],
+  ["Some results", "Alguns resultados"],
+  ["5M", "5 mi"],
+  ["credit limit transfers after I redesigned the flow", "de transferências de limite depois que redesenhei o fluxo"],
+  ["to produce a product video with the agent I built, down from up to 4 h", "para produzir um vídeo de produto com o agente que criei. Antes, até 4 h"],
+  ["to analyse a claim, down from 45‑60 min", "para analisar um sinistro. Antes, 45‑60 min"],
+  ["in monthly bench cost", "no custo mensal do bench"],
 ]);
