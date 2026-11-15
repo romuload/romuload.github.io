@@ -4678,5 +4678,5 @@ window.PORTFOLIO_TRANSLATIONS.push(...[
   ["in monthly bench cost", "no custo mensal do bench"],
   ["I start with the journey", "Começo pela jornada"],
   ["I look at the data and at how people behave at each step.", "Entendo os dados e o comportamento das pessoas em cada etapa."],
-  ["Product designer for complex B2B and B2C products, with work across banking, insurance, energy and technology.", "Product designer de produtos B2B e B2C complexos, com passagem por bancos, seguradoras, energia e tecnologia."],
+  ["B2B and B2C product designer, with work across banking, insurance, energy and technology.", "Product designer B2B e B2C, com passagem por bancos, seguradoras, energia e tecnologia."],
 ]);
