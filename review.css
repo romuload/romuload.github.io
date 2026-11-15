@@ -27,7 +27,7 @@
 .review-decisions p{font-size:16px;line-height:1.7;color:var(--ink2,#c2c7ce);margin:0}
 .case-motion .review-decisions p{color:inherit}
 .review-details{margin:20px 0;background:rgba(128,150,175,.07);border-radius:8px}
-.review-details>summary{cursor:pointer;padding:22px 24px;font-size:18px;line-height:1.4;font-weight:600;color:inherit;min-height:48px}
+.review-details>summary{cursor:pointer;padding:24px 24px;font-size:18px;line-height:1.4;font-weight:600;color:inherit;min-height:48px}
 .review-details>summary:focus-visible{outline:3px solid currentColor;outline-offset:4px}
 .review-detail-body{padding:12px 24px 28px;min-width:0}
 .review-detail-body .sec{padding-block:32px}
@@ -75,7 +75,7 @@
  .review-section h2{font-size:30px;margin-bottom:24px}
  .review-section>.wrap>p{font-size:16px}
  .review-decisions h3{font-size:22px}
- .review-details>summary{padding:18px 16px;font-size:16px}
+ .review-details>summary{padding:16px 16px;font-size:16px}
  .review-detail-body{padding:8px 16px 24px}
  .review-reading .mc-hero{padding:36px 0}
  .review-reading .mc-hero h1{font-size:36px}
