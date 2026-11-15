@@ -1,6 +1,6 @@
 /* Gallery cover for the Itaú motion case: the test video looping on a floating screen.
    Same proportions as the laptop covers; the bank's orange fading into black. */
-.image-motion{display:grid;place-items:center;aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate;background:radial-gradient(ellipse at 50% 15%,#FF6200,#121212 92%)}
+.image-motion{display:grid;place-items:center;aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate;background:radial-gradient(ellipse at 50% 15%,#4a2410,#141210 92%)}
 .image-motion .mg-screen{position:relative;width:74cqw;border-radius:1.6cqw;overflow:hidden;outline:3px solid #FF6200;background:#fff;box-shadow:0 4cqw 8cqw rgba(0,0,0,.45)}
 .image-motion .mg-screen video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;padding:0;filter:none}
 @media(max-width:767px){.image-motion{aspect-ratio:1.3}}

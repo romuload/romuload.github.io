@@ -41,7 +41,7 @@
 .profile-steps strong{display:block;color:var(--ink);margin-bottom:4px}
 @media(max-width:767px){.profile-bio .profile-how{margin-top:40px}.profile-steps li{font-size:var(--text-sm)}}
 .result-cards{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.result-card{position:relative;display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 20px 22px;border:1px solid var(--line);border-radius:var(--radius-card);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+.result-card{position:relative;display:flex;flex-direction:column;gap:6px;height:100%;padding:20px 20px 24px;border:1px solid var(--line);border-radius:var(--radius-card);color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
 .result-card:hover,.result-card:focus-visible{border-color:var(--ink);transform:translateY(-2px)}
 .result-client{font-size:var(--text-xs);color:var(--muted)}
 .result-num{font-size:var(--text-xl);line-height:1.1;letter-spacing:-.02em;font-weight:600;font-variant-numeric:tabular-nums}

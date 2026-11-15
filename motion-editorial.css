@@ -21,7 +21,7 @@
  .case-motion.review-reading #details+.sec{padding-top:44px}
  .mc-method-intro>.wrap>h2{margin-bottom:28px}
  .mc-method-copy p{font-size:16px}
- .mc-method-evidence .strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .mc-method-evidence .strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
  .case-motion .mc-lessons{padding-block:48px}
  .case-motion .mc-lessons h2{margin-bottom:32px;font-size:30px}
  .case-motion .mc-lessons-grid{grid-template-columns:1fr;gap:32px}
