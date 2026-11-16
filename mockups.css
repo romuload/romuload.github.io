@@ -13,7 +13,7 @@
 .logo-slot .logo-thomson{width:160px;height:36px;max-width:160px}
 .logo-slot .logo-sonda{width:120px;height:40px}
 .logo-slot .logo-gft{width:104px;height:40px}
-.logo-track{animation-duration:38s}
+.logo-track{animation-duration:44s}
 @media(prefers-reduced-motion:reduce){.logo-window{overflow:visible}.logo-track{width:100%}.logo-group{width:100%;display:flex;flex-wrap:wrap;justify-content:center;row-gap:16px}.logo-group[aria-hidden=true]{display:none}.logo-slot{width:auto;flex:0 0 25%;padding-inline:8px;box-sizing:border-box}.logo-slot img,.logo-slot .logo-thomson{max-width:100%}}
 @media(prefers-reduced-motion:reduce) and (max-width:767px){.logo-slot{flex-basis:33.333%}}
 /* Each screen has its own explicit viewport. Absolutely positioned captures cannot
