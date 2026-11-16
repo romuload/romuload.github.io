@@ -45,8 +45,8 @@ window.PORTFOLIO_TRANSLATIONS = [
     "Retomar carrossel"
   ],
   [
-    "Clients: Petrobras, Itaú, Porto, Fiat, Thomson Reuters and Sonda IT",
-    "Clientes: Petrobras, Itaú, Porto, Fiat, Thomson Reuters e Sonda IT"
+    "Clients: Itaú, Porto, GFT Technologies, Thomson Reuters, Sonda IT, Petrobras and Fiat",
+    "Clientes: Itaú, Porto, GFT Technologies, Thomson Reuters, Sonda IT, Petrobras e Fiat"
   ],
   [
     "UX, interfaces and interactive experiences that turn complex subjects into simple paths.",

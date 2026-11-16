@@ -12,8 +12,10 @@
 .logo-slot .logo-fiat{width:63px;height:51px}
 .logo-slot .logo-thomson{width:160px;height:36px;max-width:160px}
 .logo-slot .logo-sonda{width:120px;height:40px}
+.logo-slot .logo-gft{width:104px;height:40px}
 .logo-track{animation-duration:38s}
-@media(prefers-reduced-motion:reduce){.logo-window{overflow:visible}.logo-track{width:100%}.logo-group{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:16px}.logo-group[aria-hidden=true]{display:none}.logo-slot{width:auto}.logo-slot img{max-width:90%}}
+@media(prefers-reduced-motion:reduce){.logo-window{overflow:visible}.logo-track{width:100%}.logo-group{width:100%;display:flex;flex-wrap:wrap;justify-content:center;row-gap:16px}.logo-group[aria-hidden=true]{display:none}.logo-slot{width:auto;flex:0 0 25%;padding-inline:8px;box-sizing:border-box}.logo-slot img,.logo-slot .logo-thomson{max-width:100%}}
+@media(prefers-reduced-motion:reduce) and (max-width:767px){.logo-slot{flex-basis:33.333%}}
 /* Each screen has its own explicit viewport. Absolutely positioned captures cannot
    contribute intrinsic height or grow underneath a clipping bezel. */
 .project-image.device-stage,.case-page>.project-image.device-stage{aspect-ratio:1.4;overflow:hidden;container-type:inline-size;isolation:isolate}
@@ -46,7 +48,7 @@ body:has(.top) .screen{position:relative;aspect-ratio:16/10}
 body:has(.top) .screen>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:top center}
 @media(max-width:767px){
  .identity{gap:8px}.identity .brand-symbol{width:46px;height:34px}.name-text{font-size:14px}.name-text small{font-size:9px}
- .logo-slot .logo-thomson{width:120px;max-width:120px}.logo-slot .logo-sonda{width:96px}.logo-slot .logo-fiat{width:50px;height:42px}
+ .logo-slot .logo-thomson{width:120px;max-width:120px}.logo-slot .logo-sonda{width:96px}.logo-slot .logo-fiat{width:50px;height:42px}.logo-slot .logo-gft{width:84px;height:32px}
  .project-image.device-stage,.case-page>.project-image.device-stage{aspect-ratio:1.35}
  .device-stage .desktop-device{top:10%}.device-stage .phone-device,.case-page .device-stage .phone-device{top:18%}
  .desktop-browser{height:5.5cqw;font-size:1.6cqw}.desktop-viewport{min-height:0}
