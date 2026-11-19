@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#001326">
+<meta name="robots" content="noindex">
+<title>Bupa · MiBupa quote and policy flow | Romulo Nascimento</title>
+<meta name="description" content="MiBupa: redesigning how insurance agents quote and apply for a health policy, from a co-creation workshop to desktop and mobile screens.">
+<meta property="og:title" content="Bupa · MiBupa quote and policy flow | Romulo Nascimento">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://romuload.github.io/projeto-mibupa.html">
+<meta property="og:image" content="https://romuload.github.io/images/mibupa/d-planes.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="tokens.css?v=ux-1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="mibupa-case.js?v=1" defer></script>
+<link rel="stylesheet" href="locale.css?v=unslop-1">
+<script src="locale-data.js?v=logos-1"></script>
+<script src="mibupa-locale-data.js?v=1"></script>
+<script src="locale.js?v=proposals-1" defer></script>
+<link rel="icon" href="favicon.svg?v=plane-2" type="image/svg+xml">
+<link rel="alternate icon" href="favicon.ico?v=plane-2">
+<link rel="icon" type="image/png" href="favicon-32.png?v=plane-2" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16.png?v=plane-2" sizes="16x16">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=plane-2">
+<link rel="stylesheet" href="repar-case.css?v=unslop-1">
+<link rel="stylesheet" href="staffing-case.css?v=unslop-1">
+<link rel="stylesheet" href="mibupa-case.css?v=1">
+<link rel="stylesheet" href="typography.css?v=ux-1"><script src="typography.js?v=audit-3" defer></script><link rel="stylesheet" href="system.css?v=unslop-1"></head>
+<body>
+<a class="case-skip" href="#conteudo">Skip to content</a>
+<header class="top">
+<a class="portfolio-home" href="index.html" aria-label="Romulo Nascimento, projects page"><img class="brand-symbol" src="images/brand/paper-plane.svg?v=2" width="52" height="38" alt=""><span class="name-text">Romulo Nascimento<small>Product Designer</small></span></a>
+<span class="sp"></span>
+<nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="propostas.html">Proposals</a><a href="sobre.html">About me</a><a href="trabalhe-comigo.html">Work with me</a></nav>
+<div class="lang-switch" role="group" aria-label="Choose language"><button type="button" data-language="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-language="pt" aria-pressed="false" lang="pt-BR" aria-label="Português">PT</button></div>
+<div class="reading-progress" aria-hidden="true"></div>
+</header>
+<main id="conteudo">
+
+<section class="hero stf-hero mib-hero">
+<div class="wrap">
+<div class="client-signature"><span class="mib-client" data-no-translate>Bupa Global Latin America</span><span>Health insurance · via GFT</span></div>
+<h1 class="result-title">A health insurance quote agents can save, send and <span class="hl">turn into a policy without rework.</span></h1>
+<p class="lead">I redesigned how MiBupa agents quote and apply for a health policy, starting from what the business, operations and legal teams raised in a co-creation workshop.</p>
+<div class="hero-stage">
+<div class="hero-product">
+<div class="hero-desktop browser">
+<div class="bar">MiBupa · Agents · Desktop</div>
+<img src="images/mibupa/d-planes.webp" width="1600" height="1000" alt="Plan comparison for three insured people, with payment frequency to compare and benefits one tap away, with fictitious data" fetchpriority="high">
+</div>
+<div class="hero-mobile"><img src="images/mibupa/m-planes.webp" width="780" height="1580" alt="Mobile plan carousel with price, main coverage and the option to save or send the quote, with fictitious data"></div>
+</div>
+</div>
+<div class="case-summary" role="region" aria-labelledby="case-summary-title">
+<h2 id="case-summary-title" class="tldr-heading">TL;DR</h2>
+<dl class="tldr">
+<div><dt>Problem</dt><dd>Quotes were lost unless an application started, prices changed after the PDF was sent, and the health application mixed in regulatory questions that changed every year.</dd></div>
+<div><dt>What I did</dt><dd>I turned the workshop into design decisions and designed the new quote and the seven-step application for desktop and mobile, reusing the components of the portal redesign.</dd></div>
+<div><dt>Expected outcome</dt><dd>Less rework in policy issuance, quotes agents can resume and a price that matches what the client signs. These are the goals set in the workshop; I have no post-launch data.</dd></div>
+</dl>
+</div>
+<aside class="prototype-credit" aria-labelledby="prototype-credit-title">
+<div>
+<h3 id="prototype-credit-title">From Figma to code</h3>
+<p>In 2026, I rebuilt the flow as working prototypes with Claude Code, with the workshop decisions annotated on each screen.</p>
+</div>
+<a class="btn pri" href="mibupa-concept/index.html" target="_blank" rel="noopener"><span>Explore the desktop version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+</aside>
+<div class="hero-actions">
+<a class="btn pri" href="#context">Read the case <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+<a class="btn" href="#solution">See the screens <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></a>
+</div>
+<dl class="case-meta">
+<div><dt>Role</dt><dd>Product Designer (UX/UI)</dd></div>
+<div><dt>Team</dt><dd>GFT design team · Bupa IT, commercial, operations and legal</dd></div>
+<div><dt>Period</dt><dd>Late 2023</dd></div>
+<div><dt>Platform</dt><dd>MiBupa web portal · desktop and mobile</dd></div>
+</dl>
+</div>
+</section>
+
+<nav class="case-nav" aria-label="Case study chapters">
+<div class="wrap">
+<a href="#context">Context</a>
+<a href="#contribution">My role</a>
+<a href="#discovery">Workshop</a>
+<a href="#decisions">Decisions</a>
+<a href="#solution">Solution</a>
+<a href="#outcomes">Expected gains</a>
+</div>
+</nav>
+
+<section class="sec narrative-context" id="context" data-chapter="context">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>The portal was being redesigned. <span class="grad">The quote stayed behind.</span></h2>
+<p class="lead">PACO, Bupa’s customer experience and omnichannel project, was redesigning the MiBupa portal and app for clients and agents. Along the way, the team set aside the transactions at the core of the business. One of them was quoting a health plan and applying for the policy, used every day by agents in Ecuador and across Latin America.</p>
+</div>
+<div class="pain-grid" data-reveal>
+<article><h3>Quotes that disappeared</h3><p>A quote was only saved once the application started. If the client called back three days later, the agent started over.</p></article>
+<article><h3>A PDF with the wrong price</h3><p>Adding a child or an optional cover later changed the premium, but the PDF the client received kept the first value.</p></article>
+<article><h3>Payment chosen too early</h3><p>Payment frequency was fixed at the start and could not be changed at the end. Clients changed their minds after signing, and issuance redid the work.</p></article>
+<article><h3>Regulation inside the health form</h3><p>Income, employment and financial questions sat in the middle of the health application, and the regulator changed them every year.</p></article>
+</div>
+<figure class="legacy-day-figure">
+<ol class="legacy-day">
+<li><time>Mon 10:00</time><b>Quote in front of the client</b><span>The agent quotes a family of three and sends the PDF to their own email, then forwards it.</span></li>
+<li><time>Thu 16:00</time><b>The client calls back</b><span>Nothing was saved. The agent fills in every insured person again.</span></li>
+<li><time>Thu 16:40</time><b>One more child</b><span>Added during the application. The premium changes, but the PDF the client has does not.</span></li>
+<li class="is-stale"><time>Next week</time><b>Back to issuance</b><span>The client signed for an annual payment and now wants monthly. Issuance reprocesses the policy.</span></li>
+</ol>
+<figcaption>A typical sale before the redesign, rebuilt from what commercial and operations described in the workshop.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="sec narrative-role" id="contribution" data-chapter="contribution">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>From a four-hour workshop <span class="grad">to the screens of a new flow.</span></h2>
+<p class="lead">When GFT proposed a focused redesign of the quote and the policy application for agents, I joined as one of the two designers responsible for carrying the workshop decisions into the screens.</p>
+</div>
+<ol class="road" data-reveal>
+<li><time>Mid 2023</time><b>PACO process work</b><span>Reimbursements go from 7 to 4 steps. The same patterns guide this flow.</span></li>
+<li><time>2023</time><b>“Refresh” proposal</b><span>Benchmark, workshop, about 40 screens, navigable prototype, test with agents.</span></li>
+<li class="is-key"><time>Q4 2023</time><b>Co-creation workshop</b><span>Four hours, screen by screen, with business, IT, operations and legal.</span></li>
+<li><time>Late 2023</time><b>Desktop and mobile screens</b><span>The quote and seven application steps, reusing PACO components.</span></li>
+<li><time>2026</time><b>Working prototypes</b><span>Rebuilt with Claude Code to show the decisions in context.</span></li>
+</ol>
+<h3 class="mini-h">What I was responsible for</h3>
+<div class="principles" data-reveal>
+<article><h3>Turning the workshop into rules</h3><p>Pain points, legal constraints and open questions from the session became the requirements for each screen.</p></article>
+<article><h3>Interaction &amp; interface</h3><p>The quote, plan comparison and seven application steps, for desktop and mobile, with PACO’s components and patterns.</p></article>
+<article><h3>A prototype to validate</h3><p>Navigable flows for the business and development teams, and for the planned sessions with agents.</p></article>
+</div>
+<div class="constraint-panel" data-reveal>
+<h3>Design constraints</h3>
+<p>The rating engine was a closed system: the interface sent the data and showed what came back. Mexico used its own engine and stayed out of scope. Ecuadorian law decided the regulatory form, the consent texts and which health questions must always be asked. And the screens had to reuse what PACO had already built.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" id="discovery" data-chapter="discovery">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>Screen by screen, <span class="grad">with the people who fix the errors.</span></h2>
+<p class="lead">No agents could join, so we invited the people who work with them every day. We went through the current flow screen by screen, asking why each field existed and what happened when it went wrong.</p>
+</div>
+<div class="research-metrics" data-reveal>
+<article><strong>4</strong><p>hours of remote co-creation, recorded and shared</p></article>
+<article><strong>7</strong><p>areas invited, from IT and architecture to commercial, operations and legal</p></article>
+<article><strong>40</strong><p>screens in the redesign scope, desktop for agents</p></article>
+</div>
+<div class="voices" data-reveal>
+<blockquote><p>“If they add the dependants later, the PDF still shows the old value.”</p><cite>Commercial team</cite></blockquote>
+<blockquote><p>“The client no longer wants annual. It is a reprocess for everyone.”</p><cite>Issuance team</cite></blockquote>
+<blockquote><p>“We want the health application to be only health information.”</p><cite>Product team</cite></blockquote>
+</div>
+<div class="findings" data-reveal>
+<article><h3>Agents want density, not steps</h3><p>Agents change covers in front of the client. A wizard would add clicks every time the client asks how much they save.</p></article>
+<article><h3>What is not asked cannot be denied</h3><p>Gender-specific health questions must appear for everyone. If the question is skipped, a false declaration cannot be claimed later.</p></article>
+<article><h3>Regulation changes every year</h3><p>New regulator fields had arrived two weeks earlier. Keeping them in the flow meant redesigning screens every year.</p></article>
+</div>
+</div>
+</section>
+
+<section class="sec process-prototype" id="decisions" data-chapter="decisions">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>How workshop findings became design decisions.</h2>
+<p class="lead">Each decision answers something said in the session. The prototypes number them on the screens, so they can be checked in context.</p>
+</div>
+<div class="rules">
+<article data-reveal><p class="rule-in">Not getting a quote back was one of the agents’ main complaints.</p><p class="rule-out">Save the quote to “My quotes”, valid for 30 days, and resume it later. Expired quotes leave the list on their own.</p></article>
+<article data-reveal><p class="rule-in">Adding a dependant later changed the premium without warning.</p><p class="rule-out">Adding or removing someone shows the current and the new premium before confirming, and the header updates.</p></article>
+<article data-reveal><p class="rule-in">Clients changed payment frequency after signing.</p><p class="rule-out">Compare frequencies in the quote, with the total yearly cost of each one, and choose only in Billing.</p></article>
+<article data-reveal><p class="rule-in">Regulatory questions inside the health application.</p><p class="rule-out">Income, employment and financial sections leave the flow. The regulatory form is signed with the application, in one step.</p></article>
+<article data-reveal><p class="rule-in">Agents read the questions aloud and lost track across family members.</p><p class="rule-out">One block per insured person, no default answers, and gender-specific questions always visible.</p></article>
+<article data-reveal><p class="rule-in">Boxes ticked without a file, or 20-page PDFs.</p><p class="rule-out">One upload slot per required document, with format and size limits shown before uploading.</p></article>
+<article data-reveal><p class="rule-in">Consent in the middle of the flow, mixing client and agent texts.</p><p class="rule-out">Consent at the end, split into client and agent, with the send-to-signature confirmation on the same screen.</p></article>
+<article data-reveal><p class="rule-in">Agents typed their own email instead of the client’s.</p><p class="rule-out">One email, labelled as the client’s e-signature address and validated. The summary shows it with a link to correct it, without typing it twice.</p></article>
+</div>
+
+<dl class="design-reasoning" data-reveal>
+<div><dt>Evidence</dt><dd>The health questionnaire listed each question once and asked which family member it applied to. With four insured people, it was easy to skip someone without noticing.</dd></div>
+<div><dt>Interpretation</dt><dd>The workshop split: going person by person is clearer, but agents read the questions aloud and repeating them for every relative could feel slow.</dd></div>
+<div><dt>Design decision</dt><dd>One block per person with a progress count and a shortcut to mark the remaining answers as “No”, to be tested with agents on the prototype before closing the decision.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="sec guided-section" id="solution" data-chapter="solution">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>From the quote to the signature, <span class="grad">without losing the context.</span></h2>
+<p class="lead">The screens below follow the main flow for an agent, from the quote to the application sent for signature. They come from the 2026 working prototype and use fictitious data.</p>
+</div>
+<div class="vision-story">
+<div class="solution-story">
+<div class="solution-stage browser">
+<div class="bar">MiBupa · Agents</div>
+<div class="stage-screens">
+<img class="on" src="images/mibupa/d-cotizacion.webp" width="1600" height="1000" alt="Quote form with country first, previous insurer question and one card per insured person" loading="lazy">
+<img src="images/mibupa/d-planes.webp" width="1600" height="1000" alt="Plan comparison with frequency toggle, benefits and actions to save or send the quote" loading="lazy">
+<img src="images/mibupa/d-titular.webp" width="1600" height="1000" alt="Policyholder step with data preloaded from the agent’s portfolio and validated ID" loading="lazy">
+<img src="images/mibupa/d-recalc.webp" width="1600" height="1000" alt="Dialog showing the current and new premium before adding a dependant" loading="lazy">
+<img src="images/mibupa/d-cuestionario.webp" width="1600" height="1000" alt="Health questionnaire with one block per insured person and details for a yes answer" loading="lazy">
+<img src="images/mibupa/d-facturacion.webp" width="1600" height="1000" alt="Billing step with payment frequency and the total yearly cost of each option" loading="lazy">
+<img src="images/mibupa/d-documentos.webp" width="1600" height="1000" alt="Documents step with one upload slot per required document" loading="lazy">
+<img src="images/mibupa/d-resumen.webp" width="1600" height="1000" alt="Editable summary with PDF download and the e-signature email" loading="lazy">
+<img src="images/mibupa/d-consentimiento.webp" width="1600" height="1000" alt="Consent split between client and agent, with the send-to-signature confirmation" loading="lazy">
+<img src="images/mibupa/d-enviada.webp" width="1600" height="1000" alt="Application sent, with status pending signature and next steps" loading="lazy">
+</div>
+</div>
+<div class="solution-list">
+<article class="solution-step"><h3>Quote in seconds</h3><p>Country first, because it defines products and rating. Whether the client comes from another insurer is asked here, so the waiting period is clear from the start.</p><figure class="step-inline browser"><img src="images/mibupa/d-cotizacion.webp" width="1600" height="1000" alt="Quote form with country first, previous insurer question and one card per insured person" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Compare, save or send</h3><p>All plans on one screen, as agents asked. Benefit tables open without leaving the quote, and the quote can be saved or sent to several emails.</p><figure class="step-inline browser"><img src="images/mibupa/d-planes.webp" width="1600" height="1000" alt="Plan comparison with frequency toggle, benefits and actions to save or send the quote" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Policyholder</h3><p>Data from the agent’s portfolio comes preloaded and editable. The ID is checked for ten digits and for an existing policy. No more income or employment sections.</p><figure class="step-inline browser"><img src="images/mibupa/d-titular.webp" width="1600" height="1000" alt="Policyholder step with data preloaded from the agent’s portfolio and validated ID" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Dependants</h3><p>Loaded from the quote. Adding or removing someone shows the new premium before confirming, so the price the client signs matches the one they saw.</p><figure class="step-inline browser"><img src="images/mibupa/d-recalc.webp" width="1600" height="1000" alt="Dialog showing the current and new premium before adding a dependant" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Health questionnaire</h3><p>One person at a time, with progress for each and no answer selected by default. A “yes” opens the details right under the question.</p><figure class="step-inline browser"><img src="images/mibupa/d-cuestionario.webp" width="1600" height="1000" alt="Health questionnaire with one block per insured person and details for a yes answer" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Billing and payment</h3><p>The payment decision moves here, with the total yearly cost and the surcharge for paying in instalments next to each option.</p><figure class="step-inline browser"><img src="images/mibupa/d-facturacion.webp" width="1600" height="1000" alt="Billing step with payment frequency and the total yearly cost of each option" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Documents</h3><p>One slot per required document, per person. The step only continues when every required file is attached.</p><figure class="step-inline browser"><img src="images/mibupa/d-documentos.webp" width="1600" height="1000" alt="Documents step with one upload slot per required document" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Summary</h3><p>Replaces the separate download step. Every section can be edited, the PDF is one button away, and the e-signature email is shown, not typed again.</p><figure class="step-inline browser"><img src="images/mibupa/d-resumen.webp" width="1600" height="1000" alt="Editable summary with PDF download and the e-signature email" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Consent</h3><p>The last step, split into client and agent. Sending to signature is confirmed here, without an extra “Are you sure?” dialog.</p><figure class="step-inline browser"><img src="images/mibupa/d-consentimiento.webp" width="1600" height="1000" alt="Consent split between client and agent, with the send-to-signature confirmation" loading="lazy"></figure></article>
+<article class="solution-step"><h3>Sent, with next steps</h3><p>The application is pending signature, and the agent sees what happens next. Before, this screen reused the reimbursement confirmation.</p><figure class="step-inline browser"><img src="images/mibupa/d-enviada.webp" width="1600" height="1000" alt="Application sent, with status pending signature and next steps" loading="lazy"></figure></article>
+</div>
+</div>
+</div>
+<div class="phone-feature" data-reveal>
+<div class="phone-copy">
+<h3>The same flow on a phone, in front of the client.</h3>
+<p>On mobile, insured people and plans become carousels, dialogs become bottom sheets and the current step stays pinned at the top with the premium. The decisions are the same; only the layout changes.</p>
+<a class="btn" href="mibupa-concept/mobile.html" target="_blank" rel="noopener"><span>Explore the mobile version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+</div>
+<div class="mib-phones">
+<div class="phone-shell"><img src="images/mibupa/m-cotizacion.webp" width="780" height="1580" alt="Mobile quote with insured people in a carousel" loading="lazy"></div>
+<div class="phone-shell"><img src="images/mibupa/m-cuestionario.webp" width="780" height="1580" alt="Mobile health questionnaire with large yes and no buttons" loading="lazy"></div>
+<div class="phone-shell"><img src="images/mibupa/m-recalc.webp" width="780" height="1580" alt="Mobile bottom sheet showing the new premium before adding a dependant" loading="lazy"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec results-section" id="outcomes" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<span class="status-tag">Expected, not measured</span>
+<h2>Less rework for issuance. <span class="grad">More quotes that become policies.</span></h2>
+<p class="lead">The workshop opened with a clear goal: improve the experience to reduce costs and sell more policies. These are the gains each decision aimed for. I left before launch data existed, so none of them is a measured result.</p>
+</div>
+<div class="impact-metrics mib-flow-metrics" data-reveal>
+<article><strong>3</strong><h3>Redundant moments removed</h3><p>The separate download step, the “Are you sure?” dialog and typing the email twice.</p></article>
+<article><strong>3</strong><h3>Regulatory sections out</h3><p>Income, employment and financial information leave the health application.</p></article>
+</div>
+<div class="findings mib-gains" data-reveal>
+<article><h3>Issuance and operations</h3><p>Fewer reprocessed policies after a payment change, fewer applications waiting for a missing document, and less manual typing of regulatory data into another system.</p></article>
+<article><h3>Agents</h3><p>Quotes they can resume and send to several people, data preloaded from their portfolio, and fewer steps to check before sending to signature.</p></article>
+<article><h3>Clients</h3><p>The premium they sign is the one they were shown, the cost of paying in instalments is clear, and the waiting period is known from the start.</p></article>
+<article><h3>Business and compliance</h3><p>A validated signature email and ID, health questions that protect claims decisions, and a regulatory form that can change without redesigning the flow.</p></article>
+</div>
+<h3 class="mini-h mib-measure-h">How I would measure it</h3>
+<div class="rules mib-measure" data-reveal>
+<article><p class="rule-in">Reprocessed policies after a payment change</p><p class="rule-out">Share of issued policies that need a change of payment frequency in the first 30 days.</p></article>
+<article><p class="rule-in">Applications stopped by documents</p><p class="rule-out">Share of applications returned to the agent for a missing or unreadable file.</p></article>
+<article><p class="rule-in">Saved quotes that convert</p><p class="rule-out">Share of saved quotes that become an application before they expire.</p></article>
+<article><p class="rule-in">Time from quote to signature</p><p class="rule-out">Median time between the quote and the application sent for signature, by agent.</p></article>
+</div>
+<p class="metric-status">The two figures above describe the design, compared with the previous flow reviewed in the workshop. The gains come from the workshop and the proposal and were not measured after launch. As a reference from the same team and client, PACO reduced reimbursements from 7 to 4 steps.</p>
+</div>
+</section>
+
+<section class="sec reflections-section" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal><p class="eyebrow">Reflections</p></div>
+<div class="lessons" data-reveal>
+<h3>What I take forward</h3>
+<p>The most useful people in the room were the ones who fix the errors after the sale. Issuance, legal and compliance explained why fields existed and what broke downstream, which no screen review alone would have shown. Separating the regulatory form was a decision about maintenance as much as about usability.</p>
+</div>
+<div class="open-questions" data-reveal>
+<h3>What I would do next</h3>
+<p>I would run the planned sessions with agents on the prototype, starting with the questionnaire per person, and check whether saved quotes are resumed in practice. I would also bring renewals into the same flow, since the workshop named them as the biggest need still handled in spreadsheets.</p>
+</div>
+</div>
+</section>
+
+<section class="sec final-section" data-chapter="outcomes">
+<div class="wrap">
+<div class="sec-head" data-reveal>
+<h2>Try the working versions.</h2>
+<p class="lead">Each one numbers the workshop decisions on the screens. Or get in touch to talk about a product challenge.</p>
+</div>
+<div class="hero-actions">
+<a class="btn pri" href="mibupa-concept/index.html" target="_blank" rel="noopener"><span>Explore the desktop version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+<a class="btn" href="mibupa-concept/mobile.html" target="_blank" rel="noopener"><span>Explore the mobile version</span><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+<a class="btn" href="trabalhe-comigo.html">Work with me</a>
+</div>
+<p class="source-note">All names and values in the screens are fictitious. Workshop participants are identified by team only.</p>
+</div>
+</section>
+</main>
+<footer class="wrap case-footer">
+<span>© <span id="year">2026</span> Romulo Nascimento</span>
+<a href="index.html"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+<a href="trabalhe-comigo.html">Work with me</a>
+</footer>
+</body>
+</html>
